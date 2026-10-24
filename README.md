@@ -1,140 +1,360 @@
 # PromptStyler Next
 
-A creative styling engine with explicit model profiles, composable visual directions,
-and reproducible recipes. Use it from Python, ComfyUI V3, or a local style workbench
-and a native HEISS Studio composer panel.
+A modular creative styling platform for **ComfyUI**, **HEISS Studio**, and
+**standalone Python workflows**. Build a scene description, combine visual
+styles, and render the additions using the prompting convention of your model.
 
-The engine has **no runtime dependencies**. It runs offline, does not load a model,
-and does not send prompts to an external service. This is a separate implementation
-and repository; the original [PromptStyler](https://github.com/NidAll/ComfyUI_PromptStyler)
-remains independent.
+**Version 0.4.0 · 1,164 library entries · 52 packs · 11 model profiles · 5 ComfyUI V3 nodes**
 
-The optional [local prompt upscaler](docs/upscaler.md) turns text, one image, or
-both into a semantic base before styling. Its MiniCPM VLM runtime stays inside
-the ComfyUI integration and uses an existing local INT8 model.
+The shared deterministic engine runs offline on Python 3.11+ with **zero runtime
+dependencies**. An optional local MiniCPM VLM adds fast base-prompt upscaling
+inside ComfyUI. The engine, browser workbench, and HEISS integration all use the
+same style definitions and composition logic.
 
-## Start with a recipe
+This is an independent successor to
+[ComfyUI PromptStyler](https://github.com/NidAll/ComfyUI_PromptStyler).
 
-For a base that can be reused across presets, start with the
-[LLM base prompt toolkit](llm-prompts/README.md). It contains seven copyable
-metaprompts for ideas, existing prompts, references, edits and recipe handoffs,
-plus replay examples. Keep scene content in the base and choose visual direction
-through style layers. [The 0.3.0 review](docs/style-review.md) explains the pack
-corrections, limits and new finishing controls.
+## Features at a glance
 
-Python 3.11 or newer:
+| Feature | What you can do |
+| --- | --- |
+| Curated style library | Explore 1,017 visual treatments, 69 color grades, and 78 modifiers across 52 versioned packs |
+| Model-aware formatting | Use concise tags, natural-language additions, structured Fibo captions, or preserved edit instructions through explicit model profiles |
+| Layered recipes | Combine up to 16 distinct entries, reorder layers, and adjust each layer's intensity |
+| Conflict resolution | Resolve competing declared directions per visual axis with `last_wins`, `first_wins`, or `error` |
+| Protected axes | Keep selected medium, lighting, palette, composition, texture, mood, or detail choices out of style additions |
+| Prompt inspection | Inspect applied, skipped, duplicate, and suppressed clauses, capability warnings, normalized recipes, and fingerprints |
+| Local prompt upscaling | Turn text, one reference image, or both into a semantic base using an existing MiniCPM-V 4.7 1B INT8 model |
+| LLM metaprompt toolkit | Create, neutralize, describe, expand, edit, audit, and package reusable base prompts with seven copyable instructions |
+| ComfyUI nodes | Author bases, apply a single style, compose JSON recipes, and use compatible native conditioning |
+| Browser workbench | Search, filter, save favorites, combine styles, inspect results, and import/export recipes |
+| HEISS Studio module | Add a React composer panel, typed JS transport, managed Python service, and native workflow injection |
+| Metadata recommendations | Find model-eligible entries using transparent word/tag overlap scores and matching reasons |
+| Extensibility | Load custom JSON packs and explicitly register trusted Python model profiles and adapters |
+| Validation and portability | Use typed immutable records, versioned JSON schemas, bounded input validation, stable errors, and independently usable Python/CLI/HTTP interfaces |
+
+```mermaid
+flowchart LR
+    Idea[Text or reference image] --> Base[Base-prompt toolkit or local MiniCPM]
+    Base --> Engine[Shared styling engine]
+    Existing[Existing base prompt] --> Engine
+    Library[Styles + grades + modifiers] --> Engine
+    Profile[Model profile + recipe controls] --> Engine
+    Engine --> Result[Styled text + inspection + fingerprints]
+    Result --> Native[Model-native ComfyUI encoder]
+    Result --> Studio[Workbench / HEISS / Python / CLI]
+```
+
+## Quick start
+
+### ComfyUI
+
+From your ComfyUI directory:
+
+```sh
+git clone https://github.com/NidAll/ComfyUI-PromptStyler-Next.git custom_nodes/ComfyUI-PromptStyler-Next
+```
+
+Restart ComfyUI and search for **PromptStyler Next**. Start with **Style**, enter a
+scene description, choose a style and model profile, then connect the resulting
+text to your workflow's native encoder.
+
+The styling nodes need no additional runtime packages. The optional VLM upscaler
+has separate [host and model requirements](docs/upscaler.md#setup-and-controls).
+The complete repository supplies the current V3 extension entry point; installing
+the Python wheel alone does not register ComfyUI nodes.
+
+To also use the CLI and workbench in an existing ComfyUI virtual environment:
+
+```sh
+./venv/bin/python -m pip install ./custom_nodes/ComfyUI-PromptStyler-Next
+./venv/bin/promptstyler-next serve --port 8791
+```
+
+See [ComfyUI setup, conditioning, and example workflows](docs/comfyui.md).
+
+### Standalone Python and browser workbench
+
+From this repository's root, using Python 3.11 or newer:
 
 ```sh
 python -m pip install .
 promptstyler-next serve --port 8791
 ```
 
-Open [the local workbench](http://127.0.0.1:8791) to browse categories, search tags,
-save favorites, order layers, tune intensity, protect prompt attributes and inspect
-composition. It exports recipes for replay. Abstract palette swatches identify
-entries; they are not generated image previews.
+Open [http://127.0.0.1:8791](http://127.0.0.1:8791). The installed wheel contains
+the engine, style packs, schemas, HTTP service, and workbench. ComfyUI and the VLM
+are optional for this route.
+
+## ComfyUI nodes and workflows
+
+| Node | Purpose | Outputs |
+| --- | --- | --- |
+| **Load Prompt Upscaler** | Load the supported local MiniCPM INT8 artifact into a cacheable, native-managed handle | Upscaler handle |
+| **Upscale Base Prompt** | Author a base from text, one RGB IMAGE, or both | Base prompt, inspection JSON |
+| **Style** | Apply one style with model selection, intensity, optional negative text, and protected axes | Positive text, negative text, inspection JSON |
+| **Compose Recipe** | Apply an ordered JSON recipe with conflict controls; an optional connected `prompt` overrides the recipe's base | Positive text, negative text, inspection JSON |
+| **Encode Text** | Delegate tokenization and scheduled conditioning to a connected compatible native encoder | Positive and negative conditioning |
+
+The nodes appear under **PromptStyler Next**; upscaling and conditioning have
+separate subcategories. Advanced inputs keep the common styling path compact.
+
+Use **Encode Text** for the supported SDXL and Anima profiles with the correct
+connected encoder. For FLUX, Qwen-Image, MOSS-Image, and Fibo workflows, connect the
+styled STRING to the appropriate model-native encoding node. Model selection in
+PromptStyler describes formatting and capabilities; it does not load diffusion
+weights or choose sampling settings.
+
+Ready-to-use examples:
+
+- [Visual text styling workflow](examples/comfyui-text-workflow.json) and [matching API graph](examples/comfyui-text-api.json): style and recipe examples with native text previews; no model required.
+- [Visual prompt upscaler workflow](examples/comfyui-upscaler-workflow.json) and [matching API graph](examples/comfyui-upscaler-api.json): MiniCPM → base prompt → Style → preview; connect Load Image for either image input mode.
+- [Generated-caption API graph](examples/comfyui-generated-caption-api.json): feed generated text into Compose Recipe's connected prompt input.
+- [SDXL conditioning API example](examples/comfyui-sdxl-api.json): replace the checkpoint placeholder with an installed model before use.
+
+## Fast local prompt upscaling
+
+Connect **Load Prompt Upscaler → Upscale Base Prompt → Style** or **Compose Recipe**.
+Enter a short idea, connect one image, or supply both. Combined input first grounds
+the image, then applies the user's requirements in a short text rewrite.
+
+The supported deployment is the self-contained artifact:
+
+```text
+ComfyUI/models/anima_prompt_architect/minicpm-v4.7-1b-heretic-int8-convrot.safetensors
+```
+
+Its embedded tokenizer and processor assets are read locally. The runtime uses
+native ComfyUI model management, INT8 ConvRot projections, fused DeltaNet decoding,
+KV caching, greedy generation, disabled thinking, and token-based paragraph stops.
+ComfyUI caches the loader and unchanged results. Editing only the style can reuse
+the accepted base without running the VLM again.
+
+| Advanced control | Default | Use |
+| --- | --- | --- |
+| `max_new_tokens` | 128 | Bound output length; allowed range 32–384 |
+| `image_slices` | 1 | Keep one for speed; up to four can help fine detail at a time/VRAM cost |
+| `offload_after` | false | Retain native-managed residency for repeated edits, or immediately offload after each execution |
+
+Short warm requests measured on a 4 GB RTX 3050 Laptop GPU took approximately
+**0.54 s for text**, **0.79 s for an image**, and **1.26 s for text plus image**.
+A real cold text-to-style queue completed in **3.47 s**. These are bounded local
+samples; token count, crops, offloading, and GPU load affect latency.
+
+The accelerated deployment requires a supported CUDA/Kitchen host and its
+Transformers dependencies. The small VLM can miss facts or retain style language;
+preview the accepted base. Inspection includes timings, settings, token counts,
+reference content, and warnings. Changed quoted text and invalid output fail
+explicitly. The [upscaler guide](docs/upscaler.md) covers setup, measured limits,
+memory use, and the [portable benchmark](scripts/benchmark_upscaler.py).
+
+## Reusable base-prompt toolkit
+
+The [LLM toolkit](llm-prompts/README.md) helps keep scene content separate from
+optional visual direction. Copy a metaprompt into your preferred LLM and replace
+its input block with your request.
+
+| Task | Metaprompt |
+| --- | --- |
+| Develop an idea into a semantic base | [Create a base](llm-prompts/01-create-base.txt) |
+| Remove optional aesthetics from an existing prompt | [Neutralize a prompt](llm-prompts/02-neutralize-prompt.txt) |
+| Describe visible reference content | [Describe a reference](llm-prompts/03-describe-reference.txt) |
+| Add scene detail with explicit permission for additions | [Expand a scene](llm-prompts/04-expand-scene.txt) |
+| Preserve reference content while requesting a change | [Write edit instructions](llm-prompts/05-edit-instruction.txt) |
+| Check missing facts and unwanted style constraints | [Audit a base](llm-prompts/06-audit-base.txt) |
+| Turn a base and known catalog IDs into recipe JSON | [Build a recipe](llm-prompts/07-build-recipe.txt) |
+
+Keep entity counts, actions, identity colors/materials, spatial relationships, and
+exact lettering in the base. Choose rendering medium, artistic lighting, global
+palette, surface treatment, and mood through style layers. The toolkit includes
+[a six-scene corpus and replay recipes](llm-prompts/examples/README.md).
+
+Paste only the accepted base into Style or Compose Recipe. Audit reports are
+separate authoring output; LLM-generated recipes still require engine validation.
+
+## Style library and composition
+
+The library contains **1,164 entries across 52 packs**:
+
+| Kind | Entries | Role |
+| --- | ---: | --- |
+| Visual treatments | 1,017 | Establish a recognizable medium or aesthetic |
+| Color grades | 69 | Supply a palette direction |
+| Modifiers | 78 | Adjust specific lighting, texture, composition, or detail choices |
+
+Coverage includes cinematography, photography, anime, manga, illustration, fine
+art, printmaking, historical media, graphic design, 3D, architecture, concept art,
+regional crafts, fashion, textiles, botanical and culinary imagery, typography,
+technical diagrams, analog horror, retro media, gaming eras, internet aesthetics,
+and experimental approaches.
+
+Recent focused packs add **Computational Surfaces**, **Optical Material Accents**,
+**Animation Finishing**, and **Information Hierarchy**. Entries carry stable IDs,
+descriptions, categories, search tags, model eligibility, axis claims, and prose/tag
+clauses with authored intensity thresholds. See the [complete library inventory](docs/style-library.md)
+and [style review](docs/style-review.md).
+
+Composition operates on seven axes: **medium, lighting, palette, composition,
+texture, mood, and detail**.
+
+- **Layer order and conflicts:** choose `last_wins`, `first_wins`, or `error` for competing declared claims. Only the conflicting axis is suppressed, so a grade can replace a palette while retaining a medium.
+- **Intensity:** each layer activates curated clause tiers between 0 and 1. Zero bypasses that layer. Intensity is a semantic detail control, not an embedding weight or sampler strength.
+- **Protected axes:** `locked_axes` suppresses style clauses on selected axes so those directions remain under your control.
+- **Model variants and negatives:** exact profile variants can supply different authored clauses. Unsupported negative text remains in the recipe and produces a capability warning.
+- **Inspection and replay:** every applied, skipped, duplicate, or suppressed clause has a trace entry. Save the recipe, catalog snapshot, and matching engine/adapter version to reproduce its text output.
+
+The deterministic engine preserves the supplied base verbatim in prose/tag
+profiles. Fibo maps it into caption fields while preserving supplied caption data.
+Declared claims and explicit locks govern composition; the engine does not parse
+free-form scene contradictions or verify generated pixels.
+
+## Model profiles
+
+Select the profile for the actual workflow. Profiles control system-added text,
+negative-prompt handling, and conditioning eligibility.
+
+| Profile ID | Added language / output | Text negatives | Conditioning handoff |
+| --- | --- | --- | --- |
+| `generic` | Conservative natural prose; unknown-model fallback | Suppressed | Model-native encoder |
+| `sdxl` | Concise tags | With CFG | Encode Text or native SDXL nodes |
+| `flux` | Natural prose | Suppressed | Native FLUX workflow |
+| `qwen-image` | Natural prose | With enabled CFG | Native image-aware workflow |
+| `qwen-image-2.1` | Natural prose | Suppressed for CFG-free default | Native image-aware workflow |
+| `moss-image` | Natural prose | With CFG | Native MOSS workflow |
+| `moss-image-dmd` | Natural prose | Suppressed at CFG 1 | Native MOSS workflow |
+| `anima` | Lowercase spaced tags | With CFG | Encode Text or native Anima workflow |
+| `anima-turbo` | Lowercase spaced tags | Suppressed at CFG 1 | Encode Text or native Anima workflow |
+| `fibo` | Structured JSON caption fields | Unsupported by the text interface | Native Fibo encoder |
+| `fibo-edit` | Preserved edit instructions or caption JSON | Suppressed | Native Fibo edit workflow |
+
+Fibo generation places the base in `short_description` and maps explicit style
+axes into caption fields; supplied caption fields take precedence. Fibo edit keeps
+plain instructions or existing caption structures, including `edit_instruction`.
+Unknown model identifiers fall back to `generic` with a warning.
+
+Profiles describe documented workflow conventions and curated variants. Fine-tunes
+can behave differently. See [model sources, assumptions, and extension rules](docs/models.md).
+
+## Browser workbench and HEISS Studio
+
+The local workbench provides searchable categories, tags, model/type filters,
+favorites, metadata recommendations, ordered layers, per-layer intensity,
+protected axes, conflict controls, positive/negative previews, inspection, and
+recipe import/export. Filter URLs can be bookmarked. Favorites persist in browser
+storage; the service stores no prompt history. Abstract swatches identify entries
+and are labeled as swatches rather than generated-image examples.
+
+The reusable HEISS integration supplies:
+
+| Module | Purpose |
+| --- | --- |
+| `studio/client.mjs` and TypeScript declarations | Typed discovery, profiles, composition, and recommendation transport |
+| `studio/react-panel.mjs` and `panel.css` | React composer panel using the host's React instance, with search, favorites, layers, intensity, and inspected previews |
+| `studio/bridge.mjs` | Express-compatible bridge behind the host's access guards |
+| `studio/server.mjs` | Lazy owned Python sidecar with readiness checks and lifecycle cleanup |
+| `studio/model-profile.mjs` | Explicit HEISS workflow metadata → engine profile mapping |
+| `studio/graph.mjs` | Insert Compose Recipe between a mapped prompt/caption and its native encoder |
+
+Fresh generation requests carry validated recipes; retry handling avoids applying
+styles repeatedly. Image-derived captions can be styled after caption generation.
+The reviewed local Studio integration supports Anima Image Clone, MOSS Flash/Detail,
+and Fibo 2 Edit Turbo. Its model encoders and workflow controls remain native.
+
+HEISS requires an explicit server/panel integration; it has no general third-party
+style plugin loader. See [the HEISS integration guide](docs/studio.md) for mounting,
+request hooks, managed service configuration, and generation contracts. The optional
+MiniCPM authoring runtime is currently exposed through ComfyUI nodes.
+
+### HTTP interface
+
+The workbench and Studio use the versioned local API:
+
+| Method | Route | Result |
+| --- | --- | --- |
+| GET | `/api/v1/health` | Health, schema version, catalog fingerprint |
+| GET | `/api/v1/catalog` | Inventory, categories, kinds, catalog fingerprint |
+| GET | `/api/v1/profiles` | Profile capabilities and metadata |
+| GET | `/api/v1/styles` | Search/filter/paginated style metadata |
+| GET | `/api/v1/styles/{id}` | Complete style metadata |
+| POST | `/api/v1/compose` | Positive/negative text, recipe, trace, warnings, fingerprints |
+| POST | `/api/v1/recommend` | Metadata-ranked suggestions with reasons |
+
+The loopback service uses bounded JSON, strict Host/Origin checks, a fixed static
+asset allowlist, and structured errors. It has no model-download or pack-upload
+endpoint. JavaScript transports recipes and results; Python owns styling logic.
+
+## Python API and CLI
 
 ```python
 from promptstyler_next import Engine
 
 engine = Engine.builtin()
-result = engine.compose(
-    {
-        "schema_version": 1,
-        "prompt": 'A botanist in a rooftop greenhouse, a sign reading "OPEN"',
-        "model": "flux",
-        "styles": [
-            {"id": "cinema.noir", "intensity": 0.8},
-        ],
-        "locked_axes": ["composition"],
-        "conflict_policy": "last_wins",
-    }
-)
+styles = engine.list_styles(query="gouache", model="anima", kind="style")
+suggestions = engine.recommend(prompt="botanical ink illustration", model="anima", limit=6)
+
+result = engine.compose({
+    "schema_version": 1,
+    "prompt": 'A heron beside a ceramic bowl marked "雨"',
+    "model": "anima",
+    "styles": [
+        {"id": "illustration.gouache", "intensity": 0.75},
+        {"id": "grade.sage", "intensity": 0.6},
+    ],
+    "conflict_policy": "last_wins",
+    "locked_axes": ["composition"],
+})
+
 print(result.positive)
-print(result.fingerprint)
+print(result.negative)
 print(result.to_dict()["trace"])
+print(result.fingerprint)
 ```
 
-Or use the CLI:
+Typed `Recipe`, `Layer`, `Composition`, and `Profile` records are available for
+Python callers. Results include the normalized recipe, resolved profile, warnings,
+structured inspection, a composition fingerprint, and a catalog fingerprint.
+`StylerError` exposes stable `code`, `message`, and `path` fields.
 
 ```sh
 promptstyler-next styles --query noir --model flux
+promptstyler-next styles --category illustration --kind style --limit 20
 promptstyler-next profiles
 promptstyler-next compose examples/recipe.json
 promptstyler-next recommend 'botanical ink illustration' --model anima
+promptstyler-next validate ./my-pack.json
+promptstyler-next --pack ./my-pack.json serve --port 8791
 ```
 
-## One engine, three interfaces
+Discovery, composition, validation, and recommendation commands emit JSON.
+`compose` also reads a recipe from stdin; repeatable
+`--pack` options appear before the subcommand. The [Python API guide](docs/api.md)
+covers pagination, immutable snapshots, errors, and adapter registration.
 
-| Interface | What it provides | Installation |
-| --- | --- | --- |
-| Python / CLI | Discovery, validated packs, composition, inspection, metadata recommendations | `pip install .` or a built wheel |
-| ComfyUI V3 | Single-style node, JSON recipe node, native text conditioning for compatible profiles | Clone this complete repository into `ComfyUI/custom_nodes/` |
-| Studio | Local workbench, versioned HTTP API, typed JS client, Express bridge for HEISS | Mount the managed service and React panel in HEISS |
+## Custom styles and model adapters
 
-The Python wheel contains the engine, data, schemas and workbench. The complete Git
-checkout or source distribution also contains the ComfyUI extension and Studio
-module. Installing a wheel alone does not register ComfyUI nodes.
+Add a versioned JSON pack with original style text and metadata. Each entry defines
+its kind, category, tags, model restrictions or variants, axis claims, and clauses
+with natural-language text, optional tags, and intensity thresholds.
 
-[ComfyUI instructions and workflows](docs/comfyui.md) explain standalone text and
-conditioning paths. [HEISS integration](docs/studio.md) documents the actual server
-mount and fresh-generation hook; HEISS does not provide a general third-party
-plugin loader, so this package does not silently install a panel into it.
+| Consumer | Load a pack |
+| --- | --- |
+| ComfyUI | Place `.json` files in this repository's `custom_packs/`, then restart ComfyUI |
+| Python | `Engine.builtin().with_packs(["./my-pack.json"])` |
+| Custom-only Python catalog | `Engine.from_packs(["./my-pack.json"])` |
+| CLI / workbench | `promptstyler-next --pack ./my-pack.json serve --port 8791` |
 
-## What composition does
+Edited packs produce a new validated catalog snapshot. Duplicate IDs, unknown
+fields, invalid model references, unsupported schemas, and malformed/non-finite
+values fail with actionable errors. Packs are bounded data and cannot import code,
+evaluate templates, or fetch remote assets. Preview paths remain constrained
+metadata; the service does not expose arbitrary files.
 
-A style declares clauses on seven visual axes: medium, lighting, palette,
-composition, texture, mood and detail. Intensity activates authored clause tiers,
-without multiplying token weights or changing sampler settings. A zero-intensity
-layer contributes no styling.
+For another model convention, explicitly register a trusted `Profile` and
+`ModelAdapter`. Adapters format engine-owned additions and declare their revision;
+pack JSON cannot register Python code. Read [pack authoring](docs/packs.md),
+[adapter examples](docs/api.md#add-a-model-adapter), and the [architecture](docs/architecture.md).
 
-Layers can declare incompatible claims on an axis. Resolve them by first layer,
-last layer, or an explicit error. Only that axis is suppressed; a new color grade
-can change a palette while retaining the original drawing medium. Lock an axis to
-protect a choice in the subject. Every applied, skipped, duplicate or suppressed
-clause appears in the inspection trace.
-
-The subject remains verbatim in prose/tag profiles, including exact quoted text,
-Unicode, whitespace and encoder syntax. Fibo is different: its adapter preserves
-the subject in `short_description` and maps styling to published caption fields.
-Existing supplied caption fields take priority. The engine does not infer objects,
-positions, hidden scene content, or free-form semantic contradictions.
-
-## Model profiles
-
-Profiles cover SDXL, FLUX, Qwen-Image, Qwen-Image 2.1, MOSS-Image, MOSS DMD,
-Anima, Anima Turbo, Fibo 2 and an unknown-model fallback. They distinguish tags,
-natural captions and structured captions, negative-prompt capabilities, native
-conditioning paths and evidence limits. [Model sources and assumptions](docs/models.md)
-are part of the public contract.
-
-A profile describes a workflow convention, not every checkpoint in a family.
-Unknown models get conservative prose with an inspection warning. Unsupported
-negative prompts are omitted from output and preserved in the saved recipe.
-Direct generic conditioning is available only for explicitly compatible profiles;
-specialized encoders remain in the native workflow.
-
-## Style packs and extension points
-
-The library contains 1,164 authored entries in 52 packs: 1,017 visual treatments,
-69 color grades and 78 modifiers. It covers cinema, photography, illustration,
-anime, manga, historical fine art, printing, graphic design, 3D, architecture,
-material arts, analog horror, internet aesthetics, computational surfaces and more. See [the library guide](docs/style-library.md)
-for the full inventory and curation policy.
-
-Packs are versioned, bounded JSON data. IDs are stable, duplicates fail, and there
-is no executable templating, dynamic import, remote loading or pack upload API.
-Community packs retain their own declared license. Register trusted Python model
-adapters explicitly; no engine changes are needed to add a profile.
-
-- [Architecture and composition rules](docs/architecture.md)
-- [Python API and extension guide](docs/api.md)
-- [Custom pack format](docs/packs.md)
-- [Development and release checks](docs/development.md)
-- [Validation evidence and acceptance limits](docs/validation.md)
-- [Reference audit](docs/reference-audit.md)
-
-## Development
+## Development and validation
 
 ```sh
 python -m pip install -e '.[dev]'
@@ -143,14 +363,42 @@ ruff check .
 ruff format --check .
 mypy
 node --test studio/tests/*.test.mjs
+python scripts/audit_library.py --check
 python -m build
+python scripts/check_distribution.py dist
 ```
 
-Actual ComfyUI tests run separately with a ComfyUI checkout and its environment;
-standalone environments skip only that host-specific module. CI tests Python
-versions, property and HTTP contracts, Studio transport, real host registration,
-strict typing and installed artifacts.
+The recorded 0.4.0 acceptance includes **202 standalone Python tests**, **41 real
+ComfyUI host tests**, **3 tiny CUDA numerical checks**, and **18 Node/Studio tests**,
+with **93% core statement/branch coverage**. Real isolated ComfyUI queues exercised
+all upscaler input modes through styling, loader/result reuse, and native INT8/fused
+DeltaNet dispatch. Wheel/source comparisons and outside-checkout installation
+checks cover the packaged library.
 
-Code: [Apache-2.0](LICENSE). First-party style definitions: [CC0-1.0](STYLE-LICENSE).
-No model weights or third-party style text are bundled. Model licenses and host
-application licenses remain independent.
+Host tests require ComfyUI's environment; CUDA checks are explicitly opt-in with
+`PSNEXT_RUN_CUDA_TESTS=1`. CI covers Python 3.11–3.14, property/schema/HTTP contracts,
+Studio transport, host registration, typing, and distribution checks. Recorded
+local acceptance does not imply a successful hosted CI run. Generated-image
+fidelity and universal aesthetic quality require separate evaluation.
+
+## Documentation and licensing
+
+| Guide | Contents |
+| --- | --- |
+| [ComfyUI](docs/comfyui.md) | Nodes, native encoders, custom packs, and workflows |
+| [Local prompt upscaler](docs/upscaler.md) | Model requirements, controls, performance, and limits |
+| [Base-prompt toolkit](llm-prompts/README.md) | Seven metaprompts, semantic handoff, and examples |
+| [Style library](docs/style-library.md) | Inventory, creative domains, authoring, and previews |
+| [Model profiles](docs/models.md) | Conventions, capabilities, sources, and evidence |
+| [HEISS Studio](docs/studio.md) | Panel, bridge, sidecar, HTTP API, and generation hooks |
+| [Python API](docs/api.md) | Public contracts and extension examples |
+| [Pack format](docs/packs.md) | JSON schema, variants, claims, limits, and contribution rules |
+| [Architecture](docs/architecture.md) | Module boundaries, composition, and reproducibility |
+| [Development](docs/development.md) | Environments, quality gates, and packaging |
+| [Validation](docs/validation.md) | Recorded checks and acceptance boundaries |
+| [Reference audit](docs/reference-audit.md) | Original project and HEISS design findings |
+
+Code is [Apache-2.0](LICENSE). Bundled style definitions and the original LLM
+prompt toolkit are [CC0-1.0](STYLE-LICENSE); contributed packs retain their declared
+licenses. Third-party implementation attribution is in [NOTICE](NOTICE). Model
+weights are distributed separately under their own licenses.
