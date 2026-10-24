@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "next.studio-gardenart",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Garden and land-art composition",
   "description": "Authored garden and land-art composition directions that restyle the existing subject without inventing scene objects.",
   "license": "CC0-1.0",
@@ -1461,7 +1461,8 @@
       ],
       "claims": {
         "medium": "gardenart.landarttemporary",
-        "texture": "gardenart.landarttemporary"
+        "texture": "gardenart.landarttemporary",
+        "mood": "gardenart.landarttemporary"
       },
       "clauses": [
         {

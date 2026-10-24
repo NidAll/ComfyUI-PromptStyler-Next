@@ -7,3 +7,9 @@ Owners: promptstyler_next/ owns engine, validation, adapters and pack data. comf
 Use the existing ComfyUI venv for actual host tests; install dev tools only into a separate project environment. No heavy model downloads. Record validation limits, especially lack of image-quality acceptance. All implementation commits belong to this repository.
 
 Public contracts are documented in docs/api.md, docs/packs.md and docs/studio.md. Full looks use distinct medium/texture claims; hard palette constraints belong only to the palette axis. Preserve this authoring boundary when adding styles.
+
+llm-prompts/ owns the copyable semantic-base authoring toolkit and replay corpus.
+Claim every authored axis in bundled packs, including variants, and review both
+prose and tags for scene substitution or invented text. Run scripts/audit_library.py
+and the base-corpus regressions after pack edits. Image and LLM quality claims
+require actual evaluation beyond deterministic composition checks.

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.next.gaming-eras",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Gaming Eras",
   "description": "Visual languages from arcade, early 3D, handheld and contemporary game marketing.",
   "license": "CC0-1.0",
@@ -21,7 +21,9 @@
       ],
       "claims": {
         "medium": "gameera.sixteen-bit-cover",
-        "texture": "gameera.sixteen-bit-cover"
+        "texture": "gameera.sixteen-bit-cover",
+        "composition": "gameera.sixteen-bit-cover",
+        "lighting": "gameera.sixteen-bit-cover"
       },
       "clauses": [
         {
@@ -76,7 +78,8 @@
       "claims": {
         "medium": "gameera.arcade-cabinet-side",
         "palette": "gameera.arcade-cabinet-side",
-        "texture": "gameera.arcade-cabinet-side"
+        "texture": "gameera.arcade-cabinet-side",
+        "composition": "gameera.arcade-cabinet-side"
       },
       "clauses": [
         {
@@ -130,7 +133,9 @@
       ],
       "claims": {
         "medium": "gameera.ps1-lowpoly",
-        "texture": "gameera.ps1-lowpoly"
+        "texture": "gameera.ps1-lowpoly",
+        "composition": "gameera.ps1-lowpoly",
+        "lighting": "gameera.ps1-lowpoly"
       },
       "clauses": [
         {
@@ -184,7 +189,9 @@
       ],
       "claims": {
         "medium": "gameera.ps2-early-cg",
-        "texture": "gameera.ps2-early-cg"
+        "texture": "gameera.ps2-early-cg",
+        "composition": "gameera.ps2-early-cg",
+        "lighting": "gameera.ps2-early-cg"
       },
       "clauses": [
         {
@@ -238,7 +245,9 @@
       ],
       "claims": {
         "medium": "gameera.isometric-rpg",
-        "texture": "gameera.isometric-rpg"
+        "texture": "gameera.isometric-rpg",
+        "composition": "gameera.isometric-rpg",
+        "lighting": "gameera.isometric-rpg"
       },
       "clauses": [
         {
@@ -293,14 +302,15 @@
       "claims": {
         "medium": "gameera.handheld-pixel-rpg",
         "palette": "gameera.handheld-pixel-rpg",
-        "texture": "gameera.handheld-pixel-rpg"
+        "texture": "gameera.handheld-pixel-rpg",
+        "composition": "gameera.handheld-pixel-rpg"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Turn the image into a 1990s handheld color-RPG screenshot aesthetic",
+          "text": "Render the supplied scene with the clustered drawing language of a 1990s handheld color RPG, without a game interface",
           "tags": [
-            "handheld rpg pixel art"
+            "handheld color-rpg pixel rendering without interface"
           ],
           "min_intensity": 0.01
         },
@@ -347,7 +357,9 @@
       ],
       "claims": {
         "medium": "gameera.survival-horror-fixed",
-        "texture": "gameera.survival-horror-fixed"
+        "texture": "gameera.survival-horror-fixed",
+        "composition": "gameera.survival-horror-fixed",
+        "lighting": "gameera.survival-horror-fixed"
       },
       "clauses": [
         {
@@ -360,9 +372,9 @@
         },
         {
           "axis": "composition",
-          "text": "Use a difficult but controlled high corner angle with a strong foreground obstacle",
+          "text": "Use controlled high-angle framing while keeping supplied subjects and lettering unobscured",
           "tags": [
-            "uncanny fixed camera angle"
+            "controlled high-angle framing with clear supplied subjects"
           ],
           "min_intensity": 0.4
         },
@@ -401,7 +413,9 @@
       ],
       "claims": {
         "medium": "gameera.point-click-mystery",
-        "texture": "gameera.point-click-mystery"
+        "texture": "gameera.point-click-mystery",
+        "composition": "gameera.point-click-mystery",
+        "lighting": "gameera.point-click-mystery"
       },
       "clauses": [
         {
@@ -456,7 +470,8 @@
       "claims": {
         "medium": "gameera.boomer-shooter-poster",
         "palette": "gameera.boomer-shooter-poster",
-        "texture": "gameera.boomer-shooter-poster"
+        "texture": "gameera.boomer-shooter-poster",
+        "composition": "gameera.boomer-shooter-poster"
       },
       "clauses": [
         {
@@ -511,7 +526,8 @@
       "claims": {
         "medium": "gameera.rhythm-game-arcade",
         "palette": "gameera.rhythm-game-arcade",
-        "texture": "gameera.rhythm-game-arcade"
+        "texture": "gameera.rhythm-game-arcade",
+        "composition": "gameera.rhythm-game-arcade"
       },
       "clauses": [
         {
@@ -524,9 +540,9 @@
         },
         {
           "axis": "composition",
-          "text": "Use repeating vertical timing lanes and crisp peripheral interface-safe blocks",
+          "text": "Use a rhythmic vertical hierarchy drawn from supplied forms without adding timing lanes or interface elements",
           "tags": [
-            "rhythm game timing lane layout"
+            "rhythmic vertical hierarchy without interface elements"
           ],
           "min_intensity": 0.4
         },
@@ -565,7 +581,9 @@
       ],
       "claims": {
         "medium": "gameera.visual-novel-cg",
-        "texture": "gameera.visual-novel-cg"
+        "texture": "gameera.visual-novel-cg",
+        "composition": "gameera.visual-novel-cg",
+        "lighting": "gameera.visual-novel-cg"
       },
       "clauses": [
         {
@@ -619,7 +637,9 @@
       ],
       "claims": {
         "medium": "gameera.mmo-loading-art",
-        "texture": "gameera.mmo-loading-art"
+        "texture": "gameera.mmo-loading-art",
+        "composition": "gameera.mmo-loading-art",
+        "lighting": "gameera.mmo-loading-art"
       },
       "clauses": [
         {
@@ -674,7 +694,8 @@
       "claims": {
         "medium": "gameera.indie-paper-platformer",
         "palette": "gameera.indie-paper-platformer",
-        "texture": "gameera.indie-paper-platformer"
+        "texture": "gameera.indie-paper-platformer",
+        "composition": "gameera.indie-paper-platformer"
       },
       "clauses": [
         {
@@ -728,7 +749,9 @@
       ],
       "claims": {
         "medium": "gameera.voxel-diorama",
-        "texture": "gameera.voxel-diorama"
+        "texture": "gameera.voxel-diorama",
+        "composition": "gameera.voxel-diorama",
+        "lighting": "gameera.voxel-diorama"
       },
       "clauses": [
         {
@@ -783,7 +806,8 @@
       "claims": {
         "medium": "gameera.strategy-manual-plate",
         "palette": "gameera.strategy-manual-plate",
-        "texture": "gameera.strategy-manual-plate"
+        "texture": "gameera.strategy-manual-plate",
+        "composition": "gameera.strategy-manual-plate"
       },
       "clauses": [
         {
@@ -836,7 +860,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "gameera.handheld-lcd"
+        "palette": "gameera.handheld-lcd",
+        "texture": "gameera.handheld-lcd"
       },
       "clauses": [
         {
@@ -873,7 +898,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "gameera.arcade-purple"
+        "palette": "gameera.arcade-purple",
+        "lighting": "gameera.arcade-purple"
       },
       "clauses": [
         {
@@ -910,7 +936,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "gameera.retro-amber"
+        "palette": "gameera.retro-amber",
+        "lighting": "gameera.retro-amber"
       },
       "clauses": [
         {
@@ -946,7 +973,10 @@
         "texture",
         "modifier"
       ],
-      "claims": {},
+      "claims": {
+        "texture": "gameera.pixel-edge",
+        "detail": "gameera.pixel-edge"
+      },
       "clauses": [
         {
           "axis": "texture",
@@ -981,7 +1011,10 @@
         "framing",
         "modifier"
       ],
-      "claims": {},
+      "claims": {
+        "composition": "gameera.screen-ui-safe",
+        "detail": "gameera.screen-ui-safe"
+      },
       "clauses": [
         {
           "axis": "composition",

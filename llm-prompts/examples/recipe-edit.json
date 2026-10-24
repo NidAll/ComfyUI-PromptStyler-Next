@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "prompt": "Replace the word \"OPEN\" on the reference sign with \"CLOSED\". Retain the sign's position, size and two-line structure, and preserve all other visible text and objects.",
+  "model": "fibo-edit",
+  "styles": [
+    {
+      "id": "hierarchy.lettering-clearance",
+      "intensity": 0.8
+    }
+  ],
+  "locked_axes": [
+    "composition"
+  ],
+  "conflict_policy": "last_wins"
+}

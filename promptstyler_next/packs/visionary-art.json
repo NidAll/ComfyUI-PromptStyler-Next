@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.next.visionary-art",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Visionary Art",
   "description": "Nonliteral luminous structures, biomorphism, synesthesia and cosmic abstraction.",
   "license": "CC0-1.0",
@@ -22,7 +22,8 @@
       "claims": {
         "medium": "visionary.biomorphic-radiance",
         "palette": "visionary.biomorphic-radiance",
-        "texture": "visionary.biomorphic-radiance"
+        "texture": "visionary.biomorphic-radiance",
+        "composition": "visionary.biomorphic-radiance"
       },
       "clauses": [
         {
@@ -76,7 +77,9 @@
       ],
       "claims": {
         "medium": "visionary.geodesic-light",
-        "texture": "visionary.geodesic-light"
+        "texture": "visionary.geodesic-light",
+        "composition": "visionary.geodesic-light",
+        "lighting": "visionary.geodesic-light"
       },
       "clauses": [
         {
@@ -131,7 +134,8 @@
       "claims": {
         "medium": "visionary.chromatic-synesthesia",
         "palette": "visionary.chromatic-synesthesia",
-        "texture": "visionary.chromatic-synesthesia"
+        "texture": "visionary.chromatic-synesthesia",
+        "composition": "visionary.chromatic-synesthesia"
       },
       "clauses": [
         {
@@ -185,7 +189,9 @@
       ],
       "claims": {
         "medium": "visionary.cosmic-mandala",
-        "texture": "visionary.cosmic-mandala"
+        "texture": "visionary.cosmic-mandala",
+        "composition": "visionary.cosmic-mandala",
+        "lighting": "visionary.cosmic-mandala"
       },
       "clauses": [
         {
@@ -238,7 +244,10 @@
         "visionary"
       ],
       "claims": {
-        "medium": "visionary.inner-landscape"
+        "medium": "visionary.inner-landscape",
+        "composition": "visionary.inner-landscape",
+        "lighting": "visionary.inner-landscape",
+        "mood": "visionary.inner-landscape"
       },
       "clauses": [
         {
@@ -293,7 +302,8 @@
       "claims": {
         "medium": "visionary.prismatic-organism",
         "palette": "visionary.prismatic-organism",
-        "texture": "visionary.prismatic-organism"
+        "texture": "visionary.prismatic-organism",
+        "composition": "visionary.prismatic-organism"
       },
       "clauses": [
         {
@@ -347,7 +357,9 @@
       ],
       "claims": {
         "medium": "visionary.luminous-botany",
-        "texture": "visionary.luminous-botany"
+        "texture": "visionary.luminous-botany",
+        "composition": "visionary.luminous-botany",
+        "lighting": "visionary.luminous-botany"
       },
       "clauses": [
         {
@@ -402,7 +414,8 @@
       "claims": {
         "medium": "visionary.fifth-element-pattern",
         "palette": "visionary.fifth-element-pattern",
-        "texture": "visionary.fifth-element-pattern"
+        "texture": "visionary.fifth-element-pattern",
+        "composition": "visionary.fifth-element-pattern"
       },
       "clauses": [
         {
@@ -456,7 +469,9 @@
       ],
       "claims": {
         "medium": "visionary.sacred-geometry-abstract",
-        "texture": "visionary.sacred-geometry-abstract"
+        "texture": "visionary.sacred-geometry-abstract",
+        "composition": "visionary.sacred-geometry-abstract",
+        "lighting": "visionary.sacred-geometry-abstract"
       },
       "clauses": [
         {
@@ -511,7 +526,8 @@
       "claims": {
         "medium": "visionary.holographic-memory",
         "palette": "visionary.holographic-memory",
-        "texture": "visionary.holographic-memory"
+        "texture": "visionary.holographic-memory",
+        "composition": "visionary.holographic-memory"
       },
       "clauses": [
         {
@@ -565,7 +581,9 @@
       ],
       "claims": {
         "medium": "visionary.stained-light-world",
-        "texture": "visionary.stained-light-world"
+        "texture": "visionary.stained-light-world",
+        "composition": "visionary.stained-light-world",
+        "lighting": "visionary.stained-light-world"
       },
       "clauses": [
         {
@@ -619,7 +637,9 @@
       ],
       "claims": {
         "medium": "visionary.microcosm",
-        "texture": "visionary.microcosm"
+        "texture": "visionary.microcosm",
+        "composition": "visionary.microcosm",
+        "lighting": "visionary.microcosm"
       },
       "clauses": [
         {
@@ -674,7 +694,8 @@
       "claims": {
         "medium": "visionary.cosmic-current",
         "palette": "visionary.cosmic-current",
-        "texture": "visionary.cosmic-current"
+        "texture": "visionary.cosmic-current",
+        "composition": "visionary.cosmic-current"
       },
       "clauses": [
         {
@@ -728,7 +749,9 @@
       ],
       "claims": {
         "medium": "visionary.meditative-topology",
-        "texture": "visionary.meditative-topology"
+        "texture": "visionary.meditative-topology",
+        "composition": "visionary.meditative-topology",
+        "lighting": "visionary.meditative-topology"
       },
       "clauses": [
         {
@@ -783,7 +806,8 @@
       "claims": {
         "medium": "visionary.aurora-mural",
         "palette": "visionary.aurora-mural",
-        "texture": "visionary.aurora-mural"
+        "texture": "visionary.aurora-mural",
+        "composition": "visionary.aurora-mural"
       },
       "clauses": [
         {
@@ -836,7 +860,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "visionary.opal-spectrum"
+        "palette": "visionary.opal-spectrum",
+        "lighting": "visionary.opal-spectrum"
       },
       "clauses": [
         {
@@ -873,7 +898,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "visionary.deep-void-blue"
+        "palette": "visionary.deep-void-blue",
+        "lighting": "visionary.deep-void-blue"
       },
       "clauses": [
         {
@@ -910,7 +936,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "visionary.amber-ether"
+        "palette": "visionary.amber-ether",
+        "texture": "visionary.amber-ether"
       },
       "clauses": [
         {
@@ -946,7 +973,10 @@
         "outline",
         "modifier"
       ],
-      "claims": {},
+      "claims": {
+        "detail": "visionary.filament-highlights",
+        "lighting": "visionary.filament-highlights"
+      },
       "clauses": [
         {
           "axis": "detail",
@@ -981,7 +1011,10 @@
         "breathing",
         "modifier"
       ],
-      "claims": {},
+      "claims": {
+        "composition": "visionary.radial-breath",
+        "mood": "visionary.radial-breath"
+      },
       "clauses": [
         {
           "axis": "composition",

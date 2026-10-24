@@ -67,6 +67,7 @@ def main() -> int:
             "examples",
             "scripts",
             "custom_packs",
+            "llm-prompts",
             ".github",
         ):
             for source in (source_root / source_directory).rglob("*"):

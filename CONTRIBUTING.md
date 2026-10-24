@@ -13,5 +13,10 @@ language, provenance for preview assets and an explicit license. New model
 capabilities need primary-source evidence and appropriate adapter/host tests.
 Do not claim quality or acceleration from schema checks alone.
 
+For bundled packs, claim every authored clause axis and review both prose and tags
+for invented scene content. Run `python scripts/audit_library.py --check` and the
+base-corpus tests. Toolkit contributions should preserve semantic facts and exact
+text while deferring optional art direction; see [the toolkit](llm-prompts/README.md).
+
 Code contributions use Apache-2.0. First-party pack contributions are intended for
 CC0-1.0 unless agreed otherwise; third-party packs retain their declared license.

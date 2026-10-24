@@ -40,6 +40,13 @@ can coexist. Declare only axes represented by clauses, including in every varian
 An unclaimed clause is additive and cannot participate in declared-claim conflict
 resolution.
 
+The bundled 0.3.0 library claims every authored axis. Use the same policy for
+contributed bundled packs so later lighting, palette and composition layers can
+replace earlier directions. Administrator-owned external packs may deliberately
+use additive clauses, but must assess the resulting contradictions themselves.
+Review the tag form as carefully as the prose: a safe conditional description
+must not become an unconditional setting, person, timestamp or label tag.
+
 `min_intensity` is finite and between 0 and 1. It gates the clause at or above that
 threshold; intensity zero always bypasses every clause. Use the low tier for the
 recognizable visual identity, higher tiers for secondary material/light/detail.

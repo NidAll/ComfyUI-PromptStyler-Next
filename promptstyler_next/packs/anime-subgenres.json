@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.next.anime-subgenres",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Anime Subgenres",
   "description": "Genre-level anime presentation conventions without franchise or studio imitation.",
   "license": "CC0-1.0",
@@ -21,7 +21,9 @@
       ],
       "claims": {
         "medium": "subanime.shonen-impact",
-        "texture": "subanime.shonen-impact"
+        "texture": "subanime.shonen-impact",
+        "composition": "subanime.shonen-impact",
+        "lighting": "subanime.shonen-impact"
       },
       "clauses": [
         {
@@ -74,7 +76,10 @@
         "quiet"
       ],
       "claims": {
-        "medium": "subanime.slice-of-life"
+        "medium": "subanime.slice-of-life",
+        "composition": "subanime.slice-of-life",
+        "lighting": "subanime.slice-of-life",
+        "mood": "subanime.slice-of-life"
       },
       "clauses": [
         {
@@ -128,7 +133,9 @@
       ],
       "claims": {
         "medium": "subanime.magical-transformation",
-        "palette": "subanime.magical-transformation"
+        "palette": "subanime.magical-transformation",
+        "composition": "subanime.magical-transformation",
+        "lighting": "subanime.magical-transformation"
       },
       "clauses": [
         {
@@ -182,7 +189,9 @@
       ],
       "claims": {
         "medium": "subanime.mecha-technical",
-        "texture": "subanime.mecha-technical"
+        "texture": "subanime.mecha-technical",
+        "composition": "subanime.mecha-technical",
+        "lighting": "subanime.mecha-technical"
       },
       "clauses": [
         {
@@ -236,7 +245,9 @@
       ],
       "claims": {
         "medium": "subanime.dark-fantasy",
-        "texture": "subanime.dark-fantasy"
+        "texture": "subanime.dark-fantasy",
+        "composition": "subanime.dark-fantasy",
+        "lighting": "subanime.dark-fantasy"
       },
       "clauses": [
         {
@@ -249,9 +260,9 @@
         },
         {
           "axis": "composition",
-          "text": "Anchor a dominant silhouette within layered architectural depth",
+          "text": "Anchor the supplied silhouette within layered tonal depth",
           "tags": [
-            "monumental fantasy silhouette"
+            "supplied silhouette and layered tonal depth"
           ],
           "min_intensity": 0.4
         },
@@ -291,7 +302,8 @@
       "claims": {
         "medium": "subanime.romance-pastel",
         "palette": "subanime.romance-pastel",
-        "texture": "subanime.romance-pastel"
+        "texture": "subanime.romance-pastel",
+        "composition": "subanime.romance-pastel"
       },
       "clauses": [
         {
@@ -304,9 +316,9 @@
         },
         {
           "axis": "composition",
-          "text": "Use floating negative space and delicate emphasis around existing expressions",
+          "text": "Use floating negative space and delicate emphasis around the supplied focal forms",
           "tags": [
-            "romantic anime soft framing"
+            "floating negative space and delicate focal emphasis"
           ],
           "min_intensity": 0.4
         },
@@ -345,7 +357,9 @@
       ],
       "claims": {
         "medium": "subanime.seinen-noir",
-        "texture": "subanime.seinen-noir"
+        "texture": "subanime.seinen-noir",
+        "composition": "subanime.seinen-noir",
+        "lighting": "subanime.seinen-noir"
       },
       "clauses": [
         {
@@ -399,7 +413,9 @@
       ],
       "claims": {
         "medium": "subanime.sports-climax",
-        "texture": "subanime.sports-climax"
+        "texture": "subanime.sports-climax",
+        "composition": "subanime.sports-climax",
+        "lighting": "subanime.sports-climax"
       },
       "clauses": [
         {
@@ -453,7 +469,9 @@
       ],
       "claims": {
         "medium": "subanime.idol-stage",
-        "palette": "subanime.idol-stage"
+        "palette": "subanime.idol-stage",
+        "composition": "subanime.idol-stage",
+        "lighting": "subanime.idol-stage"
       },
       "clauses": [
         {
@@ -506,7 +524,10 @@
         "landscape"
       ],
       "claims": {
-        "medium": "subanime.isekai-vista"
+        "medium": "subanime.isekai-vista",
+        "composition": "subanime.isekai-vista",
+        "lighting": "subanime.isekai-vista",
+        "mood": "subanime.isekai-vista"
       },
       "clauses": [
         {
@@ -561,7 +582,8 @@
       "claims": {
         "medium": "subanime.retro-scifi-ova",
         "palette": "subanime.retro-scifi-ova",
-        "texture": "subanime.retro-scifi-ova"
+        "texture": "subanime.retro-scifi-ova",
+        "composition": "subanime.retro-scifi-ova"
       },
       "clauses": [
         {
@@ -614,7 +636,10 @@
         "unease"
       ],
       "claims": {
-        "medium": "subanime.psychological-thriller"
+        "medium": "subanime.psychological-thriller",
+        "composition": "subanime.psychological-thriller",
+        "lighting": "subanime.psychological-thriller",
+        "mood": "subanime.psychological-thriller"
       },
       "clauses": [
         {
@@ -669,7 +694,8 @@
       "claims": {
         "medium": "subanime.historical-tragedy",
         "palette": "subanime.historical-tragedy",
-        "texture": "subanime.historical-tragedy"
+        "texture": "subanime.historical-tragedy",
+        "composition": "subanime.historical-tragedy"
       },
       "clauses": [
         {
@@ -724,7 +750,8 @@
       "claims": {
         "medium": "subanime.comedy-deformation",
         "palette": "subanime.comedy-deformation",
-        "texture": "subanime.comedy-deformation"
+        "texture": "subanime.comedy-deformation",
+        "composition": "subanime.comedy-deformation"
       },
       "clauses": [
         {
@@ -778,14 +805,16 @@
       ],
       "claims": {
         "medium": "subanime.postapocalyptic-wander",
-        "texture": "subanime.postapocalyptic-wander"
+        "texture": "subanime.postapocalyptic-wander",
+        "composition": "subanime.postapocalyptic-wander",
+        "lighting": "subanime.postapocalyptic-wander"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Show the scene in a contemplative post-apocalyptic anime travel language",
+          "text": "Use a weathered, contemplative travel-anime illustration treatment without changing the supplied setting",
           "tags": [
-            "post apocalypse anime still"
+            "weathered contemplative anime illustration"
           ],
           "min_intensity": 0.01
         },
@@ -831,7 +860,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "subanime.cel-sunset"
+        "palette": "subanime.cel-sunset",
+        "lighting": "subanime.cel-sunset"
       },
       "clauses": [
         {
@@ -868,14 +898,15 @@
         "anime"
       ],
       "claims": {
-        "palette": "subanime.night-city-ink"
+        "palette": "subanime.night-city-ink",
+        "lighting": "subanime.night-city-ink"
       },
       "clauses": [
         {
           "axis": "palette",
-          "text": "Lean into ink-blue nighttime masses accented by occasional saturated cyan or magenta",
+          "text": "Use ink-blue masses with occasional saturated cyan or magenta accents",
           "tags": [
-            "indigo anime night colors"
+            "ink blue with cyan and magenta accents"
           ],
           "min_intensity": 0.01
         },
@@ -905,7 +936,8 @@
         "anime"
       ],
       "claims": {
-        "palette": "subanime.watercolor-pearl"
+        "palette": "subanime.watercolor-pearl",
+        "texture": "subanime.watercolor-pearl"
       },
       "clauses": [
         {
@@ -941,7 +973,10 @@
         "anime",
         "modifier"
       ],
-      "claims": {},
+      "claims": {
+        "detail": "subanime.speedline-edge",
+        "composition": "subanime.speedline-edge"
+      },
       "clauses": [
         {
           "axis": "detail",
@@ -976,7 +1011,10 @@
         "texture",
         "modifier"
       ],
-      "claims": {},
+      "claims": {
+        "texture": "subanime.animation-hold",
+        "detail": "subanime.animation-hold"
+      },
       "clauses": [
         {
           "axis": "texture",

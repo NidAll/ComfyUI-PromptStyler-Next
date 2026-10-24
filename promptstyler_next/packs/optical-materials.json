@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "id": "next.optical-materials",
+  "version": "1.0.0",
+  "name": "Optical Material Accents",
+  "description": "Composable light-response treatments on supplied forms; these are artistic descriptions, not physical simulations.",
+  "license": "CC0-1.0",
+  "author": "NidAll",
+  "styles": [
+    {
+      "id": "optics.stress-colors",
+      "name": "Stress-color interference",
+      "description": "Localized interference bands follow existing translucent forms.",
+      "category": "optical-materials",
+      "kind": "modifier",
+      "tags": [
+        "birefringence",
+        "stress",
+        "interference",
+        "optical"
+      ],
+      "claims": {
+        "palette": "optics.stress-colors",
+        "texture": "optics.stress-colors"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Introduce restrained interference colors within existing translucent regions, leaving specified opaque object colors intact",
+          "tags": [
+            "localized translucent interference colors"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let the colored bands follow existing curvature and thickness cues",
+          "tags": [
+            "curvature-following interference bands"
+          ],
+          "min_intensity": 0.55
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "optics.dichroic-edge",
+      "name": "Dichroic edge shift",
+      "description": "A thin-film hue split is confined to oblique highlights.",
+      "category": "optical-materials",
+      "kind": "modifier",
+      "tags": [
+        "dichroic",
+        "thin film",
+        "edge",
+        "optical"
+      ],
+      "claims": {
+        "palette": "optics.dichroic-edge",
+        "lighting": "optics.dichroic-edge"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Split only grazing highlights into a restrained paired hue shift",
+          "tags": [
+            "paired grazing-highlight hue shift"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep broad front-facing areas neutral so the color change reads as angular reflection",
+          "tags": [
+            "neutral frontal and shifting grazing reflection"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "optics.index-match",
+      "name": "Index-matched quiet",
+      "description": "Low-contrast internal boundaries retain the supplied outer silhouette.",
+      "category": "optical-materials",
+      "kind": "modifier",
+      "tags": [
+        "index matching",
+        "transparency",
+        "boundary",
+        "optical"
+      ],
+      "claims": {
+        "texture": "optics.index-match",
+        "detail": "optics.index-match"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Reduce internal surface contrast in existing translucent materials while retaining all required contours",
+          "tags": [
+            "quiet internal translucent boundaries"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Keep identifying marks and supplied lettering legible through the softened internal boundaries",
+          "tags": [
+            "identifying marks legible through translucency"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "optics.retroreturn",
+      "name": "Retroreflective return",
+      "description": "A compact near-view highlight reads as light returning toward the observer.",
+      "category": "optical-materials",
+      "kind": "modifier",
+      "tags": [
+        "retroreflective",
+        "bead",
+        "return",
+        "optical"
+      ],
+      "claims": {
+        "lighting": "optics.retroreturn",
+        "texture": "optics.retroreturn"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Concentrate a compact returned-light highlight on appropriate existing reflective areas",
+          "tags": [
+            "compact returned-light highlight"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Resolve fine beadlike sparkle only inside that highlight, without adding objects",
+          "tags": [
+            "localized fine beadlike sparkle"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "optics.edge-transmission",
+      "name": "Subsurface edge transmission",
+      "description": "Thin existing edges carry soft transmitted illumination.",
+      "category": "optical-materials",
+      "kind": "modifier",
+      "tags": [
+        "subsurface",
+        "transmission",
+        "thin edge",
+        "optical"
+      ],
+      "claims": {
+        "lighting": "optics.edge-transmission",
+        "detail": "optics.edge-transmission"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Let light spread softly through thin edges of appropriate supplied materials",
+          "tags": [
+            "soft thin-edge transmitted light"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Keep thick interior forms opaque and preserve their identifying surface marks",
+          "tags": [
+            "opaque thick forms with preserved surface marks"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "optics.frosted-rim",
+      "name": "Frosted rim scatter",
+      "description": "Roughened edge highlights soften without an overall image blur.",
+      "category": "optical-materials",
+      "kind": "modifier",
+      "tags": [
+        "frosted",
+        "rim",
+        "scatter",
+        "optical"
+      ],
+      "claims": {
+        "lighting": "optics.frosted-rim",
+        "texture": "optics.frosted-rim"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Spread bright rim highlights over a narrow roughened edge region",
+          "tags": [
+            "narrow scattered rim highlights"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep broad existing surfaces clear while edge grain remains fine and irregular",
+          "tags": [
+            "clear broad surfaces and fine edge grain"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "optics.fluorescent-spill",
+      "name": "Fluorescent surface spill",
+      "description": "Small emissive-looking regions lift adjacent tones with controlled falloff.",
+      "category": "optical-materials",
+      "kind": "modifier",
+      "tags": [
+        "fluorescent",
+        "spill",
+        "emission",
+        "optical"
+      ],
+      "claims": {
+        "lighting": "optics.fluorescent-spill",
+        "detail": "optics.fluorescent-spill"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Give selected existing bright regions a soft re-emission-like spill onto immediately adjacent surfaces",
+          "tags": [
+            "localized re-emission-like light spill"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Keep the spill narrow enough that supplied markings and lettering remain separate",
+          "tags": [
+            "narrow spill with separate supplied markings"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "optics.anisotropic-streak",
+      "name": "Anisotropic highlight streak",
+      "description": "Long highlights follow one supplied material direction.",
+      "category": "optical-materials",
+      "kind": "modifier",
+      "tags": [
+        "anisotropic",
+        "highlight",
+        "brushed",
+        "optical"
+      ],
+      "claims": {
+        "lighting": "optics.anisotropic-streak",
+        "texture": "optics.anisotropic-streak"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Stretch local specular highlights along a consistent direction on each existing surface",
+          "tags": [
+            "directional stretched specular highlights"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Use fine aligned surface striations without changing the supplied silhouette",
+          "tags": [
+            "fine aligned surface striations"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

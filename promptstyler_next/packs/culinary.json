@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "next.culinary",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Culinary image-making",
   "description": "Distinct food-photography and culinary-art directions without adding ingredients or rewriting the dish.",
   "license": "CC0-1.0",
@@ -28,9 +28,9 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "Use intimate window-light food photography",
+          "text": "Use an intimate diffuse-side-light photographic treatment of the supplied subject",
           "tags": [
-            "window light food photography"
+            "intimate diffuse-side-light photographic treatment"
           ],
           "min_intensity": 0.01
         },

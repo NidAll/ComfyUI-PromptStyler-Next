@@ -53,6 +53,11 @@ The text example uses `PreviewAny`, shipped by current ComfyUI as **Preview as T
 
 ## Custom packs
 
+For input prompts that leave artistic choices to the node, use the
+[semantic base toolkit](../llm-prompts/README.md). Paste only the generated base
+into the Style prompt or Compose Recipe's `prompt`; the audit metaprompt returns
+an authoring report, of which only `base_prompt` is image content.
+
 Place valid JSON packs directly in this repository's `custom_packs/` directory and restart ComfyUI. The engine loads them into one immutable catalog. Duplicate definitions and invalid packs fail visibly. Symlinks are refused. Node inputs never select arbitrary files; no frontend input can execute pack code or trigger a download.
 
 The same files can be loaded by standalone Python using `Engine.builtin().with_packs([...])` or passed to the Studio sidecar's pack configuration. Keep private packs out of Git. Changes require a ComfyUI restart; changing a pack on disk during an execution does not alter that execution's catalog.

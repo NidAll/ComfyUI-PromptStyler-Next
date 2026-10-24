@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.liminal-spaces",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Liminal Spaces",
   "description": "After-hours institutional emptiness, threshold architecture, and uncanny everyday geometry.",
   "license": "CC0-1.0",
@@ -21,38 +21,40 @@
       ],
       "claims": {
         "medium": "liminal.empty-mall",
-        "texture": "liminal.empty-mall"
+        "texture": "liminal.empty-mall",
+        "composition": "liminal.empty-mall",
+        "lighting": "liminal.empty-mall"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Present the existing subject within an after-hours shopping concourse",
+          "text": "Give the supplied scene an impersonal commercial-image stillness without changing its occupants or setting",
           "tags": [
-            "vacant mall interior"
+            "restrained institutional still-image treatment"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Lead the eye through repeated storefront openings and deep tiled perspective",
+          "text": "Emphasize long sightlines and measured intervals already available between the supplied forms",
           "tags": [
-            "repetitive storefront perspective"
+            "measured existing spatial intervals"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Let leftover ceiling fluorescents pool unevenly over the passage",
+          "text": "Use uneven pools of pale overhead light with quiet shadow transitions",
           "tags": [
-            "patchy fluorescent light"
+            "uneven pale overhead light"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Show waxed floor reflections and tired laminate surfaces",
+          "text": "Give existing smooth surfaces a faintly worn low-gloss finish",
           "tags": [
-            "shiny tile and worn laminate"
+            "worn low-gloss surface finish"
           ],
           "min_intensity": 0.92
         }
@@ -75,38 +77,40 @@
       ],
       "claims": {
         "medium": "liminal.school-hallway",
-        "texture": "liminal.school-hallway"
+        "texture": "liminal.school-hallway",
+        "composition": "liminal.school-hallway",
+        "lighting": "liminal.school-hallway"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Give the scene the restrained look of an empty school corridor after dismissal",
+          "text": "Use the understated institutional visual language associated with after-hours school imagery",
           "tags": [
-            "empty school corridor"
+            "understated institutional image treatment"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Align door frames and lockers along a single prolonged vanishing line",
+          "text": "Align the supplied forms along a sustained directional rhythm while retaining their identities and count",
           "tags": [
-            "long locker hallway"
+            "sustained directional framing"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Use cool late-afternoon window spill interrupted by dim ceiling fixtures",
+          "text": "Combine cool lateral diffusion with dim neutral overhead light",
           "tags": [
-            "late afternoon hallway light"
+            "cool lateral and dim overhead light"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Retain scuffed painted walls and dull linoleum reflections",
+          "text": "Apply restrained scuff-like grain to appropriate existing surfaces",
           "tags": [
-            "scuffed school linoleum"
+            "restrained scuffed surface grain"
           ],
           "min_intensity": 0.92
         }
@@ -129,38 +133,40 @@
       ],
       "claims": {
         "medium": "liminal.poolrooms",
-        "texture": "liminal.poolrooms"
+        "texture": "liminal.poolrooms",
+        "lighting": "liminal.poolrooms",
+        "composition": "liminal.poolrooms"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Interpret the scene as a quiet indoor pool environment with ambiguous depth",
+          "text": "Give the supplied scene the softly uncanny visual treatment associated with poolroom imagery",
           "tags": [
-            "empty tiled pool interior"
+            "softly uncanny aquatic image treatment"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "lighting",
-          "text": "Scatter pale aquatic reflections across walls and low ceilings",
+          "text": "Use pale undulating reflected-light patterns over the existing forms",
           "tags": [
-            "watery ceiling reflections"
+            "pale undulating reflected light"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "composition",
-          "text": "Use repeated tile bays and offset openings that suggest uncertain distance",
+          "text": "Emphasize existing depth intervals through offset tonal planes without adding openings or structures",
           "tags": [
-            "repeating tiled arches"
+            "offset tonal depth intervals"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Show damp grout seams and smooth water surfaces with faint ripples",
+          "text": "Use a smooth low-contrast surface rendering with subtle ripple-like tonal variation",
           "tags": [
-            "damp tile and calm water"
+            "smooth rippled tonal texture"
           ],
           "min_intensity": 0.92
         }
@@ -183,38 +189,40 @@
       ],
       "claims": {
         "medium": "liminal.hotel-transition",
-        "texture": "liminal.hotel-transition"
+        "texture": "liminal.hotel-transition",
+        "composition": "liminal.hotel-transition",
+        "lighting": "liminal.hotel-transition"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Frame the subject as a still from a nearly vacant hotel transition space",
+          "text": "Apply a hushed transitional-space image treatment to the supplied scene",
           "tags": [
-            "empty hotel landing"
+            "hushed transitional-space rendering"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Repeat carpeted corners, wall sconces and near-identical doorways",
+          "text": "Organize existing contours into a calm sequence of similar visual intervals",
           "tags": [
-            "repeated hotel doorways"
+            "calm repeated visual intervals"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Set a faint amber pool of light beyond each corridor bend",
+          "text": "Use sparse amber illumination with soft dark transitions",
           "tags": [
-            "dim hotel sconces"
+            "sparse amber illumination"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Use patterned carpet softened by years of foot traffic",
+          "text": "Give appropriate existing surfaces a softly worn patterned finish",
           "tags": [
-            "worn patterned carpet"
+            "softly worn patterned finish"
           ],
           "min_intensity": 0.92
         }
@@ -237,38 +245,40 @@
       ],
       "claims": {
         "medium": "liminal.office-maze",
-        "texture": "liminal.office-maze"
+        "texture": "liminal.office-maze",
+        "composition": "liminal.office-maze",
+        "lighting": "liminal.office-maze"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Cast the image as a quiet unoccupied corporate interior",
+          "text": "Give the supplied scene a quiet procedural visual treatment associated with corporate interiors",
           "tags": [
-            "empty corporate office"
+            "quiet procedural visual treatment"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Layer low partitions and fluorescent ceiling grids in orderly repetition",
+          "text": "Emphasize orthogonal relationships already present without adding partitions or objects",
           "tags": [
-            "office cubicle grid"
+            "existing orthogonal relationships"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Use a flat ceiling glow with isolated pools from inactive workstations",
+          "text": "Use flat overhead diffusion with a few locally brighter regions",
           "tags": [
-            "cold office fluorescents"
+            "flat overhead diffusion"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Maintain matte acoustic panels and slightly reflective plastic trims",
+          "text": "Keep matte surfaces and restrained plastic-like reflections where materials allow them",
           "tags": [
-            "acoustic panel textures"
+            "matte finish and restrained reflections"
           ],
           "min_intensity": 0.92
         }
@@ -291,38 +301,40 @@
       ],
       "claims": {
         "medium": "liminal.airport-night",
-        "texture": "liminal.airport-night"
+        "texture": "liminal.airport-night",
+        "composition": "liminal.airport-night",
+        "lighting": "liminal.airport-night"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Describe a near-deserted transport-terminal atmosphere around the existing subject",
+          "text": "Apply the suspended visual rhythm of off-hour transit imagery while retaining the supplied location and people",
           "tags": [
-            "vacant airport terminal"
+            "suspended transit-image rhythm"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Draw parallel seating rows toward distant check-in or gate thresholds",
+          "text": "Use long horizontal alignments and clear existing depth transitions",
           "tags": [
-            "empty terminal seats"
+            "long horizontal alignments"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Keep the distant glass dark while overhead signage casts a restrained glow",
+          "text": "Place sparse cool highlights against deep neutral surrounding tones",
           "tags": [
-            "late night terminal lighting"
+            "sparse cool highlights"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Show glossy stone floors reflecting isolated fixtures",
+          "text": "Render existing reflective surfaces with broad isolated highlights",
           "tags": [
-            "terminal floor reflections"
+            "broad isolated surface reflections"
           ],
           "min_intensity": 0.92
         }
@@ -345,38 +357,40 @@
       ],
       "claims": {
         "medium": "liminal.parking-spiral",
-        "texture": "liminal.parking-spiral"
+        "texture": "liminal.parking-spiral",
+        "composition": "liminal.parking-spiral",
+        "lighting": "liminal.parking-spiral"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Translate the scene into the visual grammar of an empty multilevel parking structure",
+          "text": "Use austere utilitarian-image rendering without replacing the supplied setting",
           "tags": [
-            "empty parking garage"
+            "austere utilitarian image rendering"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Let curved ramps disappear behind closely spaced concrete columns",
+          "text": "Emphasize existing curves and upright forms as a slow alternating rhythm",
           "tags": [
-            "spiral parking ramps"
+            "alternating curves and upright rhythms"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Use intermittent fluorescent strips broken by deep pockets of shadow",
+          "text": "Break cool illumination into distinct light and shadow bands",
           "tags": [
-            "garage light strips"
+            "intermittent cool light bands"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Keep painted bay lines and powdery weathered concrete visible",
+          "text": "Use powdery grain and subdued painted-surface wear where appropriate",
           "tags": [
-            "parking lines and concrete dust"
+            "powdery surface grain"
           ],
           "min_intensity": 0.92
         }
@@ -398,38 +412,41 @@
         "quiet"
       ],
       "claims": {
-        "medium": "liminal.suburban-bluehour"
+        "medium": "liminal.suburban-bluehour",
+        "lighting": "liminal.suburban-bluehour",
+        "composition": "liminal.suburban-bluehour",
+        "mood": "liminal.suburban-bluehour"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Place the scene in an uninhabited suburban blue-hour atmosphere",
+          "text": "Give the supplied scene the suspended stillness associated with blue-hour observations",
           "tags": [
-            "empty suburban street at dusk"
+            "suspended observational stillness"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "lighting",
-          "text": "Balance cold dusk skylight with isolated porch and street lamps",
+          "text": "Balance cool ambient fill with isolated warmer highlights",
           "tags": [
-            "blue hour porch lights"
+            "cool ambient fill and warm highlights"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "composition",
-          "text": "Leave breathing room around quiet driveways and repeated roof silhouettes",
+          "text": "Let existing negative space separate the supplied silhouettes without removing subjects",
           "tags": [
-            "vacant residential street"
+            "separated supplied silhouettes"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "mood",
-          "text": "Hold the suspended feeling of a neighborhood just before anyone returns",
+          "text": "Hold a quiet anticipatory pause without changing the scene's inhabitants",
           "tags": [
-            "unsettling suburban stillness"
+            "quiet anticipatory pause"
           ],
           "min_intensity": 0.92
         }
@@ -452,38 +469,40 @@
       ],
       "claims": {
         "medium": "liminal.playground-rain",
-        "texture": "liminal.playground-rain"
+        "texture": "liminal.playground-rain",
+        "composition": "liminal.playground-rain",
+        "lighting": "liminal.playground-rain"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Frame the setting as a deserted playground after recent rainfall",
+          "text": "Use a subdued, recently weathered observational treatment of the existing scene",
           "tags": [
-            "empty wet playground"
+            "subdued weathered observation"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Use isolated swings and long open stretches of rubberized ground",
+          "text": "Space the existing forms deliberately while preserving all requested entities",
           "tags": [
-            "solitary playground geometry"
+            "deliberately spaced existing forms"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Let diffuse gray daylight erase hard cast shadows",
+          "text": "Use diffuse gray light with shallow shadow contrast",
           "tags": [
-            "overcast playground light"
+            "diffuse gray light"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Emphasize tiny beads of rain on painted metal and puddled pavement",
+          "text": "Suggest a faint damp sheen only on surfaces that can plausibly carry it",
           "tags": [
-            "wet playground equipment"
+            "subtle plausible damp sheen"
           ],
           "min_intensity": 0.92
         }
@@ -506,38 +525,40 @@
       ],
       "claims": {
         "medium": "liminal.arcade-shutdown",
-        "texture": "liminal.arcade-shutdown"
+        "texture": "liminal.arcade-shutdown",
+        "lighting": "liminal.arcade-shutdown",
+        "composition": "liminal.arcade-shutdown"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Translate the existing subject into the deserted atmosphere of a closed arcade",
+          "text": "Apply the subdued electronic-media atmosphere associated with off-hour arcade imagery",
           "tags": [
-            "empty amusement arcade"
+            "subdued electronic-media atmosphere"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "lighting",
-          "text": "Allow dormant display lights to create rare islands of saturated color",
+          "text": "Use rare saturated light accents within a broadly subdued exposure",
           "tags": [
-            "isolated arcade monitor glow"
+            "rare saturated light accents"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "composition",
-          "text": "Repeat inactive cabinets down a narrow, receding aisle",
+          "text": "Emphasize existing vertical rhythms and receding intervals without introducing cabinets",
           "tags": [
-            "rows of silent arcade cabinets"
+            "receding vertical rhythms"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Keep dusty screen glass and worn carpet patterning subtly visible",
+          "text": "Use soft display-like reflections and fine dustlike grain on existing surfaces",
           "tags": [
-            "dusty crt glass and arcade carpet"
+            "soft display reflections and fine grain"
           ],
           "min_intensity": 0.92
         }
@@ -560,38 +581,40 @@
       ],
       "claims": {
         "medium": "liminal.hospital-nightwing",
-        "texture": "liminal.hospital-nightwing"
+        "texture": "liminal.hospital-nightwing",
+        "composition": "liminal.hospital-nightwing",
+        "lighting": "liminal.hospital-nightwing"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Use the impersonal atmosphere of an unoccupied hospital wing",
+          "text": "Give the scene a restrained clinical-image treatment while keeping its supplied location and people",
           "tags": [
-            "empty hospital hallway"
+            "restrained clinical-image treatment"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Stretch the view through repeated privacy curtains and door recesses",
+          "text": "Use long uninterrupted alignments drawn from existing scene geometry",
           "tags": [
-            "receding hospital doors"
+            "long existing alignments"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Use cold overhead light with occasional unlit segments",
+          "text": "Use cool overhead illumination interrupted by gentle shadow pockets",
           "tags": [
-            "uneven hospital fluorescent lighting"
+            "cool overhead illumination"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Let polished safety flooring and painted steel appear clean but aged",
+          "text": "Give appropriate surfaces a clean but subtly aged painted finish",
           "tags": [
-            "worn clinical flooring"
+            "subtly aged clean surface finish"
           ],
           "min_intensity": 0.92
         }
@@ -614,38 +637,40 @@
       ],
       "claims": {
         "medium": "liminal.service-stairwell",
-        "texture": "liminal.service-stairwell"
+        "texture": "liminal.service-stairwell",
+        "composition": "liminal.service-stairwell",
+        "lighting": "liminal.service-stairwell"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Build the image around an ordinary unoccupied service stairwell",
+          "text": "Apply a spare service-architecture visual treatment to the supplied subject",
           "tags": [
-            "vacant service stairwell"
+            "spare utilitarian visual treatment"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Repeat landings, railings and switchback flights with exact geometric spacing",
+          "text": "Emphasize angular directional changes in the supplied contours without inventing stairs",
           "tags": [
-            "repeating stair landings"
+            "angular supplied contour rhythm"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Place a single cool fixture around the next landing",
+          "text": "Use a narrow cool light source with broad falloff",
           "tags": [
-            "isolated stairwell light"
+            "narrow cool light source"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Emphasize matte concrete, chipped paint and thin metal handrails",
+          "text": "Show fine mineral-like grain and restrained edge wear on suitable existing materials",
           "tags": [
-            "stairwell concrete and metal"
+            "fine mineral grain and edge wear"
           ],
           "min_intensity": 0.92
         }
@@ -668,38 +693,40 @@
       ],
       "claims": {
         "medium": "liminal.transit-underpass",
-        "texture": "liminal.transit-underpass"
+        "texture": "liminal.transit-underpass",
+        "composition": "liminal.transit-underpass",
+        "lighting": "liminal.transit-underpass"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Cast the scene as a quiet pedestrian transit underpass",
+          "text": "Use the compressed spatial tension associated with underpass imagery without relocating the scene",
           "tags": [
-            "empty transit tunnel"
+            "compressed spatial tension"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Stretch parallel wall seams toward a distant small rectangular exit",
+          "text": "Guide existing parallel edges toward one quiet focal region",
           "tags": [
-            "long perspective tunnel"
+            "converging existing parallel edges"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Repeat pale ceiling fixtures with faint falloff near the vanishing point",
+          "text": "Repeat pale bands of illumination through existing depth",
           "tags": [
-            "receding tunnel lights"
+            "repeated pale illumination bands"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Allow mineral staining and brushed wall panels to remain visible",
+          "text": "Keep faint streaklike wear on suitable existing surfaces",
           "tags": [
-            "aged pedestrian underpass walls"
+            "faint streaklike surface wear"
           ],
           "min_intensity": 0.92
         }
@@ -722,38 +749,40 @@
       ],
       "claims": {
         "medium": "liminal.banquet-empty",
-        "texture": "liminal.banquet-empty"
+        "texture": "liminal.banquet-empty",
+        "composition": "liminal.banquet-empty",
+        "lighting": "liminal.banquet-empty"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Use the lingering atmosphere of an empty banquet or function room",
+          "text": "Give the supplied scene a formal after-event stillness without removing people or adding furniture",
           "tags": [
-            "deserted banquet interior"
+            "formal after-event stillness"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Arrange repetitive chair backs and round tables into quiet measured rows",
+          "text": "Use evenly measured intervals between existing forms while preserving entity counts",
           "tags": [
-            "empty banquet tables"
+            "evenly measured supplied-form intervals"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Let soft ceiling fixtures glow above an otherwise dim room",
+          "text": "Use soft overhead light above a dimmer surrounding field",
           "tags": [
-            "dim chandelier glow"
+            "soft overhead light and dim surroundings"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Keep tablecloth folds and carpet motifs unusually prominent",
+          "text": "Let subtle surface folds and repeating material patterns carry the detail where present",
           "tags": [
-            "tablecloth folds and carpet"
+            "subtle existing material rhythms"
           ],
           "min_intensity": 0.92
         }
@@ -776,38 +805,40 @@
       ],
       "claims": {
         "medium": "liminal.convenience-midnight",
-        "texture": "liminal.convenience-midnight"
+        "texture": "liminal.convenience-midnight",
+        "composition": "liminal.convenience-midnight",
+        "lighting": "liminal.convenience-midnight"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Frame the setting like an almost empty late-night convenience store",
+          "text": "Use a crisp fluorescent retail-image treatment without changing the supplied setting",
           "tags": [
-            "midnight convenience store"
+            "crisp fluorescent retail-image treatment"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Form clean shelf aisles with a clear view to the black exterior windows",
+          "text": "Organize the existing forms into clear receding visual bands",
           "tags": [
-            "isolated convenience store aisles"
+            "clear receding visual bands"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Contrast bright blue-white store tubes against darkness outside",
+          "text": "Contrast blue-white local illumination with subdued ambient exposure",
           "tags": [
-            "fluorescent shop lighting at night"
+            "blue-white local illumination"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Use chilled cabinet reflections and glossy packaging surfaces as small visual anchors",
+          "text": "Use small glossy reflections on existing smooth surfaces as visual accents",
           "tags": [
-            "glass freezer door reflections"
+            "small glossy surface accents"
           ],
           "min_intensity": 0.92
         }
@@ -829,7 +860,8 @@
         "clinical"
       ],
       "claims": {
-        "lighting": "liminal.green-fluorescence"
+        "lighting": "liminal.green-fluorescence",
+        "palette": "liminal.green-fluorescence"
       },
       "clauses": [
         {
@@ -866,7 +898,8 @@
         "street"
       ],
       "claims": {
-        "palette": "liminal.sodium-night"
+        "palette": "liminal.sodium-night",
+        "lighting": "liminal.sodium-night"
       },
       "clauses": [
         {
@@ -903,7 +936,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "liminal.washed-commercial"
+        "palette": "liminal.washed-commercial",
+        "texture": "liminal.washed-commercial"
       },
       "clauses": [
         {
@@ -940,14 +974,15 @@
         "mod"
       ],
       "claims": {
-        "composition": "liminal.repeating-geometry"
+        "composition": "liminal.repeating-geometry",
+        "detail": "liminal.repeating-geometry"
       },
       "clauses": [
         {
           "axis": "composition",
-          "text": "Repeat corridor, doorway or panel rhythms along a legible vanishing line",
+          "text": "Emphasize rhythmic spacing already present in the supplied forms without adding repeated entities",
           "tags": [
-            "repeating architectural modules"
+            "rhythmic existing spacing without added entities"
           ],
           "min_intensity": 0.01
         },
@@ -977,7 +1012,8 @@
         "mod"
       ],
       "claims": {
-        "mood": "liminal.offhour-stillness"
+        "mood": "liminal.offhour-stillness",
+        "composition": "liminal.offhour-stillness"
       },
       "clauses": [
         {

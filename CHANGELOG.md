@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.3.0 — 2026-10-24
+
+Adds a seven-prompt LLM toolkit for semantic base creation, neutralization,
+reference captioning, controlled expansion, editing, auditing and recipe authoring.
+Includes six frozen base scenes and five native-handoff recipe examples.
+
+Reviews the existing 48 packs: revises 201 prose/tag clauses across 19 packs to
+reduce setting substitution, entity duplication and invented lettering. Adds 529
+missing axis claims so layered presets and grades resolve their visual directions
+consistently. Existing IDs remain; revised packs advance their content versions.
+Multi-style outputs and fingerprints may change because previously additive
+clauses now participate in conflict resolution.
+
+Adds four focused packs with 32 authored entries: Computational Surfaces,
+Optical Material Accents, Animation Finishing and Information Hierarchy. Current
+inventory: 1,164 entries across 52 packs (1,017 styles, 69 grades, 78 modifiers).
+Adds a repeatable bundled-authoring audit, full-corpus composition regressions and
+toolkit source-distribution checks. No new runtime dependencies or native model
+capability claims. Image quality and LLM-output acceptance remain unmeasured.
+
 ## 0.2.0 — 2026-10-24
 
 Native HEISS composer panel, managed Python sidecar, explicit host profile mapping,

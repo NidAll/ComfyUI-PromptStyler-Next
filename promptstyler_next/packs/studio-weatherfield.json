@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "next.studio-weatherfield",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "Landscape and weather observation",
   "description": "Authored landscape and weather observation directions that restyle the existing subject without inventing scene objects.",
   "license": "CC0-1.0",
@@ -79,7 +79,8 @@
       ],
       "claims": {
         "medium": "weatherfield.squall",
-        "lighting": "weatherfield.squall"
+        "lighting": "weatherfield.squall",
+        "mood": "weatherfield.squall"
       },
       "clauses": [
         {
@@ -832,7 +833,8 @@
       ],
       "claims": {
         "medium": "weatherfield.stillair",
-        "lighting": "weatherfield.stillair"
+        "lighting": "weatherfield.stillair",
+        "mood": "weatherfield.stillair"
       },
       "clauses": [
         {
@@ -1237,7 +1239,8 @@
       ],
       "claims": {
         "medium": "weatherfield.lowcloud",
-        "lighting": "weatherfield.lowcloud"
+        "lighting": "weatherfield.lowcloud",
+        "mood": "weatherfield.lowcloud"
       },
       "clauses": [
         {
@@ -2280,7 +2283,8 @@
       ],
       "claims": {
         "medium": "weatherfield.poststorm",
-        "lighting": "weatherfield.poststorm"
+        "lighting": "weatherfield.poststorm",
+        "mood": "weatherfield.poststorm"
       },
       "clauses": [
         {

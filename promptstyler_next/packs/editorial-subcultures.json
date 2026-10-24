@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.next.editorial-subcultures",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Editorial Subcultures",
   "description": "Independent print, fashion, zine and youth-culture editorial aesthetics.",
   "license": "CC0-1.0",
@@ -22,7 +22,8 @@
       "claims": {
         "medium": "subedit.punk-photocopy",
         "palette": "subedit.punk-photocopy",
-        "texture": "subedit.punk-photocopy"
+        "texture": "subedit.punk-photocopy",
+        "composition": "subedit.punk-photocopy"
       },
       "clauses": [
         {
@@ -76,7 +77,9 @@
       ],
       "claims": {
         "medium": "subedit.streetwear-drop",
-        "texture": "subedit.streetwear-drop"
+        "texture": "subedit.streetwear-drop",
+        "composition": "subedit.streetwear-drop",
+        "lighting": "subedit.streetwear-drop"
       },
       "clauses": [
         {
@@ -130,8 +133,10 @@
       ],
       "claims": {
         "medium": "subedit.indie-music-zine",
-    "palette": "subedit.indie-music-zine",
-        "texture": "subedit.indie-music-zine"
+        "palette": "subedit.indie-music-zine",
+        "texture": "subedit.indie-music-zine",
+        "composition": "subedit.indie-music-zine",
+        "lighting": "subedit.indie-music-zine"
       },
       "clauses": [
         {
@@ -158,17 +163,17 @@
           ],
           "min_intensity": 0.75
         },
-    {
-      "axis": "palette",
-      "text": "Keep the imagery in a muted black-and-white photocopy palette",
-      "tags": [
-        "muted black and white"
-      ],
-      "min_intensity": 0.75
-    },
+        {
+          "axis": "palette",
+          "text": "Keep the imagery in a muted black-and-white photocopy palette",
+          "tags": [
+            "muted black and white"
+          ],
+          "min_intensity": 0.75
+        },
         {
           "axis": "texture",
-      "text": "Show fine toner dots and slight paper-fiber abrasion",
+          "text": "Show fine toner dots and slight paper-fiber abrasion",
           "tags": [
             "photocopied concert zine texture"
           ],
@@ -193,7 +198,9 @@
       ],
       "claims": {
         "medium": "subedit.alt-beauty-editorial",
-        "texture": "subedit.alt-beauty-editorial"
+        "texture": "subedit.alt-beauty-editorial",
+        "composition": "subedit.alt-beauty-editorial",
+        "lighting": "subedit.alt-beauty-editorial"
       },
       "clauses": [
         {
@@ -248,7 +255,8 @@
       "claims": {
         "medium": "subedit.club-flyer",
         "palette": "subedit.club-flyer",
-        "texture": "subedit.club-flyer"
+        "texture": "subedit.club-flyer",
+        "composition": "subedit.club-flyer"
       },
       "clauses": [
         {
@@ -302,7 +310,9 @@
       ],
       "claims": {
         "medium": "subedit.fashion-contact-sheet",
-        "texture": "subedit.fashion-contact-sheet"
+        "texture": "subedit.fashion-contact-sheet",
+        "composition": "subedit.fashion-contact-sheet",
+        "lighting": "subedit.fashion-contact-sheet"
       },
       "clauses": [
         {
@@ -315,9 +325,9 @@
         },
         {
           "axis": "composition",
-          "text": "Repeat neutral crops in a strict grid while varying minor natural gestures",
+          "text": "Keep one supplied scene inside a contact-print-inspired gridlike margin without repeating people or objects",
           "tags": [
-            "fashion proof grid framing"
+            "single scene with contact-print-inspired margins"
           ],
           "min_intensity": 0.4
         },
@@ -356,7 +366,9 @@
       ],
       "claims": {
         "medium": "subedit.rave-documentary",
-        "texture": "subedit.rave-documentary"
+        "texture": "subedit.rave-documentary",
+        "composition": "subedit.rave-documentary",
+        "lighting": "subedit.rave-documentary"
       },
       "clauses": [
         {
@@ -411,7 +423,8 @@
       "claims": {
         "medium": "subedit.fashion-grunge",
         "palette": "subedit.fashion-grunge",
-        "texture": "subedit.fashion-grunge"
+        "texture": "subedit.fashion-grunge",
+        "composition": "subedit.fashion-grunge"
       },
       "clauses": [
         {
@@ -465,7 +478,9 @@
       ],
       "claims": {
         "medium": "subedit.girlblog-diary",
-        "texture": "subedit.girlblog-diary"
+        "texture": "subedit.girlblog-diary",
+        "composition": "subedit.girlblog-diary",
+        "lighting": "subedit.girlblog-diary"
       },
       "clauses": [
         {
@@ -519,7 +534,9 @@
       ],
       "claims": {
         "medium": "subedit.luxury-understatement",
-        "texture": "subedit.luxury-understatement"
+        "texture": "subedit.luxury-understatement",
+        "composition": "subedit.luxury-understatement",
+        "lighting": "subedit.luxury-understatement"
       },
       "clauses": [
         {
@@ -573,7 +590,9 @@
       ],
       "claims": {
         "medium": "subedit.skate-photozine",
-        "texture": "subedit.skate-photozine"
+        "texture": "subedit.skate-photozine",
+        "composition": "subedit.skate-photozine",
+        "lighting": "subedit.skate-photozine"
       },
       "clauses": [
         {
@@ -628,7 +647,8 @@
       "claims": {
         "medium": "subedit.typographic-new-wave",
         "palette": "subedit.typographic-new-wave",
-        "texture": "subedit.typographic-new-wave"
+        "texture": "subedit.typographic-new-wave",
+        "composition": "subedit.typographic-new-wave"
       },
       "clauses": [
         {
@@ -682,7 +702,9 @@
       ],
       "claims": {
         "medium": "subedit.beauty-campaign-2005",
-        "texture": "subedit.beauty-campaign-2005"
+        "texture": "subedit.beauty-campaign-2005",
+        "composition": "subedit.beauty-campaign-2005",
+        "lighting": "subedit.beauty-campaign-2005"
       },
       "clauses": [
         {
@@ -737,7 +759,8 @@
       "claims": {
         "medium": "subedit.art-school-annual",
         "palette": "subedit.art-school-annual",
-        "texture": "subedit.art-school-annual"
+        "texture": "subedit.art-school-annual",
+        "composition": "subedit.art-school-annual"
       },
       "clauses": [
         {
@@ -791,7 +814,9 @@
       ],
       "claims": {
         "medium": "subedit.slow-culture-journal",
-        "texture": "subedit.slow-culture-journal"
+        "texture": "subedit.slow-culture-journal",
+        "composition": "subedit.slow-culture-journal",
+        "lighting": "subedit.slow-culture-journal"
       },
       "clauses": [
         {
@@ -844,7 +869,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "subedit.xerox-red"
+        "palette": "subedit.xerox-red",
+        "texture": "subedit.xerox-red"
       },
       "clauses": [
         {
@@ -881,7 +907,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "subedit.washed-fanzine"
+        "palette": "subedit.washed-fanzine",
+        "texture": "subedit.washed-fanzine"
       },
       "clauses": [
         {
@@ -918,7 +945,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "subedit.chrome-pop"
+        "palette": "subedit.chrome-pop",
+        "lighting": "subedit.chrome-pop"
       },
       "clauses": [
         {
@@ -954,7 +982,10 @@
         "collage",
         "modifier"
       ],
-      "claims": {},
+      "claims": {
+        "texture": "subedit.ragged-trim",
+        "composition": "subedit.ragged-trim"
+      },
       "clauses": [
         {
           "axis": "texture",
@@ -989,7 +1020,10 @@
         "misregistration",
         "modifier"
       ],
-      "claims": {},
+      "claims": {
+        "texture": "subedit.risograph-registration",
+        "detail": "subedit.risograph-registration"
+      },
       "clauses": [
         {
           "axis": "texture",

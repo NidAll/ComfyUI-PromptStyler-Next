@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.next.cozy-nostalgia",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Cozy Nostalgia",
   "description": "Warm domestic atmospheres, quiet social memory, and gentle material storytelling.",
   "license": "CC0-1.0",
@@ -21,7 +21,9 @@
       ],
       "claims": {
         "medium": "cozynostalgia.rainy-reading-window",
-        "texture": "cozynostalgia.rainy-reading-window"
+        "texture": "cozynostalgia.rainy-reading-window",
+        "composition": "cozynostalgia.rainy-reading-window",
+        "lighting": "cozynostalgia.rainy-reading-window"
       },
       "clauses": [
         {
@@ -34,25 +36,25 @@
         },
         {
           "axis": "composition",
-          "text": "Frame the subject beside a broad windowlike pool of surrounding breathing space",
+          "text": "Frame the supplied subject with generous surrounding breathing room",
           "tags": [
-            "intimate indoor window framing"
+            "generous supplied-subject breathing room"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Balance warm room illumination against diffuse gray-blue rainy daylight",
+          "text": "Balance warm local illumination against cool diffuse ambient fill without introducing weather",
           "tags": [
-            "warm lamplight rainy window"
+            "warm local light and cool diffuse fill"
           ],
           "min_intensity": 0.75
         },
         {
           "axis": "texture",
-          "text": "Keep soft fabric, paper and tiny glass-rain beads tactile but restrained",
+          "text": "Use softly tactile rendering on the materials already specified",
           "tags": [
-            "rain dotted glass soft interior texture"
+            "softly tactile supplied materials"
           ],
           "min_intensity": 0.92
         }
@@ -74,14 +76,17 @@
         "quiet"
       ],
       "claims": {
-        "medium": "cozynostalgia.late-night-desk"
+        "medium": "cozynostalgia.late-night-desk",
+        "composition": "cozynostalgia.late-night-desk",
+        "lighting": "cozynostalgia.late-night-desk",
+        "mood": "cozynostalgia.late-night-desk"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Present the supplied subject through an intimate nocturnal desk-life illustration",
+          "text": "Present the supplied subject as an intimate, quietly observed memory illustration",
           "tags": [
-            "cozy late night desk image"
+            "intimate memory illustration"
           ],
           "min_intensity": 0.01
         },
@@ -95,9 +100,9 @@
         },
         {
           "axis": "lighting",
-          "text": "Let a small warm task light define the principal subject against softly dark surroundings",
+          "text": "Let a contained warm highlight define the supplied subject against softly subdued surroundings",
           "tags": [
-            "warm desk lamp pool"
+            "contained warm highlight"
           ],
           "min_intensity": 0.75
         },
@@ -128,22 +133,24 @@
       ],
       "claims": {
         "medium": "cozynostalgia.corner-cafe-autumn",
-        "palette": "cozynostalgia.corner-cafe-autumn"
+        "palette": "cozynostalgia.corner-cafe-autumn",
+        "composition": "cozynostalgia.corner-cafe-autumn",
+        "lighting": "cozynostalgia.corner-cafe-autumn"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Turn the existing scene into a calm nostalgic café-style painting",
+          "text": "Use a calm nostalgic painting treatment for the supplied scene",
           "tags": [
-            "cozy autumn cafe painting"
+            "calm nostalgic painting"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Favor an eye-level seated perspective with foreground shelter and gentle exterior depth",
+          "text": "Favor a comfortable eye-level relationship among the supplied forms",
           "tags": [
-            "intimate seated cafe framing"
+            "comfortable eye-level relationships"
           ],
           "min_intensity": 0.4
         },
@@ -157,9 +164,9 @@
         },
         {
           "axis": "lighting",
-          "text": "Allow warm indoor practical light to meet soft blue-gray outdoor diffusion",
+          "text": "Blend warm local illumination with soft cool ambient diffusion",
           "tags": [
-            "interior exterior autumn light contrast"
+            "warm light and cool ambient diffusion"
           ],
           "min_intensity": 0.92
         }
@@ -182,14 +189,16 @@
       ],
       "claims": {
         "medium": "cozynostalgia.library-afternoon",
-        "texture": "cozynostalgia.library-afternoon"
+        "texture": "cozynostalgia.library-afternoon",
+        "composition": "cozynostalgia.library-afternoon",
+        "lighting": "cozynostalgia.library-afternoon"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Describe the supplied scene through a nostalgic library-afternoon illustrative treatment",
+          "text": "Use the patient observational quality of a nostalgic illustrated study",
           "tags": [
-            "cozy library illustration"
+            "patient nostalgic illustrated study"
           ],
           "min_intensity": 0.01
         },
@@ -236,22 +245,24 @@
       ],
       "claims": {
         "medium": "cozynostalgia.old-bookshop",
-        "texture": "cozynostalgia.old-bookshop"
+        "texture": "cozynostalgia.old-bookshop",
+        "composition": "cozynostalgia.old-bookshop",
+        "lighting": "cozynostalgia.old-bookshop"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Treat the scene as a warmly remembered secondhand-bookshop illustration",
+          "text": "Give the supplied subject a warmly remembered illustration treatment",
           "tags": [
-            "cozy secondhand bookshop art"
+            "warm remembered illustration"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Use compressed inviting depth and gentle layered shelf-like repetition when appropriate",
+          "text": "Use inviting depth and gentle layering of the forms already present",
           "tags": [
-            "intimate vintage shop depth"
+            "gentle layering of existing forms"
           ],
           "min_intensity": 0.4
         },
@@ -265,9 +276,9 @@
         },
         {
           "axis": "texture",
-          "text": "Keep paper patina, tactile bindings and dark varnished wood believable",
+          "text": "Show restrained patina on suitable supplied materials without adding books or furnishings",
           "tags": [
-            "aged paper bindings and wood"
+            "restrained patina on supplied materials"
           ],
           "min_intensity": 0.92
         }
@@ -290,7 +301,9 @@
       ],
       "claims": {
         "medium": "cozynostalgia.train-window-dusk",
-        "texture": "cozynostalgia.train-window-dusk"
+        "texture": "cozynostalgia.train-window-dusk",
+        "composition": "cozynostalgia.train-window-dusk",
+        "lighting": "cozynostalgia.train-window-dusk"
       },
       "clauses": [
         {
@@ -303,25 +316,25 @@
         },
         {
           "axis": "composition",
-          "text": "Keep a stable sheltered foreground against a softened lateral view beyond glass",
+          "text": "Keep a stable near-to-far relationship among the supplied scene layers",
           "tags": [
-            "intimate train travel perspective"
+            "stable near-to-far layering"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Blend interior dusk reflections with the last warm light outside",
+          "text": "Blend a warm fading key with subdued cool ambient reflections",
           "tags": [
-            "train dusk reflective window glow"
+            "fading warm key and cool reflections"
           ],
           "min_intensity": 0.75
         },
         {
           "axis": "texture",
-          "text": "Use gentle streaking on glass and motion-softened distant forms",
+          "text": "Soften only existing distant contours into fine lateral tonal streaks",
           "tags": [
-            "soft travel motion blur texture"
+            "fine lateral tonal streaks on distant contours"
           ],
           "min_intensity": 0.92
         }
@@ -344,38 +357,40 @@
       ],
       "claims": {
         "medium": "cozynostalgia.blanket-fort",
-        "texture": "cozynostalgia.blanket-fort"
+        "texture": "cozynostalgia.blanket-fort",
+        "composition": "cozynostalgia.blanket-fort",
+        "lighting": "cozynostalgia.blanket-fort"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Illustrate the original scene with the small sheltered scale of a childhood blanket-fort memory",
+          "text": "Use the intimate scale and soft drawing language of a sheltered childhood memory",
           "tags": [
-            "cozy childhood fort illustration"
+            "sheltered childhood-memory drawing"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Use a close viewpoint and overlapping soft fabriclike enclosures without obscuring the subject",
+          "text": "Use a close viewpoint without enclosing or obscuring the supplied subject",
           "tags": [
-            "close sheltered fabric framing"
+            "clear close-viewpoint framing"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Let warm diffuse light leak gently through translucent textile layers",
+          "text": "Use warm diffuse transmission-like illumination without inventing light sources or fabrics",
           "tags": [
-            "blanket fort soft golden light"
+            "warm diffuse transmitted light"
           ],
           "min_intensity": 0.75
         },
         {
           "axis": "texture",
-          "text": "Keep fuzzy woven fibers and rumpled cloth folds close enough to feel tangible",
+          "text": "Give existing soft materials a fine fuzzy tactile finish where appropriate",
           "tags": [
-            "soft childhood blanket texture"
+            "fine fuzzy material finish"
           ],
           "min_intensity": 0.92
         }
@@ -398,22 +413,24 @@
       ],
       "claims": {
         "medium": "cozynostalgia.sunday-kitchen",
-        "texture": "cozynostalgia.sunday-kitchen"
+        "texture": "cozynostalgia.sunday-kitchen",
+        "composition": "cozynostalgia.sunday-kitchen",
+        "lighting": "cozynostalgia.sunday-kitchen"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Present the subject as an unhurried Sunday-morning domestic painting",
+          "text": "Present the supplied scene as an unhurried, familiar observational painting",
           "tags": [
-            "cozy sunday kitchen illustration"
+            "unhurried familiar observational painting"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Use reassuring table-height perspective and balanced ordinary domestic spacing",
+          "text": "Use balanced ordinary spacing among the supplied entities",
           "tags": [
-            "unforced kitchen tabletop view"
+            "balanced ordinary spacing"
           ],
           "min_intensity": 0.4
         },
@@ -452,22 +469,24 @@
       ],
       "claims": {
         "medium": "cozynostalgia.snow-evening-window",
-        "texture": "cozynostalgia.snow-evening-window"
+        "texture": "cozynostalgia.snow-evening-window",
+        "composition": "cozynostalgia.snow-evening-window",
+        "lighting": "cozynostalgia.snow-evening-window"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Make the supplied scene feel like a quiet nostalgic winter-evening painting",
+          "text": "Use a quiet nostalgic painting treatment with softly rounded tonal transitions",
           "tags": [
-            "cozy winter evening illustration"
+            "quiet nostalgic tonal painting"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Anchor the subject within a sheltered close interior viewpoint",
+          "text": "Keep a close, gently protective framing of the supplied scene",
           "tags": [
-            "warm indoor winter framing"
+            "gently protective close framing"
           ],
           "min_intensity": 0.4
         },
@@ -481,9 +500,9 @@
         },
         {
           "axis": "texture",
-          "text": "Let matte textile surfaces remain detailed beside gently fogged window glazing",
+          "text": "Render supplied fabrics softly and existing smooth surfaces with delicate diffusion",
           "tags": [
-            "winter window condensation and wool"
+            "soft fabric rendering and smooth-surface diffusion"
           ],
           "min_intensity": 0.92
         }
@@ -506,14 +525,16 @@
       ],
       "claims": {
         "medium": "cozynostalgia.early-internet-bedroom",
-        "texture": "cozynostalgia.early-internet-bedroom"
+        "texture": "cozynostalgia.early-internet-bedroom",
+        "composition": "cozynostalgia.early-internet-bedroom",
+        "lighting": "cozynostalgia.early-internet-bedroom"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Treat the supplied scene as an early-2000s bedroom recollection",
+          "text": "Apply the intimate consumer-image character of an early-digital recollection",
           "tags": [
-            "early internet bedroom nostalgia"
+            "intimate early-digital recollection"
           ],
           "min_intensity": 0.01
         },
@@ -527,9 +548,9 @@
         },
         {
           "axis": "lighting",
-          "text": "Use a small cool screen glow to temper warm household ambient light",
+          "text": "Balance a small cool highlight with warm ambient fill without adding a display",
           "tags": [
-            "old monitor glow bedroom light"
+            "small cool highlight and warm ambient fill"
           ],
           "min_intensity": 0.75
         },
@@ -559,30 +580,33 @@
         "family"
       ],
       "claims": {
-        "medium": "cozynostalgia.summer-evening-porch"
+        "medium": "cozynostalgia.summer-evening-porch",
+        "composition": "cozynostalgia.summer-evening-porch",
+        "lighting": "cozynostalgia.summer-evening-porch",
+        "mood": "cozynostalgia.summer-evening-porch"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Recast the existing subject as an affectionate summer-evening memory painting",
+          "text": "Use the affectionate visual language of a lingering summer memory painting",
           "tags": [
-            "nostalgic summer porch artwork"
+            "affectionate lingering-memory painting"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Keep a gentle porch-height viewpoint with a relaxed outdoor depth transition",
+          "text": "Use relaxed depth transitions among the existing foreground and background forms",
           "tags": [
-            "domestic summer evening view"
+            "relaxed existing depth transitions"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Let amber porchlight overlap with remaining cool evening skylight",
+          "text": "Overlap amber local light with cool soft ambient fill",
           "tags": [
-            "porchlight blue hour balance"
+            "amber local light and cool ambient fill"
           ],
           "min_intensity": 0.75
         },
@@ -614,7 +638,8 @@
       "claims": {
         "medium": "cozynostalgia.analog-family-album",
         "palette": "cozynostalgia.analog-family-album",
-        "texture": "cozynostalgia.analog-family-album"
+        "texture": "cozynostalgia.analog-family-album",
+        "composition": "cozynostalgia.analog-family-album"
       },
       "clauses": [
         {
@@ -635,9 +660,9 @@
         },
         {
           "axis": "palette",
-          "text": "Keep slightly faded skin-adjacent warmth and gently blue-shifted deep shadows",
+          "text": "Use gently faded warm midtones and slightly cool deep shadows",
           "tags": [
-            "faded family print colors"
+            "faded warm midtones and cool shadows"
           ],
           "min_intensity": 0.75
         },
@@ -668,14 +693,16 @@
       ],
       "claims": {
         "medium": "cozynostalgia.rainy-school-break",
-        "texture": "cozynostalgia.rainy-school-break"
+        "texture": "cozynostalgia.rainy-school-break",
+        "composition": "cozynostalgia.rainy-school-break",
+        "lighting": "cozynostalgia.rainy-school-break"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Interpret the scene as an affectionate illustration of an ordinary childhood rainy-day pause",
+          "text": "Interpret the supplied scene as an affectionate everyday-memory illustration",
           "tags": [
-            "gentle childhood rainy day illustration"
+            "affectionate everyday-memory illustration"
           ],
           "min_intensity": 0.01
         },
@@ -723,14 +750,15 @@
       "claims": {
         "medium": "cozynostalgia.cottage-pencil-sketch",
         "palette": "cozynostalgia.cottage-pencil-sketch",
-        "texture": "cozynostalgia.cottage-pencil-sketch"
+        "texture": "cozynostalgia.cottage-pencil-sketch",
+        "composition": "cozynostalgia.cottage-pencil-sketch"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Translate the subject into an intimate cottage sketchbook illustration",
+          "text": "Translate the supplied subject into an intimate graphite-and-wash sketchbook study",
           "tags": [
-            "cozy pencil cottage drawing"
+            "intimate graphite and wash sketch"
           ],
           "min_intensity": 0.01
         },
@@ -777,22 +805,24 @@
       ],
       "claims": {
         "medium": "cozynostalgia.quiet-morning-bedroom",
-        "texture": "cozynostalgia.quiet-morning-bedroom"
+        "texture": "cozynostalgia.quiet-morning-bedroom",
+        "composition": "cozynostalgia.quiet-morning-bedroom",
+        "lighting": "cozynostalgia.quiet-morning-bedroom"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Make the supplied subject feel like a serene illustrated morning-at-home scene",
+          "text": "Give the supplied scene a serene, familiar illustrated treatment",
           "tags": [
-            "cozy morning bedroom illustration"
+            "serene familiar illustration"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Use an open eye-level composition with relaxed domestic spacing",
+          "text": "Use an open eye-level composition with relaxed spacing among supplied forms",
           "tags": [
-            "quiet morning interior composition"
+            "open eye-level spacing"
           ],
           "min_intensity": 0.4
         },
@@ -806,9 +836,9 @@
         },
         {
           "axis": "texture",
-          "text": "Keep natural linen folds and soft-worn textile edges believable",
+          "text": "Keep worn edges and soft folds only where the supplied materials support them",
           "tags": [
-            "soft linen domestic surface texture"
+            "plausible worn edges and soft folds"
           ],
           "min_intensity": 0.92
         }
@@ -830,7 +860,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "cozynostalgia.honey-hour"
+        "palette": "cozynostalgia.honey-hour",
+        "lighting": "cozynostalgia.honey-hour"
       },
       "clauses": [
         {
@@ -867,7 +898,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "cozynostalgia.rainy-sage"
+        "palette": "cozynostalgia.rainy-sage",
+        "lighting": "cozynostalgia.rainy-sage"
       },
       "clauses": [
         {
@@ -904,7 +936,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "cozynostalgia.lamplit-cocoa"
+        "palette": "cozynostalgia.lamplit-cocoa",
+        "lighting": "cozynostalgia.lamplit-cocoa"
       },
       "clauses": [
         {
@@ -940,21 +973,24 @@
         "focus",
         "modifier"
       ],
-      "claims": {},
+      "claims": {
+        "detail": "cozynostalgia.gentle-bokeh",
+        "composition": "cozynostalgia.gentle-bokeh"
+      },
       "clauses": [
         {
           "axis": "detail",
-          "text": "Soften only distant secondary details into small rounded defocused highlights",
+          "text": "Soften only distant secondary details while retaining the legibility of supplied lettering",
           "tags": [
-            "subtle cozy background bokeh"
+            "soft distant detail with supplied lettering legible"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Keep the entire requested subject and any exact lettering sharply readable",
+          "text": "Keep every supplied entity and requested lettering within the usable image area",
           "tags": [
-            "protected crisp foreground focus"
+            "all supplied entities and lettering remain visible"
           ],
           "min_intensity": 0.4
         }
@@ -975,7 +1011,10 @@
         "nostalgia",
         "modifier"
       ],
-      "claims": {},
+      "claims": {
+        "texture": "cozynostalgia.soft-film-grain",
+        "lighting": "cozynostalgia.soft-film-grain"
+      },
       "clauses": [
         {
           "axis": "texture",

@@ -27,13 +27,13 @@ def all_styles(engine, **filters):
 
 def test_library_has_distinct_identities_and_meaningful_growth(library_engine):
     styles = all_styles(library_engine)
-    assert len(styles) == 1132
+    assert len(styles) == 1164
     for key in ("id", "name", "description"):
         counts = Counter(style[key] for style in styles)
         assert not [value for value, count in counts.items() if count > 1], key
     primary_texts = [library_engine.get_style(style["id"])["clauses"][0]["text"] for style in styles]
     assert len(primary_texts) == len(set(primary_texts))
-    assert Counter(style["kind"] for style in styles) == {"style": 1009, "grade": 69, "modifier": 54}
+    assert Counter(style["kind"] for style in styles) == {"style": 1017, "grade": 69, "modifier": 78}
 
 
 def test_library_clauses_have_progressive_authored_detail(library_engine):

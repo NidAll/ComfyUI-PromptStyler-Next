@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "purpose": "Frozen semantic input corpus, not an engine recipe or generated-image evidence.",
+  "scenes": [
+    {
+      "id": "mechanics",
+      "base_prompt": "Two bicycle mechanics stand beside one cargo bicycle. The mechanic on the left holds the front wheel while the other adjusts the rear rack. A sign on the wall reads \"REPAIR 7\". Both mechanics and the entire bicycle are visible.",
+      "facts": [
+        "two mechanics",
+        "one cargo bicycle",
+        "left mechanic holds front wheel",
+        "other mechanic adjusts rear rack",
+        "sign REPAIR 7"
+      ],
+      "optional_locks": [
+        "composition"
+      ]
+    },
+    {
+      "id": "vessels",
+      "base_prompt": "Three ceramic vessels rest on a table: one tall narrow vase at the back, one round bowl at the front left, and one lidded jar at the front right. A small chip marks the bowl's rim. The vessels do not overlap.",
+      "facts": [
+        "three ceramic vessels",
+        "vase behind bowl and jar",
+        "bowl at front left",
+        "jar at front right",
+        "chip on bowl rim"
+      ],
+      "optional_locks": [
+        "composition"
+      ]
+    },
+    {
+      "id": "identity-color",
+      "base_prompt": "A rescue worker in a red life jacket kneels beside one tethered canoe. The worker holds a coiled rope in both hands. One empty seat is visible inside the canoe.",
+      "facts": [
+        "one rescue worker",
+        "red life jacket",
+        "one tethered canoe",
+        "rope in both hands",
+        "one empty seat"
+      ],
+      "optional_locks": [
+        "palette"
+      ]
+    },
+    {
+      "id": "multilingual-text",
+      "base_prompt": "A shop entrance has one rectangular sign displaying exactly two lines:\n\"Café • 茶\nOPEN 7\"\nThe first line sits above the second. One closed door is directly below the sign, and a potted fern stands to the right of the door.",
+      "facts": [
+        "one two-line sign",
+        "Café • 茶",
+        "OPEN 7",
+        "first line above second",
+        "one closed door below sign",
+        "one fern right of door"
+      ],
+      "optional_locks": [
+        "composition",
+        "detail",
+        "texture"
+      ]
+    },
+    {
+      "id": "impossible-scene",
+      "base_prompt": "One boulder floats above a narrow stone bridge. Two travelers stand together at the left end of the bridge and look toward the boulder. Three moons are visible above the distant horizon.",
+      "facts": [
+        "one floating boulder",
+        "one stone bridge",
+        "two travelers at left end",
+        "three moons"
+      ],
+      "optional_locks": [
+        "composition"
+      ]
+    },
+    {
+      "id": "connections",
+      "base_prompt": "Two cylindrical tanks stand side by side. The left tank is labeled \"A\" and the right tank is labeled \"B\". One pipe connects the base of A to the top of B. A closed valve sits halfway along that pipe.",
+      "facts": [
+        "two tanks",
+        "left A",
+        "right B",
+        "one pipe base A to top B",
+        "one closed valve halfway along pipe"
+      ],
+      "optional_locks": [
+        "composition"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "id": "next.animation-finishing",
+  "version": "1.0.0",
+  "name": "Animation Finishing",
+  "description": "Still-image finishing choices derived from animation production; no extra frames or motion are generated.",
+  "license": "CC0-1.0",
+  "author": "NidAll",
+  "styles": [
+    {
+      "id": "animfinish.contour-cadence",
+      "name": "Contour cadence",
+      "description": "Line thickness changes deliberately along supplied silhouettes.",
+      "category": "animation-finishing",
+      "kind": "modifier",
+      "tags": [
+        "line weight",
+        "contour",
+        "animation",
+        "finishing"
+      ],
+      "claims": {
+        "texture": "animfinish.contour-cadence",
+        "detail": "animfinish.contour-cadence"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Vary line thickness in measured intervals along the existing silhouette",
+          "tags": [
+            "measured contour line-weight cadence"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Keep joints, facial features when present, and requested lettering distinct from adjacent lines",
+          "tags": [
+            "distinct identifying lines and supplied lettering"
+          ],
+          "min_intensity": 0.55
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "animfinish.shadow-cel",
+      "name": "Two-zone shadow cel",
+      "description": "Two broad shadow groups simplify illumination while retaining form.",
+      "category": "animation-finishing",
+      "kind": "modifier",
+      "tags": [
+        "cel shadow",
+        "two value",
+        "animation",
+        "finishing"
+      ],
+      "claims": {
+        "lighting": "animfinish.shadow-cel",
+        "detail": "animfinish.shadow-cel"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Organize existing form shading into one clear light group and one broad shadow group",
+          "tags": [
+            "two-zone cel form shading"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Reserve small transitions only where needed to distinguish overlapping supplied forms",
+          "tags": [
+            "minimal transitions at supplied-form overlaps"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "animfinish.colored-shadow-line",
+      "name": "Colored shadow-side line",
+      "description": "Contour hue changes only inside existing shadow regions.",
+      "category": "animation-finishing",
+      "kind": "modifier",
+      "tags": [
+        "colored line",
+        "shadow",
+        "animation",
+        "finishing"
+      ],
+      "claims": {
+        "texture": "animfinish.colored-shadow-line",
+        "detail": "animfinish.colored-shadow-line"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Shift existing shadow-side contours away from pure black toward a nearby local hue",
+          "tags": [
+            "local-hue shadow-side contours"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Retain dark separation at essential overlaps and inside supplied letterforms",
+          "tags": [
+            "dark essential overlaps and letter interiors"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "animfinish.graphite-cleanup",
+      "name": "Dry graphite cleanup",
+      "description": "Dry, broken drawing edges retain controlled construction.",
+      "category": "animation-finishing",
+      "kind": "modifier",
+      "tags": [
+        "graphite",
+        "cleanup",
+        "dry line",
+        "animation"
+      ],
+      "claims": {
+        "texture": "animfinish.graphite-cleanup",
+        "detail": "animfinish.graphite-cleanup"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Use lightly broken dry-graphite edges along the supplied drawing contours",
+          "tags": [
+            "broken dry-graphite contour edges"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Resolve identifying features with firmer strokes while peripheral construction remains light",
+          "tags": [
+            "firm identifying strokes and light peripheral construction"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "animfinish.paint-edge-drift",
+      "name": "Paint-edge drift",
+      "description": "Slightly imperfect fill registration creates a handmade cel surface.",
+      "category": "animation-finishing",
+      "kind": "modifier",
+      "tags": [
+        "paint fill",
+        "edge drift",
+        "registration",
+        "animation"
+      ],
+      "claims": {
+        "texture": "animfinish.paint-edge-drift",
+        "detail": "animfinish.paint-edge-drift"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Let painted fills drift slightly within existing contours without crossing important boundaries",
+          "tags": [
+            "slight within-contour paint registration drift"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Keep small supplied symbols and lettering outside the drift treatment",
+          "tags": [
+            "supplied symbols and lettering free of drift"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "animfinish.optical-composite",
+      "name": "Optical composite bloom",
+      "description": "Bright cel regions meet a soft optical compositing fringe.",
+      "category": "animation-finishing",
+      "kind": "modifier",
+      "tags": [
+        "optical printer",
+        "composite",
+        "bloom",
+        "animation"
+      ],
+      "claims": {
+        "lighting": "animfinish.optical-composite",
+        "texture": "animfinish.optical-composite"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Add a narrow soft bloom only where existing bright shapes meet darker neighbors",
+          "tags": [
+            "narrow bright-edge composite bloom"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Use a fine common grain that binds foreground and background rendering",
+          "tags": [
+            "fine shared composite grain"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "animfinish.background-economy",
+      "name": "Background paint economy",
+      "description": "Secondary depth receives broader marks than the supplied focal content.",
+      "category": "animation-finishing",
+      "kind": "modifier",
+      "tags": [
+        "background",
+        "economy",
+        "depth",
+        "animation"
+      ],
+      "claims": {
+        "detail": "animfinish.background-economy",
+        "texture": "animfinish.background-economy"
+      },
+      "clauses": [
+        {
+          "axis": "detail",
+          "text": "Describe already supplied secondary depth with broader marks than the focal subject",
+          "tags": [
+            "broad secondary-depth marks"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep focal identifying contours crisp relative to peripheral painted edges",
+          "tags": [
+            "focal contour clarity against painted peripheral edges"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "animfinish.ink-trap-junction",
+      "name": "Ink-trap junctions",
+      "description": "Line junctions open slightly instead of forming clogged dark knots.",
+      "category": "animation-finishing",
+      "kind": "modifier",
+      "tags": [
+        "ink trap",
+        "junction",
+        "line art",
+        "animation"
+      ],
+      "claims": {
+        "texture": "animfinish.ink-trap-junction",
+        "detail": "animfinish.ink-trap-junction"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Open tiny gaps at crowded existing line junctions to avoid solid dark knots",
+          "tags": [
+            "open crowded line junctions"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Retain the topology of supplied shapes and every requested letter while opening those junctions",
+          "tags": [
+            "preserved shape topology and requested letters"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

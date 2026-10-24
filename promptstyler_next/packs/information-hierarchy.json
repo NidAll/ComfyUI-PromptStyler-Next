@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "id": "next.information-hierarchy",
+  "version": "1.0.0",
+  "name": "Information Hierarchy",
+  "description": "Content-aware layout and legibility modifiers that operate only on supplied entities, text and connections.",
+  "license": "CC0-1.0",
+  "author": "NidAll",
+  "styles": [
+    {
+      "id": "hierarchy.lettering-clearance",
+      "name": "Supplied lettering clearance",
+      "description": "Decoration yields locally to text that is actually present in the base.",
+      "category": "information-hierarchy",
+      "kind": "modifier",
+      "tags": [
+        "text",
+        "clearance",
+        "legibility",
+        "hierarchy"
+      ],
+      "claims": {
+        "detail": "hierarchy.lettering-clearance",
+        "texture": "hierarchy.lettering-clearance"
+      },
+      "clauses": [
+        {
+          "axis": "detail",
+          "text": "Where the base supplies lettering, keep those exact characters clearly separated from nearby decoration; otherwise add no text",
+          "tags": [
+            "preserve supplied lettering with clear local separation"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep coarse surface effects away from the interiors of supplied letters",
+          "tags": [
+            "surface effects outside supplied letter interiors"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "hierarchy.leader-clearance",
+      "name": "Leader-line clearance",
+      "description": "Already specified diagram connections retain distinct endpoints.",
+      "category": "information-hierarchy",
+      "kind": "modifier",
+      "tags": [
+        "diagram",
+        "leader line",
+        "endpoint",
+        "hierarchy"
+      ],
+      "claims": {
+        "detail": "hierarchy.leader-clearance",
+        "composition": "hierarchy.leader-clearance"
+      },
+      "clauses": [
+        {
+          "axis": "detail",
+          "text": "If the base specifies diagram connectors, keep their endpoints distinct and leave their stated connections unchanged",
+          "tags": [
+            "distinct endpoints for supplied diagram connectors"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Route only already supplied connector lines through available negative space without adding nodes or labels",
+          "tags": [
+            "supplied connectors use existing negative space"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "hierarchy.parallel-scripts",
+      "name": "Parallel-script rhythm",
+      "description": "Existing paired text lines keep their original order and separate baselines.",
+      "category": "information-hierarchy",
+      "kind": "modifier",
+      "tags": [
+        "bilingual",
+        "script",
+        "baseline",
+        "hierarchy"
+      ],
+      "claims": {
+        "composition": "hierarchy.parallel-scripts",
+        "detail": "hierarchy.parallel-scripts"
+      },
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "If the base supplies parallel text lines, keep their stated order and give each an independent baseline",
+          "tags": [
+            "separate baselines for supplied parallel text lines"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Preserve each supplied script and punctuation without transliteration or invented translation",
+          "tags": [
+            "preserve supplied scripts and punctuation"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "hierarchy.surface-inscription",
+      "name": "Surface-following inscription",
+      "description": "Requested text follows its supplied support without changing spelling.",
+      "category": "information-hierarchy",
+      "kind": "modifier",
+      "tags": [
+        "inscription",
+        "surface",
+        "text",
+        "hierarchy"
+      ],
+      "claims": {
+        "composition": "hierarchy.surface-inscription",
+        "detail": "hierarchy.surface-inscription"
+      },
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "When text is specified on an object, align only that supplied inscription with its stated support surface",
+          "tags": [
+            "supplied inscription aligned to its support"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Keep the supplied wording intact as its letterforms follow the existing surface perspective",
+          "tags": [
+            "exact supplied wording in surface perspective"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "hierarchy.counter-space",
+      "name": "Glyph counter space",
+      "description": "Small supplied letter interiors remain distinguishable under a style treatment.",
+      "category": "information-hierarchy",
+      "kind": "modifier",
+      "tags": [
+        "glyph",
+        "counter",
+        "small text",
+        "hierarchy"
+      ],
+      "claims": {
+        "detail": "hierarchy.counter-space",
+        "texture": "hierarchy.counter-space"
+      },
+      "clauses": [
+        {
+          "axis": "detail",
+          "text": "Keep counters and narrow gaps inside supplied letterforms open without changing the characters",
+          "tags": [
+            "open counters inside supplied letterforms"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Reduce local grain only where it would close those supplied letter interiors",
+          "tags": [
+            "reduced grain inside supplied letter interiors"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "hierarchy.depth-labels",
+      "name": "Depth-separated labels",
+      "description": "Existing labels remain associated with the right supplied object plane.",
+      "category": "information-hierarchy",
+      "kind": "modifier",
+      "tags": [
+        "label",
+        "depth",
+        "association",
+        "hierarchy"
+      ],
+      "claims": {
+        "composition": "hierarchy.depth-labels",
+        "detail": "hierarchy.depth-labels"
+      },
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Keep each supplied label attached to its specified entity and depth plane without creating new labels",
+          "tags": [
+            "supplied labels retain entity and depth association"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Use local edge separation to distinguish overlapping supplied labels while retaining their order",
+          "tags": [
+            "local edge separation of supplied labels"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "hierarchy.entity-readability",
+      "name": "Entity-count readability",
+      "description": "All supplied entities remain separately recognizable in a dense composition.",
+      "category": "information-hierarchy",
+      "kind": "modifier",
+      "tags": [
+        "count",
+        "entity",
+        "overlap",
+        "hierarchy"
+      ],
+      "claims": {
+        "composition": "hierarchy.entity-readability",
+        "detail": "hierarchy.entity-readability"
+      },
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Keep each explicitly counted entity separately readable without duplicating or dropping any of them",
+          "tags": [
+            "separately readable explicitly counted entities"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Retain identifying boundaries at existing overlaps rather than inventing substitute props",
+          "tags": [
+            "identifying boundaries at existing overlaps"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "hierarchy.relation-continuity",
+      "name": "Relationship continuity",
+      "description": "Stylistic abstraction keeps named adjacency and containment relationships.",
+      "category": "information-hierarchy",
+      "kind": "modifier",
+      "tags": [
+        "adjacency",
+        "containment",
+        "spatial",
+        "hierarchy"
+      ],
+      "claims": {
+        "composition": "hierarchy.relation-continuity",
+        "detail": "hierarchy.relation-continuity"
+      },
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Retain the base prompt's stated adjacency, containment and front-to-back relationships during stylization",
+          "tags": [
+            "retain stated adjacency containment and depth"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Emphasize the existing contact or overlap boundaries that make those relationships readable",
+          "tags": [
+            "readable existing contact and overlap boundaries"
+          ],
+          "min_intensity": 0.6
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

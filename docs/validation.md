@@ -1,11 +1,27 @@
 # Validation and release status
 
-Version 0.2.0 is maintained in the private GitHub repository
-`NidAll/ComfyUI-PromptStyler-Next`. The style inventory expansion below adds
-bundled data to the existing engine; it does not create a package-index release
-or version tag.
+Version 0.3.0 source is maintained in the GitHub repository
+`NidAll/ComfyUI-PromptStyler-Next`. The semantic-base toolkit and pack review are documented in
+[the 0.3.0 review](style-review.md). This source update creates no package-index
+release or version tag.
 
-## Validated behavior
+## 0.3.0 toolkit and reviewed catalog
+
+The final source passes 178 standalone tests, including Hypothesis and JSON
+Schema tests, plus 27 actual ComfyUI host tests and all 18 Node/Studio tests.
+Combined runtime statement/branch coverage is 93%. Ruff lint/format and strict
+core Mypy pass. The bundled authoring audit covers all 1,164 entries, 52 packs,
+11 profiles and 3,801 clauses including variants, with zero axis-ownership or
+hard-palette classification errors. Its zero content hints are only a limited
+heuristic result; the editorial review and its limits are documented separately.
+
+The source archive includes all seven LLM prompt files, the six-scene semantic
+corpus and five recipe examples. Wheel/source byte comparisons and an isolated
+installed-wheel composition pass confirm the complete catalog. Tests verify
+serialized base preservation across the catalog, not generated-image fidelity.
+No LLM-output benchmark or model image-quality grid was run for this version.
+
+## Earlier engine and integration acceptance
 
 | Check | Result and scope |
 | --- | --- |
@@ -17,7 +33,7 @@ or version tag.
 | Node transport | 12 tests passed, including a real Python sidecar, HTTP bridge, typed-client behavior, raw duplicate-key rejection, errors and limits |
 | Actual Express / HEISS guard | Bridge mounted in Express 5 with HEISS's actual request guard; strict input, metadata preservation and foreign-origin rejection passed |
 | Static checks | Ruff lint/format and strict Mypy passed |
-| Library | 1,132 entries, 48 packs, 11 profiles; schema/ID/provenance checks, all eligible style/profile compositions, staged intensity and intent-preservation checks passed |
+| Earlier library snapshot | 1,132 entries, 48 packs, 11 profiles; schema/ID/provenance checks, all eligible style/profile compositions, staged intensity and intent-preservation checks passed |
 | Packaging | Wheel/source archive inspections and clean installed-wheel smoke outside the checkout passed; checksums accompany artifacts |
 
 The property tests cover arbitrary valid Unicode, finite intensities, recipe
@@ -35,8 +51,8 @@ silently keep both rendering processes.
 
 The original validated catalog had 832 entries in 33 packs. Fifteen authored
 CC0-1.0 packs were promoted into the built-in library, adding 300 entries
-(225 styles, 45 grades and 30 modifiers). The current inventory is 1,132 entries
-across 48 packs. All 15 packs pass strict JSON pack loading with the built-in
+(225 styles, 45 grades and 30 modifiers). The inventory at that stage contained 1,132 entries
+across 48 packs; 0.3.0 expands it to 1,164 entries in 52 packs. All 15 packs pass strict JSON pack loading with the built-in
 catalog, without duplicate pack, style ID or title collisions. The full existing
 test suite and distribution checks were rerun for the expanded inventory on
 2026-10-24.

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.analog-horror",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Analog Horror",
   "description": "Obsolete broadcast aesthetics, institutional unease, and tape-era visual disturbance without gore.",
   "license": "CC0-1.0",
@@ -21,7 +21,9 @@
       ],
       "claims": {
         "medium": "analog-horror.broadcast-interruption",
-        "texture": "analog-horror.broadcast-interruption"
+        "texture": "analog-horror.broadcast-interruption",
+        "composition": "analog-horror.broadcast-interruption",
+        "lighting": "analog-horror.broadcast-interruption"
       },
       "clauses": [
         {
@@ -75,7 +77,9 @@
       ],
       "claims": {
         "medium": "analog-horror.psa-reel",
-        "texture": "analog-horror.psa-reel"
+        "texture": "analog-horror.psa-reel",
+        "composition": "analog-horror.psa-reel",
+        "palette": "analog-horror.psa-reel"
       },
       "clauses": [
         {
@@ -129,7 +133,9 @@
       ],
       "claims": {
         "medium": "analog-horror.security-room",
-        "texture": "analog-horror.security-room"
+        "texture": "analog-horror.security-room",
+        "composition": "analog-horror.security-room",
+        "lighting": "analog-horror.security-room"
       },
       "clauses": [
         {
@@ -142,9 +148,9 @@
         },
         {
           "axis": "composition",
-          "text": "Use a high static vantage with too much empty floor and corners",
+          "text": "Use a fixed high vantage while retaining all supplied people, objects and required framing",
           "tags": [
-            "fixed cctv wide view"
+            "fixed high vantage with supplied subjects retained"
           ],
           "min_intensity": 0.4
         },
@@ -183,7 +189,9 @@
       ],
       "claims": {
         "medium": "analog-horror.emergency-test",
-        "texture": "analog-horror.emergency-test"
+        "texture": "analog-horror.emergency-test",
+        "composition": "analog-horror.emergency-test",
+        "palette": "analog-horror.emergency-test"
       },
       "clauses": [
         {
@@ -237,7 +245,9 @@
       ],
       "claims": {
         "medium": "analog-horror.tape-training",
-        "texture": "analog-horror.tape-training"
+        "texture": "analog-horror.tape-training",
+        "composition": "analog-horror.tape-training",
+        "lighting": "analog-horror.tape-training"
       },
       "clauses": [
         {
@@ -291,7 +301,9 @@
       ],
       "claims": {
         "medium": "analog-horror.midnight-newsroom",
-        "texture": "analog-horror.midnight-newsroom"
+        "texture": "analog-horror.midnight-newsroom",
+        "composition": "analog-horror.midnight-newsroom",
+        "palette": "analog-horror.midnight-newsroom"
       },
       "clauses": [
         {
@@ -345,7 +357,9 @@
       ],
       "claims": {
         "medium": "analog-horror.field-recording",
-        "texture": "analog-horror.field-recording"
+        "texture": "analog-horror.field-recording",
+        "composition": "analog-horror.field-recording",
+        "lighting": "analog-horror.field-recording"
       },
       "clauses": [
         {
@@ -398,7 +412,10 @@
         "film"
       ],
       "claims": {
-        "medium": "analog-horror.institutional-orientation"
+        "medium": "analog-horror.institutional-orientation",
+        "composition": "analog-horror.institutional-orientation",
+        "lighting": "analog-horror.institutional-orientation",
+        "mood": "analog-horror.institutional-orientation"
       },
       "clauses": [
         {
@@ -452,7 +469,9 @@
       ],
       "claims": {
         "medium": "analog-horror.family-tape",
-        "texture": "analog-horror.family-tape"
+        "texture": "analog-horror.family-tape",
+        "composition": "analog-horror.family-tape",
+        "palette": "analog-horror.family-tape"
       },
       "clauses": [
         {
@@ -506,7 +525,9 @@
       ],
       "claims": {
         "medium": "analog-horror.station-ident",
-        "texture": "analog-horror.station-ident"
+        "texture": "analog-horror.station-ident",
+        "composition": "analog-horror.station-ident",
+        "lighting": "analog-horror.station-ident"
       },
       "clauses": [
         {
@@ -560,7 +581,9 @@
       ],
       "claims": {
         "medium": "analog-horror.masked-transmission",
-        "texture": "analog-horror.masked-transmission"
+        "texture": "analog-horror.masked-transmission",
+        "composition": "analog-horror.masked-transmission",
+        "lighting": "analog-horror.masked-transmission"
       },
       "clauses": [
         {
@@ -614,7 +637,9 @@
       ],
       "claims": {
         "medium": "analog-horror.obsolete-device",
-        "texture": "analog-horror.obsolete-device"
+        "texture": "analog-horror.obsolete-device",
+        "composition": "analog-horror.obsolete-device",
+        "palette": "analog-horror.obsolete-device"
       },
       "clauses": [
         {
@@ -668,7 +693,9 @@
       ],
       "claims": {
         "medium": "analog-horror.found-frame",
-        "texture": "analog-horror.found-frame"
+        "texture": "analog-horror.found-frame",
+        "composition": "analog-horror.found-frame",
+        "lighting": "analog-horror.found-frame"
       },
       "clauses": [
         {
@@ -721,7 +748,10 @@
         "found"
       ],
       "claims": {
-        "medium": "analog-horror.archive-suppression"
+        "medium": "analog-horror.archive-suppression",
+        "composition": "analog-horror.archive-suppression",
+        "palette": "analog-horror.archive-suppression",
+        "mood": "analog-horror.archive-suppression"
       },
       "clauses": [
         {
@@ -775,7 +805,9 @@
       ],
       "claims": {
         "medium": "analog-horror.elevator-monitor",
-        "texture": "analog-horror.elevator-monitor"
+        "texture": "analog-horror.elevator-monitor",
+        "composition": "analog-horror.elevator-monitor",
+        "lighting": "analog-horror.elevator-monitor"
       },
       "clauses": [
         {
@@ -788,9 +820,9 @@
         },
         {
           "axis": "composition",
-          "text": "Use a high corner view with narrow converging walls and empty floor",
+          "text": "Use a high corner-like viewpoint and restrained convergence of existing edges",
           "tags": [
-            "high angle elevator surveillance"
+            "high corner viewpoint and existing edge convergence"
           ],
           "min_intensity": 0.4
         },
@@ -828,7 +860,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "analog-horror.phosphor-green"
+        "palette": "analog-horror.phosphor-green",
+        "lighting": "analog-horror.phosphor-green"
       },
       "clauses": [
         {
@@ -865,7 +898,8 @@
         "grade"
       ],
       "claims": {
-        "texture": "analog-horror.vhs-degrade"
+        "texture": "analog-horror.vhs-degrade",
+        "palette": "analog-horror.vhs-degrade"
       },
       "clauses": [
         {
@@ -902,7 +936,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "analog-horror.tobacco-monochrome"
+        "palette": "analog-horror.tobacco-monochrome",
+        "lighting": "analog-horror.tobacco-monochrome"
       },
       "clauses": [
         {
@@ -939,22 +974,23 @@
         "modifier"
       ],
       "claims": {
-        "detail": "analog-horror.timecode-imprint"
+        "detail": "analog-horror.timecode-imprint",
+        "texture": "analog-horror.timecode-imprint"
       },
       "clauses": [
         {
           "axis": "detail",
-          "text": "Add a small low-contrast timecode-like readout near one image corner without specifying exact digits",
+          "text": "If the base supplies a timecode, render only those exact characters with restrained raster edges; otherwise add no readout",
           "tags": [
-            "small vintage video timecode"
+            "preserve only explicitly supplied timecode text"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "texture",
-          "text": "Give the overlay slightly inconsistent raster edges",
+          "text": "Apply slight corner raster wear without covering requested lettering",
           "tags": [
-            "faded timecode pixels"
+            "corner raster wear preserving supplied lettering"
           ],
           "min_intensity": 0.4
         }
@@ -976,7 +1012,8 @@
         "modifier"
       ],
       "claims": {
-        "texture": "analog-horror.tracking-tear"
+        "texture": "analog-horror.tracking-tear",
+        "composition": "analog-horror.tracking-tear"
       },
       "clauses": [
         {

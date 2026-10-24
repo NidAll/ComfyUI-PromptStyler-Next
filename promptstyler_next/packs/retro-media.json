@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.next.retro-media",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Retro Media",
   "description": "Consumer media, obsolete interfaces and media-artifact storytelling from multiple decades.",
   "license": "CC0-1.0",
@@ -22,7 +22,8 @@
       "claims": {
         "medium": "retromedia.hi8-home-video",
         "palette": "retromedia.hi8-home-video",
-        "texture": "retromedia.hi8-home-video"
+        "texture": "retromedia.hi8-home-video",
+        "composition": "retromedia.hi8-home-video"
       },
       "clauses": [
         {
@@ -76,7 +77,9 @@
       ],
       "claims": {
         "medium": "retromedia.minidv-weekend",
-        "texture": "retromedia.minidv-weekend"
+        "texture": "retromedia.minidv-weekend",
+        "composition": "retromedia.minidv-weekend",
+        "lighting": "retromedia.minidv-weekend"
       },
       "clauses": [
         {
@@ -131,7 +134,8 @@
       "claims": {
         "medium": "retromedia.vhs-rental-sleeve",
         "palette": "retromedia.vhs-rental-sleeve",
-        "texture": "retromedia.vhs-rental-sleeve"
+        "texture": "retromedia.vhs-rental-sleeve",
+        "composition": "retromedia.vhs-rental-sleeve"
       },
       "clauses": [
         {
@@ -185,7 +189,9 @@
       ],
       "claims": {
         "medium": "retromedia.dvd-main-menu",
-        "texture": "retromedia.dvd-main-menu"
+        "texture": "retromedia.dvd-main-menu",
+        "composition": "retromedia.dvd-main-menu",
+        "lighting": "retromedia.dvd-main-menu"
       },
       "clauses": [
         {
@@ -239,7 +245,9 @@
       ],
       "claims": {
         "medium": "retromedia.crt-local-access",
-        "texture": "retromedia.crt-local-access"
+        "texture": "retromedia.crt-local-access",
+        "composition": "retromedia.crt-local-access",
+        "lighting": "retromedia.crt-local-access"
       },
       "clauses": [
         {
@@ -294,7 +302,8 @@
       "claims": {
         "medium": "retromedia.pocket-camera-night",
         "palette": "retromedia.pocket-camera-night",
-        "texture": "retromedia.pocket-camera-night"
+        "texture": "retromedia.pocket-camera-night",
+        "lighting": "retromedia.pocket-camera-night"
       },
       "clauses": [
         {
@@ -348,7 +357,9 @@
       ],
       "claims": {
         "medium": "retromedia.mall-photo-booth",
-        "texture": "retromedia.mall-photo-booth"
+        "texture": "retromedia.mall-photo-booth",
+        "composition": "retromedia.mall-photo-booth",
+        "lighting": "retromedia.mall-photo-booth"
       },
       "clauses": [
         {
@@ -403,7 +414,8 @@
       "claims": {
         "medium": "retromedia.magazine-ad-2002",
         "palette": "retromedia.magazine-ad-2002",
-        "texture": "retromedia.magazine-ad-2002"
+        "texture": "retromedia.magazine-ad-2002",
+        "composition": "retromedia.magazine-ad-2002"
       },
       "clauses": [
         {
@@ -458,7 +470,8 @@
       "claims": {
         "medium": "retromedia.cassette-insert",
         "palette": "retromedia.cassette-insert",
-        "texture": "retromedia.cassette-insert"
+        "texture": "retromedia.cassette-insert",
+        "composition": "retromedia.cassette-insert"
       },
       "clauses": [
         {
@@ -512,7 +525,9 @@
       ],
       "claims": {
         "medium": "retromedia.polaroid-birthday",
-        "texture": "retromedia.polaroid-birthday"
+        "texture": "retromedia.polaroid-birthday",
+        "composition": "retromedia.polaroid-birthday",
+        "lighting": "retromedia.polaroid-birthday"
       },
       "clauses": [
         {
@@ -567,7 +582,8 @@
       "claims": {
         "medium": "retromedia.teletext-afterglow",
         "palette": "retromedia.teletext-afterglow",
-        "texture": "retromedia.teletext-afterglow"
+        "texture": "retromedia.teletext-afterglow",
+        "composition": "retromedia.teletext-afterglow"
       },
       "clauses": [
         {
@@ -621,7 +637,9 @@
       ],
       "claims": {
         "medium": "retromedia.film-contact-sheet",
-        "texture": "retromedia.film-contact-sheet"
+        "texture": "retromedia.film-contact-sheet",
+        "composition": "retromedia.film-contact-sheet",
+        "lighting": "retromedia.film-contact-sheet"
       },
       "clauses": [
         {
@@ -634,9 +652,9 @@
         },
         {
           "axis": "composition",
-          "text": "Arrange closely spaced rectangular exposures in a measured review grid",
+          "text": "Use a measured exposure-review-style margin around one scene without repeating the supplied entities",
           "tags": [
-            "film review frame grid"
+            "single scene with exposure-review margins"
           ],
           "min_intensity": 0.4
         },
@@ -675,7 +693,9 @@
       ],
       "claims": {
         "medium": "retromedia.pager-era-product",
-        "texture": "retromedia.pager-era-product"
+        "texture": "retromedia.pager-era-product",
+        "composition": "retromedia.pager-era-product",
+        "lighting": "retromedia.pager-era-product"
       },
       "clauses": [
         {
@@ -730,7 +750,8 @@
       "claims": {
         "medium": "retromedia.early-web-banner",
         "palette": "retromedia.early-web-banner",
-        "texture": "retromedia.early-web-banner"
+        "texture": "retromedia.early-web-banner",
+        "composition": "retromedia.early-web-banner"
       },
       "clauses": [
         {
@@ -784,7 +805,9 @@
       ],
       "claims": {
         "medium": "retromedia.laserdisc-sleeve",
-        "texture": "retromedia.laserdisc-sleeve"
+        "texture": "retromedia.laserdisc-sleeve",
+        "composition": "retromedia.laserdisc-sleeve",
+        "lighting": "retromedia.laserdisc-sleeve"
       },
       "clauses": [
         {
@@ -837,7 +860,8 @@
         "nostalgia"
       ],
       "claims": {
-        "palette": "retromedia.faded-tungsten"
+        "palette": "retromedia.faded-tungsten",
+        "lighting": "retromedia.faded-tungsten"
       },
       "clauses": [
         {
@@ -874,7 +898,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "retromedia.composite-color"
+        "palette": "retromedia.composite-color",
+        "texture": "retromedia.composite-color"
       },
       "clauses": [
         {
@@ -911,7 +936,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "retromedia.photo-lab-cyan"
+        "palette": "retromedia.photo-lab-cyan",
+        "texture": "retromedia.photo-lab-cyan"
       },
       "clauses": [
         {
@@ -947,7 +973,10 @@
         "overlay",
         "nostalgia"
       ],
-      "claims": {},
+      "claims": {
+        "detail": "retromedia.date-stamp",
+        "texture": "retromedia.date-stamp"
+      },
       "clauses": [
         {
           "axis": "detail",
@@ -982,7 +1011,10 @@
         "damage",
         "analog"
       ],
-      "claims": {},
+      "claims": {
+        "texture": "retromedia.tape-edge",
+        "composition": "retromedia.tape-edge"
+      },
       "clauses": [
         {
           "axis": "texture",

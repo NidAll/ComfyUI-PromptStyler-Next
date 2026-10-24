@@ -66,7 +66,7 @@ def test_catalog_and_discovery_share_engine(server):
         if len(page) < 1000:
             break
         offset += len(page)
-    assert catalog["total"] == len(expected) == 1132
+    assert catalog["total"] == len(expected) == 1164
     status, _, raw = request(server, path="/api/v1/styles?limit=2&offset=1")
     assert status == 200
     assert json.loads(raw)["items"] == engine.list_styles(limit=2, offset=1)

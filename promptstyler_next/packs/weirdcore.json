@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.weirdcore",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Weirdcore",
   "description": "Uncanny early-digital artifacts, unsettling found graphics, and offbeat visual anomalies.",
   "license": "CC0-1.0",
@@ -21,7 +21,9 @@
       ],
       "claims": {
         "medium": "weirdcore.broken-webcam",
-        "texture": "weirdcore.broken-webcam"
+        "texture": "weirdcore.broken-webcam",
+        "composition": "weirdcore.broken-webcam",
+        "palette": "weirdcore.broken-webcam"
       },
       "clauses": [
         {
@@ -75,7 +77,9 @@
       ],
       "claims": {
         "medium": "weirdcore.warning-card",
-        "texture": "weirdcore.warning-card"
+        "texture": "weirdcore.warning-card",
+        "composition": "weirdcore.warning-card",
+        "palette": "weirdcore.warning-card"
       },
       "clauses": [
         {
@@ -88,9 +92,9 @@
         },
         {
           "axis": "composition",
-          "text": "Isolate a stark rectangular information area surrounded by excessive empty space",
+          "text": "Use severe rectangular alignment of the existing visual masses without inserting an information panel",
           "tags": [
-            "sparse warning panel layout"
+            "severe existing rectangular alignment"
           ],
           "min_intensity": 0.4
         },
@@ -104,9 +108,9 @@
         },
         {
           "axis": "texture",
-          "text": "Introduce imperfect scan lines and worn raster text edges",
+          "text": "Introduce imperfect scan lines while keeping any supplied lettering intact",
           "tags": [
-            "degraded warning card display"
+            "imperfect scan lines and intact supplied lettering"
           ],
           "min_intensity": 0.92
         }
@@ -128,7 +132,10 @@
         "surreal"
       ],
       "claims": {
-        "medium": "weirdcore.misplaced-object"
+        "medium": "weirdcore.misplaced-object",
+        "composition": "weirdcore.misplaced-object",
+        "lighting": "weirdcore.misplaced-object",
+        "mood": "weirdcore.misplaced-object"
       },
       "clauses": [
         {
@@ -141,9 +148,9 @@
         },
         {
           "axis": "composition",
-          "text": "Give a mundane object implausibly careful central framing",
+          "text": "Frame the supplied subject with implausibly careful central balance",
           "tags": [
-            "offbeat centered object"
+            "implausibly careful central balance"
           ],
           "min_intensity": 0.4
         },
@@ -182,14 +189,16 @@
       ],
       "claims": {
         "medium": "weirdcore.threshold-error",
-        "texture": "weirdcore.threshold-error"
+        "texture": "weirdcore.threshold-error",
+        "composition": "weirdcore.threshold-error",
+        "lighting": "weirdcore.threshold-error"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Recast the scene as an uncanny digital photograph of an ambiguous threshold",
+          "text": "Use an uncanny early-digital image treatment for the supplied scene",
           "tags": [
-            "uncanny mismatched doorway"
+            "uncanny early-digital image treatment"
           ],
           "min_intensity": 0.01
         },
@@ -236,7 +245,9 @@
       ],
       "claims": {
         "medium": "weirdcore.fluorescent-clash",
-        "texture": "weirdcore.fluorescent-clash"
+        "texture": "weirdcore.fluorescent-clash",
+        "palette": "weirdcore.fluorescent-clash",
+        "composition": "weirdcore.fluorescent-clash"
       },
       "clauses": [
         {
@@ -290,7 +301,9 @@
       ],
       "claims": {
         "medium": "weirdcore.false-memory-file",
-        "texture": "weirdcore.false-memory-file"
+        "texture": "weirdcore.false-memory-file",
+        "composition": "weirdcore.false-memory-file",
+        "palette": "weirdcore.false-memory-file"
       },
       "clauses": [
         {
@@ -303,9 +316,9 @@
         },
         {
           "axis": "composition",
-          "text": "Crop like an accidental family photo that was poorly recovered",
+          "text": "Use off-balance recovered-image framing without cropping required subjects or lettering",
           "tags": [
-            "awkward archival snapshot crop"
+            "off-balance recovered-image framing"
           ],
           "min_intensity": 0.4
         },
@@ -343,30 +356,33 @@
         "uncanny"
       ],
       "claims": {
-        "medium": "weirdcore.uncanny-playroom"
+        "medium": "weirdcore.uncanny-playroom",
+        "composition": "weirdcore.uncanny-playroom",
+        "lighting": "weirdcore.uncanny-playroom",
+        "mood": "weirdcore.uncanny-playroom"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Translate the setting into an oddly orderly childlike interior visual language",
+          "text": "Apply an unnervingly orderly early-digital rendering to the supplied scene",
           "tags": [
-            "uncanny playroom aesthetic"
+            "unnervingly orderly early-digital rendering"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Repeat primary shapes in a layout just too regular to feel casual",
+          "text": "Emphasize existing primary shapes without multiplying scene entities",
           "tags": [
-            "strange repeated toy shapes"
+            "existing primary-shape emphasis"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Keep frontal indoor illumination unnaturally consistent",
+          "text": "Keep frontal illumination unnaturally consistent",
           "tags": [
-            "uncomfortably even room lighting"
+            "unnaturally consistent frontal light"
           ],
           "min_intensity": 0.78
         },
@@ -397,7 +413,9 @@
       ],
       "claims": {
         "medium": "weirdcore.cryptic-caption",
-        "texture": "weirdcore.cryptic-caption"
+        "texture": "weirdcore.cryptic-caption",
+        "composition": "weirdcore.cryptic-caption",
+        "mood": "weirdcore.cryptic-caption"
       },
       "clauses": [
         {
@@ -410,9 +428,9 @@
         },
         {
           "axis": "composition",
-          "text": "Reserve an oversized blank region that suggests missing or illegible explanatory text",
+          "text": "Emphasize existing negative space without inserting a caption or text region",
           "tags": [
-            "empty caption field"
+            "uneasy existing negative space"
           ],
           "min_intensity": 0.4
         },
@@ -451,7 +469,9 @@
       ],
       "claims": {
         "medium": "weirdcore.lost-forum-avatar",
-        "texture": "weirdcore.lost-forum-avatar"
+        "texture": "weirdcore.lost-forum-avatar",
+        "composition": "weirdcore.lost-forum-avatar",
+        "palette": "weirdcore.lost-forum-avatar"
       },
       "clauses": [
         {
@@ -504,7 +524,10 @@
         "unease"
       ],
       "claims": {
-        "medium": "weirdcore.eye-pattern"
+        "medium": "weirdcore.eye-pattern",
+        "composition": "weirdcore.eye-pattern",
+        "palette": "weirdcore.eye-pattern",
+        "mood": "weirdcore.eye-pattern"
       },
       "clauses": [
         {
@@ -517,9 +540,9 @@
         },
         {
           "axis": "composition",
-          "text": "Repeat abstract eye-shaped marks without turning them into realistic faces",
+          "text": "Articulate supplied contours with nested ovoid rhythms without inserting eyes or faces",
           "tags": [
-            "repeated eye shaped ornaments"
+            "nested ovoid contour rhythm"
           ],
           "min_intensity": 0.4
         },
@@ -533,9 +556,9 @@
         },
         {
           "axis": "mood",
-          "text": "Suggest quiet surveillance through repetition rather than explicit horror",
+          "text": "Suggest watchful unease through graphic rhythm alone",
           "tags": [
-            "subtle watched atmosphere"
+            "watchful graphic unease"
           ],
           "min_intensity": 0.92
         }
@@ -558,38 +581,40 @@
       ],
       "claims": {
         "medium": "weirdcore.vending-dream",
-        "texture": "weirdcore.vending-dream"
+        "texture": "weirdcore.vending-dream",
+        "composition": "weirdcore.vending-dream",
+        "lighting": "weirdcore.vending-dream"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Give the scene the feel of an inexplicable late-night vending-machine photograph",
+          "text": "Give the supplied scene an uncanny low-resolution illuminated-surface treatment",
           "tags": [
-            "strange vending machine scene"
+            "uncanny illuminated-surface treatment"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Repeat compartment windows as rigid lighted grids",
+          "text": "Emphasize rectangular divisions only where they already occur in the supplied scene",
           "tags": [
-            "grid of vending compartments"
+            "existing rectangular divisions"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Let cold machine light spill into otherwise featureless darkness",
+          "text": "Let cold local light spill into subdued surrounding tones",
           "tags": [
-            "isolated vending machine glow"
+            "cold local light and subdued surrounds"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Use smeared acrylic reflections and low-resolution sensor grain",
+          "text": "Use smeared reflections and low-resolution sensor grain on existing surfaces",
           "tags": [
-            "acrylic display glare and digital noise"
+            "smeared reflections and sensor grain"
           ],
           "min_intensity": 0.92
         }
@@ -612,7 +637,9 @@
       ],
       "claims": {
         "medium": "weirdcore.security-test-screen",
-        "texture": "weirdcore.security-test-screen"
+        "texture": "weirdcore.security-test-screen",
+        "composition": "weirdcore.security-test-screen",
+        "palette": "weirdcore.security-test-screen"
       },
       "clauses": [
         {
@@ -666,7 +693,9 @@
       ],
       "claims": {
         "medium": "weirdcore.synthetic-organic",
-        "texture": "weirdcore.synthetic-organic"
+        "texture": "weirdcore.synthetic-organic",
+        "lighting": "weirdcore.synthetic-organic",
+        "mood": "weirdcore.synthetic-organic"
       },
       "clauses": [
         {
@@ -719,38 +748,41 @@
         "strange"
       ],
       "claims": {
-        "medium": "weirdcore.empty-audience"
+        "medium": "weirdcore.empty-audience",
+        "composition": "weirdcore.empty-audience",
+        "lighting": "weirdcore.empty-audience",
+        "mood": "weirdcore.empty-audience"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Compose the image like found documentation of a performance without an audience",
+          "text": "Use the awkward stillness of found performance documentation without removing people or changing the scene",
           "tags": [
-            "empty performance documentation"
+            "awkward found-documentation stillness"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Emphasize front-facing stage geometry and vacant sightlines",
+          "text": "Emphasize front-facing relationships among the supplied forms",
           "tags": [
-            "empty audience point of view"
+            "front-facing supplied-form relationships"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Let harsh stage fixtures illuminate an otherwise neglected space",
+          "text": "Use harsh directional illumination over softly neglected-looking surface tones",
           "tags": [
-            "stage light in empty venue"
+            "harsh directional illumination"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "mood",
-          "text": "Preserve an unexplained social absence rather than overt terror",
+          "text": "Create a sense of interrupted activity without asserting that anyone is absent",
           "tags": [
-            "unexplained empty event mood"
+            "interrupted-activity mood"
           ],
           "min_intensity": 0.92
         }
@@ -773,7 +805,9 @@
       ],
       "claims": {
         "medium": "weirdcore.fractured-perspective",
-        "texture": "weirdcore.fractured-perspective"
+        "texture": "weirdcore.fractured-perspective",
+        "composition": "weirdcore.fractured-perspective",
+        "mood": "weirdcore.fractured-perspective"
       },
       "clauses": [
         {
@@ -826,7 +860,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "weirdcore.acid-primary"
+        "palette": "weirdcore.acid-primary",
+        "lighting": "weirdcore.acid-primary"
       },
       "clauses": [
         {
@@ -863,7 +898,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "weirdcore.washed-lcd"
+        "palette": "weirdcore.washed-lcd",
+        "texture": "weirdcore.washed-lcd"
       },
       "clauses": [
         {
@@ -900,7 +936,8 @@
         "grade"
       ],
       "claims": {
-        "texture": "weirdcore.printer-misalignment"
+        "texture": "weirdcore.printer-misalignment",
+        "palette": "weirdcore.printer-misalignment"
       },
       "clauses": [
         {
@@ -937,22 +974,23 @@
         "modifier"
       ],
       "claims": {
-        "composition": "weirdcore.text-as-artifact"
+        "composition": "weirdcore.text-as-artifact",
+        "texture": "weirdcore.text-as-artifact"
       },
       "clauses": [
         {
           "axis": "composition",
-          "text": "Set aside a patch of image space that implies a partly missing caption",
+          "text": "Use already available negative space to create an incomplete graphic cadence without adding captions",
           "tags": [
-            "empty fragmentary text area"
+            "incomplete graphic cadence in existing negative space"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "texture",
-          "text": "Degrade any existing lettering with uneven raster edges while preserving requested exact text",
+          "text": "Give nonlettered edges an uneven raster texture while retaining supplied letter shapes",
           "tags": [
-            "rough display lettering edges"
+            "uneven nonlettered raster edges with preserved lettering"
           ],
           "min_intensity": 0.4
         }
@@ -974,7 +1012,8 @@
         "modifier"
       ],
       "claims": {
-        "texture": "weirdcore.intentional-jpeg"
+        "texture": "weirdcore.intentional-jpeg",
+        "detail": "weirdcore.intentional-jpeg"
       },
       "clauses": [
         {

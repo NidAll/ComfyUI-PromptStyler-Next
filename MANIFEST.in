@@ -11,3 +11,4 @@ recursive-include scripts *.py
 include README.md CONTRIBUTING.md CHANGELOG.md SECURITY.md
 recursive-include .github *.yml
 recursive-include custom_packs *.md
+recursive-include llm-prompts *.md *.txt *.json

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.next.surreal-psychological",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Psychological Surrealism",
   "description": "Unsettling spatial logic, perceptual puzzles and symbolic but subject-preserving compositions.",
   "license": "CC0-1.0",
@@ -20,7 +20,10 @@
         "uncanny"
       ],
       "claims": {
-        "medium": "psychsurreal.displaced-scale"
+        "medium": "psychsurreal.displaced-scale",
+        "composition": "psychsurreal.displaced-scale",
+        "lighting": "psychsurreal.displaced-scale",
+        "mood": "psychsurreal.displaced-scale"
       },
       "clauses": [
         {
@@ -73,7 +76,10 @@
         "uncanny"
       ],
       "claims": {
-        "medium": "psychsurreal.endless-threshold"
+        "medium": "psychsurreal.endless-threshold",
+        "composition": "psychsurreal.endless-threshold",
+        "lighting": "psychsurreal.endless-threshold",
+        "mood": "psychsurreal.endless-threshold"
       },
       "clauses": [
         {
@@ -126,7 +132,10 @@
         "perception"
       ],
       "claims": {
-        "medium": "psychsurreal.shadow-misalignment"
+        "medium": "psychsurreal.shadow-misalignment",
+        "lighting": "psychsurreal.shadow-misalignment",
+        "composition": "psychsurreal.shadow-misalignment",
+        "mood": "psychsurreal.shadow-misalignment"
       },
       "clauses": [
         {
@@ -180,7 +189,9 @@
       ],
       "claims": {
         "medium": "psychsurreal.object-metamorphosis",
-        "texture": "psychsurreal.object-metamorphosis"
+        "texture": "psychsurreal.object-metamorphosis",
+        "composition": "psychsurreal.object-metamorphosis",
+        "lighting": "psychsurreal.object-metamorphosis"
       },
       "clauses": [
         {
@@ -233,7 +244,10 @@
         "uncanny"
       ],
       "claims": {
-        "medium": "psychsurreal.mirror-delay"
+        "medium": "psychsurreal.mirror-delay",
+        "composition": "psychsurreal.mirror-delay",
+        "lighting": "psychsurreal.mirror-delay",
+        "mood": "psychsurreal.mirror-delay"
       },
       "clauses": [
         {
@@ -286,7 +300,10 @@
         "time"
       ],
       "claims": {
-        "medium": "psychsurreal.domestic-suspension"
+        "medium": "psychsurreal.domestic-suspension",
+        "composition": "psychsurreal.domestic-suspension",
+        "lighting": "psychsurreal.domestic-suspension",
+        "mood": "psychsurreal.domestic-suspension"
       },
       "clauses": [
         {
@@ -340,7 +357,9 @@
       ],
       "claims": {
         "medium": "psychsurreal.recursive-interior",
-        "palette": "psychsurreal.recursive-interior"
+        "palette": "psychsurreal.recursive-interior",
+        "composition": "psychsurreal.recursive-interior",
+        "lighting": "psychsurreal.recursive-interior"
       },
       "clauses": [
         {
@@ -394,7 +413,9 @@
       ],
       "claims": {
         "medium": "psychsurreal.time-exposure",
-        "texture": "psychsurreal.time-exposure"
+        "texture": "psychsurreal.time-exposure",
+        "composition": "psychsurreal.time-exposure",
+        "lighting": "psychsurreal.time-exposure"
       },
       "clauses": [
         {
@@ -447,7 +468,10 @@
         "negative-space"
       ],
       "claims": {
-        "medium": "psychsurreal.unfamiliar-familiar"
+        "medium": "psychsurreal.unfamiliar-familiar",
+        "composition": "psychsurreal.unfamiliar-familiar",
+        "lighting": "psychsurreal.unfamiliar-familiar",
+        "mood": "psychsurreal.unfamiliar-familiar"
       },
       "clauses": [
         {
@@ -501,7 +525,9 @@
       ],
       "claims": {
         "medium": "psychsurreal.false-perspective",
-        "texture": "psychsurreal.false-perspective"
+        "texture": "psychsurreal.false-perspective",
+        "composition": "psychsurreal.false-perspective",
+        "lighting": "psychsurreal.false-perspective"
       },
       "clauses": [
         {
@@ -554,7 +580,10 @@
         "concept"
       ],
       "claims": {
-        "medium": "psychsurreal.absence-portrait"
+        "medium": "psychsurreal.absence-portrait",
+        "composition": "psychsurreal.absence-portrait",
+        "lighting": "psychsurreal.absence-portrait",
+        "mood": "psychsurreal.absence-portrait"
       },
       "clauses": [
         {
@@ -607,7 +636,10 @@
         "display"
       ],
       "claims": {
-        "medium": "psychsurreal.museum-of-errors"
+        "medium": "psychsurreal.museum-of-errors",
+        "composition": "psychsurreal.museum-of-errors",
+        "detail": "psychsurreal.museum-of-errors",
+        "lighting": "psychsurreal.museum-of-errors"
       },
       "clauses": [
         {
@@ -660,7 +692,10 @@
         "impossible"
       ],
       "claims": {
-        "medium": "psychsurreal.gravity-uncertain"
+        "medium": "psychsurreal.gravity-uncertain",
+        "composition": "psychsurreal.gravity-uncertain",
+        "lighting": "psychsurreal.gravity-uncertain",
+        "mood": "psychsurreal.gravity-uncertain"
       },
       "clauses": [
         {
@@ -714,7 +749,9 @@
       ],
       "claims": {
         "medium": "psychsurreal.dream-logical-map",
-        "palette": "psychsurreal.dream-logical-map"
+        "palette": "psychsurreal.dream-logical-map",
+        "composition": "psychsurreal.dream-logical-map",
+        "detail": "psychsurreal.dream-logical-map"
       },
       "clauses": [
         {
@@ -767,7 +804,10 @@
         "shadow"
       ],
       "claims": {
-        "medium": "psychsurreal.nightmare-minimal"
+        "medium": "psychsurreal.nightmare-minimal",
+        "composition": "psychsurreal.nightmare-minimal",
+        "lighting": "psychsurreal.nightmare-minimal",
+        "mood": "psychsurreal.nightmare-minimal"
       },
       "clauses": [
         {
@@ -820,7 +860,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "psychsurreal.uncertain-daylight"
+        "palette": "psychsurreal.uncertain-daylight",
+        "lighting": "psychsurreal.uncertain-daylight"
       },
       "clauses": [
         {
@@ -857,7 +898,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "psychsurreal.cobalt-interruption"
+        "palette": "psychsurreal.cobalt-interruption",
+        "lighting": "psychsurreal.cobalt-interruption"
       },
       "clauses": [
         {
@@ -894,7 +936,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "psychsurreal.warm-unreal"
+        "palette": "psychsurreal.warm-unreal",
+        "lighting": "psychsurreal.warm-unreal"
       },
       "clauses": [
         {
@@ -930,7 +973,10 @@
         "repetition",
         "modifier"
       ],
-      "claims": {},
+      "claims": {
+        "composition": "psychsurreal.off-axis-repeat",
+        "detail": "psychsurreal.off-axis-repeat"
+      },
       "clauses": [
         {
           "axis": "composition",
@@ -965,7 +1011,10 @@
         "edge",
         "modifier"
       ],
-      "claims": {},
+      "claims": {
+        "mood": "psychsurreal.edge-awareness",
+        "composition": "psychsurreal.edge-awareness"
+      },
       "clauses": [
         {
           "axis": "mood",

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.next.occult-esoteric",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Occult and Esoteric",
   "description": "Esoteric illustration, symbolic design, historical print techniques and ritual atmosphere.",
   "license": "CC0-1.0",
@@ -22,7 +22,8 @@
       "claims": {
         "medium": "esoteric.alchemical-engraving",
         "palette": "esoteric.alchemical-engraving",
-        "texture": "esoteric.alchemical-engraving"
+        "texture": "esoteric.alchemical-engraving",
+        "composition": "esoteric.alchemical-engraving"
       },
       "clauses": [
         {
@@ -77,7 +78,8 @@
       "claims": {
         "medium": "esoteric.tarot-woodcut",
         "palette": "esoteric.tarot-woodcut",
-        "texture": "esoteric.tarot-woodcut"
+        "texture": "esoteric.tarot-woodcut",
+        "composition": "esoteric.tarot-woodcut"
       },
       "clauses": [
         {
@@ -131,7 +133,9 @@
       ],
       "claims": {
         "medium": "esoteric.celestial-grimoire",
-        "texture": "esoteric.celestial-grimoire"
+        "texture": "esoteric.celestial-grimoire",
+        "composition": "esoteric.celestial-grimoire",
+        "lighting": "esoteric.celestial-grimoire"
       },
       "clauses": [
         {
@@ -186,7 +190,8 @@
       "claims": {
         "medium": "esoteric.hermetic-geometer",
         "palette": "esoteric.hermetic-geometer",
-        "texture": "esoteric.hermetic-geometer"
+        "texture": "esoteric.hermetic-geometer",
+        "composition": "esoteric.hermetic-geometer"
       },
       "clauses": [
         {
@@ -239,7 +244,10 @@
         "devotional"
       ],
       "claims": {
-        "medium": "esoteric.ritual-still-life"
+        "medium": "esoteric.ritual-still-life",
+        "composition": "esoteric.ritual-still-life",
+        "lighting": "esoteric.ritual-still-life",
+        "mood": "esoteric.ritual-still-life"
       },
       "clauses": [
         {
@@ -294,14 +302,15 @@
       "claims": {
         "medium": "esoteric.moonlit-herbarium",
         "palette": "esoteric.moonlit-herbarium",
-        "texture": "esoteric.moonlit-herbarium"
+        "texture": "esoteric.moonlit-herbarium",
+        "composition": "esoteric.moonlit-herbarium"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Interpret the given subject as a hand-painted nocturnal herbarium plate",
+          "text": "Render the supplied subject as a delicate nocturnal naturalist-style painted study",
           "tags": [
-            "moonlit herbarium illustration"
+            "nocturnal naturalist-style painted study"
           ],
           "min_intensity": 0.01
         },
@@ -349,7 +358,8 @@
       "claims": {
         "medium": "esoteric.oracle-silk-screen",
         "palette": "esoteric.oracle-silk-screen",
-        "texture": "esoteric.oracle-silk-screen"
+        "texture": "esoteric.oracle-silk-screen",
+        "composition": "esoteric.oracle-silk-screen"
       },
       "clauses": [
         {
@@ -403,14 +413,16 @@
       ],
       "claims": {
         "medium": "esoteric.astrolabe-studies",
-        "texture": "esoteric.astrolabe-studies"
+        "texture": "esoteric.astrolabe-studies",
+        "composition": "esoteric.astrolabe-studies",
+        "lighting": "esoteric.astrolabe-studies"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Treat the supplied form as an antique astronomical instrument study",
+          "text": "Use antique instrument-drawing precision on the existing subject without changing its object identity",
           "tags": [
-            "antique astrolabe illustration"
+            "antique instrument-drawing precision"
           ],
           "min_intensity": 0.01
         },
@@ -458,7 +470,8 @@
       "claims": {
         "medium": "esoteric.mystic-tapestry",
         "palette": "esoteric.mystic-tapestry",
-        "texture": "esoteric.mystic-tapestry"
+        "texture": "esoteric.mystic-tapestry",
+        "composition": "esoteric.mystic-tapestry"
       },
       "clauses": [
         {
@@ -512,7 +525,9 @@
       ],
       "claims": {
         "medium": "esoteric.mystery-playbackdrop",
-        "texture": "esoteric.mystery-playbackdrop"
+        "texture": "esoteric.mystery-playbackdrop",
+        "composition": "esoteric.mystery-playbackdrop",
+        "lighting": "esoteric.mystery-playbackdrop"
       },
       "clauses": [
         {
@@ -525,25 +540,25 @@
         },
         {
           "axis": "composition",
-          "text": "Use symmetrical scenic flats and a dignified shallow stage perspective",
+          "text": "Use a dignified shallow painted-space treatment of the supplied forms without adding scenic flats",
           "tags": [
-            "ceremonial theatrical stage symmetry"
+            "shallow painted-space composition"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Cast broad sidelight across layered painted canvas scenery",
+          "text": "Cast broad sidelight across the existing scene planes",
           "tags": [
-            "stage side lantern illumination"
+            "broad sidelight across existing planes"
           ],
           "min_intensity": 0.75
         },
         {
           "axis": "texture",
-          "text": "Expose brushy scenic flats and aged stage cloth seams",
+          "text": "Use brushy canvas grain on the supplied forms without adding cloth seams",
           "tags": [
-            "painted theatre backdrop canvas"
+            "brushy canvas grain on supplied forms"
           ],
           "min_intensity": 0.92
         }
@@ -566,7 +581,9 @@
       ],
       "claims": {
         "medium": "esoteric.midnight-illuminated",
-        "texture": "esoteric.midnight-illuminated"
+        "texture": "esoteric.midnight-illuminated",
+        "composition": "esoteric.midnight-illuminated",
+        "lighting": "esoteric.midnight-illuminated"
       },
       "clauses": [
         {
@@ -621,7 +638,8 @@
       "claims": {
         "medium": "esoteric.symbolic-linocut",
         "palette": "esoteric.symbolic-linocut",
-        "texture": "esoteric.symbolic-linocut"
+        "texture": "esoteric.symbolic-linocut",
+        "composition": "esoteric.symbolic-linocut"
       },
       "clauses": [
         {
@@ -676,7 +694,8 @@
       "claims": {
         "medium": "esoteric.astral-plate",
         "palette": "esoteric.astral-plate",
-        "texture": "esoteric.astral-plate"
+        "texture": "esoteric.astral-plate",
+        "composition": "esoteric.astral-plate"
       },
       "clauses": [
         {
@@ -689,9 +708,9 @@
         },
         {
           "axis": "composition",
-          "text": "Use measured orbital circles and a clear hierarchy of repeated inset diagrams",
+          "text": "Use measured orbital-like contour rhythms while retaining a single representation of each supplied entity",
           "tags": [
-            "astronomical orbit plate layout"
+            "orbital-like contour rhythms without duplicated entities"
           ],
           "min_intensity": 0.4
         },
@@ -730,7 +749,9 @@
       ],
       "claims": {
         "medium": "esoteric.rune-stone-study",
-        "texture": "esoteric.rune-stone-study"
+        "texture": "esoteric.rune-stone-study",
+        "composition": "esoteric.rune-stone-study",
+        "lighting": "esoteric.rune-stone-study"
       },
       "clauses": [
         {
@@ -785,7 +806,8 @@
       "claims": {
         "medium": "esoteric.esoteric-art-nouveau",
         "palette": "esoteric.esoteric-art-nouveau",
-        "texture": "esoteric.esoteric-art-nouveau"
+        "texture": "esoteric.esoteric-art-nouveau",
+        "composition": "esoteric.esoteric-art-nouveau"
       },
       "clauses": [
         {
@@ -838,7 +860,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "esoteric.aged-gold-ink"
+        "palette": "esoteric.aged-gold-ink",
+        "texture": "esoteric.aged-gold-ink"
       },
       "clauses": [
         {
@@ -875,7 +898,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "esoteric.moonstone-blue"
+        "palette": "esoteric.moonstone-blue",
+        "lighting": "esoteric.moonstone-blue"
       },
       "clauses": [
         {
@@ -912,7 +936,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "esoteric.candle-umber"
+        "palette": "esoteric.candle-umber",
+        "lighting": "esoteric.candle-umber"
       },
       "clauses": [
         {
@@ -948,7 +973,10 @@
         "lines",
         "modifier"
       ],
-      "claims": {},
+      "claims": {
+        "detail": "esoteric.fine-compass-lines",
+        "composition": "esoteric.fine-compass-lines"
+      },
       "clauses": [
         {
           "axis": "detail",
@@ -983,7 +1011,10 @@
         "ornament",
         "modifier"
       ],
-      "claims": {},
+      "claims": {
+        "texture": "esoteric.paper-gilt",
+        "lighting": "esoteric.paper-gilt"
+      },
       "clauses": [
         {
           "axis": "texture",

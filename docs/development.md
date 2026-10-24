@@ -75,6 +75,6 @@ the public repository. A release needs tested installation, clear change notes a
 honest acceptance limits. Model-specific image-quality review should use controlled
 prompts and a documented workflow/seed grid; structural tests cannot replace it.
 
-Version 0.2.0 source is maintained in the private GitHub repository
+Version 0.3.0 source belongs to the independent GitHub repository
 `NidAll/ComfyUI-PromptStyler-Next`. Pushing source changes does not create a tag,
 registry entry or package-index release.

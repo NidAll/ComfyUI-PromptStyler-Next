@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "next.botanical",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Botanical observation",
   "description": "Natural-history and botanical-study aesthetics centered on supplied plants and their observable structures.",
   "license": "CC0-1.0",
@@ -837,9 +837,9 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "Use a translucent aquatic-plant illustration style",
+          "text": "Use a translucent naturalist line-and-wash treatment for the supplied forms",
           "tags": [
-            "aquatic plant plate"
+            "translucent naturalist line and wash"
           ],
           "min_intensity": 0.01
         },

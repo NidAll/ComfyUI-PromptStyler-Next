@@ -1,0 +1,387 @@
+{
+  "schema_version": 1,
+  "id": "next.computational-surfaces",
+  "version": "1.0.0",
+  "name": "Computational Surfaces",
+  "description": "Authored surface languages inspired by plotting, field patterns and fabricated relief; no scientific simulation claim.",
+  "license": "CC0-1.0",
+  "author": "NidAll",
+  "styles": [
+    {
+      "id": "computational.flow-engraving",
+      "name": "Flow-field engraving",
+      "description": "Contour-following currents expressed as engraved line density.",
+      "category": "computational-surfaces",
+      "kind": "style",
+      "tags": [
+        "flow field",
+        "engraving",
+        "contour",
+        "computational"
+      ],
+      "claims": {
+        "medium": "computational.flow-engraving",
+        "texture": "computational.flow-engraving",
+        "lighting": "computational.flow-engraving"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Rebuild the supplied forms as a field-driven engraved illustration",
+          "tags": [
+            "field-driven engraved illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let continuous curved incision lines follow the existing surface orientation",
+          "tags": [
+            "contour-following engraved currents"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use shallow grazing illumination that reveals the incision depth",
+          "tags": [
+            "shallow grazing incision light"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "computational.reaction-diffusion",
+      "name": "Reaction-diffusion lacquer",
+      "description": "Interlocking cellular lacquer patterns contained within existing silhouettes.",
+      "category": "computational-surfaces",
+      "kind": "style",
+      "tags": [
+        "reaction diffusion",
+        "lacquer",
+        "cellular",
+        "pattern"
+      ],
+      "claims": {
+        "medium": "computational.reaction-diffusion",
+        "texture": "computational.reaction-diffusion",
+        "lighting": "computational.reaction-diffusion"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the existing subject as a smooth lacquered relief with cellular field patterning",
+          "tags": [
+            "cellular-field lacquer relief"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let organic branching bands join and separate within existing surface boundaries",
+          "tags": [
+            "branching cellular lacquer bands"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad soft highlights that reveal a thin clear finish above the pattern",
+          "tags": [
+            "broad clear-finish highlights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "computational.distance-relief",
+      "name": "Distance-field relief",
+      "description": "Nested contour intervals carved into an uninterrupted sculptural surface.",
+      "category": "computational-surfaces",
+      "kind": "style",
+      "tags": [
+        "distance field",
+        "relief",
+        "contour",
+        "carving"
+      ],
+      "claims": {
+        "medium": "computational.distance-relief",
+        "texture": "computational.distance-relief",
+        "lighting": "computational.distance-relief"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the supplied subject as a continuous contour-carved relief",
+          "tags": [
+            "continuous contour-carved relief"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Space shallow nested contour cuts according to the existing silhouette curvature",
+          "tags": [
+            "nested curvature-spaced contour cuts"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use one oblique soft light to separate adjacent relief levels",
+          "tags": [
+            "oblique soft relief light"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "computational.truchet-inlay",
+      "name": "Curved-tile inlay",
+      "description": "A continuous arc grammar distributed over the subject without adding scene geometry.",
+      "category": "computational-surfaces",
+      "kind": "style",
+      "tags": [
+        "truchet",
+        "inlay",
+        "arc",
+        "tile"
+      ],
+      "claims": {
+        "medium": "computational.truchet-inlay",
+        "texture": "computational.truchet-inlay",
+        "detail": "computational.truchet-inlay"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Give existing forms a precise inlaid surface treatment built from joined quarter-circle arcs",
+          "tags": [
+            "joined-arc inlaid surface"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Rotate local arc cells to form long connected paths within each supplied form",
+          "tags": [
+            "connected rotating arc-cell pattern"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "detail",
+          "text": "Keep the arc network subordinate to identifying contours and requested lettering",
+          "tags": [
+            "arc network subordinate to identifying marks"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "computational.dither-felt",
+      "name": "Dithered felt relief",
+      "description": "Two fiber values form a tactile error-diffusion image.",
+      "category": "computational-surfaces",
+      "kind": "style",
+      "tags": [
+        "dither",
+        "felt",
+        "fiber",
+        "error diffusion"
+      ],
+      "claims": {
+        "medium": "computational.dither-felt",
+        "texture": "computational.dither-felt",
+        "lighting": "computational.dither-felt"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the supplied scene into a shallow felt-fiber relief",
+          "tags": [
+            "shallow felt-fiber relief"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Build tonal transitions from irregular interleaved fiber clusters rather than smooth gradients",
+          "tags": [
+            "interleaved dithered fiber clusters"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep illumination broad enough to reveal short fibers without hard pin highlights",
+          "tags": [
+            "broad short-fiber illumination"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "computational.voronoi-glass",
+      "name": "Cellular cast-glass surface",
+      "description": "Unequal translucent cells articulate supplied forms without turning the scene into a window.",
+      "category": "computational-surfaces",
+      "kind": "style",
+      "tags": [
+        "voronoi",
+        "cast glass",
+        "cellular",
+        "translucent"
+      ],
+      "claims": {
+        "medium": "computational.voronoi-glass",
+        "texture": "computational.voronoi-glass",
+        "lighting": "computational.voronoi-glass"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render existing forms as contiguous cast-glass cellular surfaces",
+          "tags": [
+            "contiguous cast-glass cellular surfaces"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Vary the cell size with supplied surface curvature and retain continuous identifying contours",
+          "tags": [
+            "curvature-responsive unequal glass cells"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use restrained internal light diffusion with narrow darker cell boundaries",
+          "tags": [
+            "internal diffusion and narrow dark cell edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "computational.moire-satin",
+      "name": "Interference satin",
+      "description": "A controlled crossing-thread pattern gives large forms changing surface rhythm.",
+      "category": "computational-surfaces",
+      "kind": "style",
+      "tags": [
+        "moire",
+        "satin",
+        "interference",
+        "textile"
+      ],
+      "claims": {
+        "medium": "computational.moire-satin",
+        "texture": "computational.moire-satin",
+        "lighting": "computational.moire-satin"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Represent the supplied forms through a tailored satin-surface illustration",
+          "tags": [
+            "tailored satin-surface illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Overlay two fine thread directions to create broad interference bands along existing contours",
+          "tags": [
+            "crossing-thread interference bands"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let wide satin highlights roll across the existing form without erasing its markings",
+          "tags": [
+            "wide rolling satin highlights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "computational.density-plot",
+      "name": "Density-coded pen field",
+      "description": "Pen-stroke density models volume without outlines or invented chart data.",
+      "category": "computational-surfaces",
+      "kind": "style",
+      "tags": [
+        "pen plot",
+        "density",
+        "hatching",
+        "field"
+      ],
+      "claims": {
+        "medium": "computational.density-plot",
+        "texture": "computational.density-plot",
+        "detail": "computational.density-plot"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Draw the supplied scene as a pen-plotter field study",
+          "tags": [
+            "pen-plotter field study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Model light and dark through local stroke density while keeping individual paths readable",
+          "tags": [
+            "locally density-coded pen paths"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "detail",
+          "text": "Use sparse paths around fine identifying features and supplied lettering",
+          "tags": [
+            "sparse paths around identifying features"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

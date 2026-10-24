@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.dreamcore",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Dreamcore",
   "description": "Soft nostalgic discontinuities and luminous dream logic, with independently composable grades.",
   "license": "CC0-1.0",
@@ -21,7 +21,9 @@
       ],
       "claims": {
         "medium": "dreamcore.soft-memory",
-        "texture": "dreamcore.soft-memory"
+        "texture": "dreamcore.soft-memory",
+        "lighting": "dreamcore.soft-memory",
+        "mood": "dreamcore.soft-memory"
       },
       "clauses": [
         {
@@ -34,9 +36,9 @@
         },
         {
           "axis": "lighting",
-          "text": "Diffuse window light through an almost milky haze",
+          "text": "Diffuse the existing illumination through an almost milky haze",
           "tags": [
-            "hazy windowlight"
+            "milky diffuse illumination"
           ],
           "min_intensity": 0.4
         },
@@ -75,14 +77,16 @@
       ],
       "claims": {
         "medium": "dreamcore.toybox-reverie",
-        "texture": "dreamcore.toybox-reverie"
+        "texture": "dreamcore.toybox-reverie",
+        "palette": "dreamcore.toybox-reverie",
+        "composition": "dreamcore.toybox-reverie"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Present the subject with the suspended scale of a remembered childhood play space",
+          "text": "Use the soft, suspended rendering of a playful remembered dream",
           "tags": [
-            "childhood toybox dream"
+            "soft suspended dream rendering"
           ],
           "min_intensity": 0.01
         },
@@ -104,9 +108,9 @@
         },
         {
           "axis": "texture",
-          "text": "Suggest soft plastic gleam beside fuzzy worn fabric",
+          "text": "Suggest a fine synthetic gleam and softly worn surface grain on existing forms",
           "tags": [
-            "plastic and felt textures"
+            "fine synthetic gleam and worn grain"
           ],
           "min_intensity": 0.92
         }
@@ -128,14 +132,17 @@
         "serene"
       ],
       "claims": {
-        "medium": "dreamcore.sunlit-void"
+        "medium": "dreamcore.sunlit-void",
+        "composition": "dreamcore.sunlit-void",
+        "lighting": "dreamcore.sunlit-void",
+        "mood": "dreamcore.sunlit-void"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Place the scene within an abstract daylight-washed dream environment",
+          "text": "Apply a daylight-washed dream treatment to the supplied scene",
           "tags": [
-            "sunlit white dream space"
+            "daylight-washed dream treatment"
           ],
           "min_intensity": 0.01
         },
@@ -181,14 +188,17 @@
         "daydream"
       ],
       "claims": {
-        "medium": "dreamcore.cloudroom"
+        "medium": "dreamcore.cloudroom",
+        "lighting": "dreamcore.cloudroom",
+        "composition": "dreamcore.cloudroom",
+        "palette": "dreamcore.cloudroom"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Blend the existing setting with the airy logic of a room remembered through clouds",
+          "text": "Give existing scene boundaries an airy, incompletely remembered quality",
           "tags": [
-            "cloudlike dream interior"
+            "airy incompletely remembered boundaries"
           ],
           "min_intensity": 0.01
         },
@@ -202,9 +212,9 @@
         },
         {
           "axis": "composition",
-          "text": "Fade far boundaries rather than resolving every wall edge",
+          "text": "Fade only existing far boundaries while retaining the supplied forms",
           "tags": [
-            "dissolving room boundaries"
+            "faded existing far boundaries"
           ],
           "min_intensity": 0.78
         },
@@ -235,38 +245,40 @@
       ],
       "claims": {
         "medium": "dreamcore.childhood-bedroom",
-        "texture": "dreamcore.childhood-bedroom"
+        "texture": "dreamcore.childhood-bedroom",
+        "composition": "dreamcore.childhood-bedroom",
+        "lighting": "dreamcore.childhood-bedroom"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Reinterpret the scene as a childhood room reconstructed from incomplete memory",
+          "text": "Use the tender incompleteness of a childhood memory in the supplied scene",
           "tags": [
-            "half remembered childhood bedroom"
+            "tender incomplete-memory rendering"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Keep recognizable furniture rhythms while corners feel subtly too distant",
+          "text": "Let depth intervals feel subtly stretched without introducing furniture or changing subject scale",
           "tags": [
-            "slightly elongated bedroom perspective"
+            "subtly stretched existing depth intervals"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Mix distant sunset spill with a warm isolated bedside glow",
+          "text": "Mix a distant warm key with a contained soft local glow",
           "tags": [
-            "nostalgic bedroom sunset glow"
+            "distant warm key and local glow"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Render worn cotton, painted wood and softened poster edges",
+          "text": "Soften peripheral material edges while preserving identifying marks",
           "tags": [
-            "faded room keepsakes texture"
+            "soft peripheral edges and preserved identifying marks"
           ],
           "min_intensity": 0.92
         }
@@ -289,7 +301,9 @@
       ],
       "claims": {
         "medium": "dreamcore.paper-sky",
-        "texture": "dreamcore.paper-sky"
+        "texture": "dreamcore.paper-sky",
+        "composition": "dreamcore.paper-sky",
+        "palette": "dreamcore.paper-sky"
       },
       "clauses": [
         {
@@ -342,7 +356,10 @@
         "nostalgia"
       ],
       "claims": {
-        "medium": "dreamcore.afternoon-loop"
+        "medium": "dreamcore.afternoon-loop",
+        "lighting": "dreamcore.afternoon-loop",
+        "composition": "dreamcore.afternoon-loop",
+        "mood": "dreamcore.afternoon-loop"
       },
       "clauses": [
         {
@@ -396,22 +413,24 @@
       ],
       "claims": {
         "medium": "dreamcore.forgotten-garden",
-        "texture": "dreamcore.forgotten-garden"
+        "texture": "dreamcore.forgotten-garden",
+        "composition": "dreamcore.forgotten-garden",
+        "lighting": "dreamcore.forgotten-garden"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Render a gardenlike atmosphere remembered from a dream rather than direct observation",
+          "text": "Use a softly organic dream treatment without changing the supplied setting",
           "tags": [
-            "dreamlike forgotten garden"
+            "softly organic dream treatment"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Partially conceal transitions between planted forms and pathways",
+          "text": "Let transitions between the existing forms feel gently incomplete",
           "tags": [
-            "soft garden pathway transitions"
+            "gently incomplete existing transitions"
           ],
           "min_intensity": 0.4
         },
@@ -425,9 +444,9 @@
         },
         {
           "axis": "texture",
-          "text": "Suggest translucent leaf edges and soft pollenlike grain",
+          "text": "Use translucent edge rendering and fine powderlike grain on existing forms",
           "tags": [
-            "soft translucent foliage"
+            "translucent edges and powderlike grain"
           ],
           "min_intensity": 0.92
         }
@@ -449,22 +468,25 @@
         "surreal"
       ],
       "claims": {
-        "medium": "dreamcore.stairway-nowhere"
+        "medium": "dreamcore.stairway-nowhere",
+        "composition": "dreamcore.stairway-nowhere",
+        "lighting": "dreamcore.stairway-nowhere",
+        "mood": "dreamcore.stairway-nowhere"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Recast the scene with the improbable yet calm geometry of dream stairs",
+          "text": "Apply calm impossible-perspective drawing to the supplied scene",
           "tags": [
-            "surreal dreamy staircase"
+            "calm impossible-perspective drawing"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Let connected landings change scale or alignment in subtle unexplained ways",
+          "text": "Let existing peripheral alignments drift subtly while keeping requested spatial relationships intact",
           "tags": [
-            "impossible stair geometry"
+            "subtle peripheral alignment drift"
           ],
           "min_intensity": 0.4
         },
@@ -502,22 +524,25 @@
         "recursion"
       ],
       "claims": {
-        "medium": "dreamcore.mirror-sleep"
+        "medium": "dreamcore.mirror-sleep",
+        "composition": "dreamcore.mirror-sleep",
+        "lighting": "dreamcore.mirror-sleep",
+        "mood": "dreamcore.mirror-sleep"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Give the scene the still quality of a reflection glimpsed in a dream",
+          "text": "Give the supplied scene a still, faintly displaced reflective rendering",
           "tags": [
-            "dream mirror scene"
+            "still displaced reflective rendering"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Repeat existing forms within mirrors with slight differences in alignment",
+          "text": "Offset only tonal contour echoes without adding mirrors or duplicating scene entities",
           "tags": [
-            "subtle inconsistent reflections"
+            "offset tonal contours without duplicated entities"
           ],
           "min_intensity": 0.4
         },
@@ -531,9 +556,9 @@
         },
         {
           "axis": "mood",
-          "text": "Create a gentle sense that the reflection remembers a different moment",
+          "text": "Let the supplied moment feel softly suspended and slightly out of phase",
           "tags": [
-            "uncanny gentle mirror memory"
+            "softly suspended out-of-phase mood"
           ],
           "min_intensity": 0.92
         }
@@ -556,7 +581,9 @@
       ],
       "claims": {
         "medium": "dreamcore.underwater-daylight",
-        "texture": "dreamcore.underwater-daylight"
+        "texture": "dreamcore.underwater-daylight",
+        "lighting": "dreamcore.underwater-daylight",
+        "palette": "dreamcore.underwater-daylight"
       },
       "clauses": [
         {
@@ -609,30 +636,33 @@
         "uncanny"
       ],
       "claims": {
-        "medium": "dreamcore.oversized-furniture"
+        "medium": "dreamcore.oversized-furniture",
+        "composition": "dreamcore.oversized-furniture",
+        "lighting": "dreamcore.oversized-furniture",
+        "mood": "dreamcore.oversized-furniture"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Use the visual logic of a comfortable dream where ordinary furniture feels disproportionate",
+          "text": "Use a comfortable dream treatment with slightly uncertain background depth",
           "tags": [
-            "gentle domestic scale surrealism"
+            "comfortable dream rendering with uncertain depth"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Scale background objects subtly beyond expectation while preserving the main subject",
+          "text": "Modulate the spacing of existing background shapes while retaining required scale relationships",
           "tags": [
-            "subtle oversized furniture"
+            "modulated background spacing with retained subject scale"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Keep household lighting familiar despite the impossible proportions",
+          "text": "Keep soft familiar illumination despite the uncertain depth",
           "tags": [
-            "ordinary light in impossible room"
+            "soft familiar illumination"
           ],
           "min_intensity": 0.78
         },
@@ -663,7 +693,9 @@
       ],
       "claims": {
         "medium": "dreamcore.polaroid-dream",
-        "texture": "dreamcore.polaroid-dream"
+        "texture": "dreamcore.polaroid-dream",
+        "palette": "dreamcore.polaroid-dream",
+        "mood": "dreamcore.polaroid-dream"
       },
       "clauses": [
         {
@@ -717,14 +749,16 @@
       ],
       "claims": {
         "medium": "dreamcore.porcelain-sunrise",
-        "texture": "dreamcore.porcelain-sunrise"
+        "texture": "dreamcore.porcelain-sunrise",
+        "lighting": "dreamcore.porcelain-sunrise",
+        "palette": "dreamcore.porcelain-sunrise"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Describe the scene as a quiet porcelain-like dream at sunrise",
+          "text": "Give existing forms a quiet porcelain-like dream rendering",
           "tags": [
-            "porcelain dream dawn"
+            "quiet porcelain-like dream rendering"
           ],
           "min_intensity": 0.01
         },
@@ -770,30 +804,33 @@
         "dream"
       ],
       "claims": {
-        "medium": "dreamcore.quiet-carousel"
+        "medium": "dreamcore.quiet-carousel",
+        "composition": "dreamcore.quiet-carousel",
+        "lighting": "dreamcore.quiet-carousel",
+        "mood": "dreamcore.quiet-carousel"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Interpret the scene through the still charm of a carousel remembered after sleep",
+          "text": "Use the still ornamental rhythm of a wistful dream illustration",
           "tags": [
-            "dreamlike silent carousel"
+            "still ornamental dream illustration"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Arrange recurring ornamental shapes in circular or gently radial rhythms",
+          "text": "Draw a gentle radial rhythm from supplied contours without adding ornaments or objects",
           "tags": [
-            "circular dream fairground pattern"
+            "radial rhythm from supplied contours"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Use scattered decorative bulbs softened by mistlike bloom",
+          "text": "Use scattered small highlights softened by mistlike bloom",
           "tags": [
-            "soft fairground bulb glow"
+            "small highlights with mistlike bloom"
           ],
           "min_intensity": 0.78
         },
@@ -823,7 +860,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "dreamcore.faded-lullaby"
+        "palette": "dreamcore.faded-lullaby",
+        "lighting": "dreamcore.faded-lullaby"
       },
       "clauses": [
         {
@@ -860,7 +898,8 @@
         "soft"
       ],
       "claims": {
-        "lighting": "dreamcore.milkglass"
+        "lighting": "dreamcore.milkglass",
+        "palette": "dreamcore.milkglass"
       },
       "clauses": [
         {
@@ -897,7 +936,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "dreamcore.moon-pastel"
+        "palette": "dreamcore.moon-pastel",
+        "lighting": "dreamcore.moon-pastel"
       },
       "clauses": [
         {
@@ -934,7 +974,8 @@
         "modifier"
       ],
       "claims": {
-        "composition": "dreamcore.dream-discontinuity"
+        "composition": "dreamcore.dream-discontinuity",
+        "detail": "dreamcore.dream-discontinuity"
       },
       "clauses": [
         {
@@ -947,9 +988,9 @@
         },
         {
           "axis": "detail",
-          "text": "Repeat a minor background element as though a memory skipped a beat",
+          "text": "Give peripheral edges a slight interrupted tonal cadence without repeating scene entities",
           "tags": [
-            "soft recurring detail"
+            "interrupted peripheral tonal cadence"
           ],
           "min_intensity": 0.4
         }
@@ -971,7 +1012,8 @@
         "modifier"
       ],
       "claims": {
-        "texture": "dreamcore.memory-bleed"
+        "texture": "dreamcore.memory-bleed",
+        "mood": "dreamcore.memory-bleed"
       },
       "clauses": [
         {

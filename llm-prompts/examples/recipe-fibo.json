@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "prompt": "Three ceramic vessels rest on a table: one tall narrow vase at the back, one round bowl at the front left, and one lidded jar at the front right. A small chip marks the bowl's rim. The vessels do not overlap.",
+  "model": "fibo",
+  "styles": [
+    {
+      "id": "computational.flow-engraving",
+      "intensity": 0.8
+    },
+    {
+      "id": "optics.frosted-rim",
+      "intensity": 0.6
+    }
+  ],
+  "locked_axes": [],
+  "conflict_policy": "last_wins"
+}

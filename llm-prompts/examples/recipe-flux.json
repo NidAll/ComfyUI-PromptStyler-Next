@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "prompt": "Two bicycle mechanics stand beside one cargo bicycle. The mechanic on the left holds the front wheel while the other adjusts the rear rack. A sign on the wall reads \"REPAIR 7\". Both mechanics and the entire bicycle are visible.",
+  "model": "flux",
+  "styles": [
+    {
+      "id": "cinema.noir",
+      "intensity": 0.8
+    },
+    {
+      "id": "grade.sage",
+      "intensity": 0.6
+    }
+  ],
+  "locked_axes": [
+    "composition"
+  ],
+  "conflict_policy": "last_wins"
+}

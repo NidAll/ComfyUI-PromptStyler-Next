@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.internet-aesthetics",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Internet Aesthetics",
   "description": "Independent internet-era and online-subculture visual languages without franchise-specific imagery.",
   "license": "CC0-1.0",
@@ -21,22 +21,24 @@
       ],
       "claims": {
         "medium": "netculture.vaporwave-plaza",
-        "texture": "netculture.vaporwave-plaza"
+        "texture": "netculture.vaporwave-plaza",
+        "composition": "netculture.vaporwave-plaza",
+        "palette": "netculture.vaporwave-plaza"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Interpret the scene through a vaporwave-era 3D plaza aesthetic",
+          "text": "Interpret the supplied scene through a vaporwave-era early-CG rendering treatment",
           "tags": [
-            "vaporwave digital plaza"
+            "vaporwave early-cg rendering"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Use clean vanishing-point architecture and repeated simplified forms",
+          "text": "Use clear existing vanishing directions and simplified supplied forms without duplicating entities",
           "tags": [
-            "retro digital perspective grid"
+            "clear existing vanishing directions"
           ],
           "min_intensity": 0.4
         },
@@ -74,14 +76,17 @@
         "retro"
       ],
       "claims": {
-        "medium": "netculture.mallsoft"
+        "medium": "netculture.mallsoft",
+        "lighting": "netculture.mallsoft",
+        "composition": "netculture.mallsoft",
+        "palette": "netculture.mallsoft"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Style the scene like soft-focus commercial-mall nostalgia from an old digital memory",
+          "text": "Apply a soft-focus mallsoft memory treatment without changing the supplied setting",
           "tags": [
-            "mallsoft retail nostalgia"
+            "mallsoft soft-focus memory treatment"
           ],
           "min_intensity": 0.01
         },
@@ -95,9 +100,9 @@
         },
         {
           "axis": "composition",
-          "text": "Favor escalator or concourse rhythms with abundant breathing room",
+          "text": "Give existing receding forms a gently rhythmic spacing with generous breathing room",
           "tags": [
-            "calm mall atrium geometry"
+            "gently rhythmic existing receding forms"
           ],
           "min_intensity": 0.78
         },
@@ -128,7 +133,9 @@
       ],
       "claims": {
         "medium": "netculture.frutiger-aero",
-        "texture": "netculture.frutiger-aero"
+        "texture": "netculture.frutiger-aero",
+        "palette": "netculture.frutiger-aero",
+        "lighting": "netculture.frutiger-aero"
       },
       "clauses": [
         {
@@ -149,9 +156,9 @@
         },
         {
           "axis": "texture",
-          "text": "Use translucent glass, glossy rounded interfaces and clean liquid reflections",
+          "text": "Use translucent gloss and softly rounded surface boundaries on the supplied forms",
           "tags": [
-            "glossy glass bubble surfaces"
+            "translucent gloss and rounded surface boundaries"
           ],
           "min_intensity": 0.78
         },
@@ -182,7 +189,9 @@
       ],
       "claims": {
         "medium": "netculture.y2k-chrome",
-        "texture": "netculture.y2k-chrome"
+        "texture": "netculture.y2k-chrome",
+        "palette": "netculture.y2k-chrome",
+        "composition": "netculture.y2k-chrome"
       },
       "clauses": [
         {
@@ -236,7 +245,9 @@
       ],
       "claims": {
         "medium": "netculture.web1-diy",
-        "texture": "netculture.web1-diy"
+        "texture": "netculture.web1-diy",
+        "composition": "netculture.web1-diy",
+        "palette": "netculture.web1-diy"
       },
       "clauses": [
         {
@@ -249,9 +260,9 @@
         },
         {
           "axis": "composition",
-          "text": "Mix bordered boxes and chunky icons in deliberately imperfect alignment",
+          "text": "Align the existing visual masses with the deliberately imperfect rhythm of early-web graphics without inserting icons",
           "tags": [
-            "early web nested box layout"
+            "imperfect early-web alignment of existing forms"
           ],
           "min_intensity": 0.4
         },
@@ -290,7 +301,9 @@
       ],
       "claims": {
         "medium": "netculture.scenecore",
-        "texture": "netculture.scenecore"
+        "texture": "netculture.scenecore",
+        "palette": "netculture.scenecore",
+        "composition": "netculture.scenecore"
       },
       "clauses": [
         {
@@ -344,7 +357,9 @@
       ],
       "claims": {
         "medium": "netculture.kidcore",
-        "texture": "netculture.kidcore"
+        "texture": "netculture.kidcore",
+        "palette": "netculture.kidcore",
+        "composition": "netculture.kidcore"
       },
       "clauses": [
         {
@@ -398,7 +413,9 @@
       ],
       "claims": {
         "medium": "netculture.cyber-angel",
-        "texture": "netculture.cyber-angel"
+        "texture": "netculture.cyber-angel",
+        "palette": "netculture.cyber-angel",
+        "lighting": "netculture.cyber-angel"
       },
       "clauses": [
         {
@@ -452,7 +469,9 @@
       ],
       "claims": {
         "medium": "netculture.glossy-ui",
-        "texture": "netculture.glossy-ui"
+        "texture": "netculture.glossy-ui",
+        "composition": "netculture.glossy-ui",
+        "lighting": "netculture.glossy-ui"
       },
       "clauses": [
         {
@@ -465,17 +484,17 @@
         },
         {
           "axis": "composition",
-          "text": "Build a clear hierarchy of rounded cards and inset panel surfaces",
+          "text": "Use a hierarchy of softly rounded existing visual regions without adding controls or panels",
           "tags": [
-            "rounded software panels"
+            "softly rounded existing visual hierarchy"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Give controls soft top-left highlights and shallow recessed shadows",
+          "text": "Give supplied forms soft upper-left highlights and shallow recessed shadows",
           "tags": [
-            "glossy ui specular light"
+            "soft upper-left highlights and recessed shadows"
           ],
           "min_intensity": 0.78
         },
@@ -506,7 +525,9 @@
       ],
       "claims": {
         "medium": "netculture.soft-grunge",
-        "texture": "netculture.soft-grunge"
+        "texture": "netculture.soft-grunge",
+        "palette": "netculture.soft-grunge",
+        "mood": "netculture.soft-grunge"
       },
       "clauses": [
         {
@@ -560,7 +581,9 @@
       ],
       "claims": {
         "medium": "netculture.blog-era",
-        "texture": "netculture.blog-era"
+        "texture": "netculture.blog-era",
+        "composition": "netculture.blog-era",
+        "palette": "netculture.blog-era"
       },
       "clauses": [
         {
@@ -589,9 +612,9 @@
         },
         {
           "axis": "texture",
-          "text": "Include torn-image boundaries and low-resolution decorative graphic fragments",
+          "text": "Use torn-edge paper grain and low-resolution rescan texture on existing boundaries",
           "tags": [
-            "ripped photo edges and pixels"
+            "torn-edge paper grain and rescan texture"
           ],
           "min_intensity": 0.92
         }
@@ -614,7 +637,9 @@
       ],
       "claims": {
         "medium": "netculture.pixel-glitter",
-        "texture": "netculture.pixel-glitter"
+        "texture": "netculture.pixel-glitter",
+        "detail": "netculture.pixel-glitter",
+        "palette": "netculture.pixel-glitter"
       },
       "clauses": [
         {
@@ -667,7 +692,10 @@
         "2000s"
       ],
       "claims": {
-        "medium": "netculture.desktop-utopia"
+        "medium": "netculture.desktop-utopia",
+        "composition": "netculture.desktop-utopia",
+        "lighting": "netculture.desktop-utopia",
+        "palette": "netculture.desktop-utopia"
       },
       "clauses": [
         {
@@ -680,25 +708,25 @@
         },
         {
           "axis": "composition",
-          "text": "Favor expansive open landscapes or spacious gradients with a single clear focal area",
+          "text": "Use spacious tonal transitions and one clear focal relationship among the supplied forms",
           "tags": [
-            "open wallpaper vista"
+            "spacious existing tonal transitions"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Use cheerful even daylight and soft gradient skies",
+          "text": "Use cheerful even illumination with soft broad gradients",
           "tags": [
-            "bright screensaver sky"
+            "even illumination and soft broad gradients"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "palette",
-          "text": "Balance vivid leaf green, clean blue and white cloud highlights",
+          "text": "Balance vivid green and clean blue with restrained white highlights",
           "tags": [
-            "classic desktop green blue"
+            "vivid green blue and white highlights"
           ],
           "min_intensity": 0.92
         }
@@ -721,7 +749,9 @@
       ],
       "claims": {
         "medium": "netculture.cyber-goth",
-        "texture": "netculture.cyber-goth"
+        "texture": "netculture.cyber-goth",
+        "palette": "netculture.cyber-goth",
+        "composition": "netculture.cyber-goth"
       },
       "clauses": [
         {
@@ -775,22 +805,24 @@
       ],
       "claims": {
         "medium": "netculture.net-art-collage",
-        "texture": "netculture.net-art-collage"
+        "texture": "netculture.net-art-collage",
+        "composition": "netculture.net-art-collage",
+        "palette": "netculture.net-art-collage"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Create an original net-art assemblage using fragments of early desktop imagery",
+          "text": "Give the supplied scene an early-desktop net-art collage treatment without adding screen content",
           "tags": [
-            "net art desktop collage"
+            "early-desktop net-art collage treatment"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Overlap mismatched rectangular windows and cropped content regions",
+          "text": "Offset rectangular boundaries between existing visual regions without inserting windows or duplicating subjects",
           "tags": [
-            "layered desktop windows"
+            "offset existing rectangular boundaries"
           ],
           "min_intensity": 0.4
         },
@@ -828,7 +860,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "netculture.candy-plastic"
+        "palette": "netculture.candy-plastic",
+        "lighting": "netculture.candy-plastic"
       },
       "clauses": [
         {
@@ -865,7 +898,8 @@
         "grade"
       ],
       "claims": {
-        "lighting": "netculture.early-lcd"
+        "lighting": "netculture.early-lcd",
+        "palette": "netculture.early-lcd"
       },
       "clauses": [
         {
@@ -902,7 +936,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "netculture.peach-cyan"
+        "palette": "netculture.peach-cyan",
+        "lighting": "netculture.peach-cyan"
       },
       "clauses": [
         {
@@ -939,22 +974,23 @@
         "modifier"
       ],
       "claims": {
-        "detail": "netculture.cursor-trail"
+        "detail": "netculture.cursor-trail",
+        "composition": "netculture.cursor-trail"
       },
       "clauses": [
         {
           "axis": "detail",
-          "text": "Add a small sparse trail of cursorlike highlights near an existing focal detail",
+          "text": "Use a sparse displaced highlight trail along an existing focal contour without adding a pointer icon",
           "tags": [
-            "subtle retro cursor trail"
+            "displaced highlights along existing contours"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Keep interface ornaments secondary to the established subject",
+          "text": "Keep any existing peripheral details subordinate to the established subject",
           "tags": [
-            "minimal ui overlay ornaments"
+            "subordinate existing peripheral details"
           ],
           "min_intensity": 0.4
         }
@@ -976,7 +1012,8 @@
         "modifier"
       ],
       "claims": {
-        "texture": "netculture.sticker-chaos"
+        "texture": "netculture.sticker-chaos",
+        "composition": "netculture.sticker-chaos"
       },
       "clauses": [
         {
@@ -989,9 +1026,9 @@
         },
         {
           "axis": "composition",
-          "text": "Overlap a few small decorative shapes with playful imperfect spacing",
+          "text": "Offset the edges of existing visual masses with playful imperfect alignment without adding decorative objects",
           "tags": [
-            "scattered sticker overlays"
+            "playful imperfect existing-edge alignment"
           ],
           "min_intensity": 0.4
         }

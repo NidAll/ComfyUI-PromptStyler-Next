@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "prompt": "A shop entrance has one rectangular sign displaying exactly two lines:\n\"Café • 茶\nOPEN 7\"\nThe first line sits above the second. One closed door is directly below the sign, and a potted fern stands to the right of the door.",
+  "model": "qwen-image-2.1",
+  "styles": [
+    {
+      "id": "hierarchy.lettering-clearance",
+      "intensity": 0.8
+    }
+  ],
+  "locked_axes": [
+    "composition"
+  ],
+  "conflict_policy": "last_wins"
+}

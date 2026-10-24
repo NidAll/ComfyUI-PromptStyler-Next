@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.next.symbolism-metaphysical",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Symbolism and Metaphysical Art",
   "description": "Metaphysical space, allegory, symbolic art and poetic geometries.",
   "license": "CC0-1.0",
@@ -20,7 +20,10 @@
         "stillness"
       ],
       "claims": {
-        "medium": "metaphysical.empty-metaphysical-plaza"
+        "medium": "metaphysical.empty-metaphysical-plaza",
+        "composition": "metaphysical.empty-metaphysical-plaza",
+        "lighting": "metaphysical.empty-metaphysical-plaza",
+        "mood": "metaphysical.empty-metaphysical-plaza"
       },
       "clauses": [
         {
@@ -33,9 +36,9 @@
         },
         {
           "axis": "composition",
-          "text": "Arrange familiar architecture in unusually empty and geometrically balanced perspective",
+          "text": "Use measured perspective and spacious intervals between the supplied forms without removing inhabitants",
           "tags": [
-            "empty classical plaza perspective"
+            "measured spacious supplied-form perspective"
           ],
           "min_intensity": 0.4
         },
@@ -75,7 +78,8 @@
       "claims": {
         "medium": "metaphysical.allegorical-portrait",
         "palette": "metaphysical.allegorical-portrait",
-        "texture": "metaphysical.allegorical-portrait"
+        "texture": "metaphysical.allegorical-portrait",
+        "composition": "metaphysical.allegorical-portrait"
       },
       "clauses": [
         {
@@ -129,7 +133,9 @@
       ],
       "claims": {
         "medium": "metaphysical.oneiric-columns",
-        "texture": "metaphysical.oneiric-columns"
+        "texture": "metaphysical.oneiric-columns",
+        "composition": "metaphysical.oneiric-columns",
+        "lighting": "metaphysical.oneiric-columns"
       },
       "clauses": [
         {
@@ -142,17 +148,17 @@
         },
         {
           "axis": "composition",
-          "text": "Repeat austere columnlike vertical intervals with quietly unresolved depth",
+          "text": "Use quietly unresolved depth between existing upright contour intervals without adding columns",
           "tags": [
-            "receding metaphysical colonnade"
+            "unresolved depth between existing upright contours"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Let flat sunlit geometry contrast with unexpectedly deep interior passages",
+          "text": "Contrast flat illuminated planes with deeper shaded regions of the supplied scene",
           "tags": [
-            "solemn bright architectural shadows"
+            "flat illuminated planes and deep shaded regions"
           ],
           "min_intensity": 0.75
         },
@@ -183,7 +189,9 @@
       ],
       "claims": {
         "medium": "metaphysical.silent-statuary",
-        "texture": "metaphysical.silent-statuary"
+        "texture": "metaphysical.silent-statuary",
+        "composition": "metaphysical.silent-statuary",
+        "lighting": "metaphysical.silent-statuary"
       },
       "clauses": [
         {
@@ -238,22 +246,23 @@
       "claims": {
         "medium": "metaphysical.symbolic-garden",
         "palette": "metaphysical.symbolic-garden",
-        "texture": "metaphysical.symbolic-garden"
+        "texture": "metaphysical.symbolic-garden",
+        "composition": "metaphysical.symbolic-garden"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Compose the given subject as a symbolist garden painting with decorative plant rhythms",
+          "text": "Use symbolist painting with organically curving contour rhythms on the supplied scene",
           "tags": [
-            "allegorical garden painting"
+            "symbolist painting with organic contour rhythms"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Use repeated botanical arc patterns around the original focal forms",
+          "text": "Echo existing curved shapes in a decorative framing rhythm without adding plants",
           "tags": [
-            "symbolic botanical frame"
+            "existing curved-shape framing rhythm"
           ],
           "min_intensity": 0.4
         },
@@ -291,22 +300,25 @@
         "painting"
       ],
       "claims": {
-        "medium": "metaphysical.stillness-and-chimney"
+        "medium": "metaphysical.stillness-and-chimney",
+        "composition": "metaphysical.stillness-and-chimney",
+        "lighting": "metaphysical.stillness-and-chimney",
+        "mood": "metaphysical.stillness-and-chimney"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Reframe the existing environment as a metaphysical industrial landscape painting",
+          "text": "Apply the still geometry of metaphysical landscape painting to the supplied scene",
           "tags": [
-            "metaphysical industrial oil painting"
+            "still metaphysical landscape-painting geometry"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Separate large utilitarian shapes using improbable stretches of empty horizontal ground",
+          "text": "Separate the existing masses through broad horizontal tonal intervals without removing supplied forms",
           "tags": [
-            "empty industrial geometric vista"
+            "broad horizontal intervals between supplied masses"
           ],
           "min_intensity": 0.4
         },
@@ -346,7 +358,8 @@
       "claims": {
         "medium": "metaphysical.gilded-sleep",
         "palette": "metaphysical.gilded-sleep",
-        "texture": "metaphysical.gilded-sleep"
+        "texture": "metaphysical.gilded-sleep",
+        "composition": "metaphysical.gilded-sleep"
       },
       "clauses": [
         {
@@ -400,7 +413,9 @@
       ],
       "claims": {
         "medium": "metaphysical.theatre-of-objects",
-        "texture": "metaphysical.theatre-of-objects"
+        "texture": "metaphysical.theatre-of-objects",
+        "composition": "metaphysical.theatre-of-objects",
+        "lighting": "metaphysical.theatre-of-objects"
       },
       "clauses": [
         {
@@ -454,7 +469,9 @@
       ],
       "claims": {
         "medium": "metaphysical.mirror-of-forms",
-        "palette": "metaphysical.mirror-of-forms"
+        "palette": "metaphysical.mirror-of-forms",
+        "composition": "metaphysical.mirror-of-forms",
+        "mood": "metaphysical.mirror-of-forms"
       },
       "clauses": [
         {
@@ -467,9 +484,9 @@
         },
         {
           "axis": "composition",
-          "text": "Echo existing shapes across an imperfect central axis without adding new figures",
+          "text": "Echo the rhythm of existing contours across an imperfect central axis without duplicating entities",
           "tags": [
-            "near symmetrical form echo"
+            "existing contour rhythm across imperfect central axis"
           ],
           "min_intensity": 0.4
         },
@@ -508,22 +525,24 @@
       ],
       "claims": {
         "medium": "metaphysical.antique-city-dusk",
-        "palette": "metaphysical.antique-city-dusk"
+        "palette": "metaphysical.antique-city-dusk",
+        "composition": "metaphysical.antique-city-dusk",
+        "lighting": "metaphysical.antique-city-dusk"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Render the subject in a carefully modeled metaphysical cityscape painting",
+          "text": "Use the careful modeling of a metaphysical painted study of the supplied scene",
           "tags": [
-            "metaphysical old city oil painting"
+            "carefully modeled metaphysical painting"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Use an architectural corridor of arcades and blank walls to emphasize emptiness",
+          "text": "Emphasize existing upright and horizontal alignments without adding arcades or walls",
           "tags": [
-            "quiet arcaded urban perspective"
+            "existing upright and horizontal alignments"
           ],
           "min_intensity": 0.4
         },
@@ -537,9 +556,9 @@
         },
         {
           "axis": "lighting",
-          "text": "Cast extended evening silhouettes across otherwise empty paving",
+          "text": "Cast elongated evening-like shadows only from the supplied forms",
           "tags": [
-            "stretched dusk arcade shadows"
+            "elongated supplied-form shadows"
           ],
           "min_intensity": 0.92
         }
@@ -562,22 +581,24 @@
       ],
       "claims": {
         "medium": "metaphysical.symbolic-water",
-        "texture": "metaphysical.symbolic-water"
+        "texture": "metaphysical.symbolic-water",
+        "composition": "metaphysical.symbolic-water",
+        "lighting": "metaphysical.symbolic-water"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Translate the scene into an allegorical still-water oil painting",
+          "text": "Use the quiet surface modeling of an allegorical oil painting without introducing water",
           "tags": [
-            "symbolist reflective water painting"
+            "quiet allegorical oil-surface modeling"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Use a stable horizon or waterline to divide real and reflected subject forms",
+          "text": "Divide existing upper and lower tonal fields while preserving the supplied subject relationships",
           "tags": [
-            "balanced water reflection symmetry"
+            "balanced existing upper and lower tonal fields"
           ],
           "min_intensity": 0.4
         },
@@ -591,9 +612,9 @@
         },
         {
           "axis": "texture",
-          "text": "Paint small opaque ripple marks within otherwise smoothly glazed water areas",
+          "text": "Paint small opaque ripplelike brush marks within otherwise smoothly glazed existing forms",
           "tags": [
-            "glazed oil water ripples"
+            "ripplelike brush marks within existing glazed forms"
           ],
           "min_intensity": 0.92
         }
@@ -617,22 +638,23 @@
       "claims": {
         "medium": "metaphysical.symbolic-absence",
         "palette": "metaphysical.symbolic-absence",
-        "texture": "metaphysical.symbolic-absence"
+        "texture": "metaphysical.symbolic-absence",
+        "composition": "metaphysical.symbolic-absence"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Treat the subject as a minimal symbolist painting about absence",
+          "text": "Use a minimal symbolist painting treatment with a strong sense of spatial pause",
           "tags": [
-            "minimal allegory painting"
+            "minimal symbolist spatial-pause painting"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Place one recognizable original form in wide intentional empty painted space",
+          "text": "Use wide painted breathing space while keeping every supplied entity visible",
           "tags": [
-            "symbolic negative space composition"
+            "painted breathing space with all supplied entities"
           ],
           "min_intensity": 0.4
         },
@@ -672,7 +694,8 @@
       "claims": {
         "medium": "metaphysical.ornamental-myth",
         "palette": "metaphysical.ornamental-myth",
-        "texture": "metaphysical.ornamental-myth"
+        "texture": "metaphysical.ornamental-myth",
+        "composition": "metaphysical.ornamental-myth"
       },
       "clauses": [
         {
@@ -725,22 +748,25 @@
         "symbolism"
       ],
       "claims": {
-        "medium": "metaphysical.nocturnal-arch"
+        "medium": "metaphysical.nocturnal-arch",
+        "composition": "metaphysical.nocturnal-arch",
+        "lighting": "metaphysical.nocturnal-arch",
+        "mood": "metaphysical.nocturnal-arch"
       },
       "clauses": [
         {
           "axis": "medium",
-          "text": "Turn the subject into an architectural symbolist nocturne painted with muted oils",
+          "text": "Use a muted oil-painted symbolist nocturne treatment of the supplied scene",
           "tags": [
-            "nocturnal architectural symbolism"
+            "muted symbolist nocturne painting"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Enclose the visible focal area within a broad archlike dark framing mass",
+          "text": "Frame existing focal forms with a broad archlike dark tonal mass without adding architecture",
           "tags": [
-            "framed nocturnal arch perspective"
+            "archlike dark tonal framing"
           ],
           "min_intensity": 0.4
         },
@@ -779,7 +805,9 @@
       ],
       "claims": {
         "medium": "metaphysical.marble-and-cloud",
-        "texture": "metaphysical.marble-and-cloud"
+        "texture": "metaphysical.marble-and-cloud",
+        "composition": "metaphysical.marble-and-cloud",
+        "lighting": "metaphysical.marble-and-cloud"
       },
       "clauses": [
         {
@@ -832,7 +860,8 @@
         "pigment"
       ],
       "claims": {
-        "palette": "metaphysical.faded-ochre"
+        "palette": "metaphysical.faded-ochre",
+        "texture": "metaphysical.faded-ochre"
       },
       "clauses": [
         {
@@ -869,7 +898,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "metaphysical.jade-wine"
+        "palette": "metaphysical.jade-wine",
+        "lighting": "metaphysical.jade-wine"
       },
       "clauses": [
         {
@@ -906,7 +936,8 @@
         "grade"
       ],
       "claims": {
-        "palette": "metaphysical.twilight-stone"
+        "palette": "metaphysical.twilight-stone",
+        "lighting": "metaphysical.twilight-stone"
       },
       "clauses": [
         {
@@ -942,7 +973,10 @@
         "modifier",
         "light"
       ],
-      "claims": {},
+      "claims": {
+        "lighting": "metaphysical.long-shadow",
+        "composition": "metaphysical.long-shadow"
+      },
       "clauses": [
         {
           "axis": "lighting",
@@ -977,7 +1011,10 @@
         "modifier",
         "space"
       ],
-      "claims": {},
+      "claims": {
+        "mood": "metaphysical.symbolic-pause",
+        "composition": "metaphysical.symbolic-pause"
+      },
       "clauses": [
         {
           "axis": "mood",
