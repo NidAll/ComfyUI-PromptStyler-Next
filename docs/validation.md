@@ -1,9 +1,30 @@
 # Validation and release status
 
-Version 0.3.0 source is maintained in the GitHub repository
+Version 0.4.0 adds the optional local MiniCPM upscaler to the source tree. The source repository is
 `NidAll/ComfyUI-PromptStyler-Next`. The semantic-base toolkit and pack review are documented in
 [the 0.3.0 review](style-review.md). This source update creates no package-index
 release or version tag.
+
+## 0.4.0 optional VLM authoring
+
+The standalone suite passes 202 tests (plus one explicitly opt-in CUDA module
+skip), the actual ComfyUI host suite passes 41 tests, and all 18 Node/Studio
+tests pass. Core statement/branch coverage remains 93%; core typing and repository
+lint/format checks pass. Three additional tiny CUDA tests verify INT8 projection
+fusion, RMS normalization and recurrent DeltaNet behavior against references.
+
+Real MiniCPM generation covered text, image and combined requests using the
+existing local native INT8 artifact. An isolated offline ComfyUI server queued
+all three input modes through Upscale Base Prompt → Style → PreviewAny. Identical
+requests reused all outputs; edited text reused the loader. Real image inference
+also succeeded with quantized-weight dequantization blocked, and profiling
+confirmed native INT8 linear/GEMV plus fused DeltaNet convolution/decode kernels.
+This validates dispatch and bounded examples, not arbitrary prompt fidelity.
+
+See [the upscaler guide](upscaler.md) for measured cold/warm latency, memory,
+known omissions/style leakage, installation requirements and repeatable benchmark
+commands. No diffusion image-quality comparison or hosted CI run is claimed.
+Model weights, host dependencies, core code and unrelated services are unchanged.
 
 ## 0.3.0 toolkit and reviewed catalog
 

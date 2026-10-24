@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.4.0 — 2026-10-24
+
+Added optional V3 Load Prompt Upscaler and Upscale Base Prompt nodes for the existing
+MiniCPM-V 4.7 1B native INT8 deployment. Text, image and combined inputs feed the
+semantic-base toolkit contract before shared style composition. Includes native
+model placement, cached handles, fused decoding, paragraph-token stopping, bounded
+inputs, quoted-text checks, diagnostics and executable workflow examples. The core
+and Studio service remain independent of the VLM runtime.
+
 ## 0.3.0 — 2026-10-24
 
 Adds a seven-prompt LLM toolkit for semantic base creation, neutralization,

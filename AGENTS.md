@@ -13,3 +13,11 @@ Claim every authored axis in bundled packs, including variants, and review both
 prose and tags for scene substitution or invented text. Run scripts/audit_library.py
 and the base-corpus regressions after pack edits. Image and LLM quality claims
 require actual evaluation beyond deterministic composition checks.
+
+Optional VLM authoring belongs only to comfyui/upscaler/; importing the core,
+HTTP service or node schemas must not load model tensors or initialize CUDA.
+Use the existing packaged MiniCPM artifact, pinned local vendor code and native
+Comfy ModelPatcher/Kitchen operations. Never download weights or upgrade host
+dependencies automatically. Cache handles through the loader node, not global
+tensor caches. Keep semantic-base contract/examples and diagnostics testable
+without Torch. Reinstall the updated project into the existing ComfyUI venv.

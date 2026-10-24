@@ -6,6 +6,8 @@ Clone this repository into `ComfyUI/custom_nodes/ComfyUI-PromptStyler-Next` and 
 
 | Node | Use | Outputs |
 |---|---|---|
+| **PromptStyler Next: Load Prompt Upscaler** | Load a local MiniCPM-V 4.7 1B INT8 artifact once; native model management owns placement | Cached upscaler handle |
+| **PromptStyler Next: Upscale Base Prompt** | Author a semantic base from text, one image, or both; see [setup and measured performance](upscaler.md) | Base prompt, inspection JSON |
 | **PromptStyler Next: Style** | Pick one style, profile, and intensity; optional negative text and protected axes are under advanced inputs | Positive text, negative text, inspection JSON |
 | **PromptStyler Next: Compose Recipe** | Compose ordered layers with explicit conflict policy using recipe JSON | Positive text, negative text, inspection JSON |
 | **PromptStyler Next: Encode Text** | Convert the two text outputs using a compatible native text encoder | Positive conditioning, negative conditioning |
@@ -44,6 +46,9 @@ Fibo's structured profile can emit a native JSON caption. Keep that output intac
 Negative support describes the selected inference profile, not every possible checkpoint in a family. Unsupported negative text is retained in the recipe and explained in warnings rather than silently used as positive text. Distilled/Turbo profiles can differ from their base models.
 
 ## Examples
+
+- `examples/comfyui-upscaler-workflow.json`: importable visual text-to-base-to-style graph. Connect Load Image to its optional image socket for either image input mode.
+- `examples/comfyui-upscaler-api.json`: equivalent executable API graph, requiring the existing MiniCPM model.
 
 - `examples/comfyui-text-workflow.json`: importable visual graph with style and recipe examples plus native text previews. It needs no models.
 - `examples/comfyui-text-api.json`: matching API graph; send it as the `prompt` field of a normal ComfyUI `/prompt` request.

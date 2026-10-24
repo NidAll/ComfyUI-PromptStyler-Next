@@ -9,6 +9,10 @@ and does not send prompts to an external service. This is a separate implementat
 and repository; the original [PromptStyler](https://github.com/NidAll/ComfyUI_PromptStyler)
 remains independent.
 
+The optional [local prompt upscaler](docs/upscaler.md) turns text, one image, or
+both into a semantic base before styling. Its MiniCPM VLM runtime stays inside
+the ComfyUI integration and uses an existing local INT8 model.
+
 ## Start with a recipe
 
 For a base that can be reused across presets, start with the

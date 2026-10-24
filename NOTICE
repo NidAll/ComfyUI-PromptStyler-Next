@@ -2,8 +2,20 @@ PromptStyler Next
 Copyright 2026 NidAll
 
 This is an independent implementation inspired by the concept of
-NidAll/ComfyUI_PromptStyler. Original source and template text were not copied.
+NidAll/ComfyUI_PromptStyler. Original PromptStyler source and template text were not copied.
 Code is licensed under Apache-2.0. First-party style definitions and original
 llm-prompts toolkit text/examples are CC0-1.0;
 see STYLE-LICENSE. Third-party community packs retain their declared licenses.
 HEISS UI and ComfyUI are separate projects; no affiliation is implied.
+
+Optional MiniCPM runtime attribution:
+- comfyui/upscaler/vendor/minicpmv4_7/: OpenBMB and Hugging Face,
+  Transformers v5.19.0 configuration, modeling and processing files, Apache-2.0.
+  Source: https://github.com/huggingface/transformers/tree/v5.19.0/src/transformers/models/minicpmv4_7
+  Local changes: absolute imports into installed Transformers and documentation
+  for precomputed multimodal outputs. Original license headers are retained.
+- Native fused loading/operations are adapted from NidAll's independent
+  ComfyUI-Anima-Prompt-Architect (Apache-2.0), without its PixAI stage.
+- Supported checkpoint: saidutta69/MiniCPM-V-4.7-1B-heretic, revision
+  f2ec4781396394599a524bd396133ed117b38da1, derived from OpenBMB MiniCPM-V 4.7 1B,
+  Apache-2.0. Weights and model assets are separate; none are bundled here.

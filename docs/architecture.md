@@ -1,5 +1,12 @@
 # Architecture
 
+The optional `comfyui/upscaler/` authoring stage is upstream of this deterministic
+engine. It owns pinned local MiniCPM code, embedded-asset validation, native
+ModelPatcher placement and serialized generation. Its loader handle is cached by
+ComfyUI; no global model/tensor cache or model import enters `promptstyler_next/`.
+The only handoff to the engine is the accepted base STRING. The standalone HTTP
+service and Studio integration do not load the VLM. See [upscaler](upscaler.md).
+
 ```mermaid
 flowchart TB
   Packs[Versioned JSON packs] --> Validation[Bounded strict validation]

@@ -4,6 +4,10 @@ Copy one of the `.txt` prompts into an LLM and replace its final input block wit
 your request. Paste the resulting **base prompt** into PromptStyler Next. These
 files are reusable authoring instructions; the engine does not call an LLM.
 
+For automatic local authoring inside ComfyUI, the optional
+[MiniCPM prompt upscaler](../docs/upscaler.md) distills this contract into a short
+inference prompt with examples and accepts text, an image, or both.
+
 | Start from | Copy this file | Result |
 | --- | --- | --- |
 | An idea | [01-create-base.txt](01-create-base.txt) | One portable semantic description |
