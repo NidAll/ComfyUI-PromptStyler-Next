@@ -5,5 +5,5 @@ from .engine import Engine
 from .errors import StylerError
 from .types import Composition, Layer, Recipe
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 __all__ = ["Composition", "Engine", "Layer", "ModelAdapter", "Profile", "Recipe", "StylerError"]

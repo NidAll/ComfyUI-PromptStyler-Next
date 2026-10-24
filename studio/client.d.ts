@@ -1,4 +1,4 @@
-export type ModelId = 'generic' | 'sdxl' | 'flux' | 'qwen-image' | 'moss-image' | 'anima' | 'fibo' | (string & {});
+export type ModelId = 'generic' | 'sdxl' | 'flux' | 'qwen-image' | 'moss-image' | 'anima' | 'fibo' | 'fibo-edit' | (string & {});
 export type StyleLayer = { id: string; intensity: number };
 export type Recipe = { schema_version?: 1; prompt: string; negative?: string; model?: ModelId; styles?: StyleLayer[]; conflict_policy?: 'last_wins' | 'first_wins' | 'error'; locked_axes?: string[] };
 export type StyleMetadata = { id: string; name: string; description: string; category: string; kind: 'style' | 'grade' | 'modifier'; tags: string[]; [key: string]: unknown };

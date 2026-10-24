@@ -106,3 +106,20 @@ def test_renderers_leave_subject_and_encoder_syntax_untouched():
 def test_known_fibo_style_fields_require_native_string_types(caption):
     with pytest.raises(StylerError):
         FiboAdapter().render(json.dumps(caption), ())
+
+
+def test_fibo_edit_keeps_instruction_grammar_and_structured_fields():
+    from promptstyler_next.adapters import FiboEditAdapter
+
+    adapter = FiboEditAdapter()
+    clauses = (Clause("medium", "Render in pastel", ("pastel drawing",)),)
+    assert adapter.render("Turn the coat red", clauses) == "Turn the coat red. Render in pastel."
+    original = {
+        "edit_instruction": "Turn the coat red",
+        "structured_caption": {"short_description": "A coat", "aesthetics": {"color_scheme": "red"}},
+    }
+    result = json.loads(adapter.render(json.dumps(original), clauses))
+    assert result["edit_instruction"] == original["edit_instruction"]
+    assert result["structured_caption"]["short_description"] == "A coat"
+    assert result["structured_caption"]["style_medium"] == "Render in pastel"
+    assert "palette" in adapter.locked_axes(json.dumps(original))

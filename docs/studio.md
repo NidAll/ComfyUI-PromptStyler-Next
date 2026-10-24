@@ -17,8 +17,9 @@ sign-in. `src/app/useGenerationActions.ts` constructs a body containing `prompt`
 
 HEISS does not expose a general third-party style plugin loader. A small explicit
 server mount and an optional composer panel are therefore the integration points.
-This repository leaves the installed HEISS files untouched. It does not inject
-scripts, replace graph builders, or patch minified release assets.
+The reusable modules support a source integration. The reviewed local release
+integration also uses an exact-SHA256 guarded asset patch; unknown frontend versions
+fail safely and require a fresh review. It does not replace native graph builders.
 
 ```mermaid
 flowchart LR
@@ -67,11 +68,12 @@ import the bridge, then mount it **immediately after** the existing `requestGuar
 import { createPromptStylerBridge } from '../../ComfyUI-PromptStyler-Next/studio/bridge.mjs';
 
 // Existing HEISS requestGuard is immediately above this mount.
-app.use('/api/promptstyler/v1', requireSignedIn, createPromptStylerBridge({
+app.use(requireSignedIn); // Global, so req.path retains /api/... for access decisions.
+app.use('/api/promptstyler/v1', createPromptStylerBridge({
   upstream: 'http://127.0.0.1:8791',
   timeoutMs: 5000,
 }));
-// Existing express.json(...) and global requireSignedIn stay below for other routes.
+// Existing express.json(...) follows. Remove the old later global auth mount.
 ```
 
 The example relative import assumes sibling project directories; adapt it to your
@@ -103,36 +105,48 @@ categories, descriptions, tags and preview metadata. Keep selected layer IDs,
 intensities and order in the panel's state. Obtain model capabilities from
 `profiles()`; do not infer them from filename substring matching.
 
-At the fresh-generation boundary in `useGenerationActions.ts`, after building the
-request body and **before** its existing `/api/generate` call:
+## Native panel and generation integration (0.2)
 
-```ts
-// Explicit mapping belongs to the host's selected model/profile UI.
-const selectedStylerProfile = 'flux';
-const selectedLayers = [{ id: 'cinema.noir', intensity: 0.75 }]; // use catalog IDs
-const { body: styledBody, composition } = await styleGenerationBody(styler, requestBody, {
-  schema_version: 1,
-  model: selectedStylerProfile,
-  styles: selectedLayers,
-  conflict_policy: 'last_wins',
-  locked_axes: [],
-});
-// Pass styledBody to HEISS's existing apiJson('/api/generate', ...) call.
-// Keep composition.recipe/fingerprint alongside panel state if you want replay.
-```
+`createPromptStylerPanel(React)` from `studio/react-panel.mjs` uses the host's React
+instance. Mount it beside the prompt field with `{profile, prompt, negative, mode}`
+and load `studio/panel.css`. It provides search, category/type filters, favorites,
+ordered layers, intensity, protected axes, model override, and an inspected preview.
+Selections are held per profile for the page lifetime; only favorites persist.
+Empty or disabled recipes leave generation unchanged. Video profiles hide styling.
 
-Use an ID actually returned by the catalog. The helper preserves every other
-request field and does not mutate the input. Apply styling **once** to a fresh
-request. HEISS retry requests already contain their final prompt; do not style
-those again. A simpler first integration is an explicit “Apply styled prompt”
-action that sets the existing prompt/negative fields, followed by the unchanged
-HEISS generation path.
+At fresh request creation, add `promptStyler: studioPromptStylerSelection(profile)`.
+Keep the original prompt editable. Do not re-run this selection step on retry bodies.
+`studio/model-profile.mjs` maps explicit HEISS family/capability metadata to engine
+profile IDs; it contains no prompt formatting algorithms.
 
-For imported workflows with their own `promptComposition` prefix/suffix, preview
-the final combined graph prompt and avoid applying the same style in both layers.
-Keep conditioning in HEISS's existing family graph: styling does not authorize
-replacing Qwen/MOSS/Anima/Fibo text encoders with a generic CLIP path. Fibo results
-may be caption JSON; preserve that serialized model prompt as returned.
+`createManagedPromptStyler` from `studio/server.mjs` lazily starts one owned Python
+service on an ephemeral loopback port. Configure its Python interpreter and project
+root explicitly. Mount `.middleware` behind global host guards and before JSON
+parsing. Use `.compose(recipe)` to validate and normalize generation recipes.
+Call `.stop()` from host signal handlers and `.close()` during async teardown.
+An unavailable interpreter produces an actionable request error.
+
+For custom workflows, invoke `injectPromptStyler(graph, workflow, body)` from
+`studio/graph.mjs` after normal mapped inputs and before submission. The target is
+`workflow.promptStyler` (a `{node,input,model}` metadata entry), or `controls.prompt`.
+It inserts one `PSNextCompose` between the mapped string/link and its native encoder.
+A mapped negative input can consume output 1. The host checks that the node exists
+before submission. Each retry starts with a fresh saved graph, preventing accumulation.
+For built-in graphs, compose the actual prompt on the server once and remove the
+recipe from the final retry body. Keep all native conditioning and sampler paths.
+
+The reviewed Studio installation supports these saved workflows:
+
+| Workflow | Profile | Styling location |
+| --- | --- | --- |
+| Anima Image Clone | `anima-turbo` | After the image captioner, before native text encoding |
+| MOSS Flash / Detail | `moss-image-dmd` | Native positive prompt input, CFG 1 |
+| Fibo 2 Edit Turbo | `fibo-edit` | Native edit instruction input |
+
+Anima preview displays style directions; the image caption is only available during
+generation. Fibo edit preserves plain instructions or existing caption JSON without
+inventing scene entities. Selected profiles do not change model weights, sampling,
+LoRAs or workflow mode. Automatic launcher update checks remain disabled.
 
 ## HTTP contract
 
@@ -169,7 +183,8 @@ Host/Origin rejection. `node --test studio/tests/*.test.mjs` verifies middleware
 client behavior, generation body preservation, timeouts, limits, and a real Python
 sidecar round trip. Set `PROMPTSTYLER_PYTHON` when its interpreter is not `python3`.
 
-A maintainer must opt into the small HEISS source mount/panel change. This package
-does not claim that a particular installed or upstream HEISS release already
-ships that mount. Image-generation quality and live authenticated HEISS generation
-remain separate acceptance checks from transport and text-composition correctness.
+The local installed HEISS integration was checked in an isolated copy of its actual
+release UI, including the Generate request payload, all three saved graph routes,
+and a model-free linked-caption execution in ComfyUI. Upstream HEISS does not ship
+this panel by default. Full image generation and perceptual quality remain separate
+acceptance checks; browser transport checks do not prove them.

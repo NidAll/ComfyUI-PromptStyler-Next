@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 — 2026-10-24
+
+Native HEISS composer panel, managed Python sidecar, explicit host profile mapping,
+and one-node native graph composition. Generated image captions can feed the
+optional `PSNextCompose.prompt` input. Adds the Fibo edit instruction profile,
+preserving plain edit instructions and nested structured captions. Includes browser
+request, native graph, sidecar lifecycle, and linked-caption execution validation.
+
 ## 0.1.0 — 2026-10-24
 
 Initial independent implementation: deterministic visual-axis composition, typed

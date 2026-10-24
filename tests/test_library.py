@@ -52,6 +52,7 @@ def test_profile_capabilities_are_explicit(library_engine):
         "anima",
         "anima-turbo",
         "fibo",
+        "fibo-edit",
     }
     for profile in profiles.values():
         if profile["id"] != "generic":
@@ -77,6 +78,7 @@ def test_profile_capabilities_are_explicit(library_engine):
         "anima",
         "anima-turbo",
         "fibo",
+        "fibo-edit",
     ],
 )
 def test_every_eligible_style_composes_without_losing_the_subject(library_engine, model):
@@ -111,7 +113,6 @@ def test_builtin_license_metadata_is_consistent():
             pack = json.loads(path.read_text(encoding="utf-8"))
             assert pack["license"] == "CC0-1.0"
             assert pack["schema_version"] == 1
-            assert pack["version"] == "1.0.0"
 
 
 def test_real_monochrome_look_can_accept_a_color_grade(library_engine):

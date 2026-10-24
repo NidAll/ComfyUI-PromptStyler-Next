@@ -245,3 +245,16 @@ def test_raw_array_widget_is_not_a_valid_comfy_api_link(monkeypatch):
     graph["1"]["inputs"]["locked_axes"] = []
     result = asyncio.run(execution.validate_prompt("psnext-test-raw-array", graph, None))
     assert result[3]["1"]["errors"][0]["type"] == "bad_linked_input"
+
+
+def test_recipe_node_styles_native_generated_text_input():
+    request = {
+        "prompt": "placeholder",
+        "model": "anima-turbo",
+        "styles": [{"id": "cinema.noir", "intensity": 0.75}],
+    }
+    output = COMPOSE.execute(json.dumps(request), prompt="An image-derived bird beside a lake")
+    assert output.result[0].startswith("An image-derived bird beside a lake")
+    inspection = json.loads(output.result[2])
+    assert inspection["recipe"]["prompt"] == "An image-derived bird beside a lake"
+    assert "placeholder" not in output.result[0]

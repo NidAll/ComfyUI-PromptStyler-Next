@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "next.photography",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Photographic craft",
   "description": "Camera and lighting techniques that keep the requested subject intact.",
   "license": "CC0-1.0",
@@ -61,7 +61,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -119,7 +120,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -177,7 +179,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -235,7 +238,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -292,7 +296,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -350,7 +355,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -407,7 +413,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -464,7 +471,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -520,7 +528,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -577,7 +586,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -634,7 +644,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -691,7 +702,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -748,7 +760,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -805,7 +818,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -863,7 +877,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -920,7 +935,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -977,7 +993,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1035,7 +1052,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1092,7 +1110,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1150,7 +1169,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1208,7 +1228,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1264,7 +1285,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1321,7 +1343,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1377,7 +1400,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     }

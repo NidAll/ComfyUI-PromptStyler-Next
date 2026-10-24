@@ -71,3 +71,24 @@ contract job. Hosted CI has not run because this repository has not been pushed.
 Publication should follow those hosted results and any image-quality acceptance
 the maintainer wants to claim. Existing PromptStyler, user services, models and
 host dependencies were preserved; temporary validation services were stopped.
+
+## Studio integration 0.2.0
+
+The standalone suite passed 159 tests (the host module is skipped outside ComfyUI),
+with 93% combined statement/branch coverage. All 27 actual-host node tests and 18
+JavaScript transport/generation/lifecycle tests passed. Ruff checks/format and strict
+core mypy passed. The node module is verified in its real host rather than imported
+through standalone mypy. Wheel and source checks include an outside-checkout
+dependency-free wheel installation. Catalog: 832 styles, 33 packs, 11 profiles.
+
+An isolated copy of the installed HEISS release passed browser search, selection,
+preview and Generate recipe capture; selection survives lazy gallery loading and a
+controlled generation error. All three installed saved workflows passed graph
+injection, original-input preservation and retry identity checks. A real model-free
+ComfyUI queue execution passed with a generated text link feeding PSNextCompose.
+Bridge health, foreign-origin rejection, remote-client denial and duplicate JSON
+rejection passed. Release preservation/rollback and guarded frontend patch checks
+passed, including lazy-entry imports and compressed asset parity.
+
+These checks do not run Anima, MOSS or Fibo image inference, establish perceptual
+quality, or test an authenticated remote Studio session. No image models were loaded.

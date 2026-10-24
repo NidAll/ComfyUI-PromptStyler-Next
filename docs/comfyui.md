@@ -71,3 +71,10 @@ API graphs wrap array-valued widgets as `{"__value__": []}` (or a selected list)
 because a raw list is reserved for graph links. The bundled API examples use this
 native literal wrapper. Recipe JSON itself uses ordinary arrays; it is a string
 input, independent of ComfyUI's graph-link representation.
+
+## Generated caption input
+
+`PSNextCompose` accepts an optional advanced STRING input named `prompt`. When
+connected, it replaces only the recipe's prompt before composition. This permits
+an image captioner to feed the same engine used by Studio while retaining the
+native text encoder. See [the model-free linked-caption API example](../examples/comfyui-generated-caption-api.json).

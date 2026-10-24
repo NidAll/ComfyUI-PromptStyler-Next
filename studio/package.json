@@ -1,10 +1,47 @@
 {
   "name": "@promptstyler-next/studio",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
-  "engines": { "node": ">=20.9" },
-  "exports": { "./client": { "types": "./client.d.ts", "default": "./client.mjs" }, "./bridge": { "types": "./bridge.d.ts", "default": "./bridge.mjs" } },
-  "scripts": { "test": "node --test tests/*.test.mjs" },
-  "license": "Apache-2.0"
+  "engines": {
+    "node": ">=20.9"
+  },
+  "exports": {
+    "./client": {
+      "types": "./client.d.ts",
+      "default": "./client.mjs"
+    },
+    "./bridge": {
+      "types": "./bridge.d.ts",
+      "default": "./bridge.mjs"
+    },
+    "./panel": {
+      "types": "./react-panel.d.ts",
+      "default": "./react-panel.mjs"
+    },
+    "./server": {
+      "types": "./server.d.ts",
+      "default": "./server.mjs"
+    },
+    "./graph": {
+      "types": "./graph.d.ts",
+      "default": "./graph.mjs"
+    },
+    "./model-profile": {
+      "types": "./model-profile.d.ts",
+      "default": "./model-profile.mjs"
+    }
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs"
+  },
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  }
 }

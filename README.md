@@ -2,7 +2,7 @@
 
 A creative styling engine with explicit model profiles, composable visual directions,
 and reproducible recipes. Use it from Python, ComfyUI V3, or a local style workbench
-that can connect to HEISS Studio.
+and a native HEISS Studio composer panel.
 
 The engine has **no runtime dependencies**. It runs offline, does not load a model,
 and does not send prompts to an external service. This is a separate implementation
@@ -59,7 +59,7 @@ promptstyler-next recommend 'botanical ink illustration' --model anima
 | --- | --- | --- |
 | Python / CLI | Discovery, validated packs, composition, inspection, metadata recommendations | `pip install .` or a built wheel |
 | ComfyUI V3 | Single-style node, JSON recipe node, native text conditioning for compatible profiles | Clone this complete repository into `ComfyUI/custom_nodes/` |
-| Studio | Local workbench, versioned HTTP API, typed JS client, Express bridge for HEISS | Run the Python service; explicitly mount the bridge in HEISS source |
+| Studio | Local workbench, versioned HTTP API, typed JS client, Express bridge for HEISS | Mount the managed service and React panel in HEISS |
 
 The Python wheel contains the engine, data, schemas and workbench. The complete Git
 checkout or source distribution also contains the ComfyUI extension and Studio

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "next.studio-weatherfield",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Landscape and weather observation",
   "description": "Authored landscape and weather observation directions that restyle the existing subject without inventing scene objects.",
   "license": "CC0-1.0",
@@ -60,7 +60,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -116,7 +117,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -173,7 +175,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -230,7 +233,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -287,7 +291,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -344,7 +349,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -401,7 +407,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -458,7 +465,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -515,7 +523,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -572,7 +581,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -629,7 +639,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -686,7 +697,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -743,7 +755,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -800,7 +813,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -856,7 +870,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -913,7 +928,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -970,7 +986,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1027,7 +1044,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1084,7 +1102,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1141,7 +1160,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1198,7 +1218,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1254,7 +1275,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1311,7 +1333,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1368,7 +1391,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1425,7 +1449,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1482,7 +1507,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1539,7 +1565,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1596,7 +1623,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1653,7 +1681,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1710,7 +1739,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1767,7 +1797,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1824,7 +1855,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1881,7 +1913,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1938,7 +1971,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -1995,7 +2029,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -2052,7 +2087,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -2109,7 +2145,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -2166,7 +2203,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -2223,7 +2261,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     },
@@ -2279,7 +2318,8 @@
         "qwen-image-2.1",
         "moss-image",
         "moss-image-dmd",
-        "fibo"
+        "fibo",
+        "fibo-edit"
       ],
       "variants": {}
     }

@@ -122,7 +122,14 @@ class PSNextCompose(io.ComfyNode):
                     multiline=True,
                     dynamic_prompts=False,
                     default='{"schema_version":1,"prompt":"A quiet mountain village","model":"sdxl","styles":[]}',
-                )
+                ),
+                io.String.Input(
+                    "prompt",
+                    optional=True,
+                    force_input=True,
+                    advanced=True,
+                    tooltip="Optional native text input overrides the recipe subject, for image-generated captions.",
+                ),
             ],
             outputs=[
                 io.String.Output("positive", display_name="positive"),
@@ -132,8 +139,11 @@ class PSNextCompose(io.ComfyNode):
         )
 
     @classmethod
-    def execute(cls, recipe: str) -> io.NodeOutput:
-        return _outputs(get_engine().compose(parse_json(recipe)))
+    def execute(cls, recipe: str, prompt: str | None = None) -> io.NodeOutput:
+        value = parse_json(recipe)
+        if prompt is not None and isinstance(value, dict):
+            value = {**value, "prompt": prompt}
+        return _outputs(get_engine().compose(value))
 
 
 class NativeTextEncoder(Protocol):

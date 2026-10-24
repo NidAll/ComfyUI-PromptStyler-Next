@@ -14,6 +14,7 @@ Profiles describe the workflow contract. They do not load models, select sampler
 | `anima` | Lowercase spaced tags | Available with CFG | Supported |
 | `anima-turbo` | Lowercase spaced tags | Suppressed at CFG 1 | Supported |
 | `fibo` | JSON caption fields | Text interface unsupported | Use native Fibo workflow |
+| `fibo-edit` | Preserved edit instruction or caption JSON | Suppressed | Use native Fibo edit workflow |
 
 “Supported” means the node uses the host's native scheduled text encoding with the supplied encoder. It does not verify that the user connected the right weights. Profiles marked `specialized` deliberately reject the generic encoding node; styled strings remain available for the correct native nodes.
 
@@ -44,6 +45,11 @@ Anima supports tags, natural language and mixtures. System-added tags are lowerc
 ## Fibo 2
 
 Fibo generation expects structured captions. The adapter maps the user's unmodified text into `short_description`, then maps explicit style axes into `style_medium`, `lighting.conditions`, `aesthetics.color_scheme`, `aesthetics.composition`, `aesthetics.mood_atmosphere` and `artistic_style`. Existing caption fields win, including empty strings. It never fabricates objects, locations, references or `text_render` entries. This is a deterministic partial-caption mapper, not a VLM captioner or full semantic parser. Native Fibo negative captions and edit instructions remain outside the text-negative interface. [Official Diffusers Fibo 2 API](https://huggingface.co/docs/diffusers/main/api/pipelines/bria_fibo2), [Bria caption example](https://raw.githubusercontent.com/Bria-AI/FIBO/main/default_json_caption.json).
+
+`fibo-edit` preserves plain edit instructions and appends natural visual directions.
+For JSON input it styles caption fields, including a nested `structured_caption`,
+while preserving `edit_instruction` and user fields. It does not infer the intended
+edit from a reference image. Choose `fibo` for text-to-image captions.
 
 ## Unknown models and extensions
 

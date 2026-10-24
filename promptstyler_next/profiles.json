@@ -167,6 +167,23 @@
         "https://huggingface.co/docs/diffusers/main/api/pipelines/bria_fibo2",
         "https://raw.githubusercontent.com/Bria-AI/FIBO/main/default_json_caption.json"
       ]
+    },
+    {
+      "id": "fibo-edit",
+      "name": "Fibo 2 instruction edit",
+      "format": "natural",
+      "negative": false,
+      "weighting": false,
+      "conditioning": "specialized",
+      "evidence": "conservative",
+      "aliases": [
+        "fibo-2-edit"
+      ],
+      "guidance": "Keep edit instructions in natural language. Existing structured captions retain edit_instruction and protected caption fields. Use the native image-aware Fibo edit encoder; this profile never invents scene objects.",
+      "sources": [
+        "https://huggingface.co/briaai/Fibo-2.0-edit-turbo",
+        "https://github.com/Bria-AI/FIBO"
+      ]
     }
   ]
 }

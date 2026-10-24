@@ -184,6 +184,44 @@ class FiboAdapter:
         return v.canonical(caption)
 
 
+@dataclass(frozen=True, slots=True)
+class FiboEditAdapter:
+    """Keep free-form edit instructions intact; style structured captions in place."""
+
+    revision: str = "fibo-edit/1"
+
+    def locked_axes(self, prompt: str) -> tuple[str, ...]:
+        if not prompt.lstrip().startswith("{"):
+            return ()
+        caption = _fibo_caption(prompt)
+        if "structured_caption" in caption:
+            nested = caption["structured_caption"]
+            if not isinstance(nested, (str, dict)):
+                raise StylerError(
+                    "invalid_caption",
+                    "Structured caption must be text or an object.",
+                    "prompt.structured_caption",
+                )
+            return FiboAdapter().locked_axes(v.canonical(nested) if isinstance(nested, dict) else nested)
+        return FiboAdapter().locked_axes(prompt)
+
+    def render(self, prompt: str, clauses: tuple[Clause, ...]) -> str:
+        if not prompt.lstrip().startswith("{"):
+            return NaturalAdapter().render(prompt, clauses)
+        caption = _fibo_caption(prompt)
+        if "structured_caption" not in caption:
+            return FiboAdapter().render(prompt, clauses)
+        nested = caption["structured_caption"]
+        if not isinstance(nested, (str, dict)):
+            raise StylerError(
+                "invalid_caption",
+                "Structured caption must be text or an object.",
+                "prompt.structured_caption",
+            )
+        styled = FiboAdapter().render(v.canonical(nested) if isinstance(nested, dict) else nested, clauses)
+        return v.canonical({**caption, "structured_caption": v.parse_json(styled)})
+
+
 class AdapterRegistry:
     def __init__(self, profiles: Iterable[Profile], adapters: dict[str, ModelAdapter] | None = None) -> None:
         self._profiles = tuple(sorted(profiles, key=lambda profile: profile.id))
@@ -201,7 +239,9 @@ class AdapterRegistry:
         self._adapters: dict[str, ModelAdapter] = {}
         for profile in self._profiles:
             default: ModelAdapter = (
-                FiboAdapter()
+                FiboEditAdapter()
+                if profile.id == "fibo-edit"
+                else FiboAdapter()
                 if profile.id == "fibo"
                 else TagAdapter()
                 if profile.format == "tags"
