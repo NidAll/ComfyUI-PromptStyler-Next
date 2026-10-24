@@ -21,3 +21,8 @@ Comfy ModelPatcher/Kitchen operations. Never download weights or upgrade host
 dependencies automatically. Cache handles through the loader node, not global
 tensor caches. Keep semantic-base contract/examples and diagnostics testable
 without Torch. Reinstall the updated project into the existing ComfyUI venv.
+
+Expanded text authoring must preserve the entire supplied premise in its assistant
+prefix and generate continuation only. Reference inputs stay grounded; mode/schema
+changes must retain the existing widget prefix and allow omitted new API fields.
+Do not replace output-quality evaluation with length-only assertions.

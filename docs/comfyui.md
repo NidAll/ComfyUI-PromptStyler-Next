@@ -7,7 +7,7 @@ Clone this repository into `ComfyUI/custom_nodes/ComfyUI-PromptStyler-Next` and 
 | Node | Use | Outputs |
 |---|---|---|
 | **PromptStyler Next: Load Prompt Upscaler** | Load a local MiniCPM-V 4.7 1B INT8 artifact once; native model management owns placement | Cached upscaler handle |
-| **PromptStyler Next: Upscale Base Prompt** | Author a semantic base from text, one image, or both; see [setup and measured performance](upscaler.md) | Base prompt, inspection JSON |
+| **PromptStyler Next: Upscale Base Prompt** | Expand a text idea or choose Faithful clarification; accept one image or both; see [setup and measured performance](upscaler.md) | Base prompt, inspection JSON |
 | **PromptStyler Next: Style** | Pick one style, profile, and intensity; optional negative text and protected axes are under advanced inputs | Positive text, negative text, inspection JSON |
 | **PromptStyler Next: Compose Recipe** | Compose ordered layers with explicit conflict policy using recipe JSON | Positive text, negative text, inspection JSON |
 | **PromptStyler Next: Encode Text** | Convert the two text outputs using a compatible native text encoder | Positive conditioning, negative conditioning |

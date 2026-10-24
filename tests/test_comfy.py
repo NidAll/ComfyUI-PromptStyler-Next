@@ -342,10 +342,13 @@ def test_upscaler_runtime_modes_and_native_placement(runtime, model_double, text
     image = torch.zeros((1, 32, 32, 3)) if use_image else None
     result, inspection = runtime.upscale(handle, text, image)
     info = json.loads(inspection)
-    assert result == "Two foxes share a yellow umbrella."
+    assert result == ("two foxes. " if text and not use_image else "") + "Two foxes share a yellow umbrella."
     assert info["native_int8_layers"] == 137
     assert info["mode"] == ("text+image" if text and use_image else "image" if use_image else "text")
-    assert info["warnings"] == []
+    assert not info["warnings"] or info["warnings"] == [
+        "Little scene detail was added; inspect the result or increase the output budget"
+    ]
+    assert info["source_preserved"] == bool(text and not use_image)
     generations = [call[1] for call in calls if call[0] == "generate"]
     assert len(generations) == (2 if text and use_image else 1)
     assert all(item["use_cache"] and not item["do_sample"] for item in generations)
@@ -455,5 +458,73 @@ def test_upscaler_visual_graph_has_valid_sockets_and_widgets():
         if by_id[source]["type"] in classes:
             schema = classes[by_id[source]["type"]].define_schema()
             assert schema.outputs[output_slot].io_type == value_type
-    assert by_id[2]["widgets_values"] == ["two foxes sharing a yellow umbrella", 128, 1, False]
+    assert by_id[2]["widgets_values"] == ["two foxes sharing a yellow umbrella", 192, 1, False, "expanded"]
     assert next(item for item in by_id[2]["inputs"] if item["name"] == "image")["link"] is None
+
+
+@pytest.mark.parametrize("mode", ["expanded", "faithful"])
+def test_upscaler_selected_mode_reaches_prompt_policy_and_inspection(runtime, model_double, mode):
+    handle, calls = model_double
+    _, inspection = runtime.upscale(handle, "a robot reading", detail_mode=mode)
+    assert json.loads(inspection)["settings"]["detail_mode"] == mode
+    system = next(call[1][0]["content"] for call in calls if call[0] == "messages")
+    assert ("without inventing" in system) == (mode == "faithful")
+    assert ("Make the idea more visually specific" in system) == (mode == "expanded")
+
+
+def test_invalid_detail_mode_cannot_place_or_run_a_model(runtime, model_double):
+    handle, calls = model_double
+    with pytest.raises(ValueError, match="detail_mode"):
+        runtime.upscale(handle, "a robot", detail_mode="unsupported")
+    assert calls == [] and not handle.lock.locked()
+
+
+def test_new_detail_widget_keeps_the_existing_widget_prefix():
+    inputs = UPSCALE_BASE.define_schema().inputs
+    widgets = [item.id for item in inputs if item.id not in ("upscaler", "image")]
+    assert widgets == ["prompt", "max_new_tokens", "image_slices", "offload_after", "detail_mode"]
+    mode = next(item for item in inputs if item.id == "detail_mode")
+    assert mode.optional and mode.default == "expanded"
+    assert UPSCALE_BASE.fingerprint_inputs() == "semantic-base-2"
+
+
+def test_existing_api_graph_without_detail_mode_still_validates(monkeypatch):
+    from comfy.cli_args import args
+
+    monkeypatch.setattr(args, "cpu", True)
+    import execution
+    import nodes
+    from comfy_extras.nodes_preview_any import PreviewAny
+
+    for node in NODE_CLASSES:
+        monkeypatch.setitem(nodes.NODE_CLASS_MAPPINGS, node.define_schema().node_id, node)
+    monkeypatch.setitem(nodes.NODE_CLASS_MAPPINGS, "PreviewAny", PreviewAny)
+    graph = json.loads((ROOT / "examples/comfyui-upscaler-api.json").read_text())
+    graph["2"]["inputs"].pop("detail_mode")
+    graph["2"]["inputs"]["max_new_tokens"] = 128
+    valid, error, _, node_errors = asyncio.run(execution.validate_prompt("old-upscaler-api", graph, None))
+    assert valid and error is None and not node_errors
+
+
+def test_expanded_generation_prefills_all_user_constraints(runtime, model_double):
+    handle, calls = model_double
+    source = 'A wizard folding the ocean into a perfect cube using gravity. A sign reads "雨".'
+    # The model double adds a sentence; the literal text already belongs to its prefix.
+    base, inspection = runtime.upscale(handle, source)
+    assert base.startswith(source + " ")
+    info = json.loads(inspection)
+    assert info["source_preserved"] is True and info["added_words"] == 6
+    prepared = next(call[1]["text"][0] for call in calls if call[0] == "processor")
+    assert prepared.endswith(source + " ")
+
+
+def test_source_paragraphs_do_not_hide_a_truncated_continuation(runtime, model_double):
+    import torch
+
+    handle, _ = model_double
+    handle.owner.model.generate = lambda **kwargs: torch.tensor([[2, 3] + [42] * 32])
+    source = "A wizard.\n\nThe ocean folds into a cube."
+    _, inspection = runtime.upscale(handle, source, max_new_tokens=32)
+    info = json.loads(inspection)
+    assert info["generated_tokens"] == 32
+    assert any(warning.startswith("Token limit reached") for warning in info["warnings"])

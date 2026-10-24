@@ -1,6 +1,10 @@
 # Fast local base-prompt upscaling
 
 The optional ComfyUI authoring stage accepts a scene idea, one RGB image, or both.
+Version 0.4.1 adds **Expanded** (default) and **Faithful** detail modes. Expanded
+text continues your complete original scene with useful physical detail instead
+of paraphrasing it. Faithful asks for concise clarification.
+
 It distills the [semantic-base toolkit](../llm-prompts/README.md) into a compact,
 versioned inference contract and examples. Connect its **base_prompt** STRING to
 **Style → prompt** or **Compose Recipe → prompt**, then use your model's native
@@ -48,11 +52,12 @@ Import [the visual workflow](../examples/comfyui-upscaler-workflow.json) or use
 optional image socket for either image mode. The upscaler returns scene prose,
 not Fibo JSON, inspection JSON, sampler settings or conditioning.
 
-Advanced controls:
+Detail and speed controls:
 
 | Control | Default | Effect |
 | --- | --- | --- |
-| `max_new_tokens` | 128 | Output budget, 32–384; generation stops at EOS or a blank paragraph. In combined mode the grounding pass is capped at 128 and the rewrite uses this budget. |
+| `detail_mode` | `expanded` | Expanded text preserves the complete source and adds up to three supporting details about existing subjects/actions. Faithful asks for minimal additions. Image/reference content stays grounded in the evidence in both modes. |
+| `max_new_tokens` | 192 | Output budget, 32–384; generation stops at EOS or a blank paragraph. In combined mode the grounding pass is capped at 128 and the rewrite uses this budget. |
 | `image_slices` | 1 | Fastest image setting. Up to 4 allows detail crops at a time/VRAM cost; it does not improve image-generation resolution. |
 | `offload_after` | false | Reuse the resident model for prompt edits. Enable to immediately release this model's VRAM after a request. ComfyUI can offload it automatically either way. |
 
@@ -63,6 +68,10 @@ Split batches before this node. Fine lettering can require more slices, a crop
 or a supplied transcription.
 
 ## Why the fast path is fast
+
+The new mode widget is appended after the existing widgets, and API graphs may
+omit it to use Expanded. Saved 128-token budgets remain valid; 192 is the default
+for newly added nodes.
 
 The loader is a separate cacheable V3 node. Changing prompt text or style does
 not reconstruct its model. Unchanged upscaler inputs reuse ComfyUI's complete
@@ -76,6 +85,13 @@ sampling and disabled thinking. Paragraph termination matches token IDs on the
 device; it avoids decoding the full generated prefix at every step. No
 `torch.compile` warmup or mandatory heavyweight model dependency enters the core.
 
+Expanded text pre-fills the assistant response with the supplied scene and a
+sentence boundary, then generates its continuation. This keeps counts, exact
+lettering, fantasy geometry and the original action intact instead of trusting a
+free rewrite to retain them. It adds no extra generation pass. Existing aesthetic
+instructions also survive in that source: neutralize a styled prompt with the
+toolkit first. Faithful remains a model rewrite and can still omit facts.
+
 Text-only and image-only use one generation. Combined input first grounds the
 image, then rewrites that short description with the user's requirements. This
 second short text pass corrected ignored changes and displaced unrelated objects
@@ -84,26 +100,34 @@ passes and the intermediate reference content so failures can be examined.
 
 ## Measured scope and limitations
 
-On a 4 GB RTX 3050 Laptop GPU, short tested scenes measured:
+On a 4 GB RTX 3050 Laptop GPU, the initial continuation trials produced about
+35–55-word expanded descriptions rather than one-sentence paraphrases. The wizard
+case kept the exact input sentence and added how the water folds, cube edges and
+the wizard's interaction. Both the old 128-token budget and the new 192-token
+budget allow that short continuation. Longer output costs more decode time;
+Faithful is available for faster concise output. See the recorded evaluation
+summary below for the final measurements.
 
-| Request | Warm runtime time |
-| --- | ---: |
-| Two foxes sharing an umbrella | 0.54 s |
-| Small dragon reading on a train | 0.59 s |
-| Synthetic image: red rectangle left, blue circle right | 0.79 s |
-| Same image + replace the rectangle with a green triangle | 1.26 s |
+| Final test | Output words | Runtime |
+| --- | ---: | ---: |
+| Wizard + ocean + cube, Expanded, saved 128-token budget | 53 (42 added) | 2.83 s including initial GPU placement |
+| Dragon reading on a train, Expanded | 49 (40 added) | 1.52 s warm |
+| Three lemons, bowl, table and exact `雨`, Expanded | 36 (22 added) | 0.95 s warm |
+| Two foxes sharing an umbrella, Expanded | 35 (29 added) | 1.19 s warm |
+| Wizard, Expanded, real queued warm generation | 53 (42 added) | 1.87 s runtime / 2.03 s including polling |
+| Wizard, Faithful | 11 | 0.45 s warm |
+| Two-shape reference image, Expanded | 22 | 0.98 s warm |
+| Reference + replace rectangle with triangle, Expanded | 22 | 1.66 s warm |
 
-The separate model load took 1.34 s; first placement/generation took another
-1.87 s. A real queued cold text-to-style graph completed in 3.47 s, and an edited
-warm prompt in 0.77 s including client polling. An identical cached graph completed
-without VLM execution. Observed peak Torch allocation was 2.74 GB (decimal),
-excluding the CUDA context and other applications. These are local samples,
-not latency guarantees; token count, image crops, GPU load and offloading matter.
+These are bounded samples, not latency guarantees. The reference modes may produce
+identical output in both detail modes: visible evidence, rather than a word count,
+sets their detail. Expanded text adds physical content; it does not need to use
+all the available tokens. No diffusion image-quality grid was run for this fix.
 
 This is a small VLM, not a semantic verifier. It can omit facts, invent details,
-misread text or retain unwanted style language. For example, the test bowl kept
-three lemons and the exact `雨` marking but omitted its table; a deliberately
-style-heavy input retained oil-painting language and triggered a warning.
+misread text or retain unwanted style language. Expanded continuation preserves the supplied bowl, its table, three lemons and
+exact `雨` marking before adding detail. Faithful rewrites have omitted a table
+in evaluation, and style-heavy input can retain artistic language with a warning.
 Start with content-only ideas and inspect results. Use the toolkit's audit or
 manual correction for strict content fidelity. This stage never establishes
 image-generation quality or universal compatibility through a generated image.
@@ -111,12 +135,16 @@ image-generation quality or universal compatibility through a generated image.
 Empty/reasoning output and changed quoted text fail explicitly. Token-limit and
 limited style/edit-language checks appear in `warnings`; the style-language
 check is a heuristic and can flag an actual painting depicted as an object.
-Scene descriptions are not silently filtered or padded with the original request.
+Descriptions are not silently filtered. Expanded text explicitly includes the
+original scene as its prefix; Faithful and reference output remain model-authored.
 The greedy VLM output need not match across devices or dependency versions.
 Save the accepted base text and recipe for reproducible deterministic styling.
 
 Inspection includes model identity, contract/settings, token counts, individual
-pass timings, warnings, reference content and final base. Cached results retain
+pass timings, warnings, reference content and final base. `source_preserved` and
+`added_words` explain whether the accepted base contains a preserved text prefix
+and how much continuation was generated. Small additions to short inputs produce
+a warning instead of silently presenting a paraphrase as useful expansion. Cached results retain
 the timing of their original computation. Runtime logs contain counts/timings,
 not prompt text. There is no telemetry or VLM endpoint in the Studio service.
 

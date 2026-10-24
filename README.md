@@ -4,7 +4,7 @@ A modular creative styling platform for **ComfyUI**, **HEISS Studio**, and
 **standalone Python workflows**. Build a scene description, combine visual
 styles, and render the additions using the prompting convention of your model.
 
-**Version 0.4.0 · 1,164 library entries · 52 packs · 11 model profiles · 5 ComfyUI V3 nodes**
+**Version 0.4.1 · 1,164 library entries · 52 packs · 11 model profiles · 5 ComfyUI V3 nodes**
 
 The shared deterministic engine runs offline on Python 3.11+ with **zero runtime
 dependencies**. An optional local MiniCPM VLM adds fast base-prompt upscaling
@@ -115,8 +115,12 @@ Ready-to-use examples:
 ## Fast local prompt upscaling
 
 Connect **Load Prompt Upscaler → Upscale Base Prompt → Style** or **Compose Recipe**.
-Enter a short idea, connect one image, or supply both. Combined input first grounds
-the image, then applies the user's requirements in a short text rewrite.
+Enter a short idea, connect one image, or supply both. **Expanded** is the default:
+for text ideas it preserves your complete input and continues it with concrete
+details about the existing subjects' movement, shape, pose, and relationships.
+**Faithful** asks for a concise clarification with minimal additions. Reference
+images remain grounded in visible content; combined input first describes the
+image, then applies the user's requirements in a short text rewrite.
 
 The supported deployment is the self-contained artifact:
 
@@ -132,19 +136,22 @@ the accepted base without running the VLM again.
 
 | Advanced control | Default | Use |
 | --- | --- | --- |
-| `max_new_tokens` | 128 | Bound output length; allowed range 32–384 |
+| `detail_mode` | `expanded` | Add physical detail to text ideas, or select `faithful` for concise clarification; references stay grounded |
+| `max_new_tokens` | 192 | Bound output length; allowed range 32–384 |
 | `image_slices` | 1 | Keep one for speed; up to four can help fine detail at a time/VRAM cost |
 | `offload_after` | false | Retain native-managed residency for repeated edits, or immediately offload after each execution |
 
-Short warm requests measured on a 4 GB RTX 3050 Laptop GPU took approximately
-**0.54 s for text**, **0.79 s for an image**, and **1.26 s for text plus image**.
-A real cold text-to-style queue completed in **3.47 s**. These are bounded local
-samples; token count, crops, offloading, and GPU load affect latency.
+Expanded mode generates more detail and takes longer than a short paraphrase.
+The reported wizard example now retains the original ocean/cube/gravity premise
+and adds physical detail in a paragraph of roughly 50 words, using a single model
+generation. See [measured mode comparisons](docs/upscaler.md#measured-scope-and-limitations)
+for latency and quality limits on a 4 GB RTX 3050 Laptop GPU.
 
 The accelerated deployment requires a supported CUDA/Kitchen host and its
 Transformers dependencies. The small VLM can miss facts or retain style language;
-preview the accepted base. Inspection includes timings, settings, token counts,
-reference content, and warnings. Changed quoted text and invalid output fail
+preview the accepted base. Expanded text retains any style wording already present
+in the input; use the toolkit to neutralize a styled prompt first. Inspection includes timings, settings, token counts,
+reference content, added-word counts, source-preservation status, and warnings. Changed quoted text and invalid output fail
 explicitly. The [upscaler guide](docs/upscaler.md) covers setup, measured limits,
 memory use, and the [portable benchmark](scripts/benchmark_upscaler.py).
 
@@ -292,17 +299,19 @@ engine = Engine.builtin()
 styles = engine.list_styles(query="gouache", model="anima", kind="style")
 suggestions = engine.recommend(prompt="botanical ink illustration", model="anima", limit=6)
 
-result = engine.compose({
-    "schema_version": 1,
-    "prompt": 'A heron beside a ceramic bowl marked "雨"',
-    "model": "anima",
-    "styles": [
-        {"id": "illustration.gouache", "intensity": 0.75},
-        {"id": "grade.sage", "intensity": 0.6},
-    ],
-    "conflict_policy": "last_wins",
-    "locked_axes": ["composition"],
-})
+result = engine.compose(
+    {
+        "schema_version": 1,
+        "prompt": 'A heron beside a ceramic bowl marked "雨"',
+        "model": "anima",
+        "styles": [
+            {"id": "illustration.gouache", "intensity": 0.75},
+            {"id": "grade.sage", "intensity": 0.6},
+        ],
+        "conflict_policy": "last_wins",
+        "locked_axes": ["composition"],
+    }
+)
 
 print(result.positive)
 print(result.negative)

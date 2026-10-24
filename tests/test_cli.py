@@ -16,7 +16,7 @@ def test_cli_help_and_version(capsys):
     with pytest.raises(SystemExit) as stop:
         main(["--version"])
     assert stop.value.code == 0
-    assert capsys.readouterr().out.strip() == "0.4.0"
+    assert capsys.readouterr().out.strip() == "0.4.1"
 
 
 def test_cli_discovery_and_profiles(capsys):

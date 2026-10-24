@@ -80,9 +80,10 @@
       },
       "widgets_values": [
         "two foxes sharing a yellow umbrella",
-        128,
+        192,
         1,
-        false
+        false,
+        "expanded"
       ]
     },
     {

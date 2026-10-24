@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.4.1 — 2026-10-24
+
+Fixes prompt upscaling that only paraphrased short ideas. Expanded is now the
+default: it retains the complete text premise in an assistant prefix and generates
+supporting physical detail in one pass. Faithful offers concise clarification;
+reference/image paths retain their evaluated grounding behavior. Adds an optional
+appended detail-mode widget, a 192-token default for new nodes, source/addition
+inspection and a cache contract revision. Strengthens quoted-text validation so
+changed labels cannot pass as matching substrings. Existing widgets and API
+graphs without the new mode remain usable.
+
 ## 0.4.0 — 2026-10-24
 
 Added optional V3 Load Prompt Upscaler and Upscale Base Prompt nodes for the existing

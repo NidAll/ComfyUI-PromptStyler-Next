@@ -26,7 +26,8 @@ artifact = module("artifact")
 @pytest.mark.parametrize("has_image", [False, True])
 def test_text_request_is_trimmed_and_bounds_checked(has_image):
     assert prompts.validate_request(" fox ", has_image, 128, 1) == "fox"
-    assert "fox" in prompts.user_request("fox", has_image)
+    request = prompts.user_request("fox", has_image)
+    assert ("visible" in request) if has_image else ("fox" in request)
 
 
 def test_image_only_is_valid_and_missing_both_is_actionable():
@@ -127,3 +128,39 @@ def test_example_upscaler_graph_feeds_semantic_base_into_style():
     assert graph["2"]["class_type"] == "PSNextUpscaleBase"
     assert graph["2"]["inputs"]["upscaler"] == ["1", 0]
     assert graph["3"]["inputs"]["prompt"] == ["2", 0]
+
+
+@pytest.mark.parametrize("mode", ["unknown", "", None, True])
+def test_unknown_detail_mode_is_rejected(mode):
+    with pytest.raises(ValueError, match="detail_mode"):
+        prompts.validate_request("a fox", False, 192, 1, mode)
+    with pytest.raises(ValueError, match="detail_mode"):
+        prompts.messages("a fox", False, mode)
+
+
+def test_quoted_text_is_not_accepted_as_substring_of_a_changed_label():
+    for raw in ('A bowl marked "雨.".', 'A sign marked "OPEN NOW".'):
+        original = 'A bowl marked "雨".' if "雨" in raw else 'A sign marked "OPEN".'
+        with pytest.raises(RuntimeError, match="quoted text"):
+            prompts.clean_output(raw, original, False)
+
+
+def test_faithful_and_expanded_authoring_policies_and_reference_grounding():
+    expanded = prompts.messages(prompts.user_request("a robot reading", False), False)
+    faithful = prompts.messages(prompts.user_request("a robot reading", False, "faithful"), False, "faithful")
+    assert expanded != faithful
+    assert "physical" in expanded[0]["content"]
+    assert "without inventing" in faithful[0]["content"]
+    assert all(len(item["content"].split()) >= 30 for item in expanded if item["role"] == "assistant")
+    image = prompts.messages(prompts.user_request("", True), True)
+    assert "visible" in image[0]["content"] and image[-1]["content"][0]["type"] == "image"
+    merge = prompts.messages(
+        prompts.merge_request("A box left of a ball", "replace the box"), False, reference=True
+    )
+    assert "override" in merge[0]["content"] and "final scene" in merge[0]["content"]
+
+
+def test_expansion_prefix_preserves_the_entire_scene_and_literal_text():
+    prompt = 'A wizard folding the ocean into a perfect cube using gravity. A sign reads "雨".'
+    assert prompts.expansion_prefix(prompt).startswith(prompt)
+    assert prompts.expansion_prefix('A sign reads "雨"') == 'A sign reads "雨". '

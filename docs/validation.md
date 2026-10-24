@@ -1,9 +1,28 @@
 # Validation and release status
 
-Version 0.4.0 adds the optional local MiniCPM upscaler to the source tree. The source repository is
+Version 0.4.1 refines the optional local MiniCPM authoring stage. Version 0.4.0 added the optional local MiniCPM upscaler to the source tree. The source repository is
 `NidAll/ComfyUI-PromptStyler-Next`. The semantic-base toolkit and pack review are documented in
 [the 0.3.0 review](style-review.md). This source update creates no package-index
 release or version tag.
+
+## 0.4.1 useful expansion
+
+Expanded text preserves the source premise as an assistant prefix and generates
+physical supporting detail. The reported wizard case grows from an11-word
+paraphrase to53words, retaining the complete original statement and adding42words.
+The existing128-token budget works; newly added nodes default to192. Real
+queued warm wizard expansion took1.87s (2.03s including polling), and changing only
+the style reused the accepted base without VLM execution. Faithful
+remains a concise model rewrite. Reference inputs retain their evaluated grounding
+contract rather than inventing detail to meet a length target.
+
+The updated suites pass209standalone tests (plus the opt-in CUDA module skip),
+48actual-host tests and18Studio tests; core coverage remains93%.
+Real local evaluation covered seven text/image/combined cases in both modes,
+including quoted Unicode, counts, fantasy geometry and style leakage. Expanded
+text retained the source facts; Faithful omitted a supplied table in one case.
+Aesthetic wording already in the input remains in the preserved prefix and is
+flagged. See [the measured examples and limitations](upscaler.md).
 
 ## 0.4.0 optional VLM authoring
 

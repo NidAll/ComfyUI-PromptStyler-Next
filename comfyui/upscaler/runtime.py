@@ -17,7 +17,15 @@ from PIL import Image
 from transformers import StoppingCriteria, StoppingCriteriaList
 
 from .models import bundle_fingerprint, resolve_bundle
-from .prompts import CONTRACT_VERSION, clean_output, merge_request, messages, user_request, validate_request
+from .prompts import (
+    CONTRACT_VERSION,
+    clean_output,
+    expansion_prefix,
+    merge_request,
+    messages,
+    user_request,
+    validate_request,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -93,14 +101,15 @@ def pil_image(image: torch.Tensor) -> Image.Image:
     return Image.fromarray((value.cpu().clamp(0, 1).float().numpy() * 255).round().astype("uint8"))
 
 
-def _generate(owner, processor, request, picture, budget, slices):
+def _generate(owner, processor, request, picture, budget, slices, detail_mode, *, reference=False, prefix=""):
     started = time.perf_counter()
     text = processor.apply_chat_template(
-        messages(request, picture is not None),
+        messages(request, picture is not None, detail_mode, reference),
         tokenize=False,
         add_generation_prompt=True,
         enable_thinking=False,
     )
+    text += prefix
     inputs = processor(
         text=[text],
         return_tensors="pt",
@@ -125,14 +134,16 @@ def _generate(owner, processor, request, picture, budget, slices):
             ),
         )[0, input_length:].cpu()
     generated = time.perf_counter()
-    raw = processor.tokenizer.decode(tokens, skip_special_tokens=True)
+    continuation = processor.tokenizer.decode(tokens, skip_special_tokens=True).lstrip()
+    raw = prefix + continuation
     eos = owner.model.network.generation_config.eos_token_id
     eos = [eos] if isinstance(eos, int) else eos or []
-    truncated = len(tokens) >= budget and int(tokens[-1]) not in eos and "\n\n" not in raw
+    truncated = len(tokens) >= budget and int(tokens[-1]) not in eos and "\n\n" not in continuation
     return (
         raw,
         truncated,
         {
+            "added_words": len(continuation.split()) if prefix else None,
             "input_tokens": input_length,
             "generated_tokens": len(tokens),
             "prepare_seconds": prepared - started,
@@ -145,12 +156,13 @@ def upscale(
     upscaler: UpscalerHandle,
     prompt: str = "",
     image: torch.Tensor | None = None,
-    max_new_tokens: int = 128,
+    max_new_tokens: int = 192,
     image_slices: int = 1,
     offload_after: bool = False,
+    detail_mode: str = "expanded",
 ) -> tuple[str, str]:
     started = time.perf_counter()
-    prompt = validate_request(prompt, image is not None, max_new_tokens, image_slices)
+    prompt = validate_request(prompt, image is not None, max_new_tokens, image_slices, detail_mode)
     if type(offload_after) is not bool:
         raise ValueError("offload_after must be a boolean")
     if not isinstance(upscaler, UpscalerHandle):
@@ -166,13 +178,16 @@ def upscale(
         placement_seconds = time.perf_counter() - placing
         # Ground the image independently first: small VLMs otherwise ignored text changes
         # or moved unrelated objects in the combined-input evaluation. No extra model load.
+        prefix = expansion_prefix(prompt) if picture is None and detail_mode == "expanded" else ""
         raw, truncated, first = _generate(
             owner,
             processor,
-            user_request("" if picture else prompt, picture is not None),
+            user_request(prompt, picture is not None, detail_mode),
             picture,
             min(max_new_tokens, 128) if picture and prompt else max_new_tokens,
             image_slices,
+            "faithful" if picture and prompt else detail_mode,
+            prefix=prefix,
         )
         passes = [first]
         reference = None
@@ -185,21 +200,28 @@ def upscale(
                 None,
                 max_new_tokens,
                 image_slices,
+                detail_mode,
+                reference=True,
             )
             passes.append(second)
         else:
             grounding_warnings = []
         result, warnings = clean_output(raw, prompt, truncated)
         warnings = grounding_warnings + warnings
+        if prefix and len(prompt.split()) <= 20 and first["added_words"] < 12:
+            warnings.append("Little scene detail was added; inspect the result or increase the output budget")
         inspection = {
             "schema_version": 1,
             "contract": CONTRACT_VERSION,
             "input_prompt": prompt,
+            "source_preserved": bool(prefix),
+            "added_words": first["added_words"],
             "image_sha256": hashlib.sha256(picture.tobytes()).hexdigest() if picture else None,
             "model": upscaler.identity[0].rsplit("/", 1)[-1],
             "artifact": {"bytes": upscaler.identity[1], "mtime_ns": upscaler.identity[2]},
             "mode": "text+image" if prompt and picture else "image" if picture else "text",
             "settings": {
+                "detail_mode": detail_mode,
                 "max_new_tokens": max_new_tokens,
                 "image_slices": image_slices,
                 "offload_after": offload_after,
