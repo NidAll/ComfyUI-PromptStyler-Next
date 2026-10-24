@@ -1,0 +1,1164 @@
+{
+  "schema_version": 1,
+  "id": "next.editorial",
+  "version": "1.0.0",
+  "name": "Editorial information graphics",
+  "description": "Visual grammar for structured editorial images and information graphics; exact text and data remain the caller’s responsibility.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "editorial.newspaper-explainer",
+      "name": "Newspaper explainer",
+      "description": "Use a restrained newspaper-explainer illustration style. Build one clear reading path around the supplied information.",
+      "category": "editorial/information",
+      "kind": "style",
+      "tags": [
+        "newspaper",
+        "explanation",
+        "editorial",
+        "diagram"
+      ],
+      "claims": {
+        "medium": "editorial.newspaper-explainer",
+        "composition": "editorial-newspaper-explainer",
+        "palette": "editorial-newspaper-explainer",
+        "texture": "editorial.newspaper-explainer"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a restrained newspaper-explainer illustration style",
+          "tags": [
+            "newspaper explainer"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Build one clear reading path around the supplied information",
+          "tags": [
+            "single reading path"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Pair fine line drawing with economical flat emphasis",
+          "tags": [
+            "fine editorial lines",
+            "flat emphasis"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use newsprint white with black and one muted red",
+          "tags": [
+            "newsprint",
+            "black",
+            "muted red"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.magazine-opener",
+      "name": "Magazine section opener",
+      "description": "Use a confident magazine section-opener treatment. Let one supplied visual dominate generous editorial space.",
+      "category": "editorial/layout",
+      "kind": "style",
+      "tags": [
+        "magazine",
+        "opener",
+        "editorial",
+        "layout"
+      ],
+      "claims": {
+        "medium": "editorial.magazine-opener",
+        "composition": "editorial-magazine-opener",
+        "palette": "editorial-magazine-opener",
+        "texture": "editorial.magazine-opener"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a confident magazine section-opener treatment",
+          "tags": [
+            "magazine opener"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let one supplied visual dominate generous editorial space",
+          "tags": [
+            "dominant image",
+            "editorial space"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep surface treatment crisp and lightly tactile",
+          "tags": [
+            "crisp print texture"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use a restricted high-contrast editorial palette",
+          "tags": [
+            "restricted editorial color"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.annotated-process",
+      "name": "Annotated process visual",
+      "description": "Use a clean process-explainer visual language. Separate supplied stages into a readable sequence.",
+      "category": "editorial/information",
+      "kind": "style",
+      "tags": [
+        "process",
+        "annotation",
+        "steps",
+        "explanation"
+      ],
+      "claims": {
+        "medium": "editorial.annotated-process",
+        "composition": "editorial-annotated-process",
+        "palette": "editorial-annotated-process",
+        "texture": "editorial.annotated-process"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a clean process-explainer visual language",
+          "tags": [
+            "process explainer"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate supplied stages into a readable sequence",
+          "tags": [
+            "sequential stages"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use quiet connector lines and consistent illustration scale",
+          "tags": [
+            "quiet connectors",
+            "consistent scale"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Reserve one accent color for progression",
+          "tags": [
+            "neutral base",
+            "progress accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.small-multiples",
+      "name": "Small-multiples board",
+      "description": "Use a disciplined small-multiples comparison style. Align supplied variations to a common visual baseline.",
+      "category": "editorial/information",
+      "kind": "style",
+      "tags": [
+        "comparison",
+        "small-multiples",
+        "series",
+        "grid"
+      ],
+      "claims": {
+        "medium": "editorial.small-multiples",
+        "composition": "editorial-small-multiples",
+        "palette": "editorial-small-multiples",
+        "texture": "editorial.small-multiples"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a disciplined small-multiples comparison style",
+          "tags": [
+            "small multiples"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Align supplied variations to a common visual baseline",
+          "tags": [
+            "common comparison baseline"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep repeated frames and marks visually consistent",
+          "tags": [
+            "consistent comparative marks"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use one shared restrained palette across panels",
+          "tags": [
+            "shared muted palette"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.radial-explainer",
+      "name": "Radial editorial diagram",
+      "description": "Use a calm radial-explainer illustration style. Arrange supplied relationships around one visual center.",
+      "category": "editorial/information",
+      "kind": "style",
+      "tags": [
+        "radial",
+        "system",
+        "relationships",
+        "editorial"
+      ],
+      "claims": {
+        "medium": "editorial.radial-explainer",
+        "composition": "editorial-radial-explainer",
+        "palette": "editorial-radial-explainer",
+        "texture": "editorial.radial-explainer"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a calm radial-explainer illustration style",
+          "tags": [
+            "radial explainer"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange supplied relationships around one visual center",
+          "tags": [
+            "radial relationship layout"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use sparse arcs and ample gaps between groups",
+          "tags": [
+            "sparse arcs",
+            "open spacing"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use desaturated categories with one central accent",
+          "tags": [
+            "desaturated categories"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.linear-timeline",
+      "name": "Linear visual timeline",
+      "description": "Use a spare visual-timeline treatment. Organize supplied moments along an unambiguous reading axis.",
+      "category": "editorial/information",
+      "kind": "style",
+      "tags": [
+        "timeline",
+        "history",
+        "sequence",
+        "editorial"
+      ],
+      "claims": {
+        "medium": "editorial.linear-timeline",
+        "composition": "editorial-linear-timeline",
+        "palette": "editorial-linear-timeline",
+        "texture": "editorial.linear-timeline"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a spare visual-timeline treatment",
+          "tags": [
+            "visual timeline"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize supplied moments along an unambiguous reading axis",
+          "tags": [
+            "linear sequence"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep intervals open and markers small",
+          "tags": [
+            "open intervals",
+            "small markers"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use graphite with a restrained chronological accent",
+          "tags": [
+            "graphite",
+            "chronological accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.layered-system",
+      "name": "Layered system diagram",
+      "description": "Use a layered editorial-system illustration. Separate supplied functional levels through consistent offsets.",
+      "category": "editorial/information",
+      "kind": "style",
+      "tags": [
+        "system",
+        "layers",
+        "structure",
+        "explanation"
+      ],
+      "claims": {
+        "medium": "editorial.layered-system",
+        "composition": "editorial-layered-system",
+        "palette": "editorial-layered-system",
+        "texture": "editorial.layered-system"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a layered editorial-system illustration",
+          "tags": [
+            "layered system diagram"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate supplied functional levels through consistent offsets",
+          "tags": [
+            "layered offsets"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Favor clean boundaries and translucent overlapping areas",
+          "tags": [
+            "clean boundaries",
+            "translucent overlap"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Assign adjacent levels subtly separated cool hues",
+          "tags": [
+            "separated cool hues"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.proportional-blocks",
+      "name": "Proportional block graphic",
+      "description": "Use a minimal proportional-block graphic treatment. Keep the supplied size relationships visually explicit.",
+      "category": "editorial/information",
+      "kind": "style",
+      "tags": [
+        "proportion",
+        "blocks",
+        "comparison",
+        "graphic"
+      ],
+      "claims": {
+        "medium": "editorial.proportional-blocks",
+        "composition": "editorial-proportional-blocks",
+        "palette": "editorial-proportional-blocks",
+        "texture": "editorial.proportional-blocks"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a minimal proportional-block graphic treatment",
+          "tags": [
+            "proportional block graphic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied size relationships visually explicit",
+          "tags": [
+            "explicit proportional layout"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use clean flat edges with no decorative perspective",
+          "tags": [
+            "flat blocks",
+            "clean edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Choose one neutral field and two related accents",
+          "tags": [
+            "neutral field",
+            "related accents"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.flow-ribbon",
+      "name": "Flow ribbon graphic",
+      "description": "Use a flowing editorial-ribbon illustration. Keep supplied connections traceable from end to end.",
+      "category": "editorial/information",
+      "kind": "style",
+      "tags": [
+        "flow",
+        "ribbon",
+        "connections",
+        "editorial"
+      ],
+      "claims": {
+        "medium": "editorial.flow-ribbon",
+        "composition": "editorial-flow-ribbon",
+        "palette": "editorial-flow-ribbon",
+        "texture": "editorial.flow-ribbon"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a flowing editorial-ribbon illustration",
+          "tags": [
+            "flow ribbon graphic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied connections traceable from end to end",
+          "tags": [
+            "traceable ribbons"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Separate overlapping paths with small clean gaps",
+          "tags": [
+            "clean ribbon gaps"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use a compact family of distinguishable muted colors",
+          "tags": [
+            "muted flow colors"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.survey-pattern",
+      "name": "Survey dot graphic",
+      "description": "Use an orderly editorial dot-pattern treatment. Group supplied quantities into readable visual clusters.",
+      "category": "editorial/information",
+      "kind": "style",
+      "tags": [
+        "dots",
+        "survey",
+        "comparison",
+        "pattern"
+      ],
+      "claims": {
+        "medium": "editorial.survey-pattern",
+        "composition": "editorial-survey-pattern",
+        "palette": "editorial-survey-pattern",
+        "texture": "editorial.survey-pattern"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an orderly editorial dot-pattern treatment",
+          "tags": [
+            "survey dot graphic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Group supplied quantities into readable visual clusters",
+          "tags": [
+            "readable dot clusters"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep dot spacing and diameters consistent",
+          "tags": [
+            "uniform dot spacing"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Highlight one meaningful group with a single accent",
+          "tags": [
+            "neutral dots",
+            "single accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.archive-collation",
+      "name": "Archive collation layout",
+      "description": "Use an editorial archive-collation aesthetic. Arrange supplied fragments with measured overlap and hierarchy.",
+      "category": "editorial/layout",
+      "kind": "style",
+      "tags": [
+        "archive",
+        "collage",
+        "editorial",
+        "documents"
+      ],
+      "claims": {
+        "medium": "editorial.archive-collation",
+        "composition": "editorial-archive-collation",
+        "palette": "editorial-archive-collation",
+        "texture": "editorial.archive-collation"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an editorial archive-collation aesthetic",
+          "tags": [
+            "archive editorial collage"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange supplied fragments with measured overlap and hierarchy",
+          "tags": [
+            "measured fragment overlap"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Retain cut edges and varied paper surfaces",
+          "tags": [
+            "cut paper edges",
+            "archive texture"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use faded neutrals with one oxidized accent",
+          "tags": [
+            "faded neutral",
+            "oxidized accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.field-guide-spread",
+      "name": "Field-guide spread",
+      "description": "Use a compact illustrated field-guide treatment. Give supplied specimens a consistent reference scale.",
+      "category": "editorial/layout",
+      "kind": "style",
+      "tags": [
+        "field-guide",
+        "reference",
+        "editorial",
+        "spread"
+      ],
+      "claims": {
+        "medium": "editorial.field-guide-spread",
+        "composition": "editorial-field-guide-spread",
+        "palette": "editorial-field-guide-spread",
+        "texture": "editorial.field-guide-spread"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a compact illustrated field-guide treatment",
+          "tags": [
+            "field guide spread"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Give supplied specimens a consistent reference scale",
+          "tags": [
+            "reference specimen layout"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Combine neat silhouettes with light observational detail",
+          "tags": [
+            "observational silhouettes"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use uncoated ivory and descriptive natural colors",
+          "tags": [
+            "ivory paper",
+            "natural colors"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.visual-index",
+      "name": "Visual index sheet",
+      "description": "Use a meticulous visual-index treatment. Align supplied items into a calm searchable arrangement.",
+      "category": "editorial/layout",
+      "kind": "style",
+      "tags": [
+        "index",
+        "catalog",
+        "grid",
+        "reference"
+      ],
+      "claims": {
+        "medium": "editorial.visual-index",
+        "composition": "editorial-visual-index",
+        "palette": "editorial-visual-index",
+        "texture": "editorial.visual-index"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a meticulous visual-index treatment",
+          "tags": [
+            "visual index sheet"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Align supplied items into a calm searchable arrangement",
+          "tags": [
+            "ordered index grid"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep crop sizes and negative spaces consistent",
+          "tags": [
+            "consistent crops",
+            "equal spacing"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use neutral white with measured object color",
+          "tags": [
+            "neutral white",
+            "descriptive color"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.essay-collage",
+      "name": "Essay collage image",
+      "description": "Use a restrained conceptual essay-collage style. Let supplied images meet through one deliberate visual analogy.",
+      "category": "editorial/conceptual",
+      "kind": "style",
+      "tags": [
+        "essay",
+        "collage",
+        "editorial",
+        "concept"
+      ],
+      "claims": {
+        "medium": "editorial.essay-collage",
+        "composition": "editorial-essay-collage",
+        "palette": "editorial-essay-collage",
+        "texture": "editorial.essay-collage"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a restrained conceptual essay-collage style",
+          "tags": [
+            "editorial essay collage"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let supplied images meet through one deliberate visual analogy",
+          "tags": [
+            "deliberate collage relationship"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use clean cutouts with subtle paper-scale shadows",
+          "tags": [
+            "clean cutouts",
+            "paper shadows"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Limit the composition to three related color families",
+          "tags": [
+            "limited related colors"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.cut-paper-explainer",
+      "name": "Cut-paper explainer",
+      "description": "Build the image in a cut-paper explainer style. Separate supplied functions with legible layered shapes.",
+      "category": "editorial/information",
+      "kind": "style",
+      "tags": [
+        "paper",
+        "explanation",
+        "collage",
+        "diagram"
+      ],
+      "claims": {
+        "medium": "editorial.cut-paper-explainer",
+        "composition": "editorial-cut-paper-explainer",
+        "palette": "editorial-cut-paper-explainer",
+        "texture": "editorial.cut-paper-explainer"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Build the image in a cut-paper explainer style",
+          "tags": [
+            "cut paper explainer"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate supplied functions with legible layered shapes",
+          "tags": [
+            "legible layered functions"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep cut edges tactile and shadows shallow",
+          "tags": [
+            "tactile paper edges",
+            "shallow shadows"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm matte colors on a quiet neutral ground",
+          "tags": [
+            "warm matte colors"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.perspective-annotation",
+      "name": "Annotated perspective",
+      "description": "Use an annotated editorial-perspective illustration. Keep the supplied main view central with open surrounding space.",
+      "category": "editorial/information",
+      "kind": "style",
+      "tags": [
+        "perspective",
+        "annotation",
+        "architecture",
+        "editorial"
+      ],
+      "claims": {
+        "medium": "editorial.perspective-annotation",
+        "composition": "editorial-perspective-annotation",
+        "palette": "editorial-perspective-annotation",
+        "texture": "editorial.perspective-annotation"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an annotated editorial-perspective illustration",
+          "tags": [
+            "annotated perspective"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied main view central with open surrounding space",
+          "tags": [
+            "central perspective",
+            "annotation space"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use fine leader-like marks without dense ornament",
+          "tags": [
+            "fine leader lines"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use soft gray modeling with one vermilion accent",
+          "tags": [
+            "soft gray",
+            "vermilion"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.monochrome-briefing",
+      "name": "Monochrome briefing board",
+      "description": "Use a clear monochrome briefing-board aesthetic. Rank supplied information through size and spacing.",
+      "category": "editorial/layout",
+      "kind": "style",
+      "tags": [
+        "briefing",
+        "monochrome",
+        "board",
+        "information"
+      ],
+      "claims": {
+        "medium": "editorial.monochrome-briefing",
+        "composition": "editorial-monochrome-briefing",
+        "palette": "editorial-monochrome-briefing",
+        "texture": "editorial.monochrome-briefing"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a clear briefing-board aesthetic",
+          "tags": [
+            "briefing board"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Rank supplied information through size and spacing",
+          "tags": [
+            "size hierarchy",
+            "measured spacing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use sharp vector-like shapes and a little halftone",
+          "tags": [
+            "sharp shapes",
+            "restrained halftone"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Keep a controlled black gray and white range",
+          "tags": [
+            "black gray white"
+          ],
+          "min_intensity": 0.35
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.soft-civic",
+      "name": "Civic information graphic",
+      "description": "Use a welcoming civic-information illustration style. Make supplied relationships legible with generous separation.",
+      "category": "editorial/information",
+      "kind": "style",
+      "tags": [
+        "civic",
+        "public",
+        "information",
+        "accessible"
+      ],
+      "claims": {
+        "medium": "editorial.soft-civic",
+        "composition": "editorial-soft-civic",
+        "palette": "editorial-soft-civic",
+        "texture": "editorial.soft-civic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a welcoming civic-information illustration style",
+          "tags": [
+            "civic information graphic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Make supplied relationships legible with generous separation",
+          "tags": [
+            "clear relationships",
+            "generous separation"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use rounded but disciplined shapes and open contours",
+          "tags": [
+            "open contours",
+            "disciplined rounded shapes"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted teal terracotta and warm cream",
+          "tags": [
+            "muted teal",
+            "terracotta",
+            "cream"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.business-history",
+      "name": "Business-history editorial",
+      "description": "Use a business-history editorial illustration style. Balance supplied archival forms through a clear foreground hierarchy.",
+      "category": "editorial/conceptual",
+      "kind": "style",
+      "tags": [
+        "history",
+        "editorial",
+        "industry",
+        "archive"
+      ],
+      "claims": {
+        "medium": "editorial.business-history",
+        "composition": "editorial-business-history",
+        "palette": "editorial-business-history",
+        "texture": "editorial.business-history"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a business-history editorial illustration style",
+          "tags": [
+            "business history illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Balance supplied archival forms through a clear foreground hierarchy",
+          "tags": [
+            "archival form hierarchy"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Combine engraved details with flat contemporary shapes",
+          "tags": [
+            "engraved detail",
+            "flat shapes"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use tobacco brown muted blue and aged white",
+          "tags": [
+            "tobacco brown",
+            "muted blue",
+            "aged white"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "editorial.research-summary",
+      "name": "Research summary visual",
+      "description": "Use a restrained research-summary graphic treatment. Group supplied findings around their shared visual relationship.",
+      "category": "editorial/information",
+      "kind": "style",
+      "tags": [
+        "research",
+        "summary",
+        "evidence",
+        "graphic"
+      ],
+      "claims": {
+        "medium": "editorial.research-summary",
+        "composition": "editorial-research-summary",
+        "palette": "editorial-research-summary",
+        "texture": "editorial.research-summary"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a restrained research-summary graphic treatment",
+          "tags": [
+            "research summary visual"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Group supplied findings around their shared visual relationship",
+          "tags": [
+            "grouped findings"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep marks sparse and decorative texture minimal",
+          "tags": [
+            "sparse marks",
+            "clean ground"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use charcoal and a narrow cool accent family",
+          "tags": [
+            "charcoal",
+            "cool accents"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

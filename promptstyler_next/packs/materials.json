@@ -1,0 +1,1163 @@
+{
+  "schema_version": 1,
+  "id": "next.materials",
+  "version": "1.0.0",
+  "name": "Material and textile studies",
+  "description": "Tactile translations that keep the supplied form recognizable.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "material.embroidery",
+      "name": "Thread embroidery",
+      "description": "An embroidered textile interpretation of the supplied image. Use stitch direction to describe the main forms.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "embroidery",
+        "thread",
+        "textile"
+      ],
+      "claims": {
+        "medium": "material.embroidery",
+        "composition": "material-embroidery",
+        "texture": "material.embroidery"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An embroidered textile interpretation of the supplied image",
+          "tags": [
+            "embroidery art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use stitch direction to describe the main forms",
+          "tags": [
+            "form following stitches"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show individual thread fibers and raised stitched edges",
+          "tags": [
+            "thread fibers",
+            "raised stitches"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.tapestry",
+      "name": "Woven tapestry",
+      "description": "A woven tapestry interpretation. Translate the image into a limited set of dyed yarn colors.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "tapestry",
+        "woven",
+        "textile"
+      ],
+      "claims": {
+        "medium": "material.tapestry",
+        "palette": "material-tapestry",
+        "texture": "material.tapestry"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A woven tapestry interpretation",
+          "tags": [
+            "woven tapestry"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Translate the image into a limited set of dyed yarn colors",
+          "tags": [
+            "limited dyed yarn colors"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the interlaced warp-and-weft structure visible",
+          "tags": [
+            "warp and weft texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.batik",
+      "name": "Wax-resist batik",
+      "description": "A wax-resist batik interpretation. Separate color regions through flowing resist boundaries.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "batik",
+        "resist",
+        "textile"
+      ],
+      "claims": {
+        "medium": "material.batik",
+        "composition": "material-batik",
+        "texture": "material.batik"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A wax-resist batik interpretation",
+          "tags": [
+            "batik textile art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate color regions through flowing resist boundaries",
+          "tags": [
+            "flowing resist boundaries"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show characteristic fine crackle lines through dyed cloth",
+          "tags": [
+            "batik crackle",
+            "dyed cloth"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.felt",
+      "name": "Needle-felted forms",
+      "description": "A needle-felted wool interpretation of the supplied forms. Use soft studio light to reveal rounded tactile volume.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "felt",
+        "wool",
+        "soft"
+      ],
+      "claims": {
+        "medium": "material.felt",
+        "lighting": "material-felt",
+        "texture": "material.felt"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A needle-felted wool interpretation of the supplied forms",
+          "tags": [
+            "needle felted wool"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft studio light to reveal rounded tactile volume",
+          "tags": [
+            "soft tactile lighting"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine loose wool fibers and softly compressed edges",
+          "tags": [
+            "loose wool fibers",
+            "soft edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.mosaic",
+      "name": "Tessellated mosaic",
+      "description": "A mosaic interpretation built from small tesserae. Let tile direction follow the contours of the existing forms.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "mosaic",
+        "tesserae",
+        "tile"
+      ],
+      "claims": {
+        "medium": "material.mosaic",
+        "composition": "material-mosaic",
+        "texture": "material.mosaic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A mosaic interpretation built from small tesserae",
+          "tags": [
+            "mosaic art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let tile direction follow the contours of the existing forms",
+          "tags": [
+            "contour following tesserae"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show irregular tile surfaces and narrow grout joints",
+          "tags": [
+            "irregular tiles",
+            "grout joints"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.stainedglass",
+      "name": "Leaded glass",
+      "description": "A stained-glass interpretation. Divide the forms into coherent lead-bounded color shapes.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "stained glass",
+        "lead",
+        "luminous"
+      ],
+      "claims": {
+        "medium": "material.stainedglass",
+        "composition": "material-stainedglass",
+        "lighting": "material-stainedglass"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A stained-glass interpretation",
+          "tags": [
+            "stained glass art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Divide the forms into coherent lead-bounded color shapes",
+          "tags": [
+            "lead bounded color shapes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let colored transmitted light illuminate the glass",
+          "tags": [
+            "transmitted colored light"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.marquetry",
+      "name": "Wood marquetry",
+      "description": "A wood-marquetry interpretation made from fitted veneers. Use the natural brown, amber and cream variations of wood.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "marquetry",
+        "veneer",
+        "wood"
+      ],
+      "claims": {
+        "medium": "material.marquetry",
+        "palette": "material-marquetry",
+        "texture": "material.marquetry"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A wood-marquetry interpretation made from fitted veneers",
+          "tags": [
+            "wood marquetry"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use the natural brown, amber and cream variations of wood",
+          "tags": [
+            "natural wood tones"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Align visible wood grain with the individual fitted pieces",
+          "tags": [
+            "fitted veneer",
+            "aligned wood grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.terrazzo",
+      "name": "Terrazzo inlay",
+      "description": "A terrazzo-inlay interpretation of the supplied forms. Separate major forms through contrasting mineral-chip fields.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "terrazzo",
+        "inlay",
+        "mineral"
+      ],
+      "claims": {
+        "medium": "material.terrazzo",
+        "composition": "material-terrazzo",
+        "texture": "material.terrazzo"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A terrazzo-inlay interpretation of the supplied forms",
+          "tags": [
+            "terrazzo inlay"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate major forms through contrasting mineral-chip fields",
+          "tags": [
+            "mineral chip fields"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show polished stone chips within a matte mineral binder",
+          "tags": [
+            "stone chips",
+            "mineral binder"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.enameled",
+      "name": "Cloisonné enamel",
+      "description": "A cloisonné-enamel interpretation. Contain colored enamel areas within thin metal partitions.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "cloisonne",
+        "enamel",
+        "metal"
+      ],
+      "claims": {
+        "medium": "material.enameled",
+        "composition": "material-enameled",
+        "texture": "material.enameled"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cloisonné-enamel interpretation",
+          "tags": [
+            "cloisonne enamel"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Contain colored enamel areas within thin metal partitions",
+          "tags": [
+            "metal partitions",
+            "enamel areas"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Render vitreous enamel depth and slight fired-surface variation",
+          "tags": [
+            "vitreous enamel",
+            "fired variation"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.sand",
+      "name": "Layered sand art",
+      "description": "A layered colored-sand interpretation. Build the supplied forms from clean adjoining granular regions.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "sand",
+        "granular",
+        "tactile"
+      ],
+      "claims": {
+        "medium": "material.sand",
+        "composition": "material-sand",
+        "texture": "material.sand"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A layered colored-sand interpretation",
+          "tags": [
+            "colored sand art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Build the supplied forms from clean adjoining granular regions",
+          "tags": [
+            "adjoining granular shapes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep individual fine grains and small surface ridges visible",
+          "tags": [
+            "fine sand grains",
+            "surface ridges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.embossed",
+      "name": "Blind paper emboss",
+      "description": "A blind-embossed paper interpretation. Use low raking light to reveal shallow relief.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "emboss",
+        "paper",
+        "relief"
+      ],
+      "claims": {
+        "medium": "material.embossed",
+        "lighting": "material-embossed",
+        "texture": "material.embossed"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A blind-embossed paper interpretation",
+          "tags": [
+            "blind paper embossing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use low raking light to reveal shallow relief",
+          "tags": [
+            "raking relief light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep unprinted paper fibers and softly pressed contours",
+          "tags": [
+            "unprinted paper",
+            "pressed contours"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.ceramic",
+      "name": "Underglaze ceramic",
+      "description": "A painted-underglaze ceramic interpretation. Use cobalt pigment on warm white ceramic.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "ceramic",
+        "underglaze",
+        "painted"
+      ],
+      "claims": {
+        "medium": "material.ceramic",
+        "palette": "material-ceramic",
+        "texture": "material.ceramic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A painted-underglaze ceramic interpretation",
+          "tags": [
+            "underglaze ceramic art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use cobalt pigment on warm white ceramic",
+          "tags": [
+            "cobalt underglaze",
+            "warm white ceramic"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show slight brush pooling beneath a clear fired glaze",
+          "tags": [
+            "brush pooling",
+            "fired clear glaze"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.lacquer",
+      "name": "Layered lacquer",
+      "description": "A lacquerwork interpretation of the supplied forms. Use long controlled reflections to reveal the polished layers.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "lacquer",
+        "polished",
+        "deep"
+      ],
+      "claims": {
+        "medium": "material.lacquer",
+        "lighting": "material-lacquer",
+        "texture": "material.lacquer"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A lacquerwork interpretation of the supplied forms",
+          "tags": [
+            "lacquerwork art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use long controlled reflections to reveal the polished layers",
+          "tags": [
+            "controlled lacquer reflections"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep deep translucent coating and slight hand-finished variation",
+          "tags": [
+            "deep lacquer layers",
+            "hand finish"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.repousse",
+      "name": "Hammered repoussé",
+      "description": "A repoussé metal-relief interpretation. Use raking reflections to explain raised metal contours.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "repousse",
+        "metal",
+        "relief"
+      ],
+      "claims": {
+        "medium": "material.repousse",
+        "lighting": "material-repousse",
+        "texture": "material.repousse"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A repoussé metal-relief interpretation",
+          "tags": [
+            "repousse relief"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use raking reflections to explain raised metal contours",
+          "tags": [
+            "raking metal reflections"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show small hammer marks and chased surface details",
+          "tags": [
+            "hammer marks",
+            "chased detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.beadwork",
+      "name": "Beadwork surface",
+      "description": "A beadwork interpretation of the supplied image. Use bead rows to follow the main contours.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "beadwork",
+        "textile",
+        "pattern"
+      ],
+      "claims": {
+        "medium": "material.beadwork",
+        "composition": "material-beadwork",
+        "texture": "material.beadwork"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A beadwork interpretation of the supplied image",
+          "tags": [
+            "beadwork art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use bead rows to follow the main contours",
+          "tags": [
+            "contour following bead rows"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep individual bead highlights and subtle thread gaps",
+          "tags": [
+            "bead highlights",
+            "thread gaps"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.intarsia",
+      "name": "Knitted intarsia",
+      "description": "A knitted-intarsia interpretation. Translate the supplied colors into clear adjacent yarn regions.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "intarsia",
+        "knitting",
+        "yarn"
+      ],
+      "claims": {
+        "medium": "material.intarsia",
+        "palette": "material-intarsia",
+        "texture": "material.intarsia"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A knitted-intarsia interpretation",
+          "tags": [
+            "knitted intarsia"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Translate the supplied colors into clear adjacent yarn regions",
+          "tags": [
+            "adjacent yarn colors"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show orderly knit stitches and soft wool depth",
+          "tags": [
+            "knit stitches",
+            "wool depth"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.applique",
+      "name": "Appliqué fabric",
+      "description": "An appliqué-fabric interpretation. Build the existing forms from overlapping cut fabric pieces.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "applique",
+        "fabric",
+        "stitched"
+      ],
+      "claims": {
+        "medium": "material.applique",
+        "composition": "material-applique",
+        "texture": "material.applique"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An appliqué-fabric interpretation",
+          "tags": [
+            "fabric applique"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Build the existing forms from overlapping cut fabric pieces",
+          "tags": [
+            "overlapping fabric pieces"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show stitched borders and softly frayed fabric edges",
+          "tags": [
+            "stitched borders",
+            "frayed edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.quilt",
+      "name": "Patchwork quilt",
+      "description": "A patchwork-quilt interpretation. Organize the image through joined fabric panels.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "patchwork",
+        "quilt",
+        "textile"
+      ],
+      "claims": {
+        "medium": "material.quilt",
+        "composition": "material-quilt",
+        "texture": "material.quilt"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A patchwork-quilt interpretation",
+          "tags": [
+            "patchwork quilt art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize the image through joined fabric panels",
+          "tags": [
+            "joined fabric panels"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep visible seam lines and shallow padded quilting relief",
+          "tags": [
+            "seam lines",
+            "quilted relief"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.filigree",
+      "name": "Metal filigree",
+      "description": "A metal-filigree interpretation. Describe the supplied contours with intertwined fine metal strands.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "filigree",
+        "metal",
+        "fine"
+      ],
+      "claims": {
+        "medium": "material.filigree",
+        "composition": "material-filigree",
+        "texture": "material.filigree"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A metal-filigree interpretation",
+          "tags": [
+            "metal filigree art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Describe the supplied contours with intertwined fine metal strands",
+          "tags": [
+            "intertwined metal strands"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep delicate soldered joins and polished wire highlights",
+          "tags": [
+            "soldered joins",
+            "wire highlights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.engravedleather",
+      "name": "Tooled leather",
+      "description": "A tooled-leather interpretation. Use shallow embossed channels to define the main forms.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "leather",
+        "tooled",
+        "embossed"
+      ],
+      "claims": {
+        "medium": "material.engravedleather",
+        "composition": "material-engravedleather",
+        "texture": "material.engravedleather"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A tooled-leather interpretation",
+          "tags": [
+            "tooled leather art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use shallow embossed channels to define the main forms",
+          "tags": [
+            "embossed leather channels"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show fine leather pores and compressed burnished edges",
+          "tags": [
+            "leather pores",
+            "burnished edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.rattan",
+      "name": "Woven rattan",
+      "description": "A woven-rattan interpretation. Let the weave follow the supplied volumes in coherent strips.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "rattan",
+        "woven",
+        "natural"
+      ],
+      "claims": {
+        "medium": "material.rattan",
+        "composition": "material-rattan",
+        "texture": "material.rattan"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A woven-rattan interpretation",
+          "tags": [
+            "woven rattan art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the weave follow the supplied volumes in coherent strips",
+          "tags": [
+            "volume following weave"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep split-fiber edges and warm natural cane variation",
+          "tags": [
+            "split fibers",
+            "natural cane"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.cork",
+      "name": "Carved cork",
+      "description": "A carved-cork interpretation. Use soft side light to reveal shallow cut surfaces.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "cork",
+        "carved",
+        "porous"
+      ],
+      "claims": {
+        "medium": "material.cork",
+        "lighting": "material-cork",
+        "texture": "material.cork"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A carved-cork interpretation",
+          "tags": [
+            "cork sculpture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft side light to reveal shallow cut surfaces",
+          "tags": [
+            "cork side light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show open cork pores and warm irregular grain",
+          "tags": [
+            "cork pores",
+            "irregular grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.straw",
+      "name": "Straw marquetry",
+      "description": "A straw-marquetry interpretation. Use aligned straw strips to articulate the supplied planes.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "straw",
+        "marquetry",
+        "sheen"
+      ],
+      "claims": {
+        "medium": "material.straw",
+        "composition": "material-straw",
+        "texture": "material.straw"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A straw-marquetry interpretation",
+          "tags": [
+            "straw marquetry"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use aligned straw strips to articulate the supplied planes",
+          "tags": [
+            "aligned straw strips"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine longitudinal fibers and natural directional sheen",
+          "tags": [
+            "straw fibers",
+            "directional sheen"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "material.fusedglass",
+      "name": "Fused-glass panel",
+      "description": "A fused-glass interpretation. Use overlapping translucent colors derived from the supplied image.",
+      "category": "materials",
+      "kind": "style",
+      "tags": [
+        "material",
+        "fused glass",
+        "kiln",
+        "translucent"
+      ],
+      "claims": {
+        "medium": "material.fusedglass",
+        "palette": "material-fusedglass",
+        "texture": "material.fusedglass"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A fused-glass interpretation",
+          "tags": [
+            "fused glass art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use overlapping translucent colors derived from the supplied image",
+          "tags": [
+            "overlapping translucent colors"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show softly melted edges and small trapped glass bubbles",
+          "tags": [
+            "melted glass edges",
+            "trapped bubbles"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

@@ -1,0 +1,1184 @@
+{
+  "schema_version": 1,
+  "id": "next.printmaking",
+  "version": "1.0.0",
+  "name": "Printmaking atelier",
+  "description": "Materially distinct print processes with visible mark-making.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "print.linocut",
+      "name": "Bold linocut",
+      "description": "A linocut print built from bold carved shapes. Use broad interlocking light and dark masses.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "linocut",
+        "carved",
+        "graphic"
+      ],
+      "claims": {
+        "medium": "print.linocut",
+        "composition": "print-linocut",
+        "texture": "print.linocut"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A linocut print built from bold carved shapes",
+          "tags": [
+            "linocut print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use broad interlocking light and dark masses",
+          "tags": [
+            "bold light dark masses"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Retain blunt gouge cuts and slight ink roll unevenness",
+          "tags": [
+            "gouge cuts",
+            "uneven ink roll"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.woodengraving",
+      "name": "End-grain engraving",
+      "description": "An end-grain wood engraving. Build light from fine carved lines within dense tonal fields.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "wood engraving",
+        "fine",
+        "antique"
+      ],
+      "claims": {
+        "medium": "print.woodengraving",
+        "lighting": "print-woodengraving",
+        "texture": "print.woodengraving",
+        "palette": "print-woodengraving"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An end-grain wood engraving",
+          "tags": [
+            "wood engraving"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Build light from fine carved lines within dense tonal fields",
+          "tags": [
+            "fine carved light lines"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use paper-white lines and dense black ink",
+          "tags": [
+            "paper white",
+            "black ink"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve delicate crosscuts and stippled carved transitions",
+          "tags": [
+            "crosscuts",
+            "engraved stippling"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.etching",
+      "name": "Copperplate etching",
+      "description": "A copperplate etching on warm rag paper. Describe the forms through fine exploratory linework.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "etching",
+        "copperplate",
+        "line"
+      ],
+      "claims": {
+        "medium": "print.etching",
+        "composition": "print-etching",
+        "texture": "print.etching"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A copperplate etching on warm rag paper",
+          "tags": [
+            "copperplate etching"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Describe the forms through fine exploratory linework",
+          "tags": [
+            "exploratory etched lines"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show bitten lines, subtle plate tone and a pressed plate mark",
+          "tags": [
+            "bitten lines",
+            "plate tone"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.drypoint",
+      "name": "Velvet drypoint",
+      "description": "A drypoint print with burr-rich lines. Let soft-edged dark lines gather into velvety shadow.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "drypoint",
+        "burr",
+        "dark"
+      ],
+      "claims": {
+        "medium": "print.drypoint",
+        "lighting": "print-drypoint",
+        "texture": "print.drypoint"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A drypoint print with burr-rich lines",
+          "tags": [
+            "drypoint print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let soft-edged dark lines gather into velvety shadow",
+          "tags": [
+            "velvety shadows"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep feathery ink burr around scratched plate marks",
+          "tags": [
+            "drypoint burr",
+            "feathery ink"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.aquatint",
+      "name": "Aquatint haze",
+      "description": "An aquatint print with broad etched tonal fields. Build volume through layered flat gray-brown values.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "aquatint",
+        "tonal",
+        "resin"
+      ],
+      "claims": {
+        "medium": "print.aquatint",
+        "lighting": "print-aquatint",
+        "texture": "print.aquatint"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An aquatint print with broad etched tonal fields",
+          "tags": [
+            "aquatint print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Build volume through layered flat gray-brown values",
+          "tags": [
+            "layered aquatint values"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show fine granular resin texture within the tones",
+          "tags": [
+            "granular aquatint texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.lithograph",
+      "name": "Stone lithograph",
+      "description": "A stone lithograph drawn with greasy crayon. Use direct drawn shapes and fluid tonal transitions.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "lithography",
+        "crayon",
+        "stone"
+      ],
+      "claims": {
+        "medium": "print.lithograph",
+        "composition": "print-lithograph",
+        "texture": "print.lithograph"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A stone lithograph drawn with greasy crayon",
+          "tags": [
+            "stone lithograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use direct drawn shapes and fluid tonal transitions",
+          "tags": [
+            "drawn shapes",
+            "fluid tonality"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve crayon grain and the granular tooth of the stone",
+          "tags": [
+            "lithographic crayon",
+            "stone grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.screen",
+      "name": "Layered screen print",
+      "description": "A layered screen print using opaque spot inks. Use a small set of distinct overlapping ink colors.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "screen print",
+        "flat",
+        "registration"
+      ],
+      "claims": {
+        "medium": "print.screen",
+        "palette": "print-screen",
+        "texture": "print.screen"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A layered screen print using opaque spot inks",
+          "tags": [
+            "screen print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use a small set of distinct overlapping ink colors",
+          "tags": [
+            "limited spot inks"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show mesh texture and slight registration offsets",
+          "tags": [
+            "screen mesh",
+            "print misregistration"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.risograph",
+      "name": "Risograph overlap",
+      "description": "A risograph print made with two overlapping spot inks. Use fluorescent coral and deep blue with visible overprint mixes.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "risograph",
+        "fluorescent",
+        "zine"
+      ],
+      "claims": {
+        "medium": "print.risograph",
+        "palette": "print-risograph",
+        "texture": "print.risograph"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A risograph print made with two overlapping spot inks",
+          "tags": [
+            "risograph print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use fluorescent coral and deep blue with visible overprint mixes",
+          "tags": [
+            "fluorescent coral",
+            "deep blue overprint"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep coarse stochastic grain and slight registration drift",
+          "tags": [
+            "risograph grain",
+            "registration drift"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.monotype",
+      "name": "Wiped monotype",
+      "description": "A painterly monotype pulled from a wiped plate. Let wiped-back passages create luminous soft forms.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "monotype",
+        "painterly",
+        "unique"
+      ],
+      "claims": {
+        "medium": "print.monotype",
+        "lighting": "print-monotype",
+        "texture": "print.monotype"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A painterly monotype pulled from a wiped plate",
+          "tags": [
+            "monotype print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let wiped-back passages create luminous soft forms",
+          "tags": [
+            "wiped highlights",
+            "soft forms"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show ink smears, plate residue and pressure variations",
+          "tags": [
+            "ink smears",
+            "plate residue"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.mokuhanga",
+      "name": "Water-based woodblock",
+      "description": "A water-based woodblock print on fibrous paper. Build color through translucent registered pigment layers.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "mokuhanga",
+        "woodblock",
+        "wash"
+      ],
+      "claims": {
+        "medium": "print.mokuhanga",
+        "palette": "print-mokuhanga",
+        "texture": "print.mokuhanga"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A water-based woodblock print on fibrous paper",
+          "tags": [
+            "mokuhanga woodblock print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Build color through translucent registered pigment layers",
+          "tags": [
+            "translucent pigment layers"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show subtle wood grain and brush-applied gradient bands",
+          "tags": [
+            "wood grain",
+            "bokashi gradients"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.letterpress",
+      "name": "Letterpress impression",
+      "description": "A relief-print interpretation pressed into thick paper. Reduce the existing image to clear printable shapes.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "letterpress",
+        "relief",
+        "paper"
+      ],
+      "claims": {
+        "medium": "print.letterpress",
+        "composition": "print-letterpress",
+        "texture": "print.letterpress"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A relief-print interpretation pressed into thick paper",
+          "tags": [
+            "letterpress relief print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reduce the existing image to clear printable shapes",
+          "tags": [
+            "clear relief shapes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show shallow debossing and slightly uneven ink coverage",
+          "tags": [
+            "debossed paper",
+            "uneven ink"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.engraved",
+      "name": "Steel-plate lines",
+      "description": "A steel-plate engraving with precise tapered lines. Model volume with disciplined curved hatch bands.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "engraving",
+        "steel",
+        "precision"
+      ],
+      "claims": {
+        "medium": "print.engraved",
+        "lighting": "print-engraved",
+        "texture": "print.engraved"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A steel-plate engraving with precise tapered lines",
+          "tags": [
+            "steel plate engraving"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Model volume with disciplined curved hatch bands",
+          "tags": [
+            "curved hatch bands"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep extremely fine line intersections and clean paper gaps",
+          "tags": [
+            "fine engraved lines",
+            "clean paper gaps"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.collagraph",
+      "name": "Textured collagraph",
+      "description": "A collagraph print from a textured relief plate. Describe existing forms through assembled relief shapes.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "collagraph",
+        "texture",
+        "plate"
+      ],
+      "claims": {
+        "medium": "print.collagraph",
+        "composition": "print-collagraph",
+        "texture": "print.collagraph"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A collagraph print from a textured relief plate",
+          "tags": [
+            "collagraph print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Describe existing forms through assembled relief shapes",
+          "tags": [
+            "assembled relief shapes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show fabric, card and granular impressions in the ink",
+          "tags": [
+            "fabric impressions",
+            "granular ink"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.carboprint",
+      "name": "Carbon transfer print",
+      "description": "A carbon-transfer pigment print interpretation. Use rich warm-black pigment with a long tonal scale.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "carbon",
+        "pigment",
+        "photograph"
+      ],
+      "claims": {
+        "medium": "print.carboprint",
+        "palette": "print-carboprint",
+        "texture": "print.carboprint"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A carbon-transfer pigment print interpretation",
+          "tags": [
+            "carbon transfer print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use rich warm-black pigment with a long tonal scale",
+          "tags": [
+            "warm black pigment",
+            "long tonal scale"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep slight gelatin relief in the densest printed areas",
+          "tags": [
+            "gelatin pigment relief"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.gum",
+      "name": "Gum-bichromate layers",
+      "description": "A gum-bichromate pigment print. Build muted color through softly registered pigment layers.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "gum bichromate",
+        "pigment",
+        "soft"
+      ],
+      "claims": {
+        "medium": "print.gum",
+        "palette": "print-gum",
+        "texture": "print.gum"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A gum-bichromate pigment print",
+          "tags": [
+            "gum bichromate print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Build muted color through softly registered pigment layers",
+          "tags": [
+            "muted layered pigments"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show brushed coating edges and gentle pigment pooling",
+          "tags": [
+            "brushed coating",
+            "pigment pooling"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.photogravure",
+      "name": "Photogravure depth",
+      "description": "A photogravure interpretation on thick paper. Hold a rich continuous scale from soft light to dense dark.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "photogravure",
+        "intaglio",
+        "rich"
+      ],
+      "claims": {
+        "medium": "print.photogravure",
+        "lighting": "print-photogravure",
+        "texture": "print.photogravure"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A photogravure interpretation on thick paper",
+          "tags": [
+            "photogravure print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Hold a rich continuous scale from soft light to dense dark",
+          "tags": [
+            "continuous gravure tonality"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep subtle aquatint grain and ink resting in paper fibers",
+          "tags": [
+            "gravure grain",
+            "inked fibers"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.chinecolle",
+      "name": "Chine-collé paper",
+      "description": "An intaglio print with chine-collé paper layers. Use thin attached paper shapes beneath the supplied drawn forms.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "chine colle",
+        "paper",
+        "layered"
+      ],
+      "claims": {
+        "medium": "print.chinecolle",
+        "composition": "print-chinecolle",
+        "texture": "print.chinecolle"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An intaglio print with chine-collé paper layers",
+          "tags": [
+            "chine colle print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use thin attached paper shapes beneath the supplied drawn forms",
+          "tags": [
+            "attached thin paper shapes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show delicate paper seams and pressed ink lines",
+          "tags": [
+            "paper seams",
+            "pressed lines"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.mezzotint",
+      "name": "Mezzotint darkness",
+      "description": "A mezzotint print. Lift soft luminous forms from a velvety dense ground.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "mezzotint",
+        "velvet",
+        "tonal"
+      ],
+      "claims": {
+        "medium": "print.mezzotint",
+        "lighting": "print-mezzotint",
+        "texture": "print.mezzotint",
+        "palette": "print-mezzotint"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A mezzotint print",
+          "tags": [
+            "mezzotint"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Lift soft luminous forms from a velvety dense ground",
+          "tags": [
+            "luminous forms",
+            "velvety tones"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep a silver monochrome tonal range",
+          "tags": [
+            "silver monochrome"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep very fine rocked-plate grain in the transitions",
+          "tags": [
+            "rocked plate grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.stipple",
+      "name": "Stipple engraving",
+      "description": "A stipple engraving of the supplied forms. Describe value through changing densities of tiny printed points.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "stipple",
+        "engraving",
+        "dots"
+      ],
+      "claims": {
+        "medium": "print.stipple",
+        "lighting": "print-stipple",
+        "texture": "print.stipple"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A stipple engraving of the supplied forms",
+          "tags": [
+            "stipple engraving"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Describe value through changing densities of tiny printed points",
+          "tags": [
+            "stipple point density"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep individually legible dots around soft tonal boundaries",
+          "tags": [
+            "tiny printed points"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.roulette",
+      "name": "Roulette-ground etching",
+      "description": "A roulette-ground etching. Build broad values from pressure-sensitive granular marks.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "roulette",
+        "etching",
+        "grain"
+      ],
+      "claims": {
+        "medium": "print.roulette",
+        "lighting": "print-roulette",
+        "texture": "print.roulette"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A roulette-ground etching",
+          "tags": [
+            "roulette etching"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Build broad values from pressure-sensitive granular marks",
+          "tags": [
+            "granular pressure values"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show small repeated tooth impressions from the roulette wheel",
+          "tags": [
+            "roulette tooth impressions"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.jigsaw",
+      "name": "Jigsaw relief color",
+      "description": "A jigsaw relief print made from fitted color blocks. Use adjacent solid ink colors with shared carved boundaries.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "jigsaw",
+        "relief",
+        "color"
+      ],
+      "claims": {
+        "medium": "print.jigsaw",
+        "palette": "print-jigsaw",
+        "texture": "print.jigsaw"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A jigsaw relief print made from fitted color blocks",
+          "tags": [
+            "jigsaw relief print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use adjacent solid ink colors with shared carved boundaries",
+          "tags": [
+            "adjacent solid inks"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep tiny gaps where the inked blocks meet",
+          "tags": [
+            "block join gaps",
+            "relief ink"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.colograph",
+      "name": "Carborundum intaglio",
+      "description": "A carborundum intaglio print. Use dense granular blacks beside wiped pale passages.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "carborundum",
+        "intaglio",
+        "grit"
+      ],
+      "claims": {
+        "medium": "print.colograph",
+        "lighting": "print-colograph",
+        "texture": "print.colograph"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A carborundum intaglio print",
+          "tags": [
+            "carborundum print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use dense granular blacks beside wiped pale passages",
+          "tags": [
+            "granular blacks",
+            "wiped lights"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show heavy ink retained by gritty plate textures",
+          "tags": [
+            "gritty plate texture",
+            "heavy ink"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.pochoir",
+      "name": "Pochoir color",
+      "description": "A pochoir stencil-colored print. Apply clear hand-brushed color within precise cut stencils.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "pochoir",
+        "stencil",
+        "color"
+      ],
+      "claims": {
+        "medium": "print.pochoir",
+        "palette": "print-pochoir",
+        "texture": "print.pochoir"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A pochoir stencil-colored print",
+          "tags": [
+            "pochoir print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Apply clear hand-brushed color within precise cut stencils",
+          "tags": [
+            "hand brushed stencil color"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep softly varied brush pigment inside crisp shape edges",
+          "tags": [
+            "varied brush pigment",
+            "crisp edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "print.blueline",
+      "name": "Spirit-duplicator blue",
+      "description": "A spirit-duplicator style reproduced drawing. Use faded violet-blue ink on cream paper.",
+      "category": "printmaking",
+      "kind": "style",
+      "tags": [
+        "printmaking",
+        "duplicator",
+        "blue",
+        "reproduction"
+      ],
+      "claims": {
+        "medium": "print.blueline",
+        "palette": "print-blueline",
+        "texture": "print.blueline"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A spirit-duplicator style reproduced drawing",
+          "tags": [
+            "spirit duplicator print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use faded violet-blue ink on cream paper",
+          "tags": [
+            "violet blue ink",
+            "cream paper"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show slightly uneven reproduction density and softened line edges",
+          "tags": [
+            "uneven reproduction",
+            "softened lines"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

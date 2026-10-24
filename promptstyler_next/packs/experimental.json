@@ -1,0 +1,1155 @@
+{
+  "schema_version": 1,
+  "id": "next.experimental",
+  "version": "1.0.0",
+  "name": "Experimental image languages",
+  "description": "Deliberate process-based distortions and alternative image construction.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "experimental.solarization",
+      "name": "Solarized silver",
+      "description": "A darkroom solarization interpretation. Partially reverse tones at the boundary of highlights and shadows.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "solarization",
+        "darkroom",
+        "reversal"
+      ],
+      "claims": {
+        "medium": "experimental.solarization",
+        "palette": "experimental-solarization",
+        "texture": "experimental.solarization"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A darkroom solarization interpretation",
+          "tags": [
+            "solarized photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Partially reverse tones at the boundary of highlights and shadows",
+          "tags": [
+            "partial tonal reversal"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep thin luminous edge lines from the solarization process",
+          "tags": [
+            "solarization edge lines"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.glitch",
+      "name": "Signal interruption",
+      "description": "A controlled digital-signal glitch interpretation. Preserve the main subject while offsetting narrow horizontal bands.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "glitch",
+        "digital",
+        "signal"
+      ],
+      "claims": {
+        "medium": "experimental.glitch",
+        "composition": "experimental-glitch",
+        "texture": "experimental.glitch"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A controlled digital-signal glitch interpretation",
+          "tags": [
+            "digital glitch art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve the main subject while offsetting narrow horizontal bands",
+          "tags": [
+            "horizontal signal offsets"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use localized channel separation and sparse compression blocks",
+          "tags": [
+            "channel separation",
+            "sparse blocks"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.scan",
+      "name": "Flatbed scan",
+      "description": "A flatbed-scan interpretation with contact-plane emphasis. Use shallow even scanner illumination with rapid depth falloff.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "scanner",
+        "flatbed",
+        "contact"
+      ],
+      "claims": {
+        "medium": "experimental.scan",
+        "lighting": "experimental-scan",
+        "texture": "experimental.scan"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A flatbed-scan interpretation with contact-plane emphasis",
+          "tags": [
+            "flatbed scan art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use shallow even scanner illumination with rapid depth falloff",
+          "tags": [
+            "scanner illumination"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show fine scan-line texture and occasional optical streaks",
+          "tags": [
+            "scan lines",
+            "optical streaks"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.motion",
+      "name": "Intentional camera motion",
+      "description": "An intentional-camera-motion interpretation. Stretch existing light and form into coherent directional trails.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "motion",
+        "camera",
+        "abstract"
+      ],
+      "claims": {
+        "medium": "experimental.motion",
+        "composition": "experimental-motion",
+        "texture": "experimental.motion"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An intentional-camera-motion interpretation",
+          "tags": [
+            "intentional camera movement"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Stretch existing light and form into coherent directional trails",
+          "tags": [
+            "directional motion trails"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Retain a few recognizable anchor edges within the blur",
+          "tags": [
+            "anchor edges",
+            "flowing blur"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.multiexposure",
+      "name": "Multiple exposure",
+      "description": "A multiple-exposure interpretation of the supplied forms. Overlay offset versions of the existing shapes with controlled transparency.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "exposure",
+        "layered",
+        "ghost"
+      ],
+      "claims": {
+        "medium": "experimental.multiexposure",
+        "composition": "experimental-multiexposure",
+        "texture": "experimental.multiexposure"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A multiple-exposure interpretation of the supplied forms",
+          "tags": [
+            "multiple exposure"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Overlay offset versions of the existing shapes with controlled transparency",
+          "tags": [
+            "offset transparent forms"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep smooth additive light intersections and delicate ghost edges",
+          "tags": [
+            "additive light",
+            "ghost edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.chemigram",
+      "name": "Chemigram reaction",
+      "description": "A chemigram-like abstraction from photographic chemistry. Let the supplied forms emerge through reaction-boundary shapes.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "chemigram",
+        "chemistry",
+        "darkroom"
+      ],
+      "claims": {
+        "medium": "experimental.chemigram",
+        "composition": "experimental-chemigram",
+        "texture": "experimental.chemigram"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A chemigram-like abstraction from photographic chemistry",
+          "tags": [
+            "chemigram art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied forms emerge through reaction-boundary shapes",
+          "tags": [
+            "reaction boundary forms"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show organic resist edges, chemical blooms and darkroom stains",
+          "tags": [
+            "chemical blooms",
+            "resist edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.datamosh",
+      "name": "Datamosh persistence",
+      "description": "A datamosh-style interpretation. Let blocks of the existing image smear in a consistent direction.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "datamosh",
+        "compression",
+        "motion"
+      ],
+      "claims": {
+        "medium": "experimental.datamosh",
+        "composition": "experimental-datamosh",
+        "texture": "experimental.datamosh"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A datamosh-style interpretation",
+          "tags": [
+            "datamosh art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let blocks of the existing image smear in a consistent direction",
+          "tags": [
+            "directional block smears"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve sparse crisp islands among compression-like trails",
+          "tags": [
+            "crisp islands",
+            "compression trails"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.kaleido",
+      "name": "Kaleidoscopic order",
+      "description": "A kaleidoscopic abstraction of the supplied shapes. Reflect existing motifs around a clear radial symmetry.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "kaleidoscope",
+        "symmetry",
+        "repetition"
+      ],
+      "claims": {
+        "medium": "experimental.kaleido",
+        "composition": "experimental-kaleido",
+        "texture": "experimental.kaleido"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A kaleidoscopic abstraction of the supplied shapes",
+          "tags": [
+            "kaleidoscopic art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reflect existing motifs around a clear radial symmetry",
+          "tags": [
+            "radial reflection",
+            "symmetry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep clean mirrored boundaries and repeated surface detail",
+          "tags": [
+            "clean mirrored boundaries"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.dither",
+      "name": "Dithered threshold",
+      "description": "A dithered bitmap interpretation. Reduce the image to two strongly separated ink values.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "dither",
+        "bitmap",
+        "threshold"
+      ],
+      "claims": {
+        "medium": "experimental.dither",
+        "palette": "experimental-dither",
+        "texture": "experimental.dither"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A dithered bitmap interpretation",
+          "tags": [
+            "dithered bitmap art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Reduce the image to two strongly separated ink values",
+          "tags": [
+            "two tone threshold"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Build midtones from deliberate ordered pixel patterns",
+          "tags": [
+            "ordered dithering",
+            "pixel patterns"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.slitscan",
+      "name": "Slit-scan stretch",
+      "description": "A slit-scan interpretation with time-like spatial distortion. Stretch slices of the existing forms along one consistent axis.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "slit scan",
+        "time",
+        "distortion"
+      ],
+      "claims": {
+        "medium": "experimental.slitscan",
+        "composition": "experimental-slitscan",
+        "texture": "experimental.slitscan"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A slit-scan interpretation with time-like spatial distortion",
+          "tags": [
+            "slit scan art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Stretch slices of the existing forms along one consistent axis",
+          "tags": [
+            "single axis slice stretch"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep smooth bands connected to occasional clear contour slices",
+          "tags": [
+            "continuous bands",
+            "contour slices"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.lumen",
+      "name": "Lumen-print bloom",
+      "description": "A lumen-print interpretation on light-sensitive paper. Use unstable rose, violet and amber chemical color shifts.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "lumen print",
+        "light",
+        "paper"
+      ],
+      "claims": {
+        "medium": "experimental.lumen",
+        "palette": "experimental-lumen",
+        "texture": "experimental.lumen"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A lumen-print interpretation on light-sensitive paper",
+          "tags": [
+            "lumen print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use unstable rose, violet and amber chemical color shifts",
+          "tags": [
+            "rose violet amber chemistry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show soft contact shadows and irregular exposure blooms",
+          "tags": [
+            "contact shadows",
+            "exposure blooms"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.moired",
+      "name": "Moiré interference",
+      "description": "An interference-pattern interpretation. Layer fine line fields to reveal broad secondary rhythms.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "moire",
+        "interference",
+        "line"
+      ],
+      "claims": {
+        "medium": "experimental.moired",
+        "composition": "experimental-moired",
+        "texture": "experimental.moired"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An interference-pattern interpretation",
+          "tags": [
+            "moire art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Layer fine line fields to reveal broad secondary rhythms",
+          "tags": [
+            "interfering line fields"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep controlled moire waves following the existing forms",
+          "tags": [
+            "controlled moire waves"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.polarized",
+      "name": "Polarized color field",
+      "description": "A polarization-inspired optical interpretation. Use spectral color shifts within existing translucent shapes.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "polarization",
+        "color",
+        "optical"
+      ],
+      "claims": {
+        "medium": "experimental.polarized",
+        "palette": "experimental-polarized",
+        "texture": "experimental.polarized"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A polarization-inspired optical interpretation",
+          "tags": [
+            "polarized optical art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use spectral color shifts within existing translucent shapes",
+          "tags": [
+            "spectral polarization colors"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep smooth color bands separated by crisp material boundaries",
+          "tags": [
+            "smooth spectral bands"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.thermal",
+      "name": "Thermal-value image",
+      "description": "A thermal-camera visual interpretation. Map existing tonal differences into an ordered false-color heat scale.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "thermal",
+        "false color",
+        "sensor"
+      ],
+      "claims": {
+        "medium": "experimental.thermal",
+        "palette": "experimental-thermal",
+        "texture": "experimental.thermal"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A thermal-camera visual interpretation",
+          "tags": [
+            "thermal image aesthetic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Map existing tonal differences into an ordered false-color heat scale",
+          "tags": [
+            "ordered thermal false color"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep soft sensor-like transitions and modest electronic noise",
+          "tags": [
+            "soft sensor transitions"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.xerox",
+      "name": "Repeated photocopy",
+      "description": "A repeatedly photocopied interpretation. Use hard black and paper white with lost middle values.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "photocopy",
+        "xerox",
+        "degraded"
+      ],
+      "claims": {
+        "medium": "experimental.xerox",
+        "palette": "experimental-xerox",
+        "texture": "experimental.xerox"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A repeatedly photocopied interpretation",
+          "tags": [
+            "xerox art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use hard black and paper white with lost middle values",
+          "tags": [
+            "black white photocopy"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show toner dropout, dust flecks and rough copied edges",
+          "tags": [
+            "toner dropout",
+            "copied edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.embodied",
+      "name": "Embossed distortion",
+      "description": "An embossed-surface abstraction of the supplied image. Let shallow virtual relief replace ordinary local color.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "emboss",
+        "relief",
+        "abstract"
+      ],
+      "claims": {
+        "medium": "experimental.embodied",
+        "lighting": "experimental-embodied",
+        "texture": "experimental.embodied"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An embossed-surface abstraction of the supplied image",
+          "tags": [
+            "embossed image abstraction"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let shallow virtual relief replace ordinary local color",
+          "tags": [
+            "shallow relief light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep delicate raised edges and compressed smooth fields",
+          "tags": [
+            "raised contours",
+            "compressed fields"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.refract",
+      "name": "Refracted fragments",
+      "description": "A prism-refraction interpretation. Split the existing contours into a few overlapping displaced fragments.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "refraction",
+        "prism",
+        "fragment"
+      ],
+      "claims": {
+        "medium": "experimental.refract",
+        "composition": "experimental-refract",
+        "palette": "experimental-refract"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A prism-refraction interpretation",
+          "tags": [
+            "prismatic refraction art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Split the existing contours into a few overlapping displaced fragments",
+          "tags": [
+            "displaced refracted fragments"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep restrained spectral separation at fragment boundaries",
+          "tags": [
+            "subtle spectral boundaries"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.raster",
+      "name": "Raster-line image",
+      "description": "A raster-line interpretation. Describe the supplied forms through continuous parallel scan paths.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "raster",
+        "line",
+        "scan"
+      ],
+      "claims": {
+        "medium": "experimental.raster",
+        "composition": "experimental-raster",
+        "texture": "experimental.raster"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A raster-line interpretation",
+          "tags": [
+            "raster line art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Describe the supplied forms through continuous parallel scan paths",
+          "tags": [
+            "parallel scan paths"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Vary line density and amplitude with the existing tonal structure",
+          "tags": [
+            "variable scan density"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.chromakey",
+      "name": "Chromakey rupture",
+      "description": "A chromakey-inspired digital collage. Separate the existing subject into precise keyed color regions.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "chroma key",
+        "cutout",
+        "digital"
+      ],
+      "claims": {
+        "medium": "experimental.chromakey",
+        "composition": "experimental-chromakey",
+        "texture": "experimental.chromakey"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A chromakey-inspired digital collage",
+          "tags": [
+            "chromakey collage"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate the existing subject into precise keyed color regions",
+          "tags": [
+            "keyed color regions"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep selective edge spill and hard digital mask boundaries",
+          "tags": [
+            "edge spill",
+            "digital masks"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.photogram",
+      "name": "Contact photogram",
+      "description": "A photogram-like darkroom interpretation. Read the supplied shapes as overlapping contact silhouettes.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "photogram",
+        "contact",
+        "darkroom"
+      ],
+      "claims": {
+        "medium": "experimental.photogram",
+        "composition": "experimental-photogram",
+        "texture": "experimental.photogram"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A photogram-like darkroom interpretation",
+          "tags": [
+            "photogram art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Read the supplied shapes as overlapping contact silhouettes",
+          "tags": [
+            "contact silhouettes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep soft proximity halos and crisp contact edges",
+          "tags": [
+            "proximity halos",
+            "contact edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.interlaced",
+      "name": "Interlaced-video trace",
+      "description": "An interlaced-video visual interpretation. Offset narrow alternating scan fields around existing motion.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "interlaced",
+        "video",
+        "field"
+      ],
+      "claims": {
+        "medium": "experimental.interlaced",
+        "composition": "experimental-interlaced",
+        "texture": "experimental.interlaced"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An interlaced-video visual interpretation",
+          "tags": [
+            "interlaced video art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Offset narrow alternating scan fields around existing motion",
+          "tags": [
+            "alternating scan fields"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show restrained field combing and soft analog chroma",
+          "tags": [
+            "field combing",
+            "analog chroma"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.cellular",
+      "name": "Cellular abstraction",
+      "description": "A cellular-pattern abstraction of the supplied forms. Let coherent cell boundaries follow the image’s main structural regions.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "cellular",
+        "procedural",
+        "organic"
+      ],
+      "claims": {
+        "medium": "experimental.cellular",
+        "composition": "experimental-cellular",
+        "texture": "experimental.cellular"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cellular-pattern abstraction of the supplied forms",
+          "tags": [
+            "cellular abstraction"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let coherent cell boundaries follow the image’s main structural regions",
+          "tags": [
+            "coherent cell boundaries"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep subtly irregular cells rather than uniform decorative dots",
+          "tags": [
+            "irregular cellular texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.foldscan",
+      "name": "Folded-scan memory",
+      "description": "A folded-paper scan interpretation. Let deliberate crease lines interrupt the existing image planes.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "fold",
+        "scan",
+        "paper"
+      ],
+      "claims": {
+        "medium": "experimental.foldscan",
+        "composition": "experimental-foldscan",
+        "texture": "experimental.foldscan"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A folded-paper scan interpretation",
+          "tags": [
+            "folded scan art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let deliberate crease lines interrupt the existing image planes",
+          "tags": [
+            "image crease interruptions"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show shallow fold shadows and paper abrasion at the creases",
+          "tags": [
+            "fold shadows",
+            "paper abrasion"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "experimental.waveform",
+      "name": "Waveform contour",
+      "description": "A waveform-contour abstraction. Translate the supplied silhouette into flowing oscillating line bands.",
+      "category": "experimental",
+      "kind": "style",
+      "tags": [
+        "experimental",
+        "waveform",
+        "contour",
+        "digital"
+      ],
+      "claims": {
+        "medium": "experimental.waveform",
+        "composition": "experimental-waveform",
+        "texture": "experimental.waveform"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A waveform-contour abstraction",
+          "tags": [
+            "waveform contour art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Translate the supplied silhouette into flowing oscillating line bands",
+          "tags": [
+            "oscillating line bands"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine amplitude changes tied to the existing form",
+          "tags": [
+            "form linked amplitude"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

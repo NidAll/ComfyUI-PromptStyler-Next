@@ -1,0 +1,1172 @@
+{
+  "schema_version": 1,
+  "id": "next.anime",
+  "version": "1.0.0",
+  "name": "Anime visual languages",
+  "description": "Animation and illustrated scene treatments, without character or artist insertion.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "anime.cel",
+      "name": "Painted cel",
+      "description": "Hand-painted animation cels over a painted background. Describe form using clean two-step cel shadows.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "cel",
+        "animation",
+        "handpainted"
+      ],
+      "claims": {
+        "medium": "anime.cel",
+        "lighting": "anime-cel",
+        "texture": "anime.cel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Hand-painted animation cels over a painted background",
+          "tags": [
+            "traditional cel animation"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Describe form using clean two-step cel shadows",
+          "tags": [
+            "two tone cel shading"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep line edges crisp with small variations from hand inking",
+          "tags": [
+            "crisp ink lines",
+            "hand painted color"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.watercolor",
+      "name": "Watercolor animation",
+      "description": "An anime illustration with watercolor-painted surroundings. Use transparent muted washes with open paper highlights.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "watercolor",
+        "soft",
+        "background"
+      ],
+      "claims": {
+        "medium": "anime.watercolor",
+        "palette": "anime-watercolor",
+        "texture": "anime.watercolor"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An anime illustration with watercolor-painted surroundings",
+          "tags": [
+            "anime watercolor illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use transparent muted washes with open paper highlights",
+          "tags": [
+            "transparent watercolor",
+            "muted washes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Allow light pigment granulation around painted edges",
+          "tags": [
+            "watercolor granulation",
+            "soft painted edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.ova",
+      "name": "Late-1980s OVA",
+      "description": "A late-1980s original-video-animation frame. Use deep jewel shadows with restrained warm skin-tone treatment.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "retro",
+        "ova",
+        "cel"
+      ],
+      "claims": {
+        "medium": "anime.ova",
+        "palette": "anime-ova",
+        "texture": "anime.ova"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A late-1980s original-video-animation frame",
+          "tags": [
+            "1980s ova frame"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use deep jewel shadows with restrained warm skin-tone treatment",
+          "tags": [
+            "jewel tone shadows",
+            "restrained warmth"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Render dense cel paint and fine transferred-film grain",
+          "tags": [
+            "dense cel paint",
+            "film transfer grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.graphic",
+      "name": "Graphic anime poster",
+      "description": "A graphic anime illustration built around a strong silhouette. Use large negative-space shapes and a decisive focal hierarchy.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "graphic",
+        "poster",
+        "silhouette"
+      ],
+      "claims": {
+        "medium": "anime.graphic",
+        "composition": "anime-graphic",
+        "palette": "anime-graphic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A graphic anime illustration built around a strong silhouette",
+          "tags": [
+            "graphic anime illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use large negative-space shapes and a decisive focal hierarchy",
+          "tags": [
+            "bold silhouette",
+            "negative space"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Limit the image to three coordinated flat colors",
+          "tags": [
+            "three color palette",
+            "flat colors"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.pastel",
+      "name": "Pastel slice of life",
+      "description": "A gentle slice-of-life anime illustration. Use soft diffuse daylight without theatrical contrast.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "pastel",
+        "slice of life",
+        "gentle"
+      ],
+      "claims": {
+        "medium": "anime.pastel",
+        "lighting": "anime-pastel",
+        "palette": "anime-pastel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A gentle slice-of-life anime illustration",
+          "tags": [
+            "slice of life anime"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft diffuse daylight without theatrical contrast",
+          "tags": [
+            "soft diffuse daylight"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Balance warm pastel colors with pale neutral accents",
+          "tags": [
+            "warm pastel colors",
+            "pale neutrals"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.mecha",
+      "name": "Mechanical cel craft",
+      "description": "A mechanically precise anime illustration. Use controlled panel-line detail and restrained surface wear on existing hard surfaces.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "mecha",
+        "mechanical",
+        "industrial"
+      ],
+      "claims": {
+        "medium": "anime.mecha",
+        "lighting": "anime-mecha",
+        "texture": "anime.mecha"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A mechanically precise anime illustration",
+          "tags": [
+            "mechanical anime illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Use controlled panel-line detail and restrained surface wear on existing hard surfaces",
+          "tags": [
+            "precise panel lines",
+            "restrained wear"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let sharply bounded highlights explain hard-surface volumes",
+          "tags": [
+            "bounded hard surface highlights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.inkline",
+      "name": "Fine-line key visual",
+      "description": "An anime key visual with delicate variable-width linework. Use clear local colors with gently shifted shadow hues.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "fine line",
+        "key visual",
+        "delicate"
+      ],
+      "claims": {
+        "medium": "anime.inkline",
+        "palette": "anime-inkline",
+        "texture": "anime.inkline"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An anime key visual with delicate variable-width linework",
+          "tags": [
+            "anime key visual",
+            "fine lineart"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use clear local colors with gently shifted shadow hues",
+          "tags": [
+            "clear local colors",
+            "hue shifted shadows"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Reserve small detailed marks for the focal area",
+          "tags": [
+            "selective fine detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.gouache",
+      "name": "Gouache background plate",
+      "description": "A hand-painted animation background in opaque gouache. Organize depth through overlapping painted value groups.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "gouache",
+        "background",
+        "paint"
+      ],
+      "claims": {
+        "medium": "anime.gouache",
+        "composition": "anime-gouache",
+        "texture": "anime.gouache"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A hand-painted animation background in opaque gouache",
+          "tags": [
+            "gouache anime background"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize depth through overlapping painted value groups",
+          "tags": [
+            "layered value groups"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show dry-brush scumbling and opaque pigment coverage",
+          "tags": [
+            "gouache pigment",
+            "dry brush scumble"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.chibi",
+      "name": "Chibi illustration",
+      "description": "A chibi-style illustration with compact expressive shape design. Simplify existing forms into rounded readable masses.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "chibi",
+        "stylized",
+        "compact"
+      ],
+      "claims": {
+        "medium": "anime.chibi",
+        "composition": "anime-chibi",
+        "texture": "anime.chibi"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A chibi-style illustration with compact expressive shape design",
+          "tags": [
+            "chibi",
+            "compact shape design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Simplify existing forms into rounded readable masses",
+          "tags": [
+            "rounded simplified shapes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use clean outlines and restrained decorative detail",
+          "tags": [
+            "clean outlines",
+            "simple details"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.sumi",
+      "name": "Ink-and-cel fusion",
+      "description": "An anime illustration combining cel color with expressive ink marks. Balance precise focal contours against broad gestural strokes.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "ink",
+        "sumi",
+        "expressive"
+      ],
+      "claims": {
+        "medium": "anime.sumi",
+        "composition": "anime-sumi",
+        "texture": "anime.sumi"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An anime illustration combining cel color with expressive ink marks",
+          "tags": [
+            "anime ink illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Balance precise focal contours against broad gestural strokes",
+          "tags": [
+            "precise contours",
+            "gestural strokes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep visible ink feathering at selected brush edges",
+          "tags": [
+            "ink feathering",
+            "brush texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.nocturne",
+      "name": "Painted anime nocturne",
+      "description": "A painted anime nocturne with clear shape separation. Use soft rim illumination to hold silhouettes in the dark.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "night",
+        "blue",
+        "luminous"
+      ],
+      "claims": {
+        "medium": "anime.nocturne",
+        "lighting": "anime-nocturne",
+        "palette": "anime-nocturne"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A painted anime nocturne with clear shape separation",
+          "tags": [
+            "anime nocturne"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft rim illumination to hold silhouettes in the dark",
+          "tags": [
+            "soft rim light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Set subdued blue-violet masses against a few warm highlights",
+          "tags": [
+            "blue violet shadows",
+            "warm highlights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.layout",
+      "name": "Animation layout drawing",
+      "description": "A production-style animation layout drawing. Emphasize spatial construction and purposeful perspective lines.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "layout",
+        "pencil",
+        "production"
+      ],
+      "claims": {
+        "medium": "anime.layout",
+        "composition": "anime-layout",
+        "texture": "anime.layout"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A production-style animation layout drawing",
+          "tags": [
+            "animation layout drawing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Emphasize spatial construction and purposeful perspective lines",
+          "tags": [
+            "layout perspective",
+            "spatial construction"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use loose graphite construction beneath selective finished contours",
+          "tags": [
+            "graphite construction",
+            "selective contours"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.digitalflat",
+      "name": "Flat digital animation",
+      "description": "A clean digital-animation frame. Use flat local colors and sharply separated shadow layers.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "digital",
+        "flat",
+        "clean"
+      ],
+      "claims": {
+        "medium": "anime.digitalflat",
+        "palette": "anime-digitalflat",
+        "texture": "anime.digitalflat"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A clean digital-animation frame",
+          "tags": [
+            "digital anime frame"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use flat local colors and sharply separated shadow layers",
+          "tags": [
+            "flat local colors",
+            "separated shadows"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep smooth fills and stable crisp contour edges",
+          "tags": [
+            "smooth fills",
+            "stable contours"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.storyboard",
+      "name": "Anime storyboard",
+      "description": "A rough anime storyboard drawing of the supplied action. Prioritize clear staging and a concise directional read.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "storyboard",
+        "rough",
+        "sequential"
+      ],
+      "claims": {
+        "medium": "anime.storyboard",
+        "composition": "anime-storyboard",
+        "texture": "anime.storyboard"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A rough anime storyboard drawing of the supplied action",
+          "tags": [
+            "anime storyboard drawing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Prioritize clear staging and a concise directional read",
+          "tags": [
+            "clear staging",
+            "directional read"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep rapid graphite gestures and sparse tone blocks",
+          "tags": [
+            "rapid graphite gestures",
+            "sparse tone"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.silkscreen",
+      "name": "Anime screenprint",
+      "description": "An anime illustration adapted to screen-printed ink shapes. Use a narrow set of opaque spot colors.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "screenprint",
+        "ink",
+        "poster"
+      ],
+      "claims": {
+        "medium": "anime.silkscreen",
+        "palette": "anime-silkscreen",
+        "texture": "anime.silkscreen"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An anime illustration adapted to screen-printed ink shapes",
+          "tags": [
+            "anime screenprint"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use a narrow set of opaque spot colors",
+          "tags": [
+            "opaque spot colors"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show slight ink-edge roughness and screen-mesh texture",
+          "tags": [
+            "ink edge roughness",
+            "mesh texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.doujin",
+      "name": "Handmade fanbook color",
+      "description": "A handmade anime fanbook illustration. Use lightly layered colored-pencil and marker hues.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "fanbook",
+        "colored pencil",
+        "handmade"
+      ],
+      "claims": {
+        "medium": "anime.doujin",
+        "palette": "anime-doujin",
+        "texture": "anime.doujin"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A handmade anime fanbook illustration",
+          "tags": [
+            "handmade anime illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use lightly layered colored-pencil and marker hues",
+          "tags": [
+            "colored pencil",
+            "marker colors"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve visible paper and small irregularities in the ink",
+          "tags": [
+            "visible paper",
+            "irregular ink"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.lightnovel",
+      "name": "Light-novel cover paint",
+      "description": "A light-novel-cover style anime illustration. Keep a strong focal silhouette with readable supporting shapes.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "light novel",
+        "cover",
+        "polished"
+      ],
+      "claims": {
+        "medium": "anime.lightnovel",
+        "composition": "anime-lightnovel",
+        "texture": "anime.lightnovel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A light-novel-cover style anime illustration",
+          "tags": [
+            "light novel illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep a strong focal silhouette with readable supporting shapes",
+          "tags": [
+            "focal silhouette",
+            "supporting shapes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Combine crisp focal linework with softly painted secondary forms",
+          "tags": [
+            "crisp focal lines",
+            "soft secondary paint"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.children",
+      "name": "Children’s anime shapes",
+      "description": "A children’s-animation illustration with rounded clear forms. Use simple visual grouping and easily read gestures.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "children",
+        "rounded",
+        "simple"
+      ],
+      "claims": {
+        "medium": "anime.children",
+        "composition": "anime-children",
+        "palette": "anime-children"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A children’s-animation illustration with rounded clear forms",
+          "tags": [
+            "children anime illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use simple visual grouping and easily read gestures",
+          "tags": [
+            "simple grouping",
+            "clear gestures"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use friendly distinct colors with low shadow complexity",
+          "tags": [
+            "distinct friendly colors"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.roughpaint",
+      "name": "Rough anime paint study",
+      "description": "A rough painted anime study. Build the image from energetic connected color masses.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "rough paint",
+        "study",
+        "expressive"
+      ],
+      "claims": {
+        "medium": "anime.roughpaint",
+        "composition": "anime-roughpaint",
+        "texture": "anime.roughpaint"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A rough painted anime study",
+          "tags": [
+            "rough painted anime"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Build the image from energetic connected color masses",
+          "tags": [
+            "energetic color masses"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Leave broad brush marks and selected construction edges visible",
+          "tags": [
+            "broad brush marks",
+            "construction edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.mutedcel",
+      "name": "Muted cel realism",
+      "description": "An anime cel illustration with understated realistic staging. Use muted local colors and soft neutral shadow hues.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "cel",
+        "muted",
+        "realistic"
+      ],
+      "claims": {
+        "medium": "anime.mutedcel",
+        "palette": "anime-mutedcel",
+        "texture": "anime.mutedcel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An anime cel illustration with understated realistic staging",
+          "tags": [
+            "muted cel anime"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted local colors and soft neutral shadow hues",
+          "tags": [
+            "muted local colors",
+            "neutral shadows"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep clean contours without excessive glossy highlights",
+          "tags": [
+            "clean contours",
+            "restrained highlights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.chromaticline",
+      "name": "Colored contour illustration",
+      "description": "An anime illustration with colored contour lines. Let line colors shift gently to harmonize with neighboring fills.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "colored line",
+        "delicate",
+        "hue"
+      ],
+      "claims": {
+        "medium": "anime.chromaticline",
+        "palette": "anime-chromaticline",
+        "texture": "anime.chromaticline"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An anime illustration with colored contour lines",
+          "tags": [
+            "colored contour anime"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Let line colors shift gently to harmonize with neighboring fills",
+          "tags": [
+            "harmonized colored lines"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use thin variable contours and softly joined color areas",
+          "tags": [
+            "thin variable contours"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.pencilcolor",
+      "name": "Pencil-and-color keyframe",
+      "description": "An animation keyframe with retained pencil underdrawing. Apply transparent local-color washes over the drawing.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "pencil",
+        "keyframe",
+        "color"
+      ],
+      "claims": {
+        "medium": "anime.pencilcolor",
+        "palette": "anime-pencilcolor",
+        "texture": "anime.pencilcolor"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An animation keyframe with retained pencil underdrawing",
+          "tags": [
+            "pencil color keyframe"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Apply transparent local-color washes over the drawing",
+          "tags": [
+            "transparent color washes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep pencil searching lines visible under selected edges",
+          "tags": [
+            "visible underdrawing"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.woodblock",
+      "name": "Anime woodblock fusion",
+      "description": "An anime illustration translated into water-based woodblock shapes. Use softly registered flat pigment colors.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "woodblock",
+        "print",
+        "flat"
+      ],
+      "claims": {
+        "medium": "anime.woodblock",
+        "palette": "anime-woodblock",
+        "texture": "anime.woodblock"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An anime illustration translated into water-based woodblock shapes",
+          "tags": [
+            "anime woodblock illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use softly registered flat pigment colors",
+          "tags": [
+            "flat registered pigment"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine woodgrain and slightly irregular print edges",
+          "tags": [
+            "woodgrain",
+            "irregular print edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "anime.sparse",
+      "name": "Sparse-line anime",
+      "description": "A sparse-line anime illustration. Describe identifying forms with a small number of precise contours.",
+      "category": "anime",
+      "kind": "style",
+      "tags": [
+        "anime",
+        "sparse",
+        "line",
+        "minimal"
+      ],
+      "claims": {
+        "medium": "anime.sparse",
+        "composition": "anime-sparse",
+        "palette": "anime-sparse"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A sparse-line anime illustration",
+          "tags": [
+            "sparse line anime"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Describe identifying forms with a small number of precise contours",
+          "tags": [
+            "economical precise contours"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use only a few pale color areas beneath the linework",
+          "tags": [
+            "pale selective color"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

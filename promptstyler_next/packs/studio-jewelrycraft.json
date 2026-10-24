@@ -1,0 +1,1931 @@
+{
+  "schema_version": 1,
+  "id": "next.studio-jewelrycraft",
+  "version": "1.0.0",
+  "name": "Jewelry and accessory craftsmanship",
+  "description": "Authored jewelry and accessory craftsmanship directions that restyle the existing subject without inventing scene objects.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "jewelrycraft.chasing",
+      "name": "Chased-metal surface",
+      "description": "A craft interpretation with shallow chased-metal surface work. Keep small tool impressions related to the existing contours.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "chasing",
+        "worked metal",
+        "shallow relief",
+        "tool rhythm"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.chasing",
+        "lighting": "jewelrycraft.chasing",
+        "texture": "jewelrycraft.chasing"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A craft interpretation with shallow chased-metal surface work",
+          "tags": [
+            "chasing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep small tool impressions related to the existing contours",
+          "tags": [
+            "worked metal",
+            "shallow relief"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use low soft highlights to make the relief readable",
+          "tags": [
+            "tool rhythm"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.solderflow",
+      "name": "Solder-flow join study",
+      "description": "A craft interpretation attentive to small existing soldered joins. Make the joining seam fine and continuous along the existing contact.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "solder join",
+        "metal connection",
+        "capillary seam",
+        "precise contact"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.solderflow",
+        "lighting": "jewelrycraft.solderflow",
+        "texture": "jewelrycraft.solderflow"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A craft interpretation attentive to small existing soldered joins",
+          "tags": [
+            "solder join"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Make the joining seam fine and continuous along the existing contact",
+          "tags": [
+            "metal connection",
+            "capillary seam"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use low broad light to reveal the transition between joined surfaces",
+          "tags": [
+            "precise contact"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.piercedplate",
+      "name": "Pierced-plate openness",
+      "description": "A pierced-plate craft interpretation of the existing open structure. Keep the boundaries of openings consistent with the surrounding plate thickness.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "pierced plate",
+        "cut opening",
+        "thin metal",
+        "precise boundary"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.piercedplate",
+        "lighting": "jewelrycraft.piercedplate",
+        "texture": "jewelrycraft.piercedplate"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A pierced-plate craft interpretation of the existing open structure",
+          "tags": [
+            "pierced plate"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the boundaries of openings consistent with the surrounding plate thickness",
+          "tags": [
+            "cut opening",
+            "thin metal"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use edge illumination to distinguish the thin solid forms from their gaps",
+          "tags": [
+            "precise boundary"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.granulation",
+      "name": "Granulated surface rhythm",
+      "description": "A craft interpretation emphasizing small granular surface relief. Keep the granular detail varied but scaled consistently to the existing form.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "granulation",
+        "small spheres",
+        "worked surface",
+        "restrained sparkle"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.granulation",
+        "lighting": "jewelrycraft.granulation",
+        "texture": "jewelrycraft.granulation"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A craft interpretation emphasizing small granular surface relief",
+          "tags": [
+            "granulation"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the granular detail varied but scaled consistently to the existing form",
+          "tags": [
+            "small spheres",
+            "worked surface"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use subdued highlights so the relief does not become glitter",
+          "tags": [
+            "restrained sparkle"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.guilloche",
+      "name": "Engine-turned linework",
+      "description": "An engine-turned metalwork interpretation of the existing surface. Let fine intersecting cut curves follow a coherent repeated construction.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "engine turning",
+        "guilloche",
+        "intersecting cuts",
+        "coherent curves"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.guilloche",
+        "lighting": "jewelrycraft.guilloche",
+        "texture": "jewelrycraft.guilloche"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An engine-turned metalwork interpretation of the existing surface",
+          "tags": [
+            "engine turning"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let fine intersecting cut curves follow a coherent repeated construction",
+          "tags": [
+            "guilloche",
+            "intersecting cuts"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use gentle angle-dependent reflection to reveal the worked lines",
+          "tags": [
+            "coherent curves"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.champleve",
+      "name": "Recessed-enamel planes",
+      "description": "A recessed-enamel craft interpretation. Let existing colored areas sit slightly below their surrounding planes.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "champleve",
+        "recessed color",
+        "metal ground",
+        "shallow depth"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.champleve",
+        "lighting": "jewelrycraft.champleve",
+        "texture": "jewelrycraft.champleve"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A recessed-enamel craft interpretation",
+          "tags": [
+            "champleve"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let existing colored areas sit slightly below their surrounding planes",
+          "tags": [
+            "recessed color",
+            "metal ground"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep the raised ground softly reflective and the recessed color more glassy",
+          "tags": [
+            "shallow depth"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.plique",
+      "name": "Translucent-enamel light",
+      "description": "A translucent-enamel interpretation of the existing forms. Transmit restrained light through thin color areas without uniform glow.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "translucent enamel",
+        "thin color",
+        "edge structure",
+        "transmitted glow"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.plique",
+        "lighting": "jewelrycraft.plique",
+        "palette": "jewelrycraft.plique"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A translucent-enamel interpretation of the existing forms",
+          "tags": [
+            "translucent enamel"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Transmit restrained light through thin color areas without uniform glow",
+          "tags": [
+            "thin color",
+            "edge structure"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep adjacent transparent colors distinct and coherent",
+          "tags": [
+            "transmitted glow"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.niello",
+      "name": "Dark-inlay contrast",
+      "description": "A dark-inlay metalwork interpretation. Use a strong but restrained relationship between dark recesses and lighter ground.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "niello",
+        "dark inlay",
+        "metal contrast",
+        "engraved recess"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.niello",
+        "palette": "jewelrycraft.niello",
+        "texture": "jewelrycraft.niello"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A dark-inlay metalwork interpretation",
+          "tags": [
+            "niello"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use a strong but restrained relationship between dark recesses and lighter ground",
+          "tags": [
+            "dark inlay",
+            "metal contrast"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the inlaid marks flush enough to read as worked material",
+          "tags": [
+            "engraved recess"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.damascene",
+      "name": "Fine-metal inlay",
+      "description": "A fine-metal-inlay craft interpretation. Keep thin inlaid lines embedded in the existing surface rather than floating above it.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "damascene",
+        "wire inlay",
+        "material contrast",
+        "precise line"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.damascene",
+        "lighting": "jewelrycraft.damascene",
+        "texture": "jewelrycraft.damascene"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A fine-metal-inlay craft interpretation",
+          "tags": [
+            "damascene"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep thin inlaid lines embedded in the existing surface rather than floating above it",
+          "tags": [
+            "wire inlay",
+            "material contrast"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use gentle reflective differences to separate the materials",
+          "tags": [
+            "precise line"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.mokume",
+      "name": "Layered-metal grain",
+      "description": "A layered-metal material interpretation. Let flowing layer boundaries follow the existing curved surfaces.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "layered metal",
+        "mokume",
+        "flowing grain",
+        "subtle contrast"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.mokume",
+        "palette": "jewelrycraft.mokume",
+        "texture": "jewelrycraft.mokume"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A layered-metal material interpretation",
+          "tags": [
+            "layered metal"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let flowing layer boundaries follow the existing curved surfaces",
+          "tags": [
+            "mokume",
+            "flowing grain"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use restrained differences between neighboring metal tones",
+          "tags": [
+            "subtle contrast"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.keumboo",
+      "name": "Bonded-gold accents",
+      "description": "A craft interpretation using selectively bonded thin metallic accents. Keep the warmer metallic tone limited to existing small focal regions.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "bonded foil",
+        "selective gold",
+        "thin layer",
+        "material restraint"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.keumboo",
+        "palette": "jewelrycraft.keumboo",
+        "texture": "jewelrycraft.keumboo"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A craft interpretation using selectively bonded thin metallic accents",
+          "tags": [
+            "bonded foil"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep the warmer metallic tone limited to existing small focal regions",
+          "tags": [
+            "selective gold",
+            "thin layer"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let the thin applied layer conform closely to the underlying relief",
+          "tags": [
+            "material restraint"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.hammered",
+      "name": "Hammered reflective planes",
+      "description": "A hammered-metal craft interpretation. Vary the small worked facets without making them randomly dented.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "hammered metal",
+        "small facets",
+        "tool evidence",
+        "broken reflection"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.hammered",
+        "lighting": "jewelrycraft.hammered",
+        "texture": "jewelrycraft.hammered"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A hammered-metal craft interpretation",
+          "tags": [
+            "hammered metal"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Vary the small worked facets without making them randomly dented",
+          "tags": [
+            "small facets",
+            "tool evidence"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Break a broad reflection into related soft fragments",
+          "tags": [
+            "broken reflection"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.planished",
+      "name": "Planished metal smoothness",
+      "description": "A planished-metal craft interpretation. Retain faint overlapping tool evidence beneath a refined surface.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "planished metal",
+        "refined tool marks",
+        "smooth mass",
+        "satin reflection"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.planished",
+        "lighting": "jewelrycraft.planished",
+        "texture": "jewelrycraft.planished"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A planished-metal craft interpretation",
+          "tags": [
+            "planished metal"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Retain faint overlapping tool evidence beneath a refined surface",
+          "tags": [
+            "refined tool marks",
+            "smooth mass"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use long controlled satin reflections to describe the existing mass",
+          "tags": [
+            "satin reflection"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.reticulated",
+      "name": "Reticulated metal topography",
+      "description": "A reticulated-metal surface interpretation. Keep the wrinkled relief irregular but materially continuous.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "reticulated metal",
+        "wrinkled surface",
+        "organic relief",
+        "matte recess"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.reticulated",
+        "lighting": "jewelrycraft.reticulated",
+        "texture": "jewelrycraft.reticulated"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A reticulated-metal surface interpretation",
+          "tags": [
+            "reticulated metal"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the wrinkled relief irregular but materially continuous",
+          "tags": [
+            "wrinkled surface",
+            "organic relief"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Separate smooth raised ridges from subdued matte recesses",
+          "tags": [
+            "matte recess"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.foldformed",
+      "name": "Fold-formed metal",
+      "description": "A fold-formed metal craft interpretation. Let creases retain a believable memory of worked sheet material.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "fold forming",
+        "creased metal",
+        "structural fold",
+        "material memory"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.foldformed",
+        "lighting": "jewelrycraft.foldformed",
+        "texture": "jewelrycraft.foldformed"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A fold-formed metal craft interpretation",
+          "tags": [
+            "fold forming"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let creases retain a believable memory of worked sheet material",
+          "tags": [
+            "creased metal",
+            "structural fold"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use directional highlights to make the existing folds structural",
+          "tags": [
+            "material memory"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.wiredrawn",
+      "name": "Drawn-wire precision",
+      "description": "A craft interpretation that emphasizes continuous drawn-wire structure. Keep the cross-section of thin existing forms consistent through curves.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "drawn wire",
+        "continuous line",
+        "even section",
+        "precise curve"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.wiredrawn",
+        "lighting": "jewelrycraft.wiredrawn",
+        "texture": "jewelrycraft.wiredrawn"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A craft interpretation that emphasizes continuous drawn-wire structure",
+          "tags": [
+            "drawn wire"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the cross-section of thin existing forms consistent through curves",
+          "tags": [
+            "continuous line",
+            "even section"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use a fine continuous highlight rather than scattered bright points",
+          "tags": [
+            "precise curve"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.chainmail",
+      "name": "Linked-metal continuity",
+      "description": "A linked-metal craft interpretation of existing repeated structures. Keep each interlock structurally plausible and scaled to its neighbors.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "linked metal",
+        "chain structure",
+        "interlocking rhythm",
+        "small reflections"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.chainmail",
+        "lighting": "jewelrycraft.chainmail",
+        "texture": "jewelrycraft.chainmail"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A linked-metal craft interpretation of existing repeated structures",
+          "tags": [
+            "linked metal"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep each interlock structurally plausible and scaled to its neighbors",
+          "tags": [
+            "chain structure",
+            "interlocking rhythm"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use coherent small reflections without turning the whole surface into sparkle",
+          "tags": [
+            "small reflections"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.pearluster",
+      "name": "Pearlescent layered light",
+      "description": "A pearlescent material interpretation of the existing surface. Let broad highlights carry a restrained layered color shift.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "pearlescence",
+        "layered lustre",
+        "soft interference",
+        "rounded highlight"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.pearluster",
+        "lighting": "jewelrycraft.pearluster",
+        "texture": "jewelrycraft.pearluster"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A pearlescent material interpretation of the existing surface",
+          "tags": [
+            "pearlescence"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let broad highlights carry a restrained layered color shift",
+          "tags": [
+            "layered lustre",
+            "soft interference"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the underlying surface smooth with subtle natural irregularity",
+          "tags": [
+            "rounded highlight"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.cabochon",
+      "name": "Cabochon volume study",
+      "description": "A smooth cabochon-like craft interpretation. Use one broad curved reflection to describe the existing rounded form.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "cabochon",
+        "smooth curvature",
+        "depth of color",
+        "broad reflection"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.cabochon",
+        "lighting": "jewelrycraft.cabochon",
+        "palette": "jewelrycraft.cabochon"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A smooth cabochon-like craft interpretation",
+          "tags": [
+            "cabochon"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use one broad curved reflection to describe the existing rounded form",
+          "tags": [
+            "smooth curvature",
+            "depth of color"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Let color deepen toward thicker-looking areas without adding internal motifs",
+          "tags": [
+            "broad reflection"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.facetwork",
+      "name": "Facet-junction precision",
+      "description": "A craft interpretation emphasizing the existing planar junctions. Keep adjacent planes and their intersections geometrically coherent.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "facetwork",
+        "plane junction",
+        "clean edge",
+        "controlled brilliance"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.facetwork",
+        "composition": "jewelrycraft.facetwork",
+        "lighting": "jewelrycraft.facetwork"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A craft interpretation emphasizing the existing planar junctions",
+          "tags": [
+            "facetwork"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep adjacent planes and their intersections geometrically coherent",
+          "tags": [
+            "plane junction",
+            "clean edge"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use a small number of clear reflection regions rather than starburst effects",
+          "tags": [
+            "controlled brilliance"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.bezel",
+      "name": "Bezel-edge craftsmanship",
+      "description": "A craft interpretation focused on existing wrapped and enclosing edges. Make the contact between adjacent materials close and mechanically credible.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "bezel",
+        "wrapped edge",
+        "material contact",
+        "precise fit"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.bezel",
+        "lighting": "jewelrycraft.bezel",
+        "texture": "jewelrycraft.bezel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A craft interpretation focused on existing wrapped and enclosing edges",
+          "tags": [
+            "bezel"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Make the contact between adjacent materials close and mechanically credible",
+          "tags": [
+            "wrapped edge",
+            "material contact"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use a thin highlight to describe the continuity of the edge",
+          "tags": [
+            "precise fit"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.prong",
+      "name": "Fine-support articulation",
+      "description": "A craft interpretation that makes small existing support relationships legible. Keep supporting forms subordinate to the principal existing mass.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "fine support",
+        "delicate contact",
+        "open structure",
+        "precise fit"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.prong",
+        "composition": "jewelrycraft.prong",
+        "lighting": "jewelrycraft.prong"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A craft interpretation that makes small existing support relationships legible",
+          "tags": [
+            "fine support"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supporting forms subordinate to the principal existing mass",
+          "tags": [
+            "delicate contact",
+            "open structure"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use restrained edge highlights to clarify contact without visual clutter",
+          "tags": [
+            "precise fit"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.intaglio",
+      "name": "Intaglio cut-surface depth",
+      "description": "An intaglio craft interpretation of the existing surface. Read incised areas as recessed material with clean but not perfect edges.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "intaglio",
+        "cut recess",
+        "small relief",
+        "polished ground"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.intaglio",
+        "lighting": "jewelrycraft.intaglio",
+        "texture": "jewelrycraft.intaglio"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An intaglio craft interpretation of the existing surface",
+          "tags": [
+            "intaglio"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Read incised areas as recessed material with clean but not perfect edges",
+          "tags": [
+            "cut recess",
+            "small relief"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use oblique light to separate the cuts from the surrounding ground",
+          "tags": [
+            "polished ground"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.cameo",
+      "name": "Cameo layered relief",
+      "description": "A cameo-like relief interpretation of the existing forms. Use two close but clearly separated material tones.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "cameo",
+        "layered relief",
+        "two-tone material",
+        "profile clarity"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.cameo",
+        "palette": "jewelrycraft.cameo",
+        "texture": "jewelrycraft.cameo"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cameo-like relief interpretation of the existing forms",
+          "tags": [
+            "cameo"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use two close but clearly separated material tones",
+          "tags": [
+            "layered relief",
+            "two-tone material"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep raised existing contours smoothly connected to the underlying ground",
+          "tags": [
+            "profile clarity"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.scrimshaw",
+      "name": "Fine-incision drawing",
+      "description": "A fine-incision craft interpretation. Make thin existing lines feel cut into a smooth material surface.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "scrimshaw",
+        "fine incision",
+        "dark line",
+        "smooth ground"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.scrimshaw",
+        "palette": "jewelrycraft.scrimshaw",
+        "texture": "jewelrycraft.scrimshaw"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A fine-incision craft interpretation",
+          "tags": [
+            "scrimshaw"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Make thin existing lines feel cut into a smooth material surface",
+          "tags": [
+            "fine incision",
+            "dark line"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep the incised line dark against a restrained pale ground",
+          "tags": [
+            "smooth ground"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.satinengrave",
+      "name": "Satin-engraved shimmer",
+      "description": "A satin-engraved craft interpretation of the existing planes. Keep fine parallel cut directions coherent within each plane.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "satin engraving",
+        "parallel cuts",
+        "soft shimmer",
+        "directional metal"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.satinengrave",
+        "lighting": "jewelrycraft.satinengrave",
+        "texture": "jewelrycraft.satinengrave"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A satin-engraved craft interpretation of the existing planes",
+          "tags": [
+            "satin engraving"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine parallel cut directions coherent within each plane",
+          "tags": [
+            "parallel cuts",
+            "soft shimmer"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use their changing angle to create a restrained soft shimmer",
+          "tags": [
+            "directional metal"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.handengrave",
+      "name": "Hand-engraved line weight",
+      "description": "A hand-engraved craft interpretation. Let cut width and depth vary deliberately along existing contours.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "hand engraving",
+        "variable cut",
+        "worked line",
+        "precise relief"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.handengrave",
+        "lighting": "jewelrycraft.handengrave",
+        "texture": "jewelrycraft.handengrave"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A hand-engraved craft interpretation",
+          "tags": [
+            "hand engraving"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let cut width and depth vary deliberately along existing contours",
+          "tags": [
+            "variable cut",
+            "worked line"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep the bright cut edges fine enough to preserve the overall form",
+          "tags": [
+            "precise relief"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.pavements",
+      "name": "Close-set surface rhythm",
+      "description": "A craft interpretation based on tightly spaced existing surface units. Keep the repeated units related to the larger surface curvature.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "close set",
+        "small repetition",
+        "surface continuity",
+        "restrained brilliance"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.pavements",
+        "composition": "jewelrycraft.pavements",
+        "lighting": "jewelrycraft.pavements"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A craft interpretation based on tightly spaced existing surface units",
+          "tags": [
+            "close set"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the repeated units related to the larger surface curvature",
+          "tags": [
+            "small repetition",
+            "surface continuity"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use restrained coordinated highlights rather than a field of random stars",
+          "tags": [
+            "restrained brilliance"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.burnishset",
+      "name": "Burnished flush setting",
+      "description": "A craft interpretation of existing closely fitted small surface elements. Keep each existing element seated flush within a smoothly compressed edge.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "flush setting",
+        "burnished edge",
+        "material fit",
+        "small contact"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.burnishset",
+        "lighting": "jewelrycraft.burnishset",
+        "texture": "jewelrycraft.burnishset"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A craft interpretation of existing closely fitted small surface elements",
+          "tags": [
+            "flush setting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep each existing element seated flush within a smoothly compressed edge",
+          "tags": [
+            "burnished edge",
+            "material fit"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use restrained local reflections to explain the material contact",
+          "tags": [
+            "small contact"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.wovenwire",
+      "name": "Woven-wire tension",
+      "description": "A woven-wire craft interpretation. Keep over-and-under crossings coherent as the existing structure bends.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "woven wire",
+        "metal textile",
+        "open crossings",
+        "elastic structure"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.wovenwire",
+        "lighting": "jewelrycraft.wovenwire",
+        "texture": "jewelrycraft.wovenwire"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A woven-wire craft interpretation",
+          "tags": [
+            "woven wire"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep over-and-under crossings coherent as the existing structure bends",
+          "tags": [
+            "metal textile",
+            "open crossings"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Separate thin metallic strands with broad low-contrast reflections",
+          "tags": [
+            "elastic structure"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.knotwork",
+      "name": "Knotwork articulation",
+      "description": "A knotwork craft interpretation of existing linear forms. Maintain continuous strand paths through every visible crossing.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "knotwork",
+        "continuous strand",
+        "tension logic",
+        "interlaced relief"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.knotwork",
+        "lighting": "jewelrycraft.knotwork",
+        "texture": "jewelrycraft.knotwork"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A knotwork craft interpretation of existing linear forms",
+          "tags": [
+            "knotwork"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Maintain continuous strand paths through every visible crossing",
+          "tags": [
+            "continuous strand",
+            "tension logic"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft directional shading to explain the interlace",
+          "tags": [
+            "interlaced relief"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.cordcraft",
+      "name": "Braided-cord craft",
+      "description": "A braided-cord craft interpretation. Keep twist direction and strand tension consistent along the existing curves.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "braided cord",
+        "twisted fiber",
+        "continuous tension",
+        "tactile detail"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.cordcraft",
+        "lighting": "jewelrycraft.cordcraft",
+        "texture": "jewelrycraft.cordcraft"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A braided-cord craft interpretation",
+          "tags": [
+            "braided cord"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep twist direction and strand tension consistent along the existing curves",
+          "tags": [
+            "twisted fiber",
+            "continuous tension"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft grazing light to make the fiber structure tactile",
+          "tags": [
+            "tactile detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.metalpleat",
+      "name": "Pleated-metal rhythm",
+      "description": "A pleated-metal craft interpretation. Let the existing folds form a readable repeated rhythm.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "pleated metal",
+        "thin sheet",
+        "repeated folds",
+        "controlled reflection"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.metalpleat",
+        "composition": "jewelrycraft.metalpleat",
+        "lighting": "jewelrycraft.metalpleat"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A pleated-metal craft interpretation",
+          "tags": [
+            "pleated metal"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the existing folds form a readable repeated rhythm",
+          "tags": [
+            "thin sheet",
+            "repeated folds"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Alternate narrow controlled reflections with subdued plane faces",
+          "tags": [
+            "controlled reflection"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.oxidizedrecess",
+      "name": "Oxidized-recess detail",
+      "description": "A metalwork interpretation with restrained oxidation in existing recesses. Separate dark recessed tones from softly exposed raised areas.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "oxidized metal",
+        "dark recess",
+        "raised wear",
+        "quiet contrast"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.oxidizedrecess",
+        "palette": "jewelrycraft.oxidizedrecess",
+        "texture": "jewelrycraft.oxidizedrecess"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A metalwork interpretation with restrained oxidation in existing recesses",
+          "tags": [
+            "oxidized metal"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Separate dark recessed tones from softly exposed raised areas",
+          "tags": [
+            "dark recess",
+            "raised wear"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep wear related to the existing relief instead of randomly distressed",
+          "tags": [
+            "quiet contrast"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.rivet",
+      "name": "Riveted-joint clarity",
+      "description": "A craft interpretation attentive to existing small joins. Make the connection between adjacent parts visually understandable.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "rivet craft",
+        "visible joint",
+        "small fastener",
+        "material connection"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.rivet",
+        "composition": "jewelrycraft.rivet",
+        "texture": "jewelrycraft.rivet"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A craft interpretation attentive to existing small joins",
+          "tags": [
+            "rivet craft"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Make the connection between adjacent parts visually understandable",
+          "tags": [
+            "visible joint",
+            "small fastener"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep joint edges and surrounding tool marks materially credible",
+          "tags": [
+            "material connection"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.hinge",
+      "name": "Articulated-joint study",
+      "description": "A craft interpretation emphasizing existing articulated relationships. Keep narrow gaps and mating surfaces consistent through the join.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "hinge craft",
+        "articulation",
+        "precise gap",
+        "mechanical fit"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.hinge",
+        "lighting": "jewelrycraft.hinge",
+        "texture": "jewelrycraft.hinge"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A craft interpretation emphasizing existing articulated relationships",
+          "tags": [
+            "hinge craft"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep narrow gaps and mating surfaces consistent through the join",
+          "tags": [
+            "articulation",
+            "precise gap"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use fine edge contrast to clarify how the existing parts relate",
+          "tags": [
+            "mechanical fit"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.edgepaint",
+      "name": "Painted-leather edge study",
+      "description": "A leather-craft interpretation emphasizing existing finished edges. Keep the finished edge smooth while the main surface retains its natural grain.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "edge paint",
+        "leather craft",
+        "layered edge",
+        "smooth finish"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.edgepaint",
+        "lighting": "jewelrycraft.edgepaint",
+        "texture": "jewelrycraft.edgepaint"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A leather-craft interpretation emphasizing existing finished edges",
+          "tags": [
+            "edge paint"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the finished edge smooth while the main surface retains its natural grain",
+          "tags": [
+            "leather craft",
+            "layered edge"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft directional light to distinguish the two finish behaviors",
+          "tags": [
+            "smooth finish"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.shellinlay",
+      "name": "Shell-inlay planes",
+      "description": "A shell-inlay craft interpretation of the existing planes. Keep the inlaid pieces flush with clean material boundaries.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "shell inlay",
+        "layered lustre",
+        "flush join",
+        "subtle color"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.shellinlay",
+        "lighting": "jewelrycraft.shellinlay",
+        "texture": "jewelrycraft.shellinlay"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A shell-inlay craft interpretation of the existing planes",
+          "tags": [
+            "shell inlay"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the inlaid pieces flush with clean material boundaries",
+          "tags": [
+            "layered lustre",
+            "flush join"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let broad changes in angle produce subtle lustre shifts",
+          "tags": [
+            "subtle color"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.springtension",
+      "name": "Spring-tension articulation",
+      "description": "A craft interpretation attentive to existing fine elastic metal forms. Keep the section and curvature coherent through compressed and relaxed-looking regions.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "spring tension",
+        "thin metal",
+        "elastic curve",
+        "mechanical detail"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.springtension",
+        "lighting": "jewelrycraft.springtension",
+        "texture": "jewelrycraft.springtension"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A craft interpretation attentive to existing fine elastic metal forms",
+          "tags": [
+            "spring tension"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the section and curvature coherent through compressed and relaxed-looking regions",
+          "tags": [
+            "thin metal",
+            "elastic curve"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use a fine continuous highlight to make the spring-like geometry legible",
+          "tags": [
+            "mechanical detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "jewelrycraft.stoneinlay",
+      "name": "Mineral-inlay precision",
+      "description": "A mineral-inlay craft interpretation. Keep the transitions between existing material regions flush and precisely fitted.",
+      "category": "craft/jewelry",
+      "kind": "style",
+      "tags": [
+        "mineral inlay",
+        "flush stone",
+        "material boundary",
+        "quiet polish"
+      ],
+      "claims": {
+        "medium": "jewelrycraft.stoneinlay",
+        "lighting": "jewelrycraft.stoneinlay",
+        "texture": "jewelrycraft.stoneinlay"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A mineral-inlay craft interpretation",
+          "tags": [
+            "mineral inlay"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the transitions between existing material regions flush and precisely fitted",
+          "tags": [
+            "flush stone",
+            "material boundary"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad subdued polish so the joins remain visible",
+          "tags": [
+            "quiet polish"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

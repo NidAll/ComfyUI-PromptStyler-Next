@@ -1,0 +1,1170 @@
+{
+  "schema_version": 1,
+  "id": "next.regional.craft",
+  "version": "1.0.0",
+  "name": "Regional craft processes",
+  "description": "Technique-focused creative interpretations; these labels do not certify cultural authenticity.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "craft.ukiyoe",
+      "name": "Ukiyo-e print language",
+      "description": "An ukiyo-e inspired woodblock interpretation. Use decisive contours, cropped forms and shallow layered space.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "ukiyoe",
+        "woodblock",
+        "contour"
+      ],
+      "claims": {
+        "medium": "craft.ukiyoe",
+        "composition": "craft-ukiyoe",
+        "palette": "craft-ukiyoe"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An ukiyo-e inspired woodblock interpretation",
+          "tags": [
+            "ukiyo e woodblock"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use decisive contours, cropped forms and shallow layered space",
+          "tags": [
+            "decisive contours",
+            "shallow space"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use registered flat color with softly brushed gradient passages",
+          "tags": [
+            "flat colors",
+            "brushed gradients"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.nihonga",
+      "name": "Mineral-pigment nihonga",
+      "description": "A nihonga-inspired mineral-pigment painting. Use softly luminous granular mineral colors.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "nihonga",
+        "mineral",
+        "painted"
+      ],
+      "claims": {
+        "medium": "craft.nihonga",
+        "palette": "craft-nihonga",
+        "texture": "craft.nihonga"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A nihonga-inspired mineral-pigment painting",
+          "tags": [
+            "nihonga mineral painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use softly luminous granular mineral colors",
+          "tags": [
+            "granular mineral colors"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep matte pigment particles and delicately controlled contours",
+          "tags": [
+            "mineral particles",
+            "delicate contours"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.suiboku",
+      "name": "Sumi ink economy",
+      "description": "A sumi-ink interpretation on absorbent paper. Balance a small number of expressive strokes with open space.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "sumi",
+        "ink",
+        "brush"
+      ],
+      "claims": {
+        "medium": "craft.suiboku",
+        "composition": "craft-suiboku",
+        "texture": "craft.suiboku"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A sumi-ink interpretation on absorbent paper",
+          "tags": [
+            "sumi ink painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Balance a small number of expressive strokes with open space",
+          "tags": [
+            "expressive strokes",
+            "open space"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show wet-to-dry ink variation within individual marks",
+          "tags": [
+            "wet dry ink variation"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.mughal",
+      "name": "Miniature-painting precision",
+      "description": "A Mughal-miniature inspired painted interpretation. Use shallow ordered space and finely bounded supplied forms.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "mughal",
+        "miniature",
+        "fine line"
+      ],
+      "claims": {
+        "medium": "craft.mughal",
+        "composition": "craft-mughal",
+        "texture": "craft.mughal"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Mughal-miniature inspired painted interpretation",
+          "tags": [
+            "mughal miniature painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use shallow ordered space and finely bounded supplied forms",
+          "tags": [
+            "ordered shallow space"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep meticulous small brushwork and luminous opaque pigment",
+          "tags": [
+            "meticulous brushwork",
+            "opaque pigment"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.persian",
+      "name": "Persian miniature color",
+      "description": "A Persian-miniature inspired interpretation. Use vertically layered space and decorative contour rhythm.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "persian",
+        "miniature",
+        "decorative"
+      ],
+      "claims": {
+        "medium": "craft.persian",
+        "composition": "craft-persian",
+        "palette": "craft-persian"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Persian-miniature inspired interpretation",
+          "tags": [
+            "persian miniature painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use vertically layered space and decorative contour rhythm",
+          "tags": [
+            "vertical layered space",
+            "contour rhythm"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Balance luminous mineral blues, warm reds and small gold accents",
+          "tags": [
+            "mineral blue",
+            "warm red",
+            "gold accents"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.ottoman",
+      "name": "Ottoman miniature order",
+      "description": "An Ottoman-miniature inspired manuscript image. Use clear flattened groupings and deliberate schematic space.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "ottoman",
+        "miniature",
+        "manuscript"
+      ],
+      "claims": {
+        "medium": "craft.ottoman",
+        "composition": "craft-ottoman",
+        "palette": "craft-ottoman"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An Ottoman-miniature inspired manuscript image",
+          "tags": [
+            "ottoman miniature"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use clear flattened groupings and deliberate schematic space",
+          "tags": [
+            "flattened grouping",
+            "schematic space"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use firm opaque color regions with small decorative accents",
+          "tags": [
+            "opaque color regions"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.kalighat",
+      "name": "Kalighat brush contour",
+      "description": "A Kalighat-painting inspired interpretation. Use sweeping economical contours around the supplied forms.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "kalighat",
+        "brush",
+        "fluid"
+      ],
+      "claims": {
+        "medium": "craft.kalighat",
+        "composition": "craft-kalighat",
+        "texture": "craft.kalighat"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Kalighat-painting inspired interpretation",
+          "tags": [
+            "kalighat painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use sweeping economical contours around the supplied forms",
+          "tags": [
+            "sweeping economical contours"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep broad fluid brush shading and open pale ground",
+          "tags": [
+            "fluid brush shading",
+            "pale ground"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.madhubani",
+      "name": "Madhubani line density",
+      "description": "A Madhubani-inspired line-and-color interpretation. Use bounded repeated line patterns around the existing focal shapes.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "madhubani",
+        "line",
+        "pattern"
+      ],
+      "claims": {
+        "medium": "craft.madhubani",
+        "composition": "craft-madhubani",
+        "texture": "craft.madhubani"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Madhubani-inspired line-and-color interpretation",
+          "tags": [
+            "madhubani inspired painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use bounded repeated line patterns around the existing focal shapes",
+          "tags": [
+            "bounded repeated line patterns"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine hand-drawn marks and small flat color regions",
+          "tags": [
+            "fine hand marks",
+            "flat color"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.warli",
+      "name": "Warli geometric reduction",
+      "description": "A Warli-inspired geometric interpretation. Simplify the supplied forms through spare connected geometric units.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "warli",
+        "geometric",
+        "earth"
+      ],
+      "claims": {
+        "medium": "craft.warli",
+        "composition": "craft-warli",
+        "palette": "craft-warli"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Warli-inspired geometric interpretation",
+          "tags": [
+            "warli inspired art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Simplify the supplied forms through spare connected geometric units",
+          "tags": [
+            "spare connected geometry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use pale pigment against a warm earthen ground",
+          "tags": [
+            "pale pigment",
+            "earthen ground"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.kalamkari",
+      "name": "Drawn-and-dyed cloth",
+      "description": "A kalamkari-inspired drawn-and-dyed cloth interpretation. Use continuous ink-like outlines and flowing decorative relationships.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "kalamkari",
+        "dye",
+        "cloth"
+      ],
+      "claims": {
+        "medium": "craft.kalamkari",
+        "composition": "craft-kalamkari",
+        "texture": "craft.kalamkari"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A kalamkari-inspired drawn-and-dyed cloth interpretation",
+          "tags": [
+            "kalamkari cloth art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use continuous ink-like outlines and flowing decorative relationships",
+          "tags": [
+            "continuous outlines",
+            "flowing decoration"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show softly absorbed dye within a visibly woven cloth surface",
+          "tags": [
+            "absorbed dye",
+            "woven cloth"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.iznik",
+      "name": "Iznik ceramic color",
+      "description": "An Iznik-inspired painted-ceramic interpretation. Use cobalt, turquoise and restrained red over a pale glazed ground.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "iznik",
+        "ceramic",
+        "cobalt"
+      ],
+      "claims": {
+        "medium": "craft.iznik",
+        "palette": "craft-iznik",
+        "texture": "craft.iznik"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An Iznik-inspired painted-ceramic interpretation",
+          "tags": [
+            "iznik ceramic art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use cobalt, turquoise and restrained red over a pale glazed ground",
+          "tags": [
+            "cobalt turquoise",
+            "restrained red"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep clear painted contours beneath a smooth transparent glaze",
+          "tags": [
+            "painted contours",
+            "transparent glaze"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.azulejo",
+      "name": "Azulejo tile picture",
+      "description": "An azulejo-tile interpretation of the supplied image. Use cobalt blue values over a warm white glaze.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "azulejo",
+        "tile",
+        "blue"
+      ],
+      "claims": {
+        "medium": "craft.azulejo",
+        "palette": "craft-azulejo",
+        "texture": "craft.azulejo"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An azulejo-tile interpretation of the supplied image",
+          "tags": [
+            "azulejo tile art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use cobalt blue values over a warm white glaze",
+          "tags": [
+            "cobalt blue values",
+            "white glaze"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let a clear tile grid interrupt the painted image",
+          "tags": [
+            "tile grid",
+            "glazed surface"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.maiolica",
+      "name": "Maiolica brush color",
+      "description": "A maiolica-inspired painted-ceramic interpretation. Use bright copper green, cobalt and ochre on opaque white glaze.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "maiolica",
+        "ceramic",
+        "painted"
+      ],
+      "claims": {
+        "medium": "craft.maiolica",
+        "palette": "craft-maiolica",
+        "texture": "craft.maiolica"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A maiolica-inspired painted-ceramic interpretation",
+          "tags": [
+            "maiolica ceramic painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use bright copper green, cobalt and ochre on opaque white glaze",
+          "tags": [
+            "copper green",
+            "cobalt",
+            "ochre"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fluid brush edges and slight pigment pooling on glaze",
+          "tags": [
+            "fluid glaze brushwork"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.sgraffito",
+      "name": "Sgraffito ceramic cut",
+      "description": "A sgraffito-ceramic interpretation. Reveal the supplied contours by cutting through a contrasting surface slip.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "sgraffito",
+        "ceramic",
+        "scratch"
+      ],
+      "claims": {
+        "medium": "craft.sgraffito",
+        "composition": "craft-sgraffito",
+        "texture": "craft.sgraffito"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A sgraffito-ceramic interpretation",
+          "tags": [
+            "sgraffito ceramic art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reveal the supplied contours by cutting through a contrasting surface slip",
+          "tags": [
+            "cut slip contours"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show scratched clay lines with slightly lifted cut edges",
+          "tags": [
+            "scratched clay",
+            "lifted edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.damascene",
+      "name": "Damascene inlay",
+      "description": "A damascene-metal-inlay interpretation. Trace the existing forms with thin contrasting metal lines.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "damascene",
+        "metal",
+        "inlay"
+      ],
+      "claims": {
+        "medium": "craft.damascene",
+        "composition": "craft-damascene",
+        "texture": "craft.damascene"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A damascene-metal-inlay interpretation",
+          "tags": [
+            "damascene metal inlay"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Trace the existing forms with thin contrasting metal lines",
+          "tags": [
+            "contrasting metal lines"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep warm inlaid metal against a dark finely textured ground",
+          "tags": [
+            "warm metal inlay",
+            "dark ground"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.pietradura",
+      "name": "Pietra dura image",
+      "description": "A pietra-dura stone-inlay interpretation. Build the supplied forms from precisely fitted colored stone pieces.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "pietra dura",
+        "stone",
+        "inlay"
+      ],
+      "claims": {
+        "medium": "craft.pietradura",
+        "composition": "craft-pietradura",
+        "texture": "craft.pietradura"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A pietra-dura stone-inlay interpretation",
+          "tags": [
+            "pietra dura inlay"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Build the supplied forms from precisely fitted colored stone pieces",
+          "tags": [
+            "fitted stone pieces"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show polished mineral veining within each inlaid shape",
+          "tags": [
+            "polished mineral veining"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.khoghloma",
+      "name": "Lacquer folk color",
+      "description": "A Khokhloma-inspired lacquer-painting interpretation. Use warm red and gold-colored marks over a dark lacquer ground.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "lacquer",
+        "folk",
+        "red gold"
+      ],
+      "claims": {
+        "medium": "craft.khoghloma",
+        "palette": "craft-khoghloma",
+        "texture": "craft.khoghloma"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Khokhloma-inspired lacquer-painting interpretation",
+          "tags": [
+            "khokhloma inspired lacquer"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm red and gold-colored marks over a dark lacquer ground",
+          "tags": [
+            "red gold marks",
+            "dark lacquer"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fluid hand-painted edges beneath a glossy coating",
+          "tags": [
+            "fluid painted edges",
+            "lacquer coating"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.rosemaling",
+      "name": "Rosemaling brush curves",
+      "description": "A rosemaling-inspired decorative interpretation. Use flowing scroll-like brush rhythms around the supplied forms.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "rosemaling",
+        "folk",
+        "brush"
+      ],
+      "claims": {
+        "medium": "craft.rosemaling",
+        "composition": "craft-rosemaling",
+        "texture": "craft.rosemaling"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A rosemaling-inspired decorative interpretation",
+          "tags": [
+            "rosemaling decorative painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use flowing scroll-like brush rhythms around the supplied forms",
+          "tags": [
+            "flowing scroll brush rhythm"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep visible loaded-brush color variation within each stroke",
+          "tags": [
+            "loaded brush variation"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.papercut",
+      "name": "Wycinanki paper rhythm",
+      "description": "A wycinanki-inspired colored-paper interpretation. Use rhythmic cut-paper symmetry derived from the supplied shapes.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "wycinanki",
+        "paper cut",
+        "folk"
+      ],
+      "claims": {
+        "medium": "craft.papercut",
+        "composition": "craft-papercut",
+        "palette": "craft-papercut"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A wycinanki-inspired colored-paper interpretation",
+          "tags": [
+            "wycinanki paper cutting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use rhythmic cut-paper symmetry derived from the supplied shapes",
+          "tags": [
+            "rhythmic cut symmetry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Layer clearly separated saturated paper colors",
+          "tags": [
+            "saturated layered paper colors"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.hanji",
+      "name": "Hanji paper surface",
+      "description": "A hanji-paper interpretation of the supplied forms. Use softly joined fibrous-paper shapes with open visual spacing.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "hanji",
+        "paper",
+        "fiber"
+      ],
+      "claims": {
+        "medium": "craft.hanji",
+        "composition": "craft-hanji",
+        "texture": "craft.hanji"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A hanji-paper interpretation of the supplied forms",
+          "tags": [
+            "hanji paper art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use softly joined fibrous-paper shapes with open visual spacing",
+          "tags": [
+            "fibrous paper shapes",
+            "open spacing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep long plant fibers and translucent layered paper edges",
+          "tags": [
+            "long paper fibers",
+            "translucent edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.minhwa",
+      "name": "Minhwa decorative space",
+      "description": "A minhwa-inspired decorative interpretation. Use flattened space and clearly separated supplied forms.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "minhwa",
+        "folk",
+        "flat"
+      ],
+      "claims": {
+        "medium": "craft.minhwa",
+        "composition": "craft-minhwa",
+        "palette": "craft-minhwa"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A minhwa-inspired decorative interpretation",
+          "tags": [
+            "minhwa inspired painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use flattened space and clearly separated supplied forms",
+          "tags": [
+            "flattened decorative space"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Balance opaque mineral-like colors with soft neutral ground",
+          "tags": [
+            "opaque colors",
+            "soft neutral ground"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.tenango",
+      "name": "Tenango stitch rhythm",
+      "description": "A Tenango-inspired embroidered-image interpretation. Use flowing stitched contours around the supplied motifs.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "tenango",
+        "embroidery",
+        "color"
+      ],
+      "claims": {
+        "medium": "craft.tenango",
+        "composition": "craft-tenango",
+        "palette": "craft-tenango"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Tenango-inspired embroidered-image interpretation",
+          "tags": [
+            "tenango inspired embroidery"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use flowing stitched contours around the supplied motifs",
+          "tags": [
+            "flowing stitched contours"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep vivid separated thread colors on a pale textile ground",
+          "tags": [
+            "vivid threads",
+            "pale textile"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.mola",
+      "name": "Reverse-appliqué layers",
+      "description": "A mola-inspired reverse-appliqué interpretation. Reveal nested color boundaries by layered cut-fabric shapes.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "mola",
+        "applique",
+        "layers"
+      ],
+      "claims": {
+        "medium": "craft.mola",
+        "composition": "craft-mola",
+        "texture": "craft.mola"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A mola-inspired reverse-appliqué interpretation",
+          "tags": [
+            "reverse applique art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reveal nested color boundaries by layered cut-fabric shapes",
+          "tags": [
+            "nested cut fabric boundaries"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep small folded cloth edges and fine joining stitches",
+          "tags": [
+            "folded cloth edges",
+            "fine stitches"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "craft.adire",
+      "name": "Indigo-resist cloth",
+      "description": "An adire-inspired indigo-resist interpretation. Use layered indigo blue and reserved pale cloth.",
+      "category": "regional-craft",
+      "kind": "style",
+      "tags": [
+        "craft",
+        "adire",
+        "indigo",
+        "resist"
+      ],
+      "claims": {
+        "medium": "craft.adire",
+        "palette": "craft-adire",
+        "texture": "craft.adire"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An adire-inspired indigo-resist interpretation",
+          "tags": [
+            "indigo resist cloth"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use layered indigo blue and reserved pale cloth",
+          "tags": [
+            "indigo blue",
+            "reserved cloth"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep irregular resist boundaries and visible cotton weave",
+          "tags": [
+            "resist boundaries",
+            "cotton weave"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

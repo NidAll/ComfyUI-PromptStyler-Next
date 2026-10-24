@@ -1,0 +1,1163 @@
+{
+  "schema_version": 1,
+  "id": "next.technical",
+  "version": "1.0.0",
+  "name": "Technical and scientific illustration",
+  "description": "Visual languages for explaining supplied mechanisms and observations; appearance does not establish scientific correctness.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "technical.patent-plate",
+      "name": "Patent drawing plate",
+      "description": "Render the subject as a disciplined patent ink drawing. Separate outer silhouette from internal functional lines.",
+      "category": "technical/mechanical",
+      "kind": "style",
+      "tags": [
+        "patent",
+        "mechanism",
+        "drawing",
+        "invention"
+      ],
+      "claims": {
+        "medium": "technical.patent-plate",
+        "composition": "technical-patent-plate",
+        "palette": "technical-patent-plate",
+        "texture": "technical.patent-plate"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject as a disciplined patent ink drawing",
+          "tags": [
+            "patent drawing",
+            "technical ink"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate outer silhouette from internal functional lines",
+          "tags": [
+            "functional line hierarchy"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use clean black strokes with sparse sectional hatching",
+          "tags": [
+            "section hatching",
+            "clean outlines"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Keep ink black on warm white paper",
+          "tags": [
+            "black ink",
+            "ivory paper"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.exploded-assembly",
+      "name": "Exploded assembly",
+      "description": "Use a precise exploded assembly illustration. Separate existing components along their assembly axes.",
+      "category": "technical/mechanical",
+      "kind": "style",
+      "tags": [
+        "assembly",
+        "exploded",
+        "components",
+        "engineering"
+      ],
+      "claims": {
+        "medium": "technical.exploded-assembly",
+        "composition": "technical-exploded-assembly",
+        "palette": "technical-exploded-assembly",
+        "texture": "technical.exploded-assembly"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a precise exploded assembly illustration",
+          "tags": [
+            "exploded view",
+            "assembly drawing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate existing components along their assembly axes",
+          "tags": [
+            "aligned component offsets"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep edges crisp and connectors visually subordinate",
+          "tags": [
+            "crisp edges",
+            "thin connectors"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use neutral parts with one restrained functional accent",
+          "tags": [
+            "neutral components",
+            "functional accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.cutaway-perspective",
+      "name": "Perspective cutaway",
+      "description": "Illustrate a clean cutaway through the subject. Expose an interior slice while preserving exterior context.",
+      "category": "technical/mechanical",
+      "kind": "style",
+      "tags": [
+        "cutaway",
+        "interior",
+        "engineering",
+        "section"
+      ],
+      "claims": {
+        "medium": "technical.cutaway-perspective",
+        "composition": "technical-cutaway-perspective",
+        "palette": "technical-cutaway-perspective",
+        "texture": "technical.cutaway-perspective"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Illustrate a clean cutaway through the subject",
+          "tags": [
+            "cutaway illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Expose an interior slice while preserving exterior context",
+          "tags": [
+            "partial cutaway",
+            "interior context"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Distinguish cut surfaces with fine parallel hatching",
+          "tags": [
+            "cut surface hatching"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Separate materials with muted descriptive colors",
+          "tags": [
+            "muted material colors"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.axonometric-service",
+      "name": "Service manual axonometric",
+      "description": "Draw a spare axonometric service-manual plate. Favor clear access paths and isolated working areas.",
+      "category": "technical/mechanical",
+      "kind": "style",
+      "tags": [
+        "manual",
+        "repair",
+        "axonometric",
+        "instruction"
+      ],
+      "claims": {
+        "medium": "technical.axonometric-service",
+        "composition": "technical-axonometric-service",
+        "palette": "technical-axonometric-service",
+        "texture": "technical.axonometric-service"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Draw a spare axonometric service-manual plate",
+          "tags": [
+            "service manual",
+            "axonometric drawing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Favor clear access paths and isolated working areas",
+          "tags": [
+            "accessible component layout"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use uniform outlines and minimal hidden-edge dashes",
+          "tags": [
+            "uniform technical lines"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Keep the drawing monochrome with a single action accent",
+          "tags": [
+            "monochrome",
+            "action accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.optical-path",
+      "name": "Optical bench schematic",
+      "description": "Use the visual language of an optical-path diagram. Organize supplied elements along a readable directional path.",
+      "category": "technical/physics",
+      "kind": "style",
+      "tags": [
+        "optics",
+        "light",
+        "path",
+        "schematic"
+      ],
+      "claims": {
+        "medium": "technical.optical-path",
+        "composition": "technical-optical-path",
+        "palette": "technical-optical-path",
+        "texture": "technical.optical-path"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use the visual language of an optical-path diagram",
+          "tags": [
+            "optical schematic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize supplied elements along a readable directional path",
+          "tags": [
+            "directional diagram layout"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Distinguish physical edges from thin ray trajectories",
+          "tags": [
+            "thin ray lines",
+            "device outlines"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Reserve a narrow bright accent for the light path",
+          "tags": [
+            "neutral hardware",
+            "colored rays"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.circuit-block",
+      "name": "Circuit block illustration",
+      "description": "Make a restrained electronic block illustration. Group related supplied functions into a legible signal flow.",
+      "category": "technical/electronics",
+      "kind": "style",
+      "tags": [
+        "circuit",
+        "electronics",
+        "system",
+        "block"
+      ],
+      "claims": {
+        "medium": "technical.circuit-block",
+        "composition": "technical-circuit-block",
+        "palette": "technical-circuit-block",
+        "texture": "technical.circuit-block"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Make a restrained electronic block illustration",
+          "tags": [
+            "circuit block diagram"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Group related supplied functions into a legible signal flow",
+          "tags": [
+            "grouped signal flow"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use deliberate right-angle traces and consistent node sizes",
+          "tags": [
+            "orthogonal traces",
+            "uniform nodes"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Set dark graphite lines against an off-white ground",
+          "tags": [
+            "graphite",
+            "off-white"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.fluid-section",
+      "name": "Fluid-flow section",
+      "description": "Treat the subject as a sectional fluid-flow illustration. Let flow arrows follow the supplied channels clearly.",
+      "category": "technical/physics",
+      "kind": "style",
+      "tags": [
+        "fluid",
+        "flow",
+        "section",
+        "transport"
+      ],
+      "claims": {
+        "medium": "technical.fluid-section",
+        "composition": "technical-fluid-section",
+        "palette": "technical-fluid-section",
+        "texture": "technical.fluid-section"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the subject as a sectional fluid-flow illustration",
+          "tags": [
+            "fluid section diagram"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let flow arrows follow the supplied channels clearly",
+          "tags": [
+            "channel-following flow"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use sparse contour bands to imply changing velocity",
+          "tags": [
+            "sparse flow contours"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Separate fluid regions with translucent blue-gray tones",
+          "tags": [
+            "blue-gray fluid",
+            "translucent regions"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.thermal-field",
+      "name": "Thermal-field visualization",
+      "description": "Render a restrained thermal-field illustration. Keep the physical silhouette legible beneath field contours.",
+      "category": "technical/physics",
+      "kind": "style",
+      "tags": [
+        "thermal",
+        "heat",
+        "field",
+        "scientific"
+      ],
+      "claims": {
+        "medium": "technical.thermal-field",
+        "composition": "technical-thermal-field",
+        "palette": "technical-thermal-field",
+        "texture": "technical.thermal-field"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render a restrained thermal-field illustration",
+          "tags": [
+            "thermal field visualization"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the physical silhouette legible beneath field contours",
+          "tags": [
+            "object silhouette",
+            "field overlay"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use smooth contour intervals rather than noisy rainbow detail",
+          "tags": [
+            "smooth thermal contours"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use a perceptually ordered dark-to-amber scale",
+          "tags": [
+            "dark amber scale"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.anatomical-line",
+      "name": "Anatomical line study",
+      "description": "Use careful anatomical line illustration. Show supplied structural relationships through clear overlap.",
+      "category": "technical/biology",
+      "kind": "style",
+      "tags": [
+        "anatomy",
+        "structure",
+        "biology",
+        "line"
+      ],
+      "claims": {
+        "medium": "technical.anatomical-line",
+        "composition": "technical-anatomical-line",
+        "palette": "technical-anatomical-line",
+        "texture": "technical.anatomical-line"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use careful anatomical line illustration",
+          "tags": [
+            "anatomical line drawing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Show supplied structural relationships through clear overlap",
+          "tags": [
+            "structural overlap"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Build volume with selective contour-following hatching",
+          "tags": [
+            "anatomical hatching"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use dark sepia lines on pale paper",
+          "tags": [
+            "sepia ink",
+            "pale paper"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.anatomical-wash",
+      "name": "Anatomical wash plate",
+      "description": "Render an anatomical plate in transparent watercolor. Distinguish neighboring supplied structures with open edges.",
+      "category": "technical/biology",
+      "kind": "style",
+      "tags": [
+        "anatomy",
+        "watercolor",
+        "plate",
+        "biology"
+      ],
+      "claims": {
+        "medium": "technical.anatomical-wash",
+        "composition": "technical-anatomical-wash",
+        "palette": "technical-anatomical-wash",
+        "texture": "technical.anatomical-wash"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render an anatomical plate in transparent watercolor",
+          "tags": [
+            "anatomical watercolor"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Distinguish neighboring supplied structures with open edges",
+          "tags": [
+            "separated anatomical forms"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Allow thin washes to reveal the underlying drawing",
+          "tags": [
+            "transparent wash",
+            "pencil underdrawing"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use restrained mineral pinks and cool gray accents",
+          "tags": [
+            "mineral pink",
+            "cool gray"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.microscopy-plate",
+      "name": "Microscopy atlas plate",
+      "description": "Use the visual grammar of a microscopy atlas. Frame the supplied structures at one consistent magnification.",
+      "category": "technical/biology",
+      "kind": "style",
+      "tags": [
+        "microscopy",
+        "atlas",
+        "cells",
+        "observation"
+      ],
+      "claims": {
+        "medium": "technical.microscopy-plate",
+        "composition": "technical-microscopy-plate",
+        "palette": "technical-microscopy-plate",
+        "texture": "technical.microscopy-plate"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use the visual grammar of a microscopy atlas",
+          "tags": [
+            "microscopy atlas"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Frame the supplied structures at one consistent magnification",
+          "tags": [
+            "consistent magnification"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Emphasize translucent boundaries and fine granular interiors",
+          "tags": [
+            "translucent membranes",
+            "granular texture"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use a restrained specimen-stain palette",
+          "tags": [
+            "specimen stain colors"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.electron-surface",
+      "name": "Electron micrograph surface",
+      "description": "Give the subject an electron-micrograph surface appearance. Favor readable relief and broad continuous surface fields.",
+      "category": "technical/biology",
+      "kind": "style",
+      "tags": [
+        "microscopy",
+        "surface",
+        "material",
+        "monochrome"
+      ],
+      "claims": {
+        "medium": "technical.electron-surface",
+        "composition": "technical-electron-surface",
+        "palette": "technical-electron-surface",
+        "texture": "technical.electron-surface"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Give the subject an electron-micrograph surface appearance",
+          "tags": [
+            "electron micrograph aesthetic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Favor readable relief and broad continuous surface fields",
+          "tags": [
+            "surface relief"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use crisp microtexture with directional pseudo-depth shading",
+          "tags": [
+            "fine microtexture",
+            "directional relief"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Keep a cool monochrome tonal range",
+          "tags": [
+            "cool monochrome"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.molecular-surface",
+      "name": "Molecular surface study",
+      "description": "Use a restrained molecular-surface rendering style. Keep the supplied volumes distinct through interlocking contours.",
+      "category": "technical/chemistry",
+      "kind": "style",
+      "tags": [
+        "molecular",
+        "surface",
+        "chemistry",
+        "volume"
+      ],
+      "claims": {
+        "medium": "technical.molecular-surface",
+        "composition": "technical-molecular-surface",
+        "palette": "technical-molecular-surface",
+        "texture": "technical.molecular-surface"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a restrained molecular-surface rendering style",
+          "tags": [
+            "molecular surface rendering"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied volumes distinct through interlocking contours",
+          "tags": [
+            "interlocking volumes"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Show smooth matte lobes with shallow occlusion",
+          "tags": [
+            "matte lobes",
+            "shallow occlusion"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Assign a small balanced set of categorical colors",
+          "tags": [
+            "categorical colors"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.crystal-diagram",
+      "name": "Crystallographic plate",
+      "description": "Use a crisp crystallographic illustration style. Make the supplied geometry readable through transparent faces.",
+      "category": "technical/materials",
+      "kind": "style",
+      "tags": [
+        "crystal",
+        "geometry",
+        "lattice",
+        "mineral"
+      ],
+      "claims": {
+        "medium": "technical.crystal-diagram",
+        "composition": "technical-crystal-diagram",
+        "palette": "technical-crystal-diagram",
+        "texture": "technical.crystal-diagram"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a crisp crystallographic illustration style",
+          "tags": [
+            "crystallographic diagram"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Make the supplied geometry readable through transparent faces",
+          "tags": [
+            "transparent geometric faces"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use fine structural lines and subtle facet shading",
+          "tags": [
+            "fine lattice lines",
+            "facet shading"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Keep facets pale with a limited mineral accent",
+          "tags": [
+            "pale mineral palette"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.geological-section",
+      "name": "Geological cross-section",
+      "description": "Draw a geological cross-section with legible strata. Let supplied boundaries carry the primary visual hierarchy.",
+      "category": "technical/earth-science",
+      "kind": "style",
+      "tags": [
+        "geology",
+        "strata",
+        "section",
+        "earth"
+      ],
+      "claims": {
+        "medium": "technical.geological-section",
+        "composition": "technical-geological-section",
+        "palette": "technical-geological-section",
+        "texture": "technical.geological-section"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Draw a geological cross-section with legible strata",
+          "tags": [
+            "geological cross section"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let supplied boundaries carry the primary visual hierarchy",
+          "tags": [
+            "stratigraphic boundaries"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Differentiate layers with disciplined hatch families",
+          "tags": [
+            "geological hatching"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use dry earth hues with clear neighboring contrast",
+          "tags": [
+            "earth pigments",
+            "strata contrast"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.paleontology-plate",
+      "name": "Paleontological specimen plate",
+      "description": "Render the subject as a paleontological specimen engraving. Place the primary form against generous quiet margins.",
+      "category": "technical/earth-science",
+      "kind": "style",
+      "tags": [
+        "fossil",
+        "paleontology",
+        "specimen",
+        "archive"
+      ],
+      "claims": {
+        "medium": "technical.paleontology-plate",
+        "composition": "technical-paleontology-plate",
+        "palette": "technical-paleontology-plate",
+        "texture": "technical.paleontology-plate"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject as a paleontological specimen engraving",
+          "tags": [
+            "fossil specimen engraving"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Place the primary form against generous quiet margins",
+          "tags": [
+            "isolated specimen",
+            "open margins"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Build relief with fine stipple and directional hatching",
+          "tags": [
+            "scientific stipple",
+            "engraved relief"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Keep charcoal marks on uncoated cream paper",
+          "tags": [
+            "charcoal ink",
+            "cream paper"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.orbital-plot",
+      "name": "Orbital mechanics plate",
+      "description": "Use a spare orbital-mechanics illustration style. Keep supplied trajectories separated through line hierarchy.",
+      "category": "technical/astronomy",
+      "kind": "style",
+      "tags": [
+        "orbit",
+        "astronomy",
+        "trajectory",
+        "space"
+      ],
+      "claims": {
+        "medium": "technical.orbital-plot",
+        "composition": "technical-orbital-plot",
+        "palette": "technical-orbital-plot",
+        "texture": "technical.orbital-plot"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a spare orbital-mechanics illustration style",
+          "tags": [
+            "orbital diagram"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied trajectories separated through line hierarchy",
+          "tags": [
+            "trajectory line hierarchy"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use thin arcs with sparse positional markers",
+          "tags": [
+            "thin orbital arcs"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Set pale trajectories against deep navy space",
+          "tags": [
+            "pale arcs",
+            "deep navy"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.observatory-chart",
+      "name": "Observatory field chart",
+      "description": "Use an observatory field-chart aesthetic. Balance the supplied points against a restrained coordinate scaffold.",
+      "category": "technical/astronomy",
+      "kind": "style",
+      "tags": [
+        "astronomy",
+        "field",
+        "chart",
+        "observation"
+      ],
+      "claims": {
+        "medium": "technical.observatory-chart",
+        "composition": "technical-observatory-chart",
+        "palette": "technical-observatory-chart",
+        "texture": "technical.observatory-chart"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an observatory field-chart aesthetic",
+          "tags": [
+            "astronomy field chart"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Balance the supplied points against a restrained coordinate scaffold",
+          "tags": [
+            "coordinate scaffold"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Vary point size sparingly while keeping lines very fine",
+          "tags": [
+            "fine chart lines",
+            "sparse points"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm white marks on charcoal blue",
+          "tags": [
+            "warm white",
+            "charcoal blue"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.specimen-comparison",
+      "name": "Comparative specimen plate",
+      "description": "Make a comparative natural-history illustration. Align supplied forms for direct silhouette comparison.",
+      "category": "technical/biology",
+      "kind": "style",
+      "tags": [
+        "specimen",
+        "comparison",
+        "scale",
+        "natural-history"
+      ],
+      "claims": {
+        "medium": "technical.specimen-comparison",
+        "composition": "technical-specimen-comparison",
+        "palette": "technical-specimen-comparison",
+        "texture": "technical.specimen-comparison"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Make a comparative natural-history illustration",
+          "tags": [
+            "comparative specimen plate"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Align supplied forms for direct silhouette comparison",
+          "tags": [
+            "aligned silhouettes"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use even descriptive shading without dramatic atmosphere",
+          "tags": [
+            "even descriptive shading"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Keep backgrounds neutral and specimen colors measured",
+          "tags": [
+            "neutral ground",
+            "measured colors"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "technical.laboratory-notebook",
+      "name": "Laboratory notebook study",
+      "description": "Use an observational laboratory-notebook drawing style. Arrange supplied views with exploratory breathing room.",
+      "category": "technical/research",
+      "kind": "style",
+      "tags": [
+        "notebook",
+        "observation",
+        "pencil",
+        "research"
+      ],
+      "claims": {
+        "medium": "technical.laboratory-notebook",
+        "composition": "technical-laboratory-notebook",
+        "palette": "technical-laboratory-notebook",
+        "texture": "technical.laboratory-notebook"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an observational laboratory-notebook drawing style",
+          "tags": [
+            "laboratory notebook sketch"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange supplied views with exploratory breathing room",
+          "tags": [
+            "observational study layout"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Combine fine pencil marks with selective wash",
+          "tags": [
+            "pencil notes",
+            "selective wash"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Keep graphite gray with faded blue accents",
+          "tags": [
+            "graphite gray",
+            "faded blue"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

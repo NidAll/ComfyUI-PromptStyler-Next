@@ -1,0 +1,96 @@
+{
+  "1": {
+    "class_type": "CheckpointLoaderSimple",
+    "inputs": {
+      "ckpt_name": "SELECT_YOUR_SDXL_CHECKPOINT.safetensors"
+    }
+  },
+  "2": {
+    "class_type": "PSNextStyle",
+    "inputs": {
+      "prompt": "A quiet street after rain",
+      "style": "cinema.noir",
+      "model": "sdxl",
+      "intensity": 0.75,
+      "negative": "",
+      "locked_axes": {
+        "__value__": []
+      }
+    }
+  },
+  "3": {
+    "class_type": "PSNextEncode",
+    "inputs": {
+      "clip": [
+        "1",
+        1
+      ],
+      "positive": [
+        "2",
+        0
+      ],
+      "negative": [
+        "2",
+        1
+      ],
+      "model": "sdxl"
+    }
+  },
+  "4": {
+    "class_type": "EmptyLatentImage",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    }
+  },
+  "5": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "positive": [
+        "3",
+        0
+      ],
+      "negative": [
+        "3",
+        1
+      ],
+      "latent_image": [
+        "4",
+        0
+      ],
+      "seed": 42,
+      "steps": 24,
+      "cfg": 6.0,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1.0
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": [
+        "5",
+        0
+      ],
+      "vae": [
+        "1",
+        2
+      ]
+    }
+  },
+  "7": {
+    "class_type": "PreviewImage",
+    "inputs": {
+      "images": [
+        "6",
+        0
+      ]
+    }
+  }
+}

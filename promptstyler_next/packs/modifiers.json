@@ -1,0 +1,899 @@
+{
+  "schema_version": 1,
+  "id": "next.modifiers",
+  "version": "1.0.0",
+  "name": "Light, framing and finish",
+  "description": "Composable modifier layers with explicit axes and progressive detail.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "light.softbox",
+      "name": "Broad softbox",
+      "description": "Illuminate the supplied subject with a broad soft source. Let the shadow side remain gentle while retaining dimensional modeling.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "light",
+        "softbox",
+        "studio"
+      ],
+      "claims": {
+        "lighting": "light-softbox"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Illuminate the supplied subject with a broad soft source",
+          "tags": [
+            "broad softbox"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let the shadow side remain gentle while retaining dimensional modeling",
+          "tags": [
+            "let the shadow side remain gentle while retaining dimensional modeling"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "light.raking",
+      "name": "Raking light",
+      "description": "Let a low raking light describe the existing surface relief. Use long shallow shadows to reveal tactile structure.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "light",
+        "raking",
+        "texture"
+      ],
+      "claims": {
+        "lighting": "light-raking"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Let a low raking light describe the existing surface relief",
+          "tags": [
+            "raking light"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use long shallow shadows to reveal tactile structure",
+          "tags": [
+            "use long shallow shadows to reveal tactile structure"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "light.overcast",
+      "name": "Overcast diffusion",
+      "description": "Use diffuse overcast illumination. Keep color neutral and shadow boundaries broad and soft.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "light",
+        "overcast",
+        "diffuse"
+      ],
+      "claims": {
+        "lighting": "light-overcast"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Use diffuse overcast illumination",
+          "tags": [
+            "overcast diffusion"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep color neutral and shadow boundaries broad and soft",
+          "tags": [
+            "keep color neutral and shadow boundaries broad and soft"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "light.rim",
+      "name": "Restrained rim light",
+      "description": "Use a narrow rim of light to separate the existing outer contour. Keep the rim localized rather than outlining every surface.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "light",
+        "rim",
+        "contour"
+      ],
+      "claims": {
+        "lighting": "light-rim"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Use a narrow rim of light to separate the existing outer contour",
+          "tags": [
+            "restrained rim light"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep the rim localized rather than outlining every surface",
+          "tags": [
+            "keep the rim localized rather than outlining every surface"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "light.split",
+      "name": "Split illumination",
+      "description": "Divide the principal form between a lit side and a clear shadow side. Keep the lighting boundary purposeful and the shadow detail readable.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "light",
+        "split",
+        "contrast"
+      ],
+      "claims": {
+        "lighting": "light-split"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Divide the principal form between a lit side and a clear shadow side",
+          "tags": [
+            "split illumination"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep the lighting boundary purposeful and the shadow detail readable",
+          "tags": [
+            "keep the lighting boundary purposeful and the shadow detail readable"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "light.bounce",
+      "name": "Warm bounced light",
+      "description": "Let warm reflected light gently fill the shadow side. Preserve the direction of the main light source.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "light",
+        "bounce",
+        "warm"
+      ],
+      "claims": {
+        "lighting": "light-bounce"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Let warm reflected light gently fill the shadow side",
+          "tags": [
+            "warm bounced light"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Preserve the direction of the main light source",
+          "tags": [
+            "preserve the direction of the main light source"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "frame.negative-space",
+      "name": "Deliberate negative space",
+      "description": "Give the supplied subject deliberate breathing room. Keep large quiet areas subordinate to the original focus.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "composition",
+        "negative space",
+        "quiet"
+      ],
+      "claims": {
+        "composition": "frame-negative-space"
+      },
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Give the supplied subject deliberate breathing room",
+          "tags": [
+            "deliberate negative space"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep large quiet areas subordinate to the original focus",
+          "tags": [
+            "keep large quiet areas subordinate to the original focus"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "frame.symmetry",
+      "name": "Measured symmetry",
+      "description": "Arrange the supplied forms around a balanced central axis. Keep bilateral visual weight measured without duplicating the subject.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "composition",
+        "symmetry",
+        "balance"
+      ],
+      "claims": {
+        "composition": "frame-symmetry"
+      },
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Arrange the supplied forms around a balanced central axis",
+          "tags": [
+            "measured symmetry"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep bilateral visual weight measured without duplicating the subject",
+          "tags": [
+            "keep bilateral visual weight measured without duplicating the subject"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "frame.diagonal",
+      "name": "Diagonal rhythm",
+      "description": "Emphasize diagonal relationships already present in the forms. Use the diagonal flow to lead attention toward the main focus.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "composition",
+        "diagonal",
+        "movement"
+      ],
+      "claims": {
+        "composition": "frame-diagonal"
+      },
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Emphasize diagonal relationships already present in the forms",
+          "tags": [
+            "diagonal rhythm"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use the diagonal flow to lead attention toward the main focus",
+          "tags": [
+            "use the diagonal flow to lead attention toward the main focus"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "frame.depth",
+      "name": "Layered depth",
+      "description": "Separate the existing foreground, middle distance and background. Use overlap and value differences to maintain a clear depth read.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "composition",
+        "depth",
+        "layers"
+      ],
+      "claims": {
+        "composition": "frame-depth"
+      },
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Separate the existing foreground, middle distance and background",
+          "tags": [
+            "layered depth"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use overlap and value differences to maintain a clear depth read",
+          "tags": [
+            "use overlap and value differences to maintain a clear depth read"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "frame.close",
+      "name": "Close crop",
+      "description": "Use a close crop around the supplied focal subject. Let peripheral details fall outside the frame while retaining the intended action.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "composition",
+        "crop",
+        "intimate"
+      ],
+      "claims": {
+        "composition": "frame-close"
+      },
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Use a close crop around the supplied focal subject",
+          "tags": [
+            "close crop"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let peripheral details fall outside the frame while retaining the intended action",
+          "tags": [
+            "let peripheral details fall outside the frame while retaining the intended action"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "frame.frontal",
+      "name": "Frontal clarity",
+      "description": "Use a direct frontal presentation of the supplied forms. Keep horizontal and vertical relationships deliberate and easy to read.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "composition",
+        "frontal",
+        "direct"
+      ],
+      "claims": {
+        "composition": "frame-frontal"
+      },
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Use a direct frontal presentation of the supplied forms",
+          "tags": [
+            "frontal clarity"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep horizontal and vertical relationships deliberate and easy to read",
+          "tags": [
+            "keep horizontal and vertical relationships deliberate and easy to read"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "finish.paper",
+      "name": "Uncoated paper",
+      "description": "Give the image a restrained uncoated-paper surface. Keep visible fine fibers without obscuring small important details.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "texture",
+        "paper",
+        "printed"
+      ],
+      "claims": {
+        "texture": "finish-paper"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Give the image a restrained uncoated-paper surface",
+          "tags": [
+            "uncoated paper"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep visible fine fibers without obscuring small important details",
+          "tags": [
+            "keep visible fine fibers without obscuring small important details"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "finish.grain",
+      "name": "Fine organic grain",
+      "description": "Add fine organic grain to the image texture. Let the grain vary gently with tone rather than forming a uniform overlay.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "texture",
+        "grain",
+        "film"
+      ],
+      "claims": {
+        "texture": "finish-grain"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Add fine organic grain to the image texture",
+          "tags": [
+            "fine organic grain"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let the grain vary gently with tone rather than forming a uniform overlay",
+          "tags": [
+            "let the grain vary gently with tone rather than forming a uniform overlay"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "finish.halation",
+      "name": "Restrained halation",
+      "description": "Allow a restrained glow around the brightest existing highlights. Keep dark edges and the main subject clearly defined.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "texture",
+        "halation",
+        "glow"
+      ],
+      "claims": {
+        "texture": "finish-halation"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Allow a restrained glow around the brightest existing highlights",
+          "tags": [
+            "restrained halation"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep dark edges and the main subject clearly defined",
+          "tags": [
+            "keep dark edges and the main subject clearly defined"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "finish.drybrush",
+      "name": "Dry-brush edge",
+      "description": "Let selected painted edges break into dry-brush marks. Keep larger masses coherent while exposing the underlying surface.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "texture",
+        "dry brush",
+        "paint"
+      ],
+      "claims": {
+        "texture": "finish-drybrush"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Let selected painted edges break into dry-brush marks",
+          "tags": [
+            "dry-brush edge"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep larger masses coherent while exposing the underlying surface",
+          "tags": [
+            "keep larger masses coherent while exposing the underlying surface"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "finish.hatching",
+      "name": "Directional hatching",
+      "description": "Use directional hatching to describe existing volume. Follow the curvature of the forms with changes in line density.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "texture",
+        "hatching",
+        "line"
+      ],
+      "claims": {
+        "texture": "finish-hatching"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Use directional hatching to describe existing volume",
+          "tags": [
+            "directional hatching"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Follow the curvature of the forms with changes in line density",
+          "tags": [
+            "follow the curvature of the forms with changes in line density"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "finish.granulation",
+      "name": "Pigment granulation",
+      "description": "Let visible pigment granulation enrich painted tonal areas. Concentrate granules in pooled color rather than every bright region.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "texture",
+        "pigment",
+        "watercolor"
+      ],
+      "claims": {
+        "texture": "finish-granulation"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Let visible pigment granulation enrich painted tonal areas",
+          "tags": [
+            "pigment granulation"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Concentrate granules in pooled color rather than every bright region",
+          "tags": [
+            "concentrate granules in pooled color rather than every bright region"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "mood.hushed",
+      "name": "Hushed restraint",
+      "description": "Keep the visual mood hushed and restrained. Favor gentle transitions and unhurried relationships between forms.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "mood",
+        "quiet",
+        "restrained"
+      ],
+      "claims": {
+        "mood": "mood-hushed"
+      },
+      "clauses": [
+        {
+          "axis": "mood",
+          "text": "Keep the visual mood hushed and restrained",
+          "tags": [
+            "hushed restraint"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "mood",
+          "text": "Favor gentle transitions and unhurried relationships between forms",
+          "tags": [
+            "favor gentle transitions and unhurried relationships between forms"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "mood.tension",
+      "name": "Held tension",
+      "description": "Give the supplied scene a sense of held visual tension. Keep relationships slightly unresolved without introducing new story elements.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "mood",
+        "tension",
+        "uneasy"
+      ],
+      "claims": {
+        "mood": "mood-tension"
+      },
+      "clauses": [
+        {
+          "axis": "mood",
+          "text": "Give the supplied scene a sense of held visual tension",
+          "tags": [
+            "held tension"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "mood",
+          "text": "Keep relationships slightly unresolved without introducing new story elements",
+          "tags": [
+            "keep relationships slightly unresolved without introducing new story elements"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "mood.celebratory",
+      "name": "Open celebration",
+      "description": "Give the supplied scene an open celebratory visual mood. Use lively visual rhythm while retaining the original content.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "mood",
+        "bright",
+        "celebratory"
+      ],
+      "claims": {
+        "mood": "mood-celebratory"
+      },
+      "clauses": [
+        {
+          "axis": "mood",
+          "text": "Give the supplied scene an open celebratory visual mood",
+          "tags": [
+            "open celebration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "mood",
+          "text": "Use lively visual rhythm while retaining the original content",
+          "tags": [
+            "use lively visual rhythm while retaining the original content"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "detail.selective",
+      "name": "Selective focal detail",
+      "description": "Concentrate small descriptive detail at the existing focus. Let secondary forms remain deliberately simpler.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "detail",
+        "focal",
+        "hierarchy"
+      ],
+      "claims": {
+        "detail": "detail-selective"
+      },
+      "clauses": [
+        {
+          "axis": "detail",
+          "text": "Concentrate small descriptive detail at the existing focus",
+          "tags": [
+            "selective focal detail"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Let secondary forms remain deliberately simpler",
+          "tags": [
+            "let secondary forms remain deliberately simpler"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "detail.economy",
+      "name": "Economy of marks",
+      "description": "Describe the supplied forms with an economical number of marks. Remove redundant small detail while preserving identifying structure.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "detail",
+        "minimal",
+        "economy"
+      ],
+      "claims": {
+        "detail": "detail-economy"
+      },
+      "clauses": [
+        {
+          "axis": "detail",
+          "text": "Describe the supplied forms with an economical number of marks",
+          "tags": [
+            "economy of marks"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Remove redundant small detail while preserving identifying structure",
+          "tags": [
+            "remove redundant small detail while preserving identifying structure"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "detail.tactile",
+      "name": "Tactile observation",
+      "description": "Emphasize the material qualities of the existing surfaces. Let small wear, weave or grain details follow the supplied materials.",
+      "category": "modifiers",
+      "kind": "modifier",
+      "tags": [
+        "modifier",
+        "detail",
+        "tactile",
+        "surface"
+      ],
+      "claims": {
+        "detail": "detail-tactile"
+      },
+      "clauses": [
+        {
+          "axis": "detail",
+          "text": "Emphasize the material qualities of the existing surfaces",
+          "tags": [
+            "tactile observation"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Let small wear, weave or grain details follow the supplied materials",
+          "tags": [
+            "let small wear, weave or grain details follow the supplied materials"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

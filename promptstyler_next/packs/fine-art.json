@@ -1,0 +1,1163 @@
+{
+  "schema_version": 1,
+  "id": "next.fine.art",
+  "version": "1.0.0",
+  "name": "Fine art movements",
+  "description": "Historically grounded visual procedures rather than artist impersonations.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "art.impressionist",
+      "name": "Broken-color impression",
+      "description": "An impressionist painting built from broken color. Describe light through neighboring warm and cool marks.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "impressionism",
+        "paint",
+        "light"
+      ],
+      "claims": {
+        "medium": "art.impressionist",
+        "lighting": "art-impressionist",
+        "texture": "art.impressionist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An impressionist painting built from broken color",
+          "tags": [
+            "impressionist painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Describe light through neighboring warm and cool marks",
+          "tags": [
+            "warm cool color contrast"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep short visible brushstrokes and soft joined edges",
+          "tags": [
+            "short brushstrokes",
+            "soft edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.postimpressionist",
+      "name": "Constructed color",
+      "description": "A post-impressionist painting with deliberate color construction. Organize volume into stable interlocking painted planes.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "post impressionism",
+        "structure",
+        "color"
+      ],
+      "claims": {
+        "medium": "art.postimpressionist",
+        "composition": "art-postimpressionist",
+        "texture": "art.postimpressionist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A post-impressionist painting with deliberate color construction",
+          "tags": [
+            "post impressionist painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize volume into stable interlocking painted planes",
+          "tags": [
+            "interlocking color planes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use directional brushwork that follows the shape of forms",
+          "tags": [
+            "directional brushwork"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.fauve",
+      "name": "Fauvist color",
+      "description": "A Fauvist painting with expressive simplified forms. Use intense nonliteral local colors in clear adjacent fields.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "fauvism",
+        "vivid",
+        "expressive"
+      ],
+      "claims": {
+        "medium": "art.fauve",
+        "palette": "art-fauve",
+        "texture": "art.fauve"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Fauvist painting with expressive simplified forms",
+          "tags": [
+            "fauvist painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use intense nonliteral local colors in clear adjacent fields",
+          "tags": [
+            "expressive nonliteral color"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep bold open brush marks visibly separate",
+          "tags": [
+            "bold open brush marks"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.cubist",
+      "name": "Faceted cubism",
+      "description": "A cubist interpretation built from faceted planes. Represent the existing forms through interlocking viewpoints.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "cubism",
+        "faceted",
+        "geometric"
+      ],
+      "claims": {
+        "medium": "art.cubist",
+        "composition": "art-cubist",
+        "palette": "art-cubist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cubist interpretation built from faceted planes",
+          "tags": [
+            "cubist painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Represent the existing forms through interlocking viewpoints",
+          "tags": [
+            "interlocking viewpoints",
+            "faceted planes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use restrained ochre and gray-brown tones to emphasize structure",
+          "tags": [
+            "ochre",
+            "gray brown palette"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.expressionist",
+      "name": "Expressionist gesture",
+      "description": "An expressionist painting with purposeful shape distortion. Let directional shapes carry the emotional rhythm.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "expressionism",
+        "gesture",
+        "distortion"
+      ],
+      "claims": {
+        "medium": "art.expressionist",
+        "composition": "art-expressionist",
+        "texture": "art.expressionist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An expressionist painting with purposeful shape distortion",
+          "tags": [
+            "expressionist painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let directional shapes carry the emotional rhythm",
+          "tags": [
+            "expressive shape rhythm"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use forceful visible brushwork and uneven paint density",
+          "tags": [
+            "forceful brushwork",
+            "uneven paint"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.tonalist",
+      "name": "Tonalist atmosphere",
+      "description": "A tonalist painting with closely related values. Hold the image within a narrow muted earth-color range.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "tonalism",
+        "quiet",
+        "atmospheric"
+      ],
+      "claims": {
+        "medium": "art.tonalist",
+        "palette": "art-tonalist",
+        "texture": "art.tonalist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A tonalist painting with closely related values",
+          "tags": [
+            "tonalist painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Hold the image within a narrow muted earth-color range",
+          "tags": [
+            "muted earth tones",
+            "narrow value range"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Blend edges softly through thin atmospheric paint",
+          "tags": [
+            "soft edges",
+            "thin atmospheric paint"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.pointillist",
+      "name": "Optical pointillism",
+      "description": "A pointillist painting made of discrete color marks. Mix hues optically through adjacent complementary dots.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "pointillism",
+        "dots",
+        "optical"
+      ],
+      "claims": {
+        "medium": "art.pointillist",
+        "palette": "art-pointillist",
+        "texture": "art.pointillist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A pointillist painting made of discrete color marks",
+          "tags": [
+            "pointillist painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Mix hues optically through adjacent complementary dots",
+          "tags": [
+            "optical color mixing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Maintain distinct small pigment dots across the painted surface",
+          "tags": [
+            "distinct pigment dots"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.symbolist",
+      "name": "Symbolist atmosphere",
+      "description": "A symbolist painting with dreamlike decorative form. Use subdued luminous transitions rather than direct realism.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "symbolism",
+        "dreamlike",
+        "decorative"
+      ],
+      "claims": {
+        "medium": "art.symbolist",
+        "lighting": "art-symbolist",
+        "texture": "art.symbolist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A symbolist painting with dreamlike decorative form",
+          "tags": [
+            "symbolist painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use subdued luminous transitions rather than direct realism",
+          "tags": [
+            "subdued luminous light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Combine delicate contours with veiled paint layers",
+          "tags": [
+            "delicate contours",
+            "veiled paint"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.suprematist",
+      "name": "Suprematist reduction",
+      "description": "A suprematist abstraction of the supplied forms. Reduce the image to asymmetrically balanced geometric masses.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "suprematism",
+        "geometric",
+        "minimal"
+      ],
+      "claims": {
+        "medium": "art.suprematist",
+        "composition": "art-suprematist",
+        "palette": "art-suprematist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A suprematist abstraction of the supplied forms",
+          "tags": [
+            "suprematist abstraction"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reduce the image to asymmetrically balanced geometric masses",
+          "tags": [
+            "asymmetric geometric balance"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use a sparse relationship of black and primary colors on pale ground",
+          "tags": [
+            "primary colors",
+            "pale ground"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.colorfield",
+      "name": "Color-field immersion",
+      "description": "A color-field painting organized by expansive areas of pigment. Let broad color relationships outweigh small descriptive detail.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "color field",
+        "abstract",
+        "expansive"
+      ],
+      "claims": {
+        "medium": "art.colorfield",
+        "composition": "art-colorfield",
+        "texture": "art.colorfield"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A color-field painting organized by expansive areas of pigment",
+          "tags": [
+            "color field painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let broad color relationships outweigh small descriptive detail",
+          "tags": [
+            "broad color masses"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Soften color boundaries through layered staining",
+          "tags": [
+            "layered stains",
+            "softened boundaries"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.impasto",
+      "name": "Palette-knife impasto",
+      "description": "An oil painting built with palette-knife impasto. Let relief in the paint catch small directional highlights.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "impasto",
+        "knife",
+        "paint"
+      ],
+      "claims": {
+        "medium": "art.impasto",
+        "lighting": "art-impasto",
+        "texture": "art.impasto"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An oil painting built with palette-knife impasto",
+          "tags": [
+            "palette knife oil painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let relief in the paint catch small directional highlights",
+          "tags": [
+            "paint relief highlights"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show thick ridges of pigment and scraped-back passages",
+          "tags": [
+            "thick impasto",
+            "scraped paint"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.alla-prima",
+      "name": "Alla prima oil",
+      "description": "An alla prima oil study painted wet into wet. Resolve forms through a few decisive connected value masses.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "alla prima",
+        "oil",
+        "direct"
+      ],
+      "claims": {
+        "medium": "art.alla-prima",
+        "composition": "art-alla-prima",
+        "texture": "art.alla-prima"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An alla prima oil study painted wet into wet",
+          "tags": [
+            "alla prima oil painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Resolve forms through a few decisive connected value masses",
+          "tags": [
+            "connected value masses"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fresh brushstroke edges and blended wet-paint junctions",
+          "tags": [
+            "fresh brushstrokes",
+            "wet paint"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.renaissance",
+      "name": "Renaissance tonal structure",
+      "description": "A Renaissance-inspired oil painting. Use stable proportional grouping and connected spatial depth.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "renaissance",
+        "oil",
+        "harmony"
+      ],
+      "claims": {
+        "medium": "art.renaissance",
+        "composition": "art-renaissance",
+        "lighting": "art-renaissance"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Renaissance-inspired oil painting",
+          "tags": [
+            "renaissance oil painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use stable proportional grouping and connected spatial depth",
+          "tags": [
+            "proportional grouping",
+            "spatial depth"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Model form with gradual light-to-shadow transitions",
+          "tags": [
+            "gradual tonal modeling"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.barocque",
+      "name": "Baroque chiaroscuro",
+      "description": "A Baroque-inspired oil painting. Use concentrated illumination against deep connecting shadows.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "baroque",
+        "oil",
+        "chiaroscuro"
+      ],
+      "claims": {
+        "medium": "art.barocque",
+        "lighting": "art-barocque",
+        "texture": "art.barocque"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Baroque-inspired oil painting",
+          "tags": [
+            "baroque oil painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use concentrated illumination against deep connecting shadows",
+          "tags": [
+            "baroque chiaroscuro"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Combine translucent dark glazes with opaque light passages",
+          "tags": [
+            "dark glazes",
+            "opaque lights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.rococo",
+      "name": "Rococo lightness",
+      "description": "A Rococo-inspired painted interpretation. Use light asymmetric curves and delicate visual rhythms.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "rococo",
+        "pastel",
+        "decorative"
+      ],
+      "claims": {
+        "medium": "art.rococo",
+        "composition": "art-rococo",
+        "palette": "art-rococo"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Rococo-inspired painted interpretation",
+          "tags": [
+            "rococo painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use light asymmetric curves and delicate visual rhythms",
+          "tags": [
+            "asymmetric curves",
+            "delicate rhythm"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep pale rose, cream and softened blue colors",
+          "tags": [
+            "pale rose",
+            "cream",
+            "softened blue"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.neoclassical",
+      "name": "Neoclassical contour",
+      "description": "A neoclassical painted interpretation. Prioritize measured contours and clear ordered grouping.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "neoclassical",
+        "contour",
+        "order"
+      ],
+      "claims": {
+        "medium": "art.neoclassical",
+        "composition": "art-neoclassical",
+        "lighting": "art-neoclassical"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A neoclassical painted interpretation",
+          "tags": [
+            "neoclassical painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Prioritize measured contours and clear ordered grouping",
+          "tags": [
+            "measured contours",
+            "ordered grouping"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use cool steady illumination to explain solid volumes",
+          "tags": [
+            "cool steady illumination"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.romantic",
+      "name": "Romantic sublime",
+      "description": "A Romantic-era painted interpretation. Let scale relationships and sweeping diagonals carry emotion.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "romanticism",
+        "sublime",
+        "atmosphere"
+      ],
+      "claims": {
+        "medium": "art.romantic",
+        "composition": "art-romantic",
+        "lighting": "art-romantic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Romantic-era painted interpretation",
+          "tags": [
+            "romantic painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let scale relationships and sweeping diagonals carry emotion",
+          "tags": [
+            "sweeping diagonals",
+            "scale relationships"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use dramatic atmospheric light without adding narrative elements",
+          "tags": [
+            "dramatic atmospheric light"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.realist",
+      "name": "19th-century realism",
+      "description": "A 19th-century realist oil painting. Use grounded earth pigments and believable local colors.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "realism",
+        "oil",
+        "earth"
+      ],
+      "claims": {
+        "medium": "art.realist",
+        "palette": "art-realist",
+        "texture": "art.realist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A 19th-century realist oil painting",
+          "tags": [
+            "realist oil painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use grounded earth pigments and believable local colors",
+          "tags": [
+            "earth pigments",
+            "local colors"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep direct observed paint handling and unidealized material detail",
+          "tags": [
+            "observed brushwork",
+            "material detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.precisionist",
+      "name": "Precisionist planes",
+      "description": "A precisionist painting of the supplied forms. Use sharply simplified planes and exact geometric relationships.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "precisionism",
+        "geometric",
+        "crisp"
+      ],
+      "claims": {
+        "medium": "art.precisionist",
+        "composition": "art-precisionist",
+        "palette": "art-precisionist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A precisionist painting of the supplied forms",
+          "tags": [
+            "precisionist painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use sharply simplified planes and exact geometric relationships",
+          "tags": [
+            "sharp planes",
+            "exact geometry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep clear cool-warm color divisions with smooth surfaces",
+          "tags": [
+            "clear cool warm divisions"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.orphist",
+      "name": "Orphist color rhythm",
+      "description": "An Orphist abstraction of the supplied image. Organize color through interlocking arcs and circular rhythms.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "orphism",
+        "color",
+        "rhythm"
+      ],
+      "claims": {
+        "medium": "art.orphist",
+        "composition": "art-orphist",
+        "palette": "art-orphist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An Orphist abstraction of the supplied image",
+          "tags": [
+            "orphist abstraction"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize color through interlocking arcs and circular rhythms",
+          "tags": [
+            "interlocking arcs",
+            "circular rhythm"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use adjacent contrasting hues to create luminous movement",
+          "tags": [
+            "contrasting luminous hues"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.nabis",
+      "name": "Decorative Nabis planes",
+      "description": "A Nabis-inspired decorative painting. Flatten depth into interlocking decorative planes.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "nabis",
+        "decorative",
+        "flat"
+      ],
+      "claims": {
+        "medium": "art.nabis",
+        "composition": "art-nabis",
+        "palette": "art-nabis"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Nabis-inspired decorative painting",
+          "tags": [
+            "nabis painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Flatten depth into interlocking decorative planes",
+          "tags": [
+            "flattened decorative planes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use subdued warm colors with strong local color groupings",
+          "tags": [
+            "subdued warm color groups"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.metaphysical",
+      "name": "Metaphysical stillness",
+      "description": "A metaphysical painted interpretation. Use deliberately suspended spatial relationships and clear geometry.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "metaphysical",
+        "stillness",
+        "geometry"
+      ],
+      "claims": {
+        "medium": "art.metaphysical",
+        "composition": "art-metaphysical",
+        "lighting": "art-metaphysical"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A metaphysical painted interpretation",
+          "tags": [
+            "metaphysical painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use deliberately suspended spatial relationships and clear geometry",
+          "tags": [
+            "suspended space",
+            "clear geometry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Cast long precise shadows under still even light",
+          "tags": [
+            "long precise shadows"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.informel",
+      "name": "Material abstraction",
+      "description": "An art-informel material abstraction. Let irregular material masses carry the supplied image structure.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "art informel",
+        "material",
+        "gesture"
+      ],
+      "claims": {
+        "medium": "art.informel",
+        "composition": "art-informel",
+        "texture": "art.informel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An art-informel material abstraction",
+          "tags": [
+            "art informel"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let irregular material masses carry the supplied image structure",
+          "tags": [
+            "irregular material masses"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show scraped pigment, embedded grit and exposed ground",
+          "tags": [
+            "scraped pigment",
+            "embedded grit"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "art.hardedge",
+      "name": "Hard-edge abstraction",
+      "description": "A hard-edge abstract interpretation. Separate forms with exact unmodulated boundaries.",
+      "category": "fine-art",
+      "kind": "style",
+      "tags": [
+        "fine art",
+        "hard edge",
+        "flat",
+        "geometric"
+      ],
+      "claims": {
+        "medium": "art.hardedge",
+        "composition": "art-hardedge",
+        "palette": "art-hardedge"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A hard-edge abstract interpretation",
+          "tags": [
+            "hard edge abstraction"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate forms with exact unmodulated boundaries",
+          "tags": [
+            "exact shape boundaries"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use flat opaque color fields with clear value separation",
+          "tags": [
+            "flat opaque color fields"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

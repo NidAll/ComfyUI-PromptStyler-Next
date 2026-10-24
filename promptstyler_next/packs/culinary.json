@@ -1,0 +1,1162 @@
+{
+  "schema_version": 1,
+  "id": "next.culinary",
+  "version": "1.0.0",
+  "name": "Culinary image-making",
+  "description": "Distinct food-photography and culinary-art directions without adding ingredients or rewriting the dish.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "culinary.window-table",
+      "name": "Window-light table study",
+      "description": "Use intimate window-light food photography. Keep the supplied dish central within generous table space.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "food",
+        "window",
+        "table",
+        "daylight"
+      ],
+      "claims": {
+        "medium": "culinary.window-table",
+        "composition": "culinary-window-table",
+        "palette": "culinary-window-table",
+        "texture": "culinary.window-table"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use intimate window-light food photography",
+          "tags": [
+            "window light food photography"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied dish central within generous table space",
+          "tags": [
+            "quiet table composition"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal natural crumbs and soft surface irregularities",
+          "tags": [
+            "natural food texture"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm neutrals with restrained ingredient color",
+          "tags": [
+            "warm neutral palette"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.hard-sun-lunch",
+      "name": "Hard-sun lunch editorial",
+      "description": "Use a sharply sunlit culinary editorial treatment. Let decisive cast shadows structure the supplied arrangement.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "food",
+        "sunlight",
+        "lunch",
+        "editorial"
+      ],
+      "claims": {
+        "medium": "culinary.hard-sun-lunch",
+        "composition": "culinary-hard-sun-lunch",
+        "palette": "culinary-hard-sun-lunch",
+        "texture": "culinary.hard-sun-lunch"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a sharply sunlit culinary editorial treatment",
+          "tags": [
+            "hard sun food editorial"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let decisive cast shadows structure the supplied arrangement",
+          "tags": [
+            "decisive cast shadows"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep crisp highlights and dry tactile table surfaces",
+          "tags": [
+            "crisp food highlights",
+            "dry surfaces"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use chalk white with concentrated natural color",
+          "tags": [
+            "chalk white",
+            "natural color"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.night-bistro",
+      "name": "Night bistro still life",
+      "description": "Use a low-light bistro still-life treatment. Frame the supplied setting closely with intimate shadow.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "food",
+        "bistro",
+        "night",
+        "restaurant"
+      ],
+      "claims": {
+        "medium": "culinary.night-bistro",
+        "composition": "culinary-night-bistro",
+        "palette": "culinary-night-bistro",
+        "texture": "culinary.night-bistro"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a low-light bistro still-life treatment",
+          "tags": [
+            "bistro food still life"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Frame the supplied setting closely with intimate shadow",
+          "tags": [
+            "intimate close framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Let small reflections emerge from soft darkness",
+          "tags": [
+            "small reflections",
+            "soft darkness"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use tobacco amber and deep wine neutrals",
+          "tags": [
+            "tobacco amber",
+            "wine neutrals"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.pastry-section",
+      "name": "Pastry cross-section study",
+      "description": "Use precise pastry-editorial photography. Emphasize the supplied layer structure through a clear cut view.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "pastry",
+        "layers",
+        "baking",
+        "section"
+      ],
+      "claims": {
+        "medium": "culinary.pastry-section",
+        "composition": "culinary-pastry-section",
+        "palette": "culinary-pastry-section",
+        "texture": "culinary.pastry-section"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use precise pastry-editorial photography",
+          "tags": [
+            "pastry editorial photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Emphasize the supplied layer structure through a clear cut view",
+          "tags": [
+            "pastry cross section"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep flaky edges and soft fillings materially distinct",
+          "tags": [
+            "flaky texture",
+            "soft filling"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use pale butter tones and quiet cream shadows",
+          "tags": [
+            "butter yellow",
+            "cream shadows"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.bread-crust",
+      "name": "Bread crust portrait",
+      "description": "Treat the supplied bread as a tactile culinary portrait. Favor a simple angle that reveals crust and volume.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "bread",
+        "baking",
+        "crust",
+        "rustic"
+      ],
+      "claims": {
+        "medium": "culinary.bread-crust",
+        "composition": "culinary-bread-crust",
+        "palette": "culinary-bread-crust",
+        "texture": "culinary.bread-crust"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the supplied bread as a tactile culinary portrait",
+          "tags": [
+            "bread portrait"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Favor a simple angle that reveals crust and volume",
+          "tags": [
+            "crust-focused composition"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use raking detail to reveal scored ridges and flour",
+          "tags": [
+            "scored crust",
+            "flour texture"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use toasted browns with cool muted background tones",
+          "tags": [
+            "toasted brown",
+            "cool neutral ground"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.confection-macro",
+      "name": "Confection macro",
+      "description": "Use a close confectionery-detail photograph. Isolate the supplied confection through shallow spatial layering.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "confection",
+        "sugar",
+        "macro",
+        "dessert"
+      ],
+      "claims": {
+        "medium": "culinary.confection-macro",
+        "composition": "culinary-confection-macro",
+        "palette": "culinary-confection-macro",
+        "texture": "culinary.confection-macro"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a close confectionery-detail photograph",
+          "tags": [
+            "confectionery macro"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Isolate the supplied confection through shallow spatial layering",
+          "tags": [
+            "isolated confection",
+            "shallow depth"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Distinguish brittle sugar from soft or creamy surfaces",
+          "tags": [
+            "sugar detail",
+            "creamy texture"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use restrained pastel surroundings and descriptive highlights",
+          "tags": [
+            "restrained pastels"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.soup-steam",
+      "name": "Quiet steam study",
+      "description": "Use a calm warm-food still-life treatment. Keep the supplied vessel unobstructed against a quiet background.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "soup",
+        "steam",
+        "warmth",
+        "food"
+      ],
+      "claims": {
+        "medium": "culinary.soup-steam",
+        "composition": "culinary-soup-steam",
+        "palette": "culinary-soup-steam",
+        "texture": "culinary.soup-steam"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a calm warm-food still-life treatment",
+          "tags": [
+            "warm food still life"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied vessel unobstructed against a quiet background",
+          "tags": [
+            "clear vessel silhouette"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Let delicate existing vapor read through gentle backlight",
+          "tags": [
+            "delicate vapor",
+            "gentle backlight"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted earth and gray-green tones",
+          "tags": [
+            "muted earth",
+            "gray green"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.fermentation-journal",
+      "name": "Fermentation journal",
+      "description": "Use an observational fermentation-journal aesthetic. Keep supplied containers and contents plainly readable.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "fermentation",
+        "jar",
+        "process",
+        "food"
+      ],
+      "claims": {
+        "medium": "culinary.fermentation-journal",
+        "composition": "culinary-fermentation-journal",
+        "palette": "culinary-fermentation-journal",
+        "texture": "culinary.fermentation-journal"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an observational fermentation-journal aesthetic",
+          "tags": [
+            "fermentation journal photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied containers and contents plainly readable",
+          "tags": [
+            "plain observational framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal glass smears tiny bubbles and layered contents",
+          "tags": [
+            "glass texture",
+            "tiny bubbles"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use subdued greens amber and uncoated-paper neutrals",
+          "tags": [
+            "subdued green",
+            "amber",
+            "paper neutral"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.market-produce",
+      "name": "Market produce editorial",
+      "description": "Use a direct seasonal-produce editorial treatment. Let the supplied forms fill the frame with natural irregularity.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "produce",
+        "market",
+        "seasonal",
+        "vegetables"
+      ],
+      "claims": {
+        "medium": "culinary.market-produce",
+        "composition": "culinary-market-produce",
+        "palette": "culinary-market-produce",
+        "texture": "culinary.market-produce"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a direct seasonal-produce editorial treatment",
+          "tags": [
+            "seasonal produce editorial"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied forms fill the frame with natural irregularity",
+          "tags": [
+            "organic produce arrangement"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve skins bruises and varied surface sheen",
+          "tags": [
+            "natural skins",
+            "varied sheen"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Keep colors local to the supplied produce",
+          "tags": [
+            "descriptive produce color"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.herbarium-menu",
+      "name": "Culinary herbarium plate",
+      "description": "Use a culinary-herbarium illustration style. Give supplied ingredients clear silhouettes and open margins.",
+      "category": "culinary/illustration",
+      "kind": "style",
+      "tags": [
+        "herbs",
+        "menu",
+        "botanical",
+        "food"
+      ],
+      "claims": {
+        "medium": "culinary.herbarium-menu",
+        "composition": "culinary-herbarium-menu",
+        "palette": "culinary-herbarium-menu",
+        "texture": "culinary.herbarium-menu"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a culinary-herbarium illustration style",
+          "tags": [
+            "culinary herbarium plate"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Give supplied ingredients clear silhouettes and open margins",
+          "tags": [
+            "ingredient silhouettes"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Combine fine line drawing with translucent natural washes",
+          "tags": [
+            "fine botanical lines",
+            "transparent wash"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use herb greens and faded mineral accents",
+          "tags": [
+            "herb green",
+            "mineral accents"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.cookbook-gouache",
+      "name": "Cookbook gouache plate",
+      "description": "Render the subject as a painted cookbook gouache plate. Keep supplied food shapes bold and immediately readable.",
+      "category": "culinary/illustration",
+      "kind": "style",
+      "tags": [
+        "cookbook",
+        "gouache",
+        "food",
+        "illustration"
+      ],
+      "claims": {
+        "medium": "culinary.cookbook-gouache",
+        "composition": "culinary-cookbook-gouache",
+        "palette": "culinary-cookbook-gouache",
+        "texture": "culinary.cookbook-gouache"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject as a painted cookbook gouache plate",
+          "tags": [
+            "cookbook gouache"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied food shapes bold and immediately readable",
+          "tags": [
+            "bold food silhouettes"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use opaque brush marks with soft dry edges",
+          "tags": [
+            "opaque gouache",
+            "dry edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm balanced pigment colors",
+          "tags": [
+            "warm gouache palette"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.recipe-linocut",
+      "name": "Recipe linocut image",
+      "description": "Use a compact culinary-linocut treatment. Build the supplied subject from strong interlocking masses.",
+      "category": "culinary/illustration",
+      "kind": "style",
+      "tags": [
+        "recipe",
+        "linocut",
+        "print",
+        "food"
+      ],
+      "claims": {
+        "medium": "culinary.recipe-linocut",
+        "composition": "culinary-recipe-linocut",
+        "palette": "culinary-recipe-linocut",
+        "texture": "culinary.recipe-linocut"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a compact culinary-linocut treatment",
+          "tags": [
+            "culinary linocut"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Build the supplied subject from strong interlocking masses",
+          "tags": [
+            "interlocking food shapes"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep carved strokes directional and deliberately uneven",
+          "tags": [
+            "carved directional marks"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use dark ink with one earthy secondary color",
+          "tags": [
+            "dark ink",
+            "earth accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.restaurant-silver",
+      "name": "Restaurant silver service",
+      "description": "Use restrained restaurant-service photography. Balance the supplied dish against its existing reflective setting.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "restaurant",
+        "silver",
+        "service",
+        "reflection"
+      ],
+      "claims": {
+        "medium": "culinary.restaurant-silver",
+        "composition": "culinary-restaurant-silver",
+        "palette": "culinary-restaurant-silver",
+        "texture": "culinary.restaurant-silver"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use restrained restaurant-service photography",
+          "tags": [
+            "silver service photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Balance the supplied dish against its existing reflective setting",
+          "tags": [
+            "reflective table balance"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Control metallic highlights without flattening their reflections",
+          "tags": [
+            "controlled silver reflections"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use cool silver against warm food tones",
+          "tags": [
+            "cool silver",
+            "warm food"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.ceramic-menu",
+      "name": "Ceramic menu still life",
+      "description": "Use a tactile ceramic-led food still life. Let the supplied vessel shape guide the framing.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "ceramic",
+        "menu",
+        "plate",
+        "food"
+      ],
+      "claims": {
+        "medium": "culinary.ceramic-menu",
+        "composition": "culinary-ceramic-menu",
+        "palette": "culinary-ceramic-menu",
+        "texture": "culinary.ceramic-menu"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a tactile ceramic-led food still life",
+          "tags": [
+            "ceramic food still life"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied vessel shape guide the framing",
+          "tags": [
+            "vessel-led framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal glaze variation beside the food's softer textures",
+          "tags": [
+            "ceramic glaze",
+            "soft food textures"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted glazes and uncoated-paper neutrals",
+          "tags": [
+            "muted ceramic palette"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.ice-dessert",
+      "name": "Frozen dessert study",
+      "description": "Use crisp frozen-dessert editorial photography. Give the supplied frozen forms clear sculptural separation.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "ice",
+        "frozen",
+        "dessert",
+        "texture"
+      ],
+      "claims": {
+        "medium": "culinary.ice-dessert",
+        "composition": "culinary-ice-dessert",
+        "palette": "culinary-ice-dessert",
+        "texture": "culinary.ice-dessert"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use crisp frozen-dessert editorial photography",
+          "tags": [
+            "frozen dessert photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Give the supplied frozen forms clear sculptural separation",
+          "tags": [
+            "sculptural frozen forms"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal frost grains melt edges and smooth cold surfaces",
+          "tags": [
+            "frost grains",
+            "melt edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use cool whites with a narrow flavor-color accent",
+          "tags": [
+            "cool white",
+            "flavor accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.beverage-refraction",
+      "name": "Beverage refraction study",
+      "description": "Use a clear beverage-refraction photograph. Let the supplied glass geometry create the primary rhythm.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "drink",
+        "glass",
+        "refraction",
+        "beverage"
+      ],
+      "claims": {
+        "medium": "culinary.beverage-refraction",
+        "composition": "culinary-beverage-refraction",
+        "palette": "culinary-beverage-refraction",
+        "texture": "culinary.beverage-refraction"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a clear beverage-refraction photograph",
+          "tags": [
+            "beverage refraction"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied glass geometry create the primary rhythm",
+          "tags": [
+            "glass geometry"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Distinguish liquid reflections bubbles and clean glass edges",
+          "tags": [
+            "liquid reflections",
+            "glass edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use a limited transparent color palette",
+          "tags": [
+            "transparent colors"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.roast-char",
+      "name": "Roast and char study",
+      "description": "Use a tactile roast-and-char culinary photograph. Keep the supplied food form close and materially legible.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "roast",
+        "char",
+        "fire",
+        "texture"
+      ],
+      "claims": {
+        "medium": "culinary.roast-char",
+        "composition": "culinary-roast-char",
+        "palette": "culinary-roast-char",
+        "texture": "culinary.roast-char"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a tactile roast-and-char culinary photograph",
+          "tags": [
+            "roast and char photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied food form close and materially legible",
+          "tags": [
+            "close food detail"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Separate dark char from glossy juices and softer interiors",
+          "tags": [
+            "char texture",
+            "glossy juices"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use deep umber copper and restrained cream",
+          "tags": [
+            "umber",
+            "copper",
+            "cream"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.tea-quiet",
+      "name": "Quiet tea-table study",
+      "description": "Use a quiet tea-table still-life treatment. Leave breathing room around the supplied vessels.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "tea",
+        "quiet",
+        "table",
+        "ritual"
+      ],
+      "claims": {
+        "medium": "culinary.tea-quiet",
+        "composition": "culinary-tea-quiet",
+        "palette": "culinary-tea-quiet",
+        "texture": "culinary.tea-quiet"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a quiet tea-table still-life treatment",
+          "tags": [
+            "quiet tea still life"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Leave breathing room around the supplied vessels",
+          "tags": [
+            "open tea-table framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Let fine ceramic texture meet soft liquid reflections",
+          "tags": [
+            "fine ceramic",
+            "soft liquid reflections"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use restrained clay gray and tea-amber tones",
+          "tags": [
+            "clay gray",
+            "tea amber"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.flatlay-preparation",
+      "name": "Preparation flat lay",
+      "description": "Use an orderly culinary-preparation flat lay. Separate the supplied preparation elements by useful visual groups.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "preparation",
+        "flatlay",
+        "ingredients",
+        "cookbook"
+      ],
+      "claims": {
+        "medium": "culinary.flatlay-preparation",
+        "composition": "culinary-flatlay-preparation",
+        "palette": "culinary-flatlay-preparation",
+        "texture": "culinary.flatlay-preparation"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an orderly culinary-preparation flat lay",
+          "tags": [
+            "food preparation flatlay"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate the supplied preparation elements by useful visual groups",
+          "tags": [
+            "grouped preparation layout"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep work-surface marks tactile but subordinate",
+          "tags": [
+            "tactile work surface"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use neutral surfaces with measured ingredient color",
+          "tags": [
+            "neutral food preparation palette"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "culinary.monochrome-tasting",
+      "name": "Monochrome tasting study",
+      "description": "Use a monochrome culinary form study. Read the supplied dish through silhouette and tonal spacing.",
+      "category": "culinary/photography",
+      "kind": "style",
+      "tags": [
+        "tasting",
+        "monochrome",
+        "food",
+        "form"
+      ],
+      "claims": {
+        "medium": "culinary.monochrome-tasting",
+        "composition": "culinary-monochrome-tasting",
+        "palette": "culinary-monochrome-tasting",
+        "texture": "culinary.monochrome-tasting"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a culinary form study",
+          "tags": [
+            "culinary form study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Read the supplied dish through silhouette and tonal spacing",
+          "tags": [
+            "tonal food composition"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Differentiate textures through restrained local contrast",
+          "tags": [
+            "restrained texture contrast"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Keep a subtle charcoal-to-pearl tonal range",
+          "tags": [
+            "charcoal",
+            "pearl monochrome"
+          ],
+          "min_intensity": 0.35
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

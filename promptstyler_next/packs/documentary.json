@@ -1,0 +1,1383 @@
+{
+  "schema_version": 1,
+  "id": "next.documentary",
+  "version": "1.0.0",
+  "name": "Observational photography",
+  "description": "Photographic observation, exposure and reproduction choices.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "documentary.street",
+      "name": "Candid street frame",
+      "description": "A candid observational street photograph. Use immediate unforced framing around the existing action.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "street",
+        "candid",
+        "photograph"
+      ],
+      "claims": {
+        "medium": "documentary.street",
+        "composition": "documentary-street",
+        "texture": "documentary.street"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A candid observational street photograph",
+          "tags": [
+            "candid street photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use immediate unforced framing around the existing action",
+          "tags": [
+            "unforced framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep modest film grain and ordinary surface detail",
+          "tags": [
+            "modest grain",
+            "ordinary detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.survey",
+      "name": "Topographic survey",
+      "description": "A neutral topographic survey photograph. Use frontal distance and a deliberately level horizon.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "topographic",
+        "survey",
+        "neutral"
+      ],
+      "claims": {
+        "medium": "documentary.survey",
+        "composition": "documentary-survey",
+        "lighting": "documentary-survey"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A neutral topographic survey photograph",
+          "tags": [
+            "topographic survey photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use frontal distance and a deliberately level horizon",
+          "tags": [
+            "frontal survey framing",
+            "level horizon"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep diffuse daylight and neutral tonal relationships",
+          "tags": [
+            "diffuse daylight",
+            "neutral tones"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.contact",
+      "name": "Archival contact print",
+      "description": "An archival contact-print photograph. Use slightly warm monochrome with soft maximum black.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "archival",
+        "contact print",
+        "paper"
+      ],
+      "claims": {
+        "medium": "documentary.contact",
+        "palette": "documentary-contact",
+        "texture": "documentary.contact"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An archival contact-print photograph",
+          "tags": [
+            "archival contact print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use slightly warm monochrome with soft maximum black",
+          "tags": [
+            "warm monochrome",
+            "soft black"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Retain small paper imperfections and fine contact-print detail",
+          "tags": [
+            "paper imperfections",
+            "contact detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.press",
+      "name": "Press-photo urgency",
+      "description": "A mid-century press-photograph interpretation. Use direct flash balanced against uneven ambient light.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "press",
+        "news",
+        "flash"
+      ],
+      "claims": {
+        "medium": "documentary.press",
+        "lighting": "documentary-press",
+        "texture": "documentary.press"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A mid-century press-photograph interpretation",
+          "tags": [
+            "press photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use direct flash balanced against uneven ambient light",
+          "tags": [
+            "press flash",
+            "uneven ambient"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show coarse reproduction grain and slightly compressed highlights",
+          "tags": [
+            "coarse press grain",
+            "compressed highlights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.color",
+      "name": "Everyday color",
+      "description": "An unembellished everyday color photograph. Keep an observational eye-level framing.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "everyday",
+        "color",
+        "ordinary"
+      ],
+      "claims": {
+        "medium": "documentary.color",
+        "composition": "documentary-color",
+        "palette": "documentary-color"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An unembellished everyday color photograph",
+          "tags": [
+            "everyday color photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep an observational eye-level framing",
+          "tags": [
+            "eye level observation"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Retain the ordinary mixed colors of the supplied scene",
+          "tags": [
+            "ordinary mixed colors"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.night",
+      "name": "Night documentary",
+      "description": "An available-light documentary night photograph. Let existing light sources fall off into deep unfilled shadows.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "night",
+        "available light",
+        "grain"
+      ],
+      "claims": {
+        "medium": "documentary.night",
+        "lighting": "documentary-night",
+        "texture": "documentary.night"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An available-light documentary night photograph",
+          "tags": [
+            "night documentary photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let existing light sources fall off into deep unfilled shadows",
+          "tags": [
+            "available night light",
+            "unfilled shadows"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep visible high-sensitivity grain and modest motion softness",
+          "tags": [
+            "high sensitivity grain",
+            "modest motion blur"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.field",
+      "name": "Field-notebook image",
+      "description": "A field-study photograph with observational precision. Prioritize the visible structure of the supplied subject.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "field",
+        "notebook",
+        "study"
+      ],
+      "claims": {
+        "medium": "documentary.field",
+        "composition": "documentary-field",
+        "texture": "documentary.field"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A field-study photograph with observational precision",
+          "tags": [
+            "field study photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Prioritize the visible structure of the supplied subject",
+          "tags": [
+            "observational structural framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Retain natural surface wear and imperfect ambient exposure",
+          "tags": [
+            "natural wear",
+            "ambient exposure"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.typology",
+      "name": "Typological view",
+      "description": "A typological documentary photograph. Use a measured frontal view with consistent margins.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "typology",
+        "frontal",
+        "systematic"
+      ],
+      "claims": {
+        "medium": "documentary.typology",
+        "composition": "documentary-typology",
+        "lighting": "documentary-typology"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A typological documentary photograph",
+          "tags": [
+            "typological photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use a measured frontal view with consistent margins",
+          "tags": [
+            "measured frontal view"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Favor overcast light and minimal dramatic shadow",
+          "tags": [
+            "overcast light",
+            "minimal shadow"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.travel",
+      "name": "Travel-film diary",
+      "description": "A travel-diary color-film photograph. Use spontaneous framing with a clear main point of attention.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "travel",
+        "diary",
+        "film"
+      ],
+      "claims": {
+        "medium": "documentary.travel",
+        "composition": "documentary-travel",
+        "texture": "documentary.travel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A travel-diary color-film photograph",
+          "tags": [
+            "travel diary photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use spontaneous framing with a clear main point of attention",
+          "tags": [
+            "spontaneous framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve fine consumer-film grain and gentle highlight warmth",
+          "tags": [
+            "consumer film grain",
+            "warm highlights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.institutional",
+      "name": "Institutional record",
+      "description": "A direct institutional-record photograph. Keep the full supplied subject clearly readable with plain framing.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "record",
+        "neutral",
+        "direct"
+      ],
+      "claims": {
+        "medium": "documentary.institutional",
+        "composition": "documentary-institutional",
+        "lighting": "documentary-institutional"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A direct institutional-record photograph",
+          "tags": [
+            "record photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the full supplied subject clearly readable with plain framing",
+          "tags": [
+            "plain complete framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use even functional illumination and neutral color balance",
+          "tags": [
+            "functional light",
+            "neutral balance"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.handheld",
+      "name": "Handheld immediacy",
+      "description": "A spontaneous handheld documentary photograph. Allow a slight natural framing imbalance around the supplied subject.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "handheld",
+        "immediate",
+        "spontaneous"
+      ],
+      "claims": {
+        "medium": "documentary.handheld",
+        "composition": "documentary-handheld",
+        "texture": "documentary.handheld"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A spontaneous handheld documentary photograph",
+          "tags": [
+            "handheld documentary photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Allow a slight natural framing imbalance around the supplied subject",
+          "tags": [
+            "natural framing imbalance"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep subtle motion softness without dissolving important forms",
+          "tags": [
+            "subtle motion softness"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.silver",
+      "name": "Silver-gelatin documentary",
+      "description": "A silver-gelatin documentary print. Hold luminous middle values between detailed black and white extremes.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "silver gelatin",
+        "monochrome",
+        "darkroom"
+      ],
+      "claims": {
+        "medium": "documentary.silver",
+        "lighting": "documentary-silver",
+        "texture": "documentary.silver"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A silver-gelatin documentary print",
+          "tags": [
+            "silver gelatin documentary"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Hold luminous middle values between detailed tonal extremes",
+          "tags": [
+            "luminous midtones",
+            "detailed extremes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep organic silver grain and soft enlarger-edge character",
+          "tags": [
+            "silver grain",
+            "enlarger softness"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.mediumformat",
+      "name": "Medium-format observation",
+      "description": "A measured medium-format documentary photograph. Use calm edge placement and a strong central-spatial relationship.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "medium format",
+        "square",
+        "measured"
+      ],
+      "claims": {
+        "medium": "documentary.mediumformat",
+        "composition": "documentary-mediumformat",
+        "texture": "documentary.mediumformat"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A measured medium-format documentary photograph",
+          "tags": [
+            "medium format documentary"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use calm edge placement and a strong central-spatial relationship",
+          "tags": [
+            "calm edge placement"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine tonal detail and modest optical softness",
+          "tags": [
+            "fine tonal detail",
+            "modest softness"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.printmatte",
+      "name": "Matte fiber print",
+      "description": "A matte fiber-based documentary print. Use soft neutral monochrome with open middle values.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "matte",
+        "fiber print",
+        "monochrome"
+      ],
+      "claims": {
+        "medium": "documentary.printmatte",
+        "palette": "documentary-printmatte",
+        "texture": "documentary.printmatte"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A matte fiber-based documentary print",
+          "tags": [
+            "matte fiber photographic print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use soft neutral monochrome with open middle values",
+          "tags": [
+            "open monochrome midtones"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let the paper fiber texture remain gently visible",
+          "tags": [
+            "visible fiber paper"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.push",
+      "name": "Push-processed record",
+      "description": "A push-processed documentary film photograph. Keep abrupt existing light differences and deep unfilled shadows.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "pushed film",
+        "grain",
+        "contrast"
+      ],
+      "claims": {
+        "medium": "documentary.push",
+        "lighting": "documentary-push",
+        "texture": "documentary.push"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A push-processed documentary film photograph",
+          "tags": [
+            "push processed documentary"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep abrupt existing light differences and deep unfilled shadows",
+          "tags": [
+            "abrupt ambient contrast"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show prominent grain and compressed shadow transitions",
+          "tags": [
+            "pushed film grain",
+            "compressed shadows"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.pull",
+      "name": "Pull-processed calm",
+      "description": "A pull-processed documentary film photograph. Use soft contrast with long subdued middle values.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "pulled film",
+        "soft contrast",
+        "film"
+      ],
+      "claims": {
+        "medium": "documentary.pull",
+        "palette": "documentary-pull",
+        "texture": "documentary.pull"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A pull-processed documentary film photograph",
+          "tags": [
+            "pull processed documentary"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use soft contrast with long subdued middle values",
+          "tags": [
+            "soft contrast",
+            "long midtones"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine restrained grain and gently held highlights",
+          "tags": [
+            "fine restrained grain",
+            "held highlights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.zone",
+      "name": "Zone-system precision",
+      "description": "A carefully exposed zone-system documentary print. Hold distinct tonal zones from textured dark to detailed pale areas.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "zone system",
+        "monochrome",
+        "tonal"
+      ],
+      "claims": {
+        "medium": "documentary.zone",
+        "lighting": "documentary-zone",
+        "texture": "documentary.zone"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A carefully exposed zone-system documentary print",
+          "tags": [
+            "zone system photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Hold distinct tonal zones from textured dark to detailed pale areas",
+          "tags": [
+            "distinct tonal zones"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve fine material definition across the exposure range",
+          "tags": [
+            "full range material detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.dust",
+      "name": "Dusty transparency archive",
+      "description": "An archival color-transparency interpretation. Keep gently shifted warm dyes and faded cool shadows.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "transparency",
+        "archive",
+        "aged"
+      ],
+      "claims": {
+        "medium": "documentary.dust",
+        "palette": "documentary-dust",
+        "texture": "documentary.dust"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An archival color-transparency interpretation",
+          "tags": [
+            "archival color transparency"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep gently shifted warm dyes and faded cool shadows",
+          "tags": [
+            "aged warm dyes",
+            "faded cool shadows"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show sparse dust flecks and fine slide-emulsion texture",
+          "tags": [
+            "sparse dust",
+            "slide emulsion"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.workprint",
+      "name": "Darkroom work print",
+      "description": "A darkroom documentary work print. Keep the supplied framing direct and provisional.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "work print",
+        "darkroom",
+        "rough"
+      ],
+      "claims": {
+        "medium": "documentary.workprint",
+        "composition": "documentary-workprint",
+        "texture": "documentary.workprint"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A darkroom documentary work print",
+          "tags": [
+            "darkroom work print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied framing direct and provisional",
+          "tags": [
+            "direct provisional framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show uneven border exposure and modest paper handling marks",
+          "tags": [
+            "uneven print borders",
+            "handling marks"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.repro",
+      "name": "Halftone photo reproduction",
+      "description": "A documentary photograph reproduced in coarse halftone. Compress the scene into printable black-ink values.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "halftone",
+        "newspaper",
+        "reproduction"
+      ],
+      "claims": {
+        "medium": "documentary.repro",
+        "palette": "documentary-repro",
+        "texture": "documentary.repro"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A documentary photograph reproduced in coarse halftone",
+          "tags": [
+            "documentary halftone reproduction"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Compress the scene into printable black-ink values",
+          "tags": [
+            "printable black values"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the reproduction dots and slight paper ink spread visible",
+          "tags": [
+            "reproduction dots",
+            "ink spread"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.rollfilm",
+      "name": "Roll-film snapshot",
+      "description": "A casual roll-film snapshot. Use relaxed slightly imperfect everyday framing.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "roll film",
+        "snapshot",
+        "casual"
+      ],
+      "claims": {
+        "medium": "documentary.rollfilm",
+        "composition": "documentary-rollfilm",
+        "texture": "documentary.rollfilm"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A casual roll-film snapshot",
+          "tags": [
+            "roll film snapshot"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use relaxed slightly imperfect everyday framing",
+          "tags": [
+            "relaxed snapshot framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep modest lens softness and occasional exposure unevenness",
+          "tags": [
+            "lens softness",
+            "uneven exposure"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.distance",
+      "name": "Distant observation",
+      "description": "A quietly distant observational photograph. Keep the supplied subject within a broad unforced spatial context.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "distant",
+        "observational",
+        "quiet"
+      ],
+      "claims": {
+        "medium": "documentary.distance",
+        "composition": "documentary-distance",
+        "lighting": "documentary-distance"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A quietly distant observational photograph",
+          "tags": [
+            "distant observation photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied subject within a broad unforced spatial context",
+          "tags": [
+            "broad unforced context"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let ambient light remain ordinary and unshaped",
+          "tags": [
+            "ordinary ambient light"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.instant",
+      "name": "Instant-film diary",
+      "description": "An instant-film diary photograph. Use softly compressed colors and creamy pale values.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "instant film",
+        "diary",
+        "soft"
+      ],
+      "claims": {
+        "medium": "documentary.instant",
+        "palette": "documentary-instant",
+        "texture": "documentary.instant"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An instant-film diary photograph",
+          "tags": [
+            "instant film photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use softly compressed colors and creamy pale values",
+          "tags": [
+            "compressed instant colors",
+            "creamy highlights"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep gentle chemical color variation and soft edge definition",
+          "tags": [
+            "chemical color variation",
+            "soft edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "documentary.rawdigital",
+      "name": "Unprocessed digital record",
+      "description": "A minimally processed digital documentary photograph. Keep a neutral white balance and moderate local saturation.",
+      "category": "documentary",
+      "kind": "style",
+      "tags": [
+        "documentary",
+        "raw",
+        "digital",
+        "neutral"
+      ],
+      "claims": {
+        "medium": "documentary.rawdigital",
+        "palette": "documentary-rawdigital",
+        "texture": "documentary.rawdigital"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A minimally processed digital documentary photograph",
+          "tags": [
+            "minimally processed digital photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep a neutral white balance and moderate local saturation",
+          "tags": [
+            "neutral white balance",
+            "moderate saturation"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Retain honest fine sensor detail without heavy sharpening",
+          "tags": [
+            "fine sensor detail",
+            "restrained sharpening"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    }
+  ]
+}

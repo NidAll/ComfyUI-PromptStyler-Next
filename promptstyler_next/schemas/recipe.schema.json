@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:promptstyler-next:recipe:1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "type": "integer"
+    },
+    "prompt": {
+      "type": "string",
+      "maxLength": 32768
+    },
+    "negative": {
+      "type": "string",
+      "maxLength": 32768
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "styles": {
+      "type": "array",
+      "maxItems": 16,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 96,
+            "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"
+          },
+          "intensity": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "conflict_policy": {
+      "enum": [
+        "last_wins",
+        "first_wins",
+        "error"
+      ]
+    },
+    "locked_axes": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "medium",
+          "lighting",
+          "palette",
+          "composition",
+          "texture",
+          "mood",
+          "detail"
+        ]
+      },
+      "uniqueItems": true,
+      "maxItems": 7
+    }
+  },
+  "required": [
+    "prompt"
+  ],
+  "additionalProperties": false
+}

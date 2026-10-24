@@ -1,0 +1,1931 @@
+{
+  "schema_version": 1,
+  "id": "next.studio-textilecraft",
+  "version": "1.0.0",
+  "name": "Textile and garment image craft",
+  "description": "Authored textile and garment image craft directions that restyle the existing subject without inventing scene objects.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "textilecraft.weaveatlas",
+      "name": "Weave-atlas study",
+      "description": "A textile-study interpretation of the existing forms. Make warp and weft crossings legible at a plausible scale.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "weave atlas",
+        "warp weft",
+        "thread structure",
+        "technical cloth"
+      ],
+      "claims": {
+        "medium": "textilecraft.weaveatlas",
+        "lighting": "textilecraft.weaveatlas",
+        "texture": "textilecraft.weaveatlas"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A textile-study interpretation of the existing forms",
+          "tags": [
+            "weave atlas"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Make warp and weft crossings legible at a plausible scale",
+          "tags": [
+            "warp weft",
+            "thread structure"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft grazing light to distinguish raised and recessed threads",
+          "tags": [
+            "technical cloth"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.jacquard",
+      "name": "Jacquard relief study",
+      "description": "A jacquard-textile interpretation with pattern built into the weave. Let changes in weave density create the existing pattern's relief.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "jacquard",
+        "woven relief",
+        "tonal pattern",
+        "thread sheen"
+      ],
+      "claims": {
+        "medium": "textilecraft.jacquard",
+        "lighting": "textilecraft.jacquard",
+        "texture": "textilecraft.jacquard"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A jacquard-textile interpretation with pattern built into the weave",
+          "tags": [
+            "jacquard"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let changes in weave density create the existing pattern's relief",
+          "tags": [
+            "woven relief",
+            "tonal pattern"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use restrained directional light to reveal thread sheen without metallic glare",
+          "tags": [
+            "thread sheen"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.brocade",
+      "name": "Brocade surface depth",
+      "description": "A brocade-textile interpretation of the existing forms. Give the raised woven structure a coherent depth and scale.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "brocade",
+        "raised weave",
+        "dense cloth",
+        "subtle lustre"
+      ],
+      "claims": {
+        "medium": "textilecraft.brocade",
+        "lighting": "textilecraft.brocade",
+        "texture": "textilecraft.brocade"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A brocade-textile interpretation of the existing forms",
+          "tags": [
+            "brocade"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Give the raised woven structure a coherent depth and scale",
+          "tags": [
+            "raised weave",
+            "dense cloth"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad side illumination to separate the dense ground from raised areas",
+          "tags": [
+            "subtle lustre"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.chiffon",
+      "name": "Chiffon layered air",
+      "description": "A chiffon-like textile interpretation. Keep folds light and gravity-led with delicate overlapping layers.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "chiffon",
+        "sheer layers",
+        "gravity folds",
+        "soft translucency"
+      ],
+      "claims": {
+        "medium": "textilecraft.chiffon",
+        "lighting": "textilecraft.chiffon",
+        "texture": "textilecraft.chiffon"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A chiffon-like textile interpretation",
+          "tags": [
+            "chiffon"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep folds light and gravity-led with delicate overlapping layers",
+          "tags": [
+            "sheer layers",
+            "gravity folds"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let transmitted light distinguish single from multiple existing layers",
+          "tags": [
+            "soft translucency"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.tulle",
+      "name": "Tulle mesh volume",
+      "description": "A tulle-like textile interpretation with an airy open structure. Keep the fine mesh readable where existing layers overlap.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "tulle",
+        "fine mesh",
+        "airy volume",
+        "layered opacity"
+      ],
+      "claims": {
+        "medium": "textilecraft.tulle",
+        "lighting": "textilecraft.tulle",
+        "texture": "textilecraft.tulle"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A tulle-like textile interpretation with an airy open structure",
+          "tags": [
+            "tulle"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the fine mesh readable where existing layers overlap",
+          "tags": [
+            "fine mesh",
+            "airy volume"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Build opacity through layer count rather than uniform milky shading",
+          "tags": [
+            "layered opacity"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.organza",
+      "name": "Organza crisp translucency",
+      "description": "An organza-textile interpretation. Use crisp lightweight folds with a slight memory of shape.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "organza",
+        "crisp fold",
+        "sheer cloth",
+        "edge sheen"
+      ],
+      "claims": {
+        "medium": "textilecraft.organza",
+        "lighting": "textilecraft.organza",
+        "texture": "textilecraft.organza"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An organza-textile interpretation",
+          "tags": [
+            "organza"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Use crisp lightweight folds with a slight memory of shape",
+          "tags": [
+            "crisp fold",
+            "sheer cloth"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep edge sheen fine and directional across the translucent material",
+          "tags": [
+            "edge sheen"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.velvet",
+      "name": "Velvet pile direction",
+      "description": "A velvet-textile interpretation of the existing surfaces. Let the pile direction subtly shift the apparent tone.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "velvet",
+        "pile direction",
+        "dense shadow",
+        "soft lustre"
+      ],
+      "claims": {
+        "medium": "textilecraft.velvet",
+        "lighting": "textilecraft.velvet",
+        "texture": "textilecraft.velvet"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A velvet-textile interpretation of the existing surfaces",
+          "tags": [
+            "velvet"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let the pile direction subtly shift the apparent tone",
+          "tags": [
+            "pile direction",
+            "dense shadow"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use low broad light that creates deep but readable soft shadows",
+          "tags": [
+            "soft lustre"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.corduroy",
+      "name": "Corduroy rib rhythm",
+      "description": "A corduroy-textile interpretation. Keep parallel ribs continuous as they follow the existing form.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "corduroy",
+        "parallel ribs",
+        "soft valleys",
+        "directional cloth"
+      ],
+      "claims": {
+        "medium": "textilecraft.corduroy",
+        "lighting": "textilecraft.corduroy",
+        "texture": "textilecraft.corduroy"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A corduroy-textile interpretation",
+          "tags": [
+            "corduroy"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep parallel ribs continuous as they follow the existing form",
+          "tags": [
+            "parallel ribs",
+            "soft valleys"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use side light to distinguish the rib crests from soft valleys",
+          "tags": [
+            "directional cloth"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.denim",
+      "name": "Denim wear structure",
+      "description": "A denim-textile interpretation of the existing surfaces. Resolve diagonal twill and localized wear at plausible contact points.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "denim",
+        "twill weave",
+        "indigo variation",
+        "contact wear"
+      ],
+      "claims": {
+        "medium": "textilecraft.denim",
+        "palette": "textilecraft.denim",
+        "texture": "textilecraft.denim"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A denim-textile interpretation of the existing surfaces",
+          "tags": [
+            "denim"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Resolve diagonal twill and localized wear at plausible contact points",
+          "tags": [
+            "twill weave",
+            "indigo variation"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Separate indigo depth from worn pale fibers without a uniform blue wash",
+          "tags": [
+            "contact wear"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.tweed",
+      "name": "Tweed fiber mixture",
+      "description": "A tweed-textile interpretation. Make differently spun yarns form a coherent coarse weave.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "tweed",
+        "mixed yarn",
+        "coarse weave",
+        "muted flecks"
+      ],
+      "claims": {
+        "medium": "textilecraft.tweed",
+        "palette": "textilecraft.tweed",
+        "texture": "textilecraft.tweed"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A tweed-textile interpretation",
+          "tags": [
+            "tweed"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Make differently spun yarns form a coherent coarse weave",
+          "tags": [
+            "mixed yarn",
+            "coarse weave"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use subdued mixed fiber colors rather than random saturated speckles",
+          "tags": [
+            "muted flecks"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.boucle",
+      "name": "Bouclé loop structure",
+      "description": "A bouclé-textile interpretation with interlocking looped yarn. Keep the loops varied in size but structurally connected.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "boucle",
+        "looped yarn",
+        "irregular relief",
+        "soft volume"
+      ],
+      "claims": {
+        "medium": "textilecraft.boucle",
+        "lighting": "textilecraft.boucle",
+        "texture": "textilecraft.boucle"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A bouclé-textile interpretation with interlocking looped yarn",
+          "tags": [
+            "boucle"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the loops varied in size but structurally connected",
+          "tags": [
+            "looped yarn",
+            "irregular relief"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft side illumination that reveals relief without harsh tiny shadows",
+          "tags": [
+            "soft volume"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.herringbone",
+      "name": "Herringbone directional rhythm",
+      "description": "A herringbone-textile interpretation of the existing form. Keep alternating diagonal weave directions continuous across folds.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "herringbone",
+        "zigzag weave",
+        "thread direction",
+        "restrained contrast"
+      ],
+      "claims": {
+        "medium": "textilecraft.herringbone",
+        "palette": "textilecraft.herringbone",
+        "texture": "textilecraft.herringbone"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A herringbone-textile interpretation of the existing form",
+          "tags": [
+            "herringbone"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep alternating diagonal weave directions continuous across folds",
+          "tags": [
+            "zigzag weave",
+            "thread direction"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use enough tonal contrast to read the structure without optical vibration",
+          "tags": [
+            "restrained contrast"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.seersucker",
+      "name": "Seersucker puckered relief",
+      "description": "A seersucker-textile interpretation. Let alternating tension produce shallow irregular puckering.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "seersucker",
+        "puckered cloth",
+        "alternating tension",
+        "matte cotton"
+      ],
+      "claims": {
+        "medium": "textilecraft.seersucker",
+        "lighting": "textilecraft.seersucker",
+        "texture": "textilecraft.seersucker"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A seersucker-textile interpretation",
+          "tags": [
+            "seersucker"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let alternating tension produce shallow irregular puckering",
+          "tags": [
+            "puckered cloth",
+            "alternating tension"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use gentle lateral light to reveal the relief without making it look crumpled",
+          "tags": [
+            "matte cotton"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.waffle",
+      "name": "Waffle-weave cells",
+      "description": "A waffle-weave textile interpretation. Keep the recessed woven cells consistent as they turn around existing curves.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "waffle weave",
+        "cellular cloth",
+        "soft pockets",
+        "thread relief"
+      ],
+      "claims": {
+        "medium": "textilecraft.waffle",
+        "lighting": "textilecraft.waffle",
+        "texture": "textilecraft.waffle"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A waffle-weave textile interpretation",
+          "tags": [
+            "waffle weave"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the recessed woven cells consistent as they turn around existing curves",
+          "tags": [
+            "cellular cloth",
+            "soft pockets"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad diffuse light with small soft pocket shadows",
+          "tags": [
+            "thread relief"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.ribknit",
+      "name": "Rib-knit elasticity",
+      "description": "A rib-knit textile interpretation. Let knitted ribs widen and compress coherently with the existing form.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "rib knit",
+        "elastic cloth",
+        "parallel loops",
+        "soft stretch"
+      ],
+      "claims": {
+        "medium": "textilecraft.ribknit",
+        "lighting": "textilecraft.ribknit",
+        "texture": "textilecraft.ribknit"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A rib-knit textile interpretation",
+          "tags": [
+            "rib knit"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let knitted ribs widen and compress coherently with the existing form",
+          "tags": [
+            "elastic cloth",
+            "parallel loops"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft broad illumination to preserve the loop structure",
+          "tags": [
+            "soft stretch"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.cableknit",
+      "name": "Cable-knit interlace",
+      "description": "A cable-knit textile interpretation of the existing surface. Keep raised yarn paths interlaced rather than pasted onto the form.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "cable knit",
+        "interlaced yarn",
+        "raised structure",
+        "soft wool"
+      ],
+      "claims": {
+        "medium": "textilecraft.cableknit",
+        "lighting": "textilecraft.cableknit",
+        "texture": "textilecraft.cableknit"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cable-knit textile interpretation of the existing surface",
+          "tags": [
+            "cable knit"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep raised yarn paths interlaced rather than pasted onto the form",
+          "tags": [
+            "interlaced yarn",
+            "raised structure"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use gentle side light to separate crossing structures",
+          "tags": [
+            "soft wool"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.brushedwool",
+      "name": "Brushed-wool finish",
+      "description": "A brushed-wool textile interpretation of the existing surface. Keep the raised fibers short and directionally coherent.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "brushed wool",
+        "raised fibers",
+        "soft surface",
+        "cloth finish"
+      ],
+      "claims": {
+        "medium": "textilecraft.brushedwool",
+        "lighting": "textilecraft.brushedwool",
+        "texture": "textilecraft.brushedwool"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A brushed-wool textile interpretation of the existing surface",
+          "tags": [
+            "brushed wool"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the raised fibers short and directionally coherent",
+          "tags": [
+            "raised fibers",
+            "soft surface"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad soft illumination to separate the nap from the underlying cloth",
+          "tags": [
+            "cloth finish"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.bondedseam",
+      "name": "Bonded-seam construction",
+      "description": "A textile interpretation emphasizing existing bonded seams. Keep the flattened joins closely fitted to the adjoining material.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "bonded seam",
+        "flat join",
+        "technical cloth",
+        "pressed boundary"
+      ],
+      "claims": {
+        "medium": "textilecraft.bondedseam",
+        "lighting": "textilecraft.bondedseam",
+        "texture": "textilecraft.bondedseam"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A textile interpretation emphasizing existing bonded seams",
+          "tags": [
+            "bonded seam"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the flattened joins closely fitted to the adjoining material",
+          "tags": [
+            "flat join",
+            "technical cloth"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use low diffuse light to reveal the small change in surface thickness",
+          "tags": [
+            "pressed boundary"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.smocking",
+      "name": "Smocked tension geometry",
+      "description": "A smocked-textile interpretation. Form small repeated gathers around coherent tension points.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "smocking",
+        "gathered cloth",
+        "repeated tension",
+        "stitched relief"
+      ],
+      "claims": {
+        "medium": "textilecraft.smocking",
+        "lighting": "textilecraft.smocking",
+        "texture": "textilecraft.smocking"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A smocked-textile interpretation",
+          "tags": [
+            "smocking"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Form small repeated gathers around coherent tension points",
+          "tags": [
+            "gathered cloth",
+            "repeated tension"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep shallow shadow changes legible without exaggerated contrast",
+          "tags": [
+            "stitched relief"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.pleating",
+      "name": "Pleat memory study",
+      "description": "A pleated-textile interpretation of the existing surface. Let repeated narrow planes follow the original silhouette.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "pleating",
+        "fold memory",
+        "repeated planes",
+        "crisp cloth"
+      ],
+      "claims": {
+        "medium": "textilecraft.pleating",
+        "composition": "textilecraft.pleating",
+        "lighting": "textilecraft.pleating"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A pleated-textile interpretation of the existing surface",
+          "tags": [
+            "pleating"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let repeated narrow planes follow the original silhouette",
+          "tags": [
+            "fold memory",
+            "repeated planes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use oblique illumination to reveal alternating pleat faces",
+          "tags": [
+            "crisp cloth"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.biasdrape",
+      "name": "Bias-cut drape",
+      "description": "A textile interpretation with a convincing bias-cut fall. Make diagonal tension and gravity shape the existing folds.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "bias cut",
+        "diagonal tension",
+        "fluid fall",
+        "cloth weight"
+      ],
+      "claims": {
+        "medium": "textilecraft.biasdrape",
+        "lighting": "textilecraft.biasdrape",
+        "texture": "textilecraft.biasdrape"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A textile interpretation with a convincing bias-cut fall",
+          "tags": [
+            "bias cut"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Make diagonal tension and gravity shape the existing folds",
+          "tags": [
+            "diagonal tension",
+            "fluid fall"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use long soft highlights to explain cloth weight and curvature",
+          "tags": [
+            "cloth weight"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.rawedge",
+      "name": "Raw-edge construction",
+      "description": "A textile craft interpretation with exposed construction edges. Keep fraying limited to existing cut edges and stress points.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "raw edge",
+        "frayed fibers",
+        "visible construction",
+        "dry textile"
+      ],
+      "claims": {
+        "medium": "textilecraft.rawedge",
+        "lighting": "textilecraft.rawedge",
+        "texture": "textilecraft.rawedge"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A textile craft interpretation with exposed construction edges",
+          "tags": [
+            "raw edge"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fraying limited to existing cut edges and stress points",
+          "tags": [
+            "frayed fibers",
+            "visible construction"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use clear diffuse light that preserves individual loose fibers",
+          "tags": [
+            "dry textile"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.topstitch",
+      "name": "Topstitched seam rhythm",
+      "description": "A textile-construction interpretation with precise topstitched boundaries. Keep stitch length and thread tension consistent along existing seams.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "topstitching",
+        "seam rhythm",
+        "thread tension",
+        "garment construction"
+      ],
+      "claims": {
+        "medium": "textilecraft.topstitch",
+        "lighting": "textilecraft.topstitch",
+        "texture": "textilecraft.topstitch"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A textile-construction interpretation with precise topstitched boundaries",
+          "tags": [
+            "topstitching"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep stitch length and thread tension consistent along existing seams",
+          "tags": [
+            "seam rhythm",
+            "thread tension"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft lateral illumination to reveal the thread without hard outlines",
+          "tags": [
+            "garment construction"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "textilecraft.patternmatch",
+      "name": "Pattern-matched panel study",
+      "description": "A textile interpretation attentive to existing pattern alignment. Continue the existing pattern coherently across adjoining panel boundaries.",
+      "category": "textile/craft",
+      "kind": "style",
+      "tags": [
+        "pattern matching",
+        "panel join",
+        "cloth continuity",
+        "precise construction"
+      ],
+      "claims": {
+        "medium": "textilecraft.patternmatch",
+        "composition": "textilecraft.patternmatch",
+        "texture": "textilecraft.patternmatch"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A textile interpretation attentive to existing pattern alignment",
+          "tags": [
+            "pattern matching"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Continue the existing pattern coherently across adjoining panel boundaries",
+          "tags": [
+            "panel join",
+            "cloth continuity"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep panel joins readable without adding new motifs",
+          "tags": [
+            "precise construction"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.tailored",
+      "name": "Tailored seam clarity",
+      "description": "A garment-construction interpretation of the existing forms. Make seam lines, cloth tension and pressed edges structurally coherent.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "tailoring",
+        "seam structure",
+        "pressed cloth",
+        "controlled light"
+      ],
+      "claims": {
+        "medium": "fashiondetail.tailored",
+        "lighting": "fashiondetail.tailored",
+        "texture": "fashiondetail.tailored"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A garment-construction interpretation of the existing forms",
+          "tags": [
+            "tailoring"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Make seam lines, cloth tension and pressed edges structurally coherent",
+          "tags": [
+            "seam structure",
+            "pressed cloth"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft directional light that explains construction without fashion-show glare",
+          "tags": [
+            "controlled light"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.patterncut",
+      "name": "Pattern-cut spatial logic",
+      "description": "A textile interpretation attentive to the logic of existing panel construction. Keep adjoining planes and their meeting edges visually understandable.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "pattern cutting",
+        "panel logic",
+        "joining edge",
+        "cloth grain"
+      ],
+      "claims": {
+        "medium": "fashiondetail.patterncut",
+        "composition": "fashiondetail.patterncut",
+        "texture": "fashiondetail.patterncut"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A textile interpretation attentive to the logic of existing panel construction",
+          "tags": [
+            "pattern cutting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep adjoining planes and their meeting edges visually understandable",
+          "tags": [
+            "panel logic",
+            "joining edge"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let grain direction remain consistent within each existing panel",
+          "tags": [
+            "cloth grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.selvedge",
+      "name": "Selvedge-edge study",
+      "description": "A textile craft interpretation emphasizing existing finished edges. Keep the denser woven edge visibly related to the main cloth structure.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "selvedge",
+        "woven edge",
+        "thread tension",
+        "material finish"
+      ],
+      "claims": {
+        "medium": "fashiondetail.selvedge",
+        "lighting": "fashiondetail.selvedge",
+        "texture": "fashiondetail.selvedge"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A textile craft interpretation emphasizing existing finished edges",
+          "tags": [
+            "selvedge"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the denser woven edge visibly related to the main cloth structure",
+          "tags": [
+            "woven edge",
+            "thread tension"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use gentle side light to separate the edge from the broader surface",
+          "tags": [
+            "material finish"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.buttonhole",
+      "name": "Small construction detail",
+      "description": "A close garment-craft interpretation of existing small construction features. Keep stitched boundaries and local tension plausible at the feature's scale.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "construction detail",
+        "stitched opening",
+        "precise tension",
+        "close view"
+      ],
+      "claims": {
+        "medium": "fashiondetail.buttonhole",
+        "lighting": "fashiondetail.buttonhole",
+        "texture": "fashiondetail.buttonhole"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A close garment-craft interpretation of existing small construction features",
+          "tags": [
+            "construction detail"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep stitched boundaries and local tension plausible at the feature's scale",
+          "tags": [
+            "stitched opening",
+            "precise tension"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft clear illumination without turning fine threads into hard outlines",
+          "tags": [
+            "close view"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.facing",
+      "name": "Turned-edge craftsmanship",
+      "description": "A garment-craft interpretation focused on existing turned edges. Let the edge thickness and its transition into the surface feel physically consistent.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "facing",
+        "turned edge",
+        "cloth thickness",
+        "hidden construction"
+      ],
+      "claims": {
+        "medium": "fashiondetail.facing",
+        "lighting": "fashiondetail.facing",
+        "texture": "fashiondetail.facing"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A garment-craft interpretation focused on existing turned edges",
+          "tags": [
+            "facing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let the edge thickness and its transition into the surface feel physically consistent",
+          "tags": [
+            "turned edge",
+            "cloth thickness"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use a fine soft shadow to show the turn without heavy dark lining",
+          "tags": [
+            "hidden construction"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.piping",
+      "name": "Piped-edge continuity",
+      "description": "A textile-construction interpretation with clearly articulated existing edges. Keep narrow raised boundaries continuous around curves and corners.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "piping",
+        "continuous edge",
+        "corded seam",
+        "precise line"
+      ],
+      "claims": {
+        "medium": "fashiondetail.piping",
+        "lighting": "fashiondetail.piping",
+        "texture": "fashiondetail.piping"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A textile-construction interpretation with clearly articulated existing edges",
+          "tags": [
+            "piping"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep narrow raised boundaries continuous around curves and corners",
+          "tags": [
+            "continuous edge",
+            "corded seam"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use a slim controlled highlight to make their relief readable",
+          "tags": [
+            "precise line"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.biasbinding",
+      "name": "Bias-bound edge rhythm",
+      "description": "A garment-craft interpretation of existing wrapped edges. Make the binding follow curves without unexplained breaks or puckering.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "bias binding",
+        "wrapped edge",
+        "diagonal stretch",
+        "cloth contour"
+      ],
+      "claims": {
+        "medium": "fashiondetail.biasbinding",
+        "composition": "fashiondetail.biasbinding",
+        "texture": "fashiondetail.biasbinding"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A garment-craft interpretation of existing wrapped edges",
+          "tags": [
+            "bias binding"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Make the binding follow curves without unexplained breaks or puckering",
+          "tags": [
+            "wrapped edge",
+            "diagonal stretch"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the edge rhythm subordinate to the original silhouette",
+          "tags": [
+            "cloth contour"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.rolledhem",
+      "name": "Rolled-hem delicacy",
+      "description": "A fine textile-construction interpretation of existing light edges. Show a small consistent rolled edge with believable cloth thickness.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "rolled hem",
+        "fine edge",
+        "light cloth",
+        "small tension"
+      ],
+      "claims": {
+        "medium": "fashiondetail.rolledhem",
+        "lighting": "fashiondetail.rolledhem",
+        "texture": "fashiondetail.rolledhem"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A fine textile-construction interpretation of existing light edges",
+          "tags": [
+            "rolled hem"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Show a small consistent rolled edge with believable cloth thickness",
+          "tags": [
+            "fine edge",
+            "light cloth"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use diffuse light that preserves delicate edge separation",
+          "tags": [
+            "small tension"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.welt",
+      "name": "Welt-construction restraint",
+      "description": "A tailored-construction interpretation of existing narrow joins. Keep the joining edges close, parallel and mechanically plausible.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "welt seam",
+        "precise opening",
+        "tailored edge",
+        "quiet detail"
+      ],
+      "claims": {
+        "medium": "fashiondetail.welt",
+        "lighting": "fashiondetail.welt",
+        "texture": "fashiondetail.welt"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A tailored-construction interpretation of existing narrow joins",
+          "tags": [
+            "welt seam"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the joining edges close, parallel and mechanically plausible",
+          "tags": [
+            "precise opening",
+            "tailored edge"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft low-contrast light to retain their subtle dimensional difference",
+          "tags": [
+            "quiet detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.garmentflat",
+      "name": "Garment flat-study clarity",
+      "description": "A textile presentation emphasizing the existing construction as a clear flat study. Keep the complete form and panel relationships readable without decorative posing.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "garment study",
+        "flat presentation",
+        "panel readability",
+        "neutral light"
+      ],
+      "claims": {
+        "medium": "fashiondetail.garmentflat",
+        "composition": "fashiondetail.garmentflat",
+        "lighting": "fashiondetail.garmentflat"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A textile presentation emphasizing the existing construction as a clear flat study",
+          "tags": [
+            "garment study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the complete form and panel relationships readable without decorative posing",
+          "tags": [
+            "flat presentation",
+            "panel readability"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use even neutral illumination with enough soft shadow to retain cloth depth",
+          "tags": [
+            "neutral light"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.lookbook",
+      "name": "Quiet lookbook presentation",
+      "description": "A quiet fashion-image interpretation of the existing subject. Keep the presentation direct and the original silhouette fully readable.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "lookbook",
+        "unforced presentation",
+        "cloth behavior",
+        "neutral palette"
+      ],
+      "claims": {
+        "medium": "fashiondetail.lookbook",
+        "composition": "fashiondetail.lookbook",
+        "palette": "fashiondetail.lookbook"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A quiet fashion-image interpretation of the existing subject",
+          "tags": [
+            "lookbook"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the presentation direct and the original silhouette fully readable",
+          "tags": [
+            "unforced presentation",
+            "cloth behavior"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Favor neutral surrounding tones so existing material color remains the focus",
+          "tags": [
+            "neutral palette"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.movementcloth",
+      "name": "Cloth movement evidence",
+      "description": "A fashion-material interpretation attentive to movement already implied by the subject. Let folds follow coherent tension and gravity rather than arbitrary swirls.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "cloth movement",
+        "tension line",
+        "gravity response",
+        "held form"
+      ],
+      "claims": {
+        "medium": "fashiondetail.movementcloth",
+        "lighting": "fashiondetail.movementcloth",
+        "texture": "fashiondetail.movementcloth"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A fashion-material interpretation attentive to movement already implied by the subject",
+          "tags": [
+            "cloth movement"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let folds follow coherent tension and gravity rather than arbitrary swirls",
+          "tags": [
+            "tension line",
+            "gravity response"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad soft highlights to make those structural changes readable",
+          "tags": [
+            "held form"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.atelier",
+      "name": "Atelier process image",
+      "description": "An atelier-style documentation treatment of existing textile work. Retain small construction and handling marks already present.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "atelier",
+        "working cloth",
+        "craft evidence",
+        "available light"
+      ],
+      "claims": {
+        "medium": "fashiondetail.atelier",
+        "lighting": "fashiondetail.atelier",
+        "texture": "fashiondetail.atelier"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An atelier-style documentation treatment of existing textile work",
+          "tags": [
+            "atelier"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Retain small construction and handling marks already present",
+          "tags": [
+            "working cloth",
+            "craft evidence"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use believable broad available light instead of polished advertising illumination",
+          "tags": [
+            "available light"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.textilearchive",
+      "name": "Textile sample documentation",
+      "description": "A textile-sample documentation treatment. Keep the existing surface at a consistent scale suitable for visual comparison.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "textile sample",
+        "comparative detail",
+        "neutral exposure",
+        "material scale"
+      ],
+      "claims": {
+        "medium": "fashiondetail.textilearchive",
+        "composition": "fashiondetail.textilearchive",
+        "lighting": "fashiondetail.textilearchive"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A textile-sample documentation treatment",
+          "tags": [
+            "textile sample"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the existing surface at a consistent scale suitable for visual comparison",
+          "tags": [
+            "comparative detail",
+            "neutral exposure"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use neutral low-glare light that preserves weave and local color",
+          "tags": [
+            "material scale"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.repairvisible",
+      "name": "Visible-repair cloth study",
+      "description": "A textile craft interpretation of existing repaired or joined surfaces. Let joining marks reveal how the material is held together.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "visible repair",
+        "material care",
+        "joined textile",
+        "thread evidence"
+      ],
+      "claims": {
+        "medium": "fashiondetail.repairvisible",
+        "palette": "fashiondetail.repairvisible",
+        "texture": "fashiondetail.repairvisible"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A textile craft interpretation of existing repaired or joined surfaces",
+          "tags": [
+            "visible repair"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let joining marks reveal how the material is held together",
+          "tags": [
+            "material care",
+            "joined textile"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use restrained contrast between existing thread and ground tones",
+          "tags": [
+            "thread evidence"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "fashiondetail.wearmap",
+      "name": "Garment wear-map study",
+      "description": "A documentary textile interpretation attentive to existing wear patterns. Keep fading, compression and abrasion related to plausible contact areas.",
+      "category": "textile/fashion",
+      "kind": "style",
+      "tags": [
+        "garment wear",
+        "contact pattern",
+        "material use",
+        "subtle fading"
+      ],
+      "claims": {
+        "medium": "fashiondetail.wearmap",
+        "lighting": "fashiondetail.wearmap",
+        "texture": "fashiondetail.wearmap"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A documentary textile interpretation attentive to existing wear patterns",
+          "tags": [
+            "garment wear"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fading, compression and abrasion related to plausible contact areas",
+          "tags": [
+            "contact pattern",
+            "material use"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft neutral light that preserves those small material differences",
+          "tags": [
+            "subtle fading"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

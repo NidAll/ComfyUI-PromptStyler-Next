@@ -1,0 +1,299 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:promptstyler-next:pack:1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "type": "integer"
+    },
+    "id": {
+      "type": "string",
+      "maxLength": 96,
+      "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"
+    },
+    "version": {
+      "type": "string",
+      "maxLength": 64,
+      "pattern": "^\\d+\\.\\d+\\.\\d+(?:-[0-9A-Za-z.-]+)?$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "description": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2048
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "author": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "styles": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 2048,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 96,
+            "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 2048
+          },
+          "category": {
+            "type": "string",
+            "maxLength": 128,
+            "pattern": "^[a-z][a-z0-9._-]*(?:/[a-z][a-z0-9._-]*)*$"
+          },
+          "kind": {
+            "enum": [
+              "style",
+              "grade",
+              "modifier"
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 96
+            },
+            "uniqueItems": true,
+            "maxItems": 32
+          },
+          "claims": {
+            "type": "object",
+            "propertyNames": {
+              "enum": [
+                "medium",
+                "lighting",
+                "palette",
+                "composition",
+                "texture",
+                "mood",
+                "detail"
+              ]
+            },
+            "additionalProperties": {
+              "type": "string",
+              "maxLength": 96,
+              "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"
+            }
+          },
+          "clauses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "axis": {
+                  "enum": [
+                    "medium",
+                    "lighting",
+                    "palette",
+                    "composition",
+                    "texture",
+                    "mood",
+                    "detail"
+                  ]
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1024
+                },
+                "tags": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 192
+                  },
+                  "uniqueItems": true,
+                  "maxItems": 24
+                },
+                "min_intensity": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              },
+              "required": [
+                "axis",
+                "text",
+                "tags"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 32
+          },
+          "negative": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 512
+            },
+            "uniqueItems": true,
+            "maxItems": 32
+          },
+          "models": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 96,
+              "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"
+            },
+            "uniqueItems": true,
+            "maxItems": 32
+          },
+          "variants": {
+            "type": "object",
+            "maxProperties": 32,
+            "propertyNames": {
+              "type": "string",
+              "maxLength": 96,
+              "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"
+            },
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "clauses": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "axis": {
+                        "enum": [
+                          "medium",
+                          "lighting",
+                          "palette",
+                          "composition",
+                          "texture",
+                          "mood",
+                          "detail"
+                        ]
+                      },
+                      "text": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1024
+                      },
+                      "tags": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 192
+                        },
+                        "uniqueItems": true,
+                        "maxItems": 24
+                      },
+                      "min_intensity": {
+                        "type": "number",
+                        "minimum": 0,
+                        "maximum": 1
+                      }
+                    },
+                    "required": [
+                      "axis",
+                      "text",
+                      "tags"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "minItems": 1,
+                  "maxItems": 32
+                },
+                "negative": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 512
+                  },
+                  "uniqueItems": true,
+                  "maxItems": 32
+                }
+              },
+              "required": [
+                "clauses"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "preview": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "maxLength": 256,
+                "pattern": "^(?!/)(?!.*(?:\\.\\.|:|\\\\)).+\\.(?:png|jpg|jpeg|webp|avif)$"
+              },
+              "alt": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 512
+              },
+              "kind": {
+                "enum": [
+                  "reference",
+                  "generated",
+                  "swatch"
+                ]
+              }
+            },
+            "required": [
+              "path",
+              "alt",
+              "kind"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "description",
+          "category",
+          "kind",
+          "tags",
+          "claims",
+          "clauses"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "id",
+    "version",
+    "name",
+    "description",
+    "license",
+    "author",
+    "styles"
+  ],
+  "additionalProperties": false
+}

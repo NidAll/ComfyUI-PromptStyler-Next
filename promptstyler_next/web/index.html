@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse and combine model-aware styles, preserve your subject, and inspect every prompt transformation.">
+  <title>PromptStyler Next</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.mjs"></script>
+</head>
+<body>
+  <main class="workbench">
+    <header class="masthead">
+      <div><h1>PromptStyler Next</h1><p>Keep your idea. Shape its visual language.</p></div>
+      <p id="connection" role="status">Connecting to your local style engine…</p>
+    </header>
+    <noscript><p>This workbench needs JavaScript. The Python API and command line also expose the full style catalog and composer.</p></noscript>
+    <section class="composer" aria-labelledby="subject-title">
+      <div class="subject"><h2 id="subject-title">Start with your subject</h2><label for="prompt">Your prompt</label><textarea id="prompt" rows="3">A quiet bookshop on a rainy evening, a reader beside the window</textarea></div>
+      <div class="profile-controls"><label for="model">Model profile</label><select id="model"><option value="generic">Generic</option></select><p id="profile-note" class="helper">Loading model capabilities…</p><details><summary>Negative prompt and conflict controls</summary><label for="negative">Negative prompt</label><textarea id="negative" rows="2"></textarea><label for="conflict">When style directions conflict</label><select id="conflict"><option value="last_wins">Later layer wins</option><option value="first_wins">Earlier layer wins</option><option value="error">Ask me to resolve</option></select><fieldset><legend>Protect these prompt axes</legend><div id="axis-locks" class="locks"></div></fieldset></details></div>
+    </section>
+    <div class="workspace">
+      <section class="catalog" aria-labelledby="catalog-title">
+        <div class="section-heading"><h2 id="catalog-title">The style library</h2><span id="result-count" class="helper"></span></div>
+        <form id="filters" class="filters" role="search">
+          <div class="search-field"><label for="search">Search styles</label><input id="search" type="search" placeholder="Noir, woodcut, soft light"></div>
+          <div><label for="category">Category</label><select id="category"><option value="">All categories</option></select></div>
+          <div><label for="kind">Type</label><select id="kind"><option value="">All types</option><option value="style">Styles</option><option value="grade">Color grades</option><option value="modifier">Modifiers</option></select></div>
+          <label class="check"><input id="favorites-only" type="checkbox">Favorites</label>
+        </form>
+        <p class="swatch-note">Abstract palette swatches identify entries. They are not model-generated previews.</p>
+        <div id="catalog-status" class="helper" role="status">Loading the style library…</div>
+        <ul id="styles" class="style-grid" aria-label="Available styles"></ul>
+        <div class="catalog-actions"><button id="more" type="button" hidden>Show more</button><button id="reset-filters" type="button">Reset filters</button><button id="recommend" type="button">Suggest for this prompt</button></div>
+      </section>
+      <section class="recipe" aria-labelledby="recipe-title">
+        <div class="section-heading"><h2 id="recipe-title">Your recipe</h2><span id="layer-count" class="helper">0 layers</span></div>
+        <p class="helper">Layer order sets precedence. Intensity adds increasingly specific style clauses.</p>
+        <p id="recipe-empty" class="empty">Add a style from the library to begin, or compose your prompt unchanged.</p>
+        <ol id="layers" class="layer-list" aria-label="Ordered style layers"></ol>
+        <button id="compose" type="button" class="primary">Compose prompt</button>
+        <p id="compose-status" class="helper" role="status"></p>
+        <div class="recipe-files"><button id="export" type="button">Export recipe</button><label for="import" class="file-control">Import recipe<input id="import" type="file" accept="application/json,.json"></label></div>
+      </section>
+    </div>
+    <section class="inspection" aria-labelledby="inspection-title">
+      <div class="section-heading"><h2 id="inspection-title">See what changed</h2><div class="output-actions"><button id="copy" type="button" disabled>Copy prompt</button><button id="copy-json" type="button" disabled>Copy result JSON</button></div></div>
+      <p id="stale" class="helper">Compose a prompt to inspect its text and transformation trace.</p>
+      <div id="warnings" role="status"></div>
+      <pre id="positive" class="prompt-output" tabindex="0" aria-label="Composed positive prompt"></pre>
+      <details id="negative-result" hidden><summary>Composed negative prompt</summary><pre id="negative-output" tabindex="0"></pre></details>
+      <details><summary>Transformation trace and reproducibility</summary><pre id="trace" tabindex="0"></pre></details>
+    </section>
+    <footer><p>PromptStyler Next runs locally. Prompts stay in this tab unless exported.</p><span id="fingerprint" class="code"></span></footer>
+  </main>
+</body>
+</html>

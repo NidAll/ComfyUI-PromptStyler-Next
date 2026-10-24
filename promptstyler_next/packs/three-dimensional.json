@@ -1,0 +1,1223 @@
+{
+  "schema_version": 1,
+  "id": "next.three.dimensional",
+  "version": "1.0.0",
+  "name": "3D and miniature craft",
+  "description": "Rendering languages and tangible miniature fabrication.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "render.clay",
+      "name": "Clay maquette",
+      "description": "A photographed clay maquette of the supplied forms. Use broad studio light to describe sculpted volume.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "clay",
+        "maquette",
+        "sculptural"
+      ],
+      "claims": {
+        "medium": "render.clay",
+        "lighting": "render-clay",
+        "texture": "render.clay"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A photographed clay maquette of the supplied forms",
+          "tags": [
+            "clay maquette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad studio light to describe sculpted volume",
+          "tags": [
+            "broad studio light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep small tool marks and matte clay pores visible",
+          "tags": [
+            "clay tool marks",
+            "matte pores"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {
+        "anima": {
+          "clauses": [
+            {
+              "axis": "medium",
+              "text": "An illustrated anime interpretation evoking a sculpted clay maquette",
+              "tags": [
+                "anime illustration",
+                "clay maquette look"
+              ],
+              "min_intensity": 0.01
+            },
+            {
+              "axis": "lighting",
+              "text": "Use broad studio light to describe sculpted volume",
+              "tags": [
+                "broad studio light"
+              ],
+              "min_intensity": 0.4
+            },
+            {
+              "axis": "texture",
+              "text": "Keep small tool marks and matte clay pores visible",
+              "tags": [
+                "clay tool marks",
+                "matte pores"
+              ],
+              "min_intensity": 0.75
+            }
+          ],
+          "negative": []
+        },
+        "anima-turbo": {
+          "clauses": [
+            {
+              "axis": "medium",
+              "text": "An illustrated anime interpretation evoking a sculpted clay maquette",
+              "tags": [
+                "anime illustration",
+                "clay maquette look"
+              ],
+              "min_intensity": 0.01
+            },
+            {
+              "axis": "lighting",
+              "text": "Use broad studio light to describe sculpted volume",
+              "tags": [
+                "broad studio light"
+              ],
+              "min_intensity": 0.4
+            },
+            {
+              "axis": "texture",
+              "text": "Keep small tool marks and matte clay pores visible",
+              "tags": [
+                "clay tool marks",
+                "matte pores"
+              ],
+              "min_intensity": 0.75
+            }
+          ],
+          "negative": []
+        }
+      }
+    },
+    {
+      "id": "render.archviz",
+      "name": "Architectural visualization",
+      "description": "A physically grounded architectural visualization. Use soft global illumination and believable reflected light.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "archviz",
+        "visualization",
+        "physical"
+      ],
+      "claims": {
+        "medium": "render.archviz",
+        "lighting": "render-archviz",
+        "texture": "render.archviz"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A physically grounded architectural visualization",
+          "tags": [
+            "architectural visualization"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft global illumination and believable reflected light",
+          "tags": [
+            "global illumination",
+            "reflected light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Render restrained material roughness rather than mirror-polished surfaces",
+          "tags": [
+            "physical material roughness"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.isometric",
+      "name": "Isometric miniature",
+      "description": "An isometric miniature rendering. Use an orthographic three-quarter view with readable overlapping forms.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "isometric",
+        "miniature",
+        "orthographic"
+      ],
+      "claims": {
+        "medium": "render.isometric",
+        "composition": "render-isometric",
+        "lighting": "render-isometric"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An isometric miniature rendering",
+          "tags": [
+            "isometric miniature"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use an orthographic three-quarter view with readable overlapping forms",
+          "tags": [
+            "orthographic isometric view"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Cast soft consistent shadows that anchor each form",
+          "tags": [
+            "soft consistent shadows"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.lowpoly",
+      "name": "Low-poly facets",
+      "description": "A low-poly three-dimensional interpretation. Describe forms with deliberately sparse polygon facets.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "low poly",
+        "faceted",
+        "geometry"
+      ],
+      "claims": {
+        "medium": "render.lowpoly",
+        "composition": "render-lowpoly",
+        "lighting": "render-lowpoly"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A low-poly three-dimensional interpretation",
+          "tags": [
+            "low poly render"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Describe forms with deliberately sparse polygon facets",
+          "tags": [
+            "sparse polygon facets"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let flat face normals produce distinct light planes",
+          "tags": [
+            "flat shaded faces"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.voxel",
+      "name": "Voxel construction",
+      "description": "A voxel-built interpretation of the supplied subject. Translate forms into a coherent grid of small cubic volumes.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "voxel",
+        "block",
+        "grid"
+      ],
+      "claims": {
+        "medium": "render.voxel",
+        "composition": "render-voxel",
+        "texture": "render.voxel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A voxel-built interpretation of the supplied subject",
+          "tags": [
+            "voxel art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Translate forms into a coherent grid of small cubic volumes",
+          "tags": [
+            "cubic voxel grid"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep crisp stepped contours and simple surface colors",
+          "tags": [
+            "stepped contours",
+            "simple colors"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.papermodel",
+      "name": "Paper model",
+      "description": "A folded-paper scale-model interpretation. Build recognizable forms from folded planes and tabs.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "paper",
+        "model",
+        "folded"
+      ],
+      "claims": {
+        "medium": "render.papermodel",
+        "composition": "render-papermodel",
+        "texture": "render.papermodel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A folded-paper scale-model interpretation",
+          "tags": [
+            "paper scale model"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Build recognizable forms from folded planes and tabs",
+          "tags": [
+            "folded paper planes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show fine crease edges and slight paper-fiber roughness",
+          "tags": [
+            "crease edges",
+            "paper fibers"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.stopmotion",
+      "name": "Stop-motion set",
+      "description": "A tangible stop-motion miniature set. Use carefully placed small-scale studio illumination.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "stop motion",
+        "miniature",
+        "handmade"
+      ],
+      "claims": {
+        "medium": "render.stopmotion",
+        "lighting": "render-stopmotion",
+        "texture": "render.stopmotion"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A tangible stop-motion miniature set",
+          "tags": [
+            "stop motion miniature"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use carefully placed small-scale studio illumination",
+          "tags": [
+            "miniature set lighting"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve handmade seams and slight material irregularities",
+          "tags": [
+            "handmade seams",
+            "material irregularities"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.porcelain",
+      "name": "Porcelain sculpture",
+      "description": "A glazed-porcelain sculptural interpretation. Use long soft reflections to reveal the curved volumes.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "porcelain",
+        "ceramic",
+        "glazed"
+      ],
+      "claims": {
+        "medium": "render.porcelain",
+        "lighting": "render-porcelain",
+        "texture": "render.porcelain"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A glazed-porcelain sculptural interpretation",
+          "tags": [
+            "porcelain sculpture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use long soft reflections to reveal the curved volumes",
+          "tags": [
+            "long soft reflections"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep smooth translucent glaze over subtly imperfect ceramic",
+          "tags": [
+            "translucent glaze",
+            "ceramic imperfections"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.glass",
+      "name": "Cast-glass volume",
+      "description": "A cast-glass interpretation of the supplied forms. Use controlled backlight to reveal refraction and thickness.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "glass",
+        "transparent",
+        "caustic"
+      ],
+      "claims": {
+        "medium": "render.glass",
+        "lighting": "render-glass",
+        "texture": "render.glass"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cast-glass interpretation of the supplied forms",
+          "tags": [
+            "cast glass sculpture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use controlled backlight to reveal refraction and thickness",
+          "tags": [
+            "glass backlight",
+            "refraction"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show slight internal bubbles and softened cast surfaces",
+          "tags": [
+            "internal bubbles",
+            "cast glass surface"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.chrome",
+      "name": "Liquid-metal study",
+      "description": "A liquid-metal sculptural rendering. Use broad reflected light bands to describe each surface.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "chrome",
+        "reflective",
+        "metal"
+      ],
+      "claims": {
+        "medium": "render.chrome",
+        "lighting": "render-chrome",
+        "texture": "render.chrome"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A liquid-metal sculptural rendering",
+          "tags": [
+            "liquid metal render"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad reflected light bands to describe each surface",
+          "tags": [
+            "broad reflection bands"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep polished metallic reflections with slight surface waviness",
+          "tags": [
+            "polished metal",
+            "surface waviness"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.wireframe",
+      "name": "Wireframe topology",
+      "description": "A technical wireframe rendering of the supplied forms. Let a consistent geometric edge network describe the volumes.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "wireframe",
+        "topology",
+        "technical"
+      ],
+      "claims": {
+        "medium": "render.wireframe",
+        "composition": "render-wireframe",
+        "palette": "render-wireframe"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A technical wireframe rendering of the supplied forms",
+          "tags": [
+            "wireframe rendering"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let a consistent geometric edge network describe the volumes",
+          "tags": [
+            "consistent topology edges"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use a restrained luminous line color over a dark neutral field",
+          "tags": [
+            "luminous wire lines",
+            "dark field"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.resin",
+      "name": "Translucent resin",
+      "description": "A translucent cast-resin sculptural interpretation. Use soft backlight to reveal subsurface scattering.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "resin",
+        "translucent",
+        "subsurface"
+      ],
+      "claims": {
+        "medium": "render.resin",
+        "lighting": "render-resin",
+        "texture": "render.resin"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A translucent cast-resin sculptural interpretation",
+          "tags": [
+            "cast resin sculpture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft backlight to reveal subsurface scattering",
+          "tags": [
+            "subsurface scattering",
+            "soft backlight"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show gentle color depth and a satin cast surface",
+          "tags": [
+            "resin color depth",
+            "satin surface"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.basrelief",
+      "name": "Bas-relief carving",
+      "description": "A shallow bas-relief interpretation in carved stone. Describe depth with overlapping compressed relief planes.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "bas relief",
+        "stone",
+        "shallow"
+      ],
+      "claims": {
+        "medium": "render.basrelief",
+        "composition": "render-basrelief",
+        "lighting": "render-basrelief"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A shallow bas-relief interpretation in carved stone",
+          "tags": [
+            "stone bas relief"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Describe depth with overlapping compressed relief planes",
+          "tags": [
+            "compressed relief planes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use side light to reveal the carved depth changes",
+          "tags": [
+            "side lit relief"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.wax",
+      "name": "Carved wax model",
+      "description": "A carved-wax model of the supplied forms. Let warm translucency gather along thin wax edges.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "wax",
+        "carved",
+        "translucent"
+      ],
+      "claims": {
+        "medium": "render.wax",
+        "lighting": "render-wax",
+        "texture": "render.wax"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A carved-wax model of the supplied forms",
+          "tags": [
+            "carved wax model"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let warm translucency gather along thin wax edges",
+          "tags": [
+            "translucent wax edges"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show small knife facets and softly polished wax surfaces",
+          "tags": [
+            "knife facets",
+            "polished wax"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.plasticine",
+      "name": "Plasticine animation",
+      "description": "A plasticine animation-frame interpretation. Use rounded pressed volumes with clearly joined masses.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "plasticine",
+        "claymation",
+        "tactile"
+      ],
+      "claims": {
+        "medium": "render.plasticine",
+        "composition": "render-plasticine",
+        "texture": "render.plasticine"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A plasticine animation-frame interpretation",
+          "tags": [
+            "plasticine animation"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use rounded pressed volumes with clearly joined masses",
+          "tags": [
+            "pressed plasticine volumes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep thumbprints and small kneaded surface seams",
+          "tags": [
+            "thumbprints",
+            "kneaded seams"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.cnc",
+      "name": "CNC-machined object",
+      "description": "A CNC-machined interpretation of the supplied forms. Use grazing studio light to describe machined surfaces.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "cnc",
+        "machining",
+        "toolpath"
+      ],
+      "claims": {
+        "medium": "render.cnc",
+        "lighting": "render-cnc",
+        "texture": "render.cnc"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A CNC-machined interpretation of the supplied forms",
+          "tags": [
+            "cnc machined sculpture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use grazing studio light to describe machined surfaces",
+          "tags": [
+            "grazing machine surface light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep closely spaced toolpaths and slightly rounded milling corners",
+          "tags": [
+            "milling toolpaths",
+            "rounded corners"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.sls",
+      "name": "Powder-printed nylon",
+      "description": "A powder-printed nylon model. Retain the supplied forms as a coherent manufactured volume.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "sls",
+        "nylon",
+        "printed"
+      ],
+      "claims": {
+        "medium": "render.sls",
+        "composition": "render-sls",
+        "texture": "render.sls"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A powder-printed nylon model",
+          "tags": [
+            "sls nylon model"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Retain the supplied forms as a coherent manufactured volume",
+          "tags": [
+            "coherent manufactured volume"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show fine chalky powder texture and softly resolved edges",
+          "tags": [
+            "nylon powder texture",
+            "soft edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.fdm",
+      "name": "Layer-line print",
+      "description": "A filament-printed model of the supplied subject. Use broad neutral light to reveal the contour steps.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "fdm",
+        "3d print",
+        "layers"
+      ],
+      "claims": {
+        "medium": "render.fdm",
+        "lighting": "render-fdm",
+        "texture": "render.fdm"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A filament-printed model of the supplied subject",
+          "tags": [
+            "fdm printed model"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad neutral light to reveal the contour steps",
+          "tags": [
+            "neutral contour light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep visible stacked extrusion lines and small print seams",
+          "tags": [
+            "extrusion layer lines",
+            "print seams"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.bronze",
+      "name": "Patinated bronze",
+      "description": "A cast-bronze sculptural interpretation. Use broad low reflections to reveal sculpted form.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "bronze",
+        "patina",
+        "sculpture"
+      ],
+      "claims": {
+        "medium": "render.bronze",
+        "lighting": "render-bronze",
+        "texture": "render.bronze"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cast-bronze sculptural interpretation",
+          "tags": [
+            "bronze sculpture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad low reflections to reveal sculpted form",
+          "tags": [
+            "broad bronze reflections"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show dark patina with restrained worn metallic high points",
+          "tags": [
+            "dark patina",
+            "worn high points"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.terracotta",
+      "name": "Terracotta maquette",
+      "description": "A fired-terracotta maquette. Use warm iron-rich clay tones with subtle firing variation.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "terracotta",
+        "clay",
+        "fired"
+      ],
+      "claims": {
+        "medium": "render.terracotta",
+        "palette": "render-terracotta",
+        "texture": "render.terracotta"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A fired-terracotta maquette",
+          "tags": [
+            "terracotta maquette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm iron-rich clay tones with subtle firing variation",
+          "tags": [
+            "iron rich clay tones"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep coarse clay pores and small handmade tool facets",
+          "tags": [
+            "clay pores",
+            "handmade facets"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.plaster",
+      "name": "Plaster cast study",
+      "description": "A plaster-cast study of the supplied forms. Use soft directional light to clarify planes in pale material.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "plaster",
+        "cast",
+        "white"
+      ],
+      "claims": {
+        "medium": "render.plaster",
+        "lighting": "render-plaster",
+        "texture": "render.plaster"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A plaster-cast study of the supplied forms",
+          "tags": [
+            "plaster cast"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft directional light to clarify planes in pale material",
+          "tags": [
+            "soft plaster lighting"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep tiny cast bubbles and a dry mineral surface",
+          "tags": [
+            "cast bubbles",
+            "dry mineral surface"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.inflatable",
+      "name": "Inflated soft volume",
+      "description": "An inflatable soft-volume interpretation. Translate forms into gently pressurized connected masses.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "inflatable",
+        "soft",
+        "seam"
+      ],
+      "claims": {
+        "medium": "render.inflatable",
+        "composition": "render-inflatable",
+        "texture": "render.inflatable"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An inflatable soft-volume interpretation",
+          "tags": [
+            "inflatable sculpture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Translate forms into gently pressurized connected masses",
+          "tags": [
+            "pressurized connected masses"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show stretched fabric skin and subtle welded seams",
+          "tags": [
+            "stretched skin",
+            "welded seams"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.cutaway",
+      "name": "Technical cutaway render",
+      "description": "A technical cutaway-style rendering of the supplied object. Use a single clearly readable cut plane without inventing labeled components.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "cutaway",
+        "sectional",
+        "technical"
+      ],
+      "claims": {
+        "medium": "render.cutaway",
+        "composition": "render-cutaway",
+        "lighting": "render-cutaway"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A technical cutaway-style rendering of the supplied object",
+          "tags": [
+            "technical cutaway render"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use a single clearly readable cut plane without inventing labeled components",
+          "tags": [
+            "single clear cut plane"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep neutral even light across the exposed geometry",
+          "tags": [
+            "even technical light"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "render.pointcloud",
+      "name": "Point-cloud volume",
+      "description": "A point-cloud interpretation of the supplied forms. Let variable-density points describe the existing volumes.",
+      "category": "three-dimensional",
+      "kind": "style",
+      "tags": [
+        "3d",
+        "point cloud",
+        "scan",
+        "spatial"
+      ],
+      "claims": {
+        "medium": "render.pointcloud",
+        "composition": "render-pointcloud",
+        "palette": "render-pointcloud"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A point-cloud interpretation of the supplied forms",
+          "tags": [
+            "point cloud art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let variable-density points describe the existing volumes",
+          "tags": [
+            "variable density point volume"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use a restrained depth-based color progression",
+          "tags": [
+            "restrained depth colors"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

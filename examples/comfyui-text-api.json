@@ -1,0 +1,39 @@
+{
+  "1": {
+    "class_type": "PSNextStyle",
+    "inputs": {
+      "prompt": "A quiet street after rain",
+      "style": "cinema.noir",
+      "model": "sdxl",
+      "intensity": 0.75,
+      "negative": "",
+      "locked_axes": {
+        "__value__": []
+      }
+    }
+  },
+  "2": {
+    "class_type": "PSNextCompose",
+    "inputs": {
+      "recipe": "{\"schema_version\": 1, \"prompt\": \"A violin maker in a small workshop\", \"model\": \"sdxl\", \"styles\": [{\"id\": \"cinema.noir\", \"intensity\": 0.75}], \"locked_axes\": [\"composition\"]}"
+    }
+  },
+  "3": {
+    "class_type": "PreviewAny",
+    "inputs": {
+      "source": [
+        "1",
+        0
+      ]
+    }
+  },
+  "4": {
+    "class_type": "PreviewAny",
+    "inputs": {
+      "source": [
+        "2",
+        2
+      ]
+    }
+  }
+}

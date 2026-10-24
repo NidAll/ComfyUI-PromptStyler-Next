@@ -1,0 +1,1282 @@
+{
+  "schema_version": 1,
+  "id": "next.cinema",
+  "version": "1.0.0",
+  "name": "Cinematography",
+  "description": "Framing, exposure and production design without adding a story or changing the subject.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "cinema.noir",
+      "name": "Silver-screen noir",
+      "description": "A classic film still with sculpted tonal masses. Hard directional light cuts clean shapes through deep shadow.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "noir",
+        "film",
+        "monochrome",
+        "chiaroscuro"
+      ],
+      "claims": {
+        "medium": "cinema.noir",
+        "lighting": "cinema-noir",
+        "texture": "cinema.noir",
+        "palette": "cinema-noir"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A classic film still with sculpted tonal masses",
+          "tags": [
+            "classic film still",
+            "sculpted tonal masses"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Hard directional light cuts clean shapes through deep shadow",
+          "tags": [
+            "chiaroscuro",
+            "hard light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use a black-and-white silver palette",
+          "tags": [
+            "black and white",
+            "silver monochrome"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Fine silver-grain texture and restrained highlight bloom",
+          "tags": [
+            "silver grain",
+            "restrained halation"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {
+        "anima": {
+          "clauses": [
+            {
+              "axis": "medium",
+              "text": "An anime keyframe with sculpted tonal masses",
+              "tags": [
+                "anime keyframe",
+                "sculpted tonal masses"
+              ],
+              "min_intensity": 0.01
+            },
+            {
+              "axis": "lighting",
+              "text": "Hard directional light cuts clean shapes through deep shadow",
+              "tags": [
+                "chiaroscuro",
+                "hard light"
+              ],
+              "min_intensity": 0.4
+            },
+            {
+              "axis": "palette",
+              "text": "Use a black-and-white silver palette",
+              "tags": [
+                "black and white",
+                "silver monochrome"
+              ],
+              "min_intensity": 0.4
+            },
+            {
+              "axis": "texture",
+              "text": "Fine silver-grain texture and restrained highlight bloom",
+              "tags": [
+                "silver grain",
+                "restrained halation"
+              ],
+              "min_intensity": 0.75
+            }
+          ],
+          "negative": []
+        },
+        "anima-turbo": {
+          "clauses": [
+            {
+              "axis": "medium",
+              "text": "An anime keyframe with sculpted tonal masses",
+              "tags": [
+                "anime keyframe",
+                "sculpted tonal masses"
+              ],
+              "min_intensity": 0.01
+            },
+            {
+              "axis": "lighting",
+              "text": "Hard directional light cuts clean shapes through deep shadow",
+              "tags": [
+                "chiaroscuro",
+                "hard light"
+              ],
+              "min_intensity": 0.4
+            },
+            {
+              "axis": "palette",
+              "text": "Use a black-and-white silver palette",
+              "tags": [
+                "black and white",
+                "silver monochrome"
+              ],
+              "min_intensity": 0.4
+            },
+            {
+              "axis": "texture",
+              "text": "Fine silver-grain texture and restrained highlight bloom",
+              "tags": [
+                "silver grain",
+                "restrained halation"
+              ],
+              "min_intensity": 0.75
+            }
+          ],
+          "negative": []
+        }
+      }
+    },
+    {
+      "id": "cinema.widescreen",
+      "name": "Widescreen intimacy",
+      "description": "A restrained widescreen cinematic still. Arrange the existing subject across a broad frame with breathing room.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "widescreen",
+        "intimate",
+        "negative space"
+      ],
+      "claims": {
+        "medium": "cinema.widescreen",
+        "composition": "cinema-widescreen",
+        "lighting": "cinema-widescreen"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A restrained widescreen cinematic still",
+          "tags": [
+            "cinematic still"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange the existing subject across a broad frame with breathing room",
+          "tags": [
+            "wide framing",
+            "negative space"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft side light with gentle separation from the background",
+          "tags": [
+            "soft side light",
+            "gentle separation"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.practical",
+      "name": "Practical-light drama",
+      "description": "A naturalistic drama still with believable exposure. Let existing visible light sources motivate the illumination.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "practical",
+        "warm",
+        "interior"
+      ],
+      "claims": {
+        "medium": "cinema.practical",
+        "lighting": "cinema-practical",
+        "palette": "cinema-practical"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A naturalistic drama still with believable exposure",
+          "tags": [
+            "naturalistic film still"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let existing visible light sources motivate the illumination",
+          "tags": [
+            "motivated practical lighting"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep warm highlights balanced against neutral shadows",
+          "tags": [
+            "warm highlights",
+            "neutral shadows"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.technicolor",
+      "name": "Three-strip color",
+      "description": "A classic color-process cinematic still. Separate rich reds and greens with luminous creamy highlights.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "technicolor",
+        "saturated",
+        "classic"
+      ],
+      "claims": {
+        "medium": "cinema.technicolor",
+        "palette": "cinema-technicolor",
+        "texture": "cinema.technicolor"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A classic color-process cinematic still",
+          "tags": [
+            "classic color film"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Separate rich reds and greens with luminous creamy highlights",
+          "tags": [
+            "three strip color",
+            "rich reds and greens"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Smooth dye-like color transitions with subtle film grain",
+          "tags": [
+            "dye transfer color",
+            "subtle film grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.slow",
+      "name": "Contemplative cinema",
+      "description": "An observational cinematic still with quiet visual pacing. Use balanced wide framing and unhurried spatial relationships.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "slow",
+        "observational",
+        "stillness"
+      ],
+      "claims": {
+        "medium": "cinema.slow",
+        "composition": "cinema-slow",
+        "palette": "cinema-slow"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An observational cinematic still with quiet visual pacing",
+          "tags": [
+            "observational cinema"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use balanced wide framing and unhurried spatial relationships",
+          "tags": [
+            "static wide shot",
+            "balanced framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep a restrained natural palette with small tonal differences",
+          "tags": [
+            "restrained natural colors"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.sodium",
+      "name": "Sodium-vapor night",
+      "description": "A night-scene cinematic still with carefully held shadow detail. Illuminate existing forms with low amber sodium-vapor light.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "night",
+        "amber",
+        "urban"
+      ],
+      "claims": {
+        "medium": "cinema.sodium",
+        "lighting": "cinema-sodium",
+        "palette": "cinema-sodium"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A night-scene cinematic still with carefully held shadow detail",
+          "tags": [
+            "night film still"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Illuminate existing forms with low amber sodium-vapor light",
+          "tags": [
+            "sodium vapor lighting"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep amber highlights against muted olive-black shadows",
+          "tags": [
+            "amber highlights",
+            "olive black shadows"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.bleach",
+      "name": "Bleach-bypass tension",
+      "description": "A bleach-bypass cinematic still. Suppress saturation while retaining dense blacks and pale highlights.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "bleach bypass",
+        "desaturated",
+        "contrast"
+      ],
+      "claims": {
+        "medium": "cinema.bleach",
+        "palette": "cinema-bleach",
+        "texture": "cinema.bleach"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A bleach-bypass cinematic still",
+          "tags": [
+            "bleach bypass film"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Suppress saturation while retaining dense blacks and pale highlights",
+          "tags": [
+            "desaturated colors",
+            "dense blacks"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let coarse silver grain remain visible in midtones",
+          "tags": [
+            "coarse silver grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.daynight",
+      "name": "Day-for-night blue",
+      "description": "A deliberately stylized day-for-night film still. Underexpose broad illumination to read as theatrical moonlight.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "blue",
+        "moonlight",
+        "silhouette"
+      ],
+      "claims": {
+        "medium": "cinema.daynight",
+        "lighting": "cinema-daynight",
+        "palette": "cinema-daynight"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A deliberately stylized day-for-night film still",
+          "tags": [
+            "day for night cinema"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Underexpose broad illumination to read as theatrical moonlight",
+          "tags": [
+            "underexposed moonlight"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use deep cobalt shadows and cool silver highlights",
+          "tags": [
+            "cobalt shadows",
+            "silver highlights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.anamorphic",
+      "name": "Anamorphic glow",
+      "description": "A cinematic image shaped by anamorphic lens rendering. Use broad horizontal spacing while retaining the original subject placement.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "anamorphic",
+        "optics",
+        "bokeh"
+      ],
+      "claims": {
+        "medium": "cinema.anamorphic",
+        "composition": "cinema-anamorphic",
+        "texture": "cinema.anamorphic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cinematic image shaped by anamorphic lens rendering",
+          "tags": [
+            "anamorphic film still"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use broad horizontal spacing while retaining the original subject placement",
+          "tags": [
+            "horizontal visual spacing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show restrained horizontal flare and oval out-of-focus highlights",
+          "tags": [
+            "subtle horizontal flare",
+            "oval bokeh"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.super8",
+      "name": "Super 8 memory",
+      "description": "A Super 8 film frame with a handmade home-movie character. Let warm midtones and faded cool shadows coexist.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "super8",
+        "home movie",
+        "grain"
+      ],
+      "claims": {
+        "medium": "cinema.super8",
+        "palette": "cinema-super8",
+        "texture": "cinema.super8"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Super 8 film frame with a handmade home-movie character",
+          "tags": [
+            "super 8 film frame"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Let warm midtones and faded cool shadows coexist",
+          "tags": [
+            "warm midtones",
+            "faded shadows"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Visible small-gauge grain and soft optical edges",
+          "tags": [
+            "small gauge grain",
+            "soft optical edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.silhouette",
+      "name": "Graphic silhouette",
+      "description": "A cinematic silhouette study built from clear shape design. Backlight the existing forms so their outer contours carry the image.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "silhouette",
+        "backlight",
+        "graphic"
+      ],
+      "claims": {
+        "medium": "cinema.silhouette",
+        "lighting": "cinema-silhouette",
+        "composition": "cinema-silhouette"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cinematic silhouette study built from clear shape design",
+          "tags": [
+            "silhouette film still"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Backlight the existing forms so their outer contours carry the image",
+          "tags": [
+            "strong backlight",
+            "silhouette"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep overlapping silhouettes readable with deliberate gaps",
+          "tags": [
+            "separated silhouettes",
+            "readable shapes"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.available",
+      "name": "Available-light realism",
+      "description": "An understated cinematic still with available-light realism. Preserve uneven ambient illumination rather than flattening it.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "available light",
+        "realistic",
+        "understated"
+      ],
+      "claims": {
+        "medium": "cinema.available",
+        "lighting": "cinema-available",
+        "texture": "cinema.available"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An understated cinematic still with available-light realism",
+          "tags": [
+            "available light film still"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Preserve uneven ambient illumination rather than flattening it",
+          "tags": [
+            "natural ambient light",
+            "uneven exposure"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep subtle lens softness and fine organic grain",
+          "tags": [
+            "subtle lens softness",
+            "fine grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.expressionist",
+      "name": "Expressionist shadows",
+      "description": "An expressionist silent-cinema still. Let oblique existing forms create purposeful visual unease.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "expressionist",
+        "angular",
+        "shadow"
+      ],
+      "claims": {
+        "medium": "cinema.expressionist",
+        "composition": "cinema-expressionist",
+        "lighting": "cinema-expressionist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An expressionist silent-cinema still",
+          "tags": [
+            "expressionist silent film"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let oblique existing forms create purposeful visual unease",
+          "tags": [
+            "oblique forms",
+            "uneasy framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Project sharply angular shadows across the supplied surfaces",
+          "tags": [
+            "angular projected shadows"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.neorealist",
+      "name": "Neorealist daylight",
+      "description": "A neorealist location-film still. Use unvarnished daylight with honest variations in exposure.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "neorealism",
+        "daylight",
+        "location"
+      ],
+      "claims": {
+        "medium": "cinema.neorealist",
+        "lighting": "cinema-neorealist",
+        "texture": "cinema.neorealist",
+        "palette": "cinema-neorealist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A neorealist location-film still",
+          "tags": [
+            "neorealist cinema"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use unvarnished daylight with honest variations in exposure",
+          "tags": [
+            "unvarnished daylight"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use an understated black-and-white palette",
+          "tags": [
+            "understated monochrome"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Retain ordinary material wear and modest film grain",
+          "tags": [
+            "ordinary material wear",
+            "modest film grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.newwave",
+      "name": "New-wave spontaneity",
+      "description": "A spontaneous new-wave cinema still. Use an off-center handheld framing with immediate spatial energy.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "new wave",
+        "spontaneous",
+        "handheld"
+      ],
+      "claims": {
+        "medium": "cinema.newwave",
+        "composition": "cinema-newwave",
+        "texture": "cinema.newwave",
+        "palette": "cinema-newwave"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A spontaneous new-wave cinema still",
+          "tags": [
+            "new wave film still"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use an off-center handheld framing with immediate spatial energy",
+          "tags": [
+            "off center handheld framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use a crisp black-and-white tonal palette",
+          "tags": [
+            "crisp monochrome"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine film grain and lightly softened optics",
+          "tags": [
+            "fine film grain",
+            "soft optics"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.epic70",
+      "name": "70mm breadth",
+      "description": "A large-format 70mm cinematic still. Use broad spatial relationships with distinct foreground and far detail.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "70mm",
+        "broad",
+        "detailed"
+      ],
+      "claims": {
+        "medium": "cinema.epic70",
+        "composition": "cinema-epic70",
+        "texture": "cinema.epic70"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A large-format 70mm cinematic still",
+          "tags": [
+            "70mm film still"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use broad spatial relationships with distinct foreground and far detail",
+          "tags": [
+            "broad spatial staging"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Render smooth fine-grain tonal detail across the wide frame",
+          "tags": [
+            "fine large format grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.twostrip",
+      "name": "Two-strip color process",
+      "description": "An early two-strip color-process film still. Restrict color relationships to warm orange-red and muted cyan-green.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "two strip",
+        "color",
+        "vintage"
+      ],
+      "claims": {
+        "medium": "cinema.twostrip",
+        "palette": "cinema-twostrip",
+        "texture": "cinema.twostrip"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An early two-strip color-process film still",
+          "tags": [
+            "two strip color cinema"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Restrict color relationships to warm orange-red and muted cyan-green",
+          "tags": [
+            "orange red",
+            "cyan green"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep softly separated dye tones and gentle film softness",
+          "tags": [
+            "dye tone separation",
+            "film softness"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.silent",
+      "name": "Silent-film silver",
+      "description": "An orthochromatic silent-film still. Use crisp monochrome with compressed warm-color response.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "silent",
+        "orthochromatic",
+        "vintage"
+      ],
+      "claims": {
+        "medium": "cinema.silent",
+        "palette": "cinema-silent",
+        "texture": "cinema.silent"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An orthochromatic silent-film still",
+          "tags": [
+            "orthochromatic silent film"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use crisp monochrome with compressed warm-color response",
+          "tags": [
+            "orthochromatic monochrome"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine age-softened grain and mild optical bloom",
+          "tags": [
+            "aged fine grain",
+            "optical bloom"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.colornoir",
+      "name": "Color noir",
+      "description": "A color-noir cinematic still. Hold the supplied forms in pools of low directional light.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "noir",
+        "color",
+        "low key"
+      ],
+      "claims": {
+        "medium": "cinema.colornoir",
+        "lighting": "cinema-colornoir",
+        "palette": "cinema-colornoir"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A color-noir cinematic still",
+          "tags": [
+            "color noir film"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Hold the supplied forms in pools of low directional light",
+          "tags": [
+            "pooled low key light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use subdued burgundy and petrol-blue relationships",
+          "tags": [
+            "burgundy",
+            "petrol blue"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.softfocus",
+      "name": "Diffusion-filter romance",
+      "description": "A classic diffusion-filter cinematic still. Wrap the existing highlights in a gentle luminous veil.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "diffusion",
+        "soft focus",
+        "glow"
+      ],
+      "claims": {
+        "medium": "cinema.softfocus",
+        "lighting": "cinema-softfocus",
+        "texture": "cinema.softfocus"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A classic diffusion-filter cinematic still",
+          "tags": [
+            "diffusion filter cinema"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Wrap the existing highlights in a gentle luminous veil",
+          "tags": [
+            "soft highlight diffusion"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep soft highlight spread over an otherwise readable image",
+          "tags": [
+            "highlight spread",
+            "readable detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.harshnoon",
+      "name": "High-noon austerity",
+      "description": "An austere cinematic still under hard daylight. Let overhead light cast short uncompromising shadows.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "noon",
+        "austere",
+        "hard light"
+      ],
+      "claims": {
+        "medium": "cinema.harshnoon",
+        "lighting": "cinema-harshnoon",
+        "palette": "cinema-harshnoon"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An austere cinematic still under hard daylight",
+          "tags": [
+            "austere daylight cinema"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let overhead light cast short uncompromising shadows",
+          "tags": [
+            "hard overhead daylight"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use dry pale highlights and restrained sun-worn colors",
+          "tags": [
+            "dry pale highlights",
+            "sun worn color"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.fogplane",
+      "name": "Atmospheric light planes",
+      "description": "A cinematic still with layered atmospheric depth. Use faint suspended haze to reveal broad existing light beams.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "haze",
+        "light planes",
+        "depth"
+      ],
+      "claims": {
+        "medium": "cinema.fogplane",
+        "lighting": "cinema-fogplane",
+        "composition": "cinema-fogplane"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cinematic still with layered atmospheric depth",
+          "tags": [
+            "atmospheric cinema"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use faint suspended haze to reveal broad existing light beams",
+          "tags": [
+            "subtle haze",
+            "light beams"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Separate near silhouettes from progressively softer distant planes",
+          "tags": [
+            "layered silhouette depth"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.crushed",
+      "name": "Crushed-video contrast",
+      "description": "A deliberately harsh early-digital-video still. Use clipped pale values against compact near-black shadows.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "video",
+        "crushed",
+        "contrast"
+      ],
+      "claims": {
+        "medium": "cinema.crushed",
+        "palette": "cinema-crushed",
+        "texture": "cinema.crushed"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A deliberately harsh early-digital-video still",
+          "tags": [
+            "early digital cinema"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use clipped pale values against compact near-black shadows",
+          "tags": [
+            "clipped highlights",
+            "crushed shadows"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep subtle electronic edge harshness and chroma noise",
+          "tags": [
+            "electronic edges",
+            "chroma noise"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cinema.painterly",
+      "name": "Painterly production still",
+      "description": "A cinematic still with painterly production-design coherence. Unify the supplied forms into broad carefully balanced visual masses.",
+      "category": "cinema",
+      "kind": "style",
+      "tags": [
+        "cinema",
+        "painterly",
+        "production",
+        "color"
+      ],
+      "claims": {
+        "medium": "cinema.painterly",
+        "composition": "cinema-painterly",
+        "palette": "cinema-painterly"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cinematic still with painterly production-design coherence",
+          "tags": [
+            "painterly cinema"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Unify the supplied forms into broad carefully balanced visual masses",
+          "tags": [
+            "balanced visual masses"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use related midtone colors with one controlled accent hue",
+          "tags": [
+            "related midtones",
+            "controlled accent"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

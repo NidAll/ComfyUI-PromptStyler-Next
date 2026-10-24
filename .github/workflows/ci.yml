@@ -1,0 +1,63 @@
+name: Quality gates
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ['3.11', '3.12', '3.13', '3.14']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m pip install -e '.[dev]'
+      - run: python -m coverage run -m pytest --ignore=tests/test_comfy.py
+      - run: python -m coverage report --fail-under=85
+      - run: ruff check .
+      - run: ruff format --check .
+      - run: mypy
+      - run: python -m build
+      - run: python scripts/check_distribution.py dist
+      - uses: actions/upload-artifact@v4
+        if: matrix.python == '3.12'
+        with:
+          name: distributions
+          path: dist/*
+  studio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --test studio/tests/*.test.mjs
+  comfyui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: promptstyler-next
+      - uses: actions/checkout@v4
+        with:
+          repository: Comfy-Org/ComfyUI
+          ref: 7cebca52227c63b4180ceed448cbd7ad22903b6d
+          path: comfyui-host
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -r comfyui-host/requirements.txt pytest
+      - run: python -m pytest tests/test_comfy.py -q
+        working-directory: promptstyler-next
+        env:
+          PYTHONPATH: ${{ github.workspace }}/comfyui-host

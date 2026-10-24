@@ -1,0 +1,1166 @@
+{
+  "schema_version": 1,
+  "id": "next.wayfinding",
+  "version": "1.0.0",
+  "name": "Wayfinding and environmental graphics",
+  "description": "Presentation styles for supplied signs and spatial-communication concepts; no automatic factual routes or exact typography are inferred.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "wayfinding.rail-enamel",
+      "name": "Railway enamel sign",
+      "description": "Use a restrained railway-enamel signage treatment. Keep the supplied message area clear within simple framing.",
+      "category": "wayfinding/signage",
+      "kind": "style",
+      "tags": [
+        "railway",
+        "enamel",
+        "sign",
+        "wayfinding"
+      ],
+      "claims": {
+        "medium": "wayfinding.rail-enamel",
+        "composition": "wayfinding-rail-enamel",
+        "palette": "wayfinding-rail-enamel",
+        "texture": "wayfinding.rail-enamel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a restrained railway-enamel signage treatment",
+          "tags": [
+            "railway enamel sign"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied message area clear within simple framing",
+          "tags": [
+            "clear sign field"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal smooth enamel and gently rounded metal edges",
+          "tags": [
+            "smooth enamel",
+            "rounded metal edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use deep blue and warm sign-white",
+          "tags": [
+            "deep blue",
+            "warm white"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.civic-monolith",
+      "name": "Civic monolith sign",
+      "description": "Use a calm civic-monolith sign-design treatment. Let the supplied information read through a tall ordered field.",
+      "category": "wayfinding/environmental",
+      "kind": "style",
+      "tags": [
+        "civic",
+        "monolith",
+        "sign",
+        "public"
+      ],
+      "claims": {
+        "medium": "wayfinding.civic-monolith",
+        "composition": "wayfinding-civic-monolith",
+        "palette": "wayfinding-civic-monolith",
+        "texture": "wayfinding.civic-monolith"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a calm civic-monolith sign-design treatment",
+          "tags": [
+            "civic monolith signage"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied information read through a tall ordered field",
+          "tags": [
+            "ordered vertical sign"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use matte durable faces and precise physical edges",
+          "tags": [
+            "matte sign face",
+            "precise edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use charcoal stone and one restrained civic accent",
+          "tags": [
+            "charcoal stone",
+            "civic accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.museum-panel",
+      "name": "Museum interpretation panel",
+      "description": "Use a measured museum-interpretation panel style. Balance supplied visual material with generous reading space.",
+      "category": "wayfinding/cultural",
+      "kind": "style",
+      "tags": [
+        "museum",
+        "panel",
+        "interpretation",
+        "sign"
+      ],
+      "claims": {
+        "medium": "wayfinding.museum-panel",
+        "composition": "wayfinding-museum-panel",
+        "palette": "wayfinding-museum-panel",
+        "texture": "wayfinding.museum-panel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a measured museum-interpretation panel style",
+          "tags": [
+            "museum interpretation panel"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Balance supplied visual material with generous reading space",
+          "tags": [
+            "generous interpretation space"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use fine print surfaces and quiet physical mounting",
+          "tags": [
+            "fine print surface",
+            "quiet mounting"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm white charcoal and muted collection color",
+          "tags": [
+            "warm white",
+            "charcoal"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.trail-marker",
+      "name": "Trail marker object",
+      "description": "Use a durable trail-marker design treatment. Make the supplied directional form recognizable at a glance.",
+      "category": "wayfinding/outdoor",
+      "kind": "style",
+      "tags": [
+        "trail",
+        "marker",
+        "outdoor",
+        "wayfinding"
+      ],
+      "claims": {
+        "medium": "wayfinding.trail-marker",
+        "composition": "wayfinding-trail-marker",
+        "palette": "wayfinding-trail-marker",
+        "texture": "wayfinding.trail-marker"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a durable trail-marker design treatment",
+          "tags": [
+            "trail marker"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Make the supplied directional form recognizable at a glance",
+          "tags": [
+            "clear directional silhouette"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal weathered but serviceable wood or coated metal",
+          "tags": [
+            "weathered sign material"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted forest neutrals with one legible contrast color",
+          "tags": [
+            "forest neutral",
+            "contrast accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.park-map-panel",
+      "name": "Park orientation panel",
+      "description": "Use a welcoming park-orientation panel style. Keep supplied spatial information ordered within a clear frame.",
+      "category": "wayfinding/outdoor",
+      "kind": "style",
+      "tags": [
+        "park",
+        "map",
+        "panel",
+        "orientation"
+      ],
+      "claims": {
+        "medium": "wayfinding.park-map-panel",
+        "composition": "wayfinding-park-map-panel",
+        "palette": "wayfinding-park-map-panel",
+        "texture": "wayfinding.park-map-panel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a welcoming park-orientation panel style",
+          "tags": [
+            "park orientation panel"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied spatial information ordered within a clear frame",
+          "tags": [
+            "ordered orientation field"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use matte print and tactile durable support materials",
+          "tags": [
+            "matte panel",
+            "durable support"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use cream dark green and restrained earth accents",
+          "tags": [
+            "cream",
+            "dark green",
+            "earth accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.airport-pictogram",
+      "name": "Airport pictogram system",
+      "description": "Use a disciplined airport-pictogram system style. Give supplied symbols consistent visual weight and spacing.",
+      "category": "wayfinding/transport",
+      "kind": "style",
+      "tags": [
+        "airport",
+        "pictogram",
+        "system",
+        "navigation"
+      ],
+      "claims": {
+        "medium": "wayfinding.airport-pictogram",
+        "composition": "wayfinding-airport-pictogram",
+        "palette": "wayfinding-airport-pictogram",
+        "texture": "wayfinding.airport-pictogram"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a disciplined airport-pictogram system style",
+          "tags": [
+            "airport pictogram system"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Give supplied symbols consistent visual weight and spacing",
+          "tags": [
+            "consistent pictogram spacing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep contours geometrically clean and stroke weights uniform",
+          "tags": [
+            "uniform pictogram strokes"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use high-contrast charcoal and warm yellow",
+          "tags": [
+            "charcoal",
+            "yellow sign field"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.campus-color",
+      "name": "Campus color-wayfinding",
+      "description": "Use a coherent campus color-wayfinding treatment. Organize supplied destinations into clearly separated groups.",
+      "category": "wayfinding/environmental",
+      "kind": "style",
+      "tags": [
+        "campus",
+        "color",
+        "wayfinding",
+        "system"
+      ],
+      "claims": {
+        "medium": "wayfinding.campus-color",
+        "composition": "wayfinding-campus-color",
+        "palette": "wayfinding-campus-color",
+        "texture": "wayfinding.campus-color"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a coherent campus color-wayfinding treatment",
+          "tags": [
+            "campus wayfinding"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize supplied destinations into clearly separated groups",
+          "tags": [
+            "separated destination groups"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use matte planes and simple modular proportions",
+          "tags": [
+            "matte modular signs"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Choose a few distinct softened category colors",
+          "tags": [
+            "soft category colors"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.library-stack",
+      "name": "Library stack guidance",
+      "description": "Use a quiet library-stack guidance aesthetic. Keep supplied information aligned with ample surrounding calm.",
+      "category": "wayfinding/cultural",
+      "kind": "style",
+      "tags": [
+        "library",
+        "stack",
+        "guidance",
+        "sign"
+      ],
+      "claims": {
+        "medium": "wayfinding.library-stack",
+        "composition": "wayfinding-library-stack",
+        "palette": "wayfinding-library-stack",
+        "texture": "wayfinding.library-stack"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a quiet library-stack guidance aesthetic",
+          "tags": [
+            "library stack signage"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied information aligned with ample surrounding calm",
+          "tags": [
+            "quiet aligned sign layout"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use restrained edge detail and soft non-glare surfaces",
+          "tags": [
+            "non glare signs",
+            "restrained edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm paper neutrals and deep muted green",
+          "tags": [
+            "paper neutral",
+            "deep green"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.hospital-route",
+      "name": "Care-space wayfinding",
+      "description": "Use a calm care-space wayfinding design. Keep supplied directional choices uncluttered and well separated.",
+      "category": "wayfinding/environmental",
+      "kind": "style",
+      "tags": [
+        "care",
+        "hospital",
+        "route",
+        "public"
+      ],
+      "claims": {
+        "medium": "wayfinding.hospital-route",
+        "composition": "wayfinding-hospital-route",
+        "palette": "wayfinding-hospital-route",
+        "texture": "wayfinding.hospital-route"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a calm care-space wayfinding design",
+          "tags": [
+            "care space wayfinding"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied directional choices uncluttered and well separated",
+          "tags": [
+            "uncluttered directional choices"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use softly rounded edges and matte cleanable surfaces",
+          "tags": [
+            "soft sign edges",
+            "matte surface"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm white with restrained blue-green accents",
+          "tags": [
+            "warm white",
+            "blue green"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.industrial-stencil",
+      "name": "Industrial stencil marker",
+      "description": "Use a functional industrial-stencil treatment. Give supplied marks strong simple spatial placement.",
+      "category": "wayfinding/industrial",
+      "kind": "style",
+      "tags": [
+        "industrial",
+        "stencil",
+        "marker",
+        "utility"
+      ],
+      "claims": {
+        "medium": "wayfinding.industrial-stencil",
+        "composition": "wayfinding-industrial-stencil",
+        "palette": "wayfinding-industrial-stencil",
+        "texture": "wayfinding.industrial-stencil"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a functional industrial-stencil treatment",
+          "tags": [
+            "industrial stencil sign"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Give supplied marks strong simple spatial placement",
+          "tags": [
+            "strong simple placement"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal cut-stencil bridges and lightly worn paint",
+          "tags": [
+            "stencil bridges",
+            "worn paint"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use dull safety yellow against dark utility gray",
+          "tags": [
+            "dull yellow",
+            "utility gray"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.warehouse-bay",
+      "name": "Warehouse bay marker",
+      "description": "Use a legible warehouse-bay marker aesthetic. Make supplied identifiers occupy one clear dominant field.",
+      "category": "wayfinding/industrial",
+      "kind": "style",
+      "tags": [
+        "warehouse",
+        "bay",
+        "marker",
+        "navigation"
+      ],
+      "claims": {
+        "medium": "wayfinding.warehouse-bay",
+        "composition": "wayfinding-warehouse-bay",
+        "palette": "wayfinding-warehouse-bay",
+        "texture": "wayfinding.warehouse-bay"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a legible warehouse-bay marker aesthetic",
+          "tags": [
+            "warehouse bay marker"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Make supplied identifiers occupy one clear dominant field",
+          "tags": [
+            "dominant identifier field"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use clean painted surfaces with modest working wear",
+          "tags": [
+            "painted surface",
+            "working wear"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use white charcoal and a restrained industrial accent",
+          "tags": [
+            "white",
+            "charcoal",
+            "industrial accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.floor-route",
+      "name": "Floor route marking",
+      "description": "Use a precise floor-route graphic treatment. Let the supplied path flow continuously through the ground plane.",
+      "category": "wayfinding/environmental",
+      "kind": "style",
+      "tags": [
+        "floor",
+        "route",
+        "marking",
+        "wayfinding"
+      ],
+      "claims": {
+        "medium": "wayfinding.floor-route",
+        "composition": "wayfinding-floor-route",
+        "palette": "wayfinding-floor-route",
+        "texture": "wayfinding.floor-route"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a precise floor-route graphic treatment",
+          "tags": [
+            "floor route marking"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied path flow continuously through the ground plane",
+          "tags": [
+            "continuous floor path"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep painted edges clear against the existing floor texture",
+          "tags": [
+            "clear paint edges",
+            "floor texture"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use one route color against quiet neutral flooring",
+          "tags": [
+            "single route color",
+            "neutral floor"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.window-vinyl",
+      "name": "Window vinyl information",
+      "description": "Use a restrained window-vinyl information treatment. Keep supplied marks readable against layered glass depth.",
+      "category": "wayfinding/signage",
+      "kind": "style",
+      "tags": [
+        "window",
+        "vinyl",
+        "glass",
+        "sign"
+      ],
+      "claims": {
+        "medium": "wayfinding.window-vinyl",
+        "composition": "wayfinding-window-vinyl",
+        "palette": "wayfinding-window-vinyl",
+        "texture": "wayfinding.window-vinyl"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a restrained window-vinyl information treatment",
+          "tags": [
+            "window vinyl signage"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied marks readable against layered glass depth",
+          "tags": [
+            "legible glass overlay"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Distinguish matte vinyl from soft reflected surroundings",
+          "tags": [
+            "matte vinyl",
+            "soft glass reflection"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use opaque white or dark neutral vinyl",
+          "tags": [
+            "neutral vinyl color"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.perforated-metal",
+      "name": "Perforated metal sign",
+      "description": "Render the sign in perforated sheet-metal language. Let supplied solid and open regions form a readable hierarchy.",
+      "category": "wayfinding/material",
+      "kind": "style",
+      "tags": [
+        "perforated",
+        "metal",
+        "sign",
+        "environmental"
+      ],
+      "claims": {
+        "medium": "wayfinding.perforated-metal",
+        "composition": "wayfinding-perforated-metal",
+        "palette": "wayfinding-perforated-metal",
+        "texture": "wayfinding.perforated-metal"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the sign in perforated sheet-metal language",
+          "tags": [
+            "perforated metal signage"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let supplied solid and open regions form a readable hierarchy",
+          "tags": [
+            "solid open sign hierarchy"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal fine perforations folded edges and diffuse reflections",
+          "tags": [
+            "fine perforations",
+            "folded metal"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted anodized metal with dark recesses",
+          "tags": [
+            "muted anodized metal"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.cast-lettering",
+      "name": "Cast relief signage",
+      "description": "Use a cast-relief signage presentation style. Keep supplied raised forms clear against broad backing planes.",
+      "category": "wayfinding/material",
+      "kind": "style",
+      "tags": [
+        "cast",
+        "relief",
+        "sign",
+        "lettering"
+      ],
+      "claims": {
+        "medium": "wayfinding.cast-lettering",
+        "composition": "wayfinding-cast-lettering",
+        "palette": "wayfinding-cast-lettering",
+        "texture": "wayfinding.cast-lettering"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a cast-relief signage presentation style",
+          "tags": [
+            "cast relief sign"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied raised forms clear against broad backing planes",
+          "tags": [
+            "clear raised forms"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal shallow casting texture and soft edge shadows",
+          "tags": [
+            "casting texture",
+            "relief shadow"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use patinated bronze or quiet cast gray",
+          "tags": [
+            "patinated bronze",
+            "cast gray"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.engraved-inlay",
+      "name": "Engraved inlay sign",
+      "description": "Use a refined engraved-inlay sign treatment. Let supplied marks sit with measured surrounding space.",
+      "category": "wayfinding/material",
+      "kind": "style",
+      "tags": [
+        "engraved",
+        "inlay",
+        "sign",
+        "craft"
+      ],
+      "claims": {
+        "medium": "wayfinding.engraved-inlay",
+        "composition": "wayfinding-engraved-inlay",
+        "palette": "wayfinding-engraved-inlay",
+        "texture": "wayfinding.engraved-inlay"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a refined engraved-inlay sign treatment",
+          "tags": [
+            "engraved inlay sign"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let supplied marks sit with measured surrounding space",
+          "tags": [
+            "measured sign spacing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal crisp incised edges and flush inlay surfaces",
+          "tags": [
+            "incised edges",
+            "flush inlay"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use dark inlay against pale natural material",
+          "tags": [
+            "dark inlay",
+            "pale material"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.modular-direction",
+      "name": "Modular direction blades",
+      "description": "Use a coherent modular-direction blade system. Separate supplied directions through consistent physical modules.",
+      "category": "wayfinding/environmental",
+      "kind": "style",
+      "tags": [
+        "modular",
+        "direction",
+        "blade",
+        "sign"
+      ],
+      "claims": {
+        "medium": "wayfinding.modular-direction",
+        "composition": "wayfinding-modular-direction",
+        "palette": "wayfinding-modular-direction",
+        "texture": "wayfinding.modular-direction"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a coherent modular-direction blade system",
+          "tags": [
+            "modular directional sign"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate supplied directions through consistent physical modules",
+          "tags": [
+            "consistent sign modules"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use precise joins and even matte finishes",
+          "tags": [
+            "precise sign joins",
+            "matte finish"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use a neutral base with controlled directional accents",
+          "tags": [
+            "neutral base",
+            "directional accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.temporary-event",
+      "name": "Temporary event guidance",
+      "description": "Use a clear temporary-event signage treatment. Keep supplied directions prominent in a simple portable frame.",
+      "category": "wayfinding/event",
+      "kind": "style",
+      "tags": [
+        "temporary",
+        "event",
+        "guide",
+        "sign"
+      ],
+      "claims": {
+        "medium": "wayfinding.temporary-event",
+        "composition": "wayfinding-temporary-event",
+        "palette": "wayfinding-temporary-event",
+        "texture": "wayfinding.temporary-event"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a clear temporary-event signage treatment",
+          "tags": [
+            "temporary event guidance"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied directions prominent in a simple portable frame",
+          "tags": [
+            "portable sign framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal folded board cloth tape or lightweight supports",
+          "tags": [
+            "temporary sign materials"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm white with one recognizable event color",
+          "tags": [
+            "warm white",
+            "event color"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.heritage-plaque",
+      "name": "Heritage interpretation plaque",
+      "description": "Use a restrained heritage-interpretation plaque treatment. Frame supplied content through calm durable proportions.",
+      "category": "wayfinding/cultural",
+      "kind": "style",
+      "tags": [
+        "heritage",
+        "plaque",
+        "interpretation",
+        "sign"
+      ],
+      "claims": {
+        "medium": "wayfinding.heritage-plaque",
+        "composition": "wayfinding-heritage-plaque",
+        "palette": "wayfinding-heritage-plaque",
+        "texture": "wayfinding.heritage-plaque"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a restrained heritage-interpretation plaque treatment",
+          "tags": [
+            "heritage plaque"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Frame supplied content through calm durable proportions",
+          "tags": [
+            "calm plaque proportions"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal patina fine surface grain and carefully finished edges",
+          "tags": [
+            "subtle patina",
+            "finished edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use dark bronze soft stone and warm highlights",
+          "tags": [
+            "dark bronze",
+            "soft stone"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "wayfinding.translucent-lightbox",
+      "name": "Translucent wayfinding lightbox",
+      "description": "Use a quietly illuminated wayfinding-lightbox treatment. Keep supplied marks clear inside an evenly lit field.",
+      "category": "wayfinding/illuminated",
+      "kind": "style",
+      "tags": [
+        "lightbox",
+        "translucent",
+        "sign",
+        "wayfinding"
+      ],
+      "claims": {
+        "medium": "wayfinding.translucent-lightbox",
+        "composition": "wayfinding-translucent-lightbox",
+        "palette": "wayfinding-translucent-lightbox",
+        "texture": "wayfinding.translucent-lightbox"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a quietly illuminated wayfinding-lightbox treatment",
+          "tags": [
+            "wayfinding lightbox"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied marks clear inside an evenly lit field",
+          "tags": [
+            "evenly lit sign field"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use soft translucent diffusion and crisp housing edges",
+          "tags": [
+            "translucent diffusion",
+            "crisp housing"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm luminous white with one subdued accent",
+          "tags": [
+            "luminous warm white",
+            "subdued accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

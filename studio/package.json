@@ -1,0 +1,10 @@
+{
+  "name": "@promptstyler-next/studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20.9" },
+  "exports": { "./client": { "types": "./client.d.ts", "default": "./client.mjs" }, "./bridge": { "types": "./bridge.d.ts", "default": "./bridge.mjs" } },
+  "scripts": { "test": "node --test tests/*.test.mjs" },
+  "license": "Apache-2.0"
+}

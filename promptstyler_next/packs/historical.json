@@ -1,0 +1,1189 @@
+{
+  "schema_version": 1,
+  "id": "next.historical",
+  "version": "1.0.0",
+  "name": "Historical image craft",
+  "description": "Distinct historical media and representational systems interpreted as creative constraints.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "history.fresco",
+      "name": "Buon fresco",
+      "description": "A buon-fresco interpretation on lime plaster. Use restrained mineral pigments with a pale plaster ground.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "fresco",
+        "plaster",
+        "pigment"
+      ],
+      "claims": {
+        "medium": "history.fresco",
+        "palette": "history-fresco",
+        "texture": "history.fresco"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A buon-fresco interpretation on lime plaster",
+          "tags": [
+            "buon fresco"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use restrained mineral pigments with a pale plaster ground",
+          "tags": [
+            "mineral pigments",
+            "pale plaster"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep matte absorbed pigment and slight plaster irregularity",
+          "tags": [
+            "absorbed pigment",
+            "plaster texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.encaustic",
+      "name": "Encaustic panel",
+      "description": "An encaustic-painted panel interpretation. Model form with warm translucent wax layers.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "encaustic",
+        "wax",
+        "panel"
+      ],
+      "claims": {
+        "medium": "history.encaustic",
+        "lighting": "history-encaustic",
+        "texture": "history.encaustic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An encaustic-painted panel interpretation",
+          "tags": [
+            "encaustic painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Model form with warm translucent wax layers",
+          "tags": [
+            "translucent wax layers"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show small fused brush ridges and a restrained wax sheen",
+          "tags": [
+            "fused wax ridges",
+            "wax sheen"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.illumination",
+      "name": "Illuminated manuscript",
+      "description": "An illuminated-manuscript interpretation of the supplied forms. Use clearly bounded decorative fields and a balanced page-like hierarchy.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "illumination",
+        "manuscript",
+        "gold"
+      ],
+      "claims": {
+        "medium": "history.illumination",
+        "composition": "history-illumination",
+        "texture": "history.illumination"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An illuminated-manuscript interpretation of the supplied forms",
+          "tags": [
+            "illuminated manuscript"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use clearly bounded decorative fields and a balanced page-like hierarchy",
+          "tags": [
+            "bounded decorative fields"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Combine opaque pigment with restrained raised-gold accents",
+          "tags": [
+            "opaque pigment",
+            "raised gold"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.goldpanel",
+      "name": "Gold-ground panel",
+      "description": "A tempera panel painting over a gold ground. Keep the supplied forms frontal and carefully contoured.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "gold ground",
+        "panel",
+        "tempera"
+      ],
+      "claims": {
+        "medium": "history.goldpanel",
+        "composition": "history-goldpanel",
+        "texture": "history.goldpanel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A tempera panel painting over a gold ground",
+          "tags": [
+            "gold ground tempera"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied forms frontal and carefully contoured",
+          "tags": [
+            "frontal contoured forms"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show fine punched gold details behind opaque painted shapes",
+          "tags": [
+            "punched gold",
+            "opaque tempera"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.byzantine",
+      "name": "Byzantine tesserae",
+      "description": "A Byzantine-mosaic inspired interpretation. Use frontal grouped forms and deliberate contour bands.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "byzantine",
+        "mosaic",
+        "luminous"
+      ],
+      "claims": {
+        "medium": "history.byzantine",
+        "composition": "history-byzantine",
+        "texture": "history.byzantine"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Byzantine-mosaic inspired interpretation",
+          "tags": [
+            "byzantine mosaic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use frontal grouped forms and deliberate contour bands",
+          "tags": [
+            "frontal grouping",
+            "contour bands"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let uneven gold and colored tesserae catch small changing highlights",
+          "tags": [
+            "gold tesserae",
+            "uneven mosaic"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.romanwall",
+      "name": "Roman wall pigment",
+      "description": "A Roman-wall-painting inspired interpretation. Use broad framed color fields and clearly modeled supplied forms.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "roman",
+        "wall painting",
+        "plaster"
+      ],
+      "claims": {
+        "medium": "history.romanwall",
+        "composition": "history-romanwall",
+        "palette": "history-romanwall"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Roman-wall-painting inspired interpretation",
+          "tags": [
+            "roman wall painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use broad framed color fields and clearly modeled supplied forms",
+          "tags": [
+            "framed color fields"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Favor iron red, warm ochre and pale mineral tones",
+          "tags": [
+            "iron red",
+            "ochre",
+            "mineral pale"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.cave",
+      "name": "Earth-pigment mark",
+      "description": "An earth-pigment drawing on an uneven rock surface. Use spare gestural contours to describe the supplied subject.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "earth pigment",
+        "rock",
+        "gestural"
+      ],
+      "claims": {
+        "medium": "history.cave",
+        "composition": "history-cave",
+        "texture": "history.cave"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An earth-pigment drawing on an uneven rock surface",
+          "tags": [
+            "earth pigment rock drawing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use spare gestural contours to describe the supplied subject",
+          "tags": [
+            "spare gestural contours"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep charcoal, ochre and rough mineral texture visibly distinct",
+          "tags": [
+            "charcoal ochre",
+            "rock texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.egyptian",
+      "name": "Register and contour",
+      "description": "An ancient-Egyptian-wall-art inspired interpretation. Use clear register-like alignment and strongly readable contours.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "egyptian",
+        "contour",
+        "register"
+      ],
+      "claims": {
+        "medium": "history.egyptian",
+        "composition": "history-egyptian",
+        "palette": "history-egyptian"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An ancient-Egyptian-wall-art inspired interpretation",
+          "tags": [
+            "egyptian wall art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use clear register-like alignment and strongly readable contours",
+          "tags": [
+            "register alignment",
+            "readable contours"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use flat mineral reds, ochres, blue and green on pale ground",
+          "tags": [
+            "flat mineral colors"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.blackfigure",
+      "name": "Black-figure ceramic",
+      "description": "An incised ceramic-painting interpretation. Use black silhouettes against warm terracotta.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "black figure",
+        "ceramic",
+        "silhouette"
+      ],
+      "claims": {
+        "medium": "history.blackfigure",
+        "palette": "history-blackfigure",
+        "texture": "history.blackfigure"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An incised ceramic-painting interpretation",
+          "tags": [
+            "incised ceramic painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use black silhouettes against warm terracotta",
+          "tags": [
+            "black silhouettes",
+            "terracotta"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Define interior detail through fine incised pale lines",
+          "tags": [
+            "incised ceramic lines"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.redfigure",
+      "name": "Red-figure ceramic",
+      "description": "A reserved-form ceramic-painting interpretation. Reserve warm terracotta forms within a glossy dark field.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "red figure",
+        "ceramic",
+        "line"
+      ],
+      "claims": {
+        "medium": "history.redfigure",
+        "palette": "history-redfigure",
+        "texture": "history.redfigure"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A reserved-form ceramic-painting interpretation",
+          "tags": [
+            "reserved form ceramic painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Reserve warm terracotta forms within a glossy dark field",
+          "tags": [
+            "terracotta forms",
+            "dark field"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use fine dark interior lines and controlled painted contours",
+          "tags": [
+            "fine ceramic interior lines"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.insular",
+      "name": "Interlaced manuscript",
+      "description": "An insular-manuscript inspired decorative image. Use tightly controlled interlacing lines around the supplied main forms.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "insular",
+        "manuscript",
+        "interlace"
+      ],
+      "claims": {
+        "medium": "history.insular",
+        "composition": "history-insular",
+        "palette": "history-insular"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An insular-manuscript inspired decorative image",
+          "tags": [
+            "insular manuscript art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use tightly controlled interlacing lines around the supplied main forms",
+          "tags": [
+            "controlled interlace",
+            "main forms"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use opaque earth colors with selective bright mineral accents",
+          "tags": [
+            "opaque earth colors",
+            "mineral accents"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.northern",
+      "name": "Northern oil detail",
+      "description": "A Northern-Renaissance inspired oil painting. Use cool clear light and carefully separated small reflections.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "northern renaissance",
+        "oil",
+        "detail"
+      ],
+      "claims": {
+        "medium": "history.northern",
+        "lighting": "history-northern",
+        "texture": "history.northern"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Northern-Renaissance inspired oil painting",
+          "tags": [
+            "northern renaissance oil"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use cool clear light and carefully separated small reflections",
+          "tags": [
+            "cool clear light",
+            "small reflections"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Build fine observed detail through translucent oil layers",
+          "tags": [
+            "fine observed detail",
+            "oil glazes"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.bistre",
+      "name": "Bistre wash drawing",
+      "description": "A bistre-wash drawing. Use warm transparent brown over pale paper.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "bistre",
+        "brown",
+        "drawing"
+      ],
+      "claims": {
+        "medium": "history.bistre",
+        "palette": "history-bistre",
+        "texture": "history.bistre"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A bistre-wash drawing",
+          "tags": [
+            "bistre drawing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm transparent brown over pale paper",
+          "tags": [
+            "transparent bistre brown"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine pen contours visible through pooled tonal washes",
+          "tags": [
+            "fine pen",
+            "pooled wash"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.sanguine",
+      "name": "Sanguine chalk",
+      "description": "A chalk study on warm paper. Model forms through delicate chalk value changes.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "sanguine",
+        "chalk",
+        "study"
+      ],
+      "claims": {
+        "medium": "history.sanguine",
+        "lighting": "history-sanguine",
+        "texture": "history.sanguine",
+        "palette": "history-sanguine"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A chalk study on warm paper",
+          "tags": [
+            "chalk study",
+            "warm paper"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Model forms through delicate chalk value changes",
+          "tags": [
+            "delicate chalk modeling"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm red sanguine-chalk values",
+          "tags": [
+            "sanguine red chalk"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show fine chalk grain and softly rubbed shadow passages",
+          "tags": [
+            "chalk grain",
+            "rubbed shadows"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.grisaille",
+      "name": "Grisaille underpainting",
+      "description": "A thinly layered tonal painting. Describe sculptural volumes through a carefully controlled value scale.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "grisaille",
+        "gray",
+        "painting"
+      ],
+      "claims": {
+        "medium": "history.grisaille",
+        "lighting": "history-grisaille",
+        "texture": "history.grisaille",
+        "palette": "history-grisaille"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A thinly layered tonal painting",
+          "tags": [
+            "tonal underpainting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Describe sculptural volumes through a carefully controlled value scale",
+          "tags": [
+            "sculptural value modeling"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep the image in neutral grisaille values",
+          "tags": [
+            "neutral grisaille"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep thin painted layers with restrained opaque highlights",
+          "tags": [
+            "thin gray layers",
+            "opaque lights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.verdaccio",
+      "name": "Verdaccio study",
+      "description": "A verdaccio underpainting interpretation. Use muted green-earth and warm neutral value relationships.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "verdaccio",
+        "green earth",
+        "underpaint"
+      ],
+      "claims": {
+        "medium": "history.verdaccio",
+        "palette": "history-verdaccio",
+        "texture": "history.verdaccio"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A verdaccio underpainting interpretation",
+          "tags": [
+            "verdaccio underpainting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted green-earth and warm neutral value relationships",
+          "tags": [
+            "green earth",
+            "warm neutral"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show thin brushed pigment and softly joined value masses",
+          "tags": [
+            "thin brushed pigment",
+            "joined values"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.preraphaelite",
+      "name": "Pre-Raphaelite clarity",
+      "description": "A Pre-Raphaelite-inspired painted interpretation. Use clear luminous local color with rich small accents.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "pre raphaelite",
+        "detail",
+        "color"
+      ],
+      "claims": {
+        "medium": "history.preraphaelite",
+        "palette": "history-preraphaelite",
+        "texture": "history.preraphaelite"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Pre-Raphaelite-inspired painted interpretation",
+          "tags": [
+            "pre raphaelite painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use clear luminous local color with rich small accents",
+          "tags": [
+            "luminous local color"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Render precise material detail over a smoothly worked surface",
+          "tags": [
+            "precise painted detail",
+            "smooth surface"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.academic",
+      "name": "Academic painted form",
+      "description": "An academic oil-painting study. Model the supplied forms with measured controlled transitions.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "academic",
+        "painting",
+        "modeled"
+      ],
+      "claims": {
+        "medium": "history.academic",
+        "lighting": "history-academic",
+        "texture": "history.academic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An academic oil-painting study",
+          "tags": [
+            "academic oil painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Model the supplied forms with measured controlled transitions",
+          "tags": [
+            "measured tonal transitions"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep smoothly joined paint surfaces and precise focal edges",
+          "tags": [
+            "smooth paint",
+            "precise focal edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.aesthetic",
+      "name": "Aesthetic-movement harmony",
+      "description": "An Aesthetic-movement inspired decorative image. Favor asymmetrical balance and quiet decorative relationships.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "aesthetic movement",
+        "decorative",
+        "harmony"
+      ],
+      "claims": {
+        "medium": "history.aesthetic",
+        "composition": "history-aesthetic",
+        "palette": "history-aesthetic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An Aesthetic-movement inspired decorative image",
+          "tags": [
+            "aesthetic movement art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Favor asymmetrical balance and quiet decorative relationships",
+          "tags": [
+            "quiet asymmetric balance"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted olive, ochre and restrained blue-green harmonies",
+          "tags": [
+            "olive ochre",
+            "blue green harmony"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.artscrafts",
+      "name": "Arts-and-Crafts image",
+      "description": "An Arts-and-Crafts inspired illustration. Use integrated borders and rhythmic simplified natural forms already present.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "arts crafts",
+        "handmade",
+        "ornamental"
+      ],
+      "claims": {
+        "medium": "history.artscrafts",
+        "composition": "history-artscrafts",
+        "texture": "history.artscrafts"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An Arts-and-Crafts inspired illustration",
+          "tags": [
+            "arts and crafts illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use integrated borders and rhythmic simplified natural forms already present",
+          "tags": [
+            "integrated borders",
+            "rhythmic forms"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep crisp hand-drawn edges and a restrained printed-paper surface",
+          "tags": [
+            "hand drawn edges",
+            "paper surface"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.cloisonnist",
+      "name": "Cloisonnist boundaries",
+      "description": "A cloisonnist painted interpretation. Contain broad flat color regions within dark clear contours.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "cloisonnism",
+        "outline",
+        "flat"
+      ],
+      "claims": {
+        "medium": "history.cloisonnist",
+        "composition": "history-cloisonnist",
+        "palette": "history-cloisonnist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cloisonnist painted interpretation",
+          "tags": [
+            "cloisonnist painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Contain broad flat color regions within dark clear contours",
+          "tags": [
+            "dark contours",
+            "flat regions"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use a few strong harmonious colors without fine tonal modeling",
+          "tags": [
+            "strong harmonious flat colors"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.synthetist",
+      "name": "Synthetist color planes",
+      "description": "A synthetist painted interpretation. Simplify the existing forms into expressive decorative planes.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "synthetism",
+        "flat",
+        "expressive"
+      ],
+      "claims": {
+        "medium": "history.synthetist",
+        "composition": "history-synthetist",
+        "palette": "history-synthetist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A synthetist painted interpretation",
+          "tags": [
+            "synthetist painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Simplify the existing forms into expressive decorative planes",
+          "tags": [
+            "expressive decorative planes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Let subjective flat color relationships carry the image mood",
+          "tags": [
+            "subjective flat color"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.ashcan",
+      "name": "Ashcan brushwork",
+      "description": "An Ashcan-school inspired oil interpretation. Use subdued dark earth tones and a few warm lights.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "ashcan",
+        "urban realism",
+        "oil"
+      ],
+      "claims": {
+        "medium": "history.ashcan",
+        "palette": "history-ashcan",
+        "texture": "history.ashcan"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An Ashcan-school inspired oil interpretation",
+          "tags": [
+            "ashcan oil painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use subdued dark earth tones and a few warm lights",
+          "tags": [
+            "dark earth tones",
+            "warm lights"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep blunt lively brushwork and unidealized surface detail",
+          "tags": [
+            "blunt lively brushwork"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "history.socialrealist",
+      "name": "Social-realist massing",
+      "description": "A social-realist painted interpretation of the supplied content. Use weighty connected forms and a clear collective visual rhythm.",
+      "category": "historical",
+      "kind": "style",
+      "tags": [
+        "historical",
+        "social realism",
+        "mural",
+        "mass"
+      ],
+      "claims": {
+        "medium": "history.socialrealist",
+        "composition": "history-socialrealist",
+        "texture": "history.socialrealist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A social-realist painted interpretation of the supplied content",
+          "tags": [
+            "social realist painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use weighty connected forms and a clear collective visual rhythm",
+          "tags": [
+            "weighty forms",
+            "collective rhythm"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep broad matte paint and robust simplified contours",
+          "tags": [
+            "matte paint",
+            "robust contours"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

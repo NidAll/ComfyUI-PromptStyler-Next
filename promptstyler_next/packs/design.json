@@ -1,0 +1,1181 @@
+{
+  "schema_version": 1,
+  "id": "next.design",
+  "version": "1.0.0",
+  "name": "Graphic design languages",
+  "description": "Image composition treatments; no typography is invented.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "design.swiss",
+      "name": "Swiss graphic order",
+      "description": "A Swiss-style graphic composition of the supplied content. Use an asymmetrical grid and disciplined aligned spacing.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "swiss",
+        "grid",
+        "typography"
+      ],
+      "claims": {
+        "medium": "design.swiss",
+        "composition": "design-swiss",
+        "palette": "design-swiss"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Swiss-style graphic composition of the supplied content",
+          "tags": [
+            "swiss graphic design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use an asymmetrical grid and disciplined aligned spacing",
+          "tags": [
+            "asymmetric grid",
+            "aligned spacing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use restrained neutrals and one strong red accent",
+          "tags": [
+            "neutral palette",
+            "red accent"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.bauhaus",
+      "name": "Bauhaus construction",
+      "description": "A Bauhaus-inspired graphic construction. Translate forms into balanced circles, bars and rectangular planes.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "bauhaus",
+        "geometric",
+        "primary"
+      ],
+      "claims": {
+        "medium": "design.bauhaus",
+        "composition": "design-bauhaus",
+        "palette": "design-bauhaus"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Bauhaus-inspired graphic construction",
+          "tags": [
+            "bauhaus design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Translate forms into balanced circles, bars and rectangular planes",
+          "tags": [
+            "balanced geometric planes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use primary colors with black and warm off-white",
+          "tags": [
+            "primary colors",
+            "black",
+            "warm white"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.artdeco",
+      "name": "Art Deco geometry",
+      "description": "An Art Deco graphic illustration. Use stepped geometry, symmetry and elongated arcs.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "art deco",
+        "geometric",
+        "elegant"
+      ],
+      "claims": {
+        "medium": "design.artdeco",
+        "composition": "design-artdeco",
+        "palette": "design-artdeco"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An Art Deco graphic illustration",
+          "tags": [
+            "art deco illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use stepped geometry, symmetry and elongated arcs",
+          "tags": [
+            "stepped geometry",
+            "symmetry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Contrast deep ink tones with restrained metallic gold",
+          "tags": [
+            "deep ink",
+            "metallic gold"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.artnouveau",
+      "name": "Art Nouveau flow",
+      "description": "An Art Nouveau graphic illustration. Use flowing contour rhythms and integrated organic borders.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "art nouveau",
+        "botanical",
+        "organic"
+      ],
+      "claims": {
+        "medium": "design.artnouveau",
+        "composition": "design-artnouveau",
+        "palette": "design-artnouveau"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An Art Nouveau graphic illustration",
+          "tags": [
+            "art nouveau illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use flowing contour rhythms and integrated organic borders",
+          "tags": [
+            "flowing contours",
+            "organic framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep muted moss, ochre and cream colors",
+          "tags": [
+            "moss green",
+            "ochre",
+            "cream"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.constructivist",
+      "name": "Constructivist diagonal",
+      "description": "A constructivist graphic composition. Use assertive diagonals and cropped geometric masses.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "constructivism",
+        "diagonal",
+        "poster"
+      ],
+      "claims": {
+        "medium": "design.constructivist",
+        "composition": "design-constructivist",
+        "palette": "design-constructivist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A constructivist graphic composition",
+          "tags": [
+            "constructivist design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use assertive diagonals and cropped geometric masses",
+          "tags": [
+            "diagonal geometry",
+            "cropped masses"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use vermilion, black and uncoated-paper cream",
+          "tags": [
+            "vermilion",
+            "black",
+            "paper cream"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.memphis",
+      "name": "Memphis play",
+      "description": "A Memphis-style graphic interpretation. Balance offset geometric pieces with loose rhythmic patterns.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "memphis",
+        "pattern",
+        "playful"
+      ],
+      "claims": {
+        "medium": "design.memphis",
+        "composition": "design-memphis",
+        "palette": "design-memphis"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Memphis-style graphic interpretation",
+          "tags": [
+            "memphis design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Balance offset geometric pieces with loose rhythmic patterns",
+          "tags": [
+            "offset geometry",
+            "rhythmic patterns"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use playful coral, mint and sunny yellow against dark accents",
+          "tags": [
+            "coral",
+            "mint",
+            "yellow",
+            "dark accents"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.brutalist",
+      "name": "Graphic brutalism",
+      "description": "A raw graphic-brutalist composition. Use blunt oversized forms and deliberately exposed alignments.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "brutalism",
+        "raw",
+        "blunt"
+      ],
+      "claims": {
+        "medium": "design.brutalist",
+        "composition": "design-brutalist",
+        "texture": "design.brutalist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A raw graphic-brutalist composition",
+          "tags": [
+            "graphic brutalism"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use blunt oversized forms and deliberately exposed alignments",
+          "tags": [
+            "oversized forms",
+            "exposed alignment"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep rough copied edges and uncoated-paper character",
+          "tags": [
+            "rough copied edges",
+            "uncoated paper"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.opart",
+      "name": "Optical rhythm",
+      "description": "An op-art interpretation using rhythmic geometric fields. Use controlled line spacing and figure-ground reversals.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "op art",
+        "optical",
+        "pattern"
+      ],
+      "claims": {
+        "medium": "design.opart",
+        "composition": "design-opart",
+        "palette": "design-opart"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An op-art interpretation using rhythmic geometric fields",
+          "tags": [
+            "op art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use controlled line spacing and figure-ground reversals",
+          "tags": [
+            "rhythmic lines",
+            "figure ground reversal"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use sharply separated black and white values",
+          "tags": [
+            "black and white contrast"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.isotype",
+      "name": "Pictogram clarity",
+      "description": "A pictogram-based graphic simplification. Reduce the supplied forms to consistent clear visual units.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "pictogram",
+        "isotype",
+        "information"
+      ],
+      "claims": {
+        "medium": "design.isotype",
+        "composition": "design-isotype",
+        "palette": "design-isotype"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A pictogram-based graphic simplification",
+          "tags": [
+            "pictogram design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reduce the supplied forms to consistent clear visual units",
+          "tags": [
+            "consistent visual units"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use flat distinguishable colors with minimal shading",
+          "tags": [
+            "flat distinguishable colors"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.collage",
+      "name": "Modernist photomontage",
+      "description": "A modernist photomontage interpretation. Build tension through sharp crops and overlapping scale contrasts.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "photomontage",
+        "modernist",
+        "collage"
+      ],
+      "claims": {
+        "medium": "design.collage",
+        "composition": "design-collage",
+        "texture": "design.collage"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A modernist photomontage interpretation",
+          "tags": [
+            "modernist photomontage"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Build tension through sharp crops and overlapping scale contrasts",
+          "tags": [
+            "sharp crops",
+            "scale contrast"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve cut edges and halftone reproduction marks",
+          "tags": [
+            "cut edges",
+            "halftone reproduction"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.silkscarf",
+      "name": "Decorative scarf layout",
+      "description": "A decorative printed-scarf interpretation of the supplied forms. Use rhythmic motifs framed by a deliberate ornamental border.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "scarf",
+        "ornamental",
+        "border"
+      ],
+      "claims": {
+        "medium": "design.silkscarf",
+        "composition": "design-silkscarf",
+        "palette": "design-silkscarf"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A decorative printed-scarf interpretation of the supplied forms",
+          "tags": [
+            "printed scarf design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use rhythmic motifs framed by a deliberate ornamental border",
+          "tags": [
+            "rhythmic motifs",
+            "ornamental border"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Balance saturated flat color with small pale separating spaces",
+          "tags": [
+            "saturated flat color",
+            "pale separators"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.monoline",
+      "name": "Monoline reduction",
+      "description": "A monoline graphic illustration. Describe the forms with continuous even-weight contours.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "monoline",
+        "line",
+        "minimal"
+      ],
+      "claims": {
+        "medium": "design.monoline",
+        "composition": "design-monoline",
+        "texture": "design.monoline"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A monoline graphic illustration",
+          "tags": [
+            "monoline illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Describe the forms with continuous even-weight contours",
+          "tags": [
+            "continuous even weight contours"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep broad unmarked spaces between clean lines",
+          "tags": [
+            "clean lines",
+            "unmarked spaces"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.streamline",
+      "name": "Streamline Moderne",
+      "description": "A Streamline Moderne graphic interpretation. Use long horizontal bands and smooth aerodynamic curves.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "streamline",
+        "moderne",
+        "curves"
+      ],
+      "claims": {
+        "medium": "design.streamline",
+        "composition": "design-streamline",
+        "palette": "design-streamline"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Streamline Moderne graphic interpretation",
+          "tags": [
+            "streamline moderne design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use long horizontal bands and smooth aerodynamic curves",
+          "tags": [
+            "horizontal bands",
+            "aerodynamic curves"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Balance cream and muted sea-green with deep dark accents",
+          "tags": [
+            "cream",
+            "sea green",
+            "dark accents"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.psychedelic",
+      "name": "Psychedelic contour",
+      "description": "A psychedelic graphic illustration. Let the existing forms flow into nested sinuous contours.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "psychedelic",
+        "contour",
+        "poster"
+      ],
+      "claims": {
+        "medium": "design.psychedelic",
+        "composition": "design-psychedelic",
+        "palette": "design-psychedelic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A psychedelic graphic illustration",
+          "tags": [
+            "psychedelic graphic art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the existing forms flow into nested sinuous contours",
+          "tags": [
+            "nested sinuous contours"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use vibrating adjacent warm and cool hues",
+          "tags": [
+            "vibrating warm cool hues"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.newwave",
+      "name": "New-wave print grid",
+      "description": "A new-wave graphic composition. Break a clear grid with controlled offsets and layered fragments.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "new wave",
+        "grid",
+        "print"
+      ],
+      "claims": {
+        "medium": "design.newwave",
+        "composition": "design-newwave",
+        "texture": "design.newwave"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A new-wave graphic composition",
+          "tags": [
+            "new wave graphic design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Break a clear grid with controlled offsets and layered fragments",
+          "tags": [
+            "broken grid",
+            "controlled offsets"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep coarse print dots and photocopied tonal fragments",
+          "tags": [
+            "coarse print dots",
+            "copied fragments"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.de-stijl",
+      "name": "De Stijl balance",
+      "description": "A De Stijl graphic reduction. Use orthogonal narrow divisions and unequal rectangular fields.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "de stijl",
+        "geometric",
+        "primary"
+      ],
+      "claims": {
+        "medium": "design.de-stijl",
+        "composition": "design-de-stijl",
+        "palette": "design-de-stijl"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A De Stijl graphic reduction",
+          "tags": [
+            "de stijl design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use orthogonal narrow divisions and unequal rectangular fields",
+          "tags": [
+            "orthogonal divisions",
+            "rectangular fields"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Reserve small primary-color fields within a predominantly pale ground",
+          "tags": [
+            "small primary fields",
+            "pale ground"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.dada",
+      "name": "Dada cut-and-paste",
+      "description": "A Dada-inspired cut-and-paste image. Use abrupt scale shifts and deliberately disjointed crops.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "dada",
+        "collage",
+        "disruptive"
+      ],
+      "claims": {
+        "medium": "design.dada",
+        "composition": "design-dada",
+        "texture": "design.dada"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Dada-inspired cut-and-paste image",
+          "tags": [
+            "dada collage"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use abrupt scale shifts and deliberately disjointed crops",
+          "tags": [
+            "abrupt scale shifts",
+            "disjointed crops"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve rough scissors edges and printed scraps",
+          "tags": [
+            "scissors edges",
+            "printed scraps"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.streamgrid",
+      "name": "Modular color grid",
+      "description": "A modular color-grid interpretation. Arrange the supplied content through consistent rectangular units.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "modular",
+        "grid",
+        "color"
+      ],
+      "claims": {
+        "medium": "design.streamgrid",
+        "composition": "design-streamgrid",
+        "palette": "design-streamgrid"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A modular color-grid interpretation",
+          "tags": [
+            "modular grid design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange the supplied content through consistent rectangular units",
+          "tags": [
+            "consistent rectangular units"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Assign distinct restrained colors to the existing visual groups",
+          "tags": [
+            "restrained grouped colors"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.ornamental",
+      "name": "Victorian ornamental print",
+      "description": "A Victorian ornamental-print interpretation. Frame the supplied forms with balanced ornamental line rhythms.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "victorian",
+        "ornamental",
+        "engraved"
+      ],
+      "claims": {
+        "medium": "design.ornamental",
+        "composition": "design-ornamental",
+        "texture": "design.ornamental"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Victorian ornamental-print interpretation",
+          "tags": [
+            "victorian ornamental print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Frame the supplied forms with balanced ornamental line rhythms",
+          "tags": [
+            "balanced ornamental framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use fine engraved contours and patterned tonal fills",
+          "tags": [
+            "engraved contours",
+            "patterned fills"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.decofashion",
+      "name": "Jazz-age pochoir",
+      "description": "A jazz-age pochoir graphic illustration. Use elegant elongated shapes and broad poised spaces.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "jazz age",
+        "pochoir",
+        "elegant"
+      ],
+      "claims": {
+        "medium": "design.decofashion",
+        "composition": "design-decofashion",
+        "palette": "design-decofashion"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A jazz-age pochoir graphic illustration",
+          "tags": [
+            "jazz age pochoir"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use elegant elongated shapes and broad poised spaces",
+          "tags": [
+            "elongated shapes",
+            "poised spaces"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Balance deep black with a few saturated flat-color accents",
+          "tags": [
+            "deep black",
+            "saturated accents"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.gestalt",
+      "name": "Gestalt figure-ground",
+      "description": "A Gestalt-inspired graphic reduction. Use closure and shared negative space to imply the supplied forms.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "gestalt",
+        "figure ground",
+        "minimal"
+      ],
+      "claims": {
+        "medium": "design.gestalt",
+        "composition": "design-gestalt",
+        "palette": "design-gestalt"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Gestalt-inspired graphic reduction",
+          "tags": [
+            "gestalt graphic design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use closure and shared negative space to imply the supplied forms",
+          "tags": [
+            "closure",
+            "shared negative space"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep a strict two-color figure-ground relationship",
+          "tags": [
+            "two color figure ground"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.fluorescent",
+      "name": "Fluorescent spot print",
+      "description": "A fluorescent-ink graphic interpretation. Contrast one fluorescent ink with deep neutral supporting shapes.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "fluorescent",
+        "spot print",
+        "vivid"
+      ],
+      "claims": {
+        "medium": "design.fluorescent",
+        "palette": "design-fluorescent",
+        "texture": "design.fluorescent"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A fluorescent-ink graphic interpretation",
+          "tags": [
+            "fluorescent graphic print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Contrast one fluorescent ink with deep neutral supporting shapes",
+          "tags": [
+            "fluorescent spot ink",
+            "neutral shapes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show light screen-print texture and clear overprint edges",
+          "tags": [
+            "screen print grain",
+            "overprint edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.trompe",
+      "name": "Graphic trompe-l’œil",
+      "description": "A graphic trompe-l’œil interpretation. Use precise perspective and shallow visual depth to articulate the supplied forms.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "trompe loeil",
+        "dimensional",
+        "shadow"
+      ],
+      "claims": {
+        "medium": "design.trompe",
+        "composition": "design-trompe",
+        "lighting": "design-trompe"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A graphic trompe-l’œil interpretation",
+          "tags": [
+            "graphic trompe loeil"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use precise perspective and shallow visual depth to articulate the supplied forms",
+          "tags": [
+            "precise perspective",
+            "shallow depth"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep one consistent cast-shadow direction",
+          "tags": [
+            "consistent graphic shadows"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "design.fibrous",
+      "name": "Handmade-paper graphic",
+      "description": "A graphic composition built from handmade-paper shapes. Use clear flat forms with naturally irregular boundaries.",
+      "category": "design",
+      "kind": "style",
+      "tags": [
+        "design",
+        "handmade paper",
+        "fiber",
+        "organic"
+      ],
+      "claims": {
+        "medium": "design.fibrous",
+        "composition": "design-fibrous",
+        "texture": "design.fibrous"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A graphic composition built from handmade-paper shapes",
+          "tags": [
+            "handmade paper graphic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use clear flat forms with naturally irregular boundaries",
+          "tags": [
+            "flat forms",
+            "irregular boundaries"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep visible plant fibers and soft deckled edges",
+          "tags": [
+            "plant fibers",
+            "deckled edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

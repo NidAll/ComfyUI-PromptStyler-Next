@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.hypothesis/
+.ruff_cache/
+.mypy_cache/
+.coverage*
+htmlcov/
+dist/
+build/
+*.egg-info/
+.venv/
+node_modules/
+custom_packs/*.json
+!custom_packs/example.json.example

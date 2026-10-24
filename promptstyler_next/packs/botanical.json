@@ -1,0 +1,1167 @@
+{
+  "schema_version": 1,
+  "id": "next.botanical",
+  "version": "1.0.0",
+  "name": "Botanical observation",
+  "description": "Natural-history and botanical-study aesthetics centered on supplied plants and their observable structures.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "botanical.herbarium-sheet",
+      "name": "Pressed herbarium sheet",
+      "description": "Use a pressed-herbarium specimen presentation. Keep the supplied plant's silhouette openly readable.",
+      "category": "botanical/specimen",
+      "kind": "style",
+      "tags": [
+        "herbarium",
+        "pressed",
+        "botany",
+        "specimen"
+      ],
+      "claims": {
+        "medium": "botanical.herbarium-sheet",
+        "composition": "botanical-herbarium-sheet",
+        "palette": "botanical-herbarium-sheet",
+        "texture": "botanical.herbarium-sheet"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a pressed-herbarium specimen presentation",
+          "tags": [
+            "pressed herbarium sheet"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied plant's silhouette openly readable",
+          "tags": [
+            "open specimen silhouette"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal flattened veins dry margins and paper fibers",
+          "tags": [
+            "pressed veins",
+            "dry edges",
+            "paper fibers"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use faded plant greens against warm archival paper",
+          "tags": [
+            "faded green",
+            "archival ivory"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.root-study",
+      "name": "Root-system drawing",
+      "description": "Use a careful botanical root-system drawing style. Let the supplied branching structure remain traceable.",
+      "category": "botanical/structure",
+      "kind": "style",
+      "tags": [
+        "roots",
+        "botany",
+        "drawing",
+        "structure"
+      ],
+      "claims": {
+        "medium": "botanical.root-study",
+        "composition": "botanical-root-study",
+        "palette": "botanical-root-study",
+        "texture": "botanical.root-study"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a careful botanical root-system drawing style",
+          "tags": [
+            "root system drawing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied branching structure remain traceable",
+          "tags": [
+            "traceable root branching"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use delicate line variation and sparse earth texture",
+          "tags": [
+            "delicate root lines"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use sepia ink with muted earth washes",
+          "tags": [
+            "sepia",
+            "earth wash"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.leaf-venation",
+      "name": "Leaf venation study",
+      "description": "Use a fine botanical-venation illustration. Let the supplied vein hierarchy guide the composition.",
+      "category": "botanical/structure",
+      "kind": "style",
+      "tags": [
+        "leaf",
+        "venation",
+        "botany",
+        "detail"
+      ],
+      "claims": {
+        "medium": "botanical.leaf-venation",
+        "composition": "botanical-leaf-venation",
+        "palette": "botanical-leaf-venation",
+        "texture": "botanical.leaf-venation"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a fine botanical-venation illustration",
+          "tags": [
+            "leaf venation study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied vein hierarchy guide the composition",
+          "tags": [
+            "vein hierarchy"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Distinguish major veins from delicate connecting networks",
+          "tags": [
+            "fine vein network"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use restrained green-gray ink over pale paper",
+          "tags": [
+            "green gray",
+            "pale paper"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.seed-dispersal",
+      "name": "Seed-form plate",
+      "description": "Use a natural-history seed-form plate. Give the supplied seed shape clear surrounding space.",
+      "category": "botanical/specimen",
+      "kind": "style",
+      "tags": [
+        "seed",
+        "botany",
+        "form",
+        "natural-history"
+      ],
+      "claims": {
+        "medium": "botanical.seed-dispersal",
+        "composition": "botanical-seed-dispersal",
+        "palette": "botanical-seed-dispersal",
+        "texture": "botanical.seed-dispersal"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a natural-history seed-form plate",
+          "tags": [
+            "seed form illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Give the supplied seed shape clear surrounding space",
+          "tags": [
+            "isolated seed form"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal ridges husks and fine surface hairs",
+          "tags": [
+            "seed ridges",
+            "husk detail"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use dry ochre umber and soft gray",
+          "tags": [
+            "dry ochre",
+            "umber",
+            "soft gray"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.fruit-section",
+      "name": "Botanical fruit section",
+      "description": "Render a careful botanical fruit-section study. Make the supplied internal arrangement plainly readable.",
+      "category": "botanical/structure",
+      "kind": "style",
+      "tags": [
+        "fruit",
+        "section",
+        "botany",
+        "watercolor"
+      ],
+      "claims": {
+        "medium": "botanical.fruit-section",
+        "composition": "botanical-fruit-section",
+        "palette": "botanical-fruit-section",
+        "texture": "botanical.fruit-section"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render a careful botanical fruit-section study",
+          "tags": [
+            "botanical fruit section"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Make the supplied internal arrangement plainly readable",
+          "tags": [
+            "readable fruit section"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use transparent washes with crisp boundary drawing",
+          "tags": [
+            "transparent botanical wash"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Keep pigments close to the supplied specimen colors",
+          "tags": [
+            "descriptive fruit pigments"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.flower-morphology",
+      "name": "Flower morphology plate",
+      "description": "Use a clear flower-morphology illustration style. Separate supplied overlapping structures through line hierarchy.",
+      "category": "botanical/structure",
+      "kind": "style",
+      "tags": [
+        "flower",
+        "morphology",
+        "botany",
+        "illustration"
+      ],
+      "claims": {
+        "medium": "botanical.flower-morphology",
+        "composition": "botanical-flower-morphology",
+        "palette": "botanical-flower-morphology",
+        "texture": "botanical.flower-morphology"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a clear flower-morphology illustration style",
+          "tags": [
+            "flower morphology plate"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate supplied overlapping structures through line hierarchy",
+          "tags": [
+            "floral structure hierarchy"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use delicate contour-following shading",
+          "tags": [
+            "delicate botanical shading"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use soft local colors against warm white",
+          "tags": [
+            "soft local colors",
+            "warm white"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.bud-sequence",
+      "name": "Bud sequence study",
+      "description": "Use an observational botanical-sequence treatment. Align the supplied stages at a comparable viewing scale.",
+      "category": "botanical/observation",
+      "kind": "style",
+      "tags": [
+        "bud",
+        "sequence",
+        "growth",
+        "botany"
+      ],
+      "claims": {
+        "medium": "botanical.bud-sequence",
+        "composition": "botanical-bud-sequence",
+        "palette": "botanical-bud-sequence",
+        "texture": "botanical.bud-sequence"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an observational botanical-sequence treatment",
+          "tags": [
+            "botanical sequence study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Align the supplied stages at a comparable viewing scale",
+          "tags": [
+            "comparable growth stages"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep small structural differences precisely drawn",
+          "tags": [
+            "fine growth detail"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use consistent restrained watercolor across the sequence",
+          "tags": [
+            "restrained botanical watercolor"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.bark-rubbing",
+      "name": "Bark surface rubbing",
+      "description": "Use a tactile bark-rubbing visual treatment. Let the supplied surface rhythm fill a simple field.",
+      "category": "botanical/surface",
+      "kind": "style",
+      "tags": [
+        "bark",
+        "rubbing",
+        "tree",
+        "texture"
+      ],
+      "claims": {
+        "medium": "botanical.bark-rubbing",
+        "composition": "botanical-bark-rubbing",
+        "palette": "botanical-bark-rubbing",
+        "texture": "botanical.bark-rubbing"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a tactile bark-rubbing visual treatment",
+          "tags": [
+            "bark rubbing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied surface rhythm fill a simple field",
+          "tags": [
+            "surface rhythm study"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal raised ridges through broken graphite contact",
+          "tags": [
+            "broken graphite",
+            "bark ridges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use graphite charcoal and pale paper",
+          "tags": [
+            "graphite",
+            "charcoal",
+            "pale paper"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.lichen-study",
+      "name": "Lichen field study",
+      "description": "Use a close natural-history lichen study. Keep supplied growth forms distinct against their substrate.",
+      "category": "botanical/specimen",
+      "kind": "style",
+      "tags": [
+        "lichen",
+        "field",
+        "botany",
+        "surface"
+      ],
+      "claims": {
+        "medium": "botanical.lichen-study",
+        "composition": "botanical-lichen-study",
+        "palette": "botanical-lichen-study",
+        "texture": "botanical.lichen-study"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a close natural-history lichen study",
+          "tags": [
+            "lichen field study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied growth forms distinct against their substrate",
+          "tags": [
+            "distinct growth forms"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal powdery crusts branching lobes and tiny edge relief",
+          "tags": [
+            "powdery crust",
+            "lichen relief"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted sage mineral yellow and stone gray",
+          "tags": [
+            "sage",
+            "mineral yellow",
+            "stone gray"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.moss-cushion",
+      "name": "Moss cushion study",
+      "description": "Use an intimate moss-structure illustration. Read the supplied growth through layered small-scale masses.",
+      "category": "botanical/specimen",
+      "kind": "style",
+      "tags": [
+        "moss",
+        "botany",
+        "close-study",
+        "green"
+      ],
+      "claims": {
+        "medium": "botanical.moss-cushion",
+        "composition": "botanical-moss-cushion",
+        "palette": "botanical-moss-cushion",
+        "texture": "botanical.moss-cushion"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an intimate moss-structure illustration",
+          "tags": [
+            "moss cushion study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Read the supplied growth through layered small-scale masses",
+          "tags": [
+            "layered moss masses"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine fronds and soft water sheen distinct",
+          "tags": [
+            "fine moss fronds",
+            "water sheen"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use a narrow green range with warm earth shadows",
+          "tags": [
+            "narrow green",
+            "earth shadows"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.fern-study",
+      "name": "Fern frond plate",
+      "description": "Use a delicate fern-frond plate treatment. Let the supplied repeated leaf structure establish rhythm.",
+      "category": "botanical/specimen",
+      "kind": "style",
+      "tags": [
+        "fern",
+        "frond",
+        "botany",
+        "pattern"
+      ],
+      "claims": {
+        "medium": "botanical.fern-study",
+        "composition": "botanical-fern-study",
+        "palette": "botanical-fern-study",
+        "texture": "botanical.fern-study"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a delicate fern-frond plate treatment",
+          "tags": [
+            "fern frond plate"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied repeated leaf structure establish rhythm",
+          "tags": [
+            "repeated frond rhythm"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep stems finer than the surrounding leaflet contours",
+          "tags": [
+            "fine stems",
+            "leaflet contours"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use ink green with a faint cream ground",
+          "tags": [
+            "ink green",
+            "cream ground"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.succulent-form",
+      "name": "Succulent form study",
+      "description": "Use a sculptural botanical form-study treatment. Read the supplied plant through overlapping fleshy volumes.",
+      "category": "botanical/specimen",
+      "kind": "style",
+      "tags": [
+        "succulent",
+        "form",
+        "botany",
+        "volume"
+      ],
+      "claims": {
+        "medium": "botanical.succulent-form",
+        "composition": "botanical-succulent-form",
+        "palette": "botanical-succulent-form",
+        "texture": "botanical.succulent-form"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a sculptural botanical form-study treatment",
+          "tags": [
+            "succulent form study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Read the supplied plant through overlapping fleshy volumes",
+          "tags": [
+            "overlapping plant volumes"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Show waxy surfaces and soft edge translucency",
+          "tags": [
+            "waxy leaves",
+            "edge translucency"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use restrained blue-green and clay-gray tones",
+          "tags": [
+            "blue green",
+            "clay gray"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.orchard-branch",
+      "name": "Orchard branch study",
+      "description": "Use an orchard-branch watercolor-study style. Let the supplied branch direction organize the open page.",
+      "category": "botanical/specimen",
+      "kind": "style",
+      "tags": [
+        "orchard",
+        "branch",
+        "botany",
+        "fruit"
+      ],
+      "claims": {
+        "medium": "botanical.orchard-branch",
+        "composition": "botanical-orchard-branch",
+        "palette": "botanical-orchard-branch",
+        "texture": "botanical.orchard-branch"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an orchard-branch watercolor-study style",
+          "tags": [
+            "orchard branch study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied branch direction organize the open page",
+          "tags": [
+            "branch-led page"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Balance delicate twigs with softly modeled fruit surfaces",
+          "tags": [
+            "delicate twigs",
+            "modeled fruit"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm fruit pigments with subdued foliage",
+          "tags": [
+            "warm fruit",
+            "subdued foliage"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.wild-grass",
+      "name": "Wild-grass observation",
+      "description": "Use a fine wild-grass observational sketch. Keep the supplied stems airy and spatially separated.",
+      "category": "botanical/field",
+      "kind": "style",
+      "tags": [
+        "grass",
+        "wild",
+        "field",
+        "botany"
+      ],
+      "claims": {
+        "medium": "botanical.wild-grass",
+        "composition": "botanical-wild-grass",
+        "palette": "botanical-wild-grass",
+        "texture": "botanical.wild-grass"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a fine wild-grass observational sketch",
+          "tags": [
+            "wild grass study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied stems airy and spatially separated",
+          "tags": [
+            "airy stem spacing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use light wiry strokes and dry seed-head detail",
+          "tags": [
+            "wiry strokes",
+            "dry seed heads"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use faded straw green and pale graphite",
+          "tags": [
+            "straw green",
+            "pale graphite"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.aquatic-plant",
+      "name": "Aquatic plant plate",
+      "description": "Use a translucent aquatic-plant illustration style. Read the supplied forms through flowing continuous contours.",
+      "category": "botanical/specimen",
+      "kind": "style",
+      "tags": [
+        "aquatic",
+        "plant",
+        "botany",
+        "water"
+      ],
+      "claims": {
+        "medium": "botanical.aquatic-plant",
+        "composition": "botanical-aquatic-plant",
+        "palette": "botanical-aquatic-plant",
+        "texture": "botanical.aquatic-plant"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a translucent aquatic-plant illustration style",
+          "tags": [
+            "aquatic plant plate"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Read the supplied forms through flowing continuous contours",
+          "tags": [
+            "flowing plant contours"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Show delicate membranes and subtle underwater softness",
+          "tags": [
+            "delicate plant membranes"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use pale jade teal and quiet water gray",
+          "tags": [
+            "pale jade",
+            "teal",
+            "water gray"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.nocturnal-bloom",
+      "name": "Nocturnal bloom study",
+      "description": "Use a quiet nocturnal-botany photographic treatment. Separate the supplied plant gently from surrounding darkness.",
+      "category": "botanical/field",
+      "kind": "style",
+      "tags": [
+        "bloom",
+        "night",
+        "botany",
+        "observation"
+      ],
+      "claims": {
+        "medium": "botanical.nocturnal-bloom",
+        "composition": "botanical-nocturnal-bloom",
+        "palette": "botanical-nocturnal-bloom",
+        "texture": "botanical.nocturnal-bloom"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a quiet nocturnal-botany photographic treatment",
+          "tags": [
+            "nocturnal botanical study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate the supplied plant gently from surrounding darkness",
+          "tags": [
+            "gentle nocturnal isolation"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Let low light reveal soft petals and restrained dew",
+          "tags": [
+            "soft petals",
+            "restrained dew"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use pale botanical hues against deep green-black",
+          "tags": [
+            "pale bloom",
+            "green black"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.winter-twig",
+      "name": "Winter twig study",
+      "description": "Use a spare winter-twig drawing style. Let the supplied branching geometry carry the image.",
+      "category": "botanical/field",
+      "kind": "style",
+      "tags": [
+        "winter",
+        "twig",
+        "branch",
+        "botany"
+      ],
+      "claims": {
+        "medium": "botanical.winter-twig",
+        "composition": "botanical-winter-twig",
+        "palette": "botanical-winter-twig",
+        "texture": "botanical.winter-twig"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a spare winter-twig drawing style",
+          "tags": [
+            "winter twig study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied branching geometry carry the image",
+          "tags": [
+            "branch geometry"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal small buds scars and bark seams with few marks",
+          "tags": [
+            "buds",
+            "bark scars",
+            "fine seams"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use charcoal-brown ink on cool cream",
+          "tags": [
+            "charcoal brown",
+            "cool cream"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.pollination-detail",
+      "name": "Floral interaction study",
+      "description": "Use a natural-history floral-interaction study style. Keep the supplied point of interaction clear and unobstructed.",
+      "category": "botanical/observation",
+      "kind": "style",
+      "tags": [
+        "floral",
+        "interaction",
+        "botany",
+        "detail"
+      ],
+      "claims": {
+        "medium": "botanical.pollination-detail",
+        "composition": "botanical-pollination-detail",
+        "palette": "botanical-pollination-detail",
+        "texture": "botanical.pollination-detail"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a natural-history floral-interaction study style",
+          "tags": [
+            "floral interaction study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied point of interaction clear and unobstructed",
+          "tags": [
+            "clear interaction focus"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use selective fine detail around contact surfaces",
+          "tags": [
+            "selective botanical detail"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use descriptive botanical colors with a quiet ground",
+          "tags": [
+            "natural botanical color"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.plant-silhouette",
+      "name": "Botanical silhouette sheet",
+      "description": "Use a crisp botanical-silhouette print treatment. Give the supplied plant shape generous negative space.",
+      "category": "botanical/graphic",
+      "kind": "style",
+      "tags": [
+        "plant",
+        "silhouette",
+        "botany",
+        "graphic"
+      ],
+      "claims": {
+        "medium": "botanical.plant-silhouette",
+        "composition": "botanical-plant-silhouette",
+        "palette": "botanical-plant-silhouette",
+        "texture": "botanical.plant-silhouette"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a crisp botanical-silhouette print treatment",
+          "tags": [
+            "botanical silhouette print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Give the supplied plant shape generous negative space",
+          "tags": [
+            "botanical negative space"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine edge irregularities inside otherwise bold forms",
+          "tags": [
+            "bold plant shapes",
+            "fine edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use one dark botanical ink on warm uncoated stock",
+          "tags": [
+            "dark green ink",
+            "warm stock"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "botanical.field-watercolor",
+      "name": "Field watercolor notation",
+      "description": "Use an immediate field-watercolor botanical study. Keep the supplied specimen loosely centered with open observations.",
+      "category": "botanical/field",
+      "kind": "style",
+      "tags": [
+        "field",
+        "watercolor",
+        "botany",
+        "notebook"
+      ],
+      "claims": {
+        "medium": "botanical.field-watercolor",
+        "composition": "botanical-field-watercolor",
+        "palette": "botanical-field-watercolor",
+        "texture": "botanical.field-watercolor"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an immediate field-watercolor botanical study",
+          "tags": [
+            "field botanical watercolor"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied specimen loosely centered with open observations",
+          "tags": [
+            "open field-study layout"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Leave fresh wash edges and selective pencil structure visible",
+          "tags": [
+            "fresh wash",
+            "pencil structure"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use a small earth-and-leaf watercolor palette",
+          "tags": [
+            "earth pigment",
+            "leaf green"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

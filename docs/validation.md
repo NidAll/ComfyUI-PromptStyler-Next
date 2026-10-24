@@ -1,0 +1,73 @@
+# Validation and release status
+
+Version 0.1.0 was implemented and validated on 2026-10-24 as an independent local
+repository. Source, templates and documentation are prepared for review and
+publication. No remote repository, tag, package index or registry release was
+published by this work.
+
+## Validated behavior
+
+| Check | Result and scope |
+| --- | --- |
+| Standalone Python 3.14 | 157 tests passed, including property-based Unicode/recipe tests and real HTTP tests |
+| Installed ComfyUI Python 3.12 | 180 tests passed; the optional Hypothesis module is absent in the host environment and skipped there, but passed in the isolated development environment |
+| Runtime coverage | 93% including branches; engine composition 99% |
+| ComfyUI V3 host contract | 26 tests passed: actual schemas, registration, real prompt validation, native text previews and explicitly doubled encoder delegation |
+| Live ComfyUI API | Isolated CPU server registered all three nodes and successfully executed the bundled text-only graph through `/prompt` and `/history`; no image models loaded |
+| Node transport | 12 tests passed, including a real Python sidecar, HTTP bridge, typed-client behavior, raw duplicate-key rejection, errors and limits |
+| Actual Express / HEISS guard | Bridge mounted in Express 5 with HEISS's actual request guard; strict input, metadata preservation and foreign-origin rejection passed |
+| Static checks | Ruff lint/format and strict Mypy passed |
+| Library | 832 entries, 33 packs, 10 profiles; schema/ID/provenance checks, all eligible style/profile compositions, staged intensity and intent-preservation checks passed |
+| Packaging | Wheel/source archive inspections and clean installed-wheel smoke outside the checkout passed; checksums accompany artifacts |
+
+The property tests cover arbitrary valid Unicode, finite intensities, recipe
+round-trips and protected axes. Regression tests cover huge integer JSON values,
+style-wide negatives after conflict/protected-axis/intensity suppression, and
+ComfyUI's required literal wrapper for array-valued API widgets.
+
+Builtin authoring checks catch duplicate IDs/titles/descriptions/primary clauses,
+stock quality boosters, unsupported model references and hard palette constraints
+outside the palette axis. Concrete library regressions verify that a color grade
+replaces noir's monochrome requirement and that incompatible material looks cannot
+silently keep both rendering processes.
+
+## Browser acceptance
+
+The workbench was exercised in a real browser: discovery, model/query filters,
+favorites save/remove/filter, recipe layers, ordering, intensity, stale-output copy
+protection, advanced axis locks, unsupported-negative warnings and composed output
+inspection. Bookmarked filters survive refresh. Selected styles cannot be added
+twice. Raw imported recipe JSON reaches Python validation before normalization.
+
+Hallmark static inspection reported zero failures and zero reflex findings. Its
+optional Puppeteer render tier was unavailable; actual browser visual inspection
+was performed separately. Abstract swatches are clearly identified, with no
+fabricated image previews or visual-quality metrics.
+
+## Performance scope
+
+A local CPU text-only probe over 1000 two-layer compositions measured approximately
+0.09 ms median and 0.17 ms p95 after a roughly 191 ms cold catalog load. These are
+observations for this engine/library snapshot, not an inference benchmark or a
+universal latency guarantee. Composition does not allocate model tensors or load
+weights. Profile/pack content is snapshot-based and reproducible.
+
+## Acceptance boundaries
+
+No image-generation quality grid was run. The tests establish text/schema/transport
+correctness, not optimal prompts, aesthetic fidelity, pixel equivalence or uniform
+capabilities across fine-tuned checkpoints. Fibo's mapper validates touched caption
+fields and preserves opaque user fields; it is not full native caption-schema
+validation or an image-conditioned captioner.
+
+The conditioning node delegates to a connected native encoder; real weights were
+not loaded during this validation. The actual ComfyUI API smoke uses text-only
+nodes. Live authenticated HEISS generation and a full installed React composer
+panel were not exercised. HEISS requires the explicit guarded source mount and a
+host UI hook documented in the integration guide.
+
+CI workflows are configured for Python 3.11–3.14, Node and a pinned ComfyUI CPU
+contract job. Hosted CI has not run because this repository has not been pushed.
+Publication should follow those hosted results and any image-quality acceptance
+the maintainer wants to claim. Existing PromptStyler, user services, models and
+host dependencies were preserved; temporary validation services were stopped.

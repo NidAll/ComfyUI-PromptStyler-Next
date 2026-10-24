@@ -1,0 +1,1164 @@
+{
+  "schema_version": 1,
+  "id": "next.cartography",
+  "version": "1.0.0",
+  "name": "Cartography and spatial storytelling",
+  "description": "Distinct atlas, route, terrain and civic map aesthetics for user-supplied places and spatial concepts.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "cartography.contour-atlas",
+      "name": "Contour atlas",
+      "description": "Use a finely drawn topographic-atlas style. Let nested contours organize the supplied terrain.",
+      "category": "cartography/terrain",
+      "kind": "style",
+      "tags": [
+        "contour",
+        "atlas",
+        "terrain",
+        "elevation"
+      ],
+      "claims": {
+        "medium": "cartography.contour-atlas",
+        "composition": "cartography-contour-atlas",
+        "palette": "cartography-contour-atlas",
+        "texture": "cartography.contour-atlas"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a finely drawn topographic-atlas style",
+          "tags": [
+            "topographic atlas"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let nested contours organize the supplied terrain",
+          "tags": [
+            "nested terrain contours"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep line weights light with occasional index emphasis",
+          "tags": [
+            "fine contour lines",
+            "index contours"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm ivory with subdued umber linework",
+          "tags": [
+            "ivory ground",
+            "umber lines"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.hillshade-relief",
+      "name": "Hillshade relief map",
+      "description": "Render terrain in a restrained shaded-relief map style. Keep supplied landforms continuous and spatially readable.",
+      "category": "cartography/terrain",
+      "kind": "style",
+      "tags": [
+        "relief",
+        "hillshade",
+        "terrain",
+        "atlas"
+      ],
+      "claims": {
+        "medium": "cartography.hillshade-relief",
+        "composition": "cartography-hillshade-relief",
+        "palette": "cartography-hillshade-relief",
+        "texture": "cartography.hillshade-relief"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render terrain in a restrained shaded-relief map style",
+          "tags": [
+            "shaded relief map"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied landforms continuous and spatially readable",
+          "tags": [
+            "continuous terrain masses"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use a consistent oblique light direction for relief",
+          "tags": [
+            "oblique terrain shading"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use stone gray with muted hypsometric color",
+          "tags": [
+            "stone gray",
+            "muted elevation color"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.alpine-panorama",
+      "name": "Alpine panorama map",
+      "description": "Use a hand-painted panoramic terrain-map aesthetic. Flatten perspective enough to reveal supplied landform connections.",
+      "category": "cartography/terrain",
+      "kind": "style",
+      "tags": [
+        "panorama",
+        "alpine",
+        "landscape",
+        "map"
+      ],
+      "claims": {
+        "medium": "cartography.alpine-panorama",
+        "composition": "cartography-alpine-panorama",
+        "palette": "cartography-alpine-panorama",
+        "texture": "cartography.alpine-panorama"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a hand-painted panoramic terrain-map aesthetic",
+          "tags": [
+            "panoramic terrain map"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Flatten perspective enough to reveal supplied landform connections",
+          "tags": [
+            "lifted map perspective"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Model slopes with compact directional brushwork",
+          "tags": [
+            "directional slope brushwork"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use cool distant blues and warm exposed rock",
+          "tags": [
+            "cool distance",
+            "warm rock"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.hydrographic-sheet",
+      "name": "Hydrographic chart",
+      "description": "Use a crisp hydrographic-chart visual language. Make supplied coastlines and channels the organizing shapes.",
+      "category": "cartography/water",
+      "kind": "style",
+      "tags": [
+        "water",
+        "nautical",
+        "chart",
+        "coast"
+      ],
+      "claims": {
+        "medium": "cartography.hydrographic-sheet",
+        "composition": "cartography-hydrographic-sheet",
+        "palette": "cartography-hydrographic-sheet",
+        "texture": "cartography.hydrographic-sheet"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a crisp hydrographic-chart visual language",
+          "tags": [
+            "hydrographic chart"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Make supplied coastlines and channels the organizing shapes",
+          "tags": [
+            "clear coastlines",
+            "channel hierarchy"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use delicate depth contours and restrained chart marks",
+          "tags": [
+            "depth contours",
+            "delicate chart marks"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Keep pale blue water against warm white land",
+          "tags": [
+            "pale blue water",
+            "warm white land"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.watershed-study",
+      "name": "Watershed diagram map",
+      "description": "Use a clear watershed-study map aesthetic. Let branching supplied waterways define the composition.",
+      "category": "cartography/water",
+      "kind": "style",
+      "tags": [
+        "watershed",
+        "rivers",
+        "ecology",
+        "basin"
+      ],
+      "claims": {
+        "medium": "cartography.watershed-study",
+        "composition": "cartography-watershed-study",
+        "palette": "cartography-watershed-study",
+        "texture": "cartography.watershed-study"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a clear watershed-study map aesthetic",
+          "tags": [
+            "watershed diagram"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let branching supplied waterways define the composition",
+          "tags": [
+            "branching waterways"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Separate basin boundaries from finer tributary lines",
+          "tags": [
+            "basin boundaries",
+            "tributary hierarchy"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use blue-green water over quiet earth tones",
+          "tags": [
+            "blue-green",
+            "muted earth"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.river-ribbon",
+      "name": "River ribbon map",
+      "description": "Treat the supplied route as a river-ribbon map. Follow its bends through an elongated readable field.",
+      "category": "cartography/route",
+      "kind": "style",
+      "tags": [
+        "river",
+        "ribbon",
+        "route",
+        "journey"
+      ],
+      "claims": {
+        "medium": "cartography.river-ribbon",
+        "composition": "cartography-river-ribbon",
+        "palette": "cartography-river-ribbon",
+        "texture": "cartography.river-ribbon"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the supplied route as a river-ribbon map",
+          "tags": [
+            "river ribbon map"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Follow its bends through an elongated readable field",
+          "tags": [
+            "meandering map layout"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep surrounding marks sparse beside the route",
+          "tags": [
+            "sparse cartographic marks"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use indigo linework with a pale ochre ground",
+          "tags": [
+            "indigo",
+            "ochre paper"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.transit-diagram",
+      "name": "Transit diagram",
+      "description": "Use a disciplined transit-network diagram style. Simplify supplied connections into legible geometric paths.",
+      "category": "cartography/civic",
+      "kind": "style",
+      "tags": [
+        "transit",
+        "metro",
+        "network",
+        "route"
+      ],
+      "claims": {
+        "medium": "cartography.transit-diagram",
+        "composition": "cartography-transit-diagram",
+        "palette": "cartography-transit-diagram",
+        "texture": "cartography.transit-diagram"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a disciplined transit-network diagram style",
+          "tags": [
+            "transit network diagram"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Simplify supplied connections into legible geometric paths",
+          "tags": [
+            "geometric route layout"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use consistent route widths and clear interchange rings",
+          "tags": [
+            "uniform route strokes",
+            "interchange rings"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Choose a small separated set of route colors",
+          "tags": [
+            "distinct route colors"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.walking-pocket",
+      "name": "Walking pocket map",
+      "description": "Make a welcoming illustrated walking-map treatment. Emphasize supplied landmarks through scale hierarchy.",
+      "category": "cartography/civic",
+      "kind": "style",
+      "tags": [
+        "walking",
+        "pocket",
+        "city",
+        "guide"
+      ],
+      "claims": {
+        "medium": "cartography.walking-pocket",
+        "composition": "cartography-walking-pocket",
+        "palette": "cartography-walking-pocket",
+        "texture": "cartography.walking-pocket"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Make a welcoming illustrated walking-map treatment",
+          "tags": [
+            "walking pocket map"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Emphasize supplied landmarks through scale hierarchy",
+          "tags": [
+            "landmark hierarchy"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use simplified street edges and small tactile marks",
+          "tags": [
+            "simplified streets",
+            "tactile marks"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted brick and green with cream paper",
+          "tags": [
+            "brick red",
+            "muted green",
+            "cream"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.urban-figure-ground",
+      "name": "Urban figure-ground plan",
+      "description": "Use an architectural figure-ground map style. Read supplied built masses as a connected urban fabric.",
+      "category": "cartography/civic",
+      "kind": "style",
+      "tags": [
+        "urban",
+        "buildings",
+        "plan",
+        "figure-ground"
+      ],
+      "claims": {
+        "medium": "cartography.urban-figure-ground",
+        "composition": "cartography-urban-figure-ground",
+        "palette": "cartography-urban-figure-ground",
+        "texture": "cartography.urban-figure-ground"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an architectural figure-ground map style",
+          "tags": [
+            "figure ground plan"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Read supplied built masses as a connected urban fabric",
+          "tags": [
+            "urban massing plan"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use solid building footprints against open public space",
+          "tags": [
+            "solid footprints",
+            "open space"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Keep near-black masses on a soft white ground",
+          "tags": [
+            "near-black",
+            "soft white"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.parcel-cadastral",
+      "name": "Cadastral line map",
+      "description": "Use a restrained cadastral-map drawing style. Give supplied parcel boundaries an orderly visual rhythm.",
+      "category": "cartography/civic",
+      "kind": "style",
+      "tags": [
+        "parcel",
+        "boundary",
+        "land",
+        "cadastral"
+      ],
+      "claims": {
+        "medium": "cartography.parcel-cadastral",
+        "composition": "cartography-parcel-cadastral",
+        "palette": "cartography-parcel-cadastral",
+        "texture": "cartography.parcel-cadastral"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a restrained cadastral-map drawing style",
+          "tags": [
+            "cadastral line map"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Give supplied parcel boundaries an orderly visual rhythm",
+          "tags": [
+            "parcel boundary rhythm"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Separate boundary lines from lighter contextual detail",
+          "tags": [
+            "boundary line hierarchy"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use dark gray lines with pale green land tint",
+          "tags": [
+            "dark gray",
+            "pale green"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.night-navigation",
+      "name": "Night navigation map",
+      "description": "Use a low-glare night-navigation display aesthetic. Keep the supplied route more prominent than its context.",
+      "category": "cartography/navigation",
+      "kind": "style",
+      "tags": [
+        "night",
+        "navigation",
+        "route",
+        "dark"
+      ],
+      "claims": {
+        "medium": "cartography.night-navigation",
+        "composition": "cartography-night-navigation",
+        "palette": "cartography-night-navigation",
+        "texture": "cartography.night-navigation"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a low-glare night-navigation display aesthetic",
+          "tags": [
+            "night navigation map"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied route more prominent than its context",
+          "tags": [
+            "route priority"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use thin luminous paths without broad glow",
+          "tags": [
+            "thin luminous lines"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Pair muted amber routes with charcoal blue ground",
+          "tags": [
+            "amber routes",
+            "charcoal blue"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.trail-network",
+      "name": "Trail network map",
+      "description": "Use a clear outdoor trail-map treatment. Keep supplied trail junctions readable amid terrain.",
+      "category": "cartography/outdoors",
+      "kind": "style",
+      "tags": [
+        "trail",
+        "hiking",
+        "network",
+        "landscape"
+      ],
+      "claims": {
+        "medium": "cartography.trail-network",
+        "composition": "cartography-trail-network",
+        "palette": "cartography-trail-network",
+        "texture": "cartography.trail-network"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a clear outdoor trail-map treatment",
+          "tags": [
+            "trail network map"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied trail junctions readable amid terrain",
+          "tags": [
+            "readable trail junctions"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use dotted secondary paths and quiet terrain texture",
+          "tags": [
+            "dotted paths",
+            "subtle terrain"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use forest green and warm brown over ivory",
+          "tags": [
+            "forest green",
+            "warm brown"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.archipelago-plate",
+      "name": "Archipelago atlas plate",
+      "description": "Use a delicate engraved island-atlas aesthetic. Balance supplied island silhouettes across open water.",
+      "category": "cartography/water",
+      "kind": "style",
+      "tags": [
+        "islands",
+        "archipelago",
+        "atlas",
+        "sea"
+      ],
+      "claims": {
+        "medium": "cartography.archipelago-plate",
+        "composition": "cartography-archipelago-plate",
+        "palette": "cartography-archipelago-plate",
+        "texture": "cartography.archipelago-plate"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a delicate engraved island-atlas aesthetic",
+          "tags": [
+            "engraved island atlas"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Balance supplied island silhouettes across open water",
+          "tags": [
+            "island silhouette rhythm"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Add fine coastal hachures without crowding shorelines",
+          "tags": [
+            "coastal hachures"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use ink blue with faint sea-green washes",
+          "tags": [
+            "ink blue",
+            "sea-green wash"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.historical-town",
+      "name": "Historical town plan",
+      "description": "Use a hand-engraved historical town-plan style. Keep the supplied settlement legible from an elevated plan.",
+      "category": "cartography/historical",
+      "kind": "style",
+      "tags": [
+        "town",
+        "history",
+        "plan",
+        "engraving"
+      ],
+      "claims": {
+        "medium": "cartography.historical-town",
+        "composition": "cartography-historical-town",
+        "palette": "cartography-historical-town",
+        "texture": "cartography.historical-town"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a hand-engraved historical town-plan style",
+          "tags": [
+            "historical town plan"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied settlement legible from an elevated plan",
+          "tags": [
+            "elevated town plan"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Combine building-edge hatching with delicate street texture",
+          "tags": [
+            "building hatching",
+            "fine streets"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use sepia ink with restrained watercolor tint",
+          "tags": [
+            "sepia",
+            "restrained watercolor"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.vellum-portolan",
+      "name": "Vellum portolan treatment",
+      "description": "Use a vellum coastal-chart treatment. Make supplied coastlines central within a sparse directional scaffold.",
+      "category": "cartography/historical",
+      "kind": "style",
+      "tags": [
+        "portolan",
+        "coastal",
+        "vellum",
+        "nautical"
+      ],
+      "claims": {
+        "medium": "cartography.vellum-portolan",
+        "composition": "cartography-vellum-portolan",
+        "palette": "cartography-vellum-portolan",
+        "texture": "cartography.vellum-portolan"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a vellum coastal-chart treatment",
+          "tags": [
+            "portolan chart aesthetic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Make supplied coastlines central within a sparse directional scaffold",
+          "tags": [
+            "coastal emphasis",
+            "directional scaffold"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use thin ink paths with gently uneven pen pressure",
+          "tags": [
+            "fine ink paths"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Favor faded red and green on pale vellum",
+          "tags": [
+            "faded red",
+            "faded green",
+            "vellum"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.geological-map",
+      "name": "Geological atlas map",
+      "description": "Use a clean geological-atlas map style. Keep supplied unit boundaries continuous and distinct.",
+      "category": "cartography/earth-science",
+      "kind": "style",
+      "tags": [
+        "geological",
+        "map",
+        "units",
+        "earth"
+      ],
+      "claims": {
+        "medium": "cartography.geological-map",
+        "composition": "cartography-geological-map",
+        "palette": "cartography-geological-map",
+        "texture": "cartography.geological-map"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a clean geological-atlas map style",
+          "tags": [
+            "geological atlas map"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied unit boundaries continuous and distinct",
+          "tags": [
+            "continuous map units"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Combine flat unit fills with subordinate terrain lines",
+          "tags": [
+            "flat geological fills"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted categorical earth and mineral colors",
+          "tags": [
+            "mineral categories",
+            "earth colors"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.land-use-mosaic",
+      "name": "Land-use mosaic",
+      "description": "Use a restrained land-use planning-map style. Build a clear mosaic from the supplied spatial regions.",
+      "category": "cartography/civic",
+      "kind": "style",
+      "tags": [
+        "land-use",
+        "mosaic",
+        "planning",
+        "ecology"
+      ],
+      "claims": {
+        "medium": "cartography.land-use-mosaic",
+        "composition": "cartography-land-use-mosaic",
+        "palette": "cartography-land-use-mosaic",
+        "texture": "cartography.land-use-mosaic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a restrained land-use planning-map style",
+          "tags": [
+            "land use map"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Build a clear mosaic from the supplied spatial regions",
+          "tags": [
+            "regional mosaic"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep boundary strokes thin beside flat filled areas",
+          "tags": [
+            "thin boundaries",
+            "flat regions"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use softened green ochre and dusty rose categories",
+          "tags": [
+            "soft green",
+            "ochre",
+            "dusty rose"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.isometric-city",
+      "name": "Isometric city map",
+      "description": "Use a clear isometric illustrated-map style. Preserve supplied relationships with consistent parallel projection.",
+      "category": "cartography/civic",
+      "kind": "style",
+      "tags": [
+        "city",
+        "isometric",
+        "buildings",
+        "illustrated"
+      ],
+      "claims": {
+        "medium": "cartography.isometric-city",
+        "composition": "cartography-isometric-city",
+        "palette": "cartography-isometric-city",
+        "texture": "cartography.isometric-city"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a clear isometric illustrated-map style",
+          "tags": [
+            "isometric city map"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve supplied relationships with consistent parallel projection",
+          "tags": [
+            "consistent isometric layout"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Simplify building faces while retaining recognizable silhouettes",
+          "tags": [
+            "simplified building faces"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use gentle neighborhood color groups without rainbow clutter",
+          "tags": [
+            "muted neighborhood colors"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.weather-field",
+      "name": "Weather field map",
+      "description": "Use a restrained meteorological field-map aesthetic. Keep supplied flow patterns readable over quiet geography.",
+      "category": "cartography/earth-science",
+      "kind": "style",
+      "tags": [
+        "weather",
+        "field",
+        "wind",
+        "atmosphere"
+      ],
+      "claims": {
+        "medium": "cartography.weather-field",
+        "composition": "cartography-weather-field",
+        "palette": "cartography-weather-field",
+        "texture": "cartography.weather-field"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a restrained meteorological field-map aesthetic",
+          "tags": [
+            "weather field map"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied flow patterns readable over quiet geography",
+          "tags": [
+            "readable field flow"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use smooth isolines and sparse directional strokes",
+          "tags": [
+            "smooth isolines",
+            "directional strokes"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Choose a narrow cool-to-warm ordered scale",
+          "tags": [
+            "ordered weather palette"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cartography.route-scrapbook",
+      "name": "Journey sketch map",
+      "description": "Use a personal journey-sketch map treatment. Arrange the supplied places around the route sequence.",
+      "category": "cartography/route",
+      "kind": "style",
+      "tags": [
+        "journey",
+        "sketch",
+        "map",
+        "travel"
+      ],
+      "claims": {
+        "medium": "cartography.route-scrapbook",
+        "composition": "cartography-route-scrapbook",
+        "palette": "cartography-route-scrapbook",
+        "texture": "cartography.route-scrapbook"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a personal journey-sketch map treatment",
+          "tags": [
+            "journey sketch map"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange the supplied places around the route sequence",
+          "tags": [
+            "sequential route layout"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Mix light pencil geography with confident route ink",
+          "tags": [
+            "pencil geography",
+            "ink route"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm paper with a single rust-red accent",
+          "tags": [
+            "warm paper",
+            "rust red"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

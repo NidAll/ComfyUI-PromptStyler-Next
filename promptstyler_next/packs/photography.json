@@ -1,0 +1,1385 @@
+{
+  "schema_version": 1,
+  "id": "next.photography",
+  "version": "1.0.0",
+  "name": "Photographic craft",
+  "description": "Camera and lighting techniques that keep the requested subject intact.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "photo.editorial",
+      "name": "Window-light editorial",
+      "description": "An editorial photograph with natural proportions. Broad window light models form with a soft shadow side.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "editorial",
+        "portrait",
+        "daylight"
+      ],
+      "claims": {
+        "medium": "photo.editorial",
+        "lighting": "photo-editorial",
+        "texture": "photo.editorial"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An editorial photograph with natural proportions",
+          "tags": [
+            "editorial photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Broad window light models form with a soft shadow side",
+          "tags": [
+            "window light",
+            "soft modeling"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Retain lifelike surface texture and gentle optical falloff",
+          "tags": [
+            "natural texture",
+            "optical falloff"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.flash",
+      "name": "Direct flash",
+      "description": "A candid direct-flash photograph. Frontal flash produces crisp highlights and a distinct nearby shadow.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "flash",
+        "candid",
+        "contrast"
+      ],
+      "claims": {
+        "medium": "photo.flash",
+        "lighting": "photo-flash",
+        "texture": "photo.flash"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A candid direct-flash photograph",
+          "tags": [
+            "direct flash photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Frontal flash produces crisp highlights and a distinct nearby shadow",
+          "tags": [
+            "frontal flash",
+            "hard shadow"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve abrupt light falloff and unpolished surface detail",
+          "tags": [
+            "abrupt light falloff",
+            "candid texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.large-format",
+      "name": "Large-format stillness",
+      "description": "A carefully exposed large-format photograph. Use deliberate edge placement and clear near-to-far relationships.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "large format",
+        "detail",
+        "deliberate"
+      ],
+      "claims": {
+        "medium": "photo.large-format",
+        "composition": "photo-large-format",
+        "texture": "photo.large-format"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A carefully exposed large-format photograph",
+          "tags": [
+            "large format photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use deliberate edge placement and clear near-to-far relationships",
+          "tags": [
+            "deliberate framing",
+            "spatial clarity"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Render fine material detail with smooth tonal transitions",
+          "tags": [
+            "fine material detail",
+            "smooth tonality"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.pinhole",
+      "name": "Pinhole reverie",
+      "description": "A pinhole photograph with a long-exposure character. Let broad shapes remain legible through soft optical definition.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "pinhole",
+        "soft",
+        "vignette"
+      ],
+      "claims": {
+        "medium": "photo.pinhole",
+        "composition": "photo-pinhole",
+        "texture": "photo.pinhole"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A pinhole photograph with a long-exposure character",
+          "tags": [
+            "pinhole photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let broad shapes remain legible through soft optical definition",
+          "tags": [
+            "simple shapes",
+            "soft definition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use gentle edge darkening and continuous lensless softness",
+          "tags": [
+            "pinhole softness",
+            "gentle vignette"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.wetplate",
+      "name": "Wet-plate collodion",
+      "description": "A wet-plate collodion photograph. Compress the scene into warm silver-black monochrome.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "collodion",
+        "antique",
+        "silver"
+      ],
+      "claims": {
+        "medium": "photo.wetplate",
+        "palette": "photo-wetplate",
+        "texture": "photo.wetplate"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A wet-plate collodion photograph",
+          "tags": [
+            "wet plate collodion"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Compress the scene into warm silver-black monochrome",
+          "tags": [
+            "warm silver monochrome"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show subtle emulsion pooling and irregular plate edges",
+          "tags": [
+            "collodion emulsion",
+            "irregular plate edge"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.cyanotype",
+      "name": "Cyanotype exposure",
+      "description": "A cyanotype contact-print interpretation. Use Prussian blue pigment and unprinted paper white.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "cyanotype",
+        "blue",
+        "botanical"
+      ],
+      "claims": {
+        "medium": "photo.cyanotype",
+        "palette": "photo-cyanotype",
+        "texture": "photo.cyanotype"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cyanotype contact-print interpretation",
+          "tags": [
+            "cyanotype contact print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use Prussian blue pigment and unprinted paper white",
+          "tags": [
+            "prussian blue",
+            "paper white"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let visible paper fibers soften the edges of exposed shapes",
+          "tags": [
+            "paper fibers",
+            "soft contact edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.infrared",
+      "name": "Infrared false color",
+      "description": "A false-color infrared photographic interpretation. Shift reflective surfaces toward pale rose and warm ivory.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "infrared",
+        "surreal",
+        "spectrum"
+      ],
+      "claims": {
+        "medium": "photo.infrared",
+        "palette": "photo-infrared",
+        "texture": "photo.infrared"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A false-color infrared photographic interpretation",
+          "tags": [
+            "infrared photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Shift reflective surfaces toward pale rose and warm ivory",
+          "tags": [
+            "false color infrared",
+            "pale rose tones"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve clear photographic detail under the spectral color shift",
+          "tags": [
+            "crisp spectral detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.tiltshift",
+      "name": "Selective-plane focus",
+      "description": "A view-camera photograph with a tilted plane of focus. Keep a narrow oblique plane sharply defined across the subject.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "tilt shift",
+        "focus",
+        "miniature"
+      ],
+      "claims": {
+        "medium": "photo.tiltshift",
+        "composition": "photo-tiltshift",
+        "texture": "photo.tiltshift"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A view-camera photograph with a tilted plane of focus",
+          "tags": [
+            "tilt shift photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep a narrow oblique plane sharply defined across the subject",
+          "tags": [
+            "tilted focus plane"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let focus roll away smoothly on both sides of that plane",
+          "tags": [
+            "selective focus",
+            "smooth blur"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.crosspolar",
+      "name": "Cross-polarized precision",
+      "description": "A precise cross-polarized material photograph. Suppress specular glare to reveal true surface color.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "product",
+        "scientific",
+        "material"
+      ],
+      "claims": {
+        "medium": "photo.crosspolar",
+        "lighting": "photo-crosspolar",
+        "texture": "photo.crosspolar"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A precise cross-polarized material photograph",
+          "tags": [
+            "cross polarized photography"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Suppress specular glare to reveal true surface color",
+          "tags": [
+            "glare controlled lighting"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Retain fine diffuse material detail without wet-looking shine",
+          "tags": [
+            "diffuse material texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.lowkey",
+      "name": "Low-key studio",
+      "description": "A low-key studio photograph. One controlled strip of light defines the subject against darkness.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "studio",
+        "dark",
+        "sculptural"
+      ],
+      "claims": {
+        "medium": "photo.lowkey",
+        "lighting": "photo-lowkey",
+        "texture": "photo.lowkey"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A low-key studio photograph",
+          "tags": [
+            "low key studio photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "One controlled strip of light defines the subject against darkness",
+          "tags": [
+            "strip light",
+            "deep shadow"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Hold tactile surface detail only where the light reaches",
+          "tags": [
+            "selective surface detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.highkey",
+      "name": "High-key studio",
+      "description": "A high-key studio photograph with clean tonal separation. Wrap soft illumination around the subject while retaining shape.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "studio",
+        "pale",
+        "airy"
+      ],
+      "claims": {
+        "medium": "photo.highkey",
+        "lighting": "photo-highkey",
+        "palette": "photo-highkey"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A high-key studio photograph with clean tonal separation",
+          "tags": [
+            "high key studio photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Wrap soft illumination around the subject while retaining shape",
+          "tags": [
+            "soft wrap lighting"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use luminous pale tones without erasing important edges",
+          "tags": [
+            "luminous pale tones",
+            "preserved edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.focusstack",
+      "name": "Macro focus stack",
+      "description": "A macro photograph with a carefully stacked focus range. Use a broad diffused source to describe small surface relief.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "macro",
+        "focus stack",
+        "detail"
+      ],
+      "claims": {
+        "medium": "photo.focusstack",
+        "lighting": "photo-focusstack",
+        "texture": "photo.focusstack"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A macro photograph with a carefully stacked focus range",
+          "tags": [
+            "macro photograph",
+            "focus stacking"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use a broad diffused source to describe small surface relief",
+          "tags": [
+            "diffused macro lighting"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep contiguous microtexture sharp across the focal subject",
+          "tags": [
+            "continuous sharp microtexture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.platinum",
+      "name": "Platinum-palladium print",
+      "description": "A platinum-palladium photographic print. Use warm neutral monochrome with an unusually long midtone scale.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "platinum",
+        "palladium",
+        "matte"
+      ],
+      "claims": {
+        "medium": "photo.platinum",
+        "palette": "photo-platinum",
+        "texture": "photo.platinum"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A platinum-palladium photographic print",
+          "tags": [
+            "platinum palladium print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm neutral monochrome with an unusually long midtone scale",
+          "tags": [
+            "warm neutral monochrome",
+            "long midtones"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let matte paper absorb the image without glossy black surfaces",
+          "tags": [
+            "matte photographic paper"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.salt",
+      "name": "Salted-paper print",
+      "description": "A salted-paper photographic print. Use warm brown-black tones within a softly limited contrast range.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "salted paper",
+        "brown",
+        "historic"
+      ],
+      "claims": {
+        "medium": "photo.salt",
+        "palette": "photo-salt",
+        "texture": "photo.salt"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A salted-paper photographic print",
+          "tags": [
+            "salted paper print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm brown-black tones within a softly limited contrast range",
+          "tags": [
+            "brown black tones",
+            "soft contrast"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the image embedded in visibly fibrous uncoated paper",
+          "tags": [
+            "fibrous uncoated paper"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.albumen",
+      "name": "Albumen sheen",
+      "description": "An albumen photographic print. Use delicate warm purple-brown shadows and cream highlights.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "albumen",
+        "antique",
+        "print"
+      ],
+      "claims": {
+        "medium": "photo.albumen",
+        "palette": "photo-albumen",
+        "texture": "photo.albumen"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An albumen photographic print",
+          "tags": [
+            "albumen print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use delicate warm purple-brown shadows and cream highlights",
+          "tags": [
+            "purple brown shadows",
+            "cream highlights"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show a slight eggshell surface sheen and fine age crackle",
+          "tags": [
+            "albumen sheen",
+            "fine crackle"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.daguerreotype",
+      "name": "Mirror-plate image",
+      "description": "A daguerreotype-like image on a polished metal plate. Use broad frontal illumination with a reflective plate character.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "daguerreotype",
+        "metal",
+        "antique"
+      ],
+      "claims": {
+        "medium": "photo.daguerreotype",
+        "lighting": "photo-daguerreotype",
+        "texture": "photo.daguerreotype"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A daguerreotype-like image on a polished metal plate",
+          "tags": [
+            "daguerreotype"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad frontal illumination with a reflective plate character",
+          "tags": [
+            "reflective plate light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep delicate silver detail and slight tarnish around the margins",
+          "tags": [
+            "silver plate detail",
+            "tarnished margins"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.chromogenic",
+      "name": "Chromogenic color print",
+      "description": "A chromogenic color photograph. Keep clean natural color with soft dye-cloud transitions.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "chromogenic",
+        "color",
+        "print"
+      ],
+      "claims": {
+        "medium": "photo.chromogenic",
+        "palette": "photo-chromogenic",
+        "texture": "photo.chromogenic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A chromogenic color photograph",
+          "tags": [
+            "chromogenic color print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep clean natural color with soft dye-cloud transitions",
+          "tags": [
+            "natural chromogenic color"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Render smooth photographic dye layers and fine color grain",
+          "tags": [
+            "dye cloud texture",
+            "fine color grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.slide",
+      "name": "Color-reversal slide",
+      "description": "A color-reversal transparency photograph. Use saturated local color with deep clear shadows.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "slide",
+        "reversal",
+        "vivid"
+      ],
+      "claims": {
+        "medium": "photo.slide",
+        "palette": "photo-slide",
+        "texture": "photo.slide"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A color-reversal transparency photograph",
+          "tags": [
+            "color reversal slide"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use saturated local color with deep clear shadows",
+          "tags": [
+            "saturated slide colors",
+            "clear shadows"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine grain and a narrow luminous highlight range",
+          "tags": [
+            "fine slide grain",
+            "luminous highlights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.longexposure",
+      "name": "Long-exposure patience",
+      "description": "A long-exposure photograph. Keep stationary forms fixed while existing movement becomes soft trails.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "long exposure",
+        "time",
+        "motion"
+      ],
+      "claims": {
+        "medium": "photo.longexposure",
+        "composition": "photo-longexposure",
+        "texture": "photo.longexposure"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A long-exposure photograph",
+          "tags": [
+            "long exposure photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep stationary forms fixed while existing movement becomes soft trails",
+          "tags": [
+            "fixed forms",
+            "movement trails"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show continuous motion rather than repeated sharp exposures",
+          "tags": [
+            "continuous motion texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.ringflash",
+      "name": "Ring-flash frontality",
+      "description": "A ring-flash photograph. Use nearly shadowless frontal illumination with a thin surrounding shadow.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "ring flash",
+        "fashion",
+        "flat"
+      ],
+      "claims": {
+        "medium": "photo.ringflash",
+        "lighting": "photo-ringflash",
+        "texture": "photo.ringflash"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A ring-flash photograph",
+          "tags": [
+            "ring flash photography"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use nearly shadowless frontal illumination with a thin surrounding shadow",
+          "tags": [
+            "frontal ring light",
+            "thin edge shadow"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep crisp surface detail with modest specular sparkle",
+          "tags": [
+            "crisp surface detail",
+            "specular sparkle"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.fisheye",
+      "name": "Fisheye proximity",
+      "description": "A deliberately close fisheye photograph. Let wide-angle curvature and near-far scale describe the supplied forms.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "fisheye",
+        "wide",
+        "distortion"
+      ],
+      "claims": {
+        "medium": "photo.fisheye",
+        "composition": "photo-fisheye",
+        "texture": "photo.fisheye"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A deliberately close fisheye photograph",
+          "tags": [
+            "fisheye photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let wide-angle curvature and near-far scale describe the supplied forms",
+          "tags": [
+            "wide angle curvature",
+            "near far scale"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep sharp central detail and gently softened outer edges",
+          "tags": [
+            "sharp center",
+            "soft periphery"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.telephoto",
+      "name": "Telephoto compression",
+      "description": "A telephoto photograph with compressed spatial relationships. Stack existing depth planes closely without changing their order.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "telephoto",
+        "compressed",
+        "layered"
+      ],
+      "claims": {
+        "medium": "photo.telephoto",
+        "composition": "photo-telephoto",
+        "texture": "photo.telephoto"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A telephoto photograph with compressed spatial relationships",
+          "tags": [
+            "telephoto photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Stack existing depth planes closely without changing their order",
+          "tags": [
+            "compressed depth planes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use a gently defocused background behind the focal plane",
+          "tags": [
+            "telephoto background blur"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.backlit",
+      "name": "Backlit translucency",
+      "description": "A backlit photograph emphasizing existing translucent materials. Let light pass through thin surfaces and rim the outer contours.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "backlit",
+        "translucent",
+        "rim"
+      ],
+      "claims": {
+        "medium": "photo.backlit",
+        "lighting": "photo-backlit",
+        "texture": "photo.backlit"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A backlit photograph emphasizing existing translucent materials",
+          "tags": [
+            "backlit photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let light pass through thin surfaces and rim the outer contours",
+          "tags": [
+            "transmitted light",
+            "contour rim"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep subtle internal structure visible in the lit material",
+          "tags": [
+            "translucent internal detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "photo.diptych-read",
+      "name": "Diptych-like balance",
+      "description": "A photograph organized with diptych-like visual balance. Hold two existing visual masses in a deliberate side-by-side relationship.",
+      "category": "photography",
+      "kind": "style",
+      "tags": [
+        "photography",
+        "diptych",
+        "balance",
+        "composition"
+      ],
+      "claims": {
+        "medium": "photo.diptych-read",
+        "composition": "photo-diptych-read",
+        "palette": "photo-diptych-read"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A photograph organized with diptych-like visual balance",
+          "tags": [
+            "balanced editorial photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Hold two existing visual masses in a deliberate side-by-side relationship",
+          "tags": [
+            "paired visual masses"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep their color and tonal weights quietly complementary",
+          "tags": [
+            "complementary tonal weights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    }
+  ]
+}

@@ -1,0 +1,1161 @@
+{
+  "schema_version": 1,
+  "id": "next.archival",
+  "version": "1.0.0",
+  "name": "Museum and archival presentation",
+  "description": "Ways to present supplied objects, documents and collections through careful historical and material observation.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "archival.museum-object",
+      "name": "Museum object record",
+      "description": "Use a measured museum-object record photograph. Keep the supplied object squarely readable with open margins.",
+      "category": "archival/catalog",
+      "kind": "style",
+      "tags": [
+        "museum",
+        "object",
+        "catalog",
+        "collection"
+      ],
+      "claims": {
+        "medium": "archival.museum-object",
+        "composition": "archival-museum-object",
+        "palette": "archival-museum-object",
+        "texture": "archival.museum-object"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a measured museum-object record photograph",
+          "tags": [
+            "museum object record"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied object squarely readable with open margins",
+          "tags": [
+            "clear object framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use even light to describe wear without dramatization",
+          "tags": [
+            "even descriptive light",
+            "visible wear"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use a neutral gray collection background",
+          "tags": [
+            "neutral collection gray"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.conservation-raking",
+      "name": "Conservation raking light",
+      "description": "Use a conservation-study photograph with raking light. Prioritize the supplied surface and its material condition.",
+      "category": "archival/conservation",
+      "kind": "style",
+      "tags": [
+        "conservation",
+        "raking-light",
+        "surface",
+        "study"
+      ],
+      "claims": {
+        "medium": "archival.conservation-raking",
+        "composition": "archival-conservation-raking",
+        "palette": "archival-conservation-raking",
+        "texture": "archival.conservation-raking"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a conservation-study photograph with raking light",
+          "tags": [
+            "conservation raking light"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Prioritize the supplied surface and its material condition",
+          "tags": [
+            "surface condition framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal relief craquelure and abrasion without exaggeration",
+          "tags": [
+            "surface relief",
+            "craquelure",
+            "abrasion"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use restrained material color and neutral shadows",
+          "tags": [
+            "restrained conservation color"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.conservation-transmitted",
+      "name": "Transmitted paper study",
+      "description": "Use a transmitted-light paper-study treatment. Let supplied paper structure read across a quiet field.",
+      "category": "archival/conservation",
+      "kind": "style",
+      "tags": [
+        "paper",
+        "transmitted-light",
+        "conservation",
+        "archive"
+      ],
+      "claims": {
+        "medium": "archival.conservation-transmitted",
+        "composition": "archival-conservation-transmitted",
+        "palette": "archival-conservation-transmitted",
+        "texture": "archival.conservation-transmitted"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a transmitted-light paper-study treatment",
+          "tags": [
+            "transmitted paper study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let supplied paper structure read across a quiet field",
+          "tags": [
+            "paper structure framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal fiber density and thin areas through soft translucency",
+          "tags": [
+            "paper fiber translucency"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm paper ivory against faint luminous white",
+          "tags": [
+            "paper ivory",
+            "luminous white"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.collection-grid",
+      "name": "Collection inventory grid",
+      "description": "Use a careful collection-inventory presentation. Align supplied items with consistent scale and spacing.",
+      "category": "archival/catalog",
+      "kind": "style",
+      "tags": [
+        "collection",
+        "inventory",
+        "grid",
+        "museum"
+      ],
+      "claims": {
+        "medium": "archival.collection-grid",
+        "composition": "archival-collection-grid",
+        "palette": "archival-collection-grid",
+        "texture": "archival.collection-grid"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a careful collection-inventory presentation",
+          "tags": [
+            "collection inventory grid"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Align supplied items with consistent scale and spacing",
+          "tags": [
+            "consistent inventory scale"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep each material surface evenly described",
+          "tags": [
+            "even object detail"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use uniform neutral backgrounds",
+          "tags": [
+            "uniform neutral ground"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.specimen-tray",
+      "name": "Specimen tray record",
+      "description": "Use a natural-history collection-record treatment. Give the supplied specimen clear physical context.",
+      "category": "archival/catalog",
+      "kind": "style",
+      "tags": [
+        "specimen",
+        "tray",
+        "museum",
+        "reference"
+      ],
+      "claims": {
+        "medium": "archival.specimen-tray",
+        "composition": "archival-specimen-tray",
+        "palette": "archival-specimen-tray",
+        "texture": "archival.specimen-tray"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a natural-history collection-record treatment",
+          "tags": [
+            "specimen tray record"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Give the supplied specimen clear physical context",
+          "tags": [
+            "specimen context"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine surface features distinct from support materials",
+          "tags": [
+            "specimen surface detail"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted collection neutrals",
+          "tags": [
+            "muted museum palette"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.artifact-turntable",
+      "name": "Artifact turntable study",
+      "description": "Use an artifact-volume record treatment. Choose a supplied-object angle that describes its silhouette clearly.",
+      "category": "archival/catalog",
+      "kind": "style",
+      "tags": [
+        "artifact",
+        "turntable",
+        "volume",
+        "record"
+      ],
+      "claims": {
+        "medium": "archival.artifact-turntable",
+        "composition": "archival-artifact-turntable",
+        "palette": "archival-artifact-turntable",
+        "texture": "archival.artifact-turntable"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an artifact-volume record treatment",
+          "tags": [
+            "artifact volume record"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Choose a supplied-object angle that describes its silhouette clearly",
+          "tags": [
+            "descriptive artifact angle"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use soft directional modeling and controlled contact shadow",
+          "tags": [
+            "soft object modeling"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use a quiet mid-gray tonal field",
+          "tags": [
+            "mid gray background"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.manuscript-folio",
+      "name": "Manuscript folio record",
+      "description": "Use a careful manuscript-folio photograph. Keep supplied page edges and writing area fully readable.",
+      "category": "archival/documents",
+      "kind": "style",
+      "tags": [
+        "manuscript",
+        "folio",
+        "paper",
+        "archive"
+      ],
+      "claims": {
+        "medium": "archival.manuscript-folio",
+        "composition": "archival-manuscript-folio",
+        "palette": "archival-manuscript-folio",
+        "texture": "archival.manuscript-folio"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a careful manuscript-folio photograph",
+          "tags": [
+            "manuscript folio record"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied page edges and writing area fully readable",
+          "tags": [
+            "full folio framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal paper waviness ink density and gentle edge wear",
+          "tags": [
+            "paper waviness",
+            "ink density"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use aged ivory with restrained ink color",
+          "tags": [
+            "aged ivory",
+            "ink tones"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.ledger-detail",
+      "name": "Ledger material detail",
+      "description": "Use a close archival-ledger material study. Let supplied ruling and marks establish the visual rhythm.",
+      "category": "archival/documents",
+      "kind": "style",
+      "tags": [
+        "ledger",
+        "account",
+        "paper",
+        "detail"
+      ],
+      "claims": {
+        "medium": "archival.ledger-detail",
+        "composition": "archival-ledger-detail",
+        "palette": "archival-ledger-detail",
+        "texture": "archival.ledger-detail"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a close archival-ledger material study",
+          "tags": [
+            "ledger detail photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let supplied ruling and marks establish the visual rhythm",
+          "tags": [
+            "ledger ruling rhythm"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal pressed fibers faded marks and handled edges",
+          "tags": [
+            "pressed fibers",
+            "faded marks"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use faded blue gray and warm paper",
+          "tags": [
+            "faded blue gray",
+            "warm paper"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.photographic-contact",
+      "name": "Photographic contact sheet",
+      "description": "Use a photographic contact-sheet presentation. Arrange supplied frames in a consistent observation sequence.",
+      "category": "archival/photographic",
+      "kind": "style",
+      "tags": [
+        "contact-sheet",
+        "photograph",
+        "archive",
+        "sequence"
+      ],
+      "claims": {
+        "medium": "archival.photographic-contact",
+        "composition": "archival-photographic-contact",
+        "palette": "archival-photographic-contact",
+        "texture": "archival.photographic-contact"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a photographic contact-sheet presentation",
+          "tags": [
+            "photographic contact sheet"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange supplied frames in a consistent observation sequence",
+          "tags": [
+            "contact frame sequence"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep dark frame edges and subtle emulsion variation",
+          "tags": [
+            "emulsion texture",
+            "dark frame edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use a restrained silver-gray tonal scale",
+          "tags": [
+            "silver gray"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.cyanotype-record",
+      "name": "Cyanotype specimen record",
+      "description": "Use a cyanotype-record aesthetic. Keep supplied forms clearly separated on an open field.",
+      "category": "archival/photographic",
+      "kind": "style",
+      "tags": [
+        "cyanotype",
+        "specimen",
+        "archive",
+        "photogram"
+      ],
+      "claims": {
+        "medium": "archival.cyanotype-record",
+        "composition": "archival-cyanotype-record",
+        "palette": "archival-cyanotype-record",
+        "texture": "archival.cyanotype-record"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a cyanotype-record aesthetic",
+          "tags": [
+            "cyanotype specimen record"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied forms clearly separated on an open field",
+          "tags": [
+            "open cyanotype silhouettes"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Allow slight exposure variation along fine edges",
+          "tags": [
+            "cyanotype exposure variation"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use deep Prussian blue with paper-white forms",
+          "tags": [
+            "Prussian blue",
+            "paper white"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.albumen-object",
+      "name": "Albumen object portrait",
+      "description": "Use an albumen-print object-portrait treatment. Present the supplied object through a quiet frontal frame.",
+      "category": "archival/photographic",
+      "kind": "style",
+      "tags": [
+        "albumen",
+        "object",
+        "historical",
+        "photography"
+      ],
+      "claims": {
+        "medium": "archival.albumen-object",
+        "composition": "archival-albumen-object",
+        "palette": "archival-albumen-object",
+        "texture": "archival.albumen-object"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an albumen-print object-portrait treatment",
+          "tags": [
+            "albumen object portrait"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Present the supplied object through a quiet frontal frame",
+          "tags": [
+            "quiet frontal portrait"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use delicate detail with subdued print sheen",
+          "tags": [
+            "albumen print sheen",
+            "delicate detail"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm brown-violet shadows and creamy highlights",
+          "tags": [
+            "brown violet",
+            "creamy highlights"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.glass-plate",
+      "name": "Glass-plate archive image",
+      "description": "Use a carefully exposed glass-plate photographic aesthetic. Keep supplied geometry still and deliberately framed.",
+      "category": "archival/photographic",
+      "kind": "style",
+      "tags": [
+        "glass-plate",
+        "archive",
+        "photograph",
+        "history"
+      ],
+      "claims": {
+        "medium": "archival.glass-plate",
+        "composition": "archival-glass-plate",
+        "palette": "archival-glass-plate",
+        "texture": "archival.glass-plate"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a carefully exposed glass-plate photographic aesthetic",
+          "tags": [
+            "glass plate photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied geometry still and deliberately framed",
+          "tags": [
+            "deliberate archival framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal fine detail with restrained highlight compression",
+          "tags": [
+            "fine plate detail",
+            "compressed highlights"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use cool silver shadows and pale neutral lights",
+          "tags": [
+            "cool silver",
+            "pale neutral"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.archaeology-section",
+      "name": "Archaeological section record",
+      "description": "Use an archaeological field-record treatment. Make supplied strata and object relationships plainly visible.",
+      "category": "archival/fieldwork",
+      "kind": "style",
+      "tags": [
+        "archaeology",
+        "section",
+        "excavation",
+        "record"
+      ],
+      "claims": {
+        "medium": "archival.archaeology-section",
+        "composition": "archival-archaeology-section",
+        "palette": "archival-archaeology-section",
+        "texture": "archival.archaeology-section"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an archaeological field-record treatment",
+          "tags": [
+            "archaeological field record"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Make supplied strata and object relationships plainly visible",
+          "tags": [
+            "strata relationship framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Retain soil granularity tool marks and fragile edges",
+          "tags": [
+            "soil grain",
+            "tool marks"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use dry earth colors with neutral illumination",
+          "tags": [
+            "dry earth",
+            "neutral light"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.excavation-find",
+      "name": "Excavation find portrait",
+      "description": "Use a measured excavation-find photograph. Separate the supplied artifact from its immediate context gently.",
+      "category": "archival/fieldwork",
+      "kind": "style",
+      "tags": [
+        "excavation",
+        "find",
+        "artifact",
+        "earth"
+      ],
+      "claims": {
+        "medium": "archival.excavation-find",
+        "composition": "archival-excavation-find",
+        "palette": "archival-excavation-find",
+        "texture": "archival.excavation-find"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a measured excavation-find photograph",
+          "tags": [
+            "excavation find portrait"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate the supplied artifact from its immediate context gently",
+          "tags": [
+            "gentle artifact separation"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Retain adhered earth and irregular worn surfaces",
+          "tags": [
+            "adhered earth",
+            "worn surface"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted mineral and earth tones",
+          "tags": [
+            "muted mineral",
+            "earth tones"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.oral-history-room",
+      "name": "Oral-history environment",
+      "description": "Use an attentive oral-history environment portrait. Let the supplied setting retain its ordinary spatial relationships.",
+      "category": "archival/documentary",
+      "kind": "style",
+      "tags": [
+        "oral-history",
+        "room",
+        "memory",
+        "documentary"
+      ],
+      "claims": {
+        "medium": "archival.oral-history-room",
+        "composition": "archival-oral-history-room",
+        "palette": "archival-oral-history-room",
+        "texture": "archival.oral-history-room"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an attentive oral-history environment portrait",
+          "tags": [
+            "oral history environment"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied setting retain its ordinary spatial relationships",
+          "tags": [
+            "ordinary room relationships"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep lived-in wear and soft ambient detail",
+          "tags": [
+            "lived in wear",
+            "ambient detail"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use subdued warm documentary color",
+          "tags": [
+            "subdued warm color"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.industrial-survey",
+      "name": "Industrial heritage survey",
+      "description": "Use an industrial-heritage survey photograph. Keep supplied structural relationships clear and rectilinear.",
+      "category": "archival/documentary",
+      "kind": "style",
+      "tags": [
+        "industrial",
+        "heritage",
+        "survey",
+        "record"
+      ],
+      "claims": {
+        "medium": "archival.industrial-survey",
+        "composition": "archival-industrial-survey",
+        "palette": "archival-industrial-survey",
+        "texture": "archival.industrial-survey"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an industrial-heritage survey photograph",
+          "tags": [
+            "industrial heritage survey"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied structural relationships clear and rectilinear",
+          "tags": [
+            "clear structural survey"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal oxidation repairs and layered surface age",
+          "tags": [
+            "oxidation",
+            "repair marks",
+            "surface age"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted iron gray and mineral rust",
+          "tags": [
+            "iron gray",
+            "mineral rust"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.textile-condition",
+      "name": "Textile condition record",
+      "description": "Use a textile-conservation record treatment. Present supplied weave and seams at a useful descriptive angle.",
+      "category": "archival/conservation",
+      "kind": "style",
+      "tags": [
+        "textile",
+        "conservation",
+        "condition",
+        "fibers"
+      ],
+      "claims": {
+        "medium": "archival.textile-condition",
+        "composition": "archival-textile-condition",
+        "palette": "archival-textile-condition",
+        "texture": "archival.textile-condition"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a textile-conservation record treatment",
+          "tags": [
+            "textile condition record"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Present supplied weave and seams at a useful descriptive angle",
+          "tags": [
+            "weave and seam framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal fiber variation worn pile and repaired areas",
+          "tags": [
+            "fiber variation",
+            "worn pile",
+            "repairs"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use neutral illumination and measured fabric color",
+          "tags": [
+            "neutral textile color"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.ceramic-profile",
+      "name": "Ceramic profile record",
+      "description": "Use an archaeological ceramic-profile portrait. Favor a clear supplied vessel contour over atmospheric depth.",
+      "category": "archival/catalog",
+      "kind": "style",
+      "tags": [
+        "ceramic",
+        "profile",
+        "artifact",
+        "museum"
+      ],
+      "claims": {
+        "medium": "archival.ceramic-profile",
+        "composition": "archival-ceramic-profile",
+        "palette": "archival-ceramic-profile",
+        "texture": "archival.ceramic-profile"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an archaeological ceramic-profile portrait",
+          "tags": [
+            "ceramic profile record"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Favor a clear supplied vessel contour over atmospheric depth",
+          "tags": [
+            "vessel profile framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal body texture glaze losses and turning marks",
+          "tags": [
+            "clay body",
+            "glaze loss",
+            "turning marks"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted clay hues over a quiet gray field",
+          "tags": [
+            "muted clay",
+            "quiet gray"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.mineral-cabinet",
+      "name": "Mineral cabinet record",
+      "description": "Use a mineral-cabinet specimen photograph. Choose a supplied-specimen angle that separates its facets.",
+      "category": "archival/catalog",
+      "kind": "style",
+      "tags": [
+        "mineral",
+        "cabinet",
+        "specimen",
+        "collection"
+      ],
+      "claims": {
+        "medium": "archival.mineral-cabinet",
+        "composition": "archival-mineral-cabinet",
+        "palette": "archival-mineral-cabinet",
+        "texture": "archival.mineral-cabinet"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a mineral-cabinet specimen photograph",
+          "tags": [
+            "mineral specimen record"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Choose a supplied-specimen angle that separates its facets",
+          "tags": [
+            "readable mineral facets"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep reflective crystals distinct from matte matrix",
+          "tags": [
+            "crystal reflections",
+            "matte matrix"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use a subdued dark-neutral collection ground",
+          "tags": [
+            "dark collection neutral"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "archival.archive-box",
+      "name": "Archive-box still life",
+      "description": "Use an archival-storage still-life treatment. Read the supplied arrangement through quiet ordered masses.",
+      "category": "archival/documents",
+      "kind": "style",
+      "tags": [
+        "archive",
+        "box",
+        "documents",
+        "storage"
+      ],
+      "claims": {
+        "medium": "archival.archive-box",
+        "composition": "archival-archive-box",
+        "palette": "archival-archive-box",
+        "texture": "archival.archive-box"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an archival-storage still-life treatment",
+          "tags": [
+            "archive storage still life"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Read the supplied arrangement through quiet ordered masses",
+          "tags": [
+            "ordered archival masses"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal folded paper edges cloth binding and handled surfaces",
+          "tags": [
+            "paper edges",
+            "cloth binding"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use faded paper grays and warm cardboard browns",
+          "tags": [
+            "paper gray",
+            "cardboard brown"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

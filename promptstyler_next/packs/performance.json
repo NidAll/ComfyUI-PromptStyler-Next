@@ -1,0 +1,1156 @@
+{
+  "schema_version": 1,
+  "id": "next.performance",
+  "version": "1.0.0",
+  "name": "Performance and scenography",
+  "description": "Lighting, staging and presentation languages for the supplied performer, setting or stage concept.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "performance.rehearsal-daylight",
+      "name": "Daylight rehearsal",
+      "description": "Use an observational daylight-rehearsal photograph. Leave enough space to read the supplied movement.",
+      "category": "performance/documentary",
+      "kind": "style",
+      "tags": [
+        "rehearsal",
+        "performance",
+        "daylight",
+        "practice"
+      ],
+      "claims": {
+        "medium": "performance.rehearsal-daylight",
+        "composition": "performance-rehearsal-daylight",
+        "palette": "performance-rehearsal-daylight",
+        "texture": "performance.rehearsal-daylight"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an observational daylight-rehearsal photograph",
+          "tags": [
+            "daylight rehearsal"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Leave enough space to read the supplied movement",
+          "tags": [
+            "movement-aware framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep floor wear and fabric texture gently visible",
+          "tags": [
+            "worn floor",
+            "fabric texture"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use subdued daylight neutrals",
+          "tags": [
+            "subdued daylight neutrals"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.blackbox-pool",
+      "name": "Black-box light pool",
+      "description": "Use a spare black-box theater treatment. Concentrate attention within a single clear light pool.",
+      "category": "performance/stage",
+      "kind": "style",
+      "tags": [
+        "black-box",
+        "spotlight",
+        "stage",
+        "theater"
+      ],
+      "claims": {
+        "medium": "performance.blackbox-pool",
+        "composition": "performance-blackbox-pool",
+        "palette": "performance-blackbox-pool",
+        "texture": "performance.blackbox-pool"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a spare black-box theater treatment",
+          "tags": [
+            "black box theater"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Concentrate attention within a single clear light pool",
+          "tags": [
+            "isolated light pool"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Let surrounding darkness fall away without glossy effects",
+          "tags": [
+            "matte stage darkness"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use neutral white illumination against deep charcoal",
+          "tags": [
+            "white stage light",
+            "charcoal"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.proscenium-tableau",
+      "name": "Proscenium tableau",
+      "description": "Use a composed proscenium-theater tableau. Keep the supplied scene legible within a frontal stage frame.",
+      "category": "performance/stage",
+      "kind": "style",
+      "tags": [
+        "proscenium",
+        "tableau",
+        "theater",
+        "framing"
+      ],
+      "claims": {
+        "medium": "performance.proscenium-tableau",
+        "composition": "performance-proscenium-tableau",
+        "palette": "performance-proscenium-tableau",
+        "texture": "performance.proscenium-tableau"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a composed proscenium-theater tableau",
+          "tags": [
+            "proscenium tableau"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied scene legible within a frontal stage frame",
+          "tags": [
+            "frontal stage framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Let scenic surfaces retain visible crafted texture",
+          "tags": [
+            "crafted scenic texture"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use coordinated scenic colors with restrained highlights",
+          "tags": [
+            "coordinated stage color"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.side-light-dance",
+      "name": "Side-lit dance study",
+      "description": "Use sculptural side-lit dance photography. Frame the supplied gesture with space for its extension.",
+      "category": "performance/movement",
+      "kind": "style",
+      "tags": [
+        "dance",
+        "side-light",
+        "movement",
+        "body"
+      ],
+      "claims": {
+        "medium": "performance.side-light-dance",
+        "composition": "performance-side-light-dance",
+        "palette": "performance-side-light-dance",
+        "texture": "performance.side-light-dance"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use sculptural side-lit dance photography",
+          "tags": [
+            "side lit dance"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Frame the supplied gesture with space for its extension",
+          "tags": [
+            "gesture extension"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Let side light reveal the planes of fabric and movement",
+          "tags": [
+            "sculptural side light"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use dark neutrals and restrained skin or costume color",
+          "tags": [
+            "dark performance palette"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.silhouette-cyclorama",
+      "name": "Cyclorama silhouette",
+      "description": "Use a graphic cyclorama-silhouette treatment. Keep supplied contours cleanly separated from the ground.",
+      "category": "performance/movement",
+      "kind": "style",
+      "tags": [
+        "silhouette",
+        "cyclorama",
+        "stage",
+        "movement"
+      ],
+      "claims": {
+        "medium": "performance.silhouette-cyclorama",
+        "composition": "performance-silhouette-cyclorama",
+        "palette": "performance-silhouette-cyclorama",
+        "texture": "performance.silhouette-cyclorama"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a graphic cyclorama-silhouette treatment",
+          "tags": [
+            "cyclorama silhouette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied contours cleanly separated from the ground",
+          "tags": [
+            "separated silhouettes"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use smooth background falloff and crisp edge transitions",
+          "tags": [
+            "smooth cyclorama",
+            "crisp silhouette"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use one deep silhouette against a single luminous hue",
+          "tags": [
+            "single hue",
+            "silhouette contrast"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.haze-beam",
+      "name": "Haze and beam stage",
+      "description": "Use a controlled haze-and-beam stage treatment. Let existing light directions frame the supplied focal action.",
+      "category": "performance/lighting",
+      "kind": "style",
+      "tags": [
+        "haze",
+        "beam",
+        "concert",
+        "light"
+      ],
+      "claims": {
+        "medium": "performance.haze-beam",
+        "composition": "performance-haze-beam",
+        "palette": "performance-haze-beam",
+        "texture": "performance.haze-beam"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a controlled haze-and-beam stage treatment",
+          "tags": [
+            "stage light beams"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let existing light directions frame the supplied focal action",
+          "tags": [
+            "directional stage framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep haze translucent so supplied forms remain legible",
+          "tags": [
+            "translucent stage haze"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Limit beams to a restrained two-color relationship",
+          "tags": [
+            "two color stage light"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.footlight-study",
+      "name": "Footlight stage study",
+      "description": "Use a restrained footlight-theater treatment. Make the supplied stage action readable from low illumination.",
+      "category": "performance/lighting",
+      "kind": "style",
+      "tags": [
+        "footlight",
+        "theater",
+        "shadow",
+        "stage"
+      ],
+      "claims": {
+        "medium": "performance.footlight-study",
+        "composition": "performance-footlight-study",
+        "palette": "performance-footlight-study",
+        "texture": "performance.footlight-study"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a restrained footlight-theater treatment",
+          "tags": [
+            "footlight stage"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Make the supplied stage action readable from low illumination",
+          "tags": [
+            "low illuminated stage"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Emphasize upward shadow shapes without grotesque distortion",
+          "tags": [
+            "upward stage shadows"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm footlights with cool background restraint",
+          "tags": [
+            "warm footlight",
+            "cool backdrop"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.opera-depth",
+      "name": "Operatic scenic depth",
+      "description": "Use an operatic scenic-presentation style. Layer the supplied setting through broad foreground and backdrop planes.",
+      "category": "performance/stage",
+      "kind": "style",
+      "tags": [
+        "opera",
+        "scenery",
+        "depth",
+        "theater"
+      ],
+      "claims": {
+        "medium": "performance.opera-depth",
+        "composition": "performance-opera-depth",
+        "palette": "performance-opera-depth",
+        "texture": "performance.opera-depth"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an operatic scenic-presentation style",
+          "tags": [
+            "operatic scenic design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Layer the supplied setting through broad foreground and backdrop planes",
+          "tags": [
+            "layered scenic depth"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep painted surfaces and physical scenic edges distinct",
+          "tags": [
+            "painted scenery",
+            "physical stage edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use deep coordinated scenic hues",
+          "tags": [
+            "deep scenic palette"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.chamber-recital",
+      "name": "Chamber recital portrait",
+      "description": "Use intimate chamber-recital photography. Keep the supplied performer and instrument visually connected.",
+      "category": "performance/music",
+      "kind": "style",
+      "tags": [
+        "chamber",
+        "recital",
+        "music",
+        "intimate"
+      ],
+      "claims": {
+        "medium": "performance.chamber-recital",
+        "composition": "performance-chamber-recital",
+        "palette": "performance-chamber-recital",
+        "texture": "performance.chamber-recital"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use intimate chamber-recital photography",
+          "tags": [
+            "chamber recital"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied performer and instrument visually connected",
+          "tags": [
+            "performer instrument relationship"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal polished surfaces with small controlled reflections",
+          "tags": [
+            "controlled instrument reflections"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm wood and soft black neutrals",
+          "tags": [
+            "warm wood",
+            "soft black"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.jazz-club",
+      "name": "Close jazz-club frame",
+      "description": "Use a close low-light jazz-club treatment. Let the supplied action emerge from intimate cropped space.",
+      "category": "performance/music",
+      "kind": "style",
+      "tags": [
+        "jazz",
+        "club",
+        "night",
+        "music"
+      ],
+      "claims": {
+        "medium": "performance.jazz-club",
+        "composition": "performance-jazz-club",
+        "palette": "performance-jazz-club",
+        "texture": "performance.jazz-club"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a close low-light jazz-club treatment",
+          "tags": [
+            "jazz club photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied action emerge from intimate cropped space",
+          "tags": [
+            "intimate performance crop"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use soft grain and restrained stage highlights",
+          "tags": [
+            "soft grain",
+            "small stage highlights"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use amber highlights over tobacco-dark shadows",
+          "tags": [
+            "amber",
+            "tobacco shadows"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.orchestra-balcony",
+      "name": "Orchestra balcony study",
+      "description": "Use a composed balcony-view performance photograph. Organize the supplied ensemble through repeating diagonal rhythms.",
+      "category": "performance/music",
+      "kind": "style",
+      "tags": [
+        "orchestra",
+        "balcony",
+        "ensemble",
+        "music"
+      ],
+      "claims": {
+        "medium": "performance.orchestra-balcony",
+        "composition": "performance-orchestra-balcony",
+        "palette": "performance-orchestra-balcony",
+        "texture": "performance.orchestra-balcony"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a composed balcony-view performance photograph",
+          "tags": [
+            "orchestra balcony view"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize the supplied ensemble through repeating diagonal rhythms",
+          "tags": [
+            "ensemble diagonal rhythm"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep repeated surfaces distinct without harsh sharpening",
+          "tags": [
+            "restrained ensemble detail"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use dark formal tones with warm polished accents",
+          "tags": [
+            "dark formal palette",
+            "warm accents"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.puppet-stage",
+      "name": "Puppet theater craft",
+      "description": "Use a tactile puppet-theater presentation style. Frame the supplied action as an intimate staged scene.",
+      "category": "performance/craft",
+      "kind": "style",
+      "tags": [
+        "puppet",
+        "miniature",
+        "theater",
+        "craft"
+      ],
+      "claims": {
+        "medium": "performance.puppet-stage",
+        "composition": "performance-puppet-stage",
+        "palette": "performance-puppet-stage",
+        "texture": "performance.puppet-stage"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a tactile puppet-theater presentation style",
+          "tags": [
+            "puppet theater craft"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Frame the supplied action as an intimate staged scene",
+          "tags": [
+            "intimate puppet staging"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal fabric seams carved edges and scenic brushwork",
+          "tags": [
+            "fabric seams",
+            "carved edges",
+            "scenic paint"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use rich but softened theatrical pigments",
+          "tags": [
+            "softened theater pigments"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.shadow-theater",
+      "name": "Shadow theater screen",
+      "description": "Use a paper-screen shadow-theater treatment. Arrange supplied silhouettes in clearly separated depth bands.",
+      "category": "performance/craft",
+      "kind": "style",
+      "tags": [
+        "shadow",
+        "screen",
+        "theater",
+        "silhouette"
+      ],
+      "claims": {
+        "medium": "performance.shadow-theater",
+        "composition": "performance-shadow-theater",
+        "palette": "performance-shadow-theater",
+        "texture": "performance.shadow-theater"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a paper-screen shadow-theater treatment",
+          "tags": [
+            "shadow theater"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange supplied silhouettes in clearly separated depth bands",
+          "tags": [
+            "layered shadow silhouettes"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Vary edge softness according to apparent screen distance",
+          "tags": [
+            "graduated shadow softness"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm translucent ivory and deep umber shadows",
+          "tags": [
+            "translucent ivory",
+            "umber shadow"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.scenic-model",
+      "name": "Scenic model-box",
+      "description": "Render the setting as a crafted scenic model-box. Keep the supplied stage geometry readable as a miniature.",
+      "category": "performance/design",
+      "kind": "style",
+      "tags": [
+        "scenography",
+        "model",
+        "box",
+        "design"
+      ],
+      "claims": {
+        "medium": "performance.scenic-model",
+        "composition": "performance-scenic-model",
+        "palette": "performance-scenic-model",
+        "texture": "performance.scenic-model"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the setting as a crafted scenic model-box",
+          "tags": [
+            "scenic model box"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied stage geometry readable as a miniature",
+          "tags": [
+            "miniature stage geometry"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Show paper joins matte paint and model-scale edges",
+          "tags": [
+            "paper joins",
+            "matte scenic paint"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted design-board colors",
+          "tags": [
+            "muted scenic colors"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.lighting-plan",
+      "name": "Theatrical lighting concept",
+      "description": "Use a theatrical lighting-concept illustration. Build the supplied scene around deliberate light zones.",
+      "category": "performance/design",
+      "kind": "style",
+      "tags": [
+        "lighting",
+        "concept",
+        "theater",
+        "design"
+      ],
+      "claims": {
+        "medium": "performance.lighting-plan",
+        "composition": "performance-lighting-plan",
+        "palette": "performance-lighting-plan",
+        "texture": "performance.lighting-plan"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a theatrical lighting-concept illustration",
+          "tags": [
+            "stage lighting concept"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Build the supplied scene around deliberate light zones",
+          "tags": [
+            "deliberate light zones"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep beams schematic and stage surfaces understated",
+          "tags": [
+            "schematic beams",
+            "quiet stage surfaces"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use a small purposeful family of light colors",
+          "tags": [
+            "purposeful lighting palette"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.backstage-candid",
+      "name": "Backstage candid",
+      "description": "Use an attentive backstage-documentary treatment. Let supplied gestures lead a close observational frame.",
+      "category": "performance/documentary",
+      "kind": "style",
+      "tags": [
+        "backstage",
+        "candid",
+        "performance",
+        "documentary"
+      ],
+      "claims": {
+        "medium": "performance.backstage-candid",
+        "composition": "performance-backstage-candid",
+        "palette": "performance-backstage-candid",
+        "texture": "performance.backstage-candid"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an attentive backstage-documentary treatment",
+          "tags": [
+            "backstage candid"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let supplied gestures lead a close observational frame",
+          "tags": [
+            "observational gesture framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Retain practical light falloff and ordinary surface wear",
+          "tags": [
+            "practical light",
+            "surface wear"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use desaturated warm practical-light tones",
+          "tags": [
+            "desaturated practical light"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.costume-fitting",
+      "name": "Costume fitting study",
+      "description": "Use a costume-fitting editorial treatment. Keep the supplied garment construction readable on the form.",
+      "category": "performance/craft",
+      "kind": "style",
+      "tags": [
+        "costume",
+        "fitting",
+        "theater",
+        "textile"
+      ],
+      "claims": {
+        "medium": "performance.costume-fitting",
+        "composition": "performance-costume-fitting",
+        "palette": "performance-costume-fitting",
+        "texture": "performance.costume-fitting"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a costume-fitting editorial treatment",
+          "tags": [
+            "costume fitting photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied garment construction readable on the form",
+          "tags": [
+            "garment construction framing"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal seams drape and temporary working marks",
+          "tags": [
+            "seams",
+            "drape",
+            "working marks"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use neutral surroundings and descriptive fabric colors",
+          "tags": [
+            "neutral studio",
+            "descriptive textile color"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.floor-pattern",
+      "name": "Movement floor pattern",
+      "description": "Use a graphic movement-floor study. Read the supplied movement as a clear spatial rhythm.",
+      "category": "performance/movement",
+      "kind": "style",
+      "tags": [
+        "movement",
+        "floor",
+        "pattern",
+        "choreography"
+      ],
+      "claims": {
+        "medium": "performance.floor-pattern",
+        "composition": "performance-floor-pattern",
+        "palette": "performance-floor-pattern",
+        "texture": "performance.floor-pattern"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a graphic movement-floor study",
+          "tags": [
+            "movement floor graphic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Read the supplied movement as a clear spatial rhythm",
+          "tags": [
+            "spatial movement rhythm"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Combine a quiet ground with crisp motion accents",
+          "tags": [
+            "quiet ground",
+            "crisp motion accents"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use one dark ground and a single movement color",
+          "tags": [
+            "dark ground",
+            "single movement accent"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.outdoor-festival",
+      "name": "Open-air performance frame",
+      "description": "Use an open-air performance-editorial treatment. Balance supplied stage action with its existing environment.",
+      "category": "performance/stage",
+      "kind": "style",
+      "tags": [
+        "outdoor",
+        "festival",
+        "performance",
+        "environment"
+      ],
+      "claims": {
+        "medium": "performance.outdoor-festival",
+        "composition": "performance-outdoor-festival",
+        "palette": "performance-outdoor-festival",
+        "texture": "performance.outdoor-festival"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an open-air performance-editorial treatment",
+          "tags": [
+            "open air performance"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Balance supplied stage action with its existing environment",
+          "tags": [
+            "stage environment balance"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Keep available-light texture and airy depth",
+          "tags": [
+            "available light",
+            "airy depth"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use natural surroundings with restrained stage accents",
+          "tags": [
+            "natural ground",
+            "stage accents"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "performance.empty-stage",
+      "name": "Empty-stage atmosphere",
+      "description": "Use a quiet stage-space portrait treatment. Make the supplied scenic geometry carry the visual attention.",
+      "category": "performance/stage",
+      "kind": "style",
+      "tags": [
+        "empty-stage",
+        "scenery",
+        "quiet",
+        "theater"
+      ],
+      "claims": {
+        "medium": "performance.empty-stage",
+        "composition": "performance-empty-stage",
+        "palette": "performance-empty-stage",
+        "texture": "performance.empty-stage"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a quiet stage-space portrait treatment",
+          "tags": [
+            "stage space portrait"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Make the supplied scenic geometry carry the visual attention",
+          "tags": [
+            "scenic geometry"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal matte surfaces and subtle pools of residual light",
+          "tags": [
+            "matte scenery",
+            "subtle light pools"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted grays with a small warm light accent",
+          "tags": [
+            "muted gray",
+            "warm light"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

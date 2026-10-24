@@ -1,0 +1,899 @@
+{
+  "schema_version": 1,
+  "id": "next.grades",
+  "version": "1.0.0",
+  "name": "Color room",
+  "description": "Composable grade layers with explicit axes and progressive detail.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "grade.amber-teal",
+      "name": "Amber and teal",
+      "description": "Favor amber highlights and restrained teal shadows. Keep neutral surfaces from drifting into oversaturated cyan.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "amber",
+        "teal",
+        "complementary"
+      ],
+      "claims": {
+        "palette": "grade-amber-teal"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor amber highlights and restrained teal shadows",
+          "tags": [
+            "amber and teal"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep neutral surfaces from drifting into oversaturated cyan",
+          "tags": [
+            "keep neutral surfaces from drifting into oversaturated cyan"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.warm-neutral",
+      "name": "Warm neutral",
+      "description": "Shift the midtones gently toward warm neutrals. Hold whites near ivory and keep shadow color restrained.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "warm",
+        "neutral",
+        "gentle"
+      ],
+      "claims": {
+        "palette": "grade-warm-neutral"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Shift the midtones gently toward warm neutrals",
+          "tags": [
+            "warm neutral"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Hold whites near ivory and keep shadow color restrained",
+          "tags": [
+            "hold whites near ivory and keep shadow color restrained"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.cool-neutral",
+      "name": "Cool neutral",
+      "description": "Shift neutral tones gently toward cool slate. Keep important warm local colors distinct from the cool balance.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "cool",
+        "neutral",
+        "gentle"
+      ],
+      "claims": {
+        "palette": "grade-cool-neutral"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Shift neutral tones gently toward cool slate",
+          "tags": [
+            "cool neutral"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep important warm local colors distinct from the cool balance",
+          "tags": [
+            "keep important warm local colors distinct from the cool balance"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.silver",
+      "name": "Silver monochrome",
+      "description": "Translate the colors into balanced silver monochrome. Keep a broad middle-gray scale between dense black and luminous white.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "silver",
+        "monochrome",
+        "black white"
+      ],
+      "claims": {
+        "palette": "grade-silver"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Translate the colors into balanced silver monochrome",
+          "tags": [
+            "silver monochrome"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep a broad middle-gray scale between dense black and luminous white",
+          "tags": [
+            "keep a broad middle-gray scale between dense black and luminous white"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.sepia",
+      "name": "Restrained sepia",
+      "description": "Translate color into warm sepia-brown tones. Keep highlights pale and avoid a uniform orange cast.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "sepia",
+        "brown",
+        "archival"
+      ],
+      "claims": {
+        "palette": "grade-sepia"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Translate color into warm sepia-brown tones",
+          "tags": [
+            "restrained sepia"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep highlights pale and avoid a uniform orange cast",
+          "tags": [
+            "keep highlights pale and avoid a uniform orange cast"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.copper",
+      "name": "Copper dusk",
+      "description": "Favor muted copper and russet midtones. Keep deep shadows neutral with small warm highlight accents.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "copper",
+        "dusk",
+        "warm"
+      ],
+      "claims": {
+        "palette": "grade-copper"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor muted copper and russet midtones",
+          "tags": [
+            "copper dusk"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep deep shadows neutral with small warm highlight accents",
+          "tags": [
+            "keep deep shadows neutral with small warm highlight accents"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.sage",
+      "name": "Sage and stone",
+      "description": "Favor muted sage greens and warm stone neutrals. Keep saturation low while preserving distinct local color boundaries.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "sage",
+        "stone",
+        "muted"
+      ],
+      "claims": {
+        "palette": "grade-sage"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor muted sage greens and warm stone neutrals",
+          "tags": [
+            "sage and stone"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep saturation low while preserving distinct local color boundaries",
+          "tags": [
+            "keep saturation low while preserving distinct local color boundaries"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.porcelain",
+      "name": "Porcelain cool",
+      "description": "Favor pale blue-white and softly cooled neutral tones. Retain gentle midtone separation rather than washing out the forms.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "pale",
+        "porcelain",
+        "cool"
+      ],
+      "claims": {
+        "palette": "grade-porcelain"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor pale blue-white and softly cooled neutral tones",
+          "tags": [
+            "porcelain cool"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Retain gentle midtone separation rather than washing out the forms",
+          "tags": [
+            "retain gentle midtone separation rather than washing out the forms"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.rose",
+      "name": "Rose ash",
+      "description": "Mix dusty rose highlights with soft ash-gray shadows. Keep the color impression understated and evenly balanced.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "rose",
+        "gray",
+        "muted"
+      ],
+      "claims": {
+        "palette": "grade-rose"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Mix dusty rose highlights with soft ash-gray shadows",
+          "tags": [
+            "rose ash"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep the color impression understated and evenly balanced",
+          "tags": [
+            "keep the color impression understated and evenly balanced"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.ochre",
+      "name": "Ochre earth",
+      "description": "Favor ochre, clay and muted earth colors. Let small pale accents separate adjacent warm masses.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "ochre",
+        "earth",
+        "pigment"
+      ],
+      "claims": {
+        "palette": "grade-ochre"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor ochre, clay and muted earth colors",
+          "tags": [
+            "ochre earth"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Let small pale accents separate adjacent warm masses",
+          "tags": [
+            "let small pale accents separate adjacent warm masses"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.jewel",
+      "name": "Jewel restraint",
+      "description": "Use deep jewel colors with restrained saturation. Preserve dark color separation rather than collapsing it into black.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "jewel",
+        "deep",
+        "rich"
+      ],
+      "claims": {
+        "palette": "grade-jewel"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Use deep jewel colors with restrained saturation",
+          "tags": [
+            "jewel restraint"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Preserve dark color separation rather than collapsing it into black",
+          "tags": [
+            "preserve dark color separation rather than collapsing it into black"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.pastel",
+      "name": "Chalk pastel",
+      "description": "Lift colors toward a chalky pastel range. Keep shadow values soft but maintain the main shape boundaries.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "pastel",
+        "chalk",
+        "pale"
+      ],
+      "claims": {
+        "palette": "grade-pastel"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Lift colors toward a chalky pastel range",
+          "tags": [
+            "chalk pastel"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep shadow values soft but maintain the main shape boundaries",
+          "tags": [
+            "keep shadow values soft but maintain the main shape boundaries"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.olive",
+      "name": "Olive film",
+      "description": "Favor muted olive shadows and warm neutral midtones. Keep pale highlights slightly creamy rather than green.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "olive",
+        "film",
+        "muted"
+      ],
+      "claims": {
+        "palette": "grade-olive"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor muted olive shadows and warm neutral midtones",
+          "tags": [
+            "olive film"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep pale highlights slightly creamy rather than green",
+          "tags": [
+            "keep pale highlights slightly creamy rather than green"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.cobalt",
+      "name": "Cobalt and cream",
+      "description": "Favor cobalt blue and warm cream color relationships. Concentrate saturated blue in the strongest existing color regions.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "cobalt",
+        "cream",
+        "blue"
+      ],
+      "claims": {
+        "palette": "grade-cobalt"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor cobalt blue and warm cream color relationships",
+          "tags": [
+            "cobalt and cream"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Concentrate saturated blue in the strongest existing color regions",
+          "tags": [
+            "concentrate saturated blue in the strongest existing color regions"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.indigo",
+      "name": "Indigo dusk",
+      "description": "Favor indigo shadows with gently violet midtones. Keep the brightest values softly cool and color-separated.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "indigo",
+        "blue",
+        "dusk"
+      ],
+      "claims": {
+        "palette": "grade-indigo"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor indigo shadows with gently violet midtones",
+          "tags": [
+            "indigo dusk"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep the brightest values softly cool and color-separated",
+          "tags": [
+            "keep the brightest values softly cool and color-separated"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.vermilion",
+      "name": "Vermilion accent",
+      "description": "Use restrained neutrals with a vermilion accent on existing focal colors. Keep the red accent localized rather than tinting the entire image.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "vermilion",
+        "red",
+        "limited"
+      ],
+      "claims": {
+        "palette": "grade-vermilion"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Use restrained neutrals with a vermilion accent on existing focal colors",
+          "tags": [
+            "vermilion accent"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep the red accent localized rather than tinting the entire image",
+          "tags": [
+            "keep the red accent localized rather than tinting the entire image"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.mossgold",
+      "name": "Moss and gold",
+      "description": "Favor deep moss green and muted golden tones. Keep highlights mineral and subdued rather than metallic yellow.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "moss",
+        "gold",
+        "earthy"
+      ],
+      "claims": {
+        "palette": "grade-mossgold"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor deep moss green and muted golden tones",
+          "tags": [
+            "moss and gold"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep highlights mineral and subdued rather than metallic yellow",
+          "tags": [
+            "keep highlights mineral and subdued rather than metallic yellow"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.lavender",
+      "name": "Lavender smoke",
+      "description": "Favor smoky lavender and cool gray color relationships. Keep soft warm highlights to preserve tonal depth.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "lavender",
+        "gray",
+        "soft"
+      ],
+      "claims": {
+        "palette": "grade-lavender"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor smoky lavender and cool gray color relationships",
+          "tags": [
+            "lavender smoke"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep soft warm highlights to preserve tonal depth",
+          "tags": [
+            "keep soft warm highlights to preserve tonal depth"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.sand",
+      "name": "Sand and ink",
+      "description": "Favor warm sand midtones and deep ink-colored shadows. Keep a small number of pale highlights for graphic separation.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "sand",
+        "ink",
+        "neutral"
+      ],
+      "claims": {
+        "palette": "grade-sand"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor warm sand midtones and deep ink-colored shadows",
+          "tags": [
+            "sand and ink"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep a small number of pale highlights for graphic separation",
+          "tags": [
+            "keep a small number of pale highlights for graphic separation"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.celadon",
+      "name": "Celadon wash",
+      "description": "Favor pale celadon greens and off-white neutrals. Keep the strongest local colors softly desaturated but recognizable.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "celadon",
+        "pale green",
+        "muted"
+      ],
+      "claims": {
+        "palette": "grade-celadon"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor pale celadon greens and off-white neutrals",
+          "tags": [
+            "celadon wash"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep the strongest local colors softly desaturated but recognizable",
+          "tags": [
+            "keep the strongest local colors softly desaturated but recognizable"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.charcoal",
+      "name": "Charcoal compression",
+      "description": "Compress color toward charcoal and subdued neutral midtones. Keep narrow luminous highlights and readable dark detail.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "charcoal",
+        "dark",
+        "muted"
+      ],
+      "claims": {
+        "palette": "grade-charcoal"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Compress color toward charcoal and subdued neutral midtones",
+          "tags": [
+            "charcoal compression"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep narrow luminous highlights and readable dark detail",
+          "tags": [
+            "keep narrow luminous highlights and readable dark detail"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.cream",
+      "name": "Cream lift",
+      "description": "Lift the darkest tones slightly and warm the pale values toward cream. Keep local color differences visible beneath the faded tonal balance.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "cream",
+        "faded",
+        "gentle"
+      ],
+      "claims": {
+        "palette": "grade-cream"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Lift the darkest tones slightly and warm the pale values toward cream",
+          "tags": [
+            "cream lift"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep local color differences visible beneath the faded tonal balance",
+          "tags": [
+            "keep local color differences visible beneath the faded tonal balance"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.acid",
+      "name": "Acid yellow-green",
+      "description": "Favor an intentional acid-yellow and dark green relationship. Keep the pale color field clean and the dark shapes distinctly separated.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "acid",
+        "yellow green",
+        "graphic"
+      ],
+      "claims": {
+        "palette": "grade-acid"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor an intentional acid-yellow and dark green relationship",
+          "tags": [
+            "acid yellow-green"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep the pale color field clean and the dark shapes distinctly separated",
+          "tags": [
+            "keep the pale color field clean and the dark shapes distinctly separated"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "grade.aubergine",
+      "name": "Aubergine and peach",
+      "description": "Favor aubergine shadows and muted peach midtones. Use pale warm highlights without excessive red saturation.",
+      "category": "grades",
+      "kind": "grade",
+      "tags": [
+        "grade",
+        "aubergine",
+        "peach",
+        "complementary"
+      ],
+      "claims": {
+        "palette": "grade-aubergine"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor aubergine shadows and muted peach midtones",
+          "tags": [
+            "aubergine and peach"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use pale warm highlights without excessive red saturation",
+          "tags": [
+            "use pale warm highlights without excessive red saturation"
+          ],
+          "min_intensity": 0.65
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

@@ -1,0 +1,2287 @@
+{
+  "schema_version": 1,
+  "id": "next.studio-weatherfield",
+  "version": "1.0.0",
+  "name": "Landscape and weather observation",
+  "description": "Authored landscape and weather observation directions that restyle the existing subject without inventing scene objects.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "weatherfield.frontalrain",
+      "name": "Frontal-rain observation",
+      "description": "A landscape-photography treatment under a broad frontal-rain atmosphere. Flatten the distant illumination while preserving nearby form separation.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "rain front",
+        "soft visibility",
+        "muted distance",
+        "wet atmosphere"
+      ],
+      "claims": {
+        "medium": "weatherfield.frontalrain",
+        "lighting": "weatherfield.frontalrain",
+        "texture": "weatherfield.frontalrain"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape-photography treatment under a broad frontal-rain atmosphere",
+          "tags": [
+            "rain front"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Flatten the distant illumination while preserving nearby form separation",
+          "tags": [
+            "soft visibility",
+            "muted distance"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Suggest moisture through existing surface response rather than added streak effects",
+          "tags": [
+            "wet atmosphere"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.squall",
+      "name": "Passing-squall contrast",
+      "description": "A landscape interpretation with the tonal contrast of a passing squall. Set localized clear illumination against a dimmer diffuse distance.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "passing squall",
+        "local contrast",
+        "shifting illumination",
+        "distant haze"
+      ],
+      "claims": {
+        "medium": "weatherfield.squall",
+        "lighting": "weatherfield.squall"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation with the tonal contrast of a passing squall",
+          "tags": [
+            "passing squall"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Set localized clear illumination against a dimmer diffuse distance",
+          "tags": [
+            "local contrast",
+            "shifting illumination"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "mood",
+          "text": "Keep the atmosphere unsettled without inventing dramatic weather objects",
+          "tags": [
+            "distant haze"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.coastalmist",
+      "name": "Coastal-mist intervals",
+      "description": "A coastal-mist landscape interpretation. Separate existing depth layers through gradually softened intervals.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "coastal mist",
+        "layered distance",
+        "soft horizon",
+        "cool neutral"
+      ],
+      "claims": {
+        "medium": "weatherfield.coastalmist",
+        "composition": "weatherfield.coastalmist",
+        "palette": "weatherfield.coastalmist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A coastal-mist landscape interpretation",
+          "tags": [
+            "coastal mist"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate existing depth layers through gradually softened intervals",
+          "tags": [
+            "layered distance",
+            "soft horizon"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Favor cool neutral tones with small surviving warm local accents",
+          "tags": [
+            "cool neutral"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.heatveil",
+      "name": "Heat-veil distance",
+      "description": "A landscape interpretation viewed through a restrained heat veil. Soften fine detail progressively with distance while keeping nearby edges intact.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "heat haze",
+        "distance compression",
+        "warm air",
+        "soft detail"
+      ],
+      "claims": {
+        "medium": "weatherfield.heatveil",
+        "palette": "weatherfield.heatveil",
+        "texture": "weatherfield.heatveil"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation viewed through a restrained heat veil",
+          "tags": [
+            "heat haze"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Soften fine detail progressively with distance while keeping nearby edges intact",
+          "tags": [
+            "distance compression",
+            "warm air"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use a dry warm atmospheric bias without turning the whole scene orange",
+          "tags": [
+            "soft detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.frostmorning",
+      "name": "Frost-morning stillness",
+      "description": "A quiet cold-morning landscape interpretation. Use pale directional daylight with gentle cool reflected fill.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "frost morning",
+        "cold daylight",
+        "quiet contrast",
+        "pale highlights"
+      ],
+      "claims": {
+        "medium": "weatherfield.frostmorning",
+        "lighting": "weatherfield.frostmorning",
+        "palette": "weatherfield.frostmorning"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A quiet cold-morning landscape interpretation",
+          "tags": [
+            "frost morning"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use pale directional daylight with gentle cool reflected fill",
+          "tags": [
+            "cold daylight",
+            "quiet contrast"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep bright areas subdued and lightly desaturated without adding snow",
+          "tags": [
+            "pale highlights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.snowlight",
+      "name": "Reflected-snow illumination",
+      "description": "A landscape lighting treatment informed by diffuse snow reflection. Lift lower-facing existing planes with broad cool reflected light.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "snow light",
+        "upward fill",
+        "soft contrast",
+        "cool white"
+      ],
+      "claims": {
+        "medium": "weatherfield.snowlight",
+        "lighting": "weatherfield.snowlight",
+        "palette": "weatherfield.snowlight"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape lighting treatment informed by diffuse snow reflection",
+          "tags": [
+            "snow light"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Lift lower-facing existing planes with broad cool reflected light",
+          "tags": [
+            "upward fill",
+            "soft contrast"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Separate pale neutrals carefully without clipping them to blank white",
+          "tags": [
+            "cool white"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.thaw",
+      "name": "Thaw-season material contrast",
+      "description": "A landscape surface study with a thaw-season tonal character. Keep existing wet and dry surfaces visibly different.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "thaw",
+        "wet dry contrast",
+        "low chroma",
+        "ground texture"
+      ],
+      "claims": {
+        "medium": "weatherfield.thaw",
+        "palette": "weatherfield.thaw",
+        "texture": "weatherfield.thaw"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape surface study with a thaw-season tonal character",
+          "tags": [
+            "thaw"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep existing wet and dry surfaces visibly different",
+          "tags": [
+            "wet dry contrast",
+            "low chroma"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use low-chroma earth tones with small cool reflected highlights",
+          "tags": [
+            "ground texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.cloudbreak",
+      "name": "Cloud-break illumination",
+      "description": "A landscape interpretation with a restrained opening in the illumination. Concentrate clear light on one existing depth plane within broad diffuse shade.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "cloud break",
+        "localized sunlight",
+        "broad shadow",
+        "tonal opening"
+      ],
+      "claims": {
+        "medium": "weatherfield.cloudbreak",
+        "lighting": "weatherfield.cloudbreak",
+        "composition": "weatherfield.cloudbreak"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation with a restrained opening in the illumination",
+          "tags": [
+            "cloud break"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Concentrate clear light on one existing depth plane within broad diffuse shade",
+          "tags": [
+            "localized sunlight",
+            "broad shadow"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Use the lighting change to reinforce the existing focal hierarchy",
+          "tags": [
+            "tonal opening"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.bluehour",
+      "name": "Blue-hour spatial quiet",
+      "description": "A blue-hour landscape interpretation with quiet spatial separation. Let cool ambient color dominate while preserving subtle local hue differences.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "blue hour",
+        "low luminance",
+        "cool ambient",
+        "held detail"
+      ],
+      "claims": {
+        "medium": "weatherfield.bluehour",
+        "palette": "weatherfield.bluehour",
+        "lighting": "weatherfield.bluehour"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A blue-hour landscape interpretation with quiet spatial separation",
+          "tags": [
+            "blue hour"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Let cool ambient color dominate while preserving subtle local hue differences",
+          "tags": [
+            "low luminance",
+            "cool ambient"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep low-level detail readable without artificial glowing edges",
+          "tags": [
+            "held detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.afterrain",
+      "name": "After-rain surface response",
+      "description": "A landscape interpretation with clear after-rain illumination. Let existing smooth wet areas reflect softly while rough areas remain granular.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "after rain",
+        "wet surfaces",
+        "clear air",
+        "reflected light"
+      ],
+      "claims": {
+        "medium": "weatherfield.afterrain",
+        "lighting": "weatherfield.afterrain",
+        "texture": "weatherfield.afterrain"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation with clear after-rain illumination",
+          "tags": [
+            "after rain"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let existing smooth wet areas reflect softly while rough areas remain granular",
+          "tags": [
+            "wet surfaces",
+            "clear air"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use clean broad light with restrained highlight recovery",
+          "tags": [
+            "reflected light"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.hazyhighnoon",
+      "name": "Hazy-noon compression",
+      "description": "A landscape interpretation under hazy high-noon light. Use short shadows and restrained highlights under a veiled overhead source.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "hazy noon",
+        "high sun",
+        "compressed contrast",
+        "warm distance"
+      ],
+      "claims": {
+        "medium": "weatherfield.hazyhighnoon",
+        "lighting": "weatherfield.hazyhighnoon",
+        "palette": "weatherfield.hazyhighnoon"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation under hazy high-noon light",
+          "tags": [
+            "hazy noon"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use short shadows and restrained highlights under a veiled overhead source",
+          "tags": [
+            "high sun",
+            "compressed contrast"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Let warm atmospheric distance soften local colors gently",
+          "tags": [
+            "warm distance"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.winterovercast",
+      "name": "Winter-overcast restraint",
+      "description": "A landscape-photography treatment in quiet winter-overcast light. Compress chroma while retaining differences among cool and warm neutrals.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "winter overcast",
+        "low color",
+        "flat light",
+        "subtle depth"
+      ],
+      "claims": {
+        "medium": "weatherfield.winterovercast",
+        "palette": "weatherfield.winterovercast",
+        "composition": "weatherfield.winterovercast"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape-photography treatment in quiet winter-overcast light",
+          "tags": [
+            "winter overcast"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Compress chroma while retaining differences among cool and warm neutrals",
+          "tags": [
+            "low color",
+            "flat light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Make existing overlap and scale carry depth when shadows are weak",
+          "tags": [
+            "subtle depth"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.summerhaze",
+      "name": "Summer-haze distance",
+      "description": "A landscape interpretation through soft summer haze. Reduce distant microcontrast without blurring the focal existing forms.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "summer haze",
+        "soft horizon",
+        "humid light",
+        "low microcontrast"
+      ],
+      "claims": {
+        "medium": "weatherfield.summerhaze",
+        "lighting": "weatherfield.summerhaze",
+        "texture": "weatherfield.summerhaze"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation through soft summer haze",
+          "tags": [
+            "summer haze"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Reduce distant microcontrast without blurring the focal existing forms",
+          "tags": [
+            "soft horizon",
+            "humid light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad humid illumination with gentle highlight spread",
+          "tags": [
+            "low microcontrast"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.windtrace",
+      "name": "Wind-trace observation",
+      "description": "A landscape interpretation attentive to existing directional movement. Describe aligned surface traces and bends already implied by the subject.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "wind trace",
+        "directional texture",
+        "environmental rhythm",
+        "held structure"
+      ],
+      "claims": {
+        "medium": "weatherfield.windtrace",
+        "composition": "weatherfield.windtrace",
+        "texture": "weatherfield.windtrace"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation attentive to existing directional movement",
+          "tags": [
+            "wind trace"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Describe aligned surface traces and bends already implied by the subject",
+          "tags": [
+            "directional texture",
+            "environmental rhythm"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Use their shared direction as a subtle visual rhythm",
+          "tags": [
+            "held structure"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.stillair",
+      "name": "Still-air landscape",
+      "description": "A landscape interpretation with the clarity of still air. Separate existing planes with small stable tonal differences.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "still air",
+        "precise distance",
+        "quiet surface",
+        "tonal separation"
+      ],
+      "claims": {
+        "medium": "weatherfield.stillair",
+        "lighting": "weatherfield.stillair"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation with the clarity of still air",
+          "tags": [
+            "still air"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Separate existing planes with small stable tonal differences",
+          "tags": [
+            "precise distance",
+            "quiet surface"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "mood",
+          "text": "Keep surfaces visually settled without blur or dramatic motion cues",
+          "tags": [
+            "tonal separation"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.horizonband",
+      "name": "Horizon-band study",
+      "description": "A landscape study emphasizing existing horizontal depth intervals. Read the scene as a few unequal horizontal bands.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "horizon study",
+        "horizontal intervals",
+        "tonal bands",
+        "spatial economy"
+      ],
+      "claims": {
+        "medium": "weatherfield.horizonband",
+        "composition": "weatherfield.horizonband",
+        "palette": "weatherfield.horizonband"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape study emphasizing existing horizontal depth intervals",
+          "tags": [
+            "horizon study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Read the scene as a few unequal horizontal bands",
+          "tags": [
+            "horizontal intervals",
+            "tonal bands"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep each band tonally distinct without reducing it to flat graphic blocks",
+          "tags": [
+            "spatial economy"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.depthveil",
+      "name": "Aerial-depth veil",
+      "description": "A landscape interpretation organized by gradual atmospheric depth. Move distant existing colors gently toward the ambient air tone.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "aerial perspective",
+        "depth veil",
+        "local color",
+        "progressive softness"
+      ],
+      "claims": {
+        "medium": "weatherfield.depthveil",
+        "palette": "weatherfield.depthveil",
+        "texture": "weatherfield.depthveil"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation organized by gradual atmospheric depth",
+          "tags": [
+            "aerial perspective"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Move distant existing colors gently toward the ambient air tone",
+          "tags": [
+            "depth veil",
+            "local color"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Reduce fine surface detail progressively rather than blurring all planes equally",
+          "tags": [
+            "progressive softness"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.shadowmap",
+      "name": "Terrain-shadow mapping",
+      "description": "A landscape study of the existing large-scale relief. Use oblique light to make terrain planes readable through shadow shape.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "terrain shadow",
+        "landform relief",
+        "oblique light",
+        "large masses"
+      ],
+      "claims": {
+        "medium": "weatherfield.shadowmap",
+        "lighting": "weatherfield.shadowmap",
+        "composition": "weatherfield.shadowmap"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape study of the existing large-scale relief",
+          "tags": [
+            "terrain shadow"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use oblique light to make terrain planes readable through shadow shape",
+          "tags": [
+            "landform relief",
+            "oblique light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Group minor detail beneath a few dominant landform masses",
+          "tags": [
+            "large masses"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.sidelitfield",
+      "name": "Side-lit field texture",
+      "description": "A landscape surface study under lateral illumination. Let low-angle light skim the existing relief in a continuous direction.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "field texture",
+        "side light",
+        "low relief",
+        "continuous plane"
+      ],
+      "claims": {
+        "medium": "weatherfield.sidelitfield",
+        "lighting": "weatherfield.sidelitfield",
+        "texture": "weatherfield.sidelitfield"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape surface study under lateral illumination",
+          "tags": [
+            "field texture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let low-angle light skim the existing relief in a continuous direction",
+          "tags": [
+            "side light",
+            "low relief"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve small repeated irregularities without making them identical",
+          "tags": [
+            "continuous plane"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.rainshadow",
+      "name": "Rain-shadow tonal division",
+      "description": "A landscape interpretation with a dry rain-shadow character. Use subdued mineral earth colors with clear atmospheric neutrals.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "rain shadow",
+        "dry atmosphere",
+        "unequal illumination",
+        "muted earth"
+      ],
+      "claims": {
+        "medium": "weatherfield.rainshadow",
+        "palette": "weatherfield.rainshadow",
+        "lighting": "weatherfield.rainshadow"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation with a dry rain-shadow character",
+          "tags": [
+            "rain shadow"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use subdued mineral earth colors with clear atmospheric neutrals",
+          "tags": [
+            "dry atmosphere",
+            "unequal illumination"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep the illumination firm and simple without theatrical beams",
+          "tags": [
+            "muted earth"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.highaltitude",
+      "name": "High-altitude clarity",
+      "description": "A landscape interpretation with clear high-altitude illumination. Use crisp direct light balanced by cool open shadows.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "high altitude",
+        "clear air",
+        "hard separation",
+        "cool shadow"
+      ],
+      "claims": {
+        "medium": "weatherfield.highaltitude",
+        "lighting": "weatherfield.highaltitude",
+        "texture": "weatherfield.highaltitude"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation with clear high-altitude illumination",
+          "tags": [
+            "high altitude"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use crisp direct light balanced by cool open shadows",
+          "tags": [
+            "clear air",
+            "hard separation"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep distant edges unusually clear while retaining believable scale",
+          "tags": [
+            "cool shadow"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.lowcloud",
+      "name": "Low-cloud enclosure",
+      "description": "A landscape interpretation under a low cloud ceiling. Use soft top illumination with a gently darkened upper tonal field.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "low cloud",
+        "enclosed atmosphere",
+        "soft top light",
+        "muted distance"
+      ],
+      "claims": {
+        "medium": "weatherfield.lowcloud",
+        "lighting": "weatherfield.lowcloud"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation under a low cloud ceiling",
+          "tags": [
+            "low cloud"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft top illumination with a gently darkened upper tonal field",
+          "tags": [
+            "enclosed atmosphere",
+            "soft top light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "mood",
+          "text": "Keep the spatial feeling enclosed without replacing the existing sky or setting",
+          "tags": [
+            "muted distance"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.seafog",
+      "name": "Sea-fog dissolution",
+      "description": "A landscape interpretation that dissolves gently into sea-fog tones. Let the farthest existing contours merge into a continuous atmospheric field.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "sea fog",
+        "soft edge",
+        "limited depth",
+        "cool field"
+      ],
+      "claims": {
+        "medium": "weatherfield.seafog",
+        "composition": "weatherfield.seafog",
+        "palette": "weatherfield.seafog"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation that dissolves gently into sea-fog tones",
+          "tags": [
+            "sea fog"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the farthest existing contours merge into a continuous atmospheric field",
+          "tags": [
+            "soft edge",
+            "limited depth"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use a narrow range of cool greys with small preserved local colors",
+          "tags": [
+            "cool field"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.longshadow",
+      "name": "Long-shadow geometry",
+      "description": "A landscape study of long directional shadow geometry. Extend the logic of existing low-angle light into clear coherent shadows.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "long shadows",
+        "low sun",
+        "diagonal rhythm",
+        "warm cool contrast"
+      ],
+      "claims": {
+        "medium": "weatherfield.longshadow",
+        "lighting": "weatherfield.longshadow",
+        "palette": "weatherfield.longshadow"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape study of long directional shadow geometry",
+          "tags": [
+            "long shadows"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Extend the logic of existing low-angle light into clear coherent shadows",
+          "tags": [
+            "low sun",
+            "diagonal rhythm"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Balance restrained warm lit planes against cooler shadow planes",
+          "tags": [
+            "warm cool contrast"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.flatwater",
+      "name": "Still-surface reflection study",
+      "description": "A landscape interpretation attentive to existing smooth reflective planes. Balance real forms and their existing reflected counterparts without perfect symmetry.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "still reflection",
+        "water plane",
+        "tonal symmetry",
+        "soft disturbance"
+      ],
+      "claims": {
+        "medium": "weatherfield.flatwater",
+        "composition": "weatherfield.flatwater",
+        "texture": "weatherfield.flatwater"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation attentive to existing smooth reflective planes",
+          "tags": [
+            "still reflection"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Balance real forms and their existing reflected counterparts without perfect symmetry",
+          "tags": [
+            "water plane",
+            "tonal symmetry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Retain small surface disturbances instead of making a mirror-flat composite",
+          "tags": [
+            "soft disturbance"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.brokenreflection",
+      "name": "Broken-reflection rhythm",
+      "description": "A landscape study of existing fragmented reflections. Break reflected forms into surface-following irregular fragments.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "broken reflection",
+        "water texture",
+        "vertical fragments",
+        "controlled highlights"
+      ],
+      "claims": {
+        "medium": "weatherfield.brokenreflection",
+        "lighting": "weatherfield.brokenreflection",
+        "texture": "weatherfield.brokenreflection"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape study of existing fragmented reflections",
+          "tags": [
+            "broken reflection"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Break reflected forms into surface-following irregular fragments",
+          "tags": [
+            "water texture",
+            "vertical fragments"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep bright fragments controlled rather than turning them into glitter",
+          "tags": [
+            "controlled highlights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.siltdetail",
+      "name": "Silt and sediment detail",
+      "description": "A close landscape surface study of existing sediment-like patterns. Resolve fine deposition lines and small changes in grain density.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "sediment",
+        "silt pattern",
+        "low relief",
+        "matte mineral"
+      ],
+      "claims": {
+        "medium": "weatherfield.siltdetail",
+        "lighting": "weatherfield.siltdetail",
+        "texture": "weatherfield.siltdetail"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A close landscape surface study of existing sediment-like patterns",
+          "tags": [
+            "sediment"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Resolve fine deposition lines and small changes in grain density",
+          "tags": [
+            "silt pattern",
+            "low relief"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use shallow soft illumination to keep low relief readable",
+          "tags": [
+            "matte mineral"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.saltplane",
+      "name": "Salt-plane tonal study",
+      "description": "A landscape interpretation with pale mineral-surface clarity. Separate near-white tones through tiny warm and cool shifts.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "salt plane",
+        "pale mineral",
+        "wide intervals",
+        "delicate relief"
+      ],
+      "claims": {
+        "medium": "weatherfield.saltplane",
+        "palette": "weatherfield.saltplane",
+        "texture": "weatherfield.saltplane"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation with pale mineral-surface clarity",
+          "tags": [
+            "salt plane"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Separate near-white tones through tiny warm and cool shifts",
+          "tags": [
+            "pale mineral",
+            "wide intervals"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep existing crust-like relief delicate rather than crystalline spectacle",
+          "tags": [
+            "delicate relief"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.dunecontour",
+      "name": "Dune-contour abstraction",
+      "description": "A landscape interpretation organized around existing smooth contours. Let a few curving boundaries describe the underlying volume.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "dune contour",
+        "smooth relief",
+        "curving boundary",
+        "tonal mass"
+      ],
+      "claims": {
+        "medium": "weatherfield.dunecontour",
+        "composition": "weatherfield.dunecontour",
+        "lighting": "weatherfield.dunecontour"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation organized around existing smooth contours",
+          "tags": [
+            "dune contour"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let a few curving boundaries describe the underlying volume",
+          "tags": [
+            "smooth relief",
+            "curving boundary"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad directional light with clean but softly edged shadows",
+          "tags": [
+            "tonal mass"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.rockstrata",
+      "name": "Rock-strata reading",
+      "description": "A landscape study that makes existing geological layering legible. Preserve uneven layer thickness and interrupted material transitions.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "rock strata",
+        "layered terrain",
+        "material sequence",
+        "oblique light"
+      ],
+      "claims": {
+        "medium": "weatherfield.rockstrata",
+        "lighting": "weatherfield.rockstrata",
+        "texture": "weatherfield.rockstrata"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape study that makes existing geological layering legible",
+          "tags": [
+            "rock strata"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve uneven layer thickness and interrupted material transitions",
+          "tags": [
+            "layered terrain",
+            "material sequence"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use oblique illumination to separate adjacent strata",
+          "tags": [
+            "oblique light"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.forestdepth",
+      "name": "Woodland depth intervals",
+      "description": "A landscape interpretation emphasizing existing overlapping depth planes. Keep the principal existing forms readable among irregular repeated intervals.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "woodland depth",
+        "overlap",
+        "ambient green",
+        "selective clarity"
+      ],
+      "claims": {
+        "medium": "weatherfield.forestdepth",
+        "composition": "weatherfield.forestdepth",
+        "palette": "weatherfield.forestdepth"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation emphasizing existing overlapping depth planes",
+          "tags": [
+            "woodland depth"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the principal existing forms readable among irregular repeated intervals",
+          "tags": [
+            "overlap",
+            "ambient green"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Separate muted green and brown tones without a uniform green cast",
+          "tags": [
+            "selective clarity"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.canopylight",
+      "name": "Canopy-filtered illumination",
+      "description": "A landscape lighting treatment with softly filtered overhead illumination. Place restrained irregular light patches across the existing forms.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "canopy light",
+        "broken shade",
+        "soft patches",
+        "ambient fill"
+      ],
+      "claims": {
+        "medium": "weatherfield.canopylight",
+        "lighting": "weatherfield.canopylight",
+        "texture": "weatherfield.canopylight"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape lighting treatment with softly filtered overhead illumination",
+          "tags": [
+            "canopy light"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Place restrained irregular light patches across the existing forms",
+          "tags": [
+            "broken shade",
+            "soft patches"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep local surface detail legible inside both lit and shaded areas",
+          "tags": [
+            "ambient fill"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.moorland",
+      "name": "Moorland tonal breadth",
+      "description": "A broad-toned landscape interpretation with a moorland color character. Use restrained peat, ochre and muted green relationships.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "moorland",
+        "earth color",
+        "open distance",
+        "weathered texture"
+      ],
+      "claims": {
+        "medium": "weatherfield.moorland",
+        "palette": "weatherfield.moorland",
+        "composition": "weatherfield.moorland"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A broad-toned landscape interpretation with a moorland color character",
+          "tags": [
+            "moorland"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use restrained peat, ochre and muted green relationships",
+          "tags": [
+            "earth color",
+            "open distance"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Give the existing open intervals a quiet horizontal emphasis",
+          "tags": [
+            "weathered texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.wetstone",
+      "name": "Wet-stone color depth",
+      "description": "A landscape surface study of existing mineral forms under wet-looking light. Deepen local mineral colors without increasing their saturation unnaturally.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "wet stone",
+        "darkened mineral",
+        "subtle sheen",
+        "material contrast"
+      ],
+      "claims": {
+        "medium": "weatherfield.wetstone",
+        "palette": "weatherfield.wetstone",
+        "lighting": "weatherfield.wetstone"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape surface study of existing mineral forms under wet-looking light",
+          "tags": [
+            "wet stone"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Deepen local mineral colors without increasing their saturation unnaturally",
+          "tags": [
+            "darkened mineral",
+            "subtle sheen"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use small coherent reflections to separate slick planes from rough ones",
+          "tags": [
+            "material contrast"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.dryriver",
+      "name": "Dry-channel pattern study",
+      "description": "A landscape interpretation emphasizing existing erosion-like surface patterns. Let branching or parallel traces vary naturally in width and depth.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "dry channel",
+        "eroded pattern",
+        "matte earth",
+        "flow traces"
+      ],
+      "claims": {
+        "medium": "weatherfield.dryriver",
+        "lighting": "weatherfield.dryriver",
+        "texture": "weatherfield.dryriver"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation emphasizing existing erosion-like surface patterns",
+          "tags": [
+            "dry channel"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let branching or parallel traces vary naturally in width and depth",
+          "tags": [
+            "eroded pattern",
+            "matte earth"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use even soft illumination so the pattern carries the image",
+          "tags": [
+            "flow traces"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.volcanic",
+      "name": "Volcanic tonal mass",
+      "description": "A landscape interpretation with dense volcanic material character. Separate dark brown, charcoal and muted oxide tones.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "volcanic terrain",
+        "dark landform",
+        "coarse texture",
+        "quiet color"
+      ],
+      "claims": {
+        "medium": "weatherfield.volcanic",
+        "palette": "weatherfield.volcanic",
+        "texture": "weatherfield.volcanic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation with dense volcanic material character",
+          "tags": [
+            "volcanic terrain"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Separate dark brown, charcoal and muted oxide tones",
+          "tags": [
+            "dark landform",
+            "coarse texture"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep coarse existing surfaces irregular and nonmetallic",
+          "tags": [
+            "quiet color"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.limestone",
+      "name": "Limestone weathering study",
+      "description": "A landscape interpretation of pale weathered mineral surfaces. Describe softened grooves, small pits and irregular exposed grain.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "limestone",
+        "pale weathering",
+        "soft erosion",
+        "mineral grain"
+      ],
+      "claims": {
+        "medium": "weatherfield.limestone",
+        "lighting": "weatherfield.limestone",
+        "texture": "weatherfield.limestone"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation of pale weathered mineral surfaces",
+          "tags": [
+            "limestone"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Describe softened grooves, small pits and irregular exposed grain",
+          "tags": [
+            "pale weathering",
+            "soft erosion"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad directional light that reveals relief without harsh white glare",
+          "tags": [
+            "mineral grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.clayground",
+      "name": "Clay-ground color planes",
+      "description": "A landscape interpretation built around existing clay-like color planes. Use distinct but subdued red-earth, ochre and grey relationships.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "clay ground",
+        "earth pigments",
+        "surface planes",
+        "matte relief"
+      ],
+      "claims": {
+        "medium": "weatherfield.clayground",
+        "palette": "weatherfield.clayground",
+        "texture": "weatherfield.clayground"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation built around existing clay-like color planes",
+          "tags": [
+            "clay ground"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use distinct but subdued red-earth, ochre and grey relationships",
+          "tags": [
+            "earth pigments",
+            "surface planes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine surface cracking and smooth compressed areas materially separate",
+          "tags": [
+            "matte relief"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.humidity",
+      "name": "Humid-distance softness",
+      "description": "A landscape interpretation with softly humid atmospheric depth. Let illumination wrap around existing forms with minimal hard shadow.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "humidity",
+        "air depth",
+        "soft illumination",
+        "reduced microcontrast"
+      ],
+      "claims": {
+        "medium": "weatherfield.humidity",
+        "lighting": "weatherfield.humidity",
+        "texture": "weatherfield.humidity"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation with softly humid atmospheric depth",
+          "tags": [
+            "humidity"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let illumination wrap around existing forms with minimal hard shadow",
+          "tags": [
+            "air depth",
+            "soft illumination"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Reduce distant microcontrast while retaining nearby material detail",
+          "tags": [
+            "reduced microcontrast"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    },
+    {
+      "id": "weatherfield.poststorm",
+      "name": "Post-storm tonal opening",
+      "description": "A landscape interpretation after a tonal clearing in the weather. Balance a brighter existing depth interval against still-subdued surroundings.",
+      "category": "landscape/weather",
+      "kind": "style",
+      "tags": [
+        "post storm",
+        "clear interval",
+        "grounded contrast",
+        "quiet atmosphere"
+      ],
+      "claims": {
+        "medium": "weatherfield.poststorm",
+        "lighting": "weatherfield.poststorm"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A landscape interpretation after a tonal clearing in the weather",
+          "tags": [
+            "post storm"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Balance a brighter existing depth interval against still-subdued surroundings",
+          "tags": [
+            "clear interval",
+            "grounded contrast"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "mood",
+          "text": "Favor grounded quiet after tension rather than adding lightning or spectacle",
+          "tags": [
+            "quiet atmosphere"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [
+        "generic",
+        "sdxl",
+        "flux",
+        "qwen-image",
+        "qwen-image-2.1",
+        "moss-image",
+        "moss-image-dmd",
+        "fibo"
+      ],
+      "variants": {}
+    }
+  ]
+}

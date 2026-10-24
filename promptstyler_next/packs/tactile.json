@@ -1,0 +1,1166 @@
+{
+  "schema_version": 1,
+  "id": "next.tactile",
+  "version": "1.0.0",
+  "name": "Tactile object design",
+  "description": "Craft and fabrication aesthetics applied to supplied forms, with material behavior made visible.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "tactile.folded-card",
+      "name": "Folded card construction",
+      "description": "Render the subject as folded heavy-card construction. Let supplied planes meet through clear folds and tabs.",
+      "category": "tactile/paper",
+      "kind": "style",
+      "tags": [
+        "card",
+        "fold",
+        "paper",
+        "construction"
+      ],
+      "claims": {
+        "medium": "tactile.folded-card",
+        "composition": "tactile-folded-card",
+        "palette": "tactile-folded-card",
+        "texture": "tactile.folded-card"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject as folded heavy-card construction",
+          "tags": [
+            "folded card object"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let supplied planes meet through clear folds and tabs",
+          "tags": [
+            "clear folded planes"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal compressed creases and matte cut edges",
+          "tags": [
+            "compressed folds",
+            "matte edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use uncoated ivory with one muted board color",
+          "tags": [
+            "uncoated ivory",
+            "muted board color"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.corrugated-study",
+      "name": "Corrugated board study",
+      "description": "Use a corrugated-board object-design treatment. Make supplied structural layers readable at exposed edges.",
+      "category": "tactile/paper",
+      "kind": "style",
+      "tags": [
+        "corrugated",
+        "board",
+        "cardboard",
+        "structure"
+      ],
+      "claims": {
+        "medium": "tactile.corrugated-study",
+        "composition": "tactile-corrugated-study",
+        "palette": "tactile-corrugated-study",
+        "texture": "tactile.corrugated-study"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a corrugated-board object-design treatment",
+          "tags": [
+            "corrugated board design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Make supplied structural layers readable at exposed edges",
+          "tags": [
+            "exposed board layers"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Show fine fluting fiber fuzz and pressed faces",
+          "tags": [
+            "corrugated fluting",
+            "board fibers"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use natural kraft and warm gray",
+          "tags": [
+            "kraft brown",
+            "warm gray"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.paper-honeycomb",
+      "name": "Paper honeycomb object",
+      "description": "Render the supplied form as expanded paper honeycomb. Let repeated cellular depth follow the supplied silhouette.",
+      "category": "tactile/paper",
+      "kind": "style",
+      "tags": [
+        "paper",
+        "honeycomb",
+        "structure",
+        "craft"
+      ],
+      "claims": {
+        "medium": "tactile.paper-honeycomb",
+        "composition": "tactile-paper-honeycomb",
+        "palette": "tactile-paper-honeycomb",
+        "texture": "tactile.paper-honeycomb"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the supplied form as expanded paper honeycomb",
+          "tags": [
+            "paper honeycomb object"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let repeated cellular depth follow the supplied silhouette",
+          "tags": [
+            "cellular silhouette"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Show thin paper walls and soft internal shadows",
+          "tags": [
+            "thin paper walls",
+            "cell shadows"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use pale paper colors with quiet tonal depth",
+          "tags": [
+            "pale paper palette"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.book-cloth",
+      "name": "Book-cloth object",
+      "description": "Use a book-cloth wrapped-object treatment. Emphasize the supplied object's proportions through precise wrapped edges.",
+      "category": "tactile/binding",
+      "kind": "style",
+      "tags": [
+        "book-cloth",
+        "binding",
+        "textile",
+        "object"
+      ],
+      "claims": {
+        "medium": "tactile.book-cloth",
+        "composition": "tactile-book-cloth",
+        "palette": "tactile-book-cloth",
+        "texture": "tactile.book-cloth"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a book-cloth wrapped-object treatment",
+          "tags": [
+            "book cloth object"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Emphasize the supplied object's proportions through precise wrapped edges",
+          "tags": [
+            "precise wrapped edges"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal fine cloth weave and compressed corners",
+          "tags": [
+            "book cloth weave",
+            "pressed corners"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use faded indigo and warm paper neutrals",
+          "tags": [
+            "faded indigo",
+            "paper neutrals"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.blind-deboss",
+      "name": "Blind-deboss relief",
+      "description": "Render the subject as blind-debossed heavy paper. Let supplied shapes read through shallow recessed geometry.",
+      "category": "tactile/paper",
+      "kind": "style",
+      "tags": [
+        "deboss",
+        "relief",
+        "paper",
+        "pressure"
+      ],
+      "claims": {
+        "medium": "tactile.blind-deboss",
+        "composition": "tactile-blind-deboss",
+        "palette": "tactile-blind-deboss",
+        "texture": "tactile.blind-deboss"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject as blind-debossed heavy paper",
+          "tags": [
+            "blind debossed paper"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let supplied shapes read through shallow recessed geometry",
+          "tags": [
+            "shallow recessed forms"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Use soft raking shadows and compressed paper grain",
+          "tags": [
+            "compressed paper grain",
+            "shallow shadows"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Keep a near-monochrome warm-white range",
+          "tags": [
+            "warm white monochrome"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.letterpress-object",
+      "name": "Letterpress impression study",
+      "description": "Use a deeply impressed letterpress-object treatment. Keep supplied forms bold enough to read through physical pressure.",
+      "category": "tactile/print",
+      "kind": "style",
+      "tags": [
+        "letterpress",
+        "impression",
+        "ink",
+        "paper"
+      ],
+      "claims": {
+        "medium": "tactile.letterpress-object",
+        "composition": "tactile-letterpress-object",
+        "palette": "tactile-letterpress-object",
+        "texture": "tactile.letterpress-object"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a deeply impressed letterpress-object treatment",
+          "tags": [
+            "letterpress impression"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied forms bold enough to read through physical pressure",
+          "tags": [
+            "bold impressed forms"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal ink spread and pressed paper shoulders",
+          "tags": [
+            "ink spread",
+            "pressed paper"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use charcoal ink on thick ivory stock",
+          "tags": [
+            "charcoal ink",
+            "ivory stock"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.edge-laminate",
+      "name": "Edge-laminated wood",
+      "description": "Render the object in edge-laminated wood. Let supplied curves reveal stacked structural layers.",
+      "category": "tactile/wood",
+      "kind": "style",
+      "tags": [
+        "laminate",
+        "wood",
+        "edge",
+        "construction"
+      ],
+      "claims": {
+        "medium": "tactile.edge-laminate",
+        "composition": "tactile-edge-laminate",
+        "palette": "tactile-edge-laminate",
+        "texture": "tactile.edge-laminate"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the object in edge-laminated wood",
+          "tags": [
+            "edge laminated wood"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let supplied curves reveal stacked structural layers",
+          "tags": [
+            "stacked wood layers"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Show alternating grain and finely sanded edges",
+          "tags": [
+            "alternating wood grain",
+            "sanded edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use pale birch with warm end-grain accents",
+          "tags": [
+            "pale birch",
+            "warm end grain"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.bent-plywood",
+      "name": "Bent plywood study",
+      "description": "Use a sculptural bent-plywood design treatment. Keep supplied curves continuous and structurally clear.",
+      "category": "tactile/wood",
+      "kind": "style",
+      "tags": [
+        "plywood",
+        "bent",
+        "wood",
+        "furniture"
+      ],
+      "claims": {
+        "medium": "tactile.bent-plywood",
+        "composition": "tactile-bent-plywood",
+        "palette": "tactile-bent-plywood",
+        "texture": "tactile.bent-plywood"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a sculptural bent-plywood design treatment",
+          "tags": [
+            "bent plywood object"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied curves continuous and structurally clear",
+          "tags": [
+            "continuous plywood curves"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal thin laminate lines along clean edges",
+          "tags": [
+            "thin laminate edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use honey-toned wood against a muted neutral",
+          "tags": [
+            "honey wood",
+            "muted neutral"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.endgrain-block",
+      "name": "End-grain block study",
+      "description": "Use an end-grain wooden-object treatment. Read the supplied form through solid tactile masses.",
+      "category": "tactile/wood",
+      "kind": "style",
+      "tags": [
+        "end-grain",
+        "wood",
+        "block",
+        "material"
+      ],
+      "claims": {
+        "medium": "tactile.endgrain-block",
+        "composition": "tactile-endgrain-block",
+        "palette": "tactile-endgrain-block",
+        "texture": "tactile.endgrain-block"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an end-grain wooden-object treatment",
+          "tags": [
+            "end grain wood object"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Read the supplied form through solid tactile masses",
+          "tags": [
+            "solid wood masses"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal pores growth rings and carefully eased edges",
+          "tags": [
+            "end grain pores",
+            "growth rings"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm natural wood with restrained oil sheen",
+          "tags": [
+            "natural wood",
+            "subtle oil sheen"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.joinery-study",
+      "name": "Exposed joinery object",
+      "description": "Use an exposed-joinery object-design style. Make the supplied connection geometry visually legible.",
+      "category": "tactile/wood",
+      "kind": "style",
+      "tags": [
+        "joinery",
+        "wood",
+        "construction",
+        "craft"
+      ],
+      "claims": {
+        "medium": "tactile.joinery-study",
+        "composition": "tactile-joinery-study",
+        "palette": "tactile-joinery-study",
+        "texture": "tactile.joinery-study"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use an exposed-joinery object-design style",
+          "tags": [
+            "exposed wood joinery"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Make the supplied connection geometry visually legible",
+          "tags": [
+            "legible joinery"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Show fitted seams tool traces and alternating grain direction",
+          "tags": [
+            "fitted seams",
+            "tool traces"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use balanced natural wood tones",
+          "tags": [
+            "natural joinery tones"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.cast-plaster",
+      "name": "Cast plaster study",
+      "description": "Render the supplied form as a cast-plaster object. Favor broad planes and readable rounded transitions.",
+      "category": "tactile/casting",
+      "kind": "style",
+      "tags": [
+        "plaster",
+        "cast",
+        "relief",
+        "matte"
+      ],
+      "claims": {
+        "medium": "tactile.cast-plaster",
+        "composition": "tactile-cast-plaster",
+        "palette": "tactile-cast-plaster",
+        "texture": "tactile.cast-plaster"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the supplied form as a cast-plaster object",
+          "tags": [
+            "cast plaster object"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Favor broad planes and readable rounded transitions",
+          "tags": [
+            "broad plaster planes"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Show subtle casting pores and powdery edges",
+          "tags": [
+            "casting pores",
+            "powdery edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm chalk white and cool soft shadows",
+          "tags": [
+            "chalk white",
+            "cool shadows"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.pigmented-cast",
+      "name": "Pigmented mineral cast",
+      "description": "Use a pigmented mineral-cast design treatment. Let the supplied volume remain simple and uninterrupted.",
+      "category": "tactile/casting",
+      "kind": "style",
+      "tags": [
+        "mineral",
+        "pigment",
+        "cast",
+        "object"
+      ],
+      "claims": {
+        "medium": "tactile.pigmented-cast",
+        "composition": "tactile-pigmented-cast",
+        "palette": "tactile-pigmented-cast",
+        "texture": "tactile.pigmented-cast"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a pigmented mineral-cast design treatment",
+          "tags": [
+            "pigmented mineral cast"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied volume remain simple and uninterrupted",
+          "tags": [
+            "uninterrupted cast volume"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal fine mineral flecks within a matte surface",
+          "tags": [
+            "mineral flecks",
+            "matte cast"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted oxide red and pale aggregate",
+          "tags": [
+            "muted oxide",
+            "pale aggregate"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.sand-cast-metal",
+      "name": "Sand-cast metal study",
+      "description": "Render the subject as a sand-cast metal object. Keep the supplied silhouette broad and materially grounded.",
+      "category": "tactile/metal",
+      "kind": "style",
+      "tags": [
+        "sand-cast",
+        "metal",
+        "casting",
+        "texture"
+      ],
+      "claims": {
+        "medium": "tactile.sand-cast-metal",
+        "composition": "tactile-sand-cast-metal",
+        "palette": "tactile-sand-cast-metal",
+        "texture": "tactile.sand-cast-metal"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject as a sand-cast metal object",
+          "tags": [
+            "sand cast metal"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied silhouette broad and materially grounded",
+          "tags": [
+            "grounded metal silhouette"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal fine casting grain beside selectively finished edges",
+          "tags": [
+            "casting grain",
+            "finished edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use dull aluminum with soft cool highlights",
+          "tags": [
+            "dull aluminum",
+            "cool highlights"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.hammered-sheet",
+      "name": "Hammered sheet-metal form",
+      "description": "Use a hand-hammered sheet-metal treatment. Let the supplied form read through broad connected reflections.",
+      "category": "tactile/metal",
+      "kind": "style",
+      "tags": [
+        "hammered",
+        "sheet-metal",
+        "craft",
+        "form"
+      ],
+      "claims": {
+        "medium": "tactile.hammered-sheet",
+        "composition": "tactile-hammered-sheet",
+        "palette": "tactile-hammered-sheet",
+        "texture": "tactile.hammered-sheet"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a hand-hammered sheet-metal treatment",
+          "tags": [
+            "hammered sheet metal"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let the supplied form read through broad connected reflections",
+          "tags": [
+            "connected metal reflections"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Show shallow hammer marks and gently irregular rims",
+          "tags": [
+            "hammer marks",
+            "irregular rims"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm copper with subdued oxidized shadows",
+          "tags": [
+            "warm copper",
+            "oxidized shadows"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.wire-armature",
+      "name": "Wire armature model",
+      "description": "Render the subject as an open wire-armature model. Preserve the supplied silhouette through economical structural lines.",
+      "category": "tactile/metal",
+      "kind": "style",
+      "tags": [
+        "wire",
+        "armature",
+        "model",
+        "construction"
+      ],
+      "claims": {
+        "medium": "tactile.wire-armature",
+        "composition": "tactile-wire-armature",
+        "palette": "tactile-wire-armature",
+        "texture": "tactile.wire-armature"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject as an open wire-armature model",
+          "tags": [
+            "wire armature model"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve the supplied silhouette through economical structural lines",
+          "tags": [
+            "economical wire silhouette"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal small bends joins and varied wire tension",
+          "tags": [
+            "wire bends",
+            "wire joins"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use dark steel against a quiet warm ground",
+          "tags": [
+            "dark steel",
+            "warm ground"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.felt-formed",
+      "name": "Formed felt object",
+      "description": "Use a formed-felt object-design treatment. Keep the supplied contours broad soft and distinct.",
+      "category": "tactile/fiber",
+      "kind": "style",
+      "tags": [
+        "felt",
+        "formed",
+        "fiber",
+        "soft"
+      ],
+      "claims": {
+        "medium": "tactile.felt-formed",
+        "composition": "tactile-felt-formed",
+        "palette": "tactile-felt-formed",
+        "texture": "tactile.felt-formed"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a formed-felt object-design treatment",
+          "tags": [
+            "formed felt object"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the supplied contours broad soft and distinct",
+          "tags": [
+            "soft distinct contours"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal compressed fiber and gently rounded cut edges",
+          "tags": [
+            "compressed felt fibers"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use heather gray with one muted wool color",
+          "tags": [
+            "heather gray",
+            "muted wool"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.cork-object",
+      "name": "Carved cork object",
+      "description": "Render the supplied form as a carefully carved cork object. Use clear silhouettes and stable simple contact planes.",
+      "category": "tactile/natural-material",
+      "kind": "style",
+      "tags": [
+        "cork",
+        "carved",
+        "natural",
+        "object"
+      ],
+      "claims": {
+        "medium": "tactile.cork-object",
+        "composition": "tactile-cork-object",
+        "palette": "tactile-cork-object",
+        "texture": "tactile.cork-object"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the supplied form as a carefully carved cork object",
+          "tags": [
+            "carved cork object"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use clear silhouettes and stable simple contact planes",
+          "tags": [
+            "stable cork form"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Show fine cork cells and softly chamfered edges",
+          "tags": [
+            "cork cells",
+            "soft chamfers"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use honey beige with warm shadow",
+          "tags": [
+            "honey beige",
+            "warm shadow"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.rubber-molded",
+      "name": "Molded rubber object",
+      "description": "Use a matte molded-rubber object treatment. Let supplied volumes feel resilient and clearly separated.",
+      "category": "tactile/polymer",
+      "kind": "style",
+      "tags": [
+        "rubber",
+        "molded",
+        "industrial",
+        "soft"
+      ],
+      "claims": {
+        "medium": "tactile.rubber-molded",
+        "composition": "tactile-rubber-molded",
+        "palette": "tactile-rubber-molded",
+        "texture": "tactile.rubber-molded"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a matte molded-rubber object treatment",
+          "tags": [
+            "molded rubber object"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let supplied volumes feel resilient and clearly separated",
+          "tags": [
+            "resilient rubber volumes"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Reveal fine mold seams and low diffuse sheen",
+          "tags": [
+            "mold seams",
+            "diffuse rubber sheen"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use muted graphite with one restrained pigment",
+          "tags": [
+            "graphite rubber",
+            "restrained pigment"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.wax-maquette",
+      "name": "Wax maquette study",
+      "description": "Render the subject as a hand-worked wax maquette. Preserve the supplied gesture through economical sculptural masses.",
+      "category": "tactile/modeling",
+      "kind": "style",
+      "tags": [
+        "wax",
+        "maquette",
+        "sculpture",
+        "model"
+      ],
+      "claims": {
+        "medium": "tactile.wax-maquette",
+        "composition": "tactile-wax-maquette",
+        "palette": "tactile-wax-maquette",
+        "texture": "tactile.wax-maquette"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject as a hand-worked wax maquette",
+          "tags": [
+            "wax maquette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve the supplied gesture through economical sculptural masses",
+          "tags": [
+            "economical wax masses"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Show tool pulls softened seams and slight translucency",
+          "tags": [
+            "wax tool marks",
+            "slight translucency"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use pale amber or muted sculptor's brown",
+          "tags": [
+            "pale amber",
+            "sculptor brown"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "tactile.clay-prototype",
+      "name": "Clay prototype study",
+      "description": "Use a refined clay-prototype presentation style. Read the supplied form through broad controlled surface transitions.",
+      "category": "tactile/modeling",
+      "kind": "style",
+      "tags": [
+        "clay",
+        "prototype",
+        "industrial",
+        "design"
+      ],
+      "claims": {
+        "medium": "tactile.clay-prototype",
+        "composition": "tactile-clay-prototype",
+        "palette": "tactile-clay-prototype",
+        "texture": "tactile.clay-prototype"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use a refined clay-prototype presentation style",
+          "tags": [
+            "clay design prototype"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Read the supplied form through broad controlled surface transitions",
+          "tags": [
+            "controlled surface transitions"
+          ],
+          "min_intensity": 0.35
+        },
+        {
+          "axis": "texture",
+          "text": "Show subtle tool sweep and carefully smoothed edges",
+          "tags": [
+            "clay tool sweep",
+            "smooth edges"
+          ],
+          "min_intensity": 0.65
+        },
+        {
+          "axis": "palette",
+          "text": "Use warm modeling clay against cool gray",
+          "tags": [
+            "warm clay",
+            "cool gray"
+          ],
+          "min_intensity": 0.85
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

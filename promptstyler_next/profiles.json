@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "profiles": [
+    {
+      "id": "generic",
+      "name": "Unknown / generic",
+      "format": "natural",
+      "negative": false,
+      "weighting": false,
+      "conditioning": "specialized",
+      "evidence": "conservative",
+      "aliases": [],
+      "guidance": "Preserve the subject and append plain visual language. Negative-prompt and encoder capabilities are unknown; choose an explicit profile before conditioning.",
+      "sources": []
+    },
+    {
+      "id": "sdxl",
+      "name": "SDXL",
+      "format": "tags",
+      "negative": true,
+      "weighting": true,
+      "conditioning": "clip",
+      "evidence": "documented",
+      "aliases": [
+        "sd-xl"
+      ],
+      "guidance": "Concise visual tags, optional negative prompt. The same text can feed both CLIP encoders; native SDXL encoding remains available for separate encoder text and size conditioning. Weighting is a ComfyUI encoder capability, not a universal model syntax.",
+      "sources": [
+        "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0",
+        "https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion/stable_diffusion_xl"
+      ]
+    },
+    {
+      "id": "flux",
+      "name": "FLUX image",
+      "format": "natural",
+      "negative": false,
+      "weighting": false,
+      "conditioning": "specialized",
+      "evidence": "documented",
+      "aliases": [
+        "flux-1",
+        "flux-2",
+        "flux-klein"
+      ],
+      "guidance": "Describe subject, action, style, context and light in natural language. Negative prompts are unsupported in this profile. Keep model-specific guidance and encoder selection in the native FLUX workflow.",
+      "sources": [
+        "https://github.com/black-forest-labs/skills/blob/master/README.md",
+        "https://help.bfl.ai/articles/7734566352-does-flux-2-support-negative-prompting"
+      ]
+    },
+    {
+      "id": "qwen-image",
+      "name": "Qwen-Image (CFG)",
+      "format": "natural",
+      "negative": true,
+      "weighting": false,
+      "conditioning": "specialized",
+      "evidence": "documented",
+      "aliases": [
+        "qwen"
+      ],
+      "guidance": "Use descriptive captions and quote exact requested lettering. Negative text requires a workflow that actually enables classifier-free guidance. Use the separate Qwen-Image 2.1 profile for its guidance-free default; image editing needs native image-aware encoding.",
+      "sources": [
+        "https://huggingface.co/Qwen/Qwen-Image",
+        "https://huggingface.co/docs/diffusers/api/pipelines/qwenimage"
+      ]
+    },
+    {
+      "id": "qwen-image-2.1",
+      "name": "Qwen-Image 2.1 (no CFG)",
+      "format": "natural",
+      "negative": false,
+      "weighting": false,
+      "conditioning": "specialized",
+      "evidence": "conservative",
+      "aliases": [
+        "qwen-2.1"
+      ],
+      "guidance": "Use natural language for the requested result. This profile follows the guidance-free 2.1 default and suppresses ineffective negative text. Explicit CFG-enabled workflows can use a custom profile; edits require the native image-aware encoder.",
+      "sources": [
+        "https://huggingface.co/docs/diffusers/main/api/pipelines/qwenimage21"
+      ]
+    },
+    {
+      "id": "moss-image",
+      "name": "MOSS-Image SFT / Base",
+      "format": "natural",
+      "negative": true,
+      "weighting": false,
+      "conditioning": "specialized",
+      "evidence": "documented",
+      "aliases": [
+        "moss"
+      ],
+      "guidance": "Use complete captions with lighting, materials and exact visible text. The full model supports optional negatives when guidance is enabled. Native JSON layouts are a separate workflow; this profile does not invent boxes or rewrite layouts.",
+      "sources": [
+        "https://huggingface.co/OpenMOSS-Team/MOSS-Image-SFT",
+        "https://github.com/OpenMOSS/MOSS-Image/blob/main/USERGUIDE.md"
+      ]
+    },
+    {
+      "id": "moss-image-dmd",
+      "name": "MOSS-Image DMD (CFG 1)",
+      "format": "natural",
+      "negative": false,
+      "weighting": false,
+      "conditioning": "specialized",
+      "evidence": "documented",
+      "aliases": [
+        "moss-dmd",
+        "kromoss-dmd"
+      ],
+      "guidance": "Natural captions for a DMD/DMD2 workflow running at CFG 1. There is no negative branch; styling never changes the installed adapter, sampler, steps or guidance.",
+      "sources": [
+        "https://huggingface.co/lodestones/Kromoss",
+        "https://huggingface.co/lodestones/MOSS-Image-Base-8-steps-dmd/commit/da05cb3b52899179e2bb5f7efe1058fefcbae21b"
+      ]
+    },
+    {
+      "id": "anima",
+      "name": "Anima Base / Aesthetic",
+      "format": "tags",
+      "negative": true,
+      "weighting": false,
+      "conditioning": "clip",
+      "evidence": "documented",
+      "aliases": [
+        "anima-base",
+        "anima-aesthetic"
+      ],
+      "guidance": "Lowercase tags with spaces, natural language, or a mixture. Aesthetic does not need score tags. No quality boosters, artist identities or safety labels are inserted automatically. Photographic styles are excluded because the model targets illustration.",
+      "sources": [
+        "https://huggingface.co/circlestone-labs/Anima"
+      ]
+    },
+    {
+      "id": "anima-turbo",
+      "name": "Anima Turbo (CFG 1)",
+      "format": "tags",
+      "negative": false,
+      "weighting": false,
+      "conditioning": "clip",
+      "evidence": "conservative",
+      "aliases": [
+        "anima-lightning"
+      ],
+      "guidance": "Use descriptive tags or mixed captions without automatic score tags. This profile follows Turbo at CFG 1, so negative text is suppressed; it does not choose a step count or modify the user workflow.",
+      "sources": [
+        "https://huggingface.co/circlestone-labs/Anima"
+      ]
+    },
+    {
+      "id": "fibo",
+      "name": "Fibo 2 structured caption",
+      "format": "structured",
+      "negative": false,
+      "weighting": false,
+      "conditioning": "specialized",
+      "evidence": "conservative",
+      "aliases": [
+        "fibo-2",
+        "fibo-2.0"
+      ],
+      "guidance": "Export model-caption fields from the supplied subject and explicit style axes. Existing user caption fields take priority. The text negative interface is intentionally unsupported: native Fibo negatives are structured captions. Use native Fibo encoding and inspect the caption; no scene objects or coordinates are inferred.",
+      "sources": [
+        "https://huggingface.co/docs/diffusers/main/api/pipelines/bria_fibo2",
+        "https://raw.githubusercontent.com/Bria-AI/FIBO/main/default_json_caption.json"
+      ]
+    }
+  ]
+}

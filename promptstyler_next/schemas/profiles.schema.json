@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:promptstyler-next:profiles:1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "type": "integer"
+    },
+    "profiles": {
+      "type": "array",
+      "maxItems": 64,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 96,
+            "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 128
+          },
+          "format": {
+            "enum": [
+              "natural",
+              "tags",
+              "structured"
+            ]
+          },
+          "negative": {
+            "type": "boolean"
+          },
+          "weighting": {
+            "type": "boolean"
+          },
+          "conditioning": {
+            "enum": [
+              "clip",
+              "specialized"
+            ]
+          },
+          "guidance": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4096
+          },
+          "sources": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "maxLength": 512,
+              "pattern": "^https://"
+            },
+            "uniqueItems": true,
+            "maxItems": 32
+          },
+          "evidence": {
+            "enum": [
+              "documented",
+              "conservative"
+            ]
+          },
+          "aliases": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128
+            },
+            "uniqueItems": true,
+            "maxItems": 32
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "format",
+          "negative",
+          "weighting",
+          "conditioning",
+          "guidance",
+          "sources",
+          "evidence"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "profiles"
+  ],
+  "additionalProperties": false
+}

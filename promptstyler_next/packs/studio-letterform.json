@@ -1,0 +1,1931 @@
+{
+  "schema_version": 1,
+  "id": "next.studio-letterform",
+  "version": "1.0.0",
+  "name": "Lettering and typographic image craft",
+  "description": "Authored lettering and typographic image craft directions that restyle the existing subject without inventing scene objects.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "letterform.incisedroman",
+      "name": "Incised capital construction",
+      "description": "An incised-lettering interpretation of any text already specified by the user. Make letter edges feel cut into the existing surface with coherent shallow depth.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "incised lettering",
+        "stone cut",
+        "serif structure",
+        "measured spacing"
+      ],
+      "claims": {
+        "medium": "letterform.incisedroman",
+        "composition": "letterform.incisedroman",
+        "texture": "letterform.incisedroman"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An incised-lettering interpretation of any text already specified by the user",
+          "tags": [
+            "incised lettering"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Make letter edges feel cut into the existing surface with coherent shallow depth",
+          "tags": [
+            "stone cut",
+            "serif structure"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep spacing measured and preserve the supplied text exactly",
+          "tags": [
+            "measured spacing"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.broadnib",
+      "name": "Broad-nib stroke logic",
+      "description": "A broad-nib lettering treatment of the user's existing text. Keep thick and thin stroke changes coherent with a consistent pen angle.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "broad nib",
+        "calligraphy",
+        "stroke contrast",
+        "pen angle"
+      ],
+      "claims": {
+        "medium": "letterform.broadnib",
+        "composition": "letterform.broadnib",
+        "texture": "letterform.broadnib"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A broad-nib lettering treatment of the user's existing text",
+          "tags": [
+            "broad nib"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep thick and thin stroke changes coherent with a consistent pen angle",
+          "tags": [
+            "calligraphy",
+            "stroke contrast"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve the supplied letter sequence and spacing hierarchy",
+          "tags": [
+            "pen angle"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.pointedpen",
+      "name": "Pointed-pen pressure rhythm",
+      "description": "A pointed-pen lettering treatment of existing text. Let pressure create smooth thick strokes and delicate connecting hairlines.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "pointed pen",
+        "pressure variation",
+        "hairline stroke",
+        "ink flow"
+      ],
+      "claims": {
+        "medium": "letterform.pointedpen",
+        "composition": "letterform.pointedpen",
+        "texture": "letterform.pointedpen"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A pointed-pen lettering treatment of existing text",
+          "tags": [
+            "pointed pen"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let pressure create smooth thick strokes and delicate connecting hairlines",
+          "tags": [
+            "pressure variation",
+            "hairline stroke"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the original wording legible without added flourishes that form new letters",
+          "tags": [
+            "ink flow"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.brushsign",
+      "name": "Brush-sign lettering",
+      "description": "A brush-painted sign-lettering treatment of the user's existing text. Keep paint edges confident with slight evidence of bristle movement.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "sign painting",
+        "brush stroke",
+        "paint edge",
+        "confident rhythm"
+      ],
+      "claims": {
+        "medium": "letterform.brushsign",
+        "composition": "letterform.brushsign",
+        "texture": "letterform.brushsign"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A brush-painted sign-lettering treatment of the user's existing text",
+          "tags": [
+            "sign painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep paint edges confident with slight evidence of bristle movement",
+          "tags": [
+            "brush stroke",
+            "paint edge"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve the supplied text and give repeated letters related proportions",
+          "tags": [
+            "confident rhythm"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.casualscript",
+      "name": "Casual-script sign craft",
+      "description": "A relaxed hand-lettered treatment of existing text. Keep the baseline lively but the original word shapes easy to read.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "casual script",
+        "hand lettering",
+        "stroke rhythm",
+        "painted sign"
+      ],
+      "claims": {
+        "medium": "letterform.casualscript",
+        "composition": "letterform.casualscript",
+        "texture": "letterform.casualscript"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A relaxed hand-lettered treatment of existing text",
+          "tags": [
+            "casual script"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the baseline lively but the original word shapes easy to read",
+          "tags": [
+            "hand lettering",
+            "stroke rhythm"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use believable brush loading rather than perfectly uniform vector strokes",
+          "tags": [
+            "painted sign"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.splitbrush",
+      "name": "Split-brush dry lettering",
+      "description": "A dry-brush lettering treatment of the user's existing text. Let bristle gaps break the stroke while preserving the complete letter structure.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "dry brush",
+        "split bristle",
+        "broken stroke",
+        "visible ground"
+      ],
+      "claims": {
+        "medium": "letterform.splitbrush",
+        "composition": "letterform.splitbrush",
+        "texture": "letterform.splitbrush"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A dry-brush lettering treatment of the user's existing text",
+          "tags": [
+            "dry brush"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let bristle gaps break the stroke while preserving the complete letter structure",
+          "tags": [
+            "split bristle",
+            "broken stroke"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the original wording readable through the broken marks",
+          "tags": [
+            "visible ground"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.monoline",
+      "name": "Monoline drafting letters",
+      "description": "A monoline drafting treatment of existing text. Keep counters open and repeated forms proportionally consistent.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "monoline letters",
+        "technical lettering",
+        "even stroke",
+        "open counters"
+      ],
+      "claims": {
+        "medium": "letterform.monoline",
+        "composition": "letterform.monoline",
+        "texture": "letterform.monoline"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A monoline drafting treatment of existing text",
+          "tags": [
+            "monoline letters"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep counters open and repeated forms proportionally consistent",
+          "tags": [
+            "technical lettering",
+            "even stroke"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use an even line with slight hand-drawn variation instead of sterile vector perfection",
+          "tags": [
+            "open counters"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.roundedblock",
+      "name": "Rounded block lettering",
+      "description": "A rounded block-lettering treatment of the user's existing text. Balance compact letter spacing with clear internal counters.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "rounded block",
+        "soft corners",
+        "clear counters",
+        "compact rhythm"
+      ],
+      "claims": {
+        "medium": "letterform.roundedblock",
+        "composition": "letterform.roundedblock",
+        "texture": "letterform.roundedblock"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A rounded block-lettering treatment of the user's existing text",
+          "tags": [
+            "rounded block"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Balance compact letter spacing with clear internal counters",
+          "tags": [
+            "soft corners",
+            "clear counters"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep corner rounding related to stroke thickness rather than inflated blob shapes",
+          "tags": [
+            "compact rhythm"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.condensed",
+      "name": "Condensed display structure",
+      "description": "A condensed display-lettering treatment of existing text. Use narrow proportions while keeping distinct letters and word spaces legible.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "condensed letters",
+        "narrow proportion",
+        "vertical rhythm",
+        "clear spacing"
+      ],
+      "claims": {
+        "medium": "letterform.condensed",
+        "composition": "letterform.condensed",
+        "texture": "letterform.condensed"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A condensed display-lettering treatment of existing text",
+          "tags": [
+            "condensed letters"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use narrow proportions while keeping distinct letters and word spaces legible",
+          "tags": [
+            "narrow proportion",
+            "vertical rhythm"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the stroke edges firm and continuous at small turns",
+          "tags": [
+            "clear spacing"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.slab",
+      "name": "Slab-letter construction",
+      "description": "A sturdy slab-lettering treatment of the user's existing text. Use substantial terminal forms with consistent spacing and clear counters.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "slab letters",
+        "strong serif",
+        "sturdy proportion",
+        "printed weight"
+      ],
+      "claims": {
+        "medium": "letterform.slab",
+        "composition": "letterform.slab",
+        "texture": "letterform.slab"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A sturdy slab-lettering treatment of the user's existing text",
+          "tags": [
+            "slab letters"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use substantial terminal forms with consistent spacing and clear counters",
+          "tags": [
+            "strong serif",
+            "sturdy proportion"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep a slight printed-edge character without artificially distressed holes",
+          "tags": [
+            "printed weight"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.stencil",
+      "name": "Functional stencil cuts",
+      "description": "A functional stencil-lettering treatment of existing text. Keep bridges structurally plausible without confusing the supplied letter shapes.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "stencil letters",
+        "bridge logic",
+        "cut form",
+        "plain spacing"
+      ],
+      "claims": {
+        "medium": "letterform.stencil",
+        "composition": "letterform.stencil",
+        "texture": "letterform.stencil"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A functional stencil-lettering treatment of existing text",
+          "tags": [
+            "stencil letters"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep bridges structurally plausible without confusing the supplied letter shapes",
+          "tags": [
+            "bridge logic",
+            "cut form"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use clean cut edges with small real-looking material irregularity",
+          "tags": [
+            "plain spacing"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.woodtype",
+      "name": "Wood-type impression",
+      "description": "A wood-type print treatment of the user's existing text. Retain slight edge compression and uneven ink loading.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "wood type",
+        "printed letters",
+        "ink squeeze",
+        "large forms"
+      ],
+      "claims": {
+        "medium": "letterform.woodtype",
+        "composition": "letterform.woodtype",
+        "texture": "letterform.woodtype"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A wood-type print treatment of the user's existing text",
+          "tags": [
+            "wood type"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Retain slight edge compression and uneven ink loading",
+          "tags": [
+            "printed letters",
+            "ink squeeze"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep bold letterforms readable without changing the original words",
+          "tags": [
+            "large forms"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.metaltype",
+      "name": "Metal-type precision",
+      "description": "A metal-type print treatment of existing text. Use fine ink edges and a restrained pressure impression.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "metal type",
+        "letterpress",
+        "sharp serif",
+        "ink impression"
+      ],
+      "claims": {
+        "medium": "letterform.metaltype",
+        "composition": "letterform.metaltype",
+        "texture": "letterform.metaltype"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A metal-type print treatment of existing text",
+          "tags": [
+            "metal type"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Use fine ink edges and a restrained pressure impression",
+          "tags": [
+            "letterpress",
+            "sharp serif"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep fine stroke details legible and spacing deliberate",
+          "tags": [
+            "ink impression"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.rubberstamp",
+      "name": "Rubber-stamp transfer",
+      "description": "A rubber-stamp lettering treatment of the user's existing text. Use small pressure-related gaps and slightly heavier ink at some edges.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "rubber stamp",
+        "ink transfer",
+        "edge loss",
+        "plain letterforms"
+      ],
+      "claims": {
+        "medium": "letterform.rubberstamp",
+        "composition": "letterform.rubberstamp",
+        "texture": "letterform.rubberstamp"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A rubber-stamp lettering treatment of the user's existing text",
+          "tags": [
+            "rubber stamp"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Use small pressure-related gaps and slightly heavier ink at some edges",
+          "tags": [
+            "ink transfer",
+            "edge loss"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve every supplied character despite the imperfect transfer",
+          "tags": [
+            "plain letterforms"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.carboncopy",
+      "name": "Carbon-copy typography",
+      "description": "A carbon-transfer treatment of existing text. Let the marks have soft pressure-dependent density without doubled characters.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "carbon copy",
+        "soft transfer",
+        "mechanical text",
+        "uneven pressure"
+      ],
+      "claims": {
+        "medium": "letterform.carboncopy",
+        "composition": "letterform.carboncopy",
+        "texture": "letterform.carboncopy"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A carbon-transfer treatment of existing text",
+          "tags": [
+            "carbon copy"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let the marks have soft pressure-dependent density without doubled characters",
+          "tags": [
+            "soft transfer",
+            "mechanical text"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the original wording and line order clear",
+          "tags": [
+            "uneven pressure"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.thermal",
+      "name": "Thermal-print letterforms",
+      "description": "A thermal-print treatment of the user's existing text. Use compact dark marks with restrained transfer variation.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "thermal print",
+        "small type",
+        "dense marks",
+        "subtle banding"
+      ],
+      "claims": {
+        "medium": "letterform.thermal",
+        "composition": "letterform.thermal",
+        "texture": "letterform.thermal"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A thermal-print treatment of the user's existing text",
+          "tags": [
+            "thermal print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Use compact dark marks with restrained transfer variation",
+          "tags": [
+            "small type",
+            "dense marks"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep small text readable without inventing receipt details or extra lines",
+          "tags": [
+            "subtle banding"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.dotmatrix",
+      "name": "Dot-matrix construction",
+      "description": "A dot-matrix lettering treatment of existing text. Build strokes from consistent discrete marks aligned to a shared grid.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "dot matrix",
+        "discrete marks",
+        "mechanical grid",
+        "clear letter"
+      ],
+      "claims": {
+        "medium": "letterform.dotmatrix",
+        "composition": "letterform.dotmatrix",
+        "texture": "letterform.dotmatrix"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A dot-matrix lettering treatment of existing text",
+          "tags": [
+            "dot matrix"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Build strokes from consistent discrete marks aligned to a shared grid",
+          "tags": [
+            "discrete marks",
+            "mechanical grid"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the original words readable rather than dissolving them into decorative pixels",
+          "tags": [
+            "clear letter"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.plotter",
+      "name": "Pen-plotter text",
+      "description": "A pen-plotter lettering treatment of the user's existing text. Keep continuous pen paths and clear direction changes visible.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "pen plotter",
+        "single path",
+        "mechanical stroke",
+        "open construction"
+      ],
+      "claims": {
+        "medium": "letterform.plotter",
+        "composition": "letterform.plotter",
+        "texture": "letterform.plotter"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A pen-plotter lettering treatment of the user's existing text",
+          "tags": [
+            "pen plotter"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep continuous pen paths and clear direction changes visible",
+          "tags": [
+            "single path",
+            "mechanical stroke"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve wording and maintain consistent mechanical line spacing",
+          "tags": [
+            "open construction"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.blueprinttext",
+      "name": "Blueprint annotation lettering",
+      "description": "A technical-annotation treatment of existing user text. Use a restrained pale-line and dark-blue-ground relationship.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "blueprint lettering",
+        "technical note",
+        "pale line",
+        "dark ground"
+      ],
+      "claims": {
+        "medium": "letterform.blueprinttext",
+        "palette": "letterform.blueprinttext",
+        "composition": "letterform.blueprinttext"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A technical-annotation treatment of existing user text",
+          "tags": [
+            "blueprint lettering"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use a restrained pale-line and dark-blue-ground relationship",
+          "tags": [
+            "technical note",
+            "pale line"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the original letters and word order clear without adding annotation content",
+          "tags": [
+            "dark ground"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.chalk",
+      "name": "Chalkboard letter craft",
+      "description": "A chalk-lettering treatment of the user's existing text. Use dusty edges and pressure variation while keeping the strokes complete.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "chalk lettering",
+        "powder edge",
+        "hand pressure",
+        "dark ground"
+      ],
+      "claims": {
+        "medium": "letterform.chalk",
+        "composition": "letterform.chalk",
+        "texture": "letterform.chalk"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A chalk-lettering treatment of the user's existing text",
+          "tags": [
+            "chalk lettering"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Use dusty edges and pressure variation while keeping the strokes complete",
+          "tags": [
+            "powder edge",
+            "hand pressure"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve wording and give the line breaks a clear hierarchy",
+          "tags": [
+            "dark ground"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.charcoaltext",
+      "name": "Charcoal letter texture",
+      "description": "A charcoal-lettering treatment of existing text. Let paper grain interrupt the surface of broad strokes.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "charcoal letters",
+        "dry grain",
+        "soft edge",
+        "dense stroke"
+      ],
+      "claims": {
+        "medium": "letterform.charcoaltext",
+        "composition": "letterform.charcoaltext",
+        "texture": "letterform.charcoaltext"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A charcoal-lettering treatment of existing text",
+          "tags": [
+            "charcoal letters"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let paper grain interrupt the surface of broad strokes",
+          "tags": [
+            "dry grain",
+            "soft edge"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the original word shapes readable despite softened edges",
+          "tags": [
+            "dense stroke"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.cutpapertext",
+      "name": "Cut-paper letterforms",
+      "description": "A cut-paper lettering treatment of the user's existing text. Keep edges slightly hand-cut with believable paper thickness.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "cut paper",
+        "letter shape",
+        "scissor edge",
+        "flat color"
+      ],
+      "claims": {
+        "medium": "letterform.cutpapertext",
+        "composition": "letterform.cutpapertext",
+        "texture": "letterform.cutpapertext"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cut-paper lettering treatment of the user's existing text",
+          "tags": [
+            "cut paper"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep edges slightly hand-cut with believable paper thickness",
+          "tags": [
+            "letter shape",
+            "scissor edge"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Separate neighboring letter shapes clearly without adding decorative symbols",
+          "tags": [
+            "flat color"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.foldedtext",
+      "name": "Folded-strip lettering",
+      "description": "A folded-strip lettering treatment of existing text. Make folds and overlaps structurally consistent within each letter.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "folded lettering",
+        "paper strip",
+        "crease logic",
+        "planar letter"
+      ],
+      "claims": {
+        "medium": "letterform.foldedtext",
+        "composition": "letterform.foldedtext",
+        "texture": "letterform.foldedtext"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A folded-strip lettering treatment of existing text",
+          "tags": [
+            "folded lettering"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Make folds and overlaps structurally consistent within each letter",
+          "tags": [
+            "paper strip",
+            "crease logic"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve the supplied text rather than making an unreadable ribbon abstraction",
+          "tags": [
+            "planar letter"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.wiretext",
+      "name": "Continuous-wire letters",
+      "description": "A formed-wire lettering treatment of the user's existing text. Keep wire thickness consistent through bends and crossings.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "wire lettering",
+        "continuous line",
+        "formed metal",
+        "open space"
+      ],
+      "claims": {
+        "medium": "letterform.wiretext",
+        "composition": "letterform.wiretext",
+        "texture": "letterform.wiretext"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A formed-wire lettering treatment of the user's existing text",
+          "tags": [
+            "wire lettering"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep wire thickness consistent through bends and crossings",
+          "tags": [
+            "continuous line",
+            "formed metal"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Maintain legible original letter shapes and distinct word intervals",
+          "tags": [
+            "open space"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.neontext",
+      "name": "Tube-letter continuity",
+      "description": "A tube-lettering treatment of existing user text. Keep luminous edges controlled enough that the letter structure remains visible.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "tube lettering",
+        "continuous glass",
+        "restrained glow",
+        "clear words"
+      ],
+      "claims": {
+        "medium": "letterform.neontext",
+        "lighting": "letterform.neontext",
+        "composition": "letterform.neontext"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A tube-lettering treatment of existing user text",
+          "tags": [
+            "tube lettering"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep luminous edges controlled enough that the letter structure remains visible",
+          "tags": [
+            "continuous glass",
+            "restrained glow"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve every supplied character without extra signage or invented wording",
+          "tags": [
+            "clear words"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.channelletters",
+      "name": "Channel-letter depth",
+      "description": "A shallow channel-letter treatment of the user's existing text. Use small coherent side shadows to explain the letter depth.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "channel letters",
+        "shallow volume",
+        "precise edge",
+        "side shadow"
+      ],
+      "claims": {
+        "medium": "letterform.channelletters",
+        "lighting": "letterform.channelletters",
+        "composition": "letterform.channelletters"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A shallow channel-letter treatment of the user's existing text",
+          "tags": [
+            "channel letters"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use small coherent side shadows to explain the letter depth",
+          "tags": [
+            "shallow volume",
+            "precise edge"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the original words legible without exaggerated perspective distortion",
+          "tags": [
+            "side shadow"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.paintedglass",
+      "name": "Painted-glass sign craft",
+      "description": "A painted-glass lettering treatment of existing text. Separate the painted letter surface from the underlying transparent plane.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "painted glass",
+        "sign lettering",
+        "layered color",
+        "surface reflection"
+      ],
+      "claims": {
+        "medium": "letterform.paintedglass",
+        "composition": "letterform.paintedglass",
+        "texture": "letterform.paintedglass"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A painted-glass lettering treatment of existing text",
+          "tags": [
+            "painted glass"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Separate the painted letter surface from the underlying transparent plane",
+          "tags": [
+            "sign lettering",
+            "layered color"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve the supplied lettering while keeping reflections subordinate",
+          "tags": [
+            "surface reflection"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.reverseglass",
+      "name": "Reverse-glass letter layers",
+      "description": "A reverse-glass lettering treatment of the user's existing text. Make the visible face smooth while keeping the layered color boundaries precise.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "reverse glass",
+        "back-painted letters",
+        "layer order",
+        "clean face"
+      ],
+      "claims": {
+        "medium": "letterform.reverseglass",
+        "composition": "letterform.reverseglass",
+        "texture": "letterform.reverseglass"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A reverse-glass lettering treatment of the user's existing text",
+          "tags": [
+            "reverse glass"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Make the visible face smooth while keeping the layered color boundaries precise",
+          "tags": [
+            "back-painted letters",
+            "layer order"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve the original words and avoid mirror-reversing the letter sequence",
+          "tags": [
+            "clean face"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.goldleaf",
+      "name": "Gold-leaf letter surface",
+      "description": "A gold-leaf lettering treatment of existing text. Keep the thin metallic surface slightly irregular with restrained leaf joins.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "gold leaf",
+        "sign craft",
+        "thin metal",
+        "subtle joins"
+      ],
+      "claims": {
+        "medium": "letterform.goldleaf",
+        "lighting": "letterform.goldleaf",
+        "texture": "letterform.goldleaf"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A gold-leaf lettering treatment of existing text",
+          "tags": [
+            "gold leaf"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the thin metallic surface slightly irregular with restrained leaf joins",
+          "tags": [
+            "sign craft",
+            "thin metal"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad reflections that leave the original letters readable",
+          "tags": [
+            "subtle joins"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.embossed",
+      "name": "Embossed letter relief",
+      "description": "An embossed treatment of the user's existing text. Raise the letterforms through a believable small deformation of the existing surface.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "embossed letters",
+        "paper relief",
+        "shallow shadow",
+        "subtle pressure"
+      ],
+      "claims": {
+        "medium": "letterform.embossed",
+        "lighting": "letterform.embossed",
+        "texture": "letterform.embossed"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An embossed treatment of the user's existing text",
+          "tags": [
+            "embossed letters"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Raise the letterforms through a believable small deformation of the existing surface",
+          "tags": [
+            "paper relief",
+            "shallow shadow"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use low soft side light to reveal relief without adding ink",
+          "tags": [
+            "subtle pressure"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.debossed",
+      "name": "Debossed letter pressure",
+      "description": "A debossed treatment of existing text. Make the letter edges feel pressed into rather than printed onto the surface.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "debossed letters",
+        "pressed surface",
+        "small relief",
+        "quiet contrast"
+      ],
+      "claims": {
+        "medium": "letterform.debossed",
+        "lighting": "letterform.debossed",
+        "texture": "letterform.debossed"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A debossed treatment of existing text",
+          "tags": [
+            "debossed letters"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Make the letter edges feel pressed into rather than printed onto the surface",
+          "tags": [
+            "pressed surface",
+            "small relief"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep the shallow depression readable with restrained directional light",
+          "tags": [
+            "quiet contrast"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.stitchedtext",
+      "name": "Stitched-letter structure",
+      "description": "A stitched-lettering treatment of the user's existing text. Keep the thread path continuous and the stitch tension coherent.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "stitched letters",
+        "thread path",
+        "fabric tension",
+        "readable text"
+      ],
+      "claims": {
+        "medium": "letterform.stitchedtext",
+        "composition": "letterform.stitchedtext",
+        "texture": "letterform.stitchedtext"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A stitched-lettering treatment of the user's existing text",
+          "tags": [
+            "stitched letters"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the thread path continuous and the stitch tension coherent",
+          "tags": [
+            "thread path",
+            "fabric tension"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve the complete wording without decorative knots that become extra characters",
+          "tags": [
+            "readable text"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.wovenletters",
+      "name": "Woven letter pattern",
+      "description": "A woven-lettering treatment of existing text. Build the original letter shapes through coherent changes in thread direction.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "woven letters",
+        "thread grid",
+        "textile text",
+        "clear counters"
+      ],
+      "claims": {
+        "medium": "letterform.wovenletters",
+        "composition": "letterform.wovenletters",
+        "texture": "letterform.wovenletters"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A woven-lettering treatment of existing text",
+          "tags": [
+            "woven letters"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Build the original letter shapes through coherent changes in thread direction",
+          "tags": [
+            "thread grid",
+            "textile text"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep counters and word intervals clear despite the woven grid",
+          "tags": [
+            "clear counters"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.knittedtext",
+      "name": "Knitted letter rhythm",
+      "description": "A knitted-lettering treatment of the user's existing text. Let stitch loops carry the original letter shapes at a consistent scale.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "knitted letters",
+        "loop grid",
+        "soft textile",
+        "word clarity"
+      ],
+      "claims": {
+        "medium": "letterform.knittedtext",
+        "composition": "letterform.knittedtext",
+        "texture": "letterform.knittedtext"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A knitted-lettering treatment of the user's existing text",
+          "tags": [
+            "knitted letters"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let stitch loops carry the original letter shapes at a consistent scale",
+          "tags": [
+            "loop grid",
+            "soft textile"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the words legible without adding unrelated textile motifs",
+          "tags": [
+            "word clarity"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.ceramicletters",
+      "name": "Ceramic letter volume",
+      "description": "A ceramic-lettering treatment of existing text. Keep slight fired-surface irregularity at the letter edges.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "ceramic letters",
+        "glazed edge",
+        "small relief",
+        "tactile type"
+      ],
+      "claims": {
+        "medium": "letterform.ceramicletters",
+        "lighting": "letterform.ceramicletters",
+        "texture": "letterform.ceramicletters"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A ceramic-lettering treatment of existing text",
+          "tags": [
+            "ceramic letters"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep slight fired-surface irregularity at the letter edges",
+          "tags": [
+            "glazed edge",
+            "small relief"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use restrained glaze reflections that describe rather than obscure the words",
+          "tags": [
+            "tactile type"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.clayletters",
+      "name": "Handbuilt clay text",
+      "description": "A handbuilt-clay lettering treatment of the user's existing text. Retain small finger-work irregularities while keeping the letter shapes coherent.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "clay letters",
+        "hand formed",
+        "soft edge",
+        "matte surface"
+      ],
+      "claims": {
+        "medium": "letterform.clayletters",
+        "composition": "letterform.clayletters",
+        "texture": "letterform.clayletters"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A handbuilt-clay lettering treatment of the user's existing text",
+          "tags": [
+            "clay letters"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Retain small finger-work irregularities while keeping the letter shapes coherent",
+          "tags": [
+            "hand formed",
+            "soft edge"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve the supplied wording with deliberately varied but readable spacing",
+          "tags": [
+            "matte surface"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.stoneletters",
+      "name": "Stone-cut lettering weight",
+      "description": "A stone-cut lettering treatment of existing text. Keep mineral grain continuous through the letter surfaces.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "stone lettering",
+        "carved mass",
+        "mineral grain",
+        "clear edge"
+      ],
+      "claims": {
+        "medium": "letterform.stoneletters",
+        "lighting": "letterform.stoneletters",
+        "texture": "letterform.stoneletters"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A stone-cut lettering treatment of existing text",
+          "tags": [
+            "stone lettering"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep mineral grain continuous through the letter surfaces",
+          "tags": [
+            "carved mass",
+            "mineral grain"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use oblique illumination to separate existing cuts and raised planes",
+          "tags": [
+            "clear edge"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.foilstamp",
+      "name": "Foil-stamped text",
+      "description": "A foil-stamped treatment of the user's existing text. Keep the metallic layer thin and tightly registered to each letter.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "foil stamp",
+        "thin metallic print",
+        "pressed edge",
+        "quiet sheen"
+      ],
+      "claims": {
+        "medium": "letterform.foilstamp",
+        "lighting": "letterform.foilstamp",
+        "texture": "letterform.foilstamp"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A foil-stamped treatment of the user's existing text",
+          "tags": [
+            "foil stamp"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the metallic layer thin and tightly registered to each letter",
+          "tags": [
+            "thin metallic print",
+            "pressed edge"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use controlled sheen rather than mirror glare or starburst sparkle",
+          "tags": [
+            "quiet sheen"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.risotext",
+      "name": "Two-pass printed text",
+      "description": "A two-pass print treatment of existing user text. Use two coherent ink colors with restrained overlap.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "two pass print",
+        "registration",
+        "ink overlap",
+        "paper tooth"
+      ],
+      "claims": {
+        "medium": "letterform.risotext",
+        "palette": "letterform.risotext",
+        "texture": "letterform.risotext"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A two-pass print treatment of existing user text",
+          "tags": [
+            "two pass print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use two coherent ink colors with restrained overlap",
+          "tags": [
+            "registration",
+            "ink overlap"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep slight registration variation small enough to preserve every original letter",
+          "tags": [
+            "paper tooth"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "letterform.handdrawnserif",
+      "name": "Drawn-serif individuality",
+      "description": "A carefully drawn serif-lettering treatment of the user's existing text. Let small terminal details vary without losing their shared construction logic.",
+      "category": "design/lettering",
+      "kind": "style",
+      "tags": [
+        "drawn serif",
+        "lettering craft",
+        "unequal detail",
+        "consistent rhythm"
+      ],
+      "claims": {
+        "medium": "letterform.handdrawnserif",
+        "composition": "letterform.handdrawnserif",
+        "texture": "letterform.handdrawnserif"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A carefully drawn serif-lettering treatment of the user's existing text",
+          "tags": [
+            "drawn serif"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let small terminal details vary without losing their shared construction logic",
+          "tags": [
+            "lettering craft",
+            "unequal detail"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Preserve wording and establish an even visual rhythm across unequal letter widths",
+          "tags": [
+            "consistent rhythm"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

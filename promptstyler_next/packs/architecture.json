@@ -1,0 +1,1177 @@
+{
+  "schema_version": 1,
+  "id": "next.architecture",
+  "version": "1.0.0",
+  "name": "Architectural representations",
+  "description": "Representation methods, material rhythms and spatial ideas.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "architecture.axonometric",
+      "name": "Axonometric drawing",
+      "description": "An architectural axonometric drawing of the supplied forms. Use parallel projections with consistent measured edges.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "axonometric",
+        "drawing",
+        "measured"
+      ],
+      "claims": {
+        "medium": "architecture.axonometric",
+        "composition": "architecture-axonometric",
+        "texture": "architecture.axonometric"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An architectural axonometric drawing of the supplied forms",
+          "tags": [
+            "architectural axonometric"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use parallel projections with consistent measured edges",
+          "tags": [
+            "parallel projection",
+            "measured edges"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine technical lineweights and sparse pale fills",
+          "tags": [
+            "technical lineweights",
+            "pale fills"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.blueprint",
+      "name": "Blueprint linework",
+      "description": "A blueprint-style technical representation. Use pale drafting lines on a deep cyan field.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "blueprint",
+        "technical",
+        "cyan"
+      ],
+      "claims": {
+        "medium": "architecture.blueprint",
+        "palette": "architecture-blueprint",
+        "texture": "architecture.blueprint"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A blueprint-style technical representation",
+          "tags": [
+            "blueprint drawing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use pale drafting lines on a deep cyan field",
+          "tags": [
+            "pale lines",
+            "cyan field"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep slight reproduction softness and paper grain",
+          "tags": [
+            "blueprint reproduction",
+            "paper grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.brutalist",
+      "name": "Brutalist mass",
+      "description": "An architectural study emphasizing exposed concrete mass. Organize the existing forms into heavy readable planes.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "brutalist",
+        "concrete",
+        "mass"
+      ],
+      "claims": {
+        "medium": "architecture.brutalist",
+        "composition": "architecture-brutalist",
+        "texture": "architecture.brutalist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An architectural study emphasizing exposed concrete mass",
+          "tags": [
+            "brutalist architectural study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize the existing forms into heavy readable planes",
+          "tags": [
+            "heavy planes",
+            "clear massing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show board-formed concrete marks and mineral variation",
+          "tags": [
+            "board formed concrete",
+            "mineral texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.japanese",
+      "name": "Quiet timber space",
+      "description": "An architectural study of quiet timber construction. Use soft indirect light to articulate layered thresholds.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "timber",
+        "quiet",
+        "joinery"
+      ],
+      "claims": {
+        "medium": "architecture.japanese",
+        "lighting": "architecture-japanese",
+        "texture": "architecture.japanese"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An architectural study of quiet timber construction",
+          "tags": [
+            "timber architectural study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft indirect light to articulate layered thresholds",
+          "tags": [
+            "soft indirect light",
+            "layered thresholds"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show honest wood grain and precise exposed joinery",
+          "tags": [
+            "wood grain",
+            "exposed joinery"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.mediterranean",
+      "name": "Limewashed volume",
+      "description": "An architectural study of limewashed solid forms. Let raking daylight describe softly rounded edges.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "mediterranean",
+        "plaster",
+        "light"
+      ],
+      "claims": {
+        "medium": "architecture.mediterranean",
+        "lighting": "architecture-mediterranean",
+        "texture": "architecture.mediterranean"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An architectural study of limewashed solid forms",
+          "tags": [
+            "limewashed architecture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let raking daylight describe softly rounded edges",
+          "tags": [
+            "raking daylight"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep mineral plaster variation and lightly weathered surfaces",
+          "tags": [
+            "mineral plaster",
+            "subtle weathering"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.gothic",
+      "name": "Gothic structural rhythm",
+      "description": "A Gothic-inspired architectural representation. Emphasize vertical rhythm and the legible path of structural forces.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "gothic",
+        "rhythm",
+        "vertical"
+      ],
+      "claims": {
+        "medium": "architecture.gothic",
+        "composition": "architecture-gothic",
+        "texture": "architecture.gothic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Gothic-inspired architectural representation",
+          "tags": [
+            "gothic architectural study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Emphasize vertical rhythm and the legible path of structural forces",
+          "tags": [
+            "vertical rhythm",
+            "structural clarity"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Render fine cut-stone joints and worn mineral surfaces",
+          "tags": [
+            "cut stone joints",
+            "worn stone"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.modernist",
+      "name": "Modernist transparency",
+      "description": "A modernist architectural representation. Use open planes and a clearly expressed structural frame.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "modernist",
+        "glass",
+        "frame"
+      ],
+      "claims": {
+        "medium": "architecture.modernist",
+        "composition": "architecture-modernist",
+        "lighting": "architecture-modernist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A modernist architectural representation",
+          "tags": [
+            "modernist architectural study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use open planes and a clearly expressed structural frame",
+          "tags": [
+            "open planes",
+            "expressed frame"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let soft daylight pass through the transparent layers",
+          "tags": [
+            "daylight through glass"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.vernacular",
+      "name": "Vernacular earth",
+      "description": "An architectural study of earthen vernacular construction. Use thick volumes and deeply recessed existing openings.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "earth",
+        "vernacular",
+        "material"
+      ],
+      "claims": {
+        "medium": "architecture.vernacular",
+        "composition": "architecture-vernacular",
+        "texture": "architecture.vernacular"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An architectural study of earthen vernacular construction",
+          "tags": [
+            "earthen architectural study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use thick volumes and deeply recessed existing openings",
+          "tags": [
+            "thick earthen volumes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep rammed-earth strata and hand-finished plaster visible",
+          "tags": [
+            "rammed earth strata",
+            "hand plaster"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.collage",
+      "name": "Architectural collage",
+      "description": "An architectural competition collage. Combine precise geometric cuts with clearly separated depth planes.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "collage",
+        "competition",
+        "paper"
+      ],
+      "claims": {
+        "medium": "architecture.collage",
+        "composition": "architecture-collage",
+        "texture": "architecture.collage"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An architectural competition collage",
+          "tags": [
+            "architectural collage"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Combine precise geometric cuts with clearly separated depth planes",
+          "tags": [
+            "geometric cuts",
+            "depth planes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show paper cut edges and restrained photocopied grain",
+          "tags": [
+            "paper cuts",
+            "photocopy grain"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.pencil",
+      "name": "Architectural graphite",
+      "description": "An observational architectural graphite sketch. Emphasize perspective construction and a clear value hierarchy.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "graphite",
+        "sketch",
+        "observational"
+      ],
+      "claims": {
+        "medium": "architecture.pencil",
+        "composition": "architecture-pencil",
+        "texture": "architecture.pencil"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An observational architectural graphite sketch",
+          "tags": [
+            "architectural graphite sketch"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Emphasize perspective construction and a clear value hierarchy",
+          "tags": [
+            "perspective construction",
+            "value hierarchy"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep searching lines and broad side-of-pencil shading",
+          "tags": [
+            "searching pencil lines",
+            "broad graphite"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.lightmodel",
+      "name": "Daylight study model",
+      "description": "A physical architectural daylight-study model. Let one broad light source reveal the depth of existing apertures.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "model",
+        "daylight",
+        "study"
+      ],
+      "claims": {
+        "medium": "architecture.lightmodel",
+        "lighting": "architecture-lightmodel",
+        "texture": "architecture.lightmodel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A physical architectural daylight-study model",
+          "tags": [
+            "architectural study model"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let one broad light source reveal the depth of existing apertures",
+          "tags": [
+            "single daylight source"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use matte card and clean cut edges at model scale",
+          "tags": [
+            "matte card",
+            "model scale edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.section",
+      "name": "Sectional space",
+      "description": "An architectural sectional interpretation of the supplied forms. Use a clear cut-plane hierarchy and readable interior depth.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "section",
+        "drawing",
+        "spatial"
+      ],
+      "claims": {
+        "medium": "architecture.section",
+        "composition": "architecture-section",
+        "texture": "architecture.section"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An architectural sectional interpretation of the supplied forms",
+          "tags": [
+            "architectural section drawing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use a clear cut-plane hierarchy and readable interior depth",
+          "tags": [
+            "section cut hierarchy",
+            "interior depth"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Distinguish solid cut surfaces from fine background lines",
+          "tags": [
+            "solid section poche",
+            "fine lines"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.hightech",
+      "name": "High-tech structure",
+      "description": "A high-tech architectural interpretation. Express existing structural joints and service-like rhythms clearly.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "high tech",
+        "exposed",
+        "engineered"
+      ],
+      "claims": {
+        "medium": "architecture.hightech",
+        "composition": "architecture-hightech",
+        "texture": "architecture.hightech"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A high-tech architectural interpretation",
+          "tags": [
+            "high tech architecture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Express existing structural joints and service-like rhythms clearly",
+          "tags": [
+            "expressed structure",
+            "joint rhythm"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use precise metal members and restrained glazed surfaces",
+          "tags": [
+            "precise metal",
+            "restrained glass"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.deconstructive",
+      "name": "Deconstructed planes",
+      "description": "A deconstructivist architectural study. Use offset planes and tension between skewed existing volumes.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "deconstructivism",
+        "fragmented",
+        "angular"
+      ],
+      "claims": {
+        "medium": "architecture.deconstructive",
+        "composition": "architecture-deconstructive",
+        "lighting": "architecture-deconstructive"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A deconstructivist architectural study",
+          "tags": [
+            "deconstructivist architecture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use offset planes and tension between skewed existing volumes",
+          "tags": [
+            "offset planes",
+            "skewed volumes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let sharp light transitions clarify the intersecting masses",
+          "tags": [
+            "sharp intersecting light planes"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.parametric",
+      "name": "Parametric continuity",
+      "description": "A parametric architectural interpretation. Connect existing forms through coherent continuous surface rhythms.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "parametric",
+        "continuous",
+        "curved"
+      ],
+      "claims": {
+        "medium": "architecture.parametric",
+        "composition": "architecture-parametric",
+        "texture": "architecture.parametric"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A parametric architectural interpretation",
+          "tags": [
+            "parametric architecture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Connect existing forms through coherent continuous surface rhythms",
+          "tags": [
+            "continuous surface rhythm"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use smooth surfaces articulated by deliberate rib spacing",
+          "tags": [
+            "smooth surfaces",
+            "spaced ribs"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.metabolist",
+      "name": "Metabolist modularity",
+      "description": "A Metabolist-inspired architectural study. Organize the supplied forms as modular units around a clear primary structure.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "metabolism",
+        "modular",
+        "megastructure"
+      ],
+      "claims": {
+        "medium": "architecture.metabolist",
+        "composition": "architecture-metabolist",
+        "texture": "architecture.metabolist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Metabolist-inspired architectural study",
+          "tags": [
+            "metabolist architecture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize the supplied forms as modular units around a clear primary structure",
+          "tags": [
+            "modular units",
+            "primary structure"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use honest concrete and metal with visible assembly joints",
+          "tags": [
+            "concrete metal",
+            "assembly joints"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.prairie",
+      "name": "Horizontal prairie rhythm",
+      "description": "A Prairie-style architectural interpretation. Emphasize long horizontal relationships and grounded layered planes.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "prairie",
+        "horizontal",
+        "grounded"
+      ],
+      "claims": {
+        "medium": "architecture.prairie",
+        "composition": "architecture-prairie",
+        "texture": "architecture.prairie"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Prairie-style architectural interpretation",
+          "tags": [
+            "prairie architecture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Emphasize long horizontal relationships and grounded layered planes",
+          "tags": [
+            "horizontal layers",
+            "grounded planes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use warm natural materials and precise low-relief detailing",
+          "tags": [
+            "warm natural materials",
+            "low relief"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.rationalist",
+      "name": "Rationalist proportion",
+      "description": "A rationalist architectural study. Use ordered repeated proportions and clearly legible masses.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "rationalism",
+        "proportion",
+        "ordered"
+      ],
+      "claims": {
+        "medium": "architecture.rationalist",
+        "composition": "architecture-rationalist",
+        "lighting": "architecture-rationalist"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A rationalist architectural study",
+          "tags": [
+            "rationalist architecture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use ordered repeated proportions and clearly legible masses",
+          "tags": [
+            "ordered proportions",
+            "legible massing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep lucid daylight and measured rectangular shadow fields",
+          "tags": [
+            "lucid daylight",
+            "rectangular shadows"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.romanesque",
+      "name": "Romanesque weight",
+      "description": "A Romanesque-inspired architectural interpretation. Emphasize thick wall masses and rounded structural rhythms.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "romanesque",
+        "stone",
+        "heavy"
+      ],
+      "claims": {
+        "medium": "architecture.romanesque",
+        "composition": "architecture-romanesque",
+        "texture": "architecture.romanesque"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A Romanesque-inspired architectural interpretation",
+          "tags": [
+            "romanesque architecture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Emphasize thick wall masses and rounded structural rhythms",
+          "tags": [
+            "thick walls",
+            "rounded rhythms"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show rough-cut masonry and broad mineral joints",
+          "tags": [
+            "rough cut masonry",
+            "mineral joints"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.mudbrick",
+      "name": "Sun-dried brick",
+      "description": "An architectural study of sun-dried brick forms. Keep thick compact masses and clear recessed depth.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "mudbrick",
+        "earth",
+        "handmade"
+      ],
+      "claims": {
+        "medium": "architecture.mudbrick",
+        "composition": "architecture-mudbrick",
+        "texture": "architecture.mudbrick"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An architectural study of sun-dried brick forms",
+          "tags": [
+            "mudbrick architecture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep thick compact masses and clear recessed depth",
+          "tags": [
+            "compact masses",
+            "recessed depth"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show irregular earthen brick courses and weather-softened corners",
+          "tags": [
+            "earthen brick courses",
+            "soft corners"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.steelglass",
+      "name": "Steel-and-glass clarity",
+      "description": "An architectural representation emphasizing steel and glass. Let slender structural lines define broad transparent volumes.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "steel",
+        "glass",
+        "industrial"
+      ],
+      "claims": {
+        "medium": "architecture.steelglass",
+        "composition": "architecture-steelglass",
+        "lighting": "architecture-steelglass"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An architectural representation emphasizing steel and glass",
+          "tags": [
+            "steel glass architecture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let slender structural lines define broad transparent volumes",
+          "tags": [
+            "slender structure",
+            "transparent volumes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Balance transmitted daylight with restrained reflected highlights",
+          "tags": [
+            "transmitted daylight",
+            "reflected highlights"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.postmodern",
+      "name": "Postmodern quotation",
+      "description": "A postmodern architectural interpretation. Use deliberate contrasts of scale, geometry and ornamental emphasis.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "postmodern",
+        "playful",
+        "geometry"
+      ],
+      "claims": {
+        "medium": "architecture.postmodern",
+        "composition": "architecture-postmodern",
+        "palette": "architecture-postmodern"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A postmodern architectural interpretation",
+          "tags": [
+            "postmodern architecture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use deliberate contrasts of scale, geometry and ornamental emphasis",
+          "tags": [
+            "scale contrast",
+            "ornamental geometry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Apply a few clearly separated muted accent colors",
+          "tags": [
+            "muted architectural accents"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.boardmodel",
+      "name": "Chipboard mass model",
+      "description": "An architectural massing model made from chipboard. Reduce the existing structures to clear assembled volumes.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "chipboard",
+        "model",
+        "massing"
+      ],
+      "claims": {
+        "medium": "architecture.boardmodel",
+        "composition": "architecture-boardmodel",
+        "texture": "architecture.boardmodel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An architectural massing model made from chipboard",
+          "tags": [
+            "chipboard massing model"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reduce the existing structures to clear assembled volumes",
+          "tags": [
+            "assembled massing volumes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep warm fibrous card edges and visible stacked layers",
+          "tags": [
+            "fibrous card",
+            "stacked layers"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "architecture.wire",
+      "name": "Wire spatial model",
+      "description": "A wire spatial model of the supplied architecture. Describe the main volumes with sparse connected metal edges.",
+      "category": "architecture",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "wire",
+        "spatial",
+        "model"
+      ],
+      "claims": {
+        "medium": "architecture.wire",
+        "composition": "architecture-wire",
+        "lighting": "architecture-wire"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A wire spatial model of the supplied architecture",
+          "tags": [
+            "wire architectural model"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Describe the main volumes with sparse connected metal edges",
+          "tags": [
+            "sparse connected edges"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use clean soft shadows to anchor the open framework",
+          "tags": [
+            "framework soft shadows"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

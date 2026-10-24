@@ -1,0 +1,1212 @@
+{
+  "schema_version": 1,
+  "id": "next.manga",
+  "version": "1.0.0",
+  "name": "Manga and sequential ink",
+  "description": "Line, tone and printed-page craft without generating text or panel content.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "manga.screentone",
+      "name": "Classic screentone",
+      "description": "A printed manga illustration. Build shadow values from discrete screentone steps.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "screentone",
+        "ink",
+        "print"
+      ],
+      "claims": {
+        "medium": "manga.screentone",
+        "lighting": "manga-screentone",
+        "texture": "manga.screentone",
+        "palette": "manga-screentone"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A printed manga illustration",
+          "tags": [
+            "printed manga illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Build shadow values from discrete screentone steps",
+          "tags": [
+            "screentone shading"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use black ink and untouched pale paper values",
+          "tags": [
+            "black ink",
+            "pale paper"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep regular halftone dots distinct from clean ink contours",
+          "tags": [
+            "halftone dots",
+            "clean ink contours"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.brush",
+      "name": "Brush-ink action",
+      "description": "A brush-ink manga illustration with forceful gestural marks. Use directional mark flow around the existing action.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "brush",
+        "gesture",
+        "action"
+      ],
+      "claims": {
+        "medium": "manga.brush",
+        "composition": "manga-brush",
+        "texture": "manga.brush"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A brush-ink manga illustration with forceful gestural marks",
+          "tags": [
+            "brush ink manga"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use directional mark flow around the existing action",
+          "tags": [
+            "directional brush flow"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let wet heavy strokes break into dry-brush tails",
+          "tags": [
+            "wet ink",
+            "dry brush tails"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.shoujo",
+      "name": "Decorative shoujo line",
+      "description": "A shoujo-inspired manga illustration with delicate line rhythm. Use airy open spaces around the existing focal form.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "shoujo",
+        "delicate",
+        "ornamental"
+      ],
+      "claims": {
+        "medium": "manga.shoujo",
+        "composition": "manga-shoujo",
+        "texture": "manga.shoujo"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A shoujo-inspired manga illustration with delicate line rhythm",
+          "tags": [
+            "shoujo manga",
+            "delicate linework"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use airy open spaces around the existing focal form",
+          "tags": [
+            "airy composition",
+            "open space"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Combine fine line detail with lightly distributed screen tone",
+          "tags": [
+            "fine ink detail",
+            "light screentone"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.gekiga",
+      "name": "Gekiga chiaroscuro",
+      "description": "A dramatic gekiga-style ink illustration. Carve dimensional forms with deep spot blacks and narrow light planes.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "gekiga",
+        "dramatic",
+        "hatch"
+      ],
+      "claims": {
+        "medium": "manga.gekiga",
+        "lighting": "manga-gekiga",
+        "texture": "manga.gekiga"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A dramatic gekiga-style ink illustration",
+          "tags": [
+            "gekiga ink illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Carve dimensional forms with deep spot blacks and narrow light planes",
+          "tags": [
+            "spot blacks",
+            "dramatic light planes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use dense controlled hatching in transitions",
+          "tags": [
+            "dense hatching"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.clearline",
+      "name": "Clear-line comic",
+      "description": "A clear-line comic illustration with consistent contour weight. Use tidy flat color areas and restrained tonal modeling.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "comic",
+        "clear line",
+        "flat"
+      ],
+      "claims": {
+        "medium": "manga.clearline",
+        "palette": "manga-clearline",
+        "texture": "manga.clearline"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A clear-line comic illustration with consistent contour weight",
+          "tags": [
+            "clear line comic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use tidy flat color areas and restrained tonal modeling",
+          "tags": [
+            "flat comic colors"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep contours continuous and interior marks economical",
+          "tags": [
+            "continuous contours",
+            "economical detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.scratch",
+      "name": "Scratchy underground ink",
+      "description": "An underground-comic ink drawing with scratchy personal marks. Keep framing blunt and direct rather than polished.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "underground",
+        "scratch",
+        "zine"
+      ],
+      "claims": {
+        "medium": "manga.scratch",
+        "composition": "manga-scratch",
+        "texture": "manga.scratch"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An underground-comic ink drawing with scratchy personal marks",
+          "tags": [
+            "underground comic",
+            "scratchy ink"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep framing blunt and direct rather than polished",
+          "tags": [
+            "direct framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use uneven hatch density and rough copied-paper edges",
+          "tags": [
+            "uneven hatching",
+            "photocopy texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.woodcut",
+      "name": "Woodcut manga",
+      "description": "A manga illustration translated into woodcut-like ink masses. Build the image from interlocking positive and negative shapes.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "woodcut",
+        "black",
+        "carved"
+      ],
+      "claims": {
+        "medium": "manga.woodcut",
+        "composition": "manga-woodcut",
+        "texture": "manga.woodcut"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A manga illustration translated into woodcut-like ink masses",
+          "tags": [
+            "woodcut manga"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Build the image from interlocking positive and negative shapes",
+          "tags": [
+            "positive negative shapes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Leave visible carved gouge marks through the dark fields",
+          "tags": [
+            "carved gouge marks"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.pencil",
+      "name": "Graphite manga study",
+      "description": "A manga study in soft graphite. Model volume through gentle graphite value changes.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "graphite",
+        "sketch",
+        "draft"
+      ],
+      "claims": {
+        "medium": "manga.pencil",
+        "lighting": "manga-pencil",
+        "texture": "manga.pencil"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A manga study in soft graphite",
+          "tags": [
+            "graphite manga sketch"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Model volume through gentle graphite value changes",
+          "tags": [
+            "graphite tonal modeling"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep visible paper tooth and searching construction lines",
+          "tags": [
+            "paper tooth",
+            "construction lines"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.twotone",
+      "name": "Two-ink comic",
+      "description": "A two-ink comic-page illustration. Use black linework with one muted vermilion spot color.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "duotone",
+        "comic",
+        "spot color"
+      ],
+      "claims": {
+        "medium": "manga.twotone",
+        "palette": "manga-twotone",
+        "texture": "manga.twotone"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A two-ink comic-page illustration",
+          "tags": [
+            "two ink comic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use black linework with one muted vermilion spot color",
+          "tags": [
+            "black ink",
+            "vermilion spot color"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show slight print misregistration at color boundaries",
+          "tags": [
+            "subtle print misregistration"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.silhouette",
+      "name": "Spot-black storytelling",
+      "description": "A graphic manga illustration built from solid ink shapes. Reduce secondary shapes to maintain a strong reading order.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "silhouette",
+        "spot black",
+        "minimal"
+      ],
+      "claims": {
+        "medium": "manga.silhouette",
+        "composition": "manga-silhouette",
+        "texture": "manga.silhouette",
+        "palette": "manga-silhouette"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A graphic manga illustration built from solid ink shapes",
+          "tags": [
+            "solid ink manga"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reduce secondary shapes to maintain a strong reading order",
+          "tags": [
+            "clear reading order",
+            "simplified shapes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use black ink shapes and clean paper-white cuts",
+          "tags": [
+            "black ink",
+            "paper white cuts"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep internal cutouts clean within dense ink masses",
+          "tags": [
+            "dense ink masses",
+            "clean cutouts"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.crosshatch",
+      "name": "Crosshatched realism",
+      "description": "A realistic comic illustration made with pen crosshatching. Follow the volume of each form with graduated hatch density.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "crosshatch",
+        "realistic",
+        "pen"
+      ],
+      "claims": {
+        "medium": "manga.crosshatch",
+        "lighting": "manga-crosshatch",
+        "texture": "manga.crosshatch"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A realistic comic illustration made with pen crosshatching",
+          "tags": [
+            "realistic comic",
+            "pen crosshatching"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Follow the volume of each form with graduated hatch density",
+          "tags": [
+            "contour following hatching"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve individual pen strokes in layered tonal fields",
+          "tags": [
+            "layered pen strokes"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.inkwash",
+      "name": "Ink-wash page",
+      "description": "A manga illustration with layered gray ink washes. Use diluted ink pools to establish soft shadow masses.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "ink wash",
+        "gray",
+        "expressive"
+      ],
+      "claims": {
+        "medium": "manga.inkwash",
+        "lighting": "manga-inkwash",
+        "texture": "manga.inkwash"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A manga illustration with layered gray ink washes",
+          "tags": [
+            "manga ink wash"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use diluted ink pools to establish soft shadow masses",
+          "tags": [
+            "gray ink washes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let tide marks and paper absorption remain visible",
+          "tags": [
+            "ink tide marks",
+            "paper absorption"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.fude",
+      "name": "Fude-pen immediacy",
+      "description": "A manga drawing made with a flexible fude pen. Let changes in line pressure define the main contours.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "fude",
+        "brush pen",
+        "direct"
+      ],
+      "claims": {
+        "medium": "manga.fude",
+        "composition": "manga-fude",
+        "texture": "manga.fude"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A manga drawing made with a flexible fude pen",
+          "tags": [
+            "fude pen manga"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let changes in line pressure define the main contours",
+          "tags": [
+            "pressure varied contours"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep tapering brush-pen marks and occasional dry gaps",
+          "tags": [
+            "tapered fude marks",
+            "dry gaps"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.ballpoint",
+      "name": "Ballpoint comic study",
+      "description": "A comic study drawn in ballpoint pen. Keep a single blue-ink tonal range.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "ballpoint",
+        "blue",
+        "hatching"
+      ],
+      "claims": {
+        "medium": "manga.ballpoint",
+        "palette": "manga-ballpoint",
+        "texture": "manga.ballpoint"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A comic study drawn in ballpoint pen",
+          "tags": [
+            "ballpoint comic drawing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep a single blue-ink tonal range",
+          "tags": [
+            "blue ballpoint ink"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Build form with accumulated fine overlapping pen marks",
+          "tags": [
+            "overlapping ballpoint marks"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.tonecut",
+      "name": "Cut-tone geometry",
+      "description": "A manga illustration constructed with cut screentone shapes. Use crisp geometric tone boundaries to separate forms.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "tone cut",
+        "geometric",
+        "printed"
+      ],
+      "claims": {
+        "medium": "manga.tonecut",
+        "composition": "manga-tonecut",
+        "texture": "manga.tonecut"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A manga illustration constructed with cut screentone shapes",
+          "tags": [
+            "cut screentone manga"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use crisp geometric tone boundaries to separate forms",
+          "tags": [
+            "geometric tone boundaries"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep a small set of consistent printed tone frequencies",
+          "tags": [
+            "consistent tone frequencies"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.whiteink",
+      "name": "White-ink relief",
+      "description": "An opaque-ink manga illustration on toned paper. Reveal form through selective pale contours and light accents.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "white ink",
+        "black paper",
+        "luminous"
+      ],
+      "claims": {
+        "medium": "manga.whiteink",
+        "lighting": "manga-whiteink",
+        "texture": "manga.whiteink",
+        "palette": "manga-whiteink"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An opaque-ink manga illustration on toned paper",
+          "tags": [
+            "opaque ink manga"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Reveal form through selective pale contours and light accents",
+          "tags": [
+            "selective white contours"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use pale white ink over a dark paper ground",
+          "tags": [
+            "white ink",
+            "dark paper"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep opaque pen marks over broad unmarked paper areas",
+          "tags": [
+            "opaque pen marks",
+            "unmarked paper"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.nib",
+      "name": "Flexible-nib contours",
+      "description": "A flexible-nib manga drawing. Give outer contours more weight than interior descriptions.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "nib",
+        "line variation",
+        "classic"
+      ],
+      "claims": {
+        "medium": "manga.nib",
+        "composition": "manga-nib",
+        "texture": "manga.nib"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A flexible-nib manga drawing",
+          "tags": [
+            "flexible nib manga"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Give outer contours more weight than interior descriptions",
+          "tags": [
+            "weighted outer contours"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep decisive thick-to-thin pen transitions",
+          "tags": [
+            "thick thin nib strokes"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.bluepencil",
+      "name": "Blue-pencil rough",
+      "description": "A comic production rough in light pencil. Prioritize construction, gesture and clear shape relationships.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "blue pencil",
+        "rough",
+        "production"
+      ],
+      "claims": {
+        "medium": "manga.bluepencil",
+        "composition": "manga-bluepencil",
+        "texture": "manga.bluepencil",
+        "palette": "manga-bluepencil"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A comic production rough in light pencil",
+          "tags": [
+            "pencil comic production rough"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Prioritize construction, gesture and clear shape relationships",
+          "tags": [
+            "construction",
+            "gesture",
+            "shape relationships"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use a pale non-photo-blue pencil tone",
+          "tags": [
+            "pale blue pencil"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep layered pencil strokes and unresolved secondary edges",
+          "tags": [
+            "layered pencil strokes"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.chalk",
+      "name": "Chalk-dark comic",
+      "description": "A comic illustration in pale chalk on dark paper. Use broad chalk highlights to carve the existing forms.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "chalk",
+        "dark paper",
+        "rough"
+      ],
+      "claims": {
+        "medium": "manga.chalk",
+        "lighting": "manga-chalk",
+        "texture": "manga.chalk"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A comic illustration in pale chalk on dark paper",
+          "tags": [
+            "chalk comic illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad chalk highlights to carve the existing forms",
+          "tags": [
+            "broad chalk highlights"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show broken chalk edges and exposed dark paper tooth",
+          "tags": [
+            "broken chalk",
+            "dark paper tooth"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.onebit",
+      "name": "One-bit comic",
+      "description": "A thresholded bitmap comic illustration. Keep solid graphic shapes separated by clear cut spaces.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "one bit",
+        "bitmap",
+        "graphic"
+      ],
+      "claims": {
+        "medium": "manga.onebit",
+        "composition": "manga-onebit",
+        "texture": "manga.onebit",
+        "palette": "manga-onebit"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A thresholded bitmap comic illustration",
+          "tags": [
+            "thresholded bitmap comic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep solid graphic shapes separated by clear cut spaces",
+          "tags": [
+            "solid shapes",
+            "clear cut spaces"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use strict black-ink and paper-white values",
+          "tags": [
+            "black ink",
+            "paper white"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use sparse deliberate pixel clusters rather than gray washes",
+          "tags": [
+            "deliberate pixel clusters"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.warmgray",
+      "name": "Warm-gray ink page",
+      "description": "A manga illustration on warm gray toned paper. Use dark ink for shadow and small pale highlights for relief.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "warm gray",
+        "ink",
+        "toned paper"
+      ],
+      "claims": {
+        "medium": "manga.warmgray",
+        "lighting": "manga-warmgray",
+        "texture": "manga.warmgray"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A manga illustration on warm gray toned paper",
+          "tags": [
+            "toned paper manga"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use dark ink for shadow and small pale highlights for relief",
+          "tags": [
+            "dark ink",
+            "pale highlights"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep softly absorbent ink edges on the toned surface",
+          "tags": [
+            "absorbent ink edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.crayon",
+      "name": "Wax-crayon comic",
+      "description": "A comic illustration made with wax crayon. Use blunt expressive shapes and simplified contours.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "crayon",
+        "wax",
+        "expressive"
+      ],
+      "claims": {
+        "medium": "manga.crayon",
+        "composition": "manga-crayon",
+        "texture": "manga.crayon"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A comic illustration made with wax crayon",
+          "tags": [
+            "wax crayon comic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use blunt expressive shapes and simplified contours",
+          "tags": [
+            "blunt expressive shapes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Show wax buildup and broken pigment on rough paper",
+          "tags": [
+            "wax buildup",
+            "broken pigment"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.drymarker",
+      "name": "Dry-marker blacks",
+      "description": "A manga illustration with broad dry-marker blacks. Anchor the composition with large uneven dense-ink fields.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "dry marker",
+        "black",
+        "rough"
+      ],
+      "claims": {
+        "medium": "manga.drymarker",
+        "composition": "manga-drymarker",
+        "texture": "manga.drymarker"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A manga illustration with broad dry-marker blacks",
+          "tags": [
+            "dry marker manga"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Anchor the composition with large uneven dense-ink fields",
+          "tags": [
+            "large dense ink fields"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let dry marker streaks remain visible inside the ink masses",
+          "tags": [
+            "dry marker streaks"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "manga.penwash",
+      "name": "Pen-and-wash comic",
+      "description": "A pen-and-wash comic illustration. Use translucent gray wash to support the ink structure.",
+      "category": "manga",
+      "kind": "style",
+      "tags": [
+        "manga",
+        "pen wash",
+        "gray",
+        "drawing"
+      ],
+      "claims": {
+        "medium": "manga.penwash",
+        "lighting": "manga-penwash",
+        "texture": "manga.penwash"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A pen-and-wash comic illustration",
+          "tags": [
+            "pen and wash comic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use translucent gray wash to support the ink structure",
+          "tags": [
+            "translucent gray wash"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the pen lines visible through lightly pooled pigment",
+          "tags": [
+            "visible pen lines",
+            "pooled wash"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

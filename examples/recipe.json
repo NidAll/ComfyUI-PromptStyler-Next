@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "prompt": "A botanist tending a rooftop greenhouse at dusk",
+  "model": "flux",
+  "styles": [
+    {
+      "id": "cinema.noir",
+      "intensity": 0.8
+    }
+  ],
+  "conflict_policy": "last_wins",
+  "locked_axes": [
+    "composition"
+  ]
+}

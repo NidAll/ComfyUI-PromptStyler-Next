@@ -1,0 +1,1185 @@
+{
+  "schema_version": 1,
+  "id": "next.concept",
+  "version": "1.0.0",
+  "name": "Concept development",
+  "description": "Production concepts and design communication without inventing scene content.",
+  "license": "CC0-1.0",
+  "author": "PromptStyler Next contributors",
+  "styles": [
+    {
+      "id": "concept.paintover",
+      "name": "Production paintover",
+      "description": "A production-design concept painting. Use a clear focal hierarchy with simplified supporting forms.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "production",
+        "paintover",
+        "design"
+      ],
+      "claims": {
+        "medium": "concept.paintover",
+        "composition": "concept-paintover",
+        "texture": "concept.paintover"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A production-design concept painting",
+          "tags": [
+            "production concept painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use a clear focal hierarchy with simplified supporting forms",
+          "tags": [
+            "focal hierarchy",
+            "simplified support"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Combine broad painted masses with selective finished detail",
+          "tags": [
+            "broad paint masses",
+            "selective detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.thumbnails",
+      "name": "Value thumbnail",
+      "description": "A concise concept thumbnail. Reduce the supplied scene to three major value groups.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "thumbnail",
+        "values",
+        "composition"
+      ],
+      "claims": {
+        "medium": "concept.thumbnails",
+        "composition": "concept-thumbnails",
+        "texture": "concept.thumbnails",
+        "palette": "concept-thumbnails"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A concise concept thumbnail",
+          "tags": [
+            "concept thumbnail"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reduce the supplied scene to three major value groups",
+          "tags": [
+            "three value groups"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep the thumbnail in grayscale values",
+          "tags": [
+            "grayscale values"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep broad digital brush marks and unresolved secondary detail",
+          "tags": [
+            "broad digital strokes"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.silhouette",
+      "name": "Silhouette exploration",
+      "description": "A concept-design silhouette study. Emphasize a distinct outer contour and readable negative spaces.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "silhouette",
+        "design",
+        "shape"
+      ],
+      "claims": {
+        "medium": "concept.silhouette",
+        "composition": "concept-silhouette",
+        "texture": "concept.silhouette"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A concept-design silhouette study",
+          "tags": [
+            "concept silhouette study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Emphasize a distinct outer contour and readable negative spaces",
+          "tags": [
+            "distinct silhouette",
+            "readable gaps"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the interior mostly flat with a few structural accents",
+          "tags": [
+            "flat interior",
+            "structural accents"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.hardsurface",
+      "name": "Hard-surface design",
+      "description": "A hard-surface industrial concept rendering. Use clear major forms with subordinate mechanical detail.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "hard surface",
+        "industrial",
+        "design"
+      ],
+      "claims": {
+        "medium": "concept.hardsurface",
+        "composition": "concept-hardsurface",
+        "texture": "concept.hardsurface"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A hard-surface industrial concept rendering",
+          "tags": [
+            "hard surface concept"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use clear major forms with subordinate mechanical detail",
+          "tags": [
+            "clear primary forms"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Describe existing hard surfaces with restrained panel seams and material breaks",
+          "tags": [
+            "panel seams",
+            "material breaks"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.organics",
+      "name": "Organic shape design",
+      "description": "An organic concept-design study. Organize forms through flowing masses and purposeful asymmetry.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "organic",
+        "form",
+        "sculpture"
+      ],
+      "claims": {
+        "medium": "concept.organics",
+        "composition": "concept-organics",
+        "texture": "concept.organics"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An organic concept-design study",
+          "tags": [
+            "organic concept design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize forms through flowing masses and purposeful asymmetry",
+          "tags": [
+            "flowing masses",
+            "asymmetry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use restrained surface variation that follows the main forms",
+          "tags": [
+            "form following surface variation"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.keyframe",
+      "name": "Narrative keyframe",
+      "description": "A cinematic concept-art keyframe. Use clear lighting relationships to support the existing action.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "keyframe",
+        "cinematic",
+        "staging"
+      ],
+      "claims": {
+        "medium": "concept.keyframe",
+        "lighting": "concept-keyframe",
+        "composition": "concept-keyframe"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A cinematic concept-art keyframe",
+          "tags": [
+            "concept art keyframe"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use clear lighting relationships to support the existing action",
+          "tags": [
+            "story motivated light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Stage the supplied content with a strong foreground-to-background read",
+          "tags": [
+            "depth staging",
+            "clear action read"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.material",
+      "name": "Material callout study",
+      "description": "A material-focused design study of the existing subject. Use broad neutral illumination for readable surface response.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "material",
+        "callout",
+        "texture"
+      ],
+      "claims": {
+        "medium": "concept.material",
+        "lighting": "concept-material",
+        "texture": "concept.material"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A material-focused design study of the existing subject",
+          "tags": [
+            "material design study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad neutral illumination for readable surface response",
+          "tags": [
+            "neutral material lighting"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Differentiate roughness, translucency and wear without changing the form",
+          "tags": [
+            "distinct roughness",
+            "translucency",
+            "wear"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.sci-fi",
+      "name": "Functional science fiction",
+      "description": "A grounded science-fiction concept interpretation. Make the existing forms read as functional assemblies.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "science fiction",
+        "functional",
+        "design"
+      ],
+      "claims": {
+        "medium": "concept.sci-fi",
+        "composition": "concept-sci-fi",
+        "texture": "concept.sci-fi"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A grounded science-fiction concept interpretation",
+          "tags": [
+            "grounded science fiction concept"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Make the existing forms read as functional assemblies",
+          "tags": [
+            "functional assemblies"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use restrained manufactured materials and localized maintenance wear",
+          "tags": [
+            "manufactured materials",
+            "maintenance wear"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.fantasy",
+      "name": "Painterly fantasy",
+      "description": "A painterly fantasy concept illustration. Use layered atmospheric light to separate existing depth planes.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "fantasy",
+        "painterly",
+        "atmosphere"
+      ],
+      "claims": {
+        "medium": "concept.fantasy",
+        "lighting": "concept-fantasy",
+        "texture": "concept.fantasy"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A painterly fantasy concept illustration",
+          "tags": [
+            "painterly fantasy concept"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use layered atmospheric light to separate existing depth planes",
+          "tags": [
+            "atmospheric depth light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep confident broad brushwork with detail concentrated at the focus",
+          "tags": [
+            "confident brushwork",
+            "focal detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.retrofuture",
+      "name": "Retrofuture industrial",
+      "description": "A retrofuturist industrial-design concept. Use streamlined primary forms with clearly organized secondary structure.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "retrofuture",
+        "industrial",
+        "analog"
+      ],
+      "claims": {
+        "medium": "concept.retrofuture",
+        "composition": "concept-retrofuture",
+        "texture": "concept.retrofuture"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A retrofuturist industrial-design concept",
+          "tags": [
+            "retrofuturist industrial concept"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use streamlined primary forms with clearly organized secondary structure",
+          "tags": [
+            "streamlined forms",
+            "organized structure"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Favor enamel, brushed metal and analog fabrication marks on existing surfaces",
+          "tags": [
+            "enamel",
+            "brushed metal",
+            "fabrication marks"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.modular",
+      "name": "Modular system sketch",
+      "description": "A modular design-system sketch. Organize the existing forms around repeatable coherent units.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "modular",
+        "system",
+        "design"
+      ],
+      "claims": {
+        "medium": "concept.modular",
+        "composition": "concept-modular",
+        "texture": "concept.modular"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A modular design-system sketch",
+          "tags": [
+            "modular concept sketch"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize the existing forms around repeatable coherent units",
+          "tags": [
+            "repeatable units",
+            "coherent proportions"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep loose construction marks beneath selective rendered edges",
+          "tags": [
+            "construction marks",
+            "selective edges"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.atmosphere",
+      "name": "Atmospheric color study",
+      "description": "A production color-and-atmosphere study. Unify the scene through a dominant hue and restrained complementary accents.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "color study",
+        "atmosphere",
+        "light"
+      ],
+      "claims": {
+        "medium": "concept.atmosphere",
+        "palette": "concept-atmosphere",
+        "texture": "concept.atmosphere"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A production color-and-atmosphere study",
+          "tags": [
+            "production color study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Unify the scene through a dominant hue and restrained complementary accents",
+          "tags": [
+            "dominant hue",
+            "complementary accents"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let broad loose color masses precede fine descriptive detail",
+          "tags": [
+            "loose color masses"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.whitebox",
+      "name": "Whitebox blockout",
+      "description": "A neutral whitebox concept blockout. Reduce the supplied scene to primary spatial masses.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "whitebox",
+        "blockout",
+        "spatial"
+      ],
+      "claims": {
+        "medium": "concept.whitebox",
+        "composition": "concept-whitebox",
+        "lighting": "concept-whitebox"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A neutral whitebox concept blockout",
+          "tags": [
+            "whitebox blockout"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reduce the supplied scene to primary spatial masses",
+          "tags": [
+            "primary spatial masses"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use simple directional light for an immediate volume read",
+          "tags": [
+            "simple volume light"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.contour",
+      "name": "Design contour sheet",
+      "description": "A design-contour study of the supplied subject. Explain the principal form with clear unbroken contour relationships.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "contour",
+        "design",
+        "sketch"
+      ],
+      "claims": {
+        "medium": "concept.contour",
+        "composition": "concept-contour",
+        "texture": "concept.contour"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A design-contour study of the supplied subject",
+          "tags": [
+            "design contour study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Explain the principal form with clear unbroken contour relationships",
+          "tags": [
+            "unbroken contour relationships"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use economical pen pressure and sparse construction accents",
+          "tags": [
+            "economical pen marks"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.valuekey",
+      "name": "Lighting value key",
+      "description": "A production lighting-value key. Separate the existing light pattern into a few controlled value bands.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "lighting key",
+        "value",
+        "planning"
+      ],
+      "claims": {
+        "medium": "concept.valuekey",
+        "lighting": "concept-valuekey",
+        "texture": "concept.valuekey"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A production lighting-value key",
+          "tags": [
+            "lighting value key"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Separate the existing light pattern into a few controlled value bands",
+          "tags": [
+            "controlled light value bands"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Leave surface detail subordinate to the lighting design",
+          "tags": [
+            "subordinate surface detail"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.colorkey",
+      "name": "Limited-palette color key",
+      "description": "A limited-palette production color key. Organize existing colors into a few clear warm-cool groups.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "color key",
+        "palette",
+        "planning"
+      ],
+      "claims": {
+        "medium": "concept.colorkey",
+        "palette": "concept-colorkey",
+        "texture": "concept.colorkey"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A limited-palette production color key",
+          "tags": [
+            "production color key"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Organize existing colors into a few clear warm-cool groups",
+          "tags": [
+            "warm cool color groups"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep brushwork broad and descriptive detail minimal",
+          "tags": [
+            "broad color key strokes"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.inkblue",
+      "name": "Technical blue-line concept",
+      "description": "A technical concept sketch with light construction drawing. Use measured construction lines beneath the final contours.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "blue line",
+        "technical",
+        "sketch"
+      ],
+      "claims": {
+        "medium": "concept.inkblue",
+        "composition": "concept-inkblue",
+        "texture": "concept.inkblue",
+        "palette": "concept-inkblue"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A technical concept sketch with light construction drawing",
+          "tags": [
+            "technical concept sketch"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use measured construction lines beneath the final contours",
+          "tags": [
+            "measured construction lines"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use pale blue construction lines",
+          "tags": [
+            "pale blue construction lines"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep pale underdrawing and a few darker defining strokes",
+          "tags": [
+            "pale underdrawing",
+            "defining strokes"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.surfaceplanes",
+      "name": "Faceted form study",
+      "description": "A concept study of the major surface planes. Break the existing forms into clear connected planar groups.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "planes",
+        "form",
+        "study"
+      ],
+      "claims": {
+        "medium": "concept.surfaceplanes",
+        "composition": "concept-surfaceplanes",
+        "lighting": "concept-surfaceplanes"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A concept study of the major surface planes",
+          "tags": [
+            "surface plane study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Break the existing forms into clear connected planar groups",
+          "tags": [
+            "connected planar groups"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use a simple light direction to differentiate adjacent planes",
+          "tags": [
+            "differentiated plane lighting"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.ornament",
+      "name": "Ornamental design concept",
+      "description": "An ornamental design concept based on the supplied forms. Repeat identifying contours in a coherent decorative rhythm.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "ornament",
+        "pattern",
+        "design"
+      ],
+      "claims": {
+        "medium": "concept.ornament",
+        "composition": "concept-ornament",
+        "texture": "concept.ornament"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An ornamental design concept based on the supplied forms",
+          "tags": [
+            "ornamental concept drawing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Repeat identifying contours in a coherent decorative rhythm",
+          "tags": [
+            "repeated identifying contours"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the ornamental marks consistent in scale and density",
+          "tags": [
+            "consistent ornamental density"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.sculptural",
+      "name": "Sculptural design painting",
+      "description": "A sculptural concept painting of the supplied subject. Use large soft value gradients to explain dimensional form.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "sculptural",
+        "form",
+        "matte"
+      ],
+      "claims": {
+        "medium": "concept.sculptural",
+        "lighting": "concept-sculptural",
+        "texture": "concept.sculptural"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A sculptural concept painting of the supplied subject",
+          "tags": [
+            "sculptural concept painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use large soft value gradients to explain dimensional form",
+          "tags": [
+            "large soft value gradients"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep the material treatment matte and broadly painted",
+          "tags": [
+            "matte broad paint"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.elevation",
+      "name": "Orthographic design view",
+      "description": "An orthographic design illustration. Use a measured flat projection with clear proportional relationships.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "orthographic",
+        "design",
+        "elevation"
+      ],
+      "claims": {
+        "medium": "concept.elevation",
+        "composition": "concept-elevation",
+        "texture": "concept.elevation"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "An orthographic design illustration",
+          "tags": [
+            "orthographic design illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use a measured flat projection with clear proportional relationships",
+          "tags": [
+            "measured orthographic projection"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Retain sparse construction marks and clean defining edges",
+          "tags": [
+            "sparse construction marks"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.contrastkey",
+      "name": "Contrast-hierarchy study",
+      "description": "A concept-art contrast-hierarchy study. Reserve the strongest contrast for the existing focal relationship.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "contrast",
+        "hierarchy",
+        "focus"
+      ],
+      "claims": {
+        "medium": "concept.contrastkey",
+        "composition": "concept-contrastkey",
+        "texture": "concept.contrastkey"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A concept-art contrast-hierarchy study",
+          "tags": [
+            "contrast hierarchy study"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reserve the strongest contrast for the existing focal relationship",
+          "tags": [
+            "focal contrast hierarchy"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Simplify small textures outside the main focus",
+          "tags": [
+            "simplified peripheral texture"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.underpainting",
+      "name": "Monochrome underpainting",
+      "description": "A concept-art underpainting. Resolve the main light and shadow masses before local color.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "underpainting",
+        "monochrome",
+        "planning"
+      ],
+      "claims": {
+        "medium": "concept.underpainting",
+        "lighting": "concept-underpainting",
+        "texture": "concept.underpainting",
+        "palette": "concept-underpainting"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A concept-art underpainting",
+          "tags": [
+            "concept underpainting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Resolve the main light and shadow masses before local color",
+          "tags": [
+            "resolved light shadow masses"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep the underpainting in neutral monochrome",
+          "tags": [
+            "neutral monochrome"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep thin transparent paint and visible construction beneath",
+          "tags": [
+            "thin transparent underpaint"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "concept.inkrender",
+      "name": "Ink-and-render hybrid",
+      "description": "A concept drawing combining precise ink and selective painted rendering. Use ink to establish structure and paint to emphasize the main form.",
+      "category": "concept",
+      "kind": "style",
+      "tags": [
+        "concept art",
+        "ink",
+        "render",
+        "hybrid"
+      ],
+      "claims": {
+        "medium": "concept.inkrender",
+        "composition": "concept-inkrender",
+        "texture": "concept.inkrender"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "A concept drawing combining precise ink and selective painted rendering",
+          "tags": [
+            "ink render hybrid"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use ink to establish structure and paint to emphasize the main form",
+          "tags": [
+            "ink structure",
+            "selective paint"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let unfinished construction remain visible away from the focus",
+          "tags": [
+            "visible unfinished construction"
+          ],
+          "min_intensity": 0.75
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}
