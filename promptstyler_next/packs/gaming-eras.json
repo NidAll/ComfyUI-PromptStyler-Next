@@ -1,0 +1,1008 @@
+{
+  "schema_version": 1,
+  "id": "community.next.gaming-eras",
+  "version": "1.0.0",
+  "name": "Gaming Eras",
+  "description": "Visual languages from arcade, early 3D, handheld and contemporary game marketing.",
+  "license": "CC0-1.0",
+  "author": "NidAll / original community pack",
+  "styles": [
+    {
+      "id": "gameera.sixteen-bit-cover",
+      "name": "16-Bit Box Illustration",
+      "description": "Illustrated cartridge-era cover art, painted for shelf visibility and emphatic silhouettes.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "16bit",
+        "cartridge",
+        "cover",
+        "retro"
+      ],
+      "claims": {
+        "medium": "gameera.sixteen-bit-cover",
+        "texture": "gameera.sixteen-bit-cover"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the subject as hand-painted 16-bit cartridge-era box illustration",
+          "tags": [
+            "retro 16 bit box art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Build a dynamic readable central silhouette designed for small shelf viewing",
+          "tags": [
+            "classic cartridge cover framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Emphasize theatrical edge illumination and clear large shadow shapes",
+          "tags": [
+            "dramatic retro game cover light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Show airbrush-to-gouache transitions and fine printed box-stock grain",
+          "tags": [
+            "retro game cover print grain"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.arcade-cabinet-side",
+      "name": "Arcade Cabinet Side Art",
+      "description": "Large high-contrast arcade illustration intended to wrap a tall cabinet plane.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "arcade",
+        "cabinet",
+        "illustration",
+        "retro"
+      ],
+      "claims": {
+        "medium": "gameera.arcade-cabinet-side",
+        "palette": "gameera.arcade-cabinet-side",
+        "texture": "gameera.arcade-cabinet-side"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Adapt the existing subject into flamboyant arcade cabinet side-panel artwork",
+          "tags": [
+            "arcade cabinet side illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange bold diagonal motion around a tall edge-to-edge silhouette",
+          "tags": [
+            "tall arcade cabinet composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use a few intense screen-print colors separated by sharp dark contours",
+          "tags": [
+            "saturated arcade paint palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve thick ink outlines and subtle applied-vinyl printing wear",
+          "tags": [
+            "arcade vinyl print surface"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.ps1-lowpoly",
+      "name": "Fifth-Generation Low Poly",
+      "description": "PlayStation-era style early textured 3D geometry, affine artifacts and atmospheric distance.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "ps1",
+        "lowpoly",
+        "1990s",
+        "3d"
+      ],
+      "claims": {
+        "medium": "gameera.ps1-lowpoly",
+        "texture": "gameera.ps1-lowpoly"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the existing subject into late-1990s low-polygon console-rendered 3D",
+          "tags": [
+            "fifth generation low poly 3d"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use a fixed-camera game screenshot perspective with purposeful angular silhouettes",
+          "tags": [
+            "fixed camera low poly composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use vertex-lit gradients with limited local light variation",
+          "tags": [
+            "retro game vertex lighting"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep low-resolution textures and subtly unstable affine-like surface mapping",
+          "tags": [
+            "wobbly low res ps1 textures"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.ps2-early-cg",
+      "name": "Sixth-Generation CG",
+      "description": "Early-2000s real-time game rendering with chunky materials and compressed cinematic staging.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "ps2",
+        "2000s",
+        "realtime",
+        "cutscene"
+      ],
+      "claims": {
+        "medium": "gameera.ps2-early-cg",
+        "texture": "gameera.ps2-early-cg"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the supplied subject as a sixth-generation console game cutscene",
+          "tags": [
+            "early 2000s game 3d cutscene"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use game-cinematic medium framing and relatively simple environmental depth",
+          "tags": [
+            "2000s in engine cutscene framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Separate broad precomputed highlights from simple hard real-time shadows",
+          "tags": [
+            "early realtime game lighting"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve mildly low-resolution surface maps and restrained polygon-edge geometry",
+          "tags": [
+            "sixth generation texture detail"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.isometric-rpg",
+      "name": "Isometric RPG Illustration",
+      "description": "Illustrated strategy-RPG scenes with elevated orthographic-like composition.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "isometric",
+        "rpg",
+        "strategy",
+        "gameart"
+      ],
+      "claims": {
+        "medium": "gameera.isometric-rpg",
+        "texture": "gameera.isometric-rpg"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject as a detailed isometric fantasy roleplaying game illustration",
+          "tags": [
+            "isometric roleplaying game art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use consistent elevated three-quarter projection and legible small-scale layers",
+          "tags": [
+            "isometric rpg camera angle"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Maintain clear directional lighting that separates adjacent planes",
+          "tags": [
+            "isometric game directional light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep hand-painted miniature textures rather than photoreal surface microdetail",
+          "tags": [
+            "painted rpg tile materials"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.handheld-pixel-rpg",
+      "name": "Handheld Pixel RPG",
+      "description": "Pocket-console color limits with readable sprites and compact layered environments.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "handheld",
+        "pixelart",
+        "rpg",
+        "retro"
+      ],
+      "claims": {
+        "medium": "gameera.handheld-pixel-rpg",
+        "palette": "gameera.handheld-pixel-rpg",
+        "texture": "gameera.handheld-pixel-rpg"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Turn the image into a 1990s handheld color-RPG screenshot aesthetic",
+          "tags": [
+            "handheld rpg pixel art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use simple layered sprite silhouettes within a tight scene rectangle",
+          "tags": [
+            "compact handheld rpg framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Rely on a disciplined portable-console palette with distinct light and dark ramps",
+          "tags": [
+            "limited handheld color ramps"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Render surfaces in deliberate pixel clusters without smooth antialiasing",
+          "tags": [
+            "pixel clustered sprite shading"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.survival-horror-fixed",
+      "name": "Fixed-Camera Survival Horror",
+      "description": "Claustrophobic early survival-horror camera staging with shadow-heavy material economy.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "horror",
+        "survival",
+        "fixedcamera",
+        "retro"
+      ],
+      "claims": {
+        "medium": "gameera.survival-horror-fixed",
+        "texture": "gameera.survival-horror-fixed"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Frame the scene like a late-1990s fixed-camera survival-horror game background",
+          "tags": [
+            "survival horror fixed camera screenshot"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use a difficult but controlled high corner angle with a strong foreground obstacle",
+          "tags": [
+            "uncanny fixed camera angle"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Leave large areas underlit while preserving one coherent subject focal cue",
+          "tags": [
+            "low light horror game environment"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Combine grainy low-resolution surfaces with rigid game-era shadow transitions",
+          "tags": [
+            "retro survival horror render texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.point-click-mystery",
+      "name": "Point-and-Click Mystery",
+      "description": "Illustrated adventure-game interiors with object readability and painterly background depth.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "adventure",
+        "pointclick",
+        "illustration",
+        "mystery"
+      ],
+      "claims": {
+        "medium": "gameera.point-click-mystery",
+        "texture": "gameera.point-click-mystery"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the subject into a painterly point-and-click adventure game scene",
+          "tags": [
+            "classic adventure game background"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Create a theatrical side-on perspective with clear visual separation of usable forms",
+          "tags": [
+            "adventure game readable scene"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Direct attention through a small number of motivated pools of illumination",
+          "tags": [
+            "point and click dramatic light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use painted background brushwork and lightly softened contour edges",
+          "tags": [
+            "hand painted adventure game art"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.boomer-shooter-poster",
+      "name": "Retro Arena Shooter Poster",
+      "description": "Aggressive 1990s shooter promotional imagery without referencing named properties.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "fps",
+        "arena",
+        "poster",
+        "1990s"
+      ],
+      "claims": {
+        "medium": "gameera.boomer-shooter-poster",
+        "palette": "gameera.boomer-shooter-poster",
+        "texture": "gameera.boomer-shooter-poster"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the original subject as a muscularly composed 1990s arena-shooter promotional painting",
+          "tags": [
+            "retro arena shooter poster"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Push perspective using dramatic diagonals and exaggerated near-far scale",
+          "tags": [
+            "extreme game poster perspective"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Favor blistering rust-red and electric teal accents against deep neutral masses",
+          "tags": [
+            "retro shooter poster palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve airbrushed metal highlights and rough painterly splatter at the edges",
+          "tags": [
+            "painted retro shooter cover"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.rhythm-game-arcade",
+      "name": "Rhythm Arcade Interface",
+      "description": "Bright rhythmic screen design with disciplined movement lines and UI-safe areas.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "rhythm",
+        "arcade",
+        "interface",
+        "music"
+      ],
+      "claims": {
+        "medium": "gameera.rhythm-game-arcade",
+        "palette": "gameera.rhythm-game-arcade",
+        "texture": "gameera.rhythm-game-arcade"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the image through turn-of-the-century rhythm-game graphic presentation",
+          "tags": [
+            "retro rhythm game visuals"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use repeating vertical timing lanes and crisp peripheral interface-safe blocks",
+          "tags": [
+            "rhythm game timing lane layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Combine acid green and magenta accents with neutral dark structure",
+          "tags": [
+            "neon rhythm game color scheme"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Introduce restrained scanline-inspired raster edges beneath clean shapes",
+          "tags": [
+            "arcade rhythm screen pixels"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.visual-novel-cg",
+      "name": "Visual Novel Event CG",
+      "description": "Story-oriented painted anime key image with soft environmental detail and expressive framing.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "visualnovel",
+        "anime",
+        "game",
+        "illustration"
+      ],
+      "claims": {
+        "medium": "gameera.visual-novel-cg",
+        "texture": "gameera.visual-novel-cg"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject as a hand-painted visual-novel event illustration",
+          "tags": [
+            "visual novel event cg illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Hold a clear focal character or existing object relationship within a cinematic static crop",
+          "tags": [
+            "visual novel event composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use emotionally motivated ambient bounce from the surrounding scene",
+          "tags": [
+            "soft illustrative scene lighting"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Blend precise line art with broad painterly environmental color fields",
+          "tags": [
+            "painted visual novel cg"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.mmo-loading-art",
+      "name": "Fantasy MMO Loading Art",
+      "description": "Illustrative massively multiplayer game loading-panel composition and atmospheric scale.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "mmo",
+        "fantasy",
+        "loading",
+        "concept"
+      ],
+      "claims": {
+        "medium": "gameera.mmo-loading-art",
+        "texture": "gameera.mmo-loading-art"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the subject as a fantasy online game loading-screen painting",
+          "tags": [
+            "fantasy mmo loading artwork"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Build deep scenic layering around a dominant foreground focal area",
+          "tags": [
+            "epic loading screen composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use a broad atmospheric key that softens steadily into distant scenery",
+          "tags": [
+            "fantasy environment distance haze"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep richly brushed material forms and somewhat economical background finishing",
+          "tags": [
+            "mmo promotional paint texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.indie-paper-platformer",
+      "name": "Paper-Cut Indie Platformer",
+      "description": "Hand-assembled indie game worlds made from crisp paper silhouettes and layered textures.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "indie",
+        "papercut",
+        "platformer",
+        "craft"
+      ],
+      "claims": {
+        "medium": "gameera.indie-paper-platformer",
+        "palette": "gameera.indie-paper-platformer",
+        "texture": "gameera.indie-paper-platformer"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Transform the existing scene into a hand-cut paper-collage platform-game art direction",
+          "tags": [
+            "paper craft indie platformer"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize space in clearly stacked parallax layers with generous traversable gaps",
+          "tags": [
+            "parallax platform game scenery"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use tactile flat-paper pigments with warm highlights and quiet cool shadows",
+          "tags": [
+            "paper cut game color layers"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Emphasize torn fiber edges and tiny shadows between stacked pieces",
+          "tags": [
+            "layered paper cutout material"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.voxel-diorama",
+      "name": "Voxel World Diorama",
+      "description": "Block-built miniature scenes with coherent grid scale and playful light transport.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "voxel",
+        "3d",
+        "miniature",
+        "game"
+      ],
+      "claims": {
+        "medium": "gameera.voxel-diorama",
+        "texture": "gameera.voxel-diorama"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Recreate the subject as a small voxel-built game-world diorama",
+          "tags": [
+            "voxel world miniature"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Constrain forms to a consistent block scale viewed from a high three-quarter angle",
+          "tags": [
+            "isometric voxel world"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use soft miniature ambient occlusion between adjacent blocks",
+          "tags": [
+            "voxel ambient occlusion"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep individual colored cubes apparent without detailed texture maps",
+          "tags": [
+            "visible voxel cube geometry"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.strategy-manual-plate",
+      "name": "Strategy Guide Plate",
+      "description": "Printed game-strategy illustrations with annotated-space composition but no invented instructions.",
+      "category": "gaming-eras/looks",
+      "kind": "style",
+      "tags": [
+        "strategy",
+        "manual",
+        "retro",
+        "game"
+      ],
+      "claims": {
+        "medium": "gameera.strategy-manual-plate",
+        "palette": "gameera.strategy-manual-plate",
+        "texture": "gameera.strategy-manual-plate"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the supplied subject as a diagram-like image from a game strategy guide",
+          "tags": [
+            "classic game strategy guide art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reserve structured margins for supplied labels and clear callout placement",
+          "tags": [
+            "strategy guide reference layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep restrained functional color coding against lightly yellowed paper",
+          "tags": [
+            "retro game guide print palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use offset-print dots and slightly fuzzy diagram rules on paper",
+          "tags": [
+            "printed game guide texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.handheld-lcd",
+      "name": "Handheld LCD Tint",
+      "description": "Muted pale-green portable-screen colors and darker green pixel tones.",
+      "category": "gaming-eras/grades",
+      "kind": "grade",
+      "tags": [
+        "lcd",
+        "green",
+        "handheld",
+        "grade"
+      ],
+      "claims": {
+        "palette": "gameera.handheld-lcd"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Map hues onto subdued olive-glass and deep moss display levels",
+          "tags": [
+            "monochrome handheld lcd green"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Keep subtle horizontal liquid-crystal panel irregularities",
+          "tags": [
+            "handheld lcd pixel texture"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.arcade-purple",
+      "name": "Arcade Electric Purple",
+      "description": "Purple-blue display glow and focused candy-color accents.",
+      "category": "gaming-eras/grades",
+      "kind": "grade",
+      "tags": [
+        "arcade",
+        "purple",
+        "blue",
+        "grade"
+      ],
+      "claims": {
+        "palette": "gameera.arcade-purple"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Weight shadows toward midnight violet with electric violet-blue highlights",
+          "tags": [
+            "arcade neon purple grade"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let vivid accents illuminate only adjacent surfaces with short falloff",
+          "tags": [
+            "short neon bounce glow"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.retro-amber",
+      "name": "Retro HUD Amber",
+      "description": "Amber terminal-inspired color balance for information-heavy game imagery.",
+      "category": "gaming-eras/grades",
+      "kind": "grade",
+      "tags": [
+        "hud",
+        "amber",
+        "terminal",
+        "grade"
+      ],
+      "claims": {
+        "palette": "gameera.retro-amber"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Use warm amber luminous forms against dark smoky neutrals",
+          "tags": [
+            "amber game hud palette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Add restrained digital bloom to only the brightest graphic regions",
+          "tags": [
+            "soft amber hud glow"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.pixel-edge",
+      "name": "Intentional Pixel Edges",
+      "description": "Pixelation confined to existing edges while preserving overall scene content.",
+      "category": "gaming-eras/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "pixel",
+        "edge",
+        "texture",
+        "modifier"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Introduce coherent pixel clusters along selected fine contours",
+          "tags": [
+            "deliberate pixel stair stepping"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Keep the original large-scale silhouette legible from thumbnail size",
+          "tags": [
+            "clean readable pixel silhouette"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "gameera.screen-ui-safe",
+      "name": "HUD-Safe Framing",
+      "description": "A generous peripheral margin suitable for adding interface widgets later.",
+      "category": "gaming-eras/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "hud",
+        "ui",
+        "framing",
+        "modifier"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Reserve uncluttered peripheral areas suitable for overlaying future game UI",
+          "tags": [
+            "interface safe game framing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Protect any already supplied text and important focal details from overlay zones",
+          "tags": [
+            "readable ui safe focal detail"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

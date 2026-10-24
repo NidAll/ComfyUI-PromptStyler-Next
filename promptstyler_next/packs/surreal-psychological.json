@@ -1,0 +1,992 @@
+{
+  "schema_version": 1,
+  "id": "community.next.surreal-psychological",
+  "version": "1.0.0",
+  "name": "Psychological Surrealism",
+  "description": "Unsettling spatial logic, perceptual puzzles and symbolic but subject-preserving compositions.",
+  "license": "CC0-1.0",
+  "author": "NidAll / original community pack",
+  "styles": [
+    {
+      "id": "psychsurreal.displaced-scale",
+      "name": "Displaced Scale",
+      "description": "Subtle surrealism in which familiar spatial proportions become implausible but readable.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "surreal",
+        "scale",
+        "perception",
+        "uncanny"
+      ],
+      "claims": {
+        "medium": "psychsurreal.displaced-scale"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the given subject with quiet photoreal-adjacent psychological surrealism",
+          "tags": [
+            "psychological surrealist visual"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Disturb familiar scale ratios while keeping the subject immediately recognizable",
+          "tags": [
+            "uneasy surreal scale contrast"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use ordinary plausible daylight to make the impossible feel matter-of-fact",
+          "tags": [
+            "naturalistic surreal daylight"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Let the scene feel politely impossible without dramatic supernatural effects",
+          "tags": [
+            "quiet implausible atmosphere"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.endless-threshold",
+      "name": "The Endless Threshold",
+      "description": "Repeated openings that suggest inaccessible rooms and quietly looping trajectories.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "threshold",
+        "doorway",
+        "repetition",
+        "uncanny"
+      ],
+      "claims": {
+        "medium": "psychsurreal.endless-threshold"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Frame the scene as a restrained impossible-architecture photographic study",
+          "tags": [
+            "subtle impossible architecture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Repeat nested doorlike openings in a perspective that almost but never fully resolves",
+          "tags": [
+            "endless nested threshold perspective"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let successive thresholds share incongruous yet understated illumination",
+          "tags": [
+            "inconsistent corridor ambient light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Create anticipation through withheld spatial resolution rather than visible menace",
+          "tags": [
+            "unresolved spatial expectation"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.shadow-misalignment",
+      "name": "Shadow Misalignment",
+      "description": "Shadows that imply one more plausible light source or a different spatial relationship.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "shadow",
+        "uncanny",
+        "physics",
+        "perception"
+      ],
+      "claims": {
+        "medium": "psychsurreal.shadow-misalignment"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the scene through subtle photographic psychological dislocation",
+          "tags": [
+            "subtly uncanny photographic scene"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Allow a secondary soft shadow to disagree slightly with the primary source direction",
+          "tags": [
+            "misaligned duplicate shadow"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Keep subject geometry rational so the light discrepancy remains the only anomaly",
+          "tags": [
+            "normal composition uncanny light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Suggest a barely noticed perceptual error within a familiar environment",
+          "tags": [
+            "subtle shadow unease"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.object-metamorphosis",
+      "name": "Object Metamorphosis",
+      "description": "Material transitions that make one known form seem to become another without inventing subjects.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "metamorphosis",
+        "material",
+        "surreal",
+        "transformation"
+      ],
+      "claims": {
+        "medium": "psychsurreal.object-metamorphosis",
+        "texture": "psychsurreal.object-metamorphosis"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the original subject as a sculptural surrealist material metamorphosis",
+          "tags": [
+            "surreal material transformation art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep a coherent overall silhouette while transitions unfold along selected edges",
+          "tags": [
+            "continuous transforming silhouette"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Let the original material blend gradually into a plausible second surface vocabulary",
+          "tags": [
+            "seamless material metamorphosis"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "lighting",
+          "text": "Maintain consistent physical shading across the improbable transition",
+          "tags": [
+            "coherent light on impossible material"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.mirror-delay",
+      "name": "Delayed Reflection",
+      "description": "Reflection misregistration with believable glass, lighting and object identity.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "mirror",
+        "reflection",
+        "paradox",
+        "uncanny"
+      ],
+      "claims": {
+        "medium": "psychsurreal.mirror-delay"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Build the image around a believable but slightly anomalous mirrored scene",
+          "tags": [
+            "uncanny mirror visual"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Offset reflected alignment by a small deliberate fraction without changing the subject identity",
+          "tags": [
+            "misaligned mirror reflection"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Maintain physically convincing reflected brightness and glass highlights",
+          "tags": [
+            "realistic mirror surface lighting"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Keep the discrepancy quietly disturbing rather than aggressively fantastical",
+          "tags": [
+            "restrained mirror anxiety"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.domestic-suspension",
+      "name": "Domestic Suspension",
+      "description": "A household still-life with oddly arrested physical time and meticulous ordinary detail.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "domestic",
+        "stillness",
+        "surreal",
+        "time"
+      ],
+      "claims": {
+        "medium": "psychsurreal.domestic-suspension"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the existing domestic subject as an immaculate surrealist observational still-life",
+          "tags": [
+            "surreal domestic still life"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Hold ordinary household forms in slightly too-perfect intervals and alignments",
+          "tags": [
+            "unnaturally tidy domestic balance"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use calm indirect window illumination that seems frozen at one instant",
+          "tags": [
+            "frozen domestic window light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Imply an interrupted everyday routine without showing its cause",
+          "tags": [
+            "arrested domestic moment"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.recursive-interior",
+      "name": "Recursive Interior",
+      "description": "A room composed of echoes of its own geometry without explicit fantasy creatures.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "recursive",
+        "interior",
+        "geometry",
+        "surreal"
+      ],
+      "claims": {
+        "medium": "psychsurreal.recursive-interior",
+        "palette": "psychsurreal.recursive-interior"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the scene as an architectural recursive-geometry thought experiment",
+          "tags": [
+            "recursive interior surrealism"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let small parts of the environment repeat the larger room proportions at another scale",
+          "tags": [
+            "fractal-like repeated room shapes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep controlled architectural neutral colors to preserve spatial legibility",
+          "tags": [
+            "neutral impossible room palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "lighting",
+          "text": "Use consistent diffuse illumination across each repeated spatial layer",
+          "tags": [
+            "even recursive room lighting"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.time-exposure",
+      "name": "Out-of-Phase Time",
+      "description": "Multiple moments subtly superposed within a static picture.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "time",
+        "superposition",
+        "longexposure",
+        "dream"
+      ],
+      "claims": {
+        "medium": "psychsurreal.time-exposure",
+        "texture": "psychsurreal.time-exposure"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the scene as a single photographic frame containing slightly different instants",
+          "tags": [
+            "overlapping time photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Show faint positional echoes adjacent to only the subject already present",
+          "tags": [
+            "subject time displacement echoes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep the environment steady while the temporal layers retain their own exposure softness",
+          "tags": [
+            "stable surroundings time echo"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use subdued silver-grain transparency rather than strong digital ghost outlines",
+          "tags": [
+            "analog temporal double exposure"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.unfamiliar-familiar",
+      "name": "Familiar Without Context",
+      "description": "Ordinary subjects viewed through unfamiliar architectural framing and oppressive blank space.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "familiar",
+        "uncanny",
+        "absence",
+        "negative-space"
+      ],
+      "claims": {
+        "medium": "psychsurreal.unfamiliar-familiar"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Make the given familiar subject feel abruptly estranged within a realistic visual treatment",
+          "tags": [
+            "estranged familiar setting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Give surrounding emptiness disproportionate compositional influence",
+          "tags": [
+            "oppressive blank surrounding space"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep flat everyday ambient light instead of warning-style horror contrast",
+          "tags": [
+            "mundane realistic ambient light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Invite uncertainty about ordinary context rather than inserting a strange new event",
+          "tags": [
+            "everyday uncanny disconnection"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.false-perspective",
+      "name": "False Perspective",
+      "description": "Geometry that approaches a convincing forced perspective while quietly breaking it.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "perspective",
+        "optical",
+        "geometry",
+        "escheresque"
+      ],
+      "claims": {
+        "medium": "psychsurreal.false-perspective",
+        "texture": "psychsurreal.false-perspective"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Build a fine-art study of spatial perspective that remains initially credible",
+          "tags": [
+            "perceptual perspective illusion artwork"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Join lines at mismatched vanishing points while preserving clear local geometry",
+          "tags": [
+            "conflicting vanishing points"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Apply consistent directional light to emphasize the underlying contradiction",
+          "tags": [
+            "unified light impossible geometry"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep clean measured edges and material response so the illusion stays readable",
+          "tags": [
+            "precision surreal geometric edges"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.absence-portrait",
+      "name": "Portrait of Absence",
+      "description": "Portrait-style framing driven by personal traces and conspicuous unused space.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "portrait",
+        "absence",
+        "psychology",
+        "concept"
+      ],
+      "claims": {
+        "medium": "psychsurreal.absence-portrait"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the supplied subject through the visual language of a psychologically absent portrait",
+          "tags": [
+            "symbolic absence portrait"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Leave the primary framing slightly off-center with intentional vacant attention space",
+          "tags": [
+            "empty portrait negative space"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use sensitive softly graduated portrait illumination on remaining visible form",
+          "tags": [
+            "intimate soft portrait key"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Suggest missing emotional context without inserting another person or object",
+          "tags": [
+            "quiet portrait estrangement"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.museum-of-errors",
+      "name": "Museum of Almost-Correct",
+      "description": "A catalog-like display where tiny inconsistencies accumulate within formal presentation.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "museum",
+        "archive",
+        "uncanny",
+        "display"
+      ],
+      "claims": {
+        "medium": "psychsurreal.museum-of-errors"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the subject in the meticulous visual language of a museum reference plate",
+          "tags": [
+            "surreal museum specimen plate"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange viewing space into precise orthogonal margins and restrained exhibition hierarchy",
+          "tags": [
+            "formal museological composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "detail",
+          "text": "Allow one or two deliberate near-correct geometric discrepancies in the original forms",
+          "tags": [
+            "subtle specimen geometry anomaly"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "lighting",
+          "text": "Use even display illumination that refuses to dramatize the errors",
+          "tags": [
+            "neutral gallery display lighting"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.gravity-uncertain",
+      "name": "Gravity Uncertain",
+      "description": "Subtle divergence between architectural verticals and implied weight.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "gravity",
+        "tilt",
+        "geometry",
+        "impossible"
+      ],
+      "claims": {
+        "medium": "psychsurreal.gravity-uncertain"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject as a psychologically surreal still with ambiguous gravitational cues",
+          "tags": [
+            "surreal gravity contradiction"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep architectural verticals stable while selected loose forms seem one degree off balance",
+          "tags": [
+            "uncertain gravitational alignment"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Preserve believable contact shadows to heighten the spatial contradiction",
+          "tags": [
+            "physically plausible contact shadows"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Sustain calm uncertainty about orientation rather than floating spectacle",
+          "tags": [
+            "restrained gravity unease"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.dream-logical-map",
+      "name": "Dream-Like Wayfinding",
+      "description": "An orderly graphic depiction of space whose routes cannot quite reconcile.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "map",
+        "wayfinding",
+        "dream",
+        "paradox"
+      ],
+      "claims": {
+        "medium": "psychsurreal.dream-logical-map",
+        "palette": "psychsurreal.dream-logical-map"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the scene into a clean diagrammatic dream-navigation study",
+          "tags": [
+            "surreal wayfinding diagram art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Connect otherwise logical local paths into a globally contradictory route network",
+          "tags": [
+            "impossible wayfinding map geometry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use a quiet functional mapping palette that conceals the paradox initially",
+          "tags": [
+            "muted navigational graphic colors"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "detail",
+          "text": "Keep any user-supplied labels exactly as written within the clear graphic hierarchy",
+          "tags": [
+            "legible supplied map text"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.nightmare-minimal",
+      "name": "Minimal Nightmare",
+      "description": "Severe spare visual vocabulary where tension emerges from proportion and shadow.",
+      "category": "surreal-psychological/looks",
+      "kind": "style",
+      "tags": [
+        "nightmare",
+        "minimal",
+        "psychological",
+        "shadow"
+      ],
+      "claims": {
+        "medium": "psychsurreal.nightmare-minimal"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the existing subject as a spare minimalist psychological nightmare image",
+          "tags": [
+            "minimal psychological nightmare art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use one strong geometric relationship and an uncomfortable asymmetry",
+          "tags": [
+            "minimal tension through asymmetry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let a small hard light define oversized negative shadow shapes",
+          "tags": [
+            "single harsh geometric shadow"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Create sustained unease through visual withholding rather than explicit violence",
+          "tags": [
+            "understated nightmare atmosphere"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.uncertain-daylight",
+      "name": "Uncertain Daylight",
+      "description": "Pale near-real daylight with faint opposing temperature cues.",
+      "category": "surreal-psychological/grades",
+      "kind": "grade",
+      "tags": [
+        "daylight",
+        "pale",
+        "uncanny",
+        "grade"
+      ],
+      "claims": {
+        "palette": "psychsurreal.uncertain-daylight"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Set near-neutral gray daylight against a very slight green-cyan shadow shift",
+          "tags": [
+            "pale subtly uncanny daylight"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Avoid strong directionality while keeping enough spatial depth to read material surfaces",
+          "tags": [
+            "flat yet dimensional ambient light"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.cobalt-interruption",
+      "name": "Cobalt Interruption",
+      "description": "Restricted cool color accented by a localized unreal blue.",
+      "category": "surreal-psychological/grades",
+      "kind": "grade",
+      "tags": [
+        "cobalt",
+        "cool",
+        "dream",
+        "grade"
+      ],
+      "claims": {
+        "palette": "psychsurreal.cobalt-interruption"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Place one limited cobalt-blue accent among subdued concrete and warm-paper neutrals",
+          "tags": [
+            "cobalt accent uncanny palette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let the blue accent influence adjacent shadow softly without theatrical neon haze",
+          "tags": [
+            "localized cobalt color bleed"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.warm-unreal",
+      "name": "Warm but Unreal",
+      "description": "Domestic amber warmth with a small discordant cool cast in the distance.",
+      "category": "surreal-psychological/grades",
+      "kind": "grade",
+      "tags": [
+        "warm",
+        "discordant",
+        "dream",
+        "grade"
+      ],
+      "claims": {
+        "palette": "psychsurreal.warm-unreal"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Weight the image toward familiar warm ivory and faded amber with a remote cold-gray counterpoint",
+          "tags": [
+            "familiar warmth uncanny gray"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep the warm light credible while the distant cool light feels unresolved",
+          "tags": [
+            "discordant distant practical light"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.off-axis-repeat",
+      "name": "Off-Axis Repeat",
+      "description": "A single spatial echo that disturbs geometry without replacing the primary subject.",
+      "category": "surreal-psychological/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "echo",
+        "geometry",
+        "repetition",
+        "modifier"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Echo one existing framing line at an almost matching angle nearby",
+          "tags": [
+            "near duplicate architectural line"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Keep repeated structure sparse enough that the central forms stay recognizable",
+          "tags": [
+            "minimal repeating geometry"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "psychsurreal.edge-awareness",
+      "name": "Peripheral Awareness",
+      "description": "Soft visual tension held at the margins of a scene.",
+      "category": "surreal-psychological/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "peripheral",
+        "unease",
+        "edge",
+        "modifier"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "mood",
+          "text": "Concentrate subtle psychological pressure in the unseen space beyond the frame",
+          "tags": [
+            "peripheral unease"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let peripheral cropping imply continuation without adding new focal objects",
+          "tags": [
+            "off frame spatial suggestion"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

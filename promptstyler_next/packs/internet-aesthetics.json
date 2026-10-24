@@ -1,0 +1,1004 @@
+{
+  "schema_version": 1,
+  "id": "community.internet-aesthetics",
+  "version": "1.0.0",
+  "name": "Internet Aesthetics",
+  "description": "Independent internet-era and online-subculture visual languages without franchise-specific imagery.",
+  "license": "CC0-1.0",
+  "author": "NidAll / original community pack",
+  "styles": [
+    {
+      "id": "netculture.vaporwave-plaza",
+      "name": "Vaporwave Plaza",
+      "description": "Neo-classical digital plaza rendered in softly synthetic sunset geometry.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "vaporwave",
+        "sunset",
+        "retro",
+        "neon"
+      ],
+      "claims": {
+        "medium": "netculture.vaporwave-plaza",
+        "texture": "netculture.vaporwave-plaza"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the scene through a vaporwave-era 3D plaza aesthetic",
+          "tags": [
+            "vaporwave digital plaza"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use clean vanishing-point architecture and repeated simplified forms",
+          "tags": [
+            "retro digital perspective grid"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Mix lavender twilight, pink afterglow and muted turquoise",
+          "tags": [
+            "pastel synth sunset palette"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Keep smooth early-CG gradients and mild screen diffusion",
+          "tags": [
+            "soft early 3d shading"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.mallsoft",
+      "name": "Mallsoft Ambience",
+      "description": "Late-commercial nostalgia rendered with delicate sterile spaciousness.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "mallsoft",
+        "mall",
+        "ambient",
+        "retro"
+      ],
+      "claims": {
+        "medium": "netculture.mallsoft"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Style the scene like soft-focus commercial-mall nostalgia from an old digital memory",
+          "tags": [
+            "mallsoft retail nostalgia"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use broad skylight washed by pale overhead fluorescents",
+          "tags": [
+            "hazy atrium fluorescent light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Favor escalator or concourse rhythms with abundant breathing room",
+          "tags": [
+            "calm mall atrium geometry"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "palette",
+          "text": "Use faded turquoise, warm beige and understated purple trim",
+          "tags": [
+            "faded mallsoft colors"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.frutiger-aero",
+      "name": "Frutiger Aero",
+      "description": "Optimistic mid-2000s digital ecology with smooth transparent materials.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "frutiger-aero",
+        "2000s",
+        "glass",
+        "eco"
+      ],
+      "claims": {
+        "medium": "netculture.frutiger-aero",
+        "texture": "netculture.frutiger-aero"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use the optimistic polished visual language of mid-2000s eco-tech advertising",
+          "tags": [
+            "frutiger aero aesthetic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Combine sky blue, fresh green and clear watery highlights",
+          "tags": [
+            "blue green eco tech palette"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use translucent glass, glossy rounded interfaces and clean liquid reflections",
+          "tags": [
+            "glossy glass bubble surfaces"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "lighting",
+          "text": "Favor brilliant daylight gradients with very soft edge glow",
+          "tags": [
+            "optimistic clean daylight"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.y2k-chrome",
+      "name": "Y2K Chrome",
+      "description": "Turn-of-the-millennium metallic futurism and playful industrial typography.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "y2k",
+        "chrome",
+        "metallic",
+        "futurism"
+      ],
+      "claims": {
+        "medium": "netculture.y2k-chrome",
+        "texture": "netculture.y2k-chrome"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the image with turn-of-the-millennium digital chrome futurism",
+          "tags": [
+            "y2k metallic cyber design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Give selected surfaces liquid-chrome highlights and beveled reflective edges",
+          "tags": [
+            "liquid chrome bevels"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use gunmetal, electric cobalt and a small ultraviolet accent",
+          "tags": [
+            "cobalt steel ultraviolet"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "composition",
+          "text": "Organize shapes into aerodynamic curves and compact capsule forms",
+          "tags": [
+            "y2k capsule forms"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.web1-diy",
+      "name": "Web 1.0 DIY",
+      "description": "Hand-assembled early web graphics with visibly improvised layout decisions.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "web1",
+        "html",
+        "early-web",
+        "handmade"
+      ],
+      "claims": {
+        "medium": "netculture.web1-diy",
+        "texture": "netculture.web1-diy"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Arrange the composition like an enthusiastic hand-built early-web page graphic",
+          "tags": [
+            "handmade web 1.0 graphic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Mix bordered boxes and chunky icons in deliberately imperfect alignment",
+          "tags": [
+            "early web nested box layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Set saturated hyperlink blue beside plain grays and one loud accent",
+          "tags": [
+            "web safe color clash"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Allow dithered graphics and hard pixel edges",
+          "tags": [
+            "dithered old web graphics"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.scenecore",
+      "name": "Scenecore Energy",
+      "description": "Hyper-saturated subculture collage full of angled visual momentum.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "scenecore",
+        "neon",
+        "2000s",
+        "collage"
+      ],
+      "claims": {
+        "medium": "netculture.scenecore",
+        "texture": "netculture.scenecore"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Give the image an energetic late-2000s scene-subculture collage treatment",
+          "tags": [
+            "neon scene collage"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Pair black with electric cyan, acid green and hot magenta",
+          "tags": [
+            "scene neon high contrast"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange diagonal layered forms with deliberate asymmetry",
+          "tags": [
+            "layered scene graphic diagonals"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Use stickerlike cutout edges and sharp raster halftone",
+          "tags": [
+            "sticker cutout raster texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.kidcore",
+      "name": "Kidcore Color Play",
+      "description": "Playful children’s-design nostalgia with tactile cutouts and simple shapes.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "kidcore",
+        "playful",
+        "primary",
+        "nostalgia"
+      ],
+      "claims": {
+        "medium": "netculture.kidcore",
+        "texture": "netculture.kidcore"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Style the composition with cheerful kidcore craft and toy-package language",
+          "tags": [
+            "kidcore playful design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use primary colors softened by chalky pastel secondary tones",
+          "tags": [
+            "kidcore primary colors"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange oversized simple shapes with generous playful spacing",
+          "tags": [
+            "childlike cutout shapes"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Maintain paper-sticker overlap and slightly rough foam edges",
+          "tags": [
+            "craft foam and stickers"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.cyber-angel",
+      "name": "Cyber Angel",
+      "description": "Translucent ethereal cyber imagery with luminous metallic lacework.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "cyber",
+        "angel",
+        "ethereal",
+        "iridescent"
+      ],
+      "claims": {
+        "medium": "netculture.cyber-angel",
+        "texture": "netculture.cyber-angel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the visual language as ethereal cyber-era decorative art",
+          "tags": [
+            "ethereal cyber ornament"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Combine pearly silver, icy lilac and translucent cyan",
+          "tags": [
+            "iridescent cyber pastel"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use thin metallic filigree with translucent glasslike accents",
+          "tags": [
+            "chrome filigree and glass"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "lighting",
+          "text": "Let delicate rim glow separate ornaments from the background",
+          "tags": [
+            "subtle icy rim glow"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.glossy-ui",
+      "name": "Glossy Interface Dreams",
+      "description": "Sculpted interface panels presented as tangible early consumer software.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "ui",
+        "glossy",
+        "interface",
+        "retro"
+      ],
+      "claims": {
+        "medium": "netculture.glossy-ui",
+        "texture": "netculture.glossy-ui"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use the glossy visual treatment of tactile early consumer-software interfaces",
+          "tags": [
+            "glossy old software interface"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Build a clear hierarchy of rounded cards and inset panel surfaces",
+          "tags": [
+            "rounded software panels"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Give controls soft top-left highlights and shallow recessed shadows",
+          "tags": [
+            "glossy ui specular light"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Suggest translucent gradients and small beveled borders",
+          "tags": [
+            "beveled translucent ui"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.soft-grunge",
+      "name": "Soft-Grunge Blog",
+      "description": "A muted independent-photo blog sensibility with quiet analog messiness.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "soft-grunge",
+        "blog",
+        "indie",
+        "retro"
+      ],
+      "claims": {
+        "medium": "netculture.soft-grunge",
+        "texture": "netculture.soft-grunge"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the scene like a candid image found on an early personal photo blog",
+          "tags": [
+            "soft grunge blog image"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep smoke-gray, faded violet and brownish green low in saturation",
+          "tags": [
+            "muted grunge violet olive"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Layer light scan grain and subtle paper specks over imperfect contrast",
+          "tags": [
+            "indie blog photo grain"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Favor detached private contemplation over spectacle",
+          "tags": [
+            "introspective soft grunge mood"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.blog-era",
+      "name": "Blog-Era Scrapbook",
+      "description": "Personal digital scrapbook from the era of tiled backgrounds and photo snippets.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "blog",
+        "collage",
+        "scrapbook",
+        "2000s"
+      ],
+      "claims": {
+        "medium": "netculture.blog-era",
+        "texture": "netculture.blog-era"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Give the composition the hand-assembled feel of a personal internet scrapbook",
+          "tags": [
+            "early blog scrapbook"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Layer clipped image rectangles with casual margins and imperfect alignment",
+          "tags": [
+            "scrapbook photo rectangles"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Combine warm paper white with soft mint and muted coral accents",
+          "tags": [
+            "blog era paper pastel"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Include torn-image boundaries and low-resolution decorative graphic fragments",
+          "tags": [
+            "ripped photo edges and pixels"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.pixel-glitter",
+      "name": "Pixel Glitter",
+      "description": "Twinkling early-web decorative sparkle made from visible discrete pixels.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "pixel",
+        "glitter",
+        "sparkle",
+        "web"
+      ],
+      "claims": {
+        "medium": "netculture.pixel-glitter",
+        "texture": "netculture.pixel-glitter"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Give the image the aesthetic of tiny animated web graphics captured in a still frame",
+          "tags": [
+            "retro pixel glitter"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Create sparse pixel-sized sparkle clusters around existing highlights",
+          "tags": [
+            "pixel sparkle accents"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use iridescent pink-white highlights against cool blue-gray",
+          "tags": [
+            "iridescent pixel pastel"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Keep hard-edged pixel sparkle shapes legible rather than photorealistic",
+          "tags": [
+            "hard pixel glitter texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.desktop-utopia",
+      "name": "Desktop Utopia",
+      "description": "Bright serene screensaver-inspired vistas with simplified digital optimism.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "screensaver",
+        "desktop",
+        "nature",
+        "2000s"
+      ],
+      "claims": {
+        "medium": "netculture.desktop-utopia"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the scene with a clean bright early desktop-wallpaper aesthetic",
+          "tags": [
+            "optimistic desktop wallpaper"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Favor expansive open landscapes or spacious gradients with a single clear focal area",
+          "tags": [
+            "open wallpaper vista"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use cheerful even daylight and soft gradient skies",
+          "tags": [
+            "bright screensaver sky"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "palette",
+          "text": "Balance vivid leaf green, clean blue and white cloud highlights",
+          "tags": [
+            "classic desktop green blue"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.cyber-goth",
+      "name": "Cyber-Goth Club Graphic",
+      "description": "Industrial dance-culture graphic treatment with black and electric accents.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "cybergoth",
+        "industrial",
+        "club",
+        "neon"
+      ],
+      "claims": {
+        "medium": "netculture.cyber-goth",
+        "texture": "netculture.cyber-goth"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the image into an industrial cyber-goth promotional visual",
+          "tags": [
+            "cyber goth industrial flyer"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Set near-black surfaces against intense acid green and ultraviolet",
+          "tags": [
+            "black acid green ultraviolet"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Use layered angular shapes with a strict high-contrast focal point",
+          "tags": [
+            "angular club flyer composition"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Keep synthetic mesh, coated fabric and raw digital edge effects",
+          "tags": [
+            "industrial mesh digital texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.net-art-collage",
+      "name": "Net-Art Assemblage",
+      "description": "Internet-native collage shaped by fragmented windows and cursor-era visual grammar.",
+      "category": "internet/aesthetics",
+      "kind": "style",
+      "tags": [
+        "netart",
+        "collage",
+        "windows",
+        "interface"
+      ],
+      "claims": {
+        "medium": "netculture.net-art-collage",
+        "texture": "netculture.net-art-collage"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Create an original net-art assemblage using fragments of early desktop imagery",
+          "tags": [
+            "net art desktop collage"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Overlap mismatched rectangular windows and cropped content regions",
+          "tags": [
+            "layered desktop windows"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Let unrelated small color zones coexist without a unified grade",
+          "tags": [
+            "fragmented web collage palette"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Keep deliberate bitmap pixelation and interface borders",
+          "tags": [
+            "bitmap desktop textures"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.candy-plastic",
+      "name": "Candy Plastic",
+      "description": "Synthetic glossy candy hues without changing the underlying visual medium.",
+      "category": "internet/grades",
+      "kind": "grade",
+      "tags": [
+        "candy",
+        "glossy",
+        "pink",
+        "grade"
+      ],
+      "claims": {
+        "palette": "netculture.candy-plastic"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Grade toward bubblegum pink, cherry red and creamy cyan with bright accents",
+          "tags": [
+            "candy plastic color palette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Introduce a subtle soft-edged specular sheen on existing shiny surfaces",
+          "tags": [
+            "glossy highlight sheen"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.early-lcd",
+      "name": "Early LCD Bloom",
+      "description": "Pale consumer-display light with barely separated highlight channels.",
+      "category": "internet/grades",
+      "kind": "grade",
+      "tags": [
+        "lcd",
+        "screen",
+        "bloom",
+        "grade"
+      ],
+      "claims": {
+        "lighting": "netculture.early-lcd"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Diffuse bright image edges as though seen through an early LCD panel",
+          "tags": [
+            "old lcd halo"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Shift neutrals toward a lightly blue backlit white",
+          "tags": [
+            "cool display backlight"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.peach-cyan",
+      "name": "Peach and Cyan",
+      "description": "Warm peach air balanced against clean blue-cyan accents.",
+      "category": "internet/grades",
+      "kind": "grade",
+      "tags": [
+        "peach",
+        "cyan",
+        "pastel",
+        "grade"
+      ],
+      "claims": {
+        "palette": "netculture.peach-cyan"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Blend light peach mids with crisp airy cyan secondary areas",
+          "tags": [
+            "peach and cyan palette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep the colored areas luminous without a harsh neon cast",
+          "tags": [
+            "soft bright retro glow"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.cursor-trail",
+      "name": "Cursor-Trail Accent",
+      "description": "A delicate digital movement effect integrated around existing points of interaction.",
+      "category": "internet/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "cursor",
+        "trail",
+        "digital",
+        "modifier"
+      ],
+      "claims": {
+        "detail": "netculture.cursor-trail"
+      },
+      "clauses": [
+        {
+          "axis": "detail",
+          "text": "Add a small sparse trail of cursorlike highlights near an existing focal detail",
+          "tags": [
+            "subtle retro cursor trail"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep interface ornaments secondary to the established subject",
+          "tags": [
+            "minimal ui overlay ornaments"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "netculture.sticker-chaos",
+      "name": "Sticker Chaos",
+      "description": "Collaged sticker edges and playful graphic layering.",
+      "category": "internet/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "sticker",
+        "collage",
+        "overlay",
+        "modifier"
+      ],
+      "claims": {
+        "texture": "netculture.sticker-chaos"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Introduce irregular die-cut sticker borders around selected existing elements",
+          "tags": [
+            "rough die cut sticker edges"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Overlap a few small decorative shapes with playful imperfect spacing",
+          "tags": [
+            "scattered sticker overlays"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

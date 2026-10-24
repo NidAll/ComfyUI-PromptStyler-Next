@@ -1,0 +1,1008 @@
+{
+  "schema_version": 1,
+  "id": "community.next.visionary-art",
+  "version": "1.0.0",
+  "name": "Visionary Art",
+  "description": "Nonliteral luminous structures, biomorphism, synesthesia and cosmic abstraction.",
+  "license": "CC0-1.0",
+  "author": "NidAll / original community pack",
+  "styles": [
+    {
+      "id": "visionary.biomorphic-radiance",
+      "name": "Biomorphic Radiance",
+      "description": "Luminous abstract-organic forms that follow the existing subject rather than changing it.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "biomorphic",
+        "luminous",
+        "organic",
+        "visionary"
+      ],
+      "claims": {
+        "medium": "visionary.biomorphic-radiance",
+        "palette": "visionary.biomorphic-radiance",
+        "texture": "visionary.biomorphic-radiance"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the supplied subject through a luminous visionary biomorphic painting language",
+          "tags": [
+            "visionary biomorphic painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let soft branching contours radiate outward from the original focal shape",
+          "tags": [
+            "radiating biomorphic composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use shifting opal tones balanced by deep blue-green interstices",
+          "tags": [
+            "opal colored visionary palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Emphasize translucent enamel-like pigment layers around soft organic edges",
+          "tags": [
+            "translucent biomorphic enamel texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.geodesic-light",
+      "name": "Geodesic Light Field",
+      "description": "Luminous geometry and repeated tetrahedral relationships without gratuitous symbols.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "geodesic",
+        "geometry",
+        "luminous",
+        "abstract"
+      ],
+      "claims": {
+        "medium": "visionary.geodesic-light",
+        "texture": "visionary.geodesic-light"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the given subject as a visionary study of geometric light structures",
+          "tags": [
+            "geodesic light vision art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Surround or outline the subject with layered triangular perspective networks",
+          "tags": [
+            "triangular geodesic light lattice"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let narrow luminous edges glow while broad negative areas remain dark",
+          "tags": [
+            "fine line geodesic glow"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use clean graphic filament lines against a finely grained matte ground",
+          "tags": [
+            "precise luminous filament texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.chromatic-synesthesia",
+      "name": "Chromatic Synesthesia",
+      "description": "Perceptual color rhythm and soundlike forms conveyed without invented performers or instruments.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "synesthesia",
+        "music",
+        "color",
+        "abstraction"
+      ],
+      "claims": {
+        "medium": "visionary.chromatic-synesthesia",
+        "palette": "visionary.chromatic-synesthesia",
+        "texture": "visionary.chromatic-synesthesia"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Show the subject as a visionary synesthetic color-and-rhythm painting",
+          "tags": [
+            "synesthetic abstract color painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize the image through rhythmic rising and falling bands around existing contours",
+          "tags": [
+            "visual musical rhythm bands"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use tuned sequences of resonant warm and cool color harmonies",
+          "tags": [
+            "rhythmic chromatic resonance palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Allow layered soft pigment waves to reveal subtle underlying strokes",
+          "tags": [
+            "layered translucent color vibration"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.cosmic-mandala",
+      "name": "Cosmic Mandala",
+      "description": "Radial contemplative structure and celestial visual rhythm without named religious claims.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "mandala",
+        "radial",
+        "cosmic",
+        "geometry"
+      ],
+      "claims": {
+        "medium": "visionary.cosmic-mandala",
+        "texture": "visionary.cosmic-mandala"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the given subject into a detailed cosmic mandala artwork",
+          "tags": [
+            "cosmic radial mandala painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Balance nested radial relationships and measured rings around the original focal form",
+          "tags": [
+            "concentric cosmic radial geometry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let shallow luminous rings emerge in distinct layers of depth",
+          "tags": [
+            "softly glowing concentric rings"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use fine ornamental stippling against velvety painted negative space",
+          "tags": [
+            "stippled mandala painted detail"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.inner-landscape",
+      "name": "Inner Landscape",
+      "description": "Emotional topography visualized through gently folded abstract forms and atmospheric color.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "innerworld",
+        "landscape",
+        "psychological",
+        "visionary"
+      ],
+      "claims": {
+        "medium": "visionary.inner-landscape"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the original subject as a contemplative inner-landscape painting",
+          "tags": [
+            "visionary emotional landscape"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Shape nearby space into broad overlapping contours that imply psychological terrain",
+          "tags": [
+            "layered emotional topography"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use diffuse atmospheric brightness that emerges from within forms",
+          "tags": [
+            "internal landscape diffuse glow"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Let the scene feel reflective and expansive rather than overtly fantastic",
+          "tags": [
+            "quiet inner journey atmosphere"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.prismatic-organism",
+      "name": "Prismatic Organism",
+      "description": "Translucent refractions mapped to organic structure without changing underlying subject identity.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "prism",
+        "organism",
+        "refraction",
+        "light"
+      ],
+      "claims": {
+        "medium": "visionary.prismatic-organism",
+        "palette": "visionary.prismatic-organism",
+        "texture": "visionary.prismatic-organism"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Recast the existing form as an original prismatic-organic visionary painting",
+          "tags": [
+            "prismatic organic fantasy painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep central contour continuity while small nested refractions develop around edges",
+          "tags": [
+            "organic refraction continuity"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Layer complementary spectral highlights across darker neutral structural masses",
+          "tags": [
+            "spectral prismatic color highlights"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Give select surfaces glasslike refractive seams with believable internal volume",
+          "tags": [
+            "translucent prismatic material"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.luminous-botany",
+      "name": "Luminous Botany",
+      "description": "Plant-inspired light patterns around existing shapes, avoiding unrequested botanical objects.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "botanical",
+        "light",
+        "organic",
+        "vision"
+      ],
+      "claims": {
+        "medium": "visionary.luminous-botany",
+        "texture": "visionary.luminous-botany"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Illustrate the subject through botanical-inspired luminous visionary motifs",
+          "tags": [
+            "luminous botanical visionary art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use leaf-vein-like branching geometry to articulate preexisting contours",
+          "tags": [
+            "branching botanical light structure"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Create soft light diffusion along delicate branching intersections",
+          "tags": [
+            "diffuse light through branching veins"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve fine translucent brushwork and shimmering microscopic pigment flecks",
+          "tags": [
+            "delicate leaf vein brush texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.fifth-element-pattern",
+      "name": "Elemental Pattern Field",
+      "description": "Symbolic relationships between material qualities rendered as painterly abstract layers.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "elemental",
+        "abstract",
+        "texture",
+        "conceptual"
+      ],
+      "claims": {
+        "medium": "visionary.fifth-element-pattern",
+        "palette": "visionary.fifth-element-pattern",
+        "texture": "visionary.fifth-element-pattern"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Represent the existing scene as an abstract visionary study of elemental material relationships",
+          "tags": [
+            "elemental visionary abstract painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate dense grounded masses from airy open planes using curving transitional bands",
+          "tags": [
+            "elemental field composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Balance ember-like warmth with cool mineral and cloudlike tonal fields",
+          "tags": [
+            "balanced elemental warm cool palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Move gradually between grainy, fluid and vaporlike paint effects on the same canvas",
+          "tags": [
+            "mixed elemental pigment surfaces"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.sacred-geometry-abstract",
+      "name": "Abstract Proportion Study",
+      "description": "Original proportional light design with restrained mathematical structure and spaciousness.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "sacredgeometry",
+        "abstract",
+        "proportion",
+        "visionary"
+      ],
+      "claims": {
+        "medium": "visionary.sacred-geometry-abstract",
+        "texture": "visionary.sacred-geometry-abstract"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the subject into a meditative geometric light painting",
+          "tags": [
+            "visionary abstract proportions"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use overlapping circles and measured polygons to echo existing proportions",
+          "tags": [
+            "interlocking measured circles and polygons"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Allow soft illumination only at selected geometric intersections",
+          "tags": [
+            "subtle intersection light nodes"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep clean hairline edges on a quiet matte colored ground",
+          "tags": [
+            "precise geometric matte paint"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.holographic-memory",
+      "name": "Holographic Memory",
+      "description": "Translucent layers of light and repeated outlines evoking projected recollection.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "holographic",
+        "memory",
+        "transparency",
+        "abstract"
+      ],
+      "claims": {
+        "medium": "visionary.holographic-memory",
+        "palette": "visionary.holographic-memory",
+        "texture": "visionary.holographic-memory"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the scene as a softly translucent visionary holographic-memory painting",
+          "tags": [
+            "holographic memory art aesthetic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Repeat gentle offset contour echoes while protecting the identity of the supplied subject",
+          "tags": [
+            "layered transparent memory contours"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Shift between pearl-violet, pale cyan and subdued slate-blue layers",
+          "tags": [
+            "soft holographic iridescent colors"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use thin luminous glazes with distinct transparent depth boundaries",
+          "tags": [
+            "translucent projected pigment layers"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.stained-light-world",
+      "name": "Stained Light",
+      "description": "Translucent painted glass effects used to organize original forms into symbolic color cells.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "stainedglass",
+        "light",
+        "visionary",
+        "ornament"
+      ],
+      "claims": {
+        "medium": "visionary.stained-light-world",
+        "texture": "visionary.stained-light-world"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the supplied subject through luminous stained-glass-inspired visionary painting",
+          "tags": [
+            "visionary stained glass art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize existing shapes into varied translucent cells with thin structural boundaries",
+          "tags": [
+            "interlocking stained glass cell forms"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let bright colors project a mild inner glow across adjacent glass segments",
+          "tags": [
+            "stained glass filtered light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep uneven colored-glass density and restrained leadline thickness",
+          "tags": [
+            "translucent uneven glass pigment"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.microcosm",
+      "name": "Microcosm Within",
+      "description": "A nested abstract ecosystem of scale relationships around one clearly preserved focal form.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "microcosm",
+        "scale",
+        "detail",
+        "visionary"
+      ],
+      "claims": {
+        "medium": "visionary.microcosm",
+        "texture": "visionary.microcosm"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the subject as a visionary microcosm illustration",
+          "tags": [
+            "visionary microcosm drawing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Nest finer local patterns inside larger existing forms to suggest worlds within worlds",
+          "tags": [
+            "nested microcosm scale patterns"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use selective translucent glow to create separation between successive nested layers",
+          "tags": [
+            "layered microscopic inner glow"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Render delicate repeating filigree marks without losing the primary silhouette",
+          "tags": [
+            "fine microcosmic filigree art"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.cosmic-current",
+      "name": "Cosmic Current",
+      "description": "Fluid luminous motion in curved painterly bands with a controlled central anchor.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "cosmic",
+        "flow",
+        "light",
+        "waves"
+      ],
+      "claims": {
+        "medium": "visionary.cosmic-current",
+        "palette": "visionary.cosmic-current",
+        "texture": "visionary.cosmic-current"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the image into a visionary painting of flowing abstract cosmic currents",
+          "tags": [
+            "cosmic flowing light painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Curve broad ribbons of motion around the supplied subject without replacing its outline",
+          "tags": [
+            "flowing cosmic ribbon composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use deep midnight blue punctuated by luminous coral and soft turquoise accents",
+          "tags": [
+            "cosmic coral turquoise lights"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Create ribbon translucency with fine particulate pigment suspended in their wake",
+          "tags": [
+            "soft particulate cosmic ribbon texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.meditative-topology",
+      "name": "Meditative Topology",
+      "description": "Perceptual topology painted as a calm study of interconnected layers and passages.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "topology",
+        "meditation",
+        "abstract",
+        "continuity"
+      ],
+      "claims": {
+        "medium": "visionary.meditative-topology",
+        "texture": "visionary.meditative-topology"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the subject in the language of meditative visionary topology art",
+          "tags": [
+            "meditative topology painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Connect repeated contour lines into slow looping pathways that preserve local shape identity",
+          "tags": [
+            "interconnected looping form contours"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let directional gradient light reveal the topology without strong depth illusion",
+          "tags": [
+            "calm topological gradient light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use precise pencil-to-airbrush blending over lightly rough watercolor paper",
+          "tags": [
+            "topology fine grain watercolor"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.aurora-mural",
+      "name": "Aurora Mural",
+      "description": "Large-scale color-field visionary art with soft spectral curtains and restrained painterly marks.",
+      "category": "visionary-art/looks",
+      "kind": "style",
+      "tags": [
+        "aurora",
+        "colorfield",
+        "mural",
+        "visionary"
+      ],
+      "claims": {
+        "medium": "visionary.aurora-mural",
+        "palette": "visionary.aurora-mural",
+        "texture": "visionary.aurora-mural"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the image into an expansive mural of softly auroral color fields",
+          "tags": [
+            "visionary aurora mural painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let long vertical color curtains surround the main subject in broad breathing intervals",
+          "tags": [
+            "large aurora curtain composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use blue-green spectral transitions with a rare violet-pink seam",
+          "tags": [
+            "aurora teal violet colorfield"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep transparent layered pigment visible under fine mural-brush scrubbing",
+          "tags": [
+            "translucent mural brush field"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.opal-spectrum",
+      "name": "Opal Spectrum",
+      "description": "Subtle opal iridescence with restrained warm-cool separation.",
+      "category": "visionary-art/grades",
+      "kind": "grade",
+      "tags": [
+        "opal",
+        "iridescent",
+        "spectrum",
+        "grade"
+      ],
+      "claims": {
+        "palette": "visionary.opal-spectrum"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Shift cool highlights toward opalescent blue and warm edges toward pale coral",
+          "tags": [
+            "opal blue coral spectral grade"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use localized soft iridescent reflections rather than uniform rainbow glow",
+          "tags": [
+            "small opalescent edge reflections"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.deep-void-blue",
+      "name": "Deep Void Blue",
+      "description": "Dark blue tonal field illuminated by sparse crystalline cyan accents.",
+      "category": "visionary-art/grades",
+      "kind": "grade",
+      "tags": [
+        "void",
+        "blue",
+        "deep",
+        "grade"
+      ],
+      "claims": {
+        "palette": "visionary.deep-void-blue"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Build shadow masses in deep indigo-black with sparse crystalline cyan highlight edges",
+          "tags": [
+            "deep indigo crystalline cyan"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep bright regions tiny and spatially isolated to preserve calm darkness",
+          "tags": [
+            "sparse fine cyan light"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.amber-ether",
+      "name": "Amber Ether",
+      "description": "Warm luminous atmosphere against restrained mineral-gray surroundings.",
+      "category": "visionary-art/grades",
+      "kind": "grade",
+      "tags": [
+        "amber",
+        "warm",
+        "ether",
+        "grade"
+      ],
+      "claims": {
+        "palette": "visionary.amber-ether"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Balance soft honey-amber light against pale mineral-gray color fields",
+          "tags": [
+            "honey amber mineral tones"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Use very fine transparent pigment haze on broad tone transitions",
+          "tags": [
+            "transparent atmospheric warm pigment"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.filament-highlights",
+      "name": "Filament Highlights",
+      "description": "Hairline luminous contour traces around existing forms.",
+      "category": "visionary-art/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "filament",
+        "glow",
+        "outline",
+        "modifier"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "detail",
+          "text": "Trace only a few original contour segments with thin luminous filaments",
+          "tags": [
+            "sparse glowing contour filaments"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let the filament light spill a very short distance beyond each segment",
+          "tags": [
+            "localized thin halo glow"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "visionary.radial-breath",
+      "name": "Radial Breath",
+      "description": "Subtle expansion and contraction rhythm built from nested negative space.",
+      "category": "visionary-art/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "radial",
+        "rhythm",
+        "breathing",
+        "modifier"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Echo existing forms with widely spaced concentric breathing intervals",
+          "tags": [
+            "airy concentric composition rhythm"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "mood",
+          "text": "Keep the visual rhythm contemplative rather than dizzying or aggressive",
+          "tags": [
+            "slow meditative radial flow"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

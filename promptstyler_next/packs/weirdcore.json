@@ -1,0 +1,1002 @@
+{
+  "schema_version": 1,
+  "id": "community.weirdcore",
+  "version": "1.0.0",
+  "name": "Weirdcore",
+  "description": "Uncanny early-digital artifacts, unsettling found graphics, and offbeat visual anomalies.",
+  "license": "CC0-1.0",
+  "author": "NidAll / original community pack",
+  "styles": [
+    {
+      "id": "weirdcore.broken-webcam",
+      "name": "Broken Webcam",
+      "description": "Cheap webcam capture with inconsistent color and eerie perspective.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "webcam",
+        "lowres",
+        "digital",
+        "uncanny"
+      ],
+      "claims": {
+        "medium": "weirdcore.broken-webcam",
+        "texture": "weirdcore.broken-webcam"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the image through the visual grammar of an outdated low-quality webcam",
+          "tags": [
+            "early webcam capture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use a slightly unbalanced eye-level frame that leaves ordinary surroundings unexplained",
+          "tags": [
+            "awkward webcam framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Shift the image toward uneven auto white balance with intermittent magenta-green bias",
+          "tags": [
+            "webcam color imbalance"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Keep blocky color noise and smudged low-light edges",
+          "tags": [
+            "webcam pixel artifacts"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.warning-card",
+      "name": "Unhelpful Warning Card",
+      "description": "An anonymous warning screen whose implied meaning never becomes fully clear.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "warning",
+        "typography",
+        "screen",
+        "cryptic"
+      ],
+      "claims": {
+        "medium": "weirdcore.warning-card",
+        "texture": "weirdcore.warning-card"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the composition as a mysterious found warning-card image",
+          "tags": [
+            "cryptic warning card graphic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Isolate a stark rectangular information area surrounded by excessive empty space",
+          "tags": [
+            "sparse warning panel layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use severe red, black and bruised off-white with limited color transitions",
+          "tags": [
+            "ominous red black warning palette"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Introduce imperfect scan lines and worn raster text edges",
+          "tags": [
+            "degraded warning card display"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.misplaced-object",
+      "name": "Object Out of Context",
+      "description": "Ordinary objects displayed with museum-like seriousness in inexplicable situations.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "object",
+        "uncanny",
+        "juxtaposition",
+        "surreal"
+      ],
+      "claims": {
+        "medium": "weirdcore.misplaced-object"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Stage the existing subject as a deliberately out-of-context found image",
+          "tags": [
+            "uncanny misplaced object scene"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Give a mundane object implausibly careful central framing",
+          "tags": [
+            "offbeat centered object"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use flat direct illumination that resists cinematic dramatization",
+          "tags": [
+            "strange flat direct lighting"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Preserve a matter-of-fact tone despite the visual incongruity",
+          "tags": [
+            "deadpan surreal mood"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.threshold-error",
+      "name": "Threshold Error",
+      "description": "Architecture interrupted by abrupt graphic boundaries and nonmatching spaces.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "threshold",
+        "door",
+        "space",
+        "glitch"
+      ],
+      "claims": {
+        "medium": "weirdcore.threshold-error",
+        "texture": "weirdcore.threshold-error"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Recast the scene as an uncanny digital photograph of an ambiguous threshold",
+          "tags": [
+            "uncanny mismatched doorway"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Break spatial continuity across an otherwise ordinary frame edge",
+          "tags": [
+            "abrupt perspective discontinuity"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Give adjacent spatial regions slightly incompatible light temperatures",
+          "tags": [
+            "inconsistent light across doorway"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Use subtle compression artifacts at the spatial seam",
+          "tags": [
+            "pixel seam artifacts"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.fluorescent-clash",
+      "name": "Fluorescent Clash",
+      "description": "Cheerful synthetic hues rendered in an emotionally uncertain context.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "fluorescent",
+        "colors",
+        "uncanny",
+        "kitsch"
+      ],
+      "claims": {
+        "medium": "weirdcore.fluorescent-clash",
+        "texture": "weirdcore.fluorescent-clash"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Give the scene the blunt synthetic energy of a strange early-digital collage",
+          "tags": [
+            "strange digital collage"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Pair harsh lime, hot pink and pure blue in intentionally unresolved contrast",
+          "tags": [
+            "acid fluorescent palette"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange visual elements with uncomfortable almost-symmetry",
+          "tags": [
+            "uneasy asymmetry"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Retain jagged antialiasing and crunchy digital edge detail",
+          "tags": [
+            "crunchy early digital edges"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.false-memory-file",
+      "name": "False Memory File",
+      "description": "A damaged personal snapshot that seems familiar but difficult to place.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "snapshot",
+        "memory",
+        "unsettling",
+        "archive"
+      ],
+      "claims": {
+        "medium": "weirdcore.false-memory-file",
+        "texture": "weirdcore.false-memory-file"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Frame the scene as a corrupted personal photograph from an unknown archive",
+          "tags": [
+            "uncanny damaged snapshot"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Crop like an accidental family photo that was poorly recovered",
+          "tags": [
+            "awkward archival snapshot crop"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use discolored greens and faded flash-yellow highlights",
+          "tags": [
+            "corrupted family photo colors"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Mix rescan noise with slight image registration drift",
+          "tags": [
+            "rescan photo artifacts"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.uncanny-playroom",
+      "name": "Playroom Anomaly",
+      "description": "Child-friendly patterns arranged with slightly disquieting repetition.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "playroom",
+        "childlike",
+        "patterns",
+        "uncanny"
+      ],
+      "claims": {
+        "medium": "weirdcore.uncanny-playroom"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the setting into an oddly orderly childlike interior visual language",
+          "tags": [
+            "uncanny playroom aesthetic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Repeat primary shapes in a layout just too regular to feel casual",
+          "tags": [
+            "strange repeated toy shapes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep frontal indoor illumination unnaturally consistent",
+          "tags": [
+            "uncomfortably even room lighting"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Balance bright familiarity with subtle apprehension",
+          "tags": [
+            "cheerful but uncanny mood"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.cryptic-caption",
+      "name": "Cryptic Caption Fragment",
+      "description": "A low-fidelity found graphic with ambiguous text-space hierarchy.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "text",
+        "caption",
+        "found",
+        "image"
+      ],
+      "claims": {
+        "medium": "weirdcore.cryptic-caption",
+        "texture": "weirdcore.cryptic-caption"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the image as a strange found graphic with a caption-like visual structure",
+          "tags": [
+            "cryptic found image graphic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reserve an oversized blank region that suggests missing or illegible explanatory text",
+          "tags": [
+            "empty caption field"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Use coarse bitmap boundaries and slightly misplaced print registration",
+          "tags": [
+            "degraded bitmap typography space"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Suggest an incomplete explanation without inventing actual written words",
+          "tags": [
+            "unresolved found image meaning"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.lost-forum-avatar",
+      "name": "Forgotten Forum Avatar",
+      "description": "Early-message-board avatar imagery magnified beyond its intended size.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "forum",
+        "avatar",
+        "early-web",
+        "lowres"
+      ],
+      "claims": {
+        "medium": "weirdcore.lost-forum-avatar",
+        "texture": "weirdcore.lost-forum-avatar"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the composition as an early-web forum avatar seen at exaggerated scale",
+          "tags": [
+            "forgotten internet avatar"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep a compact square-centered focal area with disproportionately wide surrounding space",
+          "tags": [
+            "square avatar framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use mismatched limited-index palette colors and hard contrast",
+          "tags": [
+            "indexed avatar colors"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Make nearest-neighbor pixels and old JPEG mosquito noise visibly coexist",
+          "tags": [
+            "pixel enlarged avatar artifacts"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.eye-pattern",
+      "name": "Watching Wallpaper",
+      "description": "Patterned backgrounds that imply observation through repeated abstract eye-like motifs.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "pattern",
+        "eyes",
+        "wallpaper",
+        "unease"
+      ],
+      "claims": {
+        "medium": "weirdcore.eye-pattern"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use the language of an uncanny patterned digital wallpaper",
+          "tags": [
+            "strange observing wallpaper"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Repeat abstract eye-shaped marks without turning them into realistic faces",
+          "tags": [
+            "repeated eye shaped ornaments"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Separate a narrow bright accent color from an otherwise dull background",
+          "tags": [
+            "odd patterned accent color"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Suggest quiet surveillance through repetition rather than explicit horror",
+          "tags": [
+            "subtle watched atmosphere"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.vending-dream",
+      "name": "Vending Machine Reverie",
+      "description": "Artificial retail color and rigid compartments treated as unfamiliar.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "vending",
+        "night",
+        "retail",
+        "synthetic"
+      ],
+      "claims": {
+        "medium": "weirdcore.vending-dream",
+        "texture": "weirdcore.vending-dream"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Give the scene the feel of an inexplicable late-night vending-machine photograph",
+          "tags": [
+            "strange vending machine scene"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Repeat compartment windows as rigid lighted grids",
+          "tags": [
+            "grid of vending compartments"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let cold machine light spill into otherwise featureless darkness",
+          "tags": [
+            "isolated vending machine glow"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Use smeared acrylic reflections and low-resolution sensor grain",
+          "tags": [
+            "acrylic display glare and digital noise"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.security-test-screen",
+      "name": "Diagnostic Screen",
+      "description": "Machine-generated test imagery that seems to conceal human context.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "diagnostic",
+        "test-pattern",
+        "interface",
+        "glitch"
+      ],
+      "claims": {
+        "medium": "weirdcore.security-test-screen",
+        "texture": "weirdcore.security-test-screen"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the image as a malfunctioning diagnostic or calibration display",
+          "tags": [
+            "eerie diagnostic display"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use precise alignment grids interrupted by one subtly misplaced region",
+          "tags": [
+            "broken alignment test grid"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Contrast controlled test hues against near-black negative space",
+          "tags": [
+            "calibration screen colors"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Add phosphor bleed and hard pixel stepping along graphic boundaries",
+          "tags": [
+            "broken display phosphor edges"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.synthetic-organic",
+      "name": "Synthetic Organic Artifact",
+      "description": "Uncanny collision between faux-natural surfaces and obsolete computer rendering.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "biomorphic",
+        "render",
+        "plastic",
+        "uncanny"
+      ],
+      "claims": {
+        "medium": "weirdcore.synthetic-organic",
+        "texture": "weirdcore.synthetic-organic"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject as a strange early computer graphic of an organic object",
+          "tags": [
+            "uncanny synthetic organic render"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use artificial studio specularity that looks disconnected from the environment",
+          "tags": [
+            "unnatural cg specular light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Combine smooth plastic skin with low-poly bends and visible shading bands",
+          "tags": [
+            "plastic low poly organic surface"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Keep the material familiar enough to be unsettling",
+          "tags": [
+            "ambiguous synthetic life mood"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.empty-audience",
+      "name": "Audience Absent",
+      "description": "A staged presentation composed for viewers who are inexplicably missing.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "stage",
+        "empty",
+        "performance",
+        "strange"
+      ],
+      "claims": {
+        "medium": "weirdcore.empty-audience"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Compose the image like found documentation of a performance without an audience",
+          "tags": [
+            "empty performance documentation"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Emphasize front-facing stage geometry and vacant sightlines",
+          "tags": [
+            "empty audience point of view"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let harsh stage fixtures illuminate an otherwise neglected space",
+          "tags": [
+            "stage light in empty venue"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Preserve an unexplained social absence rather than overt terror",
+          "tags": [
+            "unexplained empty event mood"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.fractured-perspective",
+      "name": "Fractured Perspective",
+      "description": "Small incompatible camera planes spliced into an otherwise familiar photograph.",
+      "category": "weirdcore/glitch",
+      "kind": "style",
+      "tags": [
+        "perspective",
+        "splice",
+        "geometry",
+        "uncanny"
+      ],
+      "claims": {
+        "medium": "weirdcore.fractured-perspective",
+        "texture": "weirdcore.fractured-perspective"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Give the image a constructed photo-collage perspective that almost makes sense",
+          "tags": [
+            "fractured photograph perspective"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Allow adjacent planar regions to disagree slightly about vanishing points",
+          "tags": [
+            "misaligned perspective planes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fine crop-boundary halos where image pieces intersect",
+          "tags": [
+            "photo collage seams"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Use restrained disorientation without losing the original subject",
+          "tags": [
+            "subtle digital disorientation"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.acid-primary",
+      "name": "Acid Primary Clash",
+      "description": "Unmodulated primary and fluorescent hues for maximal visual friction.",
+      "category": "weirdcore/grades",
+      "kind": "grade",
+      "tags": [
+        "acid",
+        "primary",
+        "fluorescent",
+        "grade"
+      ],
+      "claims": {
+        "palette": "weirdcore.acid-primary"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Introduce sharp primary hues interrupted by hot fluorescent accents",
+          "tags": [
+            "acid primary palette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep electronic highlights stark rather than atmospheric",
+          "tags": [
+            "hard electronic highlight edges"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.washed-lcd",
+      "name": "Washed LCD",
+      "description": "Old flat-panel backlight behavior with lifted blacks and pale cyan.",
+      "category": "weirdcore/grades",
+      "kind": "grade",
+      "tags": [
+        "lcd",
+        "washed",
+        "digital",
+        "grade"
+      ],
+      "claims": {
+        "palette": "weirdcore.washed-lcd"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Lift dark tones toward charcoal gray and cool pale cyan",
+          "tags": [
+            "washed old lcd colors"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Suggest subtle subpixel fringing along hard contrast edges",
+          "tags": [
+            "faint lcd subpixel fringe"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.printer-misalignment",
+      "name": "Printer Misregistration",
+      "description": "CMY channel offsets applied as a printed-image treatment.",
+      "category": "weirdcore/grades",
+      "kind": "grade",
+      "tags": [
+        "print",
+        "offset",
+        "cmyk",
+        "grade"
+      ],
+      "claims": {
+        "texture": "weirdcore.printer-misalignment"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Allow slight cyan-magenta separation along selected contours",
+          "tags": [
+            "cmy print registration drift"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Favor inexpensive print inks with imperfect neutral gray balance",
+          "tags": [
+            "low cost digital print palette"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.text-as-artifact",
+      "name": "Unreliable Text Artifact",
+      "description": "Typography becomes a ghostly structural element without asserting exact words.",
+      "category": "weirdcore/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "typography",
+        "fragment",
+        "artifact",
+        "modifier"
+      ],
+      "claims": {
+        "composition": "weirdcore.text-as-artifact"
+      },
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Set aside a patch of image space that implies a partly missing caption",
+          "tags": [
+            "empty fragmentary text area"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Degrade any existing lettering with uneven raster edges while preserving requested exact text",
+          "tags": [
+            "rough display lettering edges"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "weirdcore.intentional-jpeg",
+      "name": "Intentional JPEG Damage",
+      "description": "Low-quality digital compression as a deliberate material treatment.",
+      "category": "weirdcore/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "jpeg",
+        "compression",
+        "artifacts",
+        "modifier"
+      ],
+      "claims": {
+        "texture": "weirdcore.intentional-jpeg"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Introduce visible block boundaries and mosquito noise in noncritical regions",
+          "tags": [
+            "jpeg block noise"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Keep high-value subject contours legible despite local compression damage",
+          "tags": [
+            "subject readable through artifacts"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

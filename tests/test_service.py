@@ -58,7 +58,15 @@ def test_catalog_and_discovery_share_engine(server):
     catalog = json.loads(raw)
     assert status == 200
     assert catalog["catalog_fingerprint"] == engine.catalog_fingerprint
-    assert catalog["total"] == len(engine.list_styles(limit=1000))
+    expected = []
+    offset = 0
+    while True:
+        page = engine.list_styles(limit=1000, offset=offset)
+        expected.extend(page)
+        if len(page) < 1000:
+            break
+        offset += len(page)
+    assert catalog["total"] == len(expected) == 1132
     status, _, raw = request(server, path="/api/v1/styles?limit=2&offset=1")
     assert status == 200
     assert json.loads(raw)["items"] == engine.list_styles(limit=2, offset=1)

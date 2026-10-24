@@ -1,0 +1,1009 @@
+{
+  "schema_version": 1,
+  "id": "community.next.retro-media",
+  "version": "1.0.0",
+  "name": "Retro Media",
+  "description": "Consumer media, obsolete interfaces and media-artifact storytelling from multiple decades.",
+  "license": "CC0-1.0",
+  "author": "NidAll / original community pack",
+  "styles": [
+    {
+      "id": "retromedia.hi8-home-video",
+      "name": "Hi8 Home Movie",
+      "description": "Casual domestic camcorder imagery with warmth, imperfect exposure and tape-era material artifacts.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "camcorder",
+        "hi8",
+        "domestic",
+        "1990s"
+      ],
+      "claims": {
+        "medium": "retromedia.hi8-home-video",
+        "palette": "retromedia.hi8-home-video",
+        "texture": "retromedia.hi8-home-video"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the scene as a late-1990s Hi8 camcorder memory rather than a polished production",
+          "tags": [
+            "hi8 camcorder still"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use a spontaneous handheld framing with slightly hesitant subject placement",
+          "tags": [
+            "candid home video framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Hold warm midtones with mild blue-green analog color drift",
+          "tags": [
+            "warm analog color drift"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Give bright edges soft tape bleed and faint scan noise",
+          "tags": [
+            "hi8 tape softness"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.minidv-weekend",
+      "name": "MiniDV Weekend",
+      "description": "Crisper early-digital camcorder footage with bright practical color and blocky low-light shadows.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "minidv",
+        "2000s",
+        "weekend",
+        "digital"
+      ],
+      "claims": {
+        "medium": "retromedia.minidv-weekend",
+        "texture": "retromedia.minidv-weekend"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Make the image feel like footage from a pocket MiniDV camera around the turn of the millennium",
+          "tags": [
+            "early digital camcorder"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Favor slightly off-axis reportage framing and a human-height viewpoint",
+          "tags": [
+            "off center handheld composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let automated gain exaggerate dim available light without cinematic relighting",
+          "tags": [
+            "digital gain in low light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use light digital edge sharpening and restrained block compression around motion",
+          "tags": [
+            "minidv compression texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.vhs-rental-sleeve",
+      "name": "Video Rental Sleeve",
+      "description": "Late-video-store packaging language built from tactile printing and theatrical framing.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "vhs",
+        "rental",
+        "cover",
+        "packaging"
+      ],
+      "claims": {
+        "medium": "retromedia.vhs-rental-sleeve",
+        "palette": "retromedia.vhs-rental-sleeve",
+        "texture": "retromedia.vhs-rental-sleeve"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the subject into an illustrated rental-era video sleeve with pre-digital print character",
+          "tags": [
+            "retro video sleeve illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Frame a dominant central image with broad title-safe margins and secondary scene space",
+          "tags": [
+            "video box cover layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use saturated theatrical colors slightly muted by old lithographic reproduction",
+          "tags": [
+            "aged theatrical print colors"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep ink halftone, soft registration and lightly scuffed coated paper visible",
+          "tags": [
+            "vhs box print wear"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.dvd-main-menu",
+      "name": "DVD Main Menu",
+      "description": "Early DVD navigation graphics with translucent panels and cinematic background treatments.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "dvd",
+        "menu",
+        "navigation",
+        "2000s"
+      ],
+      "claims": {
+        "medium": "retromedia.dvd-main-menu",
+        "texture": "retromedia.dvd-main-menu"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the existing subject as an atmospheric early-DVD menu backdrop",
+          "tags": [
+            "dvd main menu aesthetic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reserve structured side space for translucent navigation shapes without inventing labels",
+          "tags": [
+            "dvd menu navigation layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Build soft directional blooms behind the interface-safe foreground",
+          "tags": [
+            "dvd menu glow"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve mild MPEG-era smoothing and clean but period-specific graphics",
+          "tags": [
+            "early dvd video texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.crt-local-access",
+      "name": "Local Access Channel",
+      "description": "Small-station television presentation with analogue studio lighting and restrained graphics.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "publicaccess",
+        "crt",
+        "television",
+        "local"
+      ],
+      "claims": {
+        "medium": "retromedia.crt-local-access",
+        "texture": "retromedia.crt-local-access"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject as a frame from a modest local-access television program",
+          "tags": [
+            "local television studio video"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use direct presenter-era framing with simple graphic-safe lower corners",
+          "tags": [
+            "public access television framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Balance flat frontal studio fixtures against a somewhat dark background",
+          "tags": [
+            "modest studio frontal light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Allow CRT bloom and gentle composite-color fringing without damaging the center",
+          "tags": [
+            "composite television softness"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.pocket-camera-night",
+      "name": "Pocket Camera at Night",
+      "description": "Small digital-camera flash and early compact sensor artifacts in ordinary nighttime settings.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "digicam",
+        "flash",
+        "night",
+        "2000s"
+      ],
+      "claims": {
+        "medium": "retromedia.pocket-camera-night",
+        "palette": "retromedia.pocket-camera-night",
+        "texture": "retromedia.pocket-camera-night"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "See the scene through an inexpensive mid-2000s compact digital camera",
+          "tags": [
+            "pocket digicam snapshot"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Set hard on-camera flash against a rapidly darkening surrounding environment",
+          "tags": [
+            "direct pocket camera flash"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep flash-neutral foregrounds and sodium-yellow distant ambience separated",
+          "tags": [
+            "night digicam mixed lighting"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Show small-sensor chroma noise in shadows and sharp processing halos at edges",
+          "tags": [
+            "early compact sensor noise"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.mall-photo-booth",
+      "name": "Photo Booth Strip",
+      "description": "Compact booth portrait printing with even light and repeatable frame geometry.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "photobooth",
+        "strip",
+        "nostalgia",
+        "print"
+      ],
+      "claims": {
+        "medium": "retromedia.mall-photo-booth",
+        "texture": "retromedia.mall-photo-booth"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the existing subject as a modest analog photo-booth print",
+          "tags": [
+            "classic photo booth print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Repeat tightly aligned portrait-like crops in a narrow vertical rhythm",
+          "tags": [
+            "photo booth strip framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use direct, unfussy front lighting with minimal depth changes",
+          "tags": [
+            "photobooth flat lighting"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Introduce matte paper fading and delicate print roller irregularity",
+          "tags": [
+            "aged photobooth paper"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.magazine-ad-2002",
+      "name": "2002 Tech Advertisement",
+      "description": "Turn-of-the-century consumer electronics advertising with glassy product staging.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "advertising",
+        "tech",
+        "2000s",
+        "print"
+      ],
+      "claims": {
+        "medium": "retromedia.magazine-ad-2002",
+        "palette": "retromedia.magazine-ad-2002",
+        "texture": "retromedia.magazine-ad-2002"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Build a glossy consumer-technology advertisement around the supplied subject",
+          "tags": [
+            "early 2000s tech advertisement"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Place one prominent hero form against a sweeping graphic background with ample copy-safe space",
+          "tags": [
+            "tech advert hero layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use chilled blue-silver tones punctuated by a single warm accent",
+          "tags": [
+            "blue silver advertising palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Mix clean gradients with the fine screening of coated magazine paper",
+          "tags": [
+            "glossy print screen texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.cassette-insert",
+      "name": "Cassette J-Card",
+      "description": "Handmade audio packaging with narrow printing, worn folds and dense layout.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "cassette",
+        "mixtape",
+        "jcard",
+        "design"
+      ],
+      "claims": {
+        "medium": "retromedia.cassette-insert",
+        "palette": "retromedia.cassette-insert",
+        "texture": "retromedia.cassette-insert"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the image into a small-format cassette J-card artwork treatment",
+          "tags": [
+            "cassette insert artwork"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Divide space using compact fold-panel geometry and carefully reserved graphic blocks",
+          "tags": [
+            "cassette j card layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Choose a reduced ink palette that remains legible when printed very small",
+          "tags": [
+            "limited cassette print colors"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Add uncoated stock grain and delicate fold-line wear",
+          "tags": [
+            "worn cassette paper insert"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.polaroid-birthday",
+      "name": "Instant Film Keepsake",
+      "description": "Amateur instant photography with chemical color aging and intimate crop placement.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "polaroid",
+        "instantfilm",
+        "keepsake",
+        "family"
+      ],
+      "claims": {
+        "medium": "retromedia.polaroid-birthday",
+        "texture": "retromedia.polaroid-birthday"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the subject as an aged instant-film snapshot saved for personal reasons",
+          "tags": [
+            "aged instant film photograph"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Leave breathing room around the image within a generous paper border",
+          "tags": [
+            "instant photo paper border"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Hold soft ambient light with a slightly abrupt flash falloff",
+          "tags": [
+            "instant film flash falloff"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Allow dye-cloud softness and small development mottles near the print corners",
+          "tags": [
+            "aged instant film chemistry"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.teletext-afterglow",
+      "name": "Teletext Afterglow",
+      "description": "Block-based broadcast information graphics with limited colors and coarse pixel cells.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "teletext",
+        "broadcast",
+        "information",
+        "pixel"
+      ],
+      "claims": {
+        "medium": "retromedia.teletext-afterglow",
+        "palette": "retromedia.teletext-afterglow",
+        "texture": "retromedia.teletext-afterglow"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the composition into a teletext-era broadcast information image",
+          "tags": [
+            "teletext pixel graphics"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Align major forms to a coarse fixed character-cell grid",
+          "tags": [
+            "teletext grid alignment"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use a disciplined small palette of bright phosphor hues against deep navy",
+          "tags": [
+            "limited teletext phosphor colors"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep geometric stair-step contours and hard rectangular pixel cells",
+          "tags": [
+            "coarse teletext pixel blocks"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.film-contact-sheet",
+      "name": "Contact Sheet Rejects",
+      "description": "Photographic review-sheet sequencing with frame numbers implied rather than dictated.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "film",
+        "contactsheet",
+        "archive",
+        "photography"
+      ],
+      "claims": {
+        "medium": "retromedia.film-contact-sheet",
+        "texture": "retromedia.film-contact-sheet"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the subject as a photographer's analog contact-sheet selection",
+          "tags": [
+            "analog film contact sheet"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange closely spaced rectangular exposures in a measured review grid",
+          "tags": [
+            "film review frame grid"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let the tonal density vary slightly between adjacent exposures",
+          "tags": [
+            "uneven contact print density"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Show tiny dust marks and paper-edge handling without obscuring the subject",
+          "tags": [
+            "contact print surface dust"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.pager-era-product",
+      "name": "Pager Era Product Shot",
+      "description": "Late-1990s catalog imagery and simple translucent industrial forms.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "pager",
+        "catalog",
+        "product",
+        "1990s"
+      ],
+      "claims": {
+        "medium": "retromedia.pager-era-product",
+        "texture": "retromedia.pager-era-product"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Reinterpret the supplied object or scene as late-1990s technology catalog photography",
+          "tags": [
+            "1990s product catalog look"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use straightforward three-quarter presentation and quiet color-block background fields",
+          "tags": [
+            "catalog three quarter framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep a soft frontal key with small specular accents on hard materials",
+          "tags": [
+            "catalog softbox reflections"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve gentle offset-print screening beneath otherwise clean silhouettes",
+          "tags": [
+            "late 90s magazine screening"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.early-web-banner",
+      "name": "Early Web Banner",
+      "description": "Compressed raster-ad energy and tightly bounded UI-era decorative typography.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "web1",
+        "banner",
+        "gif",
+        "1990s"
+      ],
+      "claims": {
+        "medium": "retromedia.early-web-banner",
+        "palette": "retromedia.early-web-banner",
+        "texture": "retromedia.early-web-banner"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Turn the subject into a tiny early-web promotional graphic with pixel-era visual economy",
+          "tags": [
+            "early web banner graphic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use rigid nested rectangles and clear areas for user-supplied lettering",
+          "tags": [
+            "compact web banner layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Contrast hyperbright accents with dark browser-era interface fields",
+          "tags": [
+            "high contrast retro web palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Retain dithered gradient bands and coarse GIF-like raster stepping",
+          "tags": [
+            "gif dithered gradients"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.laserdisc-sleeve",
+      "name": "Laserdisc Sleeve",
+      "description": "Oversized vintage video artwork with cinematic airbrushed treatments and print grain.",
+      "category": "retro-media/looks",
+      "kind": "style",
+      "tags": [
+        "laserdisc",
+        "video",
+        "sleeve",
+        "retro"
+      ],
+      "claims": {
+        "medium": "retromedia.laserdisc-sleeve",
+        "texture": "retromedia.laserdisc-sleeve"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the composition as a large-format laserdisc sleeve illustration",
+          "tags": [
+            "laserdisc sleeve cover"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use an assertive visual focal point surrounded by spacious dramatic gradients",
+          "tags": [
+            "cinematic cover illustration layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Give edges softly airbrushed reflected highlights",
+          "tags": [
+            "retro airbrush highlights"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Balance smooth pigment transitions with aged paper-print grain",
+          "tags": [
+            "airbrush printed cover texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.faded-tungsten",
+      "name": "Faded Tungsten",
+      "description": "Consumer-film warmth with slightly greenish shadows and gently faded highlights.",
+      "category": "retro-media/grades",
+      "kind": "grade",
+      "tags": [
+        "film",
+        "grade",
+        "warm",
+        "nostalgia"
+      ],
+      "claims": {
+        "palette": "retromedia.faded-tungsten"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Shift midtones toward soft tungsten amber while keeping cool shadows restrained",
+          "tags": [
+            "faded tungsten color grade"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Allow warm practical highlights to bloom delicately rather than clip cleanly",
+          "tags": [
+            "warm practical halation"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.composite-color",
+      "name": "Composite Color Fringe",
+      "description": "A restrained analog composite-video color separation overlay.",
+      "category": "retro-media/grades",
+      "kind": "grade",
+      "tags": [
+        "video",
+        "analog",
+        "chroma",
+        "grade"
+      ],
+      "claims": {
+        "palette": "retromedia.composite-color"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Displace the red and blue color channels subtly only near contrasting borders",
+          "tags": [
+            "composite chroma offset"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Soften fine chroma detail while leaving overall silhouette edges understandable",
+          "tags": [
+            "analog chroma bandwidth"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.photo-lab-cyan",
+      "name": "Photo-Lab Cyan Shift",
+      "description": "Mild aged consumer-print cyan balance with warm paper whites.",
+      "category": "retro-media/grades",
+      "kind": "grade",
+      "tags": [
+        "photolab",
+        "cyan",
+        "print",
+        "grade"
+      ],
+      "claims": {
+        "palette": "retromedia.photo-lab-cyan"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Shift faded shadows toward muted cyan and preserve ivory paper highlights",
+          "tags": [
+            "aged cyan print color balance"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Introduce subtle chemical unevenness in broad printed color fields",
+          "tags": [
+            "aged photo lab emulsion"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.date-stamp",
+      "name": "Date Stamp",
+      "description": "Small corner timestamp treatment with no invented date text.",
+      "category": "retro-media/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "date",
+        "stamp",
+        "overlay",
+        "nostalgia"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "detail",
+          "text": "Reserve a discrete low-resolution date-stamp area without specifying actual digits",
+          "tags": [
+            "tiny orange camera timestamp"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Give the mark pixel-sharp edges softened by adjacent analog bleed",
+          "tags": [
+            "consumer camera overlay pixelation"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "retromedia.tape-edge",
+      "name": "Tape Edge Wear",
+      "description": "Modest frame-edge tape damage that leaves focal information intact.",
+      "category": "retro-media/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "tape",
+        "edge",
+        "damage",
+        "analog"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Add short tape-tracking disturbances only along outer image margins",
+          "tags": [
+            "edge tracking wear"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep supplied lettering and the main subject comfortably clear of the disturbed border",
+          "tags": [
+            "protected focal image area"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

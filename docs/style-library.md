@@ -2,7 +2,7 @@
 
 The built-in library contains original, independently authored visual treatments, color grades and creative modifiers. Code is Apache-2.0; all bundled style text is dedicated under CC0-1.0 in [STYLE-LICENSE](../STYLE-LICENSE). No legacy PromptStyler templates, artist identities or generated-image assets are copied into these packs.
 
-The launch collection has 832 entries in 33 packs: 784 visual treatments, 24 color grades and 24 modifiers. The audited reference library has 585 modern pack entries; the successor increases the count while giving each entry structured clauses, explicit composition claims and separate prose/tag renderings. The count is an inventory fact, not a visual-quality metric.
+The current collection has 1,132 entries in 48 packs: 1,009 visual treatments, 69 color grades and 54 modifiers. The audited reference library has 585 modern pack entries; the successor increases the count while giving each entry structured clauses, explicit composition claims and separate prose/tag renderings. The count is an inventory fact, not a visual-quality metric.
 
 ## What is covered
 
@@ -35,6 +35,29 @@ The launch collection has 832 entries in 33 packs: 784 visual treatments, 24 col
 | Landscape and weather | Atmospheric and landscape representation choices |
 | Fashion and textile | Garment presentation, drape and editorial material studies |
 | Grades and modifiers | Sage-and-stone color, silver monochrome, raking light, selective focal detail |
+
+### Added pack inventory
+
+These 15 authored packs add 300 entries: 225 visual treatments, 45 color grades
+and 30 modifiers. Each pack is versioned and licensed CC0-1.0.
+
+| Pack | Coverage |
+| --- | --- |
+| Analog horror | Broadcast interruptions, degraded institutional media and surveillance |
+| Anime subgenres | Storytelling and production-language variants across anime |
+| Brutalist graphic design | Raw typography, industrial signage, xerox and anti-design |
+| Cozy nostalgia | Intimate domestic scenes and warmly remembered places |
+| Dreamcore | Uncanny soft-focus memories and impossible familiar spaces |
+| Editorial subcultures | Zines, streetwear, club flyers and alternative beauty editorials |
+| Gaming eras | Distinct visual languages from 16-bit art through early 3D |
+| Internet aesthetics | Vaporwave, mallsoft, Y2K interfaces and DIY web culture |
+| Liminal spaces | Transitional, empty public and institutional environments |
+| Occult and esoteric | Alchemical, hermetic, divinatory and ritual visual systems |
+| Retro media | Analog home video, local television and physical media interfaces |
+| Psychological surrealism | Displaced scale, delayed reflections and spatial unease |
+| Symbolism and metaphysical art | Allegory, silent plazas, symbolic gardens and staged still life |
+| Visionary art | Biomorphic forms, synesthetic color and luminous geometry |
+| Weirdcore | Glitched interfaces, misplaced objects and uneasy visual incongruities |
 
 Historical and regional names are creative technique references. They do not certify provenance, cultural authenticity, scholarly reconstruction or image-model knowledge. Some transformations intentionally change geometry, palette or medium; the user chooses those treatments explicitly.
 

@@ -1,0 +1,1002 @@
+{
+  "schema_version": 1,
+  "id": "community.next.cozy-nostalgia",
+  "version": "1.0.0",
+  "name": "Cozy Nostalgia",
+  "description": "Warm domestic atmospheres, quiet social memory, and gentle material storytelling.",
+  "license": "CC0-1.0",
+  "author": "NidAll / original community pack",
+  "styles": [
+    {
+      "id": "cozynostalgia.rainy-reading-window",
+      "name": "Rainy Reading Window",
+      "description": "Comfortable indoor observation with rain-softened glass and tactile everyday warmth.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "rain",
+        "window",
+        "reading",
+        "warm"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.rainy-reading-window",
+        "texture": "cozynostalgia.rainy-reading-window"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the existing scene as a quietly observed cozy illustrated memory",
+          "tags": [
+            "cozy rain window illustrated scene"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Frame the subject beside a broad windowlike pool of surrounding breathing space",
+          "tags": [
+            "intimate indoor window framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Balance warm room illumination against diffuse gray-blue rainy daylight",
+          "tags": [
+            "warm lamplight rainy window"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep soft fabric, paper and tiny glass-rain beads tactile but restrained",
+          "tags": [
+            "rain dotted glass soft interior texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.late-night-desk",
+      "name": "Late-Night Desk",
+      "description": "A personal desk atmosphere with localized light and calm pockets of shadow.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "desk",
+        "night",
+        "study",
+        "quiet"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.late-night-desk"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the supplied subject through an intimate nocturnal desk-life illustration",
+          "tags": [
+            "cozy late night desk image"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep a personal working-distance crop with gentle surrounding clutter only if already present",
+          "tags": [
+            "intimate work desk composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let a small warm task light define the principal subject against softly dark surroundings",
+          "tags": [
+            "warm desk lamp pool"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Create quiet concentration and a sense of safe uninterrupted time",
+          "tags": [
+            "peaceful late night study mood"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.corner-cafe-autumn",
+      "name": "Corner Café Autumn",
+      "description": "Rainy-season café warmth conveyed through a gentle observer perspective.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "cafe",
+        "autumn",
+        "coffee",
+        "nostalgia"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.corner-cafe-autumn",
+        "palette": "cozynostalgia.corner-cafe-autumn"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Turn the existing scene into a calm nostalgic café-style painting",
+          "tags": [
+            "cozy autumn cafe painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Favor an eye-level seated perspective with foreground shelter and gentle exterior depth",
+          "tags": [
+            "intimate seated cafe framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use caramel-brown warmth against desaturated moss and rainy slate colors",
+          "tags": [
+            "autumn caramel rain palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "lighting",
+          "text": "Allow warm indoor practical light to meet soft blue-gray outdoor diffusion",
+          "tags": [
+            "interior exterior autumn light contrast"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.library-afternoon",
+      "name": "Library Afternoon",
+      "description": "Soft daylight, paper tactility and a measured contemplative reading atmosphere.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "library",
+        "books",
+        "daylight",
+        "quiet"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.library-afternoon",
+        "texture": "cozynostalgia.library-afternoon"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Describe the supplied scene through a nostalgic library-afternoon illustrative treatment",
+          "tags": [
+            "cozy library illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange existing forms in reassuring horizontal and vertical reading rhythms",
+          "tags": [
+            "orderly reading room perspective"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use warm diagonal daylight that settles gently across quiet surfaces",
+          "tags": [
+            "golden library afternoon light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Show paper edges, worn wood finish and softly matte fabric where present",
+          "tags": [
+            "library paper and wood tactility"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.old-bookshop",
+      "name": "Old Bookshop Glow",
+      "description": "Aging paper, amber practical light and intimate small-shop visual scale.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "bookshop",
+        "paper",
+        "vintage",
+        "shop"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.old-bookshop",
+        "texture": "cozynostalgia.old-bookshop"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the scene as a warmly remembered secondhand-bookshop illustration",
+          "tags": [
+            "cozy secondhand bookshop art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use compressed inviting depth and gentle layered shelf-like repetition when appropriate",
+          "tags": [
+            "intimate vintage shop depth"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let low tungsten light gather softly between the existing forms",
+          "tags": [
+            "old shop amber pools of light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep paper patina, tactile bindings and dark varnished wood believable",
+          "tags": [
+            "aged paper bindings and wood"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.train-window-dusk",
+      "name": "Train Window Dusk",
+      "description": "Travel nostalgia through reflected glass and receding golden-hour scenery.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "train",
+        "window",
+        "travel",
+        "dusk"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.train-window-dusk",
+        "texture": "cozynostalgia.train-window-dusk"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the subject as a quiet observational travel-memory image",
+          "tags": [
+            "nostalgic train window scene"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep a stable sheltered foreground against a softened lateral view beyond glass",
+          "tags": [
+            "intimate train travel perspective"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Blend interior dusk reflections with the last warm light outside",
+          "tags": [
+            "train dusk reflective window glow"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use gentle streaking on glass and motion-softened distant forms",
+          "tags": [
+            "soft travel motion blur texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.blanket-fort",
+      "name": "Blanket Fort Memory",
+      "description": "Childhood-scale warmth with intimate textile surfaces and soft enclosed light.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "childhood",
+        "blanket",
+        "fort",
+        "nostalgia"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.blanket-fort",
+        "texture": "cozynostalgia.blanket-fort"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Illustrate the original scene with the small sheltered scale of a childhood blanket-fort memory",
+          "tags": [
+            "cozy childhood fort illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use a close viewpoint and overlapping soft fabriclike enclosures without obscuring the subject",
+          "tags": [
+            "close sheltered fabric framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let warm diffuse light leak gently through translucent textile layers",
+          "tags": [
+            "blanket fort soft golden light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep fuzzy woven fibers and rumpled cloth folds close enough to feel tangible",
+          "tags": [
+            "soft childhood blanket texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.sunday-kitchen",
+      "name": "Sunday Kitchen",
+      "description": "Slow domestic daylight and softly imperfect everyday household material.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "kitchen",
+        "sunday",
+        "morning",
+        "domestic"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.sunday-kitchen",
+        "texture": "cozynostalgia.sunday-kitchen"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the subject as an unhurried Sunday-morning domestic painting",
+          "tags": [
+            "cozy sunday kitchen illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use reassuring table-height perspective and balanced ordinary domestic spacing",
+          "tags": [
+            "unforced kitchen tabletop view"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use clear soft morning sunshine filtered through a pale room atmosphere",
+          "tags": [
+            "gentle sunday morning kitchen light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve small use marks on ceramics, cloth and worn wooden surfaces",
+          "tags": [
+            "lived in warm kitchen textures"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.snow-evening-window",
+      "name": "Snow Outside Warmth",
+      "description": "Indoor refuge contrasted with the calm diffuse illumination of winter outdoors.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "winter",
+        "snow",
+        "window",
+        "warmth"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.snow-evening-window",
+        "texture": "cozynostalgia.snow-evening-window"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Make the supplied scene feel like a quiet nostalgic winter-evening painting",
+          "tags": [
+            "cozy winter evening illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Anchor the subject within a sheltered close interior viewpoint",
+          "tags": [
+            "warm indoor winter framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Contrast honey-colored room light with blue-white soft winter ambient light",
+          "tags": [
+            "warm indoors cold snow outdoors"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Let matte textile surfaces remain detailed beside gently fogged window glazing",
+          "tags": [
+            "winter window condensation and wool"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.early-internet-bedroom",
+      "name": "2004 Bedroom Memory",
+      "description": "Domestic early-digital nostalgia through gentle display light and inexpensive materials.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "2004",
+        "bedroom",
+        "internet",
+        "nostalgia"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.early-internet-bedroom",
+        "texture": "cozynostalgia.early-internet-bedroom"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the supplied scene as an early-2000s bedroom recollection",
+          "tags": [
+            "early internet bedroom nostalgia"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Favor close lived-in viewpoint with casual personal-space scale",
+          "tags": [
+            "2000s home computer room framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use a small cool screen glow to temper warm household ambient light",
+          "tags": [
+            "old monitor glow bedroom light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep consumer-camera softness and the ordinary matte finish of domestic surfaces",
+          "tags": [
+            "soft early digital bedroom texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.summer-evening-porch",
+      "name": "Summer Porch Light",
+      "description": "Familiar evening warmth with quiet outdoor ambience and modest household light.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "summer",
+        "porch",
+        "evening",
+        "family"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.summer-evening-porch"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Recast the existing subject as an affectionate summer-evening memory painting",
+          "tags": [
+            "nostalgic summer porch artwork"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep a gentle porch-height viewpoint with a relaxed outdoor depth transition",
+          "tags": [
+            "domestic summer evening view"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let amber porchlight overlap with remaining cool evening skylight",
+          "tags": [
+            "porchlight blue hour balance"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Keep the ambience slow, welcoming and comfortably ordinary",
+          "tags": [
+            "warm summer evening quiet"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.analog-family-album",
+      "name": "Family Album Print",
+      "description": "A modest documentary memory treatment with believable material print aging.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "family",
+        "album",
+        "photo",
+        "nostalgia"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.analog-family-album",
+        "palette": "cozynostalgia.analog-family-album",
+        "texture": "cozynostalgia.analog-family-album"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the given scene as a preserved candid album photograph",
+          "tags": [
+            "nostalgic family photo album"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use imperfectly timed personal framing instead of commercial portrait symmetry",
+          "tags": [
+            "casual family album crop"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep slightly faded skin-adjacent warmth and gently blue-shifted deep shadows",
+          "tags": [
+            "faded family print colors"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Retain faint photo-paper abrasion and delicate consumer-film grain",
+          "tags": [
+            "aged domestic print surface"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.rainy-school-break",
+      "name": "Rainy School Break",
+      "description": "Gentle childhood institutional memories without eerie liminal emptiness.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "school",
+        "rain",
+        "childhood",
+        "comfort"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.rainy-school-break",
+        "texture": "cozynostalgia.rainy-school-break"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the scene as an affectionate illustration of an ordinary childhood rainy-day pause",
+          "tags": [
+            "gentle childhood rainy day illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Favor eye-height or slightly lower viewpoints that preserve the scale of remembered spaces",
+          "tags": [
+            "childhood scale indoor framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Spread quiet overcast light evenly with a small pocket of indoor warmth",
+          "tags": [
+            "soft schoolday rain daylight"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve chalky surfaces and gently worn everyday materials without horror distortions",
+          "tags": [
+            "soft used classroom materials"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.cottage-pencil-sketch",
+      "name": "Cottage Pencil Diary",
+      "description": "Quiet pencil and watercolor diary language for small comforts and familiar materials.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "cottage",
+        "pencil",
+        "watercolor",
+        "sketchbook"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.cottage-pencil-sketch",
+        "palette": "cozynostalgia.cottage-pencil-sketch",
+        "texture": "cozynostalgia.cottage-pencil-sketch"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the subject into an intimate cottage sketchbook illustration",
+          "tags": [
+            "cozy pencil cottage drawing"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Frame the existing details with airy margins and informal observational balance",
+          "tags": [
+            "casual cottage sketchbook page"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use soft moss, wheat, warm ivory and weathered terracotta washes",
+          "tags": [
+            "cottage natural pigment palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Leave visible graphite construction marks beneath light watercolor washes",
+          "tags": [
+            "pencil and watercolor cottage texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.quiet-morning-bedroom",
+      "name": "Quiet Bedroom Morning",
+      "description": "Clean restful morning light and breathable domestic spaces with gentle fabric detail.",
+      "category": "cozy-nostalgia/looks",
+      "kind": "style",
+      "tags": [
+        "morning",
+        "bedroom",
+        "calm",
+        "domestic"
+      ],
+      "claims": {
+        "medium": "cozynostalgia.quiet-morning-bedroom",
+        "texture": "cozynostalgia.quiet-morning-bedroom"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Make the supplied subject feel like a serene illustrated morning-at-home scene",
+          "tags": [
+            "cozy morning bedroom illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use an open eye-level composition with relaxed domestic spacing",
+          "tags": [
+            "quiet morning interior composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let milky morning sunlight gradually brighten textured surfaces",
+          "tags": [
+            "diffuse pale morning bedroom light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep natural linen folds and soft-worn textile edges believable",
+          "tags": [
+            "soft linen domestic surface texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.honey-hour",
+      "name": "Honey Hour",
+      "description": "Warm honey highlights and muted amber midtones without orange saturation.",
+      "category": "cozy-nostalgia/grades",
+      "kind": "grade",
+      "tags": [
+        "honey",
+        "golden",
+        "warm",
+        "grade"
+      ],
+      "claims": {
+        "palette": "cozynostalgia.honey-hour"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Shift highlights toward gentle honey gold and shadows toward warm stone-gray",
+          "tags": [
+            "soft honey hour palette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Maintain a gradual falloff from naturally warm practical sources",
+          "tags": [
+            "subtle honey light falloff"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.rainy-sage",
+      "name": "Rainy Sage",
+      "description": "Muted green and slate-blue rainy-day tones with paper-warm near-whites.",
+      "category": "cozy-nostalgia/grades",
+      "kind": "grade",
+      "tags": [
+        "sage",
+        "rain",
+        "cool",
+        "grade"
+      ],
+      "claims": {
+        "palette": "cozynostalgia.rainy-sage"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Blend sage-green and desaturated slate-blue against lightly warm neutral whites",
+          "tags": [
+            "rainy sage muted palette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep gray-day diffusion soft and even without hard blue shadows",
+          "tags": [
+            "gentle overcast rainy light"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.lamplit-cocoa",
+      "name": "Lamplit Cocoa",
+      "description": "Deep cocoa midtones and warm lamplight with plush, low-contrast warmth.",
+      "category": "cozy-nostalgia/grades",
+      "kind": "grade",
+      "tags": [
+        "cocoa",
+        "lamp",
+        "brown",
+        "grade"
+      ],
+      "claims": {
+        "palette": "cozynostalgia.lamplit-cocoa"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Favor cocoa-brown midtones, muted cream highlights and deep softened plum shadows",
+          "tags": [
+            "cocoa cream lamplight palette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep local lamplight warm and contained rather than flooding the whole scene",
+          "tags": [
+            "localized warm lamp light"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.gentle-bokeh",
+      "name": "Gentle Background Bokeh",
+      "description": "Sparing peripheral softness that preserves the requested subject and text.",
+      "category": "cozy-nostalgia/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "bokeh",
+        "soft",
+        "focus",
+        "modifier"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "detail",
+          "text": "Soften only distant secondary details into small rounded defocused highlights",
+          "tags": [
+            "subtle cozy background bokeh"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the entire requested subject and any exact lettering sharply readable",
+          "tags": [
+            "protected crisp foreground focus"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "cozynostalgia.soft-film-grain",
+      "name": "Soft Film Grain",
+      "description": "Barely perceptible organic grain for warm everyday memories.",
+      "category": "cozy-nostalgia/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "grain",
+        "film",
+        "nostalgia",
+        "modifier"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Add very fine organic film grain most visible in midtone surfaces",
+          "tags": [
+            "gentle analog film texture"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Preserve natural highlight smoothness and avoid hard digital sharpness halos",
+          "tags": [
+            "soft nostalgic highlight rolloff"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

@@ -1,0 +1,1014 @@
+{
+  "schema_version": 1,
+  "id": "community.next.brutalist-graphic",
+  "version": "1.0.0",
+  "name": "Brutalist Graphic Design",
+  "description": "Assertive editorial structures, raw typography, print artifacts and anti-polish graphics.",
+  "license": "CC0-1.0",
+  "author": "NidAll / original community pack",
+  "styles": [
+    {
+      "id": "brutalgraphic.raw-type-poster",
+      "name": "Raw Type Poster",
+      "description": "Uncompromising editorial poster design with severe typographic hierarchy and tactile print.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "brutalism",
+        "typography",
+        "poster",
+        "raw"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.raw-type-poster",
+        "palette": "brutalgraphic.raw-type-poster",
+        "texture": "brutalgraphic.raw-type-poster"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the existing subject into an uncompromising brutalist graphic poster",
+          "tags": [
+            "brutalist typographic poster"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use oversized text-safe geometric blocks and severe asymmetric alignment",
+          "tags": [
+            "aggressive asymmetrical poster grid"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Limit visual noise with soot black, raw paper white and a sharp crimson accent",
+          "tags": [
+            "black white red brutalist palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Expose rough ink density and thick imperfect cut-and-paste edges",
+          "tags": [
+            "raw poster pasteup print texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.industrial-signage",
+      "name": "Industrial Signage Study",
+      "description": "Utilitarian signage hierarchy with enormous shapes and functional legibility.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "signage",
+        "industrial",
+        "utilitarian",
+        "graphic"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.industrial-signage",
+        "palette": "brutalgraphic.industrial-signage",
+        "texture": "brutalgraphic.industrial-signage"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the original subject through severe industrial wayfinding graphics",
+          "tags": [
+            "industrial brutalist signage design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize a few huge bars and numerallike reserved spaces into a hard directional hierarchy",
+          "tags": [
+            "industrial signage block hierarchy"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use safety-yellow accents against chalk-white and graphite-black fields",
+          "tags": [
+            "safety yellow industrial palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep edge-worn stenciling and paint-roller irregularity on coarse board",
+          "tags": [
+            "rough stenciled industrial graphic"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.xerox-culture",
+      "name": "Xerox Culture",
+      "description": "Densely printed monochrome-aligned photocopy graphics and rebellious layering.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "xerox",
+        "photocopy",
+        "independent",
+        "publication"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.xerox-culture",
+        "palette": "brutalgraphic.xerox-culture",
+        "texture": "brutalgraphic.xerox-culture"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject as a deliberately rough photocopied independent culture poster",
+          "tags": [
+            "brutalist xerox culture graphic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Pile overlarge rectangular images into an intentionally uneasy reading order",
+          "tags": [
+            "overlapping xerox layout blocks"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep the image in stark black and off-white photocopy values",
+          "tags": [
+            "photocopy black white palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Exaggerate blown toner thresholds and copier drum wear in peripheral fields",
+          "tags": [
+            "coarse xerox toner clipping"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.neo-swiss-disruption",
+      "name": "Neo-Swiss Disruption",
+      "description": "Swiss-grid precision broken by deliberately dislocated image positions.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "swiss",
+        "grid",
+        "experimental",
+        "modernist"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.neo-swiss-disruption",
+        "palette": "brutalgraphic.neo-swiss-disruption",
+        "texture": "brutalgraphic.neo-swiss-disruption"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Build the subject into a rigorously structured but disrupted neo-Swiss editorial graphic",
+          "tags": [
+            "disrupted modernist swiss graphic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Start with a mathematical grid then break one large alignment decisively",
+          "tags": [
+            "controlled broken modular grid"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep near-white and slate-gray planes with one saturated ultramarine accent",
+          "tags": [
+            "ultramarine swiss design palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Retain clean geometric ink edges with faint press registration inconsistencies",
+          "tags": [
+            "crisp offset print geometry"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.anti-design-web",
+      "name": "Anti-Design Web Composition",
+      "description": "Deliberately confrontational early-web visual hierarchy with oversized native-screen elements.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "antidesign",
+        "web",
+        "interface",
+        "postinternet"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.anti-design-web",
+        "palette": "brutalgraphic.anti-design-web",
+        "texture": "brutalgraphic.anti-design-web"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the scene into an anti-design web-culture graphic rather than a functional website screenshot",
+          "tags": [
+            "anti design web graphic composition"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Stack brutally sized UI-like rectangles and interrupted columns around the subject",
+          "tags": [
+            "oversized experimental web layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Clash one fluorescent accent with heavily desaturated interface fields",
+          "tags": [
+            "fluorescent anti design colors"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Leave hard nearest-neighbor pixels and abrupt line breaks visible",
+          "tags": [
+            "harsh web pixel edges"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.concrete-publication",
+      "name": "Concrete Publication",
+      "description": "Heavy architectural publishing with slab geometry and physical paper weight.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "architecture",
+        "concrete",
+        "publication",
+        "brutalist"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.concrete-publication",
+        "texture": "brutalgraphic.concrete-publication"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the subject as a severe concrete-architecture magazine plate",
+          "tags": [
+            "brutalist architecture publication"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Set large rectilinear image masses into a compressed editorial grid",
+          "tags": [
+            "dense concrete editorial grid"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use lateral daylight that exaggerates blocky material relief",
+          "tags": [
+            "hard side lit concrete mass"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Show rough uncoated paper and the fine granular matter of concrete",
+          "tags": [
+            "concrete grain on matte paper"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.overprint-manifesto",
+      "name": "Overprint Manifesto",
+      "description": "Dense activist-era visual grammar of layered inks without fabricated political slogans.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "overprint",
+        "manifesto",
+        "poster",
+        "ink"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.overprint-manifesto",
+        "palette": "brutalgraphic.overprint-manifesto",
+        "texture": "brutalgraphic.overprint-manifesto"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Frame the original subject as a raw multi-layer screen-printed manifesto poster",
+          "tags": [
+            "overprint manifesto graphic design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Stack strong cropped shapes with broad text-safe interruption bands",
+          "tags": [
+            "assertive overprint poster blocks"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use dense red-orange and petrol-black ink overlap against coarse ivory stock",
+          "tags": [
+            "red orange black poster palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Make overlapping ink layers show imperfect transparent trapping and paper drag",
+          "tags": [
+            "rough screenprint ink trapping"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.blackletter-industrial",
+      "name": "Blackletter Industrial",
+      "description": "Contemporary blackletter-inspired editorial weight with industrial material contrast.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "blackletter",
+        "industrial",
+        "editorial",
+        "hard"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.blackletter-industrial",
+        "palette": "brutalgraphic.blackletter-industrial",
+        "texture": "brutalgraphic.blackletter-industrial"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the supplied subject into a bold blackletter-inspired industrial graphic language",
+          "tags": [
+            "industrial blackletter inspired poster"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Reserve massive vertical typography-safe forms with uncompromising tight margins",
+          "tags": [
+            "heavy vertical letterform layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use weathered bone white and tar black with a small oxidized orange accent",
+          "tags": [
+            "tar black bone white orange"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep metal-stamped edges and coarse silkscreen registration marks",
+          "tags": [
+            "industrial stamped graphic texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.noise-and-space",
+      "name": "Noise Against Space",
+      "description": "Tightly patterned raster material juxtaposed against giant calm blank fields.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "noise",
+        "space",
+        "experimental",
+        "graphic"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.noise-and-space",
+        "palette": "brutalgraphic.noise-and-space",
+        "texture": "brutalgraphic.noise-and-space"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the existing subject as a stark experimental noise-based graphic print",
+          "tags": [
+            "brutalist noise print art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Put dense noisy visual matter in direct tension with one large untouched region",
+          "tags": [
+            "dense noise versus blank space"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Restrict to two ink densities plus a restrained acid-green indicator accent",
+          "tags": [
+            "two tone acid green print palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use high-frequency printed grain without obscuring the central subject silhouette",
+          "tags": [
+            "controlled granular graphic noise"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.grid-crush",
+      "name": "Grid Crush",
+      "description": "High-pressure horizontal and vertical structure that compresses graphic space.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "grid",
+        "compressed",
+        "typography",
+        "layout"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.grid-crush",
+        "palette": "brutalgraphic.grid-crush",
+        "texture": "brutalgraphic.grid-crush"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the image as a densely gridded brutalist publication experiment",
+          "tags": [
+            "compressed brutalist editorial"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Compress the visual field with thick horizontal bars and narrow nested columns",
+          "tags": [
+            "heavy oppressive typographic grid"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Choose graphite, chalk and a small vivid cyan system accent",
+          "tags": [
+            "graphite chalk cyan graphic palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve solid ink floods beside ragged edges and imperfect folds",
+          "tags": [
+            "heavy toner flood paper wear"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.cut-metal-print",
+      "name": "Cut Metal Print",
+      "description": "Graphic geometry inspired by fabricated sheet-metal edges and technical stencils.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "metal",
+        "stencil",
+        "industrial",
+        "print"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.cut-metal-print",
+        "texture": "brutalgraphic.cut-metal-print"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the subject as a fabricated-metal-inspired brutalist graphic relief",
+          "tags": [
+            "cut metal graphic print"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use large angular cutout forms with minimal decorative transitions",
+          "tags": [
+            "angular industrial cutout arrangement"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let a shallow side light reveal the overlap of hard planar edges",
+          "tags": [
+            "raking light sheet metal relief"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Combine scratched galvanized finishes with stencil-cut ink boundaries",
+          "tags": [
+            "scratched sheet metal stencil surface"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.distressed-index",
+      "name": "Distressed Index",
+      "description": "An overpacked reference-index page with severe information design and battered print.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "index",
+        "information",
+        "print",
+        "brutalism"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.distressed-index",
+        "palette": "brutalgraphic.distressed-index",
+        "texture": "brutalgraphic.distressed-index"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Make the scene look like an aggressively typeset archival reference index page",
+          "tags": [
+            "distressed archival index graphic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use dense ruled columns and very large section breaks without invented content",
+          "tags": [
+            "packed reference index hierarchy"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Hold mostly dirty cream, hard black and occasional underlined blue accents",
+          "tags": [
+            "aged cream ink blue index palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Retain overprinted rules and rubbed paper along frequent handling edges",
+          "tags": [
+            "worn index book paper"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.flash-culture-print",
+      "name": "Flash Culture Print",
+      "description": "Direct-flash youth-culture editorial material combined with heavy minimal typography.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "flash",
+        "street",
+        "editorial",
+        "poster"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.flash-culture-print",
+        "texture": "brutalgraphic.flash-culture-print"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Turn the given subject into a hard-flash contemporary subculture poster",
+          "tags": [
+            "hard flash street editorial poster"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Push a single raw photographic crop against oversized blank typographic planes",
+          "tags": [
+            "flash photo brutalist framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use unforgiving direct flash with abrupt shadow transitions",
+          "tags": [
+            "direct harsh street flash"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Allow coarse halftone printing on an otherwise sharp candid photograph",
+          "tags": [
+            "gritty flash photo halftone"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.monolith-poster",
+      "name": "Monolith Poster",
+      "description": "Minimal large block graphic with a single assertive form and heavy quiet space.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "minimal",
+        "monolith",
+        "poster",
+        "block"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.monolith-poster",
+        "palette": "brutalgraphic.monolith-poster",
+        "texture": "brutalgraphic.monolith-poster"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Abstract the original subject into a monumental brutalist poster treatment",
+          "tags": [
+            "brutalist monolithic poster graphic"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let one oversized rectangular mass dominate a nearly empty poster field",
+          "tags": [
+            "single giant block composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use severe soot-black and warm paper-white contrast with no decorative rainbow colors",
+          "tags": [
+            "black white minimal poster values"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Introduce dry-roller ink interruptions only on the large black field",
+          "tags": [
+            "rough roller solid ink texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.photostat-recomposition",
+      "name": "Photostat Recomposition",
+      "description": "Enlarged reprographic photography broken into brutal editorial fragments.",
+      "category": "brutalist-graphic/looks",
+      "kind": "style",
+      "tags": [
+        "photostat",
+        "reprography",
+        "collage",
+        "editorial"
+      ],
+      "claims": {
+        "medium": "brutalgraphic.photostat-recomposition",
+        "palette": "brutalgraphic.photostat-recomposition",
+        "texture": "brutalgraphic.photostat-recomposition"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Reinterpret the subject as a radically enlarged photostat image collage",
+          "tags": [
+            "brutalist photostat enlargement"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Offset a small number of massive cropped reproductions around the original focal detail",
+          "tags": [
+            "oversized photostat graphic fragments"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep harsh charcoal-gray and white with a small electric vermilion accent",
+          "tags": [
+            "photostat vermilion stark colors"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use photomechanical dot breakup and severely blown reproduction grain",
+          "tags": [
+            "enlarged coarse photostat raster"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.ink-black-white",
+      "name": "Ink Black and White",
+      "description": "High-value-contrast reproduction without destructive loss of the subject.",
+      "category": "brutalist-graphic/grades",
+      "kind": "grade",
+      "tags": [
+        "blackwhite",
+        "print",
+        "graphic",
+        "grade"
+      ],
+      "claims": {
+        "palette": "brutalgraphic.ink-black-white"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Use dense black ink and warm white paper with very few intermediate printed values",
+          "tags": [
+            "stark black and white ink reproduction"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Allow subtle plate roughness inside broad black shapes without breaking legibility",
+          "tags": [
+            "dry offset black ink grain"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.acid-signal",
+      "name": "Acid Signal",
+      "description": "A single high-voltage yellow-green against deep neutral graphic values.",
+      "category": "brutalist-graphic/grades",
+      "kind": "grade",
+      "tags": [
+        "acid",
+        "chartreuse",
+        "black",
+        "grade"
+      ],
+      "claims": {
+        "palette": "brutalgraphic.acid-signal"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Introduce aggressive chartreuse signal accents against graphite and warm ivory",
+          "tags": [
+            "acid green graphite print palette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep the signal accent flat and ink-like instead of luminous or physically glowing",
+          "tags": [
+            "flat neon ink emphasis"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.oxide-copper",
+      "name": "Oxide Copper",
+      "description": "Oxidized copper orange with cold concrete and paper whites.",
+      "category": "brutalist-graphic/grades",
+      "kind": "grade",
+      "tags": [
+        "copper",
+        "oxide",
+        "industrial",
+        "grade"
+      ],
+      "claims": {
+        "palette": "brutalgraphic.oxide-copper"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Balance oxidized orange-copper with cold gray concrete values",
+          "tags": [
+            "oxidized copper concrete color grade"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve the dryness of mineral pigment and uncoated paper on all broad fills",
+          "tags": [
+            "dry industrial graphic pigment"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.registration-crop",
+      "name": "Registration Crop",
+      "description": "Decorative print-shop registration fragments away from requested lettering.",
+      "category": "brutalist-graphic/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "registration",
+        "crop",
+        "mark",
+        "modifier"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "detail",
+          "text": "Place sparse printer registration marks outside the main focal and typography zones",
+          "tags": [
+            "peripheral registration crop marks"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Maintain generous quiet space around every user-requested word or symbol",
+          "tags": [
+            "print crop marks safe spacing"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "brutalgraphic.hard-rule",
+      "name": "Hard Rule",
+      "description": "Heavy editorial rule lines used to stabilize an otherwise chaotic composition.",
+      "category": "brutalist-graphic/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "rule",
+        "line",
+        "editorial",
+        "modifier"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Add one or two decisively thick divider rules between existing visual groups",
+          "tags": [
+            "heavy brutalist editorial rule lines"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Let the rules show slightly imperfect printed ink edges",
+          "tags": [
+            "coarse printed black rules"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

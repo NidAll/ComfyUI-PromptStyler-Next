@@ -105,11 +105,11 @@ specialized encoders remain in the native workflow.
 
 ## Style packs and extension points
 
-The library contains 832 authored entries in 33 packs, compared with 585 in the
-audited reference. It covers cinema, photography, illustration, anime, manga, historical
-fine art, printing, graphic design, 3D, architecture, material arts and more, with
-independent color grades and modifiers. See [the library guide](docs/style-library.md)
-for the inventory and curation policy.
+The library contains 1,132 authored entries in 48 packs: 1,009 visual treatments,
+69 color grades and 54 modifiers. It covers cinema, photography, illustration,
+anime, manga, historical fine art, printing, graphic design, 3D, architecture,
+material arts, analog horror, internet aesthetics and more. See [the library guide](docs/style-library.md)
+for the full inventory and curation policy.
 
 Packs are versioned, bounded JSON data. IDs are stable, duplicates fail, and there
 is no executable templating, dynamic import, remote loading or pack upload API.

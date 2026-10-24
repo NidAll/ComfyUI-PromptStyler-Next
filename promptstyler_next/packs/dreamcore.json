@@ -1,0 +1,999 @@
+{
+  "schema_version": 1,
+  "id": "community.dreamcore",
+  "version": "1.0.0",
+  "name": "Dreamcore",
+  "description": "Soft nostalgic discontinuities and luminous dream logic, with independently composable grades.",
+  "license": "CC0-1.0",
+  "author": "NidAll / original community pack",
+  "styles": [
+    {
+      "id": "dreamcore.soft-memory",
+      "name": "Soft Memory Haze",
+      "description": "An ordinary remembered scene softened into a nearly tangible half-recollection.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "memory",
+        "nostalgia",
+        "haze",
+        "dream"
+      ],
+      "claims": {
+        "medium": "dreamcore.soft-memory",
+        "texture": "dreamcore.soft-memory"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the image as a gently imperfect recollection emerging from sleep",
+          "tags": [
+            "soft dream memory"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Diffuse window light through an almost milky haze",
+          "tags": [
+            "hazy windowlight"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Keep soft grain and slight edge dissolution around peripheral details",
+          "tags": [
+            "faded recollection texture"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Maintain affection with a faint sense of unrecoverable distance",
+          "tags": [
+            "tender nostalgic unease"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.toybox-reverie",
+      "name": "Toybox Reverie",
+      "description": "Childhood scale and plastic tactility remembered through sleep.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "toybox",
+        "childhood",
+        "miniature",
+        "pastel"
+      ],
+      "claims": {
+        "medium": "dreamcore.toybox-reverie",
+        "texture": "dreamcore.toybox-reverie"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the subject with the suspended scale of a remembered childhood play space",
+          "tags": [
+            "childhood toybox dream"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Use chalky candy colors with occasional saturated plastic accents",
+          "tags": [
+            "chalk pastel and toy plastic"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Make the spatial scale gently uncertain without obscuring the subject",
+          "tags": [
+            "gentle toybox scale mismatch"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Suggest soft plastic gleam beside fuzzy worn fabric",
+          "tags": [
+            "plastic and felt textures"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.sunlit-void",
+      "name": "Sunlit Void",
+      "description": "Bright daylight meeting impossible amounts of quiet negative space.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "sunlight",
+        "void",
+        "minimal",
+        "serene"
+      ],
+      "claims": {
+        "medium": "dreamcore.sunlit-void"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Place the scene within an abstract daylight-washed dream environment",
+          "tags": [
+            "sunlit white dream space"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Leave unusually large uninterrupted areas around the established subject",
+          "tags": [
+            "expansive dreamlike negative space"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use a clear directionless glow with a few long impossible-edged shadows",
+          "tags": [
+            "soft light and improbable shadows"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Balance calm openness with a quiet sense of spatial unreality",
+          "tags": [
+            "serene spatial dislocation"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.cloudroom",
+      "name": "Cloudroom",
+      "description": "Airy domestic forms submerged in high, cloudlike atmospheric light.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "cloud",
+        "interior",
+        "airy",
+        "daydream"
+      ],
+      "claims": {
+        "medium": "dreamcore.cloudroom"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Blend the existing setting with the airy logic of a room remembered through clouds",
+          "tags": [
+            "cloudlike dream interior"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Fill the image with broad luminous overcast light and gentle bloom",
+          "tags": [
+            "soft cloud diffuse lighting"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Fade far boundaries rather than resolving every wall edge",
+          "tags": [
+            "dissolving room boundaries"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "palette",
+          "text": "Use near-white, pale lavender and sky blue with restrained contrast",
+          "tags": [
+            "pale lavender sky blue"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.childhood-bedroom",
+      "name": "Bedroom You Remember",
+      "description": "The familiar architecture of a childhood room with memory-softened detail.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "bedroom",
+        "childhood",
+        "memories",
+        "night"
+      ],
+      "claims": {
+        "medium": "dreamcore.childhood-bedroom",
+        "texture": "dreamcore.childhood-bedroom"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Reinterpret the scene as a childhood room reconstructed from incomplete memory",
+          "tags": [
+            "half remembered childhood bedroom"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep recognizable furniture rhythms while corners feel subtly too distant",
+          "tags": [
+            "slightly elongated bedroom perspective"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Mix distant sunset spill with a warm isolated bedside glow",
+          "tags": [
+            "nostalgic bedroom sunset glow"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Render worn cotton, painted wood and softened poster edges",
+          "tags": [
+            "faded room keepsakes texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.paper-sky",
+      "name": "Paper-Cut Sky",
+      "description": "Layered paper forms floating under simplified weather and sunlight.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "paper",
+        "sky",
+        "collage",
+        "soft"
+      ],
+      "claims": {
+        "medium": "dreamcore.paper-sky",
+        "texture": "dreamcore.paper-sky"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the scene as a gentle paper-cut dreamscape",
+          "tags": [
+            "soft paper cut dream"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Stack horizon-like planes with visible shallow paper offsets",
+          "tags": [
+            "layered paper horizons"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use powder blue, butter cream and blush with restrained saturation",
+          "tags": [
+            "soft powder paper colors"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Let torn fibers and layered shadow gaps define surface boundaries",
+          "tags": [
+            "delicate torn paper edges"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.afternoon-loop",
+      "name": "Endless Summer Afternoon",
+      "description": "A late summer afternoon that seems to repeat without changing.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "summer",
+        "afternoon",
+        "loop",
+        "nostalgia"
+      ],
+      "claims": {
+        "medium": "dreamcore.afternoon-loop"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Give the image the quality of a summer afternoon caught in a recurring dream",
+          "tags": [
+            "endless summer afternoon"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Allow warm low sunlight to linger with no clear passage of time",
+          "tags": [
+            "lingering golden afternoon light"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "composition",
+          "text": "Use a stable almost-too-familiar viewpoint with repeated shapes in the distance",
+          "tags": [
+            "repeating summer memory patterns"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Emphasize peaceful repetition tinged by an indistinct longing",
+          "tags": [
+            "wistful afternoon stillness"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.forgotten-garden",
+      "name": "Half-Remembered Garden",
+      "description": "Botanical memories rendered as gentle, uncertain silhouettes.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "garden",
+        "botanical",
+        "memory",
+        "soft"
+      ],
+      "claims": {
+        "medium": "dreamcore.forgotten-garden",
+        "texture": "dreamcore.forgotten-garden"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render a gardenlike atmosphere remembered from a dream rather than direct observation",
+          "tags": [
+            "dreamlike forgotten garden"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Partially conceal transitions between planted forms and pathways",
+          "tags": [
+            "soft garden pathway transitions"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use dappled diffused light with little pinpricks of brightness",
+          "tags": [
+            "diffused garden sun flecks"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Suggest translucent leaf edges and soft pollenlike grain",
+          "tags": [
+            "soft translucent foliage"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.stairway-nowhere",
+      "name": "Stairway Without Destination",
+      "description": "Architectural steps repeat into an uncertain dream horizon.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "stairs",
+        "impossible",
+        "space",
+        "surreal"
+      ],
+      "claims": {
+        "medium": "dreamcore.stairway-nowhere"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Recast the scene with the improbable yet calm geometry of dream stairs",
+          "tags": [
+            "surreal dreamy staircase"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Let connected landings change scale or alignment in subtle unexplained ways",
+          "tags": [
+            "impossible stair geometry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep shadows reassuringly soft even where spatial logic bends",
+          "tags": [
+            "soft shadows on surreal stairs"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Maintain quiet curiosity rather than menace",
+          "tags": [
+            "gentle impossible space"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.mirror-sleep",
+      "name": "Mirrored Sleep",
+      "description": "Reflections become imperfect repetitions of a familiar scene.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "mirror",
+        "reflection",
+        "dream",
+        "recursion"
+      ],
+      "claims": {
+        "medium": "dreamcore.mirror-sleep"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Give the scene the still quality of a reflection glimpsed in a dream",
+          "tags": [
+            "dream mirror scene"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Repeat existing forms within mirrors with slight differences in alignment",
+          "tags": [
+            "subtle inconsistent reflections"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep reflected highlights muted and a little slower to fade",
+          "tags": [
+            "soft reflected lights"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Create a gentle sense that the reflection remembers a different moment",
+          "tags": [
+            "uncanny gentle mirror memory"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.underwater-daylight",
+      "name": "Underwater Daylight",
+      "description": "Ordinary daylight distorted by a slow underwater optical impression.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "underwater",
+        "caustics",
+        "daylight",
+        "dream"
+      ],
+      "claims": {
+        "medium": "dreamcore.underwater-daylight",
+        "texture": "dreamcore.underwater-daylight"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the subject through a calm dream of submerged daylight",
+          "tags": [
+            "quiet submerged daylight"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Cast slow moving watery caustic bands over the existing forms",
+          "tags": [
+            "soft water caustics"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Favor diluted aqua, pearl and sun-bleached gold",
+          "tags": [
+            "washed aqua and pearl"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Blur distant edges through suspended fine particulate haze",
+          "tags": [
+            "submerged diffuse haze"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.oversized-furniture",
+      "name": "Gentle Scale Error",
+      "description": "Domestic objects take on slightly impossible proportions without losing familiarity.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "scale",
+        "domestic",
+        "objects",
+        "uncanny"
+      ],
+      "claims": {
+        "medium": "dreamcore.oversized-furniture"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Use the visual logic of a comfortable dream where ordinary furniture feels disproportionate",
+          "tags": [
+            "gentle domestic scale surrealism"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Scale background objects subtly beyond expectation while preserving the main subject",
+          "tags": [
+            "subtle oversized furniture"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep household lighting familiar despite the impossible proportions",
+          "tags": [
+            "ordinary light in impossible room"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Express curious playfulness with a trace of strangeness",
+          "tags": [
+            "playful scale unease"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.polaroid-dream",
+      "name": "Instant-Film Daydream",
+      "description": "Memory as a chemically softened instant photo with a dreamlike timeline.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "instant-film",
+        "nostalgia",
+        "soft",
+        "photo"
+      ],
+      "claims": {
+        "medium": "dreamcore.polaroid-dream",
+        "texture": "dreamcore.polaroid-dream"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Give the scene the surface logic of a faded instant-film daydream",
+          "tags": [
+            "instant film dream"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Blend warm creamy highlights with pale pink-gray shadows",
+          "tags": [
+            "faded instant film palette"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "texture",
+          "text": "Add gentle dye-cloud irregularity and delicate film-edge softness",
+          "tags": [
+            "soft instant photo dye textures"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Let the moment feel intimate and suspended beyond its actual duration",
+          "tags": [
+            "private remembered moment"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.porcelain-sunrise",
+      "name": "Porcelain Sunrise",
+      "description": "Pale ceremonial morning with porcelain surfaces and slow shadows.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "sunrise",
+        "porcelain",
+        "ivory",
+        "dream"
+      ],
+      "claims": {
+        "medium": "dreamcore.porcelain-sunrise",
+        "texture": "dreamcore.porcelain-sunrise"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Describe the scene as a quiet porcelain-like dream at sunrise",
+          "tags": [
+            "porcelain dream dawn"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Diffuse first light across rounded surfaces in soft broad gradients",
+          "tags": [
+            "pearly sunrise glow"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep an ivory and blush palette punctuated by cool lilac shadows",
+          "tags": [
+            "ivory blush lilac palette"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "texture",
+          "text": "Allow glazed edges to catch a small delicate reflected highlight",
+          "tags": [
+            "porcelain soft gleam"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.quiet-carousel",
+      "name": "Silent Carousel",
+      "description": "Fairground geometry preserved as a pleasant but motionless dream.",
+      "category": "dreamcore/visions",
+      "kind": "style",
+      "tags": [
+        "carousel",
+        "amusement",
+        "nostalgia",
+        "dream"
+      ],
+      "claims": {
+        "medium": "dreamcore.quiet-carousel"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the scene through the still charm of a carousel remembered after sleep",
+          "tags": [
+            "dreamlike silent carousel"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange recurring ornamental shapes in circular or gently radial rhythms",
+          "tags": [
+            "circular dream fairground pattern"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use scattered decorative bulbs softened by mistlike bloom",
+          "tags": [
+            "soft fairground bulb glow"
+          ],
+          "min_intensity": 0.78
+        },
+        {
+          "axis": "mood",
+          "text": "Keep the feeling wistful, affectionate and just a little distant",
+          "tags": [
+            "nostalgic quiet amusement"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.faded-lullaby",
+      "name": "Faded Lullaby",
+      "description": "Old-paper softness applied as a color treatment.",
+      "category": "dreamcore/grades",
+      "kind": "grade",
+      "tags": [
+        "faded",
+        "pastel",
+        "nostalgia",
+        "grade"
+      ],
+      "claims": {
+        "palette": "dreamcore.faded-lullaby"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Shift colors toward faded apricot, dusty lavender and pale cream",
+          "tags": [
+            "nostalgic dusty pastels"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Make high-value areas softly luminous without clipping",
+          "tags": [
+            "soft airy highlights"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.milkglass",
+      "name": "Milk-Glass Glow",
+      "description": "Translucent luminous highlights and gentle low contrast.",
+      "category": "dreamcore/grades",
+      "kind": "grade",
+      "tags": [
+        "milky",
+        "glow",
+        "glass",
+        "soft"
+      ],
+      "claims": {
+        "lighting": "dreamcore.milkglass"
+      },
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Diffuse bright areas through a translucent milk-glass halo",
+          "tags": [
+            "milky diffusion glow"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "palette",
+          "text": "Keep midtones pale and airy while protecting key subject colors",
+          "tags": [
+            "airy creamy midtones"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.moon-pastel",
+      "name": "Moonlit Pastels",
+      "description": "Quiet powder hues lit with cool lunar light.",
+      "category": "dreamcore/grades",
+      "kind": "grade",
+      "tags": [
+        "moon",
+        "pastel",
+        "cool",
+        "grade"
+      ],
+      "claims": {
+        "palette": "dreamcore.moon-pastel"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Mix powder blue, muted lilac and moon-white without neon saturation",
+          "tags": [
+            "pale moonlit pastels"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Use cool lateral light with soft silvered edges",
+          "tags": [
+            "moonlight silver edges"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.dream-discontinuity",
+      "name": "Dream Discontinuity",
+      "description": "Subtle spatial mismatch while retaining recognizable subject identity.",
+      "category": "dreamcore/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "disjointed",
+        "space",
+        "dream",
+        "modifier"
+      ],
+      "claims": {
+        "composition": "dreamcore.dream-discontinuity"
+      },
+      "clauses": [
+        {
+          "axis": "composition",
+          "text": "Let background transitions join a little impossibly while keeping the subject legible",
+          "tags": [
+            "subtle dream spatial mismatch"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "detail",
+          "text": "Repeat a minor background element as though a memory skipped a beat",
+          "tags": [
+            "soft recurring detail"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "dreamcore.memory-bleed",
+      "name": "Memory Bleed",
+      "description": "Peripheral doubling reminiscent of overlapping recollections.",
+      "category": "dreamcore/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "memory",
+        "soft",
+        "double",
+        "modifier"
+      ],
+      "claims": {
+        "texture": "dreamcore.memory-bleed"
+      },
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Give peripheral edges a faint overlapping-memory softness",
+          "tags": [
+            "faint memory double exposure"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "mood",
+          "text": "Make the scene feel remembered through two adjacent moments",
+          "tags": [
+            "overlapping recollections"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

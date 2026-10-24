@@ -94,13 +94,22 @@ from importlib.resources import files
 from promptstyler_next import Engine
 assert 'comfy_api' not in sys.modules
 engine = Engine.builtin()
-styles = engine.list_styles(query='noir')
-assert styles
-result = engine.compose({'prompt':'An orchard', 'model':'flux', 'styles':[{'id':styles[0]['id']}]})
+matches = engine.list_styles(query='noir')
+assert matches
+result = engine.compose({'prompt':'An orchard', 'model':'flux', 'styles':[{'id':matches[0]['id']}]})
 assert result.positive.startswith('An orchard')
 assert engine.compose(result.recipe).fingerprint == result.fingerprint
 assert files('promptstyler_next').joinpath('web/index.html').read_text()
-print(json.dumps({'styles': len(engine.list_styles(limit=1000)), 'profiles':len(engine.profiles()), 'fingerprint':result.catalog_fingerprint}))
+styles = []
+offset = 0
+while True:
+    page = engine.list_styles(limit=1000, offset=offset)
+    styles.extend(page)
+    if len(page) < 1000:
+        break
+    offset += len(page)
+pack_count = sum(1 for item in files('promptstyler_next').joinpath('packs').iterdir() if item.name.endswith('.json'))
+print(json.dumps({'styles': len(styles), 'packs': pack_count, 'profiles':len(engine.profiles()), 'fingerprint':result.catalog_fingerprint}))
 """
         env = {key: value for key, value in os.environ.items() if key not in {"PYTHONPATH", "PYTHONHOME"}}
         subprocess.run([str(executable), "-I", "-c", code], cwd=root, env=env, check=True)

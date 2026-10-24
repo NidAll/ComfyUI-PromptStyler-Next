@@ -1,0 +1,1004 @@
+{
+  "schema_version": 1,
+  "id": "community.next.symbolism-metaphysical",
+  "version": "1.0.0",
+  "name": "Symbolism and Metaphysical Art",
+  "description": "Metaphysical space, allegory, symbolic art and poetic geometries.",
+  "license": "CC0-1.0",
+  "author": "NidAll / original community pack",
+  "styles": [
+    {
+      "id": "metaphysical.empty-metaphysical-plaza",
+      "name": "Metaphysical Plaza",
+      "description": "Silent classical geometry with extended shadows and unusual spatial isolation.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "metaphysical",
+        "plaza",
+        "architecture",
+        "stillness"
+      ],
+      "claims": {
+        "medium": "metaphysical.empty-metaphysical-plaza"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the scene through early metaphysical-painting spatial stillness",
+          "tags": [
+            "metaphysical painted plaza"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange familiar architecture in unusually empty and geometrically balanced perspective",
+          "tags": [
+            "empty classical plaza perspective"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Cast extraordinarily long but coherent late-day shadows across broad planes",
+          "tags": [
+            "long metaphysical painted shadows"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Maintain a composed sense of expectation without supplying a hidden event",
+          "tags": [
+            "quiet philosophical unease"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.allegorical-portrait",
+      "name": "Allegorical Portrait",
+      "description": "Figural or object portraits with subdued symbolism and ceremonial visual hierarchy.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "allegory",
+        "portrait",
+        "symbolism",
+        "painting"
+      ],
+      "claims": {
+        "medium": "metaphysical.allegorical-portrait",
+        "palette": "metaphysical.allegorical-portrait",
+        "texture": "metaphysical.allegorical-portrait"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the given subject as an allegorical tempera-and-oil portrait treatment",
+          "tags": [
+            "symbolist allegorical portrait"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Place the subject centrally with contemplative empty margins and simple repeated curves",
+          "tags": [
+            "ritualized portrait framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Choose muted cinnabar, old-gold and smoky indigo rather than luminous primaries",
+          "tags": [
+            "symbolist muted jewel pigments"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use fine painterly glazing and visible brush transitions along contours",
+          "tags": [
+            "tempera oil glazed surface"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.oneiric-columns",
+      "name": "Oneiric Colonnade",
+      "description": "Classical verticals and solemn unreal space with measured, apparently rational geometry.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "columns",
+        "architecture",
+        "dream",
+        "metaphysical"
+      ],
+      "claims": {
+        "medium": "metaphysical.oneiric-columns",
+        "texture": "metaphysical.oneiric-columns"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the original scene as an architectural metaphysical canvas",
+          "tags": [
+            "dreamlike metaphysical colonnade"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Repeat austere columnlike vertical intervals with quietly unresolved depth",
+          "tags": [
+            "receding metaphysical colonnade"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let flat sunlit geometry contrast with unexpectedly deep interior passages",
+          "tags": [
+            "solemn bright architectural shadows"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Render forms with dry oil paint and slightly chalky plaster color",
+          "tags": [
+            "matte metaphysical oil paint"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.silent-statuary",
+      "name": "Silent Statuary",
+      "description": "Sculptural imagery detached from ordinary time with calm museumlike presentation.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "statuary",
+        "marble",
+        "symbolist",
+        "still"
+      ],
+      "claims": {
+        "medium": "metaphysical.silent-statuary",
+        "texture": "metaphysical.silent-statuary"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Convert the existing subject into a softly painted sculptural allegory",
+          "tags": [
+            "symbolist sculptural painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Isolate the primary shape within large measured intervals of empty space",
+          "tags": [
+            "isolated sculptural composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use high oblique daylight to emphasize patient stone relief",
+          "tags": [
+            "oblique gallery marble light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Convey polished and weathered marble with restrained material transitions",
+          "tags": [
+            "painted marble sculptural texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.symbolic-garden",
+      "name": "Garden of Signs",
+      "description": "Ornamental botanical language with an allegorical sense of order and seasonal symbolism.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "garden",
+        "allegory",
+        "ornament",
+        "painting"
+      ],
+      "claims": {
+        "medium": "metaphysical.symbolic-garden",
+        "palette": "metaphysical.symbolic-garden",
+        "texture": "metaphysical.symbolic-garden"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Compose the given subject as a symbolist garden painting with decorative plant rhythms",
+          "tags": [
+            "allegorical garden painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use repeated botanical arc patterns around the original focal forms",
+          "tags": [
+            "symbolic botanical frame"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Favor twilight greens, tarnished golds and translucent burgundy hues",
+          "tags": [
+            "mystic garden jewel palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Lay down matte mineral pigments with small translucent oil glazes",
+          "tags": [
+            "mineral pigment garden canvas"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.stillness-and-chimney",
+      "name": "Industrial Solitude",
+      "description": "Dreamlike industrial geometry, isolated structures and heavy contemplative horizons.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "industrial",
+        "solitude",
+        "metaphysical",
+        "painting"
+      ],
+      "claims": {
+        "medium": "metaphysical.stillness-and-chimney"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Reframe the existing environment as a metaphysical industrial landscape painting",
+          "tags": [
+            "metaphysical industrial oil painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Separate large utilitarian shapes using improbable stretches of empty horizontal ground",
+          "tags": [
+            "empty industrial geometric vista"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use late-afternoon sunshine with narrow vertical shadow bands",
+          "tags": [
+            "long shadows industrial plaza"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Hold a detached melancholic silence without implying a specific narrative",
+          "tags": [
+            "isolated industrial melancholy"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.gilded-sleep",
+      "name": "Gilded Reverie",
+      "description": "Symbolist dream-painting textures with luminous metallic accents and restful forms.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "dream",
+        "symbolism",
+        "gilding",
+        "canvas"
+      ],
+      "claims": {
+        "medium": "metaphysical.gilded-sleep",
+        "palette": "metaphysical.gilded-sleep",
+        "texture": "metaphysical.gilded-sleep"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the scene as a symbolist dream painting with patient decorative edges",
+          "tags": [
+            "gilded symbolist reverie painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use slow ornamental curves and a gently asymmetric resting focal arrangement",
+          "tags": [
+            "gentle ornamental dream composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Hold faded copper-gold accents against dusty mauve and moss-green fields",
+          "tags": [
+            "gilded symbolist muted palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Allow gold-leaf flecks to interrupt velvety painted passages in small areas",
+          "tags": [
+            "gold fleck canvas texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.theatre-of-objects",
+      "name": "Theatre of Objects",
+      "description": "Stage-like grouping of existing forms and philosophical decorative restraint.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "allegory",
+        "theatre",
+        "object",
+        "composition"
+      ],
+      "claims": {
+        "medium": "metaphysical.theatre-of-objects",
+        "texture": "metaphysical.theatre-of-objects"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Set the supplied subject into a restrained theatrical allegory painting",
+          "tags": [
+            "symbolic stage still life painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange existing forms like actors on a shallow stage against a calm backdrop",
+          "tags": [
+            "shallow theatrical symbolic space"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Illuminate each primary plane with a measured warm oblique key",
+          "tags": [
+            "stage allegory warm light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use thin oil glaze on a subtly textured canvas support",
+          "tags": [
+            "thin glazed allegorical canvas"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.mirror-of-forms",
+      "name": "Mirror of Forms",
+      "description": "Balanced duality and echoing compositional forms with restrained reflective motifs.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "duality",
+        "mirror",
+        "balance",
+        "symbolism"
+      ],
+      "claims": {
+        "medium": "metaphysical.mirror-of-forms",
+        "palette": "metaphysical.mirror-of-forms"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the image as an allegorical study of mirrored visual relationships",
+          "tags": [
+            "symbolic duality painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Echo existing shapes across an imperfect central axis without adding new figures",
+          "tags": [
+            "near symmetrical form echo"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep a soft steel-gray and muted gold dialogue in broad painted masses",
+          "tags": [
+            "muted steel and gold symbolism"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Suggest contemplation and separation through measured visual distance",
+          "tags": [
+            "philosophical mirrored stillness"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.antique-city-dusk",
+      "name": "Antique City at Dusk",
+      "description": "Metaphysical old-city atmosphere with deep arcades and unhurried geometric shadows.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "oldcity",
+        "dusk",
+        "metaphysical",
+        "architecture"
+      ],
+      "claims": {
+        "medium": "metaphysical.antique-city-dusk",
+        "palette": "metaphysical.antique-city-dusk"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the subject in a carefully modeled metaphysical cityscape painting",
+          "tags": [
+            "metaphysical old city oil painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use an architectural corridor of arcades and blank walls to emphasize emptiness",
+          "tags": [
+            "quiet arcaded urban perspective"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Mix sunset ochre with dusty turquoise and aged-stone neutrals",
+          "tags": [
+            "ochre turquoise metaphysical dusk"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "lighting",
+          "text": "Cast extended evening silhouettes across otherwise empty paving",
+          "tags": [
+            "stretched dusk arcade shadows"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.symbolic-water",
+      "name": "Symbolic Water Surface",
+      "description": "Still water and doubled forms treated as a restrained allegorical surface.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "water",
+        "reflection",
+        "allegory",
+        "stillness"
+      ],
+      "claims": {
+        "medium": "metaphysical.symbolic-water",
+        "texture": "metaphysical.symbolic-water"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the scene into an allegorical still-water oil painting",
+          "tags": [
+            "symbolist reflective water painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use a stable horizon or waterline to divide real and reflected subject forms",
+          "tags": [
+            "balanced water reflection symmetry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let narrow illumination traces travel slowly across a mostly quiet reflective plane",
+          "tags": [
+            "restrained reflective water light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Paint small opaque ripple marks within otherwise smoothly glazed water areas",
+          "tags": [
+            "glazed oil water ripples"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.symbolic-absence",
+      "name": "Symbol of Absence",
+      "description": "Reduced symbolic composition with conspicuous open spaces and low-event atmosphere.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "absence",
+        "minimal",
+        "symbolism",
+        "negative-space"
+      ],
+      "claims": {
+        "medium": "metaphysical.symbolic-absence",
+        "palette": "metaphysical.symbolic-absence",
+        "texture": "metaphysical.symbolic-absence"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the subject as a minimal symbolist painting about absence",
+          "tags": [
+            "minimal allegory painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Place one recognizable original form in wide intentional empty painted space",
+          "tags": [
+            "symbolic negative space composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Work in weathered ivory, quiet umber and a restrained cold-blue countertone",
+          "tags": [
+            "quiet muted symbolist colors"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use dry scumbled pigment to make the negative space visibly worked by hand",
+          "tags": [
+            "subtle scumbled painterly ground"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.ornamental-myth",
+      "name": "Ornamental Myth",
+      "description": "Mythic atmosphere through formal decoration and archetypal spacing without named characters.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "myth",
+        "archetype",
+        "ornament",
+        "symbolic"
+      ],
+      "claims": {
+        "medium": "metaphysical.ornamental-myth",
+        "palette": "metaphysical.ornamental-myth",
+        "texture": "metaphysical.ornamental-myth"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the original subject with decoratively structured mythic-symbolist painting",
+          "tags": [
+            "symbolist mythic ornament painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use repeated ornamental bands to frame the subject in ceremonial visual tiers",
+          "tags": [
+            "archetypal ornamental visual tiers"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Combine antique gold, muted jade and deep wine-colored accent regions",
+          "tags": [
+            "decorative myth painting palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Emphasize finely brushed patterns and thin mineral-pigment outlines",
+          "tags": [
+            "fine symbolist ornamental brushwork"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.nocturnal-arch",
+      "name": "Nocturnal Archway",
+      "description": "Quiet geometric nocturne with dark architectural framing and small distant luminance.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "arch",
+        "nocturne",
+        "architecture",
+        "symbolism"
+      ],
+      "claims": {
+        "medium": "metaphysical.nocturnal-arch"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Turn the subject into an architectural symbolist nocturne painted with muted oils",
+          "tags": [
+            "nocturnal architectural symbolism"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Enclose the visible focal area within a broad archlike dark framing mass",
+          "tags": [
+            "framed nocturnal arch perspective"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep small pale pools of distant light beyond substantial shadow",
+          "tags": [
+            "distant nocturne pale light"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Maintain meditative uncertainty and architectural silence",
+          "tags": [
+            "quiet nocturnal metaphysical mood"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.marble-and-cloud",
+      "name": "Marble and Cloud",
+      "description": "Sculptural weight juxtaposed with broad atmospheric softness in symbolic painting.",
+      "category": "symbolism-metaphysical/looks",
+      "kind": "style",
+      "tags": [
+        "marble",
+        "cloud",
+        "poetic",
+        "allegory"
+      ],
+      "claims": {
+        "medium": "metaphysical.marble-and-cloud",
+        "texture": "metaphysical.marble-and-cloud"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Paint the existing subject as a poetic allegory of mass and atmosphere",
+          "tags": [
+            "marble cloud allegory painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Balance weighty lower forms against spacious lifted upper tonal fields",
+          "tags": [
+            "heavy light symbolic balance"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Model hard edges with soft high atmospheric illumination",
+          "tags": [
+            "soft light on sculptural stone"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Contrast brush-smooth atmospheric gradients with granular mineral pigment on solids",
+          "tags": [
+            "granular stone atmospheric glaze"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.faded-ochre",
+      "name": "Faded Ochre",
+      "description": "Old paint yellow-ochre warmth with stable shadow neutrals.",
+      "category": "symbolism-metaphysical/grades",
+      "kind": "grade",
+      "tags": [
+        "ochre",
+        "oldpaint",
+        "grade",
+        "pigment"
+      ],
+      "claims": {
+        "palette": "metaphysical.faded-ochre"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Move broad midtones toward weathered yellow ochre and parchment cream",
+          "tags": [
+            "ochre aged oil paint colors"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Allow faint chalky mineral-pigment breakup on the brighter color masses",
+          "tags": [
+            "matte pigment chalk breakup"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.jade-wine",
+      "name": "Jade and Wine",
+      "description": "Muted cool green balanced against deep burgundy and antique brass.",
+      "category": "symbolism-metaphysical/grades",
+      "kind": "grade",
+      "tags": [
+        "jade",
+        "wine",
+        "jewel",
+        "grade"
+      ],
+      "claims": {
+        "palette": "metaphysical.jade-wine"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Balance tarnished jade greens against subdued wine-red and small brass-colored accents",
+          "tags": [
+            "jade burgundy symbolist palette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep highlights warm but controlled to avoid metallic overstatement",
+          "tags": [
+            "restrained antique highlight balance"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.twilight-stone",
+      "name": "Twilight Stone",
+      "description": "Muted stone, ash-blue and gentle violet dusk without obvious neon color.",
+      "category": "symbolism-metaphysical/grades",
+      "kind": "grade",
+      "tags": [
+        "twilight",
+        "stone",
+        "ash",
+        "grade"
+      ],
+      "claims": {
+        "palette": "metaphysical.twilight-stone"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Bring weathered stone neutrals toward ash blue and distant violet-gray",
+          "tags": [
+            "twilight stone gray blue palette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Favor soft horizontal twilight illumination over harsh directional shadows",
+          "tags": [
+            "gently receding dusk light"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.long-shadow",
+      "name": "Long Metaphysical Shadow",
+      "description": "Elongated geometrically readable shadows for allegorical atmospheres.",
+      "category": "symbolism-metaphysical/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "shadow",
+        "allegory",
+        "modifier",
+        "light"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "lighting",
+          "text": "Stretch cast shadows into deliberate long geometric forms while retaining a credible light direction",
+          "tags": [
+            "long painted metaphysical shadows"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Give the extended shadow enough visual space to register clearly",
+          "tags": [
+            "shadow as composition shape"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "metaphysical.symbolic-pause",
+      "name": "Symbolic Pause",
+      "description": "Calm emotional suspension conveyed by negative space and measured detail.",
+      "category": "symbolism-metaphysical/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "stillness",
+        "emotion",
+        "modifier",
+        "space"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "mood",
+          "text": "Create a ceremonial moment of suspension without adding any narrative actor",
+          "tags": [
+            "symbolic contemplative pause"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Leave an intentional breathing interval around the existing subject",
+          "tags": [
+            "wide allegorical breathing room"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}

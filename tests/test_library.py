@@ -14,21 +14,31 @@ def library_engine():
     return Engine.builtin()
 
 
+def all_styles(engine, **filters):
+    result = []
+    offset = 0
+    while True:
+        page = engine.list_styles(**filters, limit=1000, offset=offset)
+        result.extend(page)
+        if len(page) < 1000:
+            return result
+        offset += len(page)
+
+
 def test_library_has_distinct_identities_and_meaningful_growth(library_engine):
-    styles = library_engine.list_styles(limit=1000)
-    assert len(styles) > 800
+    styles = all_styles(library_engine)
+    assert len(styles) == 1132
     for key in ("id", "name", "description"):
         counts = Counter(style[key] for style in styles)
         assert not [value for value, count in counts.items() if count > 1], key
     primary_texts = [library_engine.get_style(style["id"])["clauses"][0]["text"] for style in styles]
     assert len(primary_texts) == len(set(primary_texts))
-    assert Counter(style["kind"] for style in styles)["grade"] == 24
-    assert Counter(style["kind"] for style in styles)["modifier"] == 24
+    assert Counter(style["kind"] for style in styles) == {"style": 1009, "grade": 69, "modifier": 54}
 
 
 def test_library_clauses_have_progressive_authored_detail(library_engine):
     forbidden = ("masterpiece", "best quality", "ultra detailed", "award winning", "8k", "16k")
-    for metadata in library_engine.list_styles(limit=1000):
+    for metadata in all_styles(library_engine):
         style = library_engine.get_style(metadata["id"])
         clauses = style["clauses"]
         assert len(clauses) >= 2, style["id"]
@@ -83,7 +93,7 @@ def test_profile_capabilities_are_explicit(library_engine):
 )
 def test_every_eligible_style_composes_without_losing_the_subject(library_engine, model):
     prompt = 'A blue ceramic teapot with the exact lettering "TEA 7"\non a plain shelf'
-    for style in library_engine.list_styles(model=model, limit=1000):
+    for style in all_styles(library_engine, model=model):
         result = library_engine.compose({"prompt": prompt, "model": model, "styles": [{"id": style["id"]}]})
         if model == "fibo":
             assert json.loads(result.positive)["short_description"] == prompt
@@ -95,7 +105,7 @@ def test_every_eligible_style_composes_without_losing_the_subject(library_engine
 
 def test_photographic_packs_do_not_claim_anima_realism(library_engine):
     for model in ("anima", "anima-turbo"):
-        styles = library_engine.list_styles(model=model, limit=1000)
+        styles = all_styles(library_engine, model=model)
         assert not any(style["id"].startswith(("photo.", "documentary.")) for style in styles)
         assert any(style["id"] == "cinema.noir" for style in styles)
     noir = library_engine.get_style("cinema.noir")
@@ -157,7 +167,7 @@ def test_full_looks_cannot_silently_keep_incompatible_materials(library_engine):
 def test_builtin_hard_palette_constraints_have_their_own_axis(library_engine):
     import re
 
-    for style in library_engine.list_styles(limit=1000):
+    for style in all_styles(library_engine):
         for clause in style["clauses"]:
             if re.search(r"\b(monochrome|black[- ]and[- ]white|grayscale|greyscale)\b", clause["text"], re.I):
                 assert clause["axis"] == "palette", (style["id"], clause)

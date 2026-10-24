@@ -1,23 +1,23 @@
 # Validation and release status
 
-Version 0.1.0 was implemented and validated on 2026-10-24 as an independent local
-repository. Source, templates and documentation are prepared for review and
-publication. No remote repository, tag, package index or registry release was
-published by this work.
+Version 0.2.0 is maintained in the private GitHub repository
+`NidAll/ComfyUI-PromptStyler-Next`. The style inventory expansion below adds
+bundled data to the existing engine; it does not create a package-index release
+or version tag.
 
 ## Validated behavior
 
 | Check | Result and scope |
 | --- | --- |
 | Standalone Python 3.14 | 157 tests passed, including property-based Unicode/recipe tests and real HTTP tests |
-| Installed ComfyUI Python 3.12 | 180 tests passed; the optional Hypothesis module is absent in the host environment and skipped there, but passed in the isolated development environment |
+| Installed ComfyUI Python 3.12 | 183 tests passed, 1 skipped; the optional Hypothesis module is absent in the host environment but passed in the isolated development environment |
 | Runtime coverage | 93% including branches; engine composition 99% |
 | ComfyUI V3 host contract | 26 tests passed: actual schemas, registration, real prompt validation, native text previews and explicitly doubled encoder delegation |
 | Live ComfyUI API | Isolated CPU server registered all three nodes and successfully executed the bundled text-only graph through `/prompt` and `/history`; no image models loaded |
 | Node transport | 12 tests passed, including a real Python sidecar, HTTP bridge, typed-client behavior, raw duplicate-key rejection, errors and limits |
 | Actual Express / HEISS guard | Bridge mounted in Express 5 with HEISS's actual request guard; strict input, metadata preservation and foreign-origin rejection passed |
 | Static checks | Ruff lint/format and strict Mypy passed |
-| Library | 832 entries, 33 packs, 10 profiles; schema/ID/provenance checks, all eligible style/profile compositions, staged intensity and intent-preservation checks passed |
+| Library | 1,132 entries, 48 packs, 11 profiles; schema/ID/provenance checks, all eligible style/profile compositions, staged intensity and intent-preservation checks passed |
 | Packaging | Wheel/source archive inspections and clean installed-wheel smoke outside the checkout passed; checksums accompany artifacts |
 
 The property tests cover arbitrary valid Unicode, finite intensities, recipe
@@ -30,6 +30,16 @@ stock quality boosters, unsupported model references and hard palette constraint
 outside the palette axis. Concrete library regressions verify that a color grade
 replaces noir's monochrome requirement and that incompatible material looks cannot
 silently keep both rendering processes.
+
+## Expanded style inventory
+
+The original validated catalog had 832 entries in 33 packs. Fifteen authored
+CC0-1.0 packs were promoted into the built-in library, adding 300 entries
+(225 styles, 45 grades and 30 modifiers). The current inventory is 1,132 entries
+across 48 packs. All 15 packs pass strict JSON pack loading with the built-in
+catalog, without duplicate pack, style ID or title collisions. The full existing
+test suite and distribution checks were rerun for the expanded inventory on
+2026-10-24.
 
 ## Browser acceptance
 
@@ -67,10 +77,10 @@ panel were not exercised. HEISS requires the explicit guarded source mount and a
 host UI hook documented in the integration guide.
 
 CI workflows are configured for Python 3.11–3.14, Node and a pinned ComfyUI CPU
-contract job. Hosted CI has not run because this repository has not been pushed.
-Publication should follow those hosted results and any image-quality acceptance
-the maintainer wants to claim. Existing PromptStyler, user services, models and
-host dependencies were preserved; temporary validation services were stopped.
+contract job. Hosted workflow status is separate from the local validation above.
+This source update creates no tag or package-index release and makes no
+image-quality claim. Existing PromptStyler, user services, models and host
+dependencies are preserved.
 
 ## Studio integration 0.2.0
 
@@ -79,7 +89,9 @@ with 93% combined statement/branch coverage. All 27 actual-host node tests and 1
 JavaScript transport/generation/lifecycle tests passed. Ruff checks/format and strict
 core mypy passed. The node module is verified in its real host rather than imported
 through standalone mypy. Wheel and source checks include an outside-checkout
-dependency-free wheel installation. Catalog: 832 styles, 33 packs, 11 profiles.
+dependency-free wheel installation. The catalog at that integration acceptance
+snapshot contained 832 entries in 33 packs and 11 profiles; the expanded 48-pack
+inventory is validated above and uses the same shared `Engine.builtin()` path.
 
 An isolated copy of the installed HEISS release passed browser search, selection,
 preview and Generate recipe capture; selection survives lazy gallery loading and a

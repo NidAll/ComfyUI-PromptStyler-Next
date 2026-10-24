@@ -1,0 +1,1010 @@
+{
+  "schema_version": 1,
+  "id": "community.next.occult-esoteric",
+  "version": "1.0.0",
+  "name": "Occult and Esoteric",
+  "description": "Esoteric illustration, symbolic design, historical print techniques and ritual atmosphere.",
+  "license": "CC0-1.0",
+  "author": "NidAll / original community pack",
+  "styles": [
+    {
+      "id": "esoteric.alchemical-engraving",
+      "name": "Alchemical Engraving",
+      "description": "Historic intaglio-style symbolic illustration with measured geometry and aged ink.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "alchemy",
+        "engraving",
+        "historical",
+        "symbolic"
+      ],
+      "claims": {
+        "medium": "esoteric.alchemical-engraving",
+        "palette": "esoteric.alchemical-engraving",
+        "texture": "esoteric.alchemical-engraving"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the given subject as a historical alchemical copperplate engraving",
+          "tags": [
+            "alchemical copperplate engraving"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use concentric structural geometry and reserved spaces for intentional user-supplied marks",
+          "tags": [
+            "hermetic engraving geometry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Favor soot-black linework on warm ivory paper with restrained mineral-red accents",
+          "tags": [
+            "alchemical parchment ink palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Draw shaded forms through fine directional burin cuts and crosshatching",
+          "tags": [
+            "engraved burin hatch texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.tarot-woodcut",
+      "name": "Tarot Woodcut",
+      "description": "Archetypal divinatory print language with expressive silhouettes and carved black.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "tarot",
+        "woodcut",
+        "archetype",
+        "print"
+      ],
+      "claims": {
+        "medium": "esoteric.tarot-woodcut",
+        "palette": "esoteric.tarot-woodcut",
+        "texture": "esoteric.tarot-woodcut"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the supplied subject into a handmade divinatory woodcut card illustration",
+          "tags": [
+            "tarot inspired woodcut art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Create a strongly bordered central tableau with geometric emblematic spacing",
+          "tags": [
+            "framed divination card layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Limit the print to dark ink, pale linen stock and one oxidized-gold accent",
+          "tags": [
+            "woodcut tarot limited colors"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep knife-cut woodgrain grooves and uneven hand-pressed ink",
+          "tags": [
+            "rough woodblock print texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.celestial-grimoire",
+      "name": "Celestial Grimoire",
+      "description": "Manuscript marginalia inspired by astronomical diagrams and careful hand illumination.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "grimoire",
+        "celestial",
+        "manuscript",
+        "stars"
+      ],
+      "claims": {
+        "medium": "esoteric.celestial-grimoire",
+        "texture": "esoteric.celestial-grimoire"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Draw the image as an illuminated celestial manuscript study",
+          "tags": [
+            "celestial grimoire illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Place the existing subject within balanced circular measurement guides and outer manuscript margins",
+          "tags": [
+            "astral manuscript compass layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use delicate metallic pigment glints rather than actual glowing effects",
+          "tags": [
+            "gold ink manuscript shimmer"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Expose vellum pores, fine quill strokes and layered mineral pigments",
+          "tags": [
+            "vellum and quill diagram texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.hermetic-geometer",
+      "name": "Hermetic Geometer",
+      "description": "Precise symbolic geometry and proportional systems on quiet archival stock.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "hermetic",
+        "sacredgeometry",
+        "diagram",
+        "precision"
+      ],
+      "claims": {
+        "medium": "esoteric.hermetic-geometer",
+        "palette": "esoteric.hermetic-geometer",
+        "texture": "esoteric.hermetic-geometer"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Convert the subject into a restrained hermetic geometric study",
+          "tags": [
+            "esoteric proportional diagram"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use centered circles, inscribed polygons and deliberately clear diagram relationships",
+          "tags": [
+            "precise overlapping sacred geometry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Keep antique ink brown, slate blue and parchment-white in balanced proportions",
+          "tags": [
+            "antique geometry chart colors"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Preserve pencil construction lines beneath decisive drawn outlines",
+          "tags": [
+            "construction geometry pencil traces"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.ritual-still-life",
+      "name": "Ritual Still Life",
+      "description": "A devotional still-life atmosphere conveyed through existing objects and candlelike illumination.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "ritual",
+        "stilllife",
+        "candle",
+        "devotional"
+      ],
+      "claims": {
+        "medium": "esoteric.ritual-still-life"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the existing subject as a contemplative ritual still-life painting",
+          "tags": [
+            "ritual still life painting"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Group the supplied objects in a stable triangular arrangement with solemn breathing room",
+          "tags": [
+            "ceremonial triangular composition"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Illuminate forms from a low warm source with deep but detailed background shadow",
+          "tags": [
+            "candlelit chiaroscuro still life"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "mood",
+          "text": "Hold quiet intentionality without adding unspecified symbols or ceremonial participants",
+          "tags": [
+            "solemn ritual atmosphere"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.moonlit-herbarium",
+      "name": "Moonlit Herbarium",
+      "description": "Botanical observation interpreted through nocturnal esoteric manuscript color and line.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "botanical",
+        "moonlight",
+        "herbarium",
+        "esoteric"
+      ],
+      "claims": {
+        "medium": "esoteric.moonlit-herbarium",
+        "palette": "esoteric.moonlit-herbarium",
+        "texture": "esoteric.moonlit-herbarium"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the given subject as a hand-painted nocturnal herbarium plate",
+          "tags": [
+            "moonlit herbarium illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Organize the form like a careful naturalist specimen study with ample annotations-safe margins",
+          "tags": [
+            "herbalist specimen page"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Favor deep midnight blue and silvered sage on aged cream paper",
+          "tags": [
+            "midnight botanical manuscript colors"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use fine stippling, translucent plantlike washes and deckled-paper fibers",
+          "tags": [
+            "stippled botanical vellum"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.oracle-silk-screen",
+      "name": "Oracle Screen Print",
+      "description": "Contemporary symbolic screen printing with large shapes and deliberate overlay registration.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "oracle",
+        "silkscreen",
+        "modern",
+        "symbolic"
+      ],
+      "claims": {
+        "medium": "esoteric.oracle-silk-screen",
+        "palette": "esoteric.oracle-silk-screen",
+        "texture": "esoteric.oracle-silk-screen"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Render the original subject as a modern esoteric screen-printed poster",
+          "tags": [
+            "contemporary oracle screenprint"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use a single central emblematic silhouette with generous layered circular framing",
+          "tags": [
+            "central symbolic screenprint layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Use two dense spot-color inks with a muted metallic accent",
+          "tags": [
+            "two ink oracle color palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Keep slightly rough screen mesh and transparent overprint intersections",
+          "tags": [
+            "screenprint overprint texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.astrolabe-studies",
+      "name": "Astrolabe Studies",
+      "description": "Technical astronomical-instrument illustration with highly readable metalwork and geometry.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "astrolabe",
+        "astronomy",
+        "instrument",
+        "diagram"
+      ],
+      "claims": {
+        "medium": "esoteric.astrolabe-studies",
+        "texture": "esoteric.astrolabe-studies"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the supplied form as an antique astronomical instrument study",
+          "tags": [
+            "antique astrolabe illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use radial calibrated divisions and centered circular precision drawing",
+          "tags": [
+            "radial antique astronomy geometry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Catch small warm highlights on engraving-like metal contours",
+          "tags": [
+            "brass measurement instrument lighting"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use tiny etched graduations and oxidized metallic surface wear",
+          "tags": [
+            "engraved astrolabe brass texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.mystic-tapestry",
+      "name": "Mystic Tapestry",
+      "description": "Symbolic woven textile direction with border rhythm and dense flat motifs.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "tapestry",
+        "weaving",
+        "symbolism",
+        "folk"
+      ],
+      "claims": {
+        "medium": "esoteric.mystic-tapestry",
+        "palette": "esoteric.mystic-tapestry",
+        "texture": "esoteric.mystic-tapestry"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Translate the supplied subject into a woven symbolic wall tapestry",
+          "tags": [
+            "esoteric woven tapestry design"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Repeat bounded ornamental border geometry around a readable center",
+          "tags": [
+            "symbolic border textile layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Select madder red, aged indigo and muted ochre wool tones",
+          "tags": [
+            "antique symbolic textile palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Show thick wool weft intersections and slight uneven loom tension",
+          "tags": [
+            "hand woven wool textile detail"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.mystery-playbackdrop",
+      "name": "Mystery Play Backdrop",
+      "description": "Theatrical sacred-drama staging without directly depicting any named religion or rite.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "theatre",
+        "mystery",
+        "backdrop",
+        "historical"
+      ],
+      "claims": {
+        "medium": "esoteric.mystery-playbackdrop",
+        "texture": "esoteric.mystery-playbackdrop"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Give the scene the hand-painted visual language of a historical mystery-play backdrop",
+          "tags": [
+            "historical mystery play scenography"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use symmetrical scenic flats and a dignified shallow stage perspective",
+          "tags": [
+            "ceremonial theatrical stage symmetry"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Cast broad sidelight across layered painted canvas scenery",
+          "tags": [
+            "stage side lantern illumination"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Expose brushy scenic flats and aged stage cloth seams",
+          "tags": [
+            "painted theatre backdrop canvas"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.midnight-illuminated",
+      "name": "Midnight Illumination",
+      "description": "Nocturnal gold-leaf manuscript detail placed on dark vellum-like surfaces.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "illumination",
+        "goldleaf",
+        "nocturnal",
+        "manuscript"
+      ],
+      "claims": {
+        "medium": "esoteric.midnight-illuminated",
+        "texture": "esoteric.midnight-illuminated"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Recast the image as a richly illuminated manuscript panel on dark prepared vellum",
+          "tags": [
+            "dark illuminated manuscript image"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Set balanced rectangular ornamental framing around the supplied subject",
+          "tags": [
+            "dark manuscript illuminated border"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Use tiny directional metallic glints on leaf-work accents",
+          "tags": [
+            "gold leaf minute light glints"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Retain raised gilded edges and precise fine-brush ornament on porous ground",
+          "tags": [
+            "gilded vellum ornamental detail"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.symbolic-linocut",
+      "name": "Symbolic Linocut",
+      "description": "Minimal occult-themed linocut visual language emphasizing archetypal arrangement.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "linocut",
+        "archetype",
+        "print",
+        "symbolic"
+      ],
+      "claims": {
+        "medium": "esoteric.symbolic-linocut",
+        "palette": "esoteric.symbolic-linocut",
+        "texture": "esoteric.symbolic-linocut"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Treat the given subject as an original symbolic linoleum-block print",
+          "tags": [
+            "symbolic linocut illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Simplify forms into large interlocking shapes with a balanced symbolic hierarchy",
+          "tags": [
+            "archetypal block print shapes"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Contrast midnight-black ink with a small bone-white and amber field",
+          "tags": [
+            "linocut occult limited palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Allow imperfect gouge lines and printed raised-edge ink drag",
+          "tags": [
+            "linocut gouge and ink streaks"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.astral-plate",
+      "name": "Astral Reference Plate",
+      "description": "A measured catalog-style presentation of celestial symbolism without fabricated lettering.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "astral",
+        "chart",
+        "reference",
+        "celestial"
+      ],
+      "claims": {
+        "medium": "esoteric.astral-plate",
+        "palette": "esoteric.astral-plate",
+        "texture": "esoteric.astral-plate"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Draw the scene as an antique astral reference engraving plate",
+          "tags": [
+            "engraved astral reference art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Use measured orbital circles and a clear hierarchy of repeated inset diagrams",
+          "tags": [
+            "astronomical orbit plate layout"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Combine faded indigo and sepia-brown on ivory chart stock",
+          "tags": [
+            "antique astral print palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use extremely fine stippled line shading and restrained printer irregularity",
+          "tags": [
+            "astronomical chart engraved dots"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.rune-stone-study",
+      "name": "Carved Sign Stone",
+      "description": "Original geometric mark-making carved into weathered mineral surfaces, without invented words.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "stone",
+        "mark",
+        "carving",
+        "ancient"
+      ],
+      "claims": {
+        "medium": "esoteric.rune-stone-study",
+        "texture": "esoteric.rune-stone-study"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Present the supplied subject as a careful study of symbolic incisions in stone",
+          "tags": [
+            "ancient sign stone relief art"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Center the existing surface or object with measured side margins",
+          "tags": [
+            "stone inscription specimen framing"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "lighting",
+          "text": "Let grazing daylight reveal the depth of incised and raised areas",
+          "tags": [
+            "raking stone carving sunlight"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Show chipped mineral grains and lichen-like patina only where visually plausible",
+          "tags": [
+            "weathered carved stone microtexture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.esoteric-art-nouveau",
+      "name": "Esoteric Nouveau",
+      "description": "Decorative linework and mystic compositional symmetry from turn-of-the-century poster traditions.",
+      "category": "occult-esoteric/looks",
+      "kind": "style",
+      "tags": [
+        "artnouveau",
+        "decorative",
+        "esoteric",
+        "poster"
+      ],
+      "claims": {
+        "medium": "esoteric.esoteric-art-nouveau",
+        "palette": "esoteric.esoteric-art-nouveau",
+        "texture": "esoteric.esoteric-art-nouveau"
+      },
+      "clauses": [
+        {
+          "axis": "medium",
+          "text": "Interpret the original subject through esoteric Art Nouveau print design",
+          "tags": [
+            "mystic art nouveau illustration"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Arrange sinuous framing lines in balanced nested ornamental curves",
+          "tags": [
+            "ornate sinuous poster frame"
+          ],
+          "min_intensity": 0.4
+        },
+        {
+          "axis": "palette",
+          "text": "Balance muted peacock green, cream and antique brass-gold accents",
+          "tags": [
+            "art nouveau peacock palette"
+          ],
+          "min_intensity": 0.75
+        },
+        {
+          "axis": "texture",
+          "text": "Use flat lithographic inks with slightly softened plate registration",
+          "tags": [
+            "vintage nouveau lithograph texture"
+          ],
+          "min_intensity": 0.92
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.aged-gold-ink",
+      "name": "Aged Gold and Ink",
+      "description": "Antique gold-color accents against deep neutral ink and pale paper.",
+      "category": "occult-esoteric/grades",
+      "kind": "grade",
+      "tags": [
+        "gold",
+        "ink",
+        "antique",
+        "grade"
+      ],
+      "claims": {
+        "palette": "esoteric.aged-gold-ink"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Set restrained ochre-gold highlights against deep brown-black ink and antique parchment",
+          "tags": [
+            "gold ochre manuscript grade"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "texture",
+          "text": "Add minute metallic pigment granulation at edge transitions",
+          "tags": [
+            "fine gilded ink granulation"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.moonstone-blue",
+      "name": "Moonstone Blue",
+      "description": "Cool mineral blues against luminous ivory with quiet shadow color.",
+      "category": "occult-esoteric/grades",
+      "kind": "grade",
+      "tags": [
+        "moonstone",
+        "blue",
+        "ivory",
+        "grade"
+      ],
+      "claims": {
+        "palette": "esoteric.moonstone-blue"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Use mineral blue-gray and subtle silver warmth over ivory-neutral grounds",
+          "tags": [
+            "moonstone midnight blue palette"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Keep luminous accents small and controlled as if reflecting moonlight",
+          "tags": [
+            "soft moonstone reflected illumination"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.candle-umber",
+      "name": "Candle Umber",
+      "description": "Dim candle-yellow highlights and rich dark umber midtones.",
+      "category": "occult-esoteric/grades",
+      "kind": "grade",
+      "tags": [
+        "candle",
+        "umber",
+        "sepia",
+        "grade"
+      ],
+      "claims": {
+        "palette": "esoteric.candle-umber"
+      },
+      "clauses": [
+        {
+          "axis": "palette",
+          "text": "Shift midtones to deep burnt umber while highlights retain sparse candle-yellow color",
+          "tags": [
+            "umber candlelit painting grade"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Let near-source forms emerge softly from dense warm shadow",
+          "tags": [
+            "warm shadow candle modeling"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.fine-compass-lines",
+      "name": "Fine Compass Lines",
+      "description": "Decorative circular construction lines that do not overwhelm the subject.",
+      "category": "occult-esoteric/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "compass",
+        "geometry",
+        "lines",
+        "modifier"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "detail",
+          "text": "Add exceptionally thin inscribed circular construction traces around existing geometry",
+          "tags": [
+            "subtle compass construction lines"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "composition",
+          "text": "Keep the subject clear inside sparse outer symbolic guides",
+          "tags": [
+            "clean center symbolic border"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    },
+    {
+      "id": "esoteric.paper-gilt",
+      "name": "Paper Gilt Edges",
+      "description": "A subtle raised gilding treatment along selected graphic borders.",
+      "category": "occult-esoteric/modifiers",
+      "kind": "modifier",
+      "tags": [
+        "gold",
+        "relief",
+        "ornament",
+        "modifier"
+      ],
+      "claims": {},
+      "clauses": [
+        {
+          "axis": "texture",
+          "text": "Give a few decorative outlines a lightly raised gilt-foil paper texture",
+          "tags": [
+            "raised gilded paper outlines"
+          ],
+          "min_intensity": 0.01
+        },
+        {
+          "axis": "lighting",
+          "text": "Place tiny specular glints only on those treated border edges",
+          "tags": [
+            "limited gold foil sparkle"
+          ],
+          "min_intensity": 0.4
+        }
+      ],
+      "negative": [],
+      "models": [],
+      "variants": {}
+    }
+  ]
+}
