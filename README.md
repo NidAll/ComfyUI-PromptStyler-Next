@@ -4,7 +4,7 @@ A modular creative styling platform for **ComfyUI**, **HEISS Studio**, and
 **standalone Python workflows**. Build a scene description, combine visual
 styles, and render the additions using the prompting convention of your model.
 
-**Version 0.4.1 · 1,164 library entries · 52 packs · 11 model profiles · 6 ComfyUI V3 nodes**
+**Version 0.4.1 + unreleased updates · 1,164 library entries · 52 packs · 11 model profiles · 6 ComfyUI V3 nodes**
 
 The shared deterministic engine runs offline on Python 3.11+ with **zero runtime
 dependencies**. Optional local MiniCPM and LFM3-VL models add base-prompt upscaling
@@ -28,14 +28,14 @@ This is an independent successor to
 | LLM metaprompt toolkit | Create, neutralize, describe, expand, edit, audit, and package reusable base prompts with seven copyable instructions |
 | ComfyUI nodes | Author bases, apply a single style, compose JSON recipes, and use compatible native conditioning |
 | Browser workbench | Search, filter, save favorites, combine styles, inspect results, and import/export recipes |
-| HEISS Studio module | Add a React composer panel, typed JS transport, managed Python service, and native workflow injection |
+| HEISS Studio module | Browse Looks/Color/Effects, save favorites and presets, restore recipes, and inject styling through a typed bridge and managed Python service |
 | Metadata recommendations | Find model-eligible entries using transparent word/tag overlap scores and matching reasons |
 | Extensibility | Load custom JSON packs and explicitly register trusted Python model profiles and adapters |
 | Validation and portability | Use typed immutable records, versioned JSON schemas, bounded input validation, stable errors, and independently usable Python/CLI/HTTP interfaces |
 
 ```mermaid
 flowchart LR
-    Idea[Text or reference image] --> Base[Base-prompt toolkit or local MiniCPM]
+    Idea[Text or reference image] --> Base[Base-prompt toolkit or local VLM]
     Base --> Engine[Shared styling engine]
     Existing[Existing base prompt] --> Engine
     Library[Styles + grades + modifiers] --> Engine
@@ -110,6 +110,7 @@ Ready-to-use examples:
 
 - [Visual text styling workflow](examples/comfyui-text-workflow.json) and [matching API graph](examples/comfyui-text-api.json): style and recipe examples with native text previews; no model required.
 - [Visual prompt upscaler workflow](examples/comfyui-upscaler-workflow.json) and [matching API graph](examples/comfyui-upscaler-api.json): MiniCPM → base prompt → Style → preview; connect Load Image for either image input mode.
+- [LFM3 MOSS Base graph](examples/comfyui-lfm3-moss_image_base-api.json) and [LFM3 Anima graph](examples/comfyui-lfm3-anima-api.json): complete scene rewriting through styling and native previews; require a separately prepared local artifact.
 - [Generated-caption API graph](examples/comfyui-generated-caption-api.json): feed generated text into Compose Recipe's connected prompt input.
 - [SDXL conditioning API example](examples/comfyui-sdxl-api.json): replace the checkpoint placeholder with an installed model before use.
 
@@ -129,13 +130,13 @@ Curated examples teach these authoring behaviors without training the model.
 Artistic direction stays with Style/Compose. See the [LFM3 guide](docs/lfm3-vl.md)
 for its separate artifact, offline setup and validation limits.
 
-The supported deployment is the self-contained artifact:
+The MiniCPM deployment uses this self-contained artifact:
 
 ```text
 ComfyUI/models/anima_prompt_architect/minicpm-v4.7-1b-heretic-int8-convrot.safetensors
 ```
 
-Its embedded tokenizer and processor assets are read locally. The runtime uses
+Its embedded tokenizer and processor assets are read locally. The MiniCPM runtime uses
 native ComfyUI model management, INT8 ConvRot projections, fused DeltaNet decoding,
 KV caching, greedy generation, disabled thinking, and token-based paragraph stops.
 ComfyUI caches the loader and unchanged results. Editing only the style can reuse
@@ -145,7 +146,8 @@ the accepted base without running the VLM again.
 | --- | --- | --- |
 | `detail_mode` | `expanded` | Add physical detail to text ideas, or select `faithful` for concise clarification; references stay grounded |
 | `max_new_tokens` | 192 | Bound output length; allowed range 32–2048 |
-| `image_slices` | 1 | Keep one for speed; up to four can help fine detail at a time/VRAM cost |
+| `image_slices` | 1 | MiniCPM: image slices, up to four. LFM3: each unit permits up to 512×512 processed pixels while retaining aspect ratio |
+| `target_model` | `moss_image_base` | LFM3 rewrite target: `moss_image_base` or `anima`; MiniCPM retains its semantic-base behavior |
 | `offload_after` | false | Retain native-managed residency for repeated edits, or immediately offload after each execution |
 
 Expanded mode can take longer than a short paraphrase. Latency varies with model
@@ -153,9 +155,9 @@ placement, input, output length and whether image grounding or repair is needed.
 See the [upscaler guide](docs/upscaler.md#measured-scope-and-limitations) for
 behavior and quality limits.
 
-The accelerated deployment requires a supported CUDA/Kitchen host and its
+The accelerated deployments require a supported CUDA/Kitchen host and its
 Transformers dependencies. The small VLM can miss facts or retain style language;
-preview the accepted base. Expanded text retains any style wording already present
+preview the accepted base. MiniCPM Expanded text retains any style wording already present
 in the input; use the toolkit to neutralize a styled prompt first. Inspection includes timings, settings, token counts,
 reference content, added-word counts, source-preservation status, and warnings. Changed quoted text and invalid output fail
 explicitly. The [upscaler guide](docs/upscaler.md) covers setup, measured limits,
@@ -268,6 +270,12 @@ The reusable HEISS integration supplies:
 | `studio/model-profile.mjs` | Explicit HEISS workflow metadata → engine profile mapping |
 | `studio/graph.mjs` | Insert Compose Recipe between a mapped prompt/caption and its native encoder |
 
+The responsive style browser offers Looks, Color, Effects, Saved and Presets.
+Search matches words across metadata and ignores accents. Favorites, named
+presets and per-workflow selections persist in browser storage and synchronize
+between tabs on the same origin. Replay helpers restore ordered strengths,
+protected axes, paused state and mixing controls.
+
 Fresh generation requests carry validated recipes; retry handling avoids applying
 styles repeatedly. Image-derived captions can be styled after caption generation.
 The reviewed local Studio integration supports Anima Image Clone, MOSS Flash/Detail,
@@ -276,7 +284,7 @@ and Fibo 2 Edit Turbo. Its model encoders and workflow controls remain native.
 HEISS requires an explicit server/panel integration; it has no general third-party
 style plugin loader. See [the HEISS integration guide](docs/studio.md) for mounting,
 request hooks, managed service configuration, and generation contracts. The optional
-MiniCPM authoring runtime is currently exposed through ComfyUI nodes.
+MiniCPM and experimental LFM3 authoring runtimes are exposed through ComfyUI nodes.
 
 ### HTTP interface
 
@@ -373,7 +381,8 @@ pack JSON cannot register Python code. Read [pack authoring](docs/packs.md),
 
 ```sh
 python -m pip install -e '.[dev]'
-python -m pytest
+python -m coverage run -m pytest --ignore=tests/test_comfy.py
+python -m coverage report --fail-under=85
 ruff check .
 ruff format --check .
 mypy
@@ -383,24 +392,27 @@ python -m build
 python scripts/check_distribution.py dist
 ```
 
-The recorded 0.4.0 acceptance includes **202 standalone Python tests**, **41 real
-ComfyUI host tests**, **3 tiny CUDA numerical checks**, and **18 Node/Studio tests**,
-with **93% core statement/branch coverage**. Real isolated ComfyUI queues exercised
-all upscaler input modes through styling, loader/result reuse, and native INT8/fused
-DeltaNet dispatch. Wheel/source comparisons and outside-checkout installation
-checks cover the packaged library.
+The current local checks pass **231 standalone Python tests**, **67 ComfyUI host
+contract tests**, **9 CPU LFM3 runtime tests**, and **24 Node/Studio tests**, with
+**93% core statement/branch coverage**. Lint, formatting, strict core typing and
+the bundled-library audit also pass. Packaging checks compare archive contents
+with source and exercise an installed wheel outside the checkout.
 
-Host tests require ComfyUI's environment; CUDA checks are explicitly opt-in with
-`PSNEXT_RUN_CUDA_TESTS=1`. CI covers Python 3.11–3.14, property/schema/HTTP contracts,
-Studio transport, host registration, typing, and distribution checks. Recorded
-local acceptance does not imply a successful hosted CI run. Generated-image
-fidelity and universal aesthetic quality require separate evaluation.
+Host tests require ComfyUI's environment. The standalone suite skips optional
+Torch runtime and CUDA modules when unavailable; two additional LFM3 CUDA tests
+require explicit opt-in. CI covers Python 3.11–3.14, property/schema/HTTP contracts,
+Studio transport, pinned CPU host registration, typing and distribution checks.
+LFM3 graph validation uses a tiny temporary metadata artifact, so CI needs no
+installed model weights. See [validation scope](docs/validation.md) for recorded
+inference and quality limits. Generated-image fidelity and universal aesthetic
+quality require separate evaluation.
 
 ## Documentation and licensing
 
 | Guide | Contents |
 | --- | --- |
 | [ComfyUI](docs/comfyui.md) | Nodes, native encoders, custom packs, and workflows |
+| [Experimental LFM3-VL](docs/lfm3-vl.md) | Separate artifact, offline preparation, targets and rewrite limits |
 | [Local prompt upscaler](docs/upscaler.md) | Model requirements, controls, performance, and limits |
 | [Base-prompt toolkit](llm-prompts/README.md) | Seven metaprompts, semantic handoff, and examples |
 | [Style library](docs/style-library.md) | Inventory, creative domains, authoring, and previews |
@@ -417,8 +429,3 @@ Code is [Apache-2.0](LICENSE). Bundled style definitions and the original LLM
 prompt toolkit are [CC0-1.0](STYLE-LICENSE); contributed packs retain their declared
 licenses. Third-party implementation attribution is in [NOTICE](NOTICE). Model
 weights are distributed separately under their own licenses.
-## Experimental LFM3-VL support
-
-The optional prompt upscaler now accepts a self-contained LFM3-VL-2B native
-INT8 ConvRot artifact for complete MOSS Image Base and Anima scene rewrites.
-See [setup, offline conversion, controls and limits](docs/lfm3-vl.md).

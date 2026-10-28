@@ -5,19 +5,37 @@ Version 0.4.1 refines the optional local MiniCPM authoring stage. Version 0.4.0 
 [the 0.3.0 review](style-review.md). This source update creates no package-index
 release or version tag.
 
+## Current source checks (2026-10-28)
+
+The current standalone suite passes 231 tests with 93% combined statement/branch
+coverage; the optional Torch runtime and CUDA modules are skipped in that isolated
+environment. The actual host passes 67 node/graph contract tests and 9 CPU LFM3
+runtime tests; two explicitly opt-in LFM3 CUDA tests are skipped. All 24 Node/Studio
+tests pass, including selection restoration, search and cross-tab persistence.
+Lint, format, strict core typing and the 1,164-entry library audit pass.
+
+The previous hosted failure came from LFM3 example graph tests assuming a locally
+installed artifact. Those tests now create tiny temporary safetensors metadata and
+exercise real discovery and native graph validation without downloading weights.
+Hosted status must be checked on the pushed commit separately from these local checks.
+
+Existing LFM3 inference evidence and remaining invention/style leakage are described
+in [the LFM3 guide](lfm3-vl.md). No new model inference or diffusion quality comparison
+was performed for this documentation and CI update.
+
 ## 0.4.1 useful expansion
 
 Expanded text preserves the source premise as an assistant prefix and generates
-physical supporting detail. The reported wizard case grows from an11-word
-paraphrase to53words, retaining the complete original statement and adding42words.
-The existing128-token budget works; newly added nodes default to192. Real
-queued warm wizard expansion took1.87s (2.03s including polling), and changing only
+physical supporting detail. The reported wizard case grows from an 11-word
+paraphrase to 53 words, retaining the complete original statement and adding 42 words.
+The existing 128-token budget works; newly added nodes default to 192. Real
+queued warm wizard expansion took 1.87s (2.03s including polling), and changing only
 the style reused the accepted base without VLM execution. Faithful
 remains a concise model rewrite. Reference inputs retain their evaluated grounding
 contract rather than inventing detail to meet a length target.
 
-The updated suites pass209standalone tests (plus the opt-in CUDA module skip),
-48actual-host tests and18Studio tests; core coverage remains93%.
+The updated suites pass 209 standalone tests (plus the opt-in CUDA module skip),
+48actual-host tests and 18 Studio tests; core coverage remains 93%.
 Real local evaluation covered seven text/image/combined cases in both modes,
 including quoted Unicode, counts, fantasy geometry and style leakage. Expanded
 text retained the source facts; Faithful omitted a supplied table in one case.

@@ -105,17 +105,56 @@ categories, descriptions, tags and preview metadata. Keep selected layer IDs,
 intensities and order in the panel's state. Obtain model capabilities from
 `profiles()`; do not infer them from filename substring matching.
 
-## Native panel and generation integration (0.2)
+## Native panel and generation integration
 
 `createPromptStylerPanel(React)` from `studio/react-panel.mjs` uses the host's React
 instance. Mount it beside the prompt field with `{profile, prompt, negative, mode}`
-and load `studio/panel.css`. It provides search, category/type filters, favorites,
-ordered layers, intensity, protected axes, model override, and an inspected preview.
-Selections are held per profile for the page lifetime; only favorites persist.
-Empty or disabled recipes leave generation unchanged. Video profiles hide styling.
+and load `studio/panel.css`. The compact Styles button opens a native modal browser
+with **Looks**, **Color**, **Effects**, **Saved** and **Presets** sections. Search names, descriptions,
+collections and tags; browse the complete compatible catalog, including pages beyond
+1,000 entries. **New additions** highlights the 15 community packs and the four
+semantic-base toolkit packs (332 entries before model/type filtering).
+
+Choose one look and one color grade by default: another choice replaces that type
+while retaining finishing effects. Click a selected card again to remove it. Selected
+styles appear as removable chips beside the original prompt; **Apply** pauses or
+resumes them. The **Your look** panel provides strength and a text preview. Under
+**Advanced controls**, opt into free mixing, reorder layers, override the model or
+protect prompt attributes. The recipe limit remains 16 layers. Strength changes
+which authored prompt clauses participate; it is not a diffusion/LoRA weight.
+
+The desktop browser has a library and a separate selection panel. On phones it uses
+the full viewport, two card columns, a collapsible selection section above the library,
+a single main scroll area and a fixed Done action. Native dialog behavior traps focus,
+supports Escape and returns focus to the launcher. Color cues are abstract identifiers,
+not generated examples or promises about output appearance.
+
+Selections are remembered per workflow profile in this browser, including pause state,
+strengths, layer order and advanced controls. Favorites retain the existing storage key.
+Save a named combination in **Your look**, then apply or delete it in **Presets**. Up to
+40 combinations are kept; saving the same name updates it. A preset preserves whether
+the saved selection was paused. These recipes contain style
+settings, not prompt text or images. Storage failures preserve the current session.
+
+Search accepts multiple words in any order and ignores accents. Sort by featured
+entries, name, or favorites first. The compatible catalog is cached for the page
+lifetime; reopening is instant after the first load. Retry invalidates that cache.
+Catalog search and browsing run only in the UI, outside model execution.
+
+The browser applies choices immediately; Done returns to the composer. Preview never
+replaces the typed prompt. Empty or disabled recipes leave generation unchanged.
+Video profiles hide styling. Catalog failures offer retry without dropping selections.
 
 At fresh request creation, add `promptStyler: studioPromptStylerSelection(profile)`.
 Keep the original prompt editable. Do not re-run this selection step on retry bodies.
+For image-setting replay, call `restoreStudioPromptStylerSelection(profile, recipe)`
+before generating; passing no recipe clears styles. Restoration preserves ordered
+strengths and engine options, validates the 16-layer shape atomically and notifies all
+mounted panels. Catalog membership is checked by the engine during composition.
+`getStudioPromptStylerState(profile)` captures the full browser state, including
+paused and free-mixing controls; `restoreStudioPromptStylerState(profile, state)`
+validates and restores that state atomically. Style selections, favorites and presets
+also follow browser storage events, keeping tabs synchronized on the same origin.
 `studio/model-profile.mjs` maps explicit HEISS family/capability metadata to engine
 profile IDs; it contains no prompt formatting algorithms.
 

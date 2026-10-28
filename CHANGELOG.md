@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+Added the responsive Studio style browser with Looks/Color/Effects, accent-insensitive
+metadata search, favorites, named presets and per-workflow persistence. Replay
+helpers restore selections and full browser state atomically; storage events keep
+tabs synchronized. Existing gallery/composer integration stays in place.
+
+Fixed LFM3 example graph tests on clean CI hosts by providing a tiny temporary
+metadata artifact through real model discovery instead of requiring installed weights.
+
 Added offline LFM3-VL 2B scene rewriting for MOSS Image Base and Anima, with
 style-neutral action/contact examples, exact-text diagnostics and one bounded
 repair that cannot discard previously satisfied lexical checks. Detailed inputs

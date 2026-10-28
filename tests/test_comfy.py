@@ -609,12 +609,31 @@ def test_upscaler_api_graph_passes_native_prompt_validation(monkeypatch):
 
 
 @pytest.mark.parametrize("target", ["moss_image_base", "anima"])
-def test_lfm_examples_include_valid_style_and_base_previews(monkeypatch, target):
+def test_lfm_examples_include_valid_style_and_base_previews(monkeypatch, tmp_path, target):
     from comfy.cli_args import args
 
     monkeypatch.setattr(args, "cpu", True)
     import execution
     import nodes
+    import torch
+    from safetensors.torch import save_file
+
+    models = sys.modules[f"{SPEC.name}.comfyui.upscaler.models"]
+    name = "lfm3-vl-2b-int8-convrot.safetensors"
+    # Exercise real artifact discovery without requiring installed model weights.
+    save_file(
+        {"fixture": torch.zeros(1)},
+        str(tmp_path / name),
+        metadata={"lfm3_vl": json.dumps({"kind": "lfm3_vl", "version": 1})},
+    )
+    monkeypatch.setattr(models, "_roots", lambda: [tmp_path])
+    filenames = models.folder_paths.get_filename_list
+    monkeypatch.setattr(
+        models.folder_paths,
+        "get_filename_list",
+        lambda kind: [name] if kind == models.MODEL_KIND else filenames(kind),
+    )
+    assert models.model_choices() == [name]
 
     for node in NODE_CLASSES:
         monkeypatch.setitem(nodes.NODE_CLASS_MAPPINGS, node.define_schema().node_id, node)
