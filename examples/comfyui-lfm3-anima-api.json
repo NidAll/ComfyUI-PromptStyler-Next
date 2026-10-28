@@ -1,0 +1,65 @@
+{
+  "1": {
+    "class_type": "PSNextLoadUpscaler",
+    "inputs": {
+      "model_name": "lfm3-vl-2b-int8-convrot.safetensors"
+    }
+  },
+  "2": {
+    "class_type": "PSNextUpscaleBase",
+    "inputs": {
+      "upscaler": [
+        "1",
+        0
+      ],
+      "prompt": "Two foxes share one yellow umbrella beside a wooden bench.",
+      "max_new_tokens": 192,
+      "image_slices": 1,
+      "offload_after": false,
+      "detail_mode": "expanded",
+      "target_model": "anima"
+    }
+  },
+  "3": {
+    "class_type": "PSNextPreviewPrompt",
+    "inputs": {
+      "base_prompt": [
+        "2",
+        0
+      ],
+      "inspection": [
+        "2",
+        1
+      ]
+    }
+  },
+  "4": {
+    "class_type": "PSNextStyle",
+    "inputs": {
+      "prompt": [
+        "2",
+        0
+      ],
+      "style": "cinema.noir",
+      "model": "anima",
+      "intensity": 0.75,
+      "negative": "",
+      "locked_axes": {
+        "__value__": []
+      }
+    }
+  },
+  "5": {
+    "class_type": "PSNextPreviewPrompt",
+    "inputs": {
+      "base_prompt": [
+        "4",
+        0
+      ],
+      "inspection": [
+        "4",
+        2
+      ]
+    }
+  }
+}

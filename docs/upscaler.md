@@ -1,6 +1,8 @@
 # Fast local base-prompt upscaling
 
 The optional ComfyUI authoring stage accepts a scene idea, one RGB image, or both.
+The experimental [LFM3-VL route](lfm3-vl.md) adds complete prompt rewriting for
+MOSS Image Base and Anima. The MiniCPM behavior described below remains available.
 Version 0.4.1 adds **Expanded** (default) and **Faithful** detail modes. Expanded
 text continues your complete original scene with useful physical detail instead
 of paraphrasing it. Faithful asks for concise clarification.
@@ -50,14 +52,19 @@ CPU inference is not supported for this accelerated deployment.
 Import [the visual workflow](../examples/comfyui-upscaler-workflow.json) or use
 [the executable API graph](../examples/comfyui-upscaler-api.json). Connect the
 optional image socket for either image mode. The upscaler returns scene prose,
-not Fibo JSON, inspection JSON, sampler settings or conditioning.
+not Fibo JSON, sampler settings or conditioning, together with inspection JSON.
+
+To present the result without creating a file, connect both output sockets to
+**PromptStyler Next: Preview Base Prompt**. It is an output-only node: ComfyUI
+history exposes the prompt in `text` and the inspection JSON in `inspection`.
+Using this preview is optional and does not alter the normal image graph.
 
 Detail and speed controls:
 
 | Control | Default | Effect |
 | --- | --- | --- |
 | `detail_mode` | `expanded` | Expanded text preserves the complete source and adds up to three supporting details about existing subjects/actions. Faithful asks for minimal additions. Image/reference content stays grounded in the evidence in both modes. |
-| `max_new_tokens` | 192 | Output budget, 32–384; generation stops at EOS or a blank paragraph. In combined mode the grounding pass is capped at 128 and the rewrite uses this budget. |
+| `max_new_tokens` | 192 | Output budget, 32–2048; generation stops at EOS or a blank paragraph. In combined mode the grounding pass is capped at 128 and the rewrite uses this budget. |
 | `image_slices` | 1 | Fastest image setting. Up to 4 allows detail crops at a time/VRAM cost; it does not improve image-generation resolution. |
 | `offload_after` | false | Reuse the resident model for prompt edits. Enable to immediately release this model's VRAM after a request. ComfyUI can offload it automatically either way. |
 
@@ -100,29 +107,13 @@ passes and the intermediate reference content so failures can be examined.
 
 ## Measured scope and limitations
 
-On a 4 GB RTX 3050 Laptop GPU, the initial continuation trials produced about
-35–55-word expanded descriptions rather than one-sentence paraphrases. The wizard
-case kept the exact input sentence and added how the water folds, cube edges and
-the wizard's interaction. Both the old 128-token budget and the new 192-token
-budget allow that short continuation. Longer output costs more decode time;
-Faithful is available for faster concise output. See the recorded evaluation
-summary below for the final measurements.
-
-| Final test | Output words | Runtime |
-| --- | ---: | ---: |
-| Wizard + ocean + cube, Expanded, saved 128-token budget | 53 (42 added) | 2.83 s including initial GPU placement |
-| Dragon reading on a train, Expanded | 49 (40 added) | 1.52 s warm |
-| Three lemons, bowl, table and exact `雨`, Expanded | 36 (22 added) | 0.95 s warm |
-| Two foxes sharing an umbrella, Expanded | 35 (29 added) | 1.19 s warm |
-| Wizard, Expanded, real queued warm generation | 53 (42 added) | 1.87 s runtime / 2.03 s including polling |
-| Wizard, Faithful | 11 | 0.45 s warm |
-| Two-shape reference image, Expanded | 22 | 0.98 s warm |
-| Reference + replace rectangle with triangle, Expanded | 22 | 1.66 s warm |
-
-These are bounded samples, not latency guarantees. The reference modes may produce
-identical output in both detail modes: visible evidence, rather than a word count,
-sets their detail. Expanded text adds physical content; it does not need to use
-all the available tokens. No diffusion image-quality grid was run for this fix.
+Expanded text can add physical details while preserving the supplied scene, but
+output length and latency vary with the input, model placement, output budget and
+whether grounding or repair passes are needed. Faithful is available for concise
+clarification. Reference modes may produce similar output in either detail mode:
+visible evidence, rather than a word count, sets their detail. These checks do not
+establish downstream diffusion image quality; no image-quality grid was run for
+the MiniCPM continuation change.
 
 This is a small VLM, not a semantic verifier. It can omit facts, invent details,
 misread text or retain unwanted style language. Expanded continuation preserves the supplied bowl, its table, three lemons and
@@ -151,7 +142,7 @@ not prompt text. There is no telemetry or VLM endpoint in the Studio service.
 ## Validation
 
 Normal standalone tests exercise the compact contract and bounded embedded
-archive reader without Torch. Host tests verify five V3 schemas, input modes,
+archive reader without Torch. Host tests verify six V3 schemas, input modes,
 placement, offload/error cleanup, stopping and file invalidation with doubles.
 Real local tests queued all three input modes through native ComfyUI and Style,
 verified reuse for identical requests and prompt edits, and compared small fused operations

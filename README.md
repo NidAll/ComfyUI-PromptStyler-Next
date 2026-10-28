@@ -4,10 +4,10 @@ A modular creative styling platform for **ComfyUI**, **HEISS Studio**, and
 **standalone Python workflows**. Build a scene description, combine visual
 styles, and render the additions using the prompting convention of your model.
 
-**Version 0.4.1 · 1,164 library entries · 52 packs · 11 model profiles · 5 ComfyUI V3 nodes**
+**Version 0.4.1 · 1,164 library entries · 52 packs · 11 model profiles · 6 ComfyUI V3 nodes**
 
 The shared deterministic engine runs offline on Python 3.11+ with **zero runtime
-dependencies**. An optional local MiniCPM VLM adds fast base-prompt upscaling
+dependencies**. Optional local MiniCPM and LFM3-VL models add base-prompt upscaling
 inside ComfyUI. The engine, browser workbench, and HEISS integration all use the
 same style definitions and composition logic.
 
@@ -24,7 +24,7 @@ This is an independent successor to
 | Conflict resolution | Resolve competing declared directions per visual axis with `last_wins`, `first_wins`, or `error` |
 | Protected axes | Keep selected medium, lighting, palette, composition, texture, mood, or detail choices out of style additions |
 | Prompt inspection | Inspect applied, skipped, duplicate, and suppressed clauses, capability warnings, normalized recipes, and fingerprints |
-| Local prompt upscaling | Turn text, one reference image, or both into a semantic base using an existing MiniCPM-V 4.7 1B INT8 model |
+| Local prompt upscaling | Turn text, one reference image, or both into a semantic base using a local MiniCPM-V 4.7 1B or LFM3-VL 2B INT8 model |
 | LLM metaprompt toolkit | Create, neutralize, describe, expand, edit, audit, and package reusable base prompts with seven copyable instructions |
 | ComfyUI nodes | Author bases, apply a single style, compose JSON recipes, and use compatible native conditioning |
 | Browser workbench | Search, filter, save favorites, combine styles, inspect results, and import/export recipes |
@@ -90,8 +90,9 @@ are optional for this route.
 
 | Node | Purpose | Outputs |
 | --- | --- | --- |
-| **Load Prompt Upscaler** | Load the supported local MiniCPM INT8 artifact into a cacheable, native-managed handle | Upscaler handle |
+| **Load Prompt Upscaler** | Load a supported local MiniCPM or LFM3-VL INT8 artifact into a cacheable, native-managed handle | Upscaler handle |
 | **Upscale Base Prompt** | Author a base from text, one RGB IMAGE, or both | Base prompt, inspection JSON |
+| **Preview Base Prompt** | Preview the base prompt and inspection without writing a file | UI preview |
 | **Style** | Apply one style with model selection, intensity, optional negative text, and protected axes | Positive text, negative text, inspection JSON |
 | **Compose Recipe** | Apply an ordered JSON recipe with conflict controls; an optional connected `prompt` overrides the recipe's base | Positive text, negative text, inspection JSON |
 | **Encode Text** | Delegate tokenization and scheduled conditioning to a connected compatible native encoder | Positive and negative conditioning |
@@ -115,12 +116,18 @@ Ready-to-use examples:
 ## Fast local prompt upscaling
 
 Connect **Load Prompt Upscaler → Upscale Base Prompt → Style** or **Compose Recipe**.
-Enter a short idea, connect one image, or supply both. **Expanded** is the default:
-for text ideas it preserves your complete input and continues it with concrete
+Enter a short idea, connect one image, or supply both. **Expanded** is the default.
+With MiniCPM, text ideas preserve your complete input and continue it with concrete
 details about the existing subjects' movement, shape, pose, and relationships.
 **Faithful** asks for a concise clarification with minimal additions. Reference
 images remain grounded in visible content; combined input first describes the
 image, then applies the user's requirements in a short text rewrite.
+
+With **LFM3-VL 2B**, select `moss_image_base` or `anima`. It rewrites the complete
+scene, developing physical form, action mechanics, contact and spatial bindings.
+Curated examples teach these authoring behaviors without training the model.
+Artistic direction stays with Style/Compose. See the [LFM3 guide](docs/lfm3-vl.md)
+for its separate artifact, offline setup and validation limits.
 
 The supported deployment is the self-contained artifact:
 
@@ -137,15 +144,14 @@ the accepted base without running the VLM again.
 | Advanced control | Default | Use |
 | --- | --- | --- |
 | `detail_mode` | `expanded` | Add physical detail to text ideas, or select `faithful` for concise clarification; references stay grounded |
-| `max_new_tokens` | 192 | Bound output length; allowed range 32–384 |
+| `max_new_tokens` | 192 | Bound output length; allowed range 32–2048 |
 | `image_slices` | 1 | Keep one for speed; up to four can help fine detail at a time/VRAM cost |
 | `offload_after` | false | Retain native-managed residency for repeated edits, or immediately offload after each execution |
 
-Expanded mode generates more detail and takes longer than a short paraphrase.
-The reported wizard example now retains the original ocean/cube/gravity premise
-and adds physical detail in a paragraph of roughly 50 words, using a single model
-generation. See [measured mode comparisons](docs/upscaler.md#measured-scope-and-limitations)
-for latency and quality limits on a 4 GB RTX 3050 Laptop GPU.
+Expanded mode can take longer than a short paraphrase. Latency varies with model
+placement, input, output length and whether image grounding or repair is needed.
+See the [upscaler guide](docs/upscaler.md#measured-scope-and-limitations) for
+behavior and quality limits.
 
 The accelerated deployment requires a supported CUDA/Kitchen host and its
 Transformers dependencies. The small VLM can miss facts or retain style language;
@@ -411,3 +417,8 @@ Code is [Apache-2.0](LICENSE). Bundled style definitions and the original LLM
 prompt toolkit are [CC0-1.0](STYLE-LICENSE); contributed packs retain their declared
 licenses. Third-party implementation attribution is in [NOTICE](NOTICE). Model
 weights are distributed separately under their own licenses.
+## Experimental LFM3-VL support
+
+The optional prompt upscaler now accepts a self-contained LFM3-VL-2B native
+INT8 ConvRot artifact for complete MOSS Image Base and Anima scene rewrites.
+See [setup, offline conversion, controls and limits](docs/lfm3-vl.md).

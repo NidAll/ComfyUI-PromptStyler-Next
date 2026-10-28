@@ -19,3 +19,10 @@ Optional MiniCPM runtime attribution:
 - Supported checkpoint: saidutta69/MiniCPM-V-4.7-1B-heretic, revision
   f2ec4781396394599a524bd396133ed117b38da1, derived from OpenBMB MiniCPM-V 4.7 1B,
   Apache-2.0. Weights and model assets are separate; none are bundled here.
+
+Optional LFM3-VL runtime:
+- comfyui/upscaler/lfm3/vendor/: LiquidAI/LFM3-VL-2B revision
+  f83d2b0a2296aaa277f394990a9b8b949ddf9691. Python files retain their
+  Apache-2.0 notices. The upstream LFM Open License v1.0 governs model weights.
+  See comfyui/upscaler/lfm3/NOTICE.md and vendor/LICENSE* for provenance,
+  local configuration/cache adaptations and both retained licenses.

@@ -2,6 +2,7 @@
 
 from comfy_api.latest import io
 
+from .upscaler.lfm_prompts import CONTRACT_VERSION as LFM_CONTRACT_VERSION
 from .upscaler.models import DEFAULT_MODEL, bundle_fingerprint, model_choices
 from .upscaler.prompts import CONTRACT_VERSION, DETAIL_MODES
 
@@ -16,8 +17,8 @@ class PSNextLoadUpscaler(io.ComfyNode):
             node_id="PSNextLoadUpscaler",
             display_name="PromptStyler Next: Load Prompt Upscaler",
             category="PromptStyler Next/upscaling",
-            description="Load the local self-contained MiniCPM-V 4.7 1B INT8 model. ComfyUI caches this handle and manages its VRAM. Requires the native CUDA/Kitchen backend.",
-            search_aliases=["minicpm", "vlm", "prompt", "upscale"],
+            description="Load a local self-contained MiniCPM or LFM3-VL INT8 ConvRot model. ComfyUI caches this handle and manages its VRAM. Requires the native CUDA/Kitchen backend.",
+            search_aliases=["minicpm", "lfm3", "vlm", "prompt", "upscale"],
             inputs=[
                 io.Combo.Input(
                     "model_name",
@@ -61,9 +62,9 @@ class PSNextUpscaleBase(io.ComfyNode):
                     "max_new_tokens",
                     default=192,
                     min=32,
-                    max=384,
+                    max=2048,
                     advanced=True,
-                    tooltip="Maximum output budget. Decoding stops at EOS or a blank paragraph; higher budgets can be slower.",
+                    tooltip="Maximum output budget. The 192-token default is fast; larger budgets allow longer descriptions. Decoding stops at EOS or a blank paragraph.",
                 ),
                 io.Int.Input(
                     "image_slices",
@@ -71,7 +72,7 @@ class PSNextUpscaleBase(io.ComfyNode):
                     min=1,
                     max=4,
                     advanced=True,
-                    tooltip="One slice is fastest. More slices help fine details and text, using more time and VRAM.",
+                    tooltip="MiniCPM: image slices. LFM3-VL: each unit allows up to 512×512 pixels while retaining aspect ratio. More detail uses more time and VRAM.",
                 ),
                 io.Boolean.Input(
                     "offload_after",
@@ -84,7 +85,14 @@ class PSNextUpscaleBase(io.ComfyNode):
                     options=list(DETAIL_MODES),
                     default="expanded",
                     optional=True,
-                    tooltip="Expanded preserves your scene text and adds physical detail about its subjects and actions. Faithful rewrites concisely with minimal additions. Images remain grounded in visible/reference content.",
+                    tooltip="Expanded develops visible physical details; Faithful clarifies with minimal additions. LFM3-VL rewrites the complete scene. MiniCPM retains its continuation behavior. Images stay grounded in reference content.",
+                ),
+                io.Combo.Input(
+                    "target_model",
+                    options=["moss_image_base", "anima"],
+                    default="moss_image_base",
+                    optional=True,
+                    tooltip="LFM3-VL rewrites the complete caption for this image model. Apply Style/Compose after this stage. MiniCPM retains its existing semantic-base behavior.",
                 ),
             ],
             outputs=[io.String.Output("base_prompt"), io.String.Output("inspection")],
@@ -92,7 +100,7 @@ class PSNextUpscaleBase(io.ComfyNode):
 
     @classmethod
     def fingerprint_inputs(cls, **kwargs):
-        return CONTRACT_VERSION
+        return CONTRACT_VERSION, LFM_CONTRACT_VERSION
 
     @classmethod
     def execute(
@@ -104,9 +112,42 @@ class PSNextUpscaleBase(io.ComfyNode):
         image_slices=1,
         offload_after=False,
         detail_mode="expanded",
+        target_model="moss_image_base",
     ):
         from .upscaler.runtime import upscale
 
         return io.NodeOutput(
-            *upscale(upscaler, prompt, image, max_new_tokens, image_slices, offload_after, detail_mode)
+            *upscale(
+                upscaler,
+                prompt,
+                image,
+                max_new_tokens,
+                image_slices,
+                offload_after,
+                detail_mode,
+                target_model,
+            )
         )
+
+
+class PSNextPreviewPrompt(io.ComfyNode):
+    """Return both upscaler results through ComfyUI's normal output/history path."""
+
+    @classmethod
+    def define_schema(cls) -> io.Schema:
+        return io.Schema(
+            node_id="PSNextPreviewPrompt",
+            display_name="PromptStyler Next: Preview Base Prompt",
+            category="PromptStyler Next/upscaling",
+            description="Preview a base prompt and its inspection without writing a file.",
+            is_output_node=True,
+            inputs=[
+                io.String.Input("base_prompt", force_input=True),
+                io.String.Input("inspection", force_input=True),
+            ],
+            outputs=[],
+        )
+
+    @classmethod
+    def execute(cls, base_prompt, inspection):
+        return io.NodeOutput(ui={"text": [base_prompt], "inspection": [inspection]})

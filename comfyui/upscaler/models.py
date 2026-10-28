@@ -49,6 +49,9 @@ def model_choices() -> list[str]:
                     and manifest.get("version") == 1
                 ):
                     choices.append(name)
+                lfm = json.loads((reader.metadata() or {}).get("lfm3_vl", "{}"))
+                if isinstance(lfm, dict) and lfm.get("kind") == "lfm3_vl" and lfm.get("version") == 1:
+                    choices.append(name)
         except (ValueError, OSError, SafetensorError):
             continue
     # Keep the node visible before installation, with an actionable execute-time error.

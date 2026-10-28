@@ -3,12 +3,19 @@
 from comfy_api.latest import ComfyExtension, io
 
 from .nodes import PSNextCompose, PSNextEncode, PSNextStyle
-from .upscaler_nodes import PSNextLoadUpscaler, PSNextUpscaleBase
+from .upscaler_nodes import PSNextLoadUpscaler, PSNextPreviewPrompt, PSNextUpscaleBase
 
 
 class PromptStylerNextExtension(ComfyExtension):
     async def get_node_list(self) -> list[type[io.ComfyNode]]:
-        return [PSNextStyle, PSNextCompose, PSNextEncode, PSNextLoadUpscaler, PSNextUpscaleBase]
+        return [
+            PSNextStyle,
+            PSNextCompose,
+            PSNextEncode,
+            PSNextLoadUpscaler,
+            PSNextUpscaleBase,
+            PSNextPreviewPrompt,
+        ]
 
 
 async def comfy_entrypoint() -> PromptStylerNextExtension:

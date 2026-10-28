@@ -112,8 +112,8 @@ def validate_request(
         raise ValueError("Prompt must be text of at most 6,000 characters")
     if not prompt.strip() and not has_image:
         raise ValueError("Enter a scene idea, connect one image, or provide both")
-    if type(max_new_tokens) is not int or not 32 <= max_new_tokens <= 384:
-        raise ValueError("max_new_tokens must be an integer between 32 and 384")
+    if type(max_new_tokens) is not int or not 32 <= max_new_tokens <= 2048:
+        raise ValueError("max_new_tokens must be an integer between 32 and 2048")
     if type(image_slices) is not int or not 1 <= image_slices <= 4:
         raise ValueError("image_slices must be an integer between 1 and 4")
     if detail_mode not in DETAIL_MODES:

@@ -1,4 +1,4 @@
-"""Benchmark an existing local MiniCPM deployment; no download or server startup."""
+"""Benchmark an existing local prompt upscaler; no download or server startup."""
 
 from __future__ import annotations
 
@@ -16,6 +16,8 @@ def main() -> None:
     parser.add_argument("--model-name", default="minicpm-v4.7-1b-heretic-int8-convrot.safetensors")
     parser.add_argument("--image", type=Path, help="Optional reference; otherwise use two synthetic shapes")
     parser.add_argument("--detail-mode", choices=("expanded", "faithful"), default="expanded")
+    parser.add_argument("--target-model", choices=("moss_image_base", "anima"), default="moss_image_base")
+    parser.add_argument("--max-new-tokens", type=int, default=192)
     parser.add_argument("--repeats", type=int, choices=range(1, 11), default=3)
     parser.add_argument("--output", type=Path, help="Optional JSON evidence file")
     args = parser.parse_args()
@@ -45,21 +47,29 @@ def main() -> None:
     handle = runtime.load_upscaler(args.model_name)
     records = []
     try:
-        for iteration in range(args.repeats):
-            for prompt, reference in (
-                ("two foxes sharing a yellow umbrella", None),
-                ("", image),
-                (
-                    "Replace the red rectangle with a green triangle."
-                    if not args.image
-                    else "Describe the main subject and preserve its visible attributes.",
-                    image,
-                ),
-            ):
-                _, inspection = runtime.upscale(handle, prompt, reference, detail_mode=args.detail_mode)
-                record = {"iteration": iteration, **json.loads(inspection)}
-                records.append(record)
-                print(json.dumps(record, ensure_ascii=False), flush=True)
+        with torch.inference_mode():
+            for iteration in range(args.repeats):
+                for prompt, reference in (
+                    ("two foxes sharing a yellow umbrella", None),
+                    ("", image),
+                    (
+                        "Replace the red rectangle with a green triangle."
+                        if not args.image
+                        else "Describe the main subject and preserve its visible attributes.",
+                        image,
+                    ),
+                ):
+                    _, inspection = runtime.upscale(
+                        handle,
+                        prompt,
+                        reference,
+                        detail_mode=args.detail_mode,
+                        target_model=args.target_model,
+                        max_new_tokens=args.max_new_tokens,
+                    )
+                    record = {"iteration": iteration, **json.loads(inspection)}
+                    records.append(record)
+                    print(json.dumps(record, ensure_ascii=False), flush=True)
     finally:
         runtime.mm.unload_model_and_clones(handle.owner)
     if args.output:

@@ -1,4 +1,4 @@
-"""Native-managed, serialized, greedy MiniCPM inference. No global tensor caches."""
+"""Native-managed, serialized local prompt authoring. No global tensor caches."""
 
 from __future__ import annotations
 
@@ -16,6 +16,7 @@ import torch
 from PIL import Image
 from transformers import StoppingCriteria, StoppingCriteriaList
 
+from . import lfm_prompts
 from .models import bundle_fingerprint, resolve_bundle
 from .prompts import (
     CONTRACT_VERSION,
@@ -38,18 +39,30 @@ class UpscalerHandle:
     identity: tuple
     load_seconds: float
     lock: Any = field(default_factory=threading.Lock)
+    model_family: str = "minicpm"
 
 
 def load_upscaler(model_name: str) -> UpscalerHandle:
-    from .loading import load_minicpm
-
     started = time.perf_counter()
     identity = bundle_fingerprint(model_name)
     path = resolve_bundle(model_name)
-    owner, processor, coverage = load_minicpm(path)
+    from safetensors import safe_open
+
+    with safe_open(path, framework="pt", device="cpu") as reader:
+        family = "lfm3_vl" if "lfm3_vl" in (reader.metadata() or {}) else "minicpm"
+    if family == "lfm3_vl":
+        from .lfm3 import load_lfm3
+
+        owner, processor, coverage = load_lfm3(path)
+    else:
+        from .loading import load_minicpm
+
+        owner, processor, coverage = load_minicpm(path)
     if identity != bundle_fingerprint(model_name):
-        raise RuntimeError("MiniCPM file changed during loading; queue the workflow again")
-    return UpscalerHandle(owner, processor, coverage, identity, time.perf_counter() - started)
+        raise RuntimeError("Upscaler file changed during loading; queue the workflow again")
+    return UpscalerHandle(
+        owner, processor, coverage, identity, time.perf_counter() - started, model_family=family
+    )
 
 
 class ParagraphComplete(StoppingCriteria):
@@ -152,6 +165,184 @@ def _generate(owner, processor, request, picture, budget, slices, detail_mode, *
     )
 
 
+def _generate_lfm3(owner, processor, chat, picture, budget, slices):
+    started = time.perf_counter()
+    mm.throw_exception_if_processing_interrupted()
+    text = processor.apply_chat_template(
+        chat, tokenize=False, add_generation_prompt=True, enable_thinking=False
+    )
+    image_kwargs = (
+        {
+            "images": [picture],
+            "images_kwargs": {"size": {"shortest_edge": 65536, "longest_edge": 512 * 512 * slices}},
+        }
+        if picture is not None
+        else {}
+    )
+    inputs = processor(text=[text], return_tensors="pt", **image_kwargs)
+    input_length = inputs["input_ids"].shape[1]
+    if input_length + budget > owner.model.network.config.text_config.max_position_embeddings:
+        raise ValueError("Input and output budget exceed the LFM3 context window")
+    prepared = time.perf_counter()
+    mm.load_models_gpu([owner], memory_required=640 * 1024**2, force_full_load=True)
+    inputs = inputs.to(owner.load_device, dtype=torch.bfloat16)
+    placed = time.perf_counter()
+    tokens = owner.model.generate(
+        **inputs,
+        do_sample=False,
+        max_new_tokens=budget,
+        use_cache=True,
+        pad_token_id=processor.tokenizer.pad_token_id,
+        stopping_criteria=StoppingCriteriaList(
+            [ParagraphComplete(processor.tokenizer, input_length, owner.load_device)]
+        ),
+    )[0, input_length:].cpu()
+    generated = time.perf_counter()
+    raw = processor.tokenizer.decode(tokens, skip_special_tokens=True).strip()
+    eos = owner.model.network.generation_config.eos_token_id
+    eos = [eos] if isinstance(eos, int) else eos or []
+    truncated = len(tokens) >= budget and int(tokens[-1]) not in eos and "\n\n" not in raw
+    return (
+        raw,
+        truncated,
+        {
+            "input_tokens": input_length,
+            "generated_tokens": len(tokens),
+            "prepare_seconds": prepared - started,
+            "placement_seconds": placed - prepared,
+            "generate_seconds": generated - placed,
+        },
+    )
+
+
+def _fidelity_issues(diagnostics):
+    return {
+        (key, value)
+        for key in (
+            "missing_quoted_text",
+            "unexpected_quoted_text",
+            "missing_relation_details",
+            "style_terms",
+        )
+        for value in diagnostics.get(key, [])
+    } | {(key, value) for key, values in diagnostics["missing_lexical_cues"].items() for value in values}
+
+
+def upscale_lfm3(upscaler, prompt, image, budget, slices, offload_after, detail_mode, target_model):
+    started = time.perf_counter()
+    prompt = validate_request(prompt, image is not None, budget, slices, detail_mode)
+    if type(offload_after) is not bool:
+        raise ValueError("offload_after must be a boolean")
+    picture = pil_image(image) if image is not None else None
+    chat = lfm_prompts.messages(prompt, picture is not None, target_model, detail_mode)
+    while not upscaler.lock.acquire(timeout=0.1):
+        mm.throw_exception_if_processing_interrupted()
+    try:
+        mm.throw_exception_if_processing_interrupted()
+        owner, processor = upscaler.owner, upscaler.processor
+        passes = []
+        reference = None
+        grounding_warnings = []
+        if picture is not None and prompt.strip():
+            grounding = lfm_prompts.messages("", True, target_model, "faithful")
+            observed, cut, timing = _generate_lfm3(
+                owner, processor, grounding, picture, min(budget, 128), slices
+            )
+            reference, grounding_warnings, _ = lfm_prompts.inspect_output(
+                observed, "", cut, target_model, allow_reference_text=True
+            )
+            passes.append({"stage": "grounding", **timing})
+            chat = lfm_prompts.messages(
+                lfm_prompts.reference_request(reference, prompt), False, target_model, "faithful"
+            )
+        raw, truncated, timing = _generate_lfm3(
+            owner, processor, chat, None if reference else picture, budget, slices
+        )
+        passes.append({"stage": "rewrite", **timing})
+        raw, removed_style_clauses = lfm_prompts.remove_style_clauses(raw)
+        raw, restored_exclusions = lfm_prompts.restore_exclusions(raw, prompt)
+        result, warnings, fidelity = lfm_prompts.inspect_output(
+            raw, prompt, truncated, target_model, allow_reference_text=picture is not None
+        )
+        initial_fidelity = fidelity
+        repair_accepted = None
+        if (
+            fidelity["missing_quoted_text"]
+            or fidelity["unexpected_quoted_text"]
+            or fidelity.get("style_terms")
+            or fidelity["missing_relation_details"]
+            or any(fidelity["missing_lexical_cues"].values())
+        ):
+            repair_source = lfm_prompts.reference_request(reference, prompt) if reference else prompt
+            correction = lfm_prompts.messages(
+                lfm_prompts.repair_request(repair_source, result, fidelity), False, target_model, "faithful"
+            )
+            raw, repaired_truncated, timing = _generate_lfm3(
+                owner, processor, correction, None, budget, slices
+            )
+            passes.append({"stage": "repair", **timing})
+            raw, repaired_style_clauses = lfm_prompts.remove_style_clauses(raw)
+            raw, repaired_exclusions = lfm_prompts.restore_exclusions(raw, prompt)
+            repaired, repaired_warnings, repaired_fidelity = lfm_prompts.inspect_output(
+                raw, prompt, repaired_truncated, target_model, allow_reference_text=picture is not None
+            )
+            # Keep the first draft when a repair loses a previously satisfied check.
+            repair_accepted = _fidelity_issues(repaired_fidelity) < _fidelity_issues(fidelity) and not (
+                repaired_truncated and not truncated
+            )
+            if repair_accepted:
+                result, warnings, fidelity = repaired, repaired_warnings, repaired_fidelity
+                restored_exclusions = repaired_exclusions
+                removed_style_clauses = repaired_style_clauses
+        warnings = grounding_warnings + warnings
+        inspection = {
+            "schema_version": 2,
+            "contract": lfm_prompts.CONTRACT_VERSION,
+            "input_prompt": prompt,
+            "model_family": "lfm3_vl",
+            "target_model": target_model,
+            "model": upscaler.identity[0].rsplit("/", 1)[-1],
+            "artifact": {"bytes": upscaler.identity[1], "mtime_ns": upscaler.identity[2]},
+            "mode": "text+image" if prompt and picture else "image" if picture else "text",
+            "authoring": "complete_rewrite",
+            "fidelity": fidelity,
+            "initial_fidelity": initial_fidelity,
+            "repair_accepted": repair_accepted,
+            "restored_exclusions": restored_exclusions,
+            "removed_style_clauses": removed_style_clauses,
+            "passes": passes,
+            "reference_content": reference,
+            "image_sha256": hashlib.sha256(picture.tobytes()).hexdigest() if picture else None,
+            "settings": {
+                "detail_mode": detail_mode,
+                "max_new_tokens": budget,
+                "image_max_pixels": 512 * 512 * slices if picture else None,
+                "offload_after": offload_after,
+                "sampling": "greedy",
+                "thinking": False,
+            },
+            "input_tokens": sum(p["input_tokens"] for p in passes),
+            "generated_tokens": sum(p["generated_tokens"] for p in passes),
+            "native_int8_layers": upscaler.native_int8_layers,
+            "seconds": {
+                "model_load": upscaler.load_seconds,
+                "prepare": sum(p["prepare_seconds"] for p in passes),
+                "placement": sum(p["placement_seconds"] for p in passes),
+                "generate": sum(p["generate_seconds"] for p in passes),
+                "total": time.perf_counter() - started,
+            },
+            "warnings": warnings,
+            "base_prompt": result,
+        }
+        return result, json.dumps(inspection, ensure_ascii=False, sort_keys=True, indent=2)
+    finally:
+        try:
+            if offload_after or sys.exc_info()[0] is not None:
+                mm.unload_model_and_clones(upscaler.owner)
+        finally:
+            upscaler.lock.release()
+
+
 def upscale(
     upscaler: UpscalerHandle,
     prompt: str = "",
@@ -160,7 +351,12 @@ def upscale(
     image_slices: int = 1,
     offload_after: bool = False,
     detail_mode: str = "expanded",
+    target_model: str = "moss_image_base",
 ) -> tuple[str, str]:
+    if isinstance(upscaler, UpscalerHandle) and upscaler.model_family == "lfm3_vl":
+        return upscale_lfm3(
+            upscaler, prompt, image, max_new_tokens, image_slices, offload_after, detail_mode, target_model
+        )
     started = time.perf_counter()
     prompt = validate_request(prompt, image is not None, max_new_tokens, image_slices, detail_mode)
     if type(offload_after) is not bool:

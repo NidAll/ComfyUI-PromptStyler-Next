@@ -28,7 +28,7 @@ sys.modules[SPEC.name] = EXTENSION
 SPEC.loader.exec_module(EXTENSION)
 NODES = asyncio.run(EXTENSION.comfy_entrypoint())
 NODE_CLASSES = asyncio.run(NODES.get_node_list())
-STYLE, COMPOSE, ENCODE, LOAD_UPSCALER, UPSCALE_BASE = NODE_CLASSES
+STYLE, COMPOSE, ENCODE, LOAD_UPSCALER, UPSCALE_BASE, PREVIEW_PROMPT = NODE_CLASSES
 
 
 def literal_inputs(inputs: dict) -> dict:
@@ -43,19 +43,70 @@ def first_style() -> str:
 
 
 def test_real_v3_registration_and_schema() -> None:
-    assert len(NODE_CLASSES) == 5
+    assert len(NODE_CLASSES) == 6
     assert not hasattr(EXTENSION, "NODE_CLASS_MAPPINGS")
-    expected = {"PSNextStyle", "PSNextCompose", "PSNextEncode", "PSNextLoadUpscaler", "PSNextUpscaleBase"}
+    expected = {
+        "PSNextStyle",
+        "PSNextCompose",
+        "PSNextEncode",
+        "PSNextLoadUpscaler",
+        "PSNextUpscaleBase",
+        "PSNextPreviewPrompt",
+    }
     assert {node.define_schema().node_id for node in NODE_CLASSES} == expected
     for node in NODE_CLASSES:
         assert issubclass(node, io.ComfyNode)
         schema = node.define_schema()
-        assert schema.inputs and schema.outputs
+        assert schema.inputs and (schema.outputs or schema.is_output_node)
         schema.validate()
         node.VALIDATE_CLASS()
         info = node.GET_NODE_INFO_V1()
         assert info["name"] == schema.node_id
         json.dumps(info, allow_nan=False)
+
+
+def test_prompt_preview_returns_two_strings_without_writing_files():
+    prompt = 'A red bicycle with a sign reading "雨".'
+    inspection = '{"source":"text","warnings":[]}'
+    result = PREVIEW_PROMPT.execute(prompt, inspection)
+    assert result.result is None
+    assert result.ui == {"text": [prompt], "inspection": [inspection]}
+
+
+def test_prompt_preview_graph_passes_native_validation(monkeypatch):
+    from comfy.cli_args import args
+
+    monkeypatch.setattr(args, "cpu", True)
+    import execution
+    import nodes
+
+    for node in NODE_CLASSES:
+        monkeypatch.setitem(nodes.NODE_CLASS_MAPPINGS, node.define_schema().node_id, node)
+    graph = {
+        "load": {"class_type": "PSNextLoadUpscaler", "inputs": {"model_name": "example.safetensors"}},
+        "upscale": {
+            "class_type": "PSNextUpscaleBase",
+            "inputs": {
+                "upscaler": ["load", 0],
+                "prompt": "a bicycle",
+                "max_new_tokens": 192,
+                "image_slices": 1,
+                "offload_after": False,
+            },
+        },
+        "preview": {
+            "class_type": "PSNextPreviewPrompt",
+            "inputs": {"base_prompt": ["upscale", 0], "inspection": ["upscale", 1]},
+        },
+    }
+    # This graph checks structure only; the model name comes from the host's real combo options.
+    options = LOAD_UPSCALER.GET_NODE_INFO_V1()["input"]["required"]["model_name"][1]["options"]
+    if not options:
+        pytest.skip("No local prompt upscaler model is installed")
+    graph["load"]["inputs"]["model_name"] = options[0]
+    valid, error, outputs, node_errors = asyncio.run(execution.validate_prompt("psnext-preview", graph, None))
+    assert valid and error is None and not node_errors
+    assert outputs == ["preview"]
 
 
 def test_simple_node_exactly_matches_shared_engine() -> None:
@@ -359,6 +410,115 @@ def test_upscaler_runtime_modes_and_native_placement(runtime, model_double, text
     assert sum(call[0] == "unload" for call in calls) == 1
 
 
+@pytest.mark.parametrize("target", ["moss_image_base", "anima"])
+@pytest.mark.parametrize("use_image", [False, True])
+def test_lfm_rewrites_with_target_and_separate_image_grounding(runtime, model_double, target, use_image):
+    from types import SimpleNamespace
+
+    import torch
+
+    handle, calls = model_double
+    handle.model_family = "lfm3_vl"
+    handle.processor.tokenizer.pad_token_id = 0
+    handle.owner.model.network.config = SimpleNamespace(
+        text_config=SimpleNamespace(max_position_embeddings=128000)
+    )
+    image = torch.zeros((1, 32, 32, 3)) if use_image else None
+    text, inspection = runtime.upscale(handle, "two foxes", image, image_slices=2, target_model=target)
+    info = json.loads(inspection)
+    assert text == "Two foxes share a yellow umbrella."
+    assert info["authoring"] == "complete_rewrite" and info["target_model"] == target
+    assert "source_preserved" not in info
+    assert len([call for call in calls if call[0] == "generate"]) == (2 if use_image else 1)
+    prepared = next(call[1] for call in calls if call[0] == "processor")
+    assert prepared["text"] == ["prepared chat"]  # No copied assistant premise.
+    if use_image:
+        assert prepared["images_kwargs"]["size"]["longest_edge"] == 512 * 512 * 2
+    assert not handle.lock.locked()
+
+
+def test_lfm_excludes_other_image_models_before_placing_weights(runtime, model_double):
+    handle, calls = model_double
+    handle.model_family = "lfm3_vl"
+    with pytest.raises(ValueError, match="target_model"):
+        runtime.upscale(handle, "fox", target_model="fibo2")
+    assert not calls and not handle.lock.locked()
+
+
+def test_lfm_repairs_at_most_once_and_reports_unresolved_detail(runtime, model_double):
+    from types import SimpleNamespace
+
+    handle, calls = model_double
+    handle.model_family = "lfm3_vl"
+    handle.processor.tokenizer.pad_token_id = 0
+    handle.owner.model.network.config = SimpleNamespace(
+        text_config=SimpleNamespace(max_position_embeddings=128000)
+    )
+    _, inspection = runtime.upscale(handle, "Two foxes beside the window.", offload_after=True)
+    info = json.loads(inspection)
+    assert [p["stage"] for p in info["passes"]] == ["rewrite", "repair"]
+    assert "window" in info["fidelity"]["missing_relation_details"] and info["warnings"]
+    assert sum(call[0] == "generate" for call in calls) == 2
+    assert sum(call[0] == "unload" for call in calls) == 1
+    assert not handle.lock.locked()
+
+
+@pytest.mark.parametrize(
+    "repaired,accepted",
+    [
+        ("Two blue birds beside a red box.", True),
+        ("Two red birds beside a red box.", False),
+        ("Two blue birds.", False),
+    ],
+)
+def test_lfm_repair_cannot_lose_previously_satisfied_constraints(
+    runtime, model_double, monkeypatch, repaired, accepted
+):
+    handle, _ = model_double
+    handle.model_family = "lfm3_vl"
+    drafts = iter(["Two blue birds.", repaired])
+
+    def generate(*args):
+        return (
+            next(drafts),
+            False,
+            {
+                "input_tokens": 10,
+                "generated_tokens": 10,
+                "prepare_seconds": 0,
+                "placement_seconds": 0,
+                "generate_seconds": 0,
+            },
+        )
+
+    monkeypatch.setattr(runtime, "_generate_lfm3", generate)
+    result, inspection = runtime.upscale(handle, "Two blue birds beside a red box.")
+    info = json.loads(inspection)
+    assert info["repair_accepted"] is accepted
+    assert result == (repaired if accepted else "Two blue birds.")
+    assert [p["stage"] for p in info["passes"]] == ["rewrite", "repair"]
+    assert not handle.lock.locked()
+
+
+@pytest.mark.parametrize(
+    "options",
+    [
+        {"prompt": "x" * 6001},
+        {"max_new_tokens": 0},
+        {"max_new_tokens": True},
+        {"max_new_tokens": 2049},
+        {"image_slices": 0},
+        {"image_slices": 5},
+    ],
+)
+def test_lfm_api_uses_node_input_limits_before_loading(runtime, model_double, options):
+    handle, calls = model_double
+    handle.model_family = "lfm3_vl"
+    with pytest.raises(ValueError):
+        runtime.upscale(handle, **({"prompt": "fox"} | options))
+    assert not calls and not handle.lock.locked()
+
+
 def test_upscaler_releases_lock_and_gpu_after_failure(runtime, model_double):
     handle, calls = model_double
 
@@ -448,6 +608,24 @@ def test_upscaler_api_graph_passes_native_prompt_validation(monkeypatch):
     assert set(outputs) == {"4", "5"}
 
 
+@pytest.mark.parametrize("target", ["moss_image_base", "anima"])
+def test_lfm_examples_include_valid_style_and_base_previews(monkeypatch, target):
+    from comfy.cli_args import args
+
+    monkeypatch.setattr(args, "cpu", True)
+    import execution
+    import nodes
+
+    for node in NODE_CLASSES:
+        monkeypatch.setitem(nodes.NODE_CLASS_MAPPINGS, node.define_schema().node_id, node)
+    graph = json.loads((ROOT / f"examples/comfyui-lfm3-{target}-api.json").read_text())
+    valid, error, outputs, node_errors = asyncio.run(execution.validate_prompt("lfm-example", graph, None))
+    assert valid and error is None and not node_errors
+    assert set(outputs) == {"3", "5"}
+    assert graph["4"]["inputs"]["prompt"] == ["2", 0]
+    assert graph["2"]["inputs"]["target_model"] == target
+
+
 def test_upscaler_visual_graph_has_valid_sockets_and_widgets():
     graph = json.loads((ROOT / "examples" / "comfyui-upscaler-workflow.json").read_text())
     by_id = {node["id"]: node for node in graph["nodes"]}
@@ -482,10 +660,20 @@ def test_invalid_detail_mode_cannot_place_or_run_a_model(runtime, model_double):
 def test_new_detail_widget_keeps_the_existing_widget_prefix():
     inputs = UPSCALE_BASE.define_schema().inputs
     widgets = [item.id for item in inputs if item.id not in ("upscaler", "image")]
-    assert widgets == ["prompt", "max_new_tokens", "image_slices", "offload_after", "detail_mode"]
+    assert widgets == [
+        "prompt",
+        "max_new_tokens",
+        "image_slices",
+        "offload_after",
+        "detail_mode",
+        "target_model",
+    ]
+    target = next(item for item in inputs if item.id == "target_model")
+    assert target.optional and target.default == "moss_image_base"
     mode = next(item for item in inputs if item.id == "detail_mode")
     assert mode.optional and mode.default == "expanded"
-    assert UPSCALE_BASE.fingerprint_inputs() == "semantic-base-2"
+    contracts = UPSCALE_BASE.fingerprint_inputs()
+    assert contracts[0] == "semantic-base-2" and contracts[1] == "lfm-semantic-depth-1"
 
 
 def test_existing_api_graph_without_detail_mode_still_validates(monkeypatch):

@@ -44,7 +44,7 @@ def test_image_only_is_valid_and_missing_both_is_actionable():
         ("a" * 6001, 128, 1),
         ("a", True, 1),
         ("a", 31, 1),
-        ("a", 385, 1),
+        ("a", 2049, 1),
         ("a", 128, False),
         ("a", 128, 5),
     ],

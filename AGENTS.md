@@ -26,3 +26,16 @@ Expanded text authoring must preserve the entire supplied premise in its assista
 prefix and generate continuation only. Reference inputs stay grounded; mode/schema
 changes must retain the existing widget prefix and allow omitted new API fields.
 Do not replace output-quality evaluation with length-only assertions.
+
+The experimental LFM3-VL path owns `comfyui/upscaler/lfm3/` and
+`lfm_prompts.py`. It performs complete MOSS Image Base/Anima scene rewrites;
+the assistant-prefix continuation requirement above applies to MiniCPM only.
+Keep the two runtime copies synchronized with Anima Prompt Architect, with
+their pinned source notices and licenses. Use the offline preparation script
+and native quantizer policy; do not fetch models or remote code at execution.
+Check short/long text and image inference, cache correctness, actual Kitchen
+dispatch, memory and generated captions before changing the measured recipe.
+Expanded authoring uses bounded physical detail and preserves standalone absence
+clauses. Repair may not discard satisfied lexical checks. Curated prompt examples
+are inference guidance, not trained distillation; keep remaining invention/style
+leakage and untested diffusion quality explicit in validation reports.

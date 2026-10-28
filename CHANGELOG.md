@@ -1,5 +1,22 @@
 # Changelog
 
+## Unreleased
+
+Added offline LFM3-VL 2B scene rewriting for MOSS Image Base and Anima, with
+style-neutral action/contact examples, exact-text diagnostics and one bounded
+repair that cannot discard previously satisfied lexical checks. Detailed inputs
+use the same contract without an arbitrary length threshold. Explicit standalone
+absence clauses are restored, and repeated requested labels avoid needless repair.
+Existing MiniCPM
+continuation and saved node widget order remain available.
+
+The benchmark now selects the image-model target and output budget and establishes
+its standalone inference context. Optional runtime tests skip cleanly when host
+dependencies are absent.
+
+Fused compatible native INT8 Q/K/V projections and routed text/vision attention
+through ComfyUI, with causal/sliding masks and shared grouped-head expansion.
+
 ## 0.4.1 — 2026-10-24
 
 Fixes prompt upscaling that only paraphrased short ideas. Expanded is now the
