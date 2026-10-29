@@ -26,7 +26,7 @@ This is an independent successor to
 | Prompt inspection | Inspect applied, skipped, duplicate, and suppressed clauses, capability warnings, normalized recipes, and fingerprints |
 | Local prompt upscaling | Turn text, one reference image, or both into a semantic base using a local MiniCPM-V 4.7 1B or LFM3-VL 2B INT8 model |
 | LLM metaprompt toolkit | Create, neutralize, describe, expand, edit, audit, and package reusable base prompts with seven copyable instructions |
-| ComfyUI nodes | Browse styles by category, author bases, compose JSON recipes, and use compatible native conditioning |
+| ComfyUI nodes | Search readable style descriptions, browse technique categories, inspect visual directions, author bases, and use native conditioning |
 | Browser workbench | Search, filter, save favorites, combine styles, inspect results, and import/export recipes |
 | HEISS Studio module | Browse Looks/Color/Effects, save favorites and presets, restore recipes, and inject styling through a typed bridge and managed Python service |
 | Metadata recommendations | Find model-eligible entries using transparent word/tag overlap scores and matching reasons |
@@ -56,7 +56,8 @@ git clone https://github.com/NidAll/ComfyUI-PromptStyler-Next.git custom_nodes/C
 ```
 
 Restart ComfyUI and search for **PromptStyler Next**. Start with **Style**, enter a
-scene description, narrow the style choices with **category**, choose a style and model profile, then connect the resulting
+scene description, choose a model profile, and open **Style explorer** to search
+and inspect visual directions before applying a style. Connect the resulting
 text to your workflow's native encoder.
 
 The styling nodes need no additional runtime packages. The optional VLM upscaler
@@ -99,6 +100,33 @@ are optional for this route.
 
 The nodes appear under **PromptStyler Next**; upscaling and conditioning have
 separate subcategories. Advanced inputs keep the common styling path compact.
+
+### Style explorer
+
+The **Style** node has one selection control: **Style explorer**, with the current
+style name on its button. Search names, descriptions, tags or IDs; filter by
+Looks, Color grades or Effects; and browse grouped technique categories.
+Choose a candidate, then **Apply**. Searching, changing filters or closing the
+explorer keeps the current workflow selection.
+
+Expand **Visual directions** to see the selected model's authored variant,
+intensity tiers and protected axes. The original style ID remains in saved
+workflows and API inputs, so existing graphs and recipes need no migration.
+Refresh the ComfyUI page after updating to load the new interface.
+
+The latest content pass refines **54 styles across seven packs**, including all
+24 illustration and 24 anime looks. Low-intensity clauses now describe more
+specific rendering techniques; category paths distinguish painting, drawing,
+ink, paper, print and animation methods. Six scene-themed treatments also remove
+instructions that could substitute scenery, weather, objects or relative scale.
+Natural clauses and model-facing tags were reviewed together.
+
+Changed pack versions intentionally change styled text and fingerprints while
+retaining style IDs. For controlled composition, start with one Look and protect
+palette or composition when colors or spatial relationships are required. Image
+models can still add decoration or favor their trained aesthetic; these changes
+do not guarantee perfect style adherence. See the [style review](docs/style-review.md)
+for the content scope and paired-image evaluation limits.
 
 Use **Encode Text** for the supported SDXL and Anima profiles with the correct
 connected encoder. For FLUX, Qwen-Image, MOSS-Image, and Fibo workflows, connect the

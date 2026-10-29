@@ -81,6 +81,13 @@ def test_style_picker_metadata_matches_catalog_without_changing_widget_inputs():
     assert set(categories) == set(options["options"])
     assert len(categories) > 1000  # Includes the second catalog page.
     assert all(module.get_engine().get_style(key)["category"] == value for key, value in categories.items())
+    metadata = options["psnext_styles"]
+    assert {style["id"] for style in metadata} == set(categories)
+    for style in metadata:
+        source = module.get_engine().get_style(style["id"])
+        assert all(source[key] == value for key, value in style.items())
+    noir = next(style for style in metadata if style["id"] == "cinema.noir")
+    assert "anime keyframe" in noir["variants"]["anima"]["clauses"][0]["tags"]
     assert (ROOT / EXTENSION.WEB_DIRECTORY / "promptstyler.js").is_file()
 
 
@@ -619,7 +626,28 @@ def test_upscaler_lock_releases_even_when_offload_fails(runtime, model_double, m
     assert not handle.lock.locked()
 
 
-def test_upscaler_api_graph_passes_native_prompt_validation(monkeypatch):
+@pytest.fixture
+def example_upscaler_catalog(tmp_path, monkeypatch):
+    import torch
+    from safetensors.torch import save_file
+
+    models = sys.modules[f"{SPEC.name}.comfyui.upscaler.models"]
+    name = models.DEFAULT_MODEL
+    save_file(
+        {"fixture": torch.zeros(1)},
+        str(tmp_path / name),
+        metadata={"anima_prompt_architect": json.dumps({"kind": "minicpm", "version": 1})},
+    )
+    monkeypatch.setattr(models, "_roots", lambda: [tmp_path])
+    filenames = models.folder_paths.get_filename_list
+    monkeypatch.setattr(
+        models.folder_paths,
+        "get_filename_list",
+        lambda kind: [name] if kind == models.MODEL_KIND else filenames(kind),
+    )
+
+
+def test_upscaler_api_graph_passes_native_prompt_validation(monkeypatch, example_upscaler_catalog):
     from comfy.cli_args import args
 
     monkeypatch.setattr(args, "cpu", True)
@@ -725,7 +753,7 @@ def test_new_detail_widget_keeps_the_existing_widget_prefix():
     assert contracts[0] == "semantic-base-2" and contracts[1] == "lfm-semantic-depth-1"
 
 
-def test_existing_api_graph_without_detail_mode_still_validates(monkeypatch):
+def test_existing_api_graph_without_detail_mode_still_validates(monkeypatch, example_upscaler_catalog):
     from comfy.cli_args import args
 
     monkeypatch.setattr(args, "cpu", True)

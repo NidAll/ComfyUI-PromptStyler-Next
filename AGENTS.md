@@ -4,11 +4,17 @@ Independent repository. Do not modify the original PromptStyler, ComfyUI core, m
 
 Owners: promptstyler_next/ owns engine, validation, adapters and pack data. comfyui/ owns V3 nodes. studio/ owns browser/Node integration. Python HTTP service belongs in promptstyler_next/service.py. Tests use pytest; optional Hypothesis is a development dependency only. Never load code, URLs, expressions, or arbitrary filesystem paths from pack input.
 
-web/ owns the ComfyUI frontend extension. Style category filtering uses catalog
-metadata on the existing combo; category is nonserialized browsing state and must
-never change the selected full style ID implicitly. Preserve the saved widget
-order and derive the category from restored IDs. Run `node --test tests/*.test.mjs`
+web/ owns the ComfyUI frontend extension. Style explorer is the only visible style
+selection control; category/search filters belong inside it. Keep the original
+style widget hidden but serialized in its original position for workflows/API
+inputs. Browsing must never change the selected full style ID implicitly. Show the
+selected style in the explorer button label. Run `node --test tests/*.test.mjs`
 and the actual V3 host tests after picker changes.
+Browser visual directions must use the selected model variant and distinguish
+intensity thresholds from protected axes. Names, categories and descriptions are
+discovery metadata; do not turn them into extra model instructions. Low-tier style
+clauses should state distinctive visual mechanics, with matching natural/tag
+forms; higher tiers add technique detail without replacing scene content.
 
 Use the existing ComfyUI venv for actual host tests; install dev tools only into a separate project environment. No heavy model downloads. Record validation limits, especially lack of image-quality acceptance. All implementation commits belong to this repository.
 

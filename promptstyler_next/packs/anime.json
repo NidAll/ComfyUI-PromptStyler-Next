@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "next.anime",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Anime visual languages",
   "description": "Animation and illustrated scene treatments, without character or artist insertion.",
   "license": "CC0-1.0",
@@ -10,8 +10,8 @@
     {
       "id": "anime.cel",
       "name": "Painted cel",
-      "description": "Hand-painted animation cels over a painted background. Describe form using clean two-step cel shadows.",
-      "category": "anime",
+      "description": "Hand-inked contours sit over painted cel fields, with clean fill boundaries and slight line variation.",
+      "category": "anime/animation/cel",
       "kind": "style",
       "tags": [
         "anime",
@@ -27,9 +27,11 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "Hand-painted animation cels over a painted background",
+          "text": "Use anime cel linework over painted cel fields, keeping contours hand-inked, fill boundaries clean, and shadow shapes distinct.",
           "tags": [
-            "traditional cel animation"
+            "anime cel animation",
+            "flat painted cel fills",
+            "hand-inked contours"
           ],
           "min_intensity": 0.01
         },
@@ -46,7 +48,7 @@
           "text": "Keep line edges crisp with small variations from hand inking",
           "tags": [
             "crisp ink lines",
-            "hand painted color"
+            "subtle hand-inked edge variation"
           ],
           "min_intensity": 0.75
         }
@@ -58,8 +60,8 @@
     {
       "id": "anime.watercolor",
       "name": "Watercolor animation",
-      "description": "An anime illustration with watercolor-painted surroundings. Use transparent muted washes with open paper highlights.",
-      "category": "anime",
+      "description": "Clear anime contours remain visible beneath transparent watercolor washes and fine pigment granulation.",
+      "category": "anime/painting/watercolor",
       "kind": "style",
       "tags": [
         "anime",
@@ -75,9 +77,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An anime illustration with watercolor-painted surroundings",
+          "text": "Keep the supplied forms' anime contour drawing visible beneath transparent watercolor washes, letting pigment edges feather around them.",
           "tags": [
-            "anime watercolor illustration"
+            "anime contour drawing",
+            "feathered watercolor washes"
           ],
           "min_intensity": 0.01
         },
@@ -107,8 +110,8 @@
     {
       "id": "anime.ova",
       "name": "Late-1980s OVA",
-      "description": "A late-1980s original-video-animation frame. Use deep jewel shadows with restrained warm skin-tone treatment.",
-      "category": "anime",
+      "description": "A vintage OVA cel finish pairs slight paint-boundary wobble with dense painted color and transferred-film grain.",
+      "category": "anime/animation/ova",
       "kind": "style",
       "tags": [
         "anime",
@@ -124,18 +127,19 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A late-1980s original-video-animation frame",
+          "text": "Give the supplied forms an anime OVA cel finish, with slight paint-boundary wobble and imperfect hand-inked lines.",
           "tags": [
-            "1980s ova frame"
+            "anime OVA cel finish",
+            "irregular painted edges"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "palette",
-          "text": "Use deep jewel shadows with restrained warm skin-tone treatment",
+          "text": "Use compact shadow groups and restrained highlights within the supplied palette.",
           "tags": [
-            "jewel tone shadows",
-            "restrained warmth"
+            "compact shadow groups",
+            "restrained highlights"
           ],
           "min_intensity": 0.4
         },
@@ -156,8 +160,8 @@
     {
       "id": "anime.graphic",
       "name": "Graphic anime poster",
-      "description": "A graphic anime illustration built around a strong silhouette. Use large negative-space shapes and a decisive focal hierarchy.",
-      "category": "anime",
+      "description": "Bold anime contours, open graphic space and a limited flat palette create a poster-like treatment.",
+      "category": "anime/graphic/poster",
       "kind": "style",
       "tags": [
         "anime",
@@ -173,9 +177,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A graphic anime illustration built around a strong silhouette",
+          "text": "Use bold anime poster contours with decisive angular edge breaks and open graphic spacing.",
           "tags": [
-            "graphic anime illustration"
+            "anime poster contours",
+            "angular graphic edges"
           ],
           "min_intensity": 0.01
         },
@@ -205,8 +210,8 @@
     {
       "id": "anime.pastel",
       "name": "Pastel slice of life",
-      "description": "A gentle slice-of-life anime illustration. Use soft diffuse daylight without theatrical contrast.",
-      "category": "anime",
+      "description": "Rounded light linework and softly joined edges give the supplied forms a gentle pastel anime finish.",
+      "category": "anime/painting/pastel",
       "kind": "style",
       "tags": [
         "anime",
@@ -222,17 +227,19 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A gentle slice-of-life anime illustration",
+          "text": "Render the supplied forms with soft anime linework, rounded joins, and gently connected shadow edges.",
           "tags": [
-            "slice of life anime"
+            "soft anime linework",
+            "rounded contour joins"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "lighting",
-          "text": "Use soft diffuse daylight without theatrical contrast",
+          "text": "Use soft diffuse light with gentle value transitions and no theatrical contrast.",
           "tags": [
-            "soft diffuse daylight"
+            "soft diffuse light",
+            "gentle value transitions"
           ],
           "min_intensity": 0.4
         },
@@ -253,8 +260,8 @@
     {
       "id": "anime.mecha",
       "name": "Mechanical cel craft",
-      "description": "A mechanically precise anime illustration. Use controlled panel-line detail and restrained surface wear on existing hard surfaces.",
-      "category": "anime",
+      "description": "Controlled technical contours and bounded highlights clarify hard-surface structure already present in the supplied forms.",
+      "category": "anime/mechanical/linework",
       "kind": "style",
       "tags": [
         "anime",
@@ -270,9 +277,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A mechanically precise anime illustration",
+          "text": "Use anime mechanical-design linework with precise technical contours, adding panel-like divisions only where hard-surface structure is supplied.",
           "tags": [
-            "mechanical anime illustration"
+            "anime technical linework",
+            "conditional panel contours"
           ],
           "min_intensity": 0.01
         },
@@ -301,8 +309,8 @@
     {
       "id": "anime.inkline",
       "name": "Fine-line key visual",
-      "description": "An anime key visual with delicate variable-width linework. Use clear local colors with gently shifted shadow hues.",
-      "category": "anime",
+      "description": "Delicate variable-width contours taper at their ends, with shifted shadow hues and focal detail.",
+      "category": "anime/linework/fine",
       "kind": "style",
       "tags": [
         "anime",
@@ -318,10 +326,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An anime key visual with delicate variable-width linework",
+          "text": "Draw anime contours with delicate variable width that tapers at the ends and leaves selected edges open.",
           "tags": [
-            "anime key visual",
-            "fine lineart"
+            "anime variable-width contours",
+            "tapered line endings"
           ],
           "min_intensity": 0.01
         },
@@ -350,8 +358,8 @@
     {
       "id": "anime.gouache",
       "name": "Gouache background plate",
-      "description": "A hand-painted animation background in opaque gouache. Organize depth through overlapping painted value groups.",
-      "category": "anime",
+      "description": "Opaque gouache builds overlapping value groups beneath dry-brush scumble and visible pigment coverage.",
+      "category": "anime/background/gouache",
       "kind": "style",
       "tags": [
         "anime",
@@ -367,9 +375,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A hand-painted animation background in opaque gouache",
+          "text": "Apply an anime background-painting treatment across the supplied scene: opaque gouache planes, overlapping value groups, and irregular brush edges.",
           "tags": [
-            "gouache anime background"
+            "anime background painting",
+            "irregular gouache edges"
           ],
           "min_intensity": 0.01
         },
@@ -398,8 +407,8 @@
     {
       "id": "anime.chibi",
       "name": "Chibi illustration",
-      "description": "A chibi-style illustration with compact expressive shape design. Simplify existing forms into rounded readable masses.",
-      "category": "anime",
+      "description": "Rounded contour joins and simple shadow groups give the supplied forms a compact, readable anime shape language.",
+      "category": "anime/character/chibi",
       "kind": "style",
       "tags": [
         "anime",
@@ -415,10 +424,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A chibi-style illustration with compact expressive shape design",
+          "text": "Give the supplied forms a compact rounded anime shape language, with clean contour joins and simple shadow groups.",
           "tags": [
-            "chibi",
-            "compact shape design"
+            "anime chibi shapes",
+            "simple shadow groups"
           ],
           "min_intensity": 0.01
         },
@@ -432,10 +441,10 @@
         },
         {
           "axis": "texture",
-          "text": "Use clean outlines and restrained decorative detail",
+          "text": "Keep outer contours clean and interior marks sparse, leaving broad shadow shapes unobstructed.",
           "tags": [
-            "clean outlines",
-            "simple details"
+            "clean outer contours",
+            "sparse interior marks"
           ],
           "min_intensity": 0.75
         }
@@ -447,8 +456,8 @@
     {
       "id": "anime.sumi",
       "name": "Ink-and-cel fusion",
-      "description": "An anime illustration combining cel color with expressive ink marks. Balance precise focal contours against broad gestural strokes.",
-      "category": "anime",
+      "description": "Clean cel shapes meet expressive sumi strokes, with selective brush-edge feathering.",
+      "category": "anime/ink/cel-fusion",
       "kind": "style",
       "tags": [
         "anime",
@@ -464,9 +473,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An anime illustration combining cel color with expressive ink marks",
+          "text": "Combine anime cel shapes with sumi-style ink contours; let selected brush edges feather or pool instead of smoothing every mark.",
           "tags": [
-            "anime ink illustration"
+            "anime cel shapes",
+            "feathered sumi edges"
           ],
           "min_intensity": 0.01
         },
@@ -496,8 +506,8 @@
     {
       "id": "anime.nocturne",
       "name": "Painted anime nocturne",
-      "description": "A painted anime nocturne with clear shape separation. Use soft rim illumination to hold silhouettes in the dark.",
-      "category": "anime",
+      "description": "Strong dark-to-light separation and a soft rim hold supplied forms in a painted nocturne treatment.",
+      "category": "anime/lighting/nocturne",
       "kind": "style",
       "tags": [
         "anime",
@@ -513,9 +523,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A painted anime nocturne with clear shape separation",
+          "text": "Paint supplied forms in an anime nocturne treatment, separating them from darker masses with a restrained soft rim on light-facing edges.",
           "tags": [
-            "anime nocturne"
+            "anime nocturne lighting",
+            "soft rim edges"
           ],
           "min_intensity": 0.01
         },
@@ -544,8 +555,8 @@
     {
       "id": "anime.layout",
       "name": "Animation layout drawing",
-      "description": "A production-style animation layout drawing. Emphasize spatial construction and purposeful perspective lines.",
-      "category": "anime",
+      "description": "Loose graphite construction and selective finished contours frame the supplied scene as an animation layout drawing.",
+      "category": "anime/production/layout",
       "kind": "style",
       "tags": [
         "anime",
@@ -561,9 +572,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A production-style animation layout drawing",
+          "text": "Draw the supplied scene as an anime layout, with loose graphite perspective guides beneath selective finished contours.",
           "tags": [
-            "animation layout drawing"
+            "anime layout construction",
+            "selective finished contours"
           ],
           "min_intensity": 0.01
         },
@@ -593,8 +605,8 @@
     {
       "id": "anime.digitalflat",
       "name": "Flat digital animation",
-      "description": "A clean digital-animation frame. Use flat local colors and sharply separated shadow layers.",
-      "category": "anime",
+      "description": "Crisp digital contours, smooth fills and sharply separated shadow shapes create a clean animation frame.",
+      "category": "anime/digital/flat-cel",
       "kind": "style",
       "tags": [
         "anime",
@@ -610,9 +622,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A clean digital-animation frame",
+          "text": "Render an anime frame with digitally crisp closed contours and stable fill boundaries; cut shadows into separate clean shapes.",
           "tags": [
-            "digital anime frame"
+            "anime digital contours",
+            "clean shadow cutouts"
           ],
           "min_intensity": 0.01
         },
@@ -642,8 +655,8 @@
     {
       "id": "anime.storyboard",
       "name": "Anime storyboard",
-      "description": "A rough anime storyboard drawing of the supplied action. Prioritize clear staging and a concise directional read.",
-      "category": "anime",
+      "description": "Rapid graphite gestures and sparse tone blocks keep the supplied action directionally clear.",
+      "category": "anime/production/storyboard",
       "kind": "style",
       "tags": [
         "anime",
@@ -659,9 +672,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A rough anime storyboard drawing of the supplied action",
+          "text": "Draw the supplied action with anime storyboard shorthand: quick graphite gestures, visible construction strokes, and broad tonal blocks clarifying direction.",
           "tags": [
-            "anime storyboard drawing"
+            "anime storyboard gestures",
+            "visible construction strokes"
           ],
           "min_intensity": 0.01
         },
@@ -691,8 +705,8 @@
     {
       "id": "anime.silkscreen",
       "name": "Anime screenprint",
-      "description": "An anime illustration adapted to screen-printed ink shapes. Use a narrow set of opaque spot colors.",
-      "category": "anime",
+      "description": "Screen-printed anime shapes use opaque spot colors, slight ink-edge roughness and visible mesh texture.",
+      "category": "anime/print/silkscreen",
       "kind": "style",
       "tags": [
         "anime",
@@ -708,9 +722,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An anime illustration adapted to screen-printed ink shapes",
+          "text": "Render the supplied forms as anime screenprint shapes, with slight register shifts and rough ink edges at overlaps.",
           "tags": [
-            "anime screenprint"
+            "anime screenprint shapes",
+            "rough overlapping edges"
           ],
           "min_intensity": 0.01
         },
@@ -739,8 +754,8 @@
     {
       "id": "anime.doujin",
       "name": "Handmade fanbook color",
-      "description": "A handmade anime fanbook illustration. Use lightly layered colored-pencil and marker hues.",
-      "category": "anime",
+      "description": "Layered pencil and marker strokes with paper gaps give the anime illustration a handmade fanbook finish.",
+      "category": "anime/fanbook/hand-colored",
       "kind": "style",
       "tags": [
         "anime",
@@ -756,9 +771,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A handmade anime fanbook illustration",
+          "text": "Use hand-drawn anime contours with layered colored-pencil and marker strokes, allowing slight overlaps and paper gaps at their edges.",
           "tags": [
-            "handmade anime illustration"
+            "hand-colored anime linework",
+            "layered pencil and marker"
           ],
           "min_intensity": 0.01
         },
@@ -788,8 +804,8 @@
     {
       "id": "anime.lightnovel",
       "name": "Light-novel cover paint",
-      "description": "A light-novel-cover style anime illustration. Keep a strong focal silhouette with readable supporting shapes.",
-      "category": "anime",
+      "description": "Crisp focal linework and soft secondary paint shape a polished light-novel-cover finish.",
+      "category": "anime/cover/painted",
       "kind": "style",
       "tags": [
         "anime",
@@ -805,9 +821,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A light-novel-cover style anime illustration",
+          "text": "Render with polished anime cover linework that stays crisp at focal edges and softens into painted transitions on secondary forms.",
           "tags": [
-            "light novel illustration"
+            "anime cover linework",
+            "soft secondary paint"
           ],
           "min_intensity": 0.01
         },
@@ -837,8 +854,8 @@
     {
       "id": "anime.children",
       "name": "Children’s anime shapes",
-      "description": "A children’s-animation illustration with rounded clear forms. Use simple visual grouping and easily read gestures.",
-      "category": "anime",
+      "description": "Rounded clear forms, simple grouping and low-complexity shadows create a children’s-anime shape treatment.",
+      "category": "anime/character/children",
       "kind": "style",
       "tags": [
         "anime",
@@ -854,9 +871,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A children’s-animation illustration with rounded clear forms",
+          "text": "Use rounded children's-anime contours and broad clean shadow groups, with small expressive line accents on the supplied forms.",
           "tags": [
-            "children anime illustration"
+            "children's-anime contours",
+            "broad clean shadows"
           ],
           "min_intensity": 0.01
         },
@@ -885,8 +903,8 @@
     {
       "id": "anime.roughpaint",
       "name": "Rough anime paint study",
-      "description": "A rough painted anime study. Build the image from energetic connected color masses.",
-      "category": "anime",
+      "description": "Broad connected paint masses and visible construction edges keep the anime study loose and energetic.",
+      "category": "anime/painting/rough",
       "kind": "style",
       "tags": [
         "anime",
@@ -902,9 +920,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A rough painted anime study",
+          "text": "Build the supplied forms from connected, broad anime brushstrokes, leaving selected construction edges unfinished.",
           "tags": [
-            "rough painted anime"
+            "broad anime brushstrokes",
+            "unfinished construction edges"
           ],
           "min_intensity": 0.01
         },
@@ -933,8 +952,8 @@
     {
       "id": "anime.mutedcel",
       "name": "Muted cel realism",
-      "description": "An anime cel illustration with understated realistic staging. Use muted local colors and soft neutral shadow hues.",
-      "category": "anime",
+      "description": "Clean cel contours, muted local colors and softened shadow hues create an understated anime finish.",
+      "category": "anime/animation/muted-cel",
       "kind": "style",
       "tags": [
         "anime",
@@ -950,9 +969,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An anime cel illustration with understated realistic staging",
+          "text": "Render the supplied forms with anime cel linework, restrained line weight, and gently softened shadow edges.",
           "tags": [
-            "muted cel anime"
+            "anime cel contours",
+            "softened shadow edges"
           ],
           "min_intensity": 0.01
         },
@@ -982,8 +1002,8 @@
     {
       "id": "anime.chromaticline",
       "name": "Colored contour illustration",
-      "description": "An anime illustration with colored contour lines. Let line colors shift gently to harmonize with neighboring fills.",
-      "category": "anime",
+      "description": "Thin variable contours harmonize with adjacent fills through subtle line-color shifts.",
+      "category": "anime/linework/chromatic",
       "kind": "style",
       "tags": [
         "anime",
@@ -999,9 +1019,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An anime illustration with colored contour lines",
+          "text": "Draw the supplied shapes with anime contours of thin, variable width; let line edges soften where they meet adjacent fills.",
           "tags": [
-            "colored contour anime"
+            "anime variable contours",
+            "soft fill joins"
           ],
           "min_intensity": 0.01
         },
@@ -1029,8 +1050,8 @@
     {
       "id": "anime.pencilcolor",
       "name": "Pencil-and-color keyframe",
-      "description": "An animation keyframe with retained pencil underdrawing. Apply transparent local-color washes over the drawing.",
-      "category": "anime",
+      "description": "Visible graphite underdrawing and transparent color washes give the keyframe a retained-pencil finish.",
+      "category": "anime/production/pencil-color",
       "kind": "style",
       "tags": [
         "anime",
@@ -1046,9 +1067,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An animation keyframe with retained pencil underdrawing",
+          "text": "Keep anime keyframe graphite searching lines visible beneath selected finished contours, then layer transparent washes over them.",
           "tags": [
-            "pencil color keyframe"
+            "anime keyframe underdrawing",
+            "transparent color washes"
           ],
           "min_intensity": 0.01
         },
@@ -1076,8 +1098,8 @@
     {
       "id": "anime.woodblock",
       "name": "Anime woodblock fusion",
-      "description": "An anime illustration translated into water-based woodblock shapes. Use softly registered flat pigment colors.",
-      "category": "anime",
+      "description": "Anime forms use flat water-based pigment, carved contours and slightly irregular print edges.",
+      "category": "anime/print/woodblock",
       "kind": "style",
       "tags": [
         "anime",
@@ -1093,9 +1115,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An anime illustration translated into water-based woodblock shapes",
+          "text": "Render supplied forms in an anime woodblock style, with firm carved contours, broad water-based pigment fields, and slight registration offsets.",
           "tags": [
-            "anime woodblock illustration"
+            "anime woodblock contours",
+            "slightly offset print edges"
           ],
           "min_intensity": 0.01
         },
@@ -1124,8 +1147,8 @@
     {
       "id": "anime.sparse",
       "name": "Sparse-line anime",
-      "description": "A sparse-line anime illustration. Describe identifying forms with a small number of precise contours.",
-      "category": "anime",
+      "description": "Economical contours and selective pale fills keep the anime linework sparse.",
+      "category": "anime/linework/sparse",
       "kind": "style",
       "tags": [
         "anime",
@@ -1141,9 +1164,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A sparse-line anime illustration",
+          "text": "Describe supplied silhouettes with sparse anime contours, using a few thin deliberate lines and leaving interior areas mostly unmarked.",
           "tags": [
-            "sparse line anime"
+            "sparse anime contours",
+            "open interior areas"
           ],
           "min_intensity": 0.01
         },

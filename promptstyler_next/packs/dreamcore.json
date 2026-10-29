@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.dreamcore",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "Dreamcore",
   "description": "Soft nostalgic discontinuities and luminous dream logic, with independently composable grades.",
   "license": "CC0-1.0",
@@ -66,7 +66,7 @@
     {
       "id": "dreamcore.toybox-reverie",
       "name": "Toybox Reverie",
-      "description": "Childhood scale and plastic tactility remembered through sleep.",
+      "description": "Softly molded illustrative volumes, rounded contour joins and chalky candy colors with shallow dreamlike depth.",
       "category": "dreamcore/visions",
       "kind": "style",
       "tags": [
@@ -84,33 +84,38 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "Use the soft, suspended rendering of a playful remembered dream",
+          "text": "Render the supplied forms as a softly modeled toybox illustration with rounded contour joins and simple molded volumes",
           "tags": [
-            "soft suspended dream rendering"
+            "toybox illustration",
+            "softly modeled supplied forms",
+            "rounded contour joins"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "palette",
-          "text": "Use chalky candy colors with occasional saturated plastic accents",
+          "text": "Use chalky candy colors with small saturated accents",
           "tags": [
-            "chalk pastel and toy plastic"
+            "chalk pastel palette",
+            "small saturated color accents"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "composition",
-          "text": "Make the spatial scale gently uncertain without obscuring the subject",
+          "text": "Suggest shallow dreamlike depth between existing planes while preserving the supplied size relationships",
           "tags": [
-            "gentle toybox scale mismatch"
+            "shallow dreamlike depth",
+            "preserved supplied size relationships"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Suggest a fine synthetic gleam and softly worn surface grain on existing forms",
+          "text": "Suggest a fine synthetic gleam and softly worn surface grain as the rendering finish on existing forms",
           "tags": [
-            "fine synthetic gleam and worn grain"
+            "fine synthetic gleam on supplied forms",
+            "softly worn surface grain"
           ],
           "min_intensity": 0.92
         }
@@ -122,7 +127,7 @@
     {
       "id": "dreamcore.sunlit-void",
       "name": "Sunlit Void",
-      "description": "Bright daylight meeting impossible amounts of quiet negative space.",
+      "description": "Limpid dream rendering with dissolved distant edges, broad diffuse light and quiet use of existing open space.",
       "category": "dreamcore/visions",
       "kind": "style",
       "tags": [
@@ -140,33 +145,36 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "Apply a daylight-washed dream treatment to the supplied scene",
+          "text": "A limpid dream illustration with simplified depth and softly dissolved distant edges on the supplied scene",
           "tags": [
-            "daylight-washed dream treatment"
+            "limpid dream illustration",
+            "softly dissolved distant edges"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Leave unusually large uninterrupted areas around the established subject",
+          "text": "Use the existing open areas as broad quiet fields while retaining all supplied objects and their positions",
           "tags": [
-            "expansive dreamlike negative space"
+            "quiet existing negative space",
+            "retained objects and positions"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Use a clear directionless glow with a few long impossible-edged shadows",
+          "text": "Use broad diffuse illumination with gently feathered shadow boundaries, consistent with the supplied light direction",
           "tags": [
-            "soft light and improbable shadows"
+            "broad diffuse illumination",
+            "feathered shadows matching supplied light"
           ],
-          "min_intensity": 0.78
+          "min_intensity": 0.4
         },
         {
           "axis": "mood",
           "text": "Balance calm openness with a quiet sense of spatial unreality",
           "tags": [
-            "serene spatial dislocation"
+            "serene spatial unreality"
           ],
           "min_intensity": 0.92
         }

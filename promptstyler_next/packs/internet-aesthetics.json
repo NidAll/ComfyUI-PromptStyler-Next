@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.internet-aesthetics",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "Internet Aesthetics",
   "description": "Independent internet-era and online-subculture visual languages without franchise-specific imagery.",
   "license": "CC0-1.0",
@@ -346,7 +346,7 @@
     {
       "id": "netculture.kidcore",
       "name": "Kidcore Color Play",
-      "description": "Playful children’s-design nostalgia with tactile cutouts and simple shapes.",
+      "description": "Rounded cut-paper silhouettes, chalk-softened primary colors and tactile layered-paper edges.",
       "category": "internet/aesthetics",
       "kind": "style",
       "tags": [
@@ -364,9 +364,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "Style the composition with cheerful kidcore craft and toy-package language",
+          "text": "A playful cut-paper illustration with broad rounded contours and simple interlocking shape boundaries on the supplied subjects",
           "tags": [
-            "kidcore playful design"
+            "playful cut-paper illustration",
+            "rounded supplied-subject contours"
           ],
           "min_intensity": 0.01
         },
@@ -374,23 +375,26 @@
           "axis": "palette",
           "text": "Use primary colors softened by chalky pastel secondary tones",
           "tags": [
-            "kidcore primary colors"
+            "primary color palette",
+            "chalky pastel secondary tones"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "composition",
-          "text": "Arrange oversized simple shapes with generous playful spacing",
+          "text": "Clarify the existing silhouettes with broad readable shape boundaries while retaining their positions and interactions",
           "tags": [
-            "childlike cutout shapes"
+            "readable supplied silhouettes",
+            "retained positions and interactions"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Maintain paper-sticker overlap and slightly rough foam edges",
+          "text": "Use paper-fiber edges and slight layered-cutout relief as the image finish",
           "tags": [
-            "craft foam and stickers"
+            "paper-fiber cut edges",
+            "slight cut-paper relief"
           ],
           "min_intensity": 0.92
         }

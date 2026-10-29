@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "next.illustration",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Illustration workshop",
   "description": "Contemporary and traditional illustrative craft.",
   "license": "CC0-1.0",
@@ -10,8 +10,8 @@
     {
       "id": "illustration.editorial",
       "name": "Conceptual editorial",
-      "description": "A conceptual editorial illustration with simplified shapes. Use a concise visual hierarchy and purposeful empty space.",
-      "category": "illustration",
+      "description": "Flat-edged forms, decisive contour hierarchy and restrained printed-paper grain give this editorial illustration a concise graphic treatment.",
+      "category": "illustration/editorial",
       "kind": "style",
       "tags": [
         "illustration",
@@ -27,9 +27,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A conceptual editorial illustration with simplified shapes",
+          "text": "Simplify the supplied forms into flat-edged silhouettes, using line-weight and edge contrast to establish visual hierarchy.",
           "tags": [
-            "conceptual editorial illustration"
+            "flat-edged forms",
+            "line-weight and edge contrast"
           ],
           "min_intensity": 0.01
         },
@@ -43,9 +44,10 @@
         },
         {
           "axis": "texture",
-          "text": "Apply a restrained printed-paper grain",
+          "text": "Apply fine printed-paper grain that remains visible in broad fills without roughening the decisive contours.",
           "tags": [
-            "printed paper grain"
+            "fine print grain",
+            "clean contour edges"
           ],
           "min_intensity": 0.75
         }
@@ -57,8 +59,8 @@
     {
       "id": "illustration.gouache",
       "name": "Opaque gouache",
-      "description": "An opaque gouache illustration. Separate matte color shapes with carefully stepped values.",
-      "category": "illustration",
+      "description": "Opaque matte gouache shapes use compact value steps, brush-loaded edges and subtle dry-brush drag.",
+      "category": "illustration/painting/gouache",
       "kind": "style",
       "tags": [
         "illustration",
@@ -74,17 +76,19 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An opaque gouache illustration",
+          "text": "Model the supplied forms in opaque matte gouache, leaving brush-loaded edges and slight overlaps visible.",
           "tags": [
-            "gouache illustration"
+            "opaque matte gouache",
+            "brush-loaded edges"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "palette",
-          "text": "Separate matte color shapes with carefully stepped values",
+          "text": "Separate the supplied colors into matte planes with compact, deliberate value steps.",
           "tags": [
-            "matte color shapes"
+            "matte color planes",
+            "compact value steps"
           ],
           "min_intensity": 0.4
         },
@@ -105,8 +109,8 @@
     {
       "id": "illustration.watercolor",
       "name": "Transparent watercolor",
-      "description": "A transparent watercolor illustration on textured paper. Reserve the paper itself for luminous highlights.",
-      "category": "illustration",
+      "description": "Transparent watercolor washes feather at selected drawn contours, with granulation and paper highlights.",
+      "category": "illustration/painting/watercolor",
       "kind": "style",
       "tags": [
         "illustration",
@@ -122,17 +126,19 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A transparent watercolor illustration on textured paper",
+          "text": "Render the supplied forms in transparent watercolor, letting washes feather at selected drawn contours.",
           "tags": [
-            "watercolor illustration"
+            "transparent watercolor",
+            "feathered wash edges"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "lighting",
-          "text": "Reserve the paper itself for luminous highlights",
+          "text": "Keep the paper itself as an unpainted highlight; let transparent washes gather softly at selected edges.",
           "tags": [
-            "reserved paper highlights"
+            "unpainted paper highlights",
+            "soft wash edges"
           ],
           "min_intensity": 0.4
         },
@@ -153,8 +159,8 @@
     {
       "id": "illustration.colored-pencil",
       "name": "Colored-pencil weave",
-      "description": "A colored-pencil illustration built from visible layered strokes. Blend neighboring hues through overlapping marks.",
-      "category": "illustration",
+      "description": "Layered colored-pencil strokes follow each contour, with neighboring marks blended over visible paper tooth.",
+      "category": "illustration/drawing/colored-pencil",
       "kind": "style",
       "tags": [
         "illustration",
@@ -170,17 +176,19 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A colored-pencil illustration built from visible layered strokes",
+          "text": "Build the supplied forms from short, layered colored-pencil strokes whose direction follows each contour.",
           "tags": [
-            "colored pencil illustration"
+            "layered pencil strokes",
+            "contour-following marks"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "palette",
-          "text": "Blend neighboring hues through overlapping marks",
+          "text": "Blend the supplied colors through overlapping strokes that follow each form’s contour.",
           "tags": [
-            "layered pencil colors"
+            "contour-following color strokes",
+            "overlapping pencil marks"
           ],
           "min_intensity": 0.4
         },
@@ -201,8 +209,8 @@
     {
       "id": "illustration.cutpaper",
       "name": "Cut-paper theater",
-      "description": "An illustration assembled from carefully cut colored paper. Use overlapping flat shapes to establish depth.",
-      "category": "illustration",
+      "description": "Overlapping flat paper shapes use exposed edges and shallow shadows to create a cut-paper relief.",
+      "category": "illustration/paper/cut-paper",
       "kind": "style",
       "tags": [
         "illustration",
@@ -218,9 +226,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An illustration assembled from carefully cut colored paper",
+          "text": "Translate the supplied forms into overlapping flat paper shapes; let exposed edges and shallow layers define their contours.",
           "tags": [
-            "cut paper illustration"
+            "overlapping paper shapes",
+            "exposed cut edges"
           ],
           "min_intensity": 0.01
         },
@@ -249,8 +258,8 @@
     {
       "id": "illustration.scratchboard",
       "name": "Scratchboard lights",
-      "description": "A scratchboard illustration revealed from a coated surface. Build light by carving fine marks out of dark masses.",
-      "category": "illustration",
+      "description": "Tapered incisions cut through a coated scratchboard surface to reveal light and directional detail.",
+      "category": "illustration/print/scratchboard",
       "kind": "style",
       "tags": [
         "illustration",
@@ -267,9 +276,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A scratchboard illustration revealed from a coated surface",
+          "text": "Render with scratchboard incisions, tapering fine cuts through a coated surface to reveal the image.",
           "tags": [
-            "scratchboard illustration"
+            "tapered scratchboard cuts",
+            "carved linework"
           ],
           "min_intensity": 0.01
         },
@@ -306,8 +316,8 @@
     {
       "id": "illustration.airbrush",
       "name": "Airbrush retrofuturism",
-      "description": "A retrofuturist airbrush illustration. Use smoothly blended saturated color fields.",
-      "category": "illustration",
+      "description": "Soft airbrush gradients end at crisp masked edges, with saturated blended fields and fine spray texture.",
+      "category": "illustration/painting/airbrush",
       "kind": "style",
       "tags": [
         "illustration",
@@ -323,9 +333,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A retrofuturist airbrush illustration",
+          "text": "Render supplied forms with softly sprayed airbrush tones held inside crisp mask edges.",
           "tags": [
-            "retrofuturist airbrush"
+            "soft airbrush gradients",
+            "crisp mask edges"
           ],
           "min_intensity": 0.01
         },
@@ -354,8 +365,8 @@
     {
       "id": "illustration.botanical",
       "name": "Botanical plate craft",
-      "description": "A botanical-plate style illustration of the supplied subject. Use clear isolation and precise structural description.",
-      "category": "illustration",
+      "description": "Measured plate-drawing contours and fine structural marks keep the supplied subject clear beneath transparent washes.",
+      "category": "illustration/study/botanical",
       "kind": "style",
       "tags": [
         "illustration",
@@ -371,9 +382,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A botanical-plate style illustration of the supplied subject",
+          "text": "Draw the supplied subject as a measured study, tracing its existing structure with precise ink contours and fine marks.",
           "tags": [
-            "botanical plate illustration"
+            "measured plate drawing",
+            "precise structural contours"
           ],
           "min_intensity": 0.01
         },
@@ -403,8 +415,8 @@
     {
       "id": "illustration.folk",
       "name": "Folk-painted forms",
-      "description": "A folk-painted illustration with direct stylized forms. Organize the image through frontal shapes and rhythmic repetition.",
-      "category": "illustration",
+      "description": "Broad hand-painted shapes and slightly irregular contour rhythms create a direct folk-art finish.",
+      "category": "illustration/folk-art/painting",
       "kind": "style",
       "tags": [
         "illustration",
@@ -420,18 +432,19 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A folk-painted illustration with direct stylized forms",
+          "text": "Simplify the supplied forms into broad hand-painted shapes; let slight asymmetry and rhythmic contour repeats carry a folk-art character.",
           "tags": [
-            "folk painting illustration"
+            "broad painted shapes",
+            "rhythmic contour repeats"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Organize the image through frontal shapes and rhythmic repetition",
+          "text": "Organize the supplied forms through flattened shape relationships and rhythmic contour repeats.",
           "tags": [
-            "frontal stylized shapes",
-            "rhythmic repetition"
+            "flattened shape relationships",
+            "rhythmic contours"
           ],
           "min_intensity": 0.4
         },
@@ -451,8 +464,8 @@
     {
       "id": "illustration.pastel",
       "name": "Soft-pastel study",
-      "description": "A soft-pastel illustration on toned paper. Build volume through broad luminous color masses.",
-      "category": "illustration",
+      "description": "Broad soft-pastel strokes break over toned paper, with powdery grain and softly rubbed transitions.",
+      "category": "illustration/drawing/soft-pastel",
       "kind": "style",
       "tags": [
         "illustration",
@@ -468,9 +481,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A soft-pastel illustration on toned paper",
+          "text": "Lay soft-pastel strokes broadly over the supplied forms, breaking edges so the toned ground shows through.",
           "tags": [
-            "soft pastel illustration"
+            "broad pastel strokes",
+            "broken powdery edges"
           ],
           "min_intensity": 0.01
         },
@@ -484,10 +498,10 @@
         },
         {
           "axis": "texture",
-          "text": "Show powdery pigment and broken marks on paper grain",
+          "text": "Show powdery pigment catching in the paper tooth, with broken marks and lightly rubbed joins.",
           "tags": [
-            "powdery pastel",
-            "broken marks"
+            "powdery pigment",
+            "broken pastel marks"
           ],
           "min_intensity": 0.75
         }
@@ -499,8 +513,8 @@
     {
       "id": "illustration.marker",
       "name": "Marker rendering",
-      "description": "An alcohol-marker illustration with confident ink outlines. Use broad translucent strokes to describe form.",
-      "category": "illustration",
+      "description": "Confident ink outlines frame overlapping alcohol-marker bands with visible stroke endings and pale streaks.",
+      "category": "illustration/drawing/marker",
       "kind": "style",
       "tags": [
         "illustration",
@@ -516,10 +530,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An alcohol-marker illustration with confident ink outlines",
+          "text": "Outline the supplied forms with confident ink lines, then shade them in overlapping alcohol-marker bands with visible stroke endings.",
           "tags": [
-            "marker rendering",
-            "ink outlines"
+            "ink outlines",
+            "overlapping marker bands"
           ],
           "min_intensity": 0.01
         },
@@ -533,9 +547,10 @@
         },
         {
           "axis": "texture",
-          "text": "Keep overlapping marker passes and occasional pale streaks visible",
+          "text": "Keep separate marker passes visible, including slight streaks at the ends of broad strokes.",
           "tags": [
-            "overlapping marker strokes"
+            "visible marker passes",
+            "streaked stroke endings"
           ],
           "min_intensity": 0.75
         }
@@ -547,8 +562,8 @@
     {
       "id": "illustration.papercollage",
       "name": "Editorial paper collage",
-      "description": "An editorial collage of torn paper shapes. Create depth through cropped fragments and purposeful overlaps.",
-      "category": "illustration",
+      "description": "Torn printed-paper surfaces use ragged fiber edges and decisive cropped overlaps for an editorial collage finish.",
+      "category": "illustration/paper/collage",
       "kind": "style",
       "tags": [
         "illustration",
@@ -564,9 +579,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An editorial collage of torn paper shapes",
+          "text": "Rebuild the supplied forms from torn paper surfaces, using ragged fiber edges and decisive cropped overlaps.",
           "tags": [
-            "editorial paper collage"
+            "torn paper fibers",
+            "cropped paper overlaps"
           ],
           "min_intensity": 0.01
         },
@@ -581,10 +597,10 @@
         },
         {
           "axis": "texture",
-          "text": "Preserve torn fiber edges and printed-paper textures",
+          "text": "Preserve torn fiber edges and printed-paper grain, with shadow only at actual overlaps.",
           "tags": [
-            "torn paper fibers",
-            "printed texture"
+            "torn fiber edges",
+            "overlap shadows"
           ],
           "min_intensity": 0.75
         }
@@ -596,8 +612,8 @@
     {
       "id": "illustration.silverpoint",
       "name": "Silverpoint study",
-      "description": "A silverpoint drawing on prepared paper. Build delicate values through accumulated pale metallic lines.",
-      "category": "illustration",
+      "description": "Fine silverpoint lines accumulate into crosshatched tonal passages on prepared paper.",
+      "category": "illustration/drawing/silverpoint",
       "kind": "style",
       "tags": [
         "illustration",
@@ -613,9 +629,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A silverpoint drawing on prepared paper",
+          "text": "Draw with fine silverpoint lines, stacking close crosshatching to build tonal passages on prepared paper.",
           "tags": [
-            "silverpoint drawing"
+            "fine silverpoint lines",
+            "crosshatched tonal passages"
           ],
           "min_intensity": 0.01
         },
@@ -644,8 +661,8 @@
     {
       "id": "illustration.reedpen",
       "name": "Reed-pen drawing",
-      "description": "An illustration drawn with a cut reed pen. Use angular strokes and economical gestural contours.",
-      "category": "illustration",
+      "description": "A broad cut-reed nib makes angular variable-width strokes, with blotted turns and dry stroke endings.",
+      "category": "illustration/drawing/reed-pen",
       "kind": "style",
       "tags": [
         "illustration",
@@ -661,17 +678,19 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An illustration drawn with a cut reed pen",
+          "text": "Use a cut reed nib for angular, variable-width ink strokes; retain blotted turns and dry endings from the broad nib.",
           "tags": [
-            "reed pen drawing"
+            "angular reed-pen strokes",
+            "variable ink loading"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Use angular strokes and economical gestural contours",
+          "text": "Use the broad nib’s angular strokes and economical contours to clarify the supplied forms.",
           "tags": [
-            "angular reed strokes"
+            "angular nib strokes",
+            "economical contours"
           ],
           "min_intensity": 0.4
         },
@@ -692,8 +711,8 @@
     {
       "id": "illustration.chalk",
       "name": "Three-chalk study",
-      "description": "A three-chalk drawing on toned paper. Balance red chalk, black chalk and white heightening.",
-      "category": "illustration",
+      "description": "Pressure-varied chalk strokes and rubbed passages leave a dry, powdery grain at the edges.",
+      "category": "illustration/drawing/chalk",
       "kind": "style",
       "tags": [
         "illustration",
@@ -709,9 +728,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A three-chalk drawing on toned paper",
+          "text": "Draw with three chalks using pressure-varied contours and broad rubbed passages, leaving dry grain visible at the edges.",
           "tags": [
-            "three chalk drawing"
+            "three-chalk strokes",
+            "rubbed powdery passages"
           ],
           "min_intensity": 0.01
         },
@@ -740,8 +760,8 @@
     {
       "id": "illustration.tempera",
       "name": "Egg-tempera illustration",
-      "description": "An egg-tempera illustration on a smooth ground. Model forms through fine overlapping luminous strokes.",
-      "category": "illustration",
+      "description": "Opaque egg tempera builds forms from small controlled strokes and disciplined crosshatched layers.",
+      "category": "illustration/painting/egg-tempera",
       "kind": "style",
       "tags": [
         "illustration",
@@ -757,9 +777,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An egg-tempera illustration on a smooth ground",
+          "text": "Paint the supplied forms in opaque egg tempera, laying small controlled strokes in thin overlapping passes.",
           "tags": [
-            "egg tempera illustration"
+            "opaque egg tempera",
+            "controlled layered strokes"
           ],
           "min_intensity": 0.01
         },
@@ -773,10 +794,10 @@
         },
         {
           "axis": "texture",
-          "text": "Keep a matte pigment surface with disciplined crosshatched paint",
+          "text": "Keep the pigment matte, with fine crosshatched strokes following the turn of each form.",
           "tags": [
             "matte tempera",
-            "painted crosshatching"
+            "form-following crosshatching"
           ],
           "min_intensity": 0.75
         }
@@ -788,8 +809,8 @@
     {
       "id": "illustration.pasteloil",
       "name": "Oil-pastel gesture",
-      "description": "An oil-pastel illustration. Use rich opaque color with visible neighboring hue strokes.",
-      "category": "illustration",
+      "description": "Opaque oil-pastel strokes leave waxy ridges and scraped-through passages in the pigment.",
+      "category": "illustration/drawing/oil-pastel",
       "kind": "style",
       "tags": [
         "illustration",
@@ -805,17 +826,19 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "An oil-pastel illustration",
+          "text": "Lay opaque oil-pastel strokes with varied pressure, then scrape narrow marks back through the waxy pigment.",
           "tags": [
-            "oil pastel illustration"
+            "waxy oil-pastel ridges",
+            "scraped pigment lines"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "palette",
-          "text": "Use rich opaque color with visible neighboring hue strokes",
+          "text": "Use the supplied colors in rich opaque strokes, leaving neighboring hues visible at overlaps.",
           "tags": [
-            "rich opaque color strokes"
+            "opaque supplied colors",
+            "visible hue overlaps"
           ],
           "min_intensity": 0.4
         },
@@ -836,8 +859,8 @@
     {
       "id": "illustration.graphicwash",
       "name": "Graphic wash illustration",
-      "description": "A graphic ink-wash illustration. Join broad wash shapes through untouched negative space.",
-      "category": "illustration",
+      "description": "Broad ink-wash masses are cut by untouched gaps, with pooled gradients and crisp reserved edges.",
+      "category": "illustration/ink/graphic-wash",
       "kind": "style",
       "tags": [
         "illustration",
@@ -853,9 +876,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A graphic ink-wash illustration",
+          "text": "Join the supplied forms with broad ink-wash masses, cut through by clean untouched gaps.",
           "tags": [
-            "graphic ink wash"
+            "broad ink-wash masses",
+            "untouched cutouts"
           ],
           "min_intensity": 0.01
         },
@@ -885,8 +909,8 @@
     {
       "id": "illustration.aerograph",
       "name": "Masked aerograph",
-      "description": "A masked aerograph illustration. Use precise geometric masks around the existing forms.",
-      "category": "illustration",
+      "description": "An aerograph blends sprayed tones inside precise masks, leaving crisp stencil boundaries around existing forms.",
+      "category": "illustration/painting/aerograph",
       "kind": "style",
       "tags": [
         "illustration",
@@ -902,9 +926,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A masked aerograph illustration",
+          "text": "Use an aerograph through sharply defined masks, blending sprayed tonal fields inside each existing contour.",
           "tags": [
-            "masked aerograph illustration"
+            "sprayed tonal fields",
+            "crisp stencil boundaries"
           ],
           "min_intensity": 0.01
         },
@@ -918,10 +943,10 @@
         },
         {
           "axis": "texture",
-          "text": "Blend smooth sprayed tones inside crisp stencil boundaries",
+          "text": "Blend sprayed tones smoothly inside the masks, preserving a crisp edge at each stencil boundary.",
           "tags": [
-            "sprayed tones",
-            "stencil boundaries"
+            "smooth sprayed tones",
+            "crisp mask edges"
           ],
           "min_intensity": 0.75
         }
@@ -933,8 +958,8 @@
     {
       "id": "illustration.waxresist",
       "name": "Wax-resist watercolor",
-      "description": "A wax-resist watercolor illustration. Let transparent color flow around pale waxed marks.",
-      "category": "illustration",
+      "description": "Transparent watercolor gathers in irregular pools around broken wax-resist marks.",
+      "category": "illustration/painting/wax-resist",
       "kind": "style",
       "tags": [
         "illustration",
@@ -950,9 +975,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A wax-resist watercolor illustration",
+          "text": "Layer transparent watercolor over wax resist so bead-like wash edges gather around each preserved line.",
           "tags": [
-            "wax resist watercolor"
+            "transparent wax-resist wash",
+            "beaded pigment edges"
           ],
           "min_intensity": 0.01
         },
@@ -982,8 +1008,8 @@
     {
       "id": "illustration.stencil",
       "name": "Hand-cut stencil",
-      "description": "A hand-cut stencil illustration. Reduce forms to bridged stencil shapes with clear internal gaps.",
-      "category": "illustration",
+      "description": "Bridged hand-cut stencil shapes keep clear openings, with restrained overspray at selected edges.",
+      "category": "illustration/print/stencil",
       "kind": "style",
       "tags": [
         "illustration",
@@ -999,9 +1025,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A hand-cut stencil illustration",
+          "text": "Reduce supplied contours to bridged hand-cut stencil shapes, with clear openings and restrained spray falloff.",
           "tags": [
-            "hand cut stencil art"
+            "bridged stencil shapes",
+            "restrained spray falloff"
           ],
           "min_intensity": 0.01
         },
@@ -1029,8 +1056,8 @@
     {
       "id": "illustration.chinesebrush",
       "name": "Brush-and-color study",
-      "description": "A brush-and-color illustration on absorbent paper. Balance confident ink contours with open washed areas.",
-      "category": "illustration",
+      "description": "Absorbent-paper brushwork pairs decisive ink contours with soft pigment spread at wet edges.",
+      "category": "illustration/ink/brush-and-color",
       "kind": "style",
       "tags": [
         "illustration",
@@ -1046,9 +1073,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A brush-and-color illustration on absorbent paper",
+          "text": "Draw supplied contours with absorbent-paper brushwork; keep ink strokes decisive while wet color softens at their edges.",
           "tags": [
-            "brush and color illustration"
+            "decisive ink brushwork",
+            "soft wet-color edges"
           ],
           "min_intensity": 0.01
         },
@@ -1077,8 +1105,8 @@
     {
       "id": "illustration.charcoal",
       "name": "Compressed-charcoal study",
-      "description": "A compressed-charcoal illustration. Model large forms through deep velvety tonal masses.",
-      "category": "illustration",
+      "description": "Compressed-charcoal strokes form velvety tonal masses, softened by rubbed edges and lifted highlights.",
+      "category": "illustration/drawing/charcoal",
       "kind": "style",
       "tags": [
         "illustration",
@@ -1094,17 +1122,19 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A compressed-charcoal illustration",
+          "text": "Build the supplied forms in compressed-charcoal strokes, pressing in dark masses and rubbing select edges into a soft haze.",
           "tags": [
-            "compressed charcoal drawing"
+            "compressed-charcoal masses",
+            "rubbed soft edges"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "lighting",
-          "text": "Model large forms through deep velvety tonal masses",
+          "text": "Model the supplied forms through velvety tonal masses and selectively lifted highlights.",
           "tags": [
-            "deep charcoal masses"
+            "velvety tonal masses",
+            "lifted highlights"
           ],
           "min_intensity": 0.4
         },
@@ -1125,8 +1155,8 @@
     {
       "id": "illustration.papercurl",
       "name": "Quilled-paper relief",
-      "description": "A quilled-paper illustration. Build the supplied forms from rolled and curved paper strips.",
-      "category": "illustration",
+      "description": "Curled paper strips define the supplied forms through fine exposed edges and shallow cast shadows.",
+      "category": "illustration/paper/quilling",
       "kind": "style",
       "tags": [
         "illustration",
@@ -1142,9 +1172,10 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "A quilled-paper illustration",
+          "text": "Shape the supplied forms from curled paper strips, using fine exposed edges and shallow shadows to define the relief.",
           "tags": [
-            "quilled paper art"
+            "curled paper strips",
+            "shallow paper relief"
           ],
           "min_intensity": 0.01
         },

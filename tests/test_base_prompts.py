@@ -70,6 +70,12 @@ def test_all_bundled_axes_are_declared(engine):
         ("weirdcore.empty-audience", "empty performance documentation"),
         ("dreamcore.mirror-sleep", "repeat existing forms within mirrors"),
         ("netculture.net-art-collage", "mismatched rectangular windows"),
+        ("analog-horror.station-ident", "station-identification screen"),
+        ("analog-horror.station-ident", "minimal station ident layout"),
+        ("cozynostalgia.rainy-reading-window", "cozy rain window illustrated scene"),
+        ("dreamcore.toybox-reverie", "scale mismatch"),
+        ("dreamcore.sunlit-void", "impossible-edged shadows"),
+        ("netculture.kidcore", "craft foam and stickers"),
     ],
 )
 @pytest.mark.parametrize("model", ["flux", "anima"])
@@ -114,3 +120,37 @@ def test_builtin_authoring_audit(engine):
     assert report["entries"] == 1164
     assert report["packs"] == 52
     assert report["authoring_errors"] == []
+
+
+@pytest.mark.parametrize("model", ["flux", "anima", "fibo"])
+def test_reflected_light_signature_is_available_at_low_intensity_and_respects_locks(engine, model):
+    recipe = {
+        "prompt": SCENES[0]["base_prompt"],
+        "model": model,
+        "styles": [{"id": "liminal.poolrooms", "intensity": 0.2}],
+    }
+    result = engine.compose(recipe)
+    assert any(t.axis == "lighting" and t.action == "applied" for t in result.trace)
+    locked = engine.compose({**recipe, "locked_axes": ["lighting"]})
+    assert not any(t.axis == "lighting" and t.action == "applied" for t in locked.trace)
+    assert locked.recipe.prompt == recipe["prompt"]
+
+
+def test_technique_categories_remain_discoverable_through_the_existing_root(engine):
+    for root in ("illustration", "anime"):
+        family = engine.list_styles(category=root, limit=1000)
+        assert family
+        assert all(style["category"].startswith(root + "/") for style in family)
+        children = {style["category"] for style in family}
+        assert len(children) > 1
+        assert all(engine.list_styles(category=child, limit=1000) for child in children)
+
+
+def test_anime_techniques_keep_their_identity_in_low_intensity_text_and_tags(engine):
+    for style in engine.list_styles(category="anime", limit=1000):
+        medium = [c for c in style["clauses"] if c["axis"] == "medium" and c["min_intensity"] <= 0.01]
+        assert medium
+        assert any("anime" in c["text"].casefold() for c in medium), style["id"]
+        assert any("anime" in " ".join(c["tags"]).casefold() for c in medium), style["id"]
+    cel = engine.get_style("anime.cel")
+    assert "flat painted cel fills" in cel["clauses"][0]["tags"]

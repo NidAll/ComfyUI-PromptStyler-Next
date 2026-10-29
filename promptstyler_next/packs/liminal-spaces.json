@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.liminal-spaces",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "Liminal Spaces",
   "description": "After-hours institutional emptiness, threshold architecture, and uncanny everyday geometry.",
   "license": "CC0-1.0",
@@ -122,7 +122,7 @@
     {
       "id": "liminal.poolrooms",
       "name": "Silent Poolrooms",
-      "description": "An uncanny indoor swimming environment shaped by reflected light and repeating tiled arches.",
+      "description": "Pale undulating reflected light, smooth tonal surfaces and measured depth intervals applied to the existing scene.",
       "category": "liminal/spaces",
       "kind": "style",
       "tags": [
@@ -140,9 +140,11 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "Give the supplied scene the softly uncanny visual treatment associated with poolroom imagery",
+          "text": "A softly uncanny illustration with continuous contours and smooth evenly graded tonal planes on the supplied forms",
           "tags": [
-            "softly uncanny aquatic image treatment"
+            "softly uncanny illustration",
+            "continuous supplied-form contours",
+            "smooth tonal planes"
           ],
           "min_intensity": 0.01
         },
@@ -150,23 +152,24 @@
           "axis": "lighting",
           "text": "Use pale undulating reflected-light patterns over the existing forms",
           "tags": [
-            "pale undulating reflected light"
+            "pale undulating reflected light on existing forms"
           ],
-          "min_intensity": 0.4
+          "min_intensity": 0.01
         },
         {
           "axis": "composition",
           "text": "Emphasize existing depth intervals through offset tonal planes without adding openings or structures",
           "tags": [
-            "offset tonal depth intervals"
+            "offset tonal depth intervals on existing forms"
           ],
           "min_intensity": 0.78
         },
         {
           "axis": "texture",
-          "text": "Use a smooth low-contrast surface rendering with subtle ripple-like tonal variation",
+          "text": "Use smooth low-contrast surface rendering with subtle ripple-like tonal variation",
           "tags": [
-            "smooth rippled tonal texture"
+            "smooth low-contrast finish",
+            "ripple-like tonal variation"
           ],
           "min_intensity": 0.92
         }

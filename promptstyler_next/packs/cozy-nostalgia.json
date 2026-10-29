@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.next.cozy-nostalgia",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "Cozy Nostalgia",
   "description": "Warm domestic atmospheres, quiet social memory, and gentle material storytelling.",
   "license": "CC0-1.0",
@@ -10,7 +10,7 @@
     {
       "id": "cozynostalgia.rainy-reading-window",
       "name": "Rainy Reading Window",
-      "description": "Comfortable indoor observation with rain-softened glass and tactile everyday warmth.",
+      "description": "Rounded storybook contours, paper tactility and warm local light against cool ambient fill; weather and props come from the supplied scene.",
       "category": "cozy-nostalgia/looks",
       "kind": "style",
       "tags": [
@@ -28,17 +28,19 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "Treat the existing scene as a quietly observed cozy illustrated memory",
+          "text": "A softly drawn storybook illustration with rounded contour transitions and gently simplified surface marks",
           "tags": [
-            "cozy rain window illustrated scene"
+            "softly drawn storybook illustration",
+            "rounded contour transitions"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Frame the supplied subject with generous surrounding breathing room",
+          "text": "Frame the supplied subject with generous surrounding breathing room while retaining its spatial relationships",
           "tags": [
-            "generous supplied-subject breathing room"
+            "breathing room around supplied subjects",
+            "retained spatial relationships"
           ],
           "min_intensity": 0.4
         },
@@ -46,17 +48,19 @@
           "axis": "lighting",
           "text": "Balance warm local illumination against cool diffuse ambient fill without introducing weather",
           "tags": [
-            "warm local light and cool diffuse fill"
+            "warm local illumination",
+            "cool diffuse ambient fill"
           ],
-          "min_intensity": 0.75
+          "min_intensity": 0.4
         },
         {
           "axis": "texture",
-          "text": "Use softly tactile rendering on the materials already specified",
+          "text": "Render the supplied materials with delicate paper grain and gently broken pencil edges",
           "tags": [
-            "softly tactile supplied materials"
+            "paper grain",
+            "gently broken pencil contours"
           ],
-          "min_intensity": 0.92
+          "min_intensity": 0.75
         }
       ],
       "negative": [],

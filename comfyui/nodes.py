@@ -52,7 +52,27 @@ class PSNextStyle(io.ComfyNode):
                 io.Combo.Input(
                     "style",
                     options=[style["id"] for style in styles],
-                    extra_dict={"psnext_categories": {style["id"]: style["category"] for style in styles}},
+                    extra_dict={
+                        "psnext_categories": {style["id"]: style["category"] for style in styles},
+                        "psnext_styles": [
+                            {
+                                key: style[key]
+                                for key in (
+                                    "id",
+                                    "name",
+                                    "description",
+                                    "category",
+                                    "kind",
+                                    "tags",
+                                    "models",
+                                    "claims",
+                                    "clauses",
+                                    "variants",
+                                )
+                            }
+                            for style in styles
+                        ],
+                    },
                 ),
                 io.Combo.Input(
                     "model", options=[profile["id"] for profile in engine.profiles()], default="generic"

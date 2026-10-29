@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "id": "community.analog-horror",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "Analog Horror",
   "description": "Obsolete broadcast aesthetics, institutional unease, and tape-era visual disturbance without gore.",
   "license": "CC0-1.0",
@@ -514,7 +514,7 @@
     {
       "id": "analog-horror.station-ident",
       "name": "Forgotten Station Ident",
-      "description": "An enigmatic television station identity card aged by obsolete hardware.",
+      "description": "Aged broadcast signal edges, quiet existing margins and restrained analog bloom; the supplied scene remains the content.",
       "category": "analog-horror/broadcast",
       "kind": "style",
       "tags": [
@@ -532,25 +532,26 @@
       "clauses": [
         {
           "axis": "medium",
-          "text": "Make the image feel like a mysterious station-identification screen from obsolete television",
+          "text": "Treat the supplied scene as aged analog broadcast artwork, retaining its silhouettes through soft signal edges and slight registration offset",
           "tags": [
-            "forgotten television station ident"
+            "aged analog broadcast rendering",
+            "soft signal contours on supplied forms"
           ],
           "min_intensity": 0.01
         },
         {
           "axis": "composition",
-          "text": "Isolate simple emblematic geometry within large quiet margins",
+          "text": "Use existing negative space as quiet margins around the supplied subject without replacing its layout",
           "tags": [
-            "minimal station ident layout"
+            "quiet margins in existing negative space"
           ],
           "min_intensity": 0.4
         },
         {
           "axis": "lighting",
-          "text": "Use dull emissive video glow over a deep background",
+          "text": "Apply faint emissive highlight rolloff within existing lit areas while retaining the supplied background",
           "tags": [
-            "dim station ident glow"
+            "faint video highlight rolloff"
           ],
           "min_intensity": 0.78
         },
@@ -558,7 +559,8 @@
           "axis": "texture",
           "text": "Show soft analog bloom and imperfect edge registration",
           "tags": [
-            "broadcast ident color fringing"
+            "analog bloom",
+            "imperfect edge registration"
           ],
           "min_intensity": 0.92
         }

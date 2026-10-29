@@ -1,4 +1,46 @@
-# Style and semantic handoff review — 0.3.0
+# Style and semantic handoff review
+
+## Technique and selection refinement — 2026-10-29
+
+The complete catalog scan still covers 1,164 entries in 52 packs. This revision
+targets 54 entries in seven packs: all 24 illustration and 24 anime looks, plus
+six treatments in Analog Horror, Cozy Nostalgia, Dreamcore, Internet Aesthetics
+and Liminal Spaces. It does not claim an exhaustive editorial rewrite of every
+style or model-specific image-quality acceptance.
+
+The illustration and anime looks now state concrete contour, fill, pigment or
+mark-making mechanics in their low-tier clauses and tags. Higher tiers retain
+their role of adding secondary technique detail. Categories group actual methods
+under drawing, painting, ink, print, paper, animation, linework and related
+families; existing root queries include these descendants. Anime's low-tier prose
+and tags retain explicit anime identity for other model profiles.
+
+The six scene-themed revisions remove station-screen substitution, rainy-window
+tags, scale mismatch, impossible shadows and craft-object tags. Rendering cues
+apply to supplied forms. Their discovery names remain useful aesthetic references
+without becoming instructions to insert the named setting or objects.
+
+The ComfyUI browser displays readable metadata and separate Look/Color/Effect
+filters. Its optional visual-direction disclosure uses the selected model variant,
+shows intensity thresholds and marks explicitly protected axes. Search and filters
+never change the selected ID; Choose followed by Apply makes that change explicit.
+Browser metadata is not appended to the model prompt.
+
+Changed pack content versions advance: illustration/anime to 1.1.0, and the other
+five packs to 1.2.0. IDs and model restrictions remain stable. Authored styled text
+and catalog/recipe fingerprints intentionally change; use the older pack versions
+when exact historical replay is required.
+
+Structural audits, semantic corpus tests and actual ComfyUI browser checks passed.
+Three paired Anima Lightning comparisons used one scene and seed, official four-step
+sampling, two watercolor intensities and one cel intensity. The final pairs retained
+the two objects, requested colors and left/right placement. They also retained
+model bias: watercolor was strongly illustrative and cel included hatching. These
+samples support a limited content-retention observation, not perfect style
+adherence or general improvement across styles, seeds and checkpoints. Palette
+and composition were explicitly protected in these comparisons.
+
+## Earlier semantic handoff review — 0.3.0
 
 The 2026-10-24 review examined the existing 48-pack, 1,132-entry catalog before
 adding new content. Strict loading and programmatic checks covered every clause,

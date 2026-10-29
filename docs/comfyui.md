@@ -12,18 +12,31 @@ Clone this repository into `ComfyUI/custom_nodes/ComfyUI-PromptStyler-Next` and 
 | **PromptStyler Next: Compose Recipe** | Compose ordered layers with explicit conflict policy using recipe JSON | Positive text, negative text, inspection JSON |
 | **PromptStyler Next: Encode Text** | Convert the two text outputs using a compatible native text encoder | Positive conditioning, negative conditioning |
 
-The **category** dropdown filters style choices immediately, including subcategories.
-Choose **All categories** to browse the entire catalog. Changing category keeps the
-current style active and visible until you explicitly select another style. The
-style dropdown retains full stable IDs; saved workflows, API graphs and recipes
-need no migration. Loading or cloning a node infers the category from its selected
-style. The category is browsing state and is not saved or sent for execution.
+Use **Style explorer** for metadata search, readable category groups, and separate
+Looks, Color grades and Effects filters. Each result describes its visual identity;
+expand **Visual directions** to inspect the selected model's authored variant,
+intensity tiers and protected axes. Choose a candidate, then **Apply** to change the
+node. Closing the browser leaves the workflow selection intact.
+
+The explorer button displays the selected style name. Category and style dropdowns
+are absent from the node; category filters live inside the explorer. Choose **All
+categories** there to browse the full catalog. The selected full ID is still saved
+and sent for execution, so workflows, API graphs and recipes need no migration.
+Loading or cloning restores the selected style and its button label. Search and
+category filters are browsing state, excluded from execution and saved widget values.
 Custom packs use their catalog categories automatically after the usual restart
 to load pack changes. Refresh the frontend after installing this extension update.
 
 Use the Studio browser or `Engine.list_styles()` for descriptions and metadata. Select a style compatible with the chosen model; an unsupported model restriction raises a descriptive validation error. The optional `locked_axes` field keeps style clauses from introducing instructions on an axis already specified in your prompt. It does not infer your intent from free text.
 
 Intensity activates curated clause tiers. Zero bypasses a layer. Increasing intensity adds author-selected visual instructions; it does not interpolate embeddings, alter sampler settings, insert token weights, or promise a linear image change.
+
+For a coherent result, start with one Look. Use a Color grade or Effect only for
+an intentional additional direction. Protect **palette** for required identity
+colors and **composition** for fixed placements or relationships. The node keeps
+the supplied prompt intact; it cannot infer every conflicting instruction in prose
+or guarantee the image model follows the style. Technique detail gives the model
+more specific guidance, rather than a longer list of quality adjectives.
 
 ```mermaid
 flowchart LR
