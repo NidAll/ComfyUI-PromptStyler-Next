@@ -12,7 +12,16 @@ Clone this repository into `ComfyUI/custom_nodes/ComfyUI-PromptStyler-Next` and 
 | **PromptStyler Next: Compose Recipe** | Compose ordered layers with explicit conflict policy using recipe JSON | Positive text, negative text, inspection JSON |
 | **PromptStyler Next: Encode Text** | Convert the two text outputs using a compatible native text encoder | Positive conditioning, negative conditioning |
 
-The style dropdown contains stable IDs. Use the Studio browser or `Engine.list_styles()` for descriptions and metadata. Select a style compatible with the chosen model; an unsupported model restriction raises a descriptive validation error. The optional `locked_axes` field keeps style clauses from introducing instructions on an axis already specified in your prompt. It does not infer your intent from free text.
+The **category** dropdown filters style choices immediately, including subcategories.
+Choose **All categories** to browse the entire catalog. Changing category keeps the
+current style active and visible until you explicitly select another style. The
+style dropdown retains full stable IDs; saved workflows, API graphs and recipes
+need no migration. Loading or cloning a node infers the category from its selected
+style. The category is browsing state and is not saved or sent for execution.
+Custom packs use their catalog categories automatically after the usual restart
+to load pack changes. Refresh the frontend after installing this extension update.
+
+Use the Studio browser or `Engine.list_styles()` for descriptions and metadata. Select a style compatible with the chosen model; an unsupported model restriction raises a descriptive validation error. The optional `locked_axes` field keeps style clauses from introducing instructions on an axis already specified in your prompt. It does not infer your intent from free text.
 
 Intensity activates curated clause tiers. Zero bypasses a layer. Increasing intensity adds author-selected visual instructions; it does not interpolate embeddings, alter sampler settings, insert token weights, or promise a linear image change.
 
@@ -73,6 +82,7 @@ Run the tests with your host Python and ComfyUI source directory:
 
 ```bash
 PYTHONPATH=/path/to/ComfyUI /path/to/ComfyUI/venv/bin/python -m pytest tests/test_comfy.py -q
+node --test tests/*.test.mjs
 ```
 
 These tests load the real V3 API, validate registration and schemas, compare node outputs against the shared engine, reject untrusted inputs, and exercise native-encoder delegation with an explicit test double. The suite skips when the host API is absent. It does not generate images or establish image-quality equivalence between model profiles.

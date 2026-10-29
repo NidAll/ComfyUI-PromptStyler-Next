@@ -65,6 +65,36 @@ def test_real_v3_registration_and_schema() -> None:
         json.dumps(info, allow_nan=False)
 
 
+def test_style_picker_metadata_matches_catalog_without_changing_widget_inputs():
+    module = sys.modules[STYLE.__module__]
+    schema = STYLE.define_schema()
+    assert [item.id for item in schema.inputs] == [
+        "prompt",
+        "style",
+        "model",
+        "intensity",
+        "negative",
+        "locked_axes",
+    ]
+    options = STYLE.GET_NODE_INFO_V1()["input"]["required"]["style"][1]
+    categories = options["psnext_categories"]
+    assert set(categories) == set(options["options"])
+    assert len(categories) > 1000  # Includes the second catalog page.
+    assert all(module.get_engine().get_style(key)["category"] == value for key, value in categories.items())
+    assert (ROOT / EXTENSION.WEB_DIRECTORY / "promptstyler.js").is_file()
+
+
+def test_saved_style_id_preserves_composition_and_fingerprint():
+    graph = json.loads((ROOT / "examples/comfyui-text-workflow.json").read_text())
+    saved = next(node for node in graph["nodes"] if node["type"] == "PSNextStyle")["widgets_values"]
+    output = STYLE.execute(*saved)
+    inspection = json.loads(output.result[2])
+    recipe = COMPOSE.execute(json.dumps(inspection["recipe"]))
+    assert recipe.result == output.result
+    assert inspection["recipe"]["styles"][0]["id"] == saved[1]
+    assert inspection["fingerprint"] == json.loads(recipe.result[2])["fingerprint"]
+
+
 def test_prompt_preview_returns_two_strings_without_writing_files():
     prompt = 'A red bicycle with a sign reading "雨".'
     inspection = '{"source":"text","warnings":[]}'

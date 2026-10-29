@@ -1,11 +1,12 @@
 include __init__.py AGENTS.md LICENSE NOTICE STYLE-LICENSE
 recursive-include comfyui *.py
+recursive-include web *.js *.mjs
 recursive-include comfyui/upscaler/lfm3 *.md LICENSE*
 recursive-include docs *.md
 recursive-include examples *.json *.py
 recursive-include studio *.mjs *.ts *.md *.json *.css
 recursive-include promptstyler_next *.json *.html *.js *.mjs *.css py.typed
-recursive-include tests *.py
+recursive-include tests *.py *.mjs
 prune .git
 
 recursive-include scripts *.py

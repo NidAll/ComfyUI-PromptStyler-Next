@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+Added a category-filtered picker to the ComfyUI Style node, including parent
+categories and custom packs. Browsing keeps the current style until another is
+selected. Saved full style IDs infer their category on load; execution inputs,
+composition and fingerprints remain unchanged.
+
 Added the responsive Studio style browser with Looks/Color/Effects, accent-insensitive
 metadata search, favorites, named presets and per-workflow persistence. Replay
 helpers restore selections and full browser state atomically; storage events keep

@@ -16,6 +16,7 @@ ruff check .
 ruff format --check .
 mypy
 node --test studio/tests/*.test.mjs
+node --test tests/*.test.mjs
 ```
 
 HTTP and Node tests need permission to open IPv4 loopback sockets. A restricted

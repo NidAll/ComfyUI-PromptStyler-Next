@@ -42,6 +42,7 @@ jobs:
         with:
           node-version: '22'
       - run: node --test studio/tests/*.test.mjs
+      - run: node --test tests/*.test.mjs
   comfyui:
     runs-on: ubuntu-latest
     steps:

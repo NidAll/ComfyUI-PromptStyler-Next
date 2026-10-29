@@ -49,7 +49,11 @@ class PSNextStyle(io.ComfyNode):
             search_aliases=["style", "prompt", "promptstyler", "aesthetic"],
             inputs=[
                 io.String.Input("prompt", multiline=True, dynamic_prompts=False),
-                io.Combo.Input("style", options=[style["id"] for style in styles]),
+                io.Combo.Input(
+                    "style",
+                    options=[style["id"] for style in styles],
+                    extra_dict={"psnext_categories": {style["id"]: style["category"] for style in styles}},
+                ),
                 io.Combo.Input(
                     "model", options=[profile["id"] for profile in engine.profiles()], default="generic"
                 ),

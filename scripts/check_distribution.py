@@ -49,6 +49,8 @@ def main() -> int:
         for required in (
             "/__init__.py",
             "/comfyui/nodes.py",
+            "/web/promptstyler.js",
+            "/web/style-picker.mjs",
             "/studio/bridge.mjs",
             "/tests/test_engine.py",
             "/docs/architecture.md",
@@ -61,6 +63,7 @@ def main() -> int:
         for source_directory in (
             "promptstyler_next",
             "comfyui",
+            "web",
             "studio",
             "tests",
             "docs",

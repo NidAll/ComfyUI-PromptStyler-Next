@@ -26,7 +26,7 @@ This is an independent successor to
 | Prompt inspection | Inspect applied, skipped, duplicate, and suppressed clauses, capability warnings, normalized recipes, and fingerprints |
 | Local prompt upscaling | Turn text, one reference image, or both into a semantic base using a local MiniCPM-V 4.7 1B or LFM3-VL 2B INT8 model |
 | LLM metaprompt toolkit | Create, neutralize, describe, expand, edit, audit, and package reusable base prompts with seven copyable instructions |
-| ComfyUI nodes | Author bases, apply a single style, compose JSON recipes, and use compatible native conditioning |
+| ComfyUI nodes | Browse styles by category, author bases, compose JSON recipes, and use compatible native conditioning |
 | Browser workbench | Search, filter, save favorites, combine styles, inspect results, and import/export recipes |
 | HEISS Studio module | Browse Looks/Color/Effects, save favorites and presets, restore recipes, and inject styling through a typed bridge and managed Python service |
 | Metadata recommendations | Find model-eligible entries using transparent word/tag overlap scores and matching reasons |
@@ -56,7 +56,7 @@ git clone https://github.com/NidAll/ComfyUI-PromptStyler-Next.git custom_nodes/C
 ```
 
 Restart ComfyUI and search for **PromptStyler Next**. Start with **Style**, enter a
-scene description, choose a style and model profile, then connect the resulting
+scene description, narrow the style choices with **category**, choose a style and model profile, then connect the resulting
 text to your workflow's native encoder.
 
 The styling nodes need no additional runtime packages. The optional VLM upscaler
