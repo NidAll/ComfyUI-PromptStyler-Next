@@ -4,7 +4,7 @@ A modular creative styling platform for **ComfyUI**, **HEISS Studio**, and
 **standalone Python workflows**. Build a scene description, combine visual
 styles, and render the additions using the prompting convention of your model.
 
-**Version 0.4.1 + unreleased updates · 1,164 library entries · 52 packs · 11 model profiles · 6 ComfyUI V3 nodes**
+**Version 0.5.0 · 1,164 library entries · 52 packs · 11 model profiles · 6 ComfyUI V3 nodes**
 
 The shared deterministic engine runs offline on Python 3.11+ with **zero runtime
 dependencies**. Optional local MiniCPM and LFM3-VL models add base-prompt upscaling
