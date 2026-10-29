@@ -2,23 +2,6 @@
 
 ## Unreleased
 
-Added a searchable ComfyUI Style explorer with readable names, category groups,
-Look/Color/Effect filters and explicit Apply. Visual directions show model
-variants, intensity tiers and protected axes before selection. Browsing controls
-stay out of saved widget values and executable API inputs.
-The explorer is the only visible style selection control; its button shows the
-selected name. The original style ID remains hidden in the saved/API widget contract.
-
-Refined illustration and anime technique categories and authored visual identities,
-plus six scene-themed treatments. Updated prose and tags together to reduce
-setting, weather, symbol and scale substitution. Changed packs advance their
-content versions; existing IDs remain, but styled text and fingerprints change.
-
-Added a category-filtered picker to the ComfyUI Style node, including parent
-categories and custom packs. Browsing keeps the current style until another is
-selected. Saved full style IDs infer their category on load; execution inputs,
-composition and fingerprints remain unchanged.
-
 Added the responsive Studio style browser with Looks/Color/Effects, accent-insensitive
 metadata search, favorites, named presets and per-workflow persistence. Replay
 helpers restore selections and full browser state atomically; storage events keep
@@ -41,6 +24,25 @@ dependencies are absent.
 
 Fused compatible native INT8 Q/K/V projections and routed text/vision attention
 through ComfyUI, with causal/sliding masks and shared grouped-head expansion.
+
+## 0.5.0 — 2026-10-29
+
+Added a category-filtered picker to the ComfyUI Style node, including parent
+categories and custom packs. Browsing keeps the current style until another is
+selected. Saved full style IDs infer their category on load; execution inputs,
+composition and fingerprints remain unchanged.
+
+Added a searchable ComfyUI Style explorer with readable names, category groups,
+Look/Color/Effect filters and explicit Apply. Visual directions show model
+variants, intensity tiers and protected axes before selection. Browsing controls
+stay out of saved widget values and executable API inputs.
+The explorer is the only visible style selection control; its button shows the
+selected name. The original style ID remains hidden in the saved/API widget contract.
+
+Refined illustration and anime technique categories and authored visual identities,
+plus six scene-themed treatments. Updated prose and tags together to reduce
+setting, weather, symbol and scale substitution. Changed packs advance their
+content versions; existing IDs remain, but styled text and fingerprints change.
 
 ## 0.4.1 — 2026-10-24
 
