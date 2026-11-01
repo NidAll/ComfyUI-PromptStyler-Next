@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+Added an enabled toggle to the ComfyUI Style node. Disabling it passes raw positive
+and negative text through unchanged, without style additions or model formatting.
+Existing saved workflows and API graphs remain enabled by default.
+
 Added the responsive Studio style browser with Looks/Color/Effects, accent-insensitive
 metadata search, favorites, named presets and per-workflow persistence. Replay
 helpers restore selections and full browser state atomically; storage events keep

@@ -1,0 +1,229 @@
+<template>
+  <style>
+    :root {
+      --paper: #f5f1eb;
+      --ink: #0f0d0b;
+      --muted: #a89f94;
+      --muted-ink: #544f4a;
+      --accent: #a33810;
+      --accent-ink: #e2703f;
+      --display: "Archivo Black", sans-serif;
+      --body: "Inter", sans-serif;
+      --mono: "JetBrains Mono", monospace;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: var(--ink);
+      font-family: var(--body);
+    }
+    .clip {
+      position: absolute;
+      inset: 0;
+    }
+    .left {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 820px;
+      height: 1080px;
+      background: var(--ink);
+    }
+    .right {
+      position: absolute;
+      left: 820px;
+      top: 0;
+      width: 1100px;
+      height: 1080px;
+      background: var(--paper);
+    }
+    .seam {
+      position: absolute;
+      left: 819px;
+      top: 0;
+      width: 2px;
+      height: 1080px;
+      background: var(--accent);
+      transform-origin: top center;
+    }
+    .l-label {
+      position: absolute;
+      left: 80px;
+      top: 92px;
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: 0.24em;
+      color: var(--accent-ink);
+      opacity: 0;
+    }
+    .r-label {
+      position: absolute;
+      left: 900px;
+      top: 92px;
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: 0.24em;
+      color: var(--muted-ink);
+      opacity: 0;
+    }
+    .tags {
+      position: absolute;
+      left: 80px;
+      top: 158px;
+      width: 670px;
+      font-family: var(--mono);
+      font-size: 30px;
+      line-height: 1.62;
+      color: var(--paper);
+      opacity: 0;
+    }
+    .json {
+      position: absolute;
+      left: 900px;
+      top: 152px;
+      width: 930px;
+      font-family: var(--mono);
+      font-size: 22px;
+      line-height: 1.55;
+      color: var(--ink);
+    }
+    .jl {
+      padding-left: 28px;
+      text-indent: -28px;
+      opacity: 0;
+      overflow-wrap: anywhere;
+    }
+    .jl0 {
+      opacity: 0;
+    }
+    .jl2 {
+      padding-left: 56px;
+      text-indent: -28px;
+      opacity: 0;
+      overflow-wrap: anywhere;
+    }
+    .k {
+      color: var(--accent);
+    }
+    .p {
+      color: var(--muted-ink);
+    }
+    .v {
+      color: var(--ink);
+    }
+    .note {
+      position: absolute;
+      left: 80px;
+      top: 372px;
+      width: 670px;
+      font-family: var(--mono);
+      font-size: 20px;
+      line-height: 1.5;
+      letter-spacing: 0.02em;
+      color: var(--muted);
+      opacity: 0;
+    }
+    .bar {
+      position: absolute;
+      left: 0;
+      top: 626px;
+      width: 1920px;
+      height: 168px;
+      background: var(--paper);
+      border-top: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+    }
+    .barline {
+      position: absolute;
+      left: 80px;
+      top: 30px;
+      width: 1500px;
+      font-family: var(--display);
+      font-size: 62px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      opacity: 0;
+    }
+    .profiles {
+      position: absolute;
+      right: 80px;
+      top: 64px;
+      font-family: var(--mono);
+      font-size: 21px;
+      letter-spacing: 0.06em;
+      color: var(--muted-ink);
+      opacity: 0;
+    }
+  </style>
+
+  <div data-hf-id="hf-2tvg" id="root" data-composition-id="s4" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-c4yt" id="s4-panels" class="clip" data-start="0" data-duration="3.81">
+      <div data-hf-id="hf-i0dv" class="left"></div>
+      <div data-hf-id="hf-8dr2" class="right"></div>
+      <div data-hf-id="hf-30oq" class="seam"></div>
+    </div>
+
+    <div data-hf-id="hf-nbza" id="s4-sdxl" class="clip" data-start="0.04" data-duration="3.77">
+      <div data-hf-id="hf-5pkc" class="l-label">SDXL &middot; TAGS</div>
+      <p data-hf-id="hf-nzpw" class="tags">black and white, silver monochrome, soft highlight diffusion, highlight spread, readable detail</p>
+      <p data-hf-id="hf-285a" class="note">Shared clause rendered by the model adapter.</p>
+    </div>
+
+    <div data-hf-id="hf-4gzx" id="s4-fibo" class="clip" data-start="0.08" data-duration="3.73">
+      <div data-hf-id="hf-5ab9" class="r-label">FIBO 2 &middot; STRUCTURED</div>
+      <div data-hf-id="hf-xax0" class="json" id="s4-json">
+        <div data-hf-id="hf-m9qe" class="jl0"><span data-hf-id="hf-jjhw" class="p">{</span></div>
+        <div data-hf-id="hf-xatu" class="jl"><span data-hf-id="hf-kqsx" class="k">"aesthetics"</span><span data-hf-id="hf-z9mi" class="p">: {</span></div>
+        <div data-hf-id="hf-fccs" class="jl2"><span data-hf-id="hf-izmt" class="k">"color_scheme"</span><span data-hf-id="hf-tpl3" class="p">: </span><span data-hf-id="hf-1cio" class="v">"Use a black-and-white silver palette"</span></div>
+        <div data-hf-id="hf-sx1y" class="jl"><span data-hf-id="hf-uc7a" class="p">},</span></div>
+        <div data-hf-id="hf-tbcz" class="jl"><span data-hf-id="hf-dm3n" class="k">"artistic_style"</span><span data-hf-id="hf-rq3r" class="p">: </span><span data-hf-id="hf-1eid" class="v">"Keep soft highlight spread over an otherwise readable image"</span><span data-hf-id="hf-0v3l" class="p">,</span></div>
+        <div data-hf-id="hf-tpo0" class="jl"><span data-hf-id="hf-em8o" class="k">"lighting"</span><span data-hf-id="hf-oppa" class="p">: {</span></div>
+        <div data-hf-id="hf-0qjo" class="jl2"><span data-hf-id="hf-nzlm" class="k">"conditions"</span><span data-hf-id="hf-rbsq" class="p">: </span><span data-hf-id="hf-q1cv" class="v">"Wrap the existing highlights in a gentle luminous veil"</span></div>
+        <div data-hf-id="hf-qxit" class="jl"><span data-hf-id="hf-jvii" class="p">},</span></div>
+        <div data-hf-id="hf-rbtu" class="jl"><span data-hf-id="hf-0edh" class="k">"short_description"</span><span data-hf-id="hf-qxhp" class="p">: </span><span data-hf-id="hf-ssq9" class="v">"A quiet bookshop on a rainy evening, a reader beside the window"</span></div>
+        <div data-hf-id="hf-jqh6" class="jl0"><span data-hf-id="hf-kc3y" class="p">}</span></div>
+      </div>
+    </div>
+
+    <div data-hf-id="hf-5v3k" id="s4-claim" class="clip" data-start="1.1" data-duration="2.71">
+      <div data-hf-id="hf-ufsv" class="bar">
+        <h2 data-hf-id="hf-rcy0" class="barline">Same recipe. The model&rsquo;s own language.</h2>
+        <p data-hf-id="hf-ylpc" class="profiles">11 model profiles</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      tl.fromTo(".seam", { scaleY: 0 }, { scaleY: 1, duration: 0.34, ease: "power3.out" }, 0.0);
+
+      // Left: the real SDXL tag output, one flat line
+      tl.fromTo("#s4-sdxl .l-label", { opacity: 0 }, { opacity: 1, duration: 0.24, ease: "power2.out" }, 0.08);
+      tl.fromTo("#s4-sdxl .tags", { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: 0.34, ease: "power2.out" }, 0.18);
+      tl.fromTo("#s4-sdxl .note", { opacity: 0 }, { opacity: 1, duration: 0.24, ease: "power2.out" }, 0.92);
+
+      // Right: the real Fibo 2 structured caption, arriving line by line
+      tl.fromTo("#s4-fibo .r-label", { opacity: 0 }, { opacity: 1, duration: 0.24, ease: "power2.out" }, 0.12);
+      const lines = gsap.utils.toArray("#s4-json > div");
+      lines.forEach((line, i) => {
+        tl.fromTo(line, { opacity: 0, x: 10 }, { opacity: 1, x: 0, duration: 0.2, ease: "power2.out" }, 0.3 + i * 0.05);
+      });
+
+      // Beat-locked at 10.93s: the claim cuts across both worlds
+      tl.fromTo(
+        "#s4-claim .bar",
+        { clipPath: "inset(0% 100% 0% 0%)" },
+        { clipPath: "inset(0% 0% 0% 0%)", duration: 0.36, ease: "power3.out" },
+        1.1,
+      );
+      tl.fromTo("#s4-claim .barline", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.26, ease: "expo.out" }, 1.28);
+      tl.fromTo("#s4-claim .profiles", { opacity: 0 }, { opacity: 1, duration: 0.26, ease: "power2.out" }, 1.56);
+
+      window.__timelines["s4"] = tl;
+    })();
+  </script>
+</template>

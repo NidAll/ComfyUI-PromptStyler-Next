@@ -65,7 +65,7 @@ def test_real_v3_registration_and_schema() -> None:
         json.dumps(info, allow_nan=False)
 
 
-def test_style_picker_metadata_matches_catalog_without_changing_widget_inputs():
+def test_style_picker_metadata_matches_catalog_with_appended_enable_toggle():
     module = sys.modules[STYLE.__module__]
     schema = STYLE.define_schema()
     assert [item.id for item in schema.inputs] == [
@@ -75,7 +75,11 @@ def test_style_picker_metadata_matches_catalog_without_changing_widget_inputs():
         "intensity",
         "negative",
         "locked_axes",
+        "enabled",
     ]
+    enabled = STYLE.GET_NODE_INFO_V1()["input"]["optional"]["enabled"]
+    assert enabled[0] == "BOOLEAN"
+    assert enabled[1]["default"] is True
     options = STYLE.GET_NODE_INFO_V1()["input"]["required"]["style"][1]
     categories = options["psnext_categories"]
     assert set(categories) == set(options["options"])
@@ -181,6 +185,42 @@ def test_zero_intensity_keeps_prompt() -> None:
     prompt = "  A red bicycle, rain.\n文字: hello!"
     output = STYLE.execute(prompt, first_style(), "sdxl", 0)
     assert output.result[0] == prompt
+
+
+@pytest.mark.parametrize(
+    "model", [profile["id"] for profile in sys.modules[STYLE.__module__].get_engine().profiles()]
+)
+@pytest.mark.parametrize("prompt", ["", '  A red bicycle.\n文字: "雨"!  ', ' {"caption": "A bird"} '])
+def test_disabled_style_passes_raw_text_without_composition(model, prompt, monkeypatch) -> None:
+    style = first_style()
+    negative = "  blur, watermark\nنص  "
+
+    def unexpected_engine():
+        pytest.fail("Disabled styling must not invoke the engine")
+
+    monkeypatch.setattr(sys.modules[STYLE.__module__], "get_engine", unexpected_engine)
+    output = STYLE.execute(prompt, style, model, negative=negative, enabled=False)
+    assert output.result[:2] == (prompt, negative)
+    assert json.loads(output.result[2]) == {
+        "enabled": False,
+        "positive": prompt,
+        "negative": negative,
+    }
+
+
+def test_reenabling_style_restores_selected_style_and_settings() -> None:
+    inputs = {
+        "prompt": "A ceramic bird",
+        "style": first_style(),
+        "model": "sdxl",
+        "negative": "blur",
+        "intensity": 0.75,
+        "locked_axes": ["palette"],
+    }
+    expected = STYLE.execute(**inputs)
+    assert expected.result[0] != inputs["prompt"]
+    assert STYLE.execute(**inputs, enabled=False).result[:2] == (inputs["prompt"], inputs["negative"])
+    assert STYLE.execute(**inputs, enabled=True).result == expected.result
 
 
 @pytest.mark.parametrize(
@@ -293,14 +333,17 @@ def test_visual_graph_links_and_widget_contract() -> None:
     # Widget order follows V3 schema order in the saved visual graph.
     style_node = by_id[1]
     style_inputs = [item.id for item in STYLE.define_schema().inputs]
-    actual = STYLE.execute(**dict(zip(style_inputs, style_node["widgets_values"], strict=True)))
+    saved = style_node["widgets_values"]
+    assert style_inputs[len(saved) :] == ["enabled"]
+    actual = STYLE.execute(**dict(zip(style_inputs[: len(saved)], saved, strict=True)))
     recipe_output = COMPOSE.execute(by_id[2]["widgets_values"][0])
     assert actual.result[0] and json.loads(recipe_output.result[2])["recipe"]["locked_axes"] == [
         "composition"
     ]
 
 
-def test_api_graph_passes_real_comfy_prompt_validation(monkeypatch):
+@pytest.mark.parametrize("enabled", [None, True, False])
+def test_api_graph_passes_real_comfy_prompt_validation(monkeypatch, enabled):
     # Native validation imports model-management; keep this test process CPU-only.
     from comfy.cli_args import args
 
@@ -313,6 +356,8 @@ def test_api_graph_passes_real_comfy_prompt_validation(monkeypatch):
         monkeypatch.setitem(nodes.NODE_CLASS_MAPPINGS, node.define_schema().node_id, node)
     monkeypatch.setitem(nodes.NODE_CLASS_MAPPINGS, "PreviewAny", PreviewAny)
     graph = json.loads((ROOT / "examples" / "comfyui-text-api.json").read_text())
+    if enabled is not None:
+        graph["1"]["inputs"]["enabled"] = enabled
     valid, error, outputs, node_errors = asyncio.run(execution.validate_prompt("psnext-test", graph, None))
     assert valid and error is None and not node_errors
     assert set(outputs) == {"3", "4"}

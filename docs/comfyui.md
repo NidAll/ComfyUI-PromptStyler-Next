@@ -31,6 +31,13 @@ Use the Studio browser or `Engine.list_styles()` for descriptions and metadata. 
 
 Intensity activates curated clause tiers. Zero bypasses a layer. Increasing intensity adds author-selected visual instructions; it does not interpolate embeddings, alter sampler settings, insert token weights, or promise a linear image change.
 
+Switch **enabled** to **Disabled** on the Style node to pass the raw `prompt` and
+`negative` text through exactly as entered, including whitespace. This skips style
+additions and model-specific formatting. The selected style and other settings
+remain available when you enable it again. Disabled inspection contains
+`enabled: false`, `positive` and `negative` instead of a composition report.
+Existing workflows and API graphs that omit `enabled` keep styling enabled.
+
 For a coherent result, start with one Look. Use a Color grade or Effect only for
 an intentional additional direction. Protect **palette** for required identity
 colors and **composition** for fixed placements or relationships. The node keeps

@@ -1,0 +1,206 @@
+<template>
+  <style>
+    :root {
+      --paper: #f5f1eb;
+      --ink: #0f0d0b;
+      --muted: #a89f94;
+      --rule: #3a342e;
+      --accent: #a33810;
+      --accent-ink: #e2703f;
+      --accent-mark: #b76344;
+      --display: "Archivo Black", sans-serif;
+      --body: "Inter", sans-serif;
+      --mono: "JetBrains Mono", monospace;
+    }
+    #root {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      background: var(--ink);
+      font-family: var(--body);
+    }
+    .clip {
+      position: absolute;
+      inset: 0;
+    }
+    .ground {
+      position: absolute;
+      inset: 0;
+      background: var(--ink);
+    }
+    .glow {
+      position: absolute;
+      left: 720px;
+      top: 220px;
+      width: 780px;
+      height: 780px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(163, 56, 16, 0.24) 0%, rgba(163, 56, 16, 0) 68%);
+    }
+    .toprule {
+      position: absolute;
+      left: 80px;
+      top: 116px;
+      height: 2px;
+      width: 320px;
+      background: var(--accent);
+      transform-origin: left center;
+    }
+    .eyebrow {
+      position: absolute;
+      left: 80px;
+      top: 146px;
+      font-family: var(--mono);
+      font-size: 21px;
+      letter-spacing: 0.3em;
+      color: var(--paper);
+      opacity: 0;
+    }
+    .label {
+      position: absolute;
+      left: 80px;
+      top: 300px;
+      font-family: var(--mono);
+      font-size: 20px;
+      letter-spacing: 0.24em;
+      color: var(--muted);
+      opacity: 0;
+    }
+    .prompt {
+      position: absolute;
+      left: 80px;
+      top: 336px;
+      width: 1760px;
+      font-family: var(--mono);
+      font-size: 38px;
+      line-height: 1.5;
+      color: var(--paper);
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+      clip-path: inset(-14% 100% -14% 0);
+    }
+    .midrule {
+      position: absolute;
+      left: 80px;
+      top: 452px;
+      height: 1px;
+      width: 1760px;
+      background: var(--rule);
+      transform-origin: left center;
+    }
+    .adds {
+      position: absolute;
+      left: 80px;
+      top: 486px;
+      width: 1760px;
+    }
+    .add {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      font-family: var(--mono);
+      font-size: 30px;
+      line-height: 1.8;
+      color: var(--accent-ink);
+      opacity: 0;
+      white-space: nowrap;
+    }
+    .add .plus {
+      color: var(--accent-mark);
+      font-size: 25px;
+    }
+    .headline {
+      position: absolute;
+      left: 78px;
+      top: 812px;
+      font-family: var(--display);
+      font-size: 96px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      color: var(--paper);
+      opacity: 0;
+    }
+    .headline em {
+      font-style: normal;
+      color: var(--accent-ink);
+    }
+  </style>
+
+  <div data-hf-id="hf-3pu3" id="root" data-composition-id="s1" data-width="1920" data-height="1080">
+    <div data-hf-id="hf-ygft" class="ground"></div>
+    <div data-hf-id="hf-b2jw" id="s1-glow" class="clip" data-start="0" data-duration="3.27">
+      <div data-hf-id="hf-2s7n" class="glow"></div>
+    </div>
+
+    <div data-hf-id="hf-539w" id="s1-top" class="clip" data-start="0" data-duration="3.27">
+      <div data-hf-id="hf-j5dj" class="toprule"></div>
+      <div data-hf-id="hf-nxyf" class="eyebrow">PROMPTSTYLER NEXT</div>
+    </div>
+
+    <div data-hf-id="hf-rzg5" id="s1-subject" class="clip" data-start="0" data-duration="3.27">
+      <div data-hf-id="hf-o8zh" class="label">YOUR PROMPT</div>
+      <p data-hf-id="hf-d14h" class="prompt">A quiet bookshop on a rainy evening, a reader beside the window</p>
+    </div>
+
+    <div data-hf-id="hf-mihc" id="s1-appends" class="clip" data-start="1.02" data-duration="2.25">
+      <div data-hf-id="hf-8hwc" class="midrule"></div>
+      <div data-hf-id="hf-8fhv" class="adds" id="s1-adds">
+        <div data-hf-id="hf-pnb8" class="add"><span data-hf-id="hf-955y" class="plus">+</span>black and white</div>
+        <div data-hf-id="hf-dr8t" class="add"><span data-hf-id="hf-e60a" class="plus">+</span>silver monochrome</div>
+        <div data-hf-id="hf-cjky" class="add"><span data-hf-id="hf-ekbb" class="plus">+</span>soft highlight diffusion</div>
+        <div data-hf-id="hf-t3x6" class="add"><span data-hf-id="hf-eymc" class="plus">+</span>highlight spread</div>
+        <div data-hf-id="hf-mi4y" class="add"><span data-hf-id="hf-fcxd" class="plus">+</span>readable detail</div>
+      </div>
+    </div>
+
+    <div data-hf-id="hf-hhdd" id="s1-line" class="clip" data-start="2.14" data-duration="1.13">
+      <h1 data-hf-id="hf-iphs" class="headline">Your words <em data-hf-id="hf-5wzs">stay.</em></h1>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const tl = gsap.timeline({ paused: true });
+
+      // Ground light: the room warms as the prompt is written
+      tl.fromTo("#s1-glow .glow", { opacity: 0, scale: 0.94 }, { opacity: 0.9, scale: 1, duration: 1.2, ease: "power2.out" }, 0);
+
+      tl.fromTo(".toprule", { scaleX: 0 }, { scaleX: 1, duration: 0.5, ease: "power2.out" }, 0);
+      tl.fromTo(".eyebrow", { opacity: 0, y: 6 }, { opacity: 1, y: 0, duration: 0.34, ease: "power2.out" }, 0.06);
+      tl.fromTo(".label", { opacity: 0 }, { opacity: 1, duration: 0.26, ease: "power2.out" }, 0.04);
+
+      // The real prompt types on: a stepped reveal, one character at a time
+      tl.fromTo(
+        ".prompt",
+        { clipPath: "inset(-14% 100% -14% 0)" },
+        { clipPath: "inset(-14% 0% -14% 0)", duration: 0.78, ease: "steps(68)" },
+        0.02,
+      );
+
+      // Appended clauses land on the beat grid, in the engine's own order
+      tl.fromTo(".midrule", { scaleX: 0 }, { scaleX: 1, duration: 0.44, ease: "power2.out" }, 1.02);
+      const rows = gsap.utils.toArray("#s1-adds .add");
+      const rowTimes = [1.09, 1.37, 1.64, 1.92, 2.19];
+      rows.forEach((row, i) => {
+        tl.fromTo(row, { opacity: 0, x: -12 }, { opacity: 1, x: 0, duration: 0.22, ease: "power2.out" }, rowTimes[i]);
+      });
+
+      // Payoff line
+      tl.fromTo(
+        "#s1-line .headline",
+        { opacity: 0, y: 16, filter: "blur(6px)" },
+        { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.3, ease: "expo.out" },
+        2.14,
+      );
+
+      // Audio-reactive: the pool of light takes the two bass accents in this window
+      // (track beats at 4.39s and 6.00s fall outside; 1.09/2.19 are the local peaks)
+      [1.09, 2.19].forEach((t) => {
+        tl.to("#s1-glow .glow", { opacity: 1, scale: 1.035, duration: 0.14, ease: "power2.out" }, t);
+        tl.to("#s1-glow .glow", { opacity: 0.9, scale: 1, duration: 0.4, ease: "power2.inOut" }, t + 0.14);
+      });
+
+      window.__timelines["s1"] = tl;
+    })();
+  </script>
+</template>

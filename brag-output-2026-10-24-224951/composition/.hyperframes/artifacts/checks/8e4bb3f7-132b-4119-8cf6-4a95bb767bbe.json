@@ -1,0 +1,1036 @@
+{
+  "ok": true,
+  "strict": false,
+  "browserSkipped": false,
+  "lint": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "filesScanned": 7
+  },
+  "runtime": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 11,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"clause-1\" is 0.10s but its slot (data-duration) is 0.35s — the slot is shortened to the media length when rendered. Set data-duration to ~0.10s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "20",
+          "data-width": "1920",
+          "data-height": "1080"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "time": 0
+      },
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"clause-2\" is 0.01s but its slot (data-duration) is 0.35s — the slot is shortened to the media length when rendered. Set data-duration to ~0.01s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "20",
+          "data-width": "1920",
+          "data-height": "1080"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "time": 0
+      },
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"clause-3\" is 0.10s but its slot (data-duration) is 0.35s — the slot is shortened to the media length when rendered. Set data-duration to ~0.10s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "20",
+          "data-width": "1920",
+          "data-height": "1080"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "time": 0
+      },
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"lib-hit\" is 0.18s but its slot (data-duration) is 1.40s — the slot is shortened to the media length when rendered. Set data-duration to ~0.18s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "20",
+          "data-width": "1920",
+          "data-height": "1080"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "time": 0
+      },
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"lib-settle\" is 0.14s but its slot (data-duration) is 1.20s — the slot is shortened to the media length when rendered. Set data-duration to ~0.14s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "20",
+          "data-width": "1920",
+          "data-height": "1080"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "time": 0
+      },
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"reveal\" is 1.48s but its slot (data-duration) is 2.20s — the slot is shortened to the media length when rendered. Set data-duration to ~1.48s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "20",
+          "data-width": "1920",
+          "data-height": "1080"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "time": 0
+      },
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"row-1\" is 0.01s but its slot (data-duration) is 0.30s — the slot is shortened to the media length when rendered. Set data-duration to ~0.01s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "20",
+          "data-width": "1920",
+          "data-height": "1080"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "time": 0
+      },
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"row-2\" is 0.10s but its slot (data-duration) is 0.30s — the slot is shortened to the media length when rendered. Set data-duration to ~0.10s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "20",
+          "data-width": "1920",
+          "data-height": "1080"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "time": 0
+      },
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"row-3\" is 0.01s but its slot (data-duration) is 0.30s — the slot is shortened to the media length when rendered. Set data-duration to ~0.01s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "20",
+          "data-width": "1920",
+          "data-height": "1080"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "time": 0
+      },
+      {
+        "code": "clip_media_fit",
+        "severity": "warning",
+        "message": "Audio \"logo\" is 0.65s but its slot (data-duration) is 2.50s — the slot is shortened to the media length when rendered. Set data-duration to ~0.65s if that isn't intended.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "20",
+          "data-width": "1920",
+          "data-height": "1080"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "time": 0
+      },
+      {
+        "code": "gsap_tween_tail",
+        "severity": "warning",
+        "message": "In timeline \"main\", a tween on opacity, scale of div.halo ends at 4.670 s, 0.120 s after a later tween on opacity, scale ends at 4.550 s. For that tail the earlier tween takes opacity, scale back and leaves its own end value on screen, so the later tween's end never shows. End the earlier tween by 4.390 s, or add overwrite: \"auto\" to the later tween.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {
+          "data-composition-id": "main",
+          "data-start": "0",
+          "data-duration": "20",
+          "data-width": "1920",
+          "data-height": "1080"
+        },
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 1920,
+          "height": 1080
+        },
+        "time": 4.55
+      }
+    ]
+  },
+  "layout": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 2,
+    "findings": [
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 5.556,
+        "selector": "div.shelf > img:nth-of-type(1)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -37.89,
+          "top": 700,
+          "right": 1922.11,
+          "bottom": 1388,
+          "width": 1960,
+          "height": 688
+        },
+        "containerSelector": "div.shelf",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 700,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 380
+        },
+        "overflow": {
+          "left": 37.89,
+          "right": 2.11,
+          "bottom": 308
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "hf-media-0",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "compositions/s2-library.html",
+        "bbox": {
+          "x": -37.89,
+          "y": 700,
+          "width": 1960,
+          "height": 688
+        },
+        "firstSeen": 5.556,
+        "lastSeen": 5.556,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          5.556
+        ]
+      },
+      {
+        "code": "container_overflow",
+        "severity": "info",
+        "time": 7.778,
+        "selector": "div.shot > img:nth-of-type(1)",
+        "message": "Element extends outside a clipping layout container.",
+        "rect": {
+          "left": -14.64,
+          "top": -3.99,
+          "right": 1928.97,
+          "bottom": 1089.3,
+          "width": 1943.62,
+          "height": 1093.28
+        },
+        "containerSelector": "div.shot",
+        "fixHint": "Resize/reposition the child or container, or mark intentional overflow with data-layout-allow-overflow.",
+        "containerRect": {
+          "left": 0,
+          "top": 0,
+          "right": 1920,
+          "bottom": 1080,
+          "width": 1920,
+          "height": 1080
+        },
+        "overflow": {
+          "left": 14.64,
+          "right": 8.97,
+          "top": 3.99,
+          "bottom": 9.3
+        },
+        "dataAttributes": {
+          "data-hf-render-id": "hf-media-1",
+          "data-hf-authored-opacity": ""
+        },
+        "sourceFile": "compositions/s3-recipe.html",
+        "bbox": {
+          "x": -14.64,
+          "y": -3.99,
+          "width": 1943.62,
+          "height": 1093.28
+        },
+        "firstSeen": 7.778,
+        "lastSeen": 7.778,
+        "occurrences": 1,
+        "heldMs": 0,
+        "times": [
+          7.778
+        ]
+      }
+    ],
+    "duration": 20,
+    "samples": [
+      1.111,
+      3.333,
+      5.556,
+      7.778,
+      10,
+      12.222,
+      14.444,
+      16.667,
+      18.889
+    ],
+    "transitionSamples": [],
+    "transitionSamplesDropped": 0,
+    "tolerance": 2,
+    "totalIssueCount": 2,
+    "truncated": false
+  },
+  "motion": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "infoCount": 0,
+    "findings": [],
+    "enabled": false,
+    "samples": 0
+  },
+  "contrast": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 1,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "contrast_aa_failure",
+        "severity": "warning",
+        "message": "Contrast is 2.89:1; WCAG AA requires 4.5:1.",
+        "text": "+",
+        "fg": "rgb(163,56,16)",
+        "bg": "rgb(15,13,11)",
+        "ratio": 2.89,
+        "requiredRatio": 4.5,
+        "suggestedColor": "rgb(183,99,68)",
+        "large": false,
+        "selector": "div > div:nth-of-type(1) > div > div:nth-of-type(5) > div:nth-of-type(2) > div:nth-of-type(1) > span",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s1-receipt.html",
+        "bbox": {
+          "x": 71.30259704589844,
+          "y": 532,
+          "width": 13.203125,
+          "height": 40.90625
+        },
+        "time": 1.111,
+        "times": [
+          1.111
+        ]
+      }
+    ],
+    "enabled": true,
+    "samples": [
+      1.111,
+      5.556,
+      10,
+      14.444,
+      18.889
+    ],
+    "checked": 73,
+    "passed": 72
+  },
+  "craft": {
+    "ok": true,
+    "errorCount": 0,
+    "warningCount": 11,
+    "infoCount": 0,
+    "findings": [
+      {
+        "code": "first_frame_empty",
+        "severity": "warning",
+        "message": "Frame 0 shows only the background, and the first frame is the thumbnail on social players: have the title or key image already on screen at 0 s instead of entering from nothing; see references/review.md.",
+        "selector": "[data-composition-id]",
+        "dataAttributes": {},
+        "sourceFile": "index.html",
+        "bbox": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "time": 0
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"A q u i e t b o o k s h o p o n a r a i n y e v e n i n g...\" (51 words) is on screen 3.00 s (±0.01 s), under its 11.85 s floor: hold it about 0.5 s + 0.3 s a word (15.80 s here) before it leaves or changes; see references/motion.md.",
+        "text": "A q u i e t b o o k s h o p o n a r a i n y e v e n i n g , a r e a d e r b e s i d e t h e w i n d o w",
+        "selector": "#s1-prompt-text",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s1-receipt.html",
+        "bbox": {
+          "x": 80,
+          "y": 333,
+          "width": 156.95,
+          "height": 50
+        },
+        "time": 0.305,
+        "words": 51,
+        "seconds": 3,
+        "floorSeconds": 11.85
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 7 text elements stay under it for 0.5 s or more, the smallest \"YOUR PROMPT\" at 15 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "YOUR PROMPT",
+        "selector": "div.label",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s1-receipt.html",
+        "bbox": {
+          "x": 80,
+          "y": 296,
+          "width": 138.61,
+          "height": 20
+        },
+        "time": 0.375,
+        "times": [
+          0.25,
+          0.375,
+          1.25,
+          1.5,
+          1.75,
+          2,
+          2.375
+        ],
+        "fontPx": 15,
+        "floorPx": 28,
+        "seconds": 3,
+        "elements": [
+          {
+            "selector": "div.label",
+            "text": "YOUR PROMPT",
+            "fontPx": 15,
+            "time": 0.375,
+            "seconds": 3
+          },
+          {
+            "selector": "#s1-top > div:nth-of-type(2)",
+            "text": "PROMPTSTYLER NEXT",
+            "fontPx": 18,
+            "time": 0.25,
+            "seconds": 3.125
+          },
+          {
+            "selector": "#s1-adds > div:nth-of-type(1)",
+            "text": "black and white",
+            "fontPx": 26,
+            "time": 1.25,
+            "seconds": 2.125
+          },
+          {
+            "selector": "#s1-adds > div:nth-of-type(2)",
+            "text": "silver monochrome",
+            "fontPx": 26,
+            "time": 1.5,
+            "seconds": 1.875
+          },
+          {
+            "selector": "#s1-adds > div:nth-of-type(3)",
+            "text": "soft highlight diffusion",
+            "fontPx": 26,
+            "time": 1.75,
+            "seconds": 1.625
+          },
+          {
+            "selector": "#s1-adds > div:nth-of-type(4)",
+            "text": "highlight spread",
+            "fontPx": 26,
+            "time": 2,
+            "seconds": 1.375
+          },
+          {
+            "selector": "#s1-adds > div:nth-of-type(5)",
+            "text": "readable detail",
+            "fontPx": 26,
+            "time": 2.375,
+            "seconds": 1
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 3 text elements stay under it for 0.5 s or more, the smallest \"THE STYLE LIBRARY\" at 17 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "THE STYLE LIBRARY",
+        "selector": "#s2-top > div:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s2-library.html",
+        "bbox": {
+          "x": 80,
+          "y": 94.48,
+          "width": 260.11,
+          "height": 22
+        },
+        "time": 3.375,
+        "times": [
+          3.375,
+          4.375,
+          4.375
+        ],
+        "fontPx": 17,
+        "floorPx": 28,
+        "seconds": 3.25,
+        "elements": [
+          {
+            "selector": "#s2-top > div:nth-of-type(1)",
+            "text": "THE STYLE LIBRARY",
+            "fontPx": 17,
+            "time": 3.375,
+            "seconds": 3.25
+          },
+          {
+            "selector": "p.detail",
+            "text": "· 69 color grades · 78 modifiersoffline · zero runtime dependencies",
+            "fontPx": 21,
+            "time": 4.375,
+            "seconds": 2.25
+          },
+          {
+            "selector": "p.detail > b:nth-of-type(1)",
+            "text": "1,017 styles",
+            "fontPx": 21,
+            "time": 4.375,
+            "seconds": 2.25
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"· 69 color grades · 78 modifiersoffline · zero runtime de...\" (11 words) is on screen 2.20 s (±0.01 s), under its 2.85 s floor: hold it about 0.5 s + 0.3 s a word (3.80 s here) before it leaves or changes; see references/motion.md.",
+        "text": "· 69 color grades · 78 modifiersoffline · zero runtime dependencies 1,017 styles",
+        "selector": "p.detail",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s2-library.html",
+        "bbox": {
+          "x": 80,
+          "y": 585.13,
+          "width": 567.02,
+          "height": 60.59000000000003
+        },
+        "time": 4.367,
+        "words": 11,
+        "seconds": 2.203,
+        "floorSeconds": 2.85
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"Layer order sets precedence. Intensity adds increasingly ...\" (10 words) is on screen 2.37 s (±0.01 s), under its 2.63 s floor: hold it about 0.5 s + 0.3 s a word (3.50 s here) before it leaves or changes; see references/motion.md.",
+        "text": "Layer order sets precedence. Intensity adds increasingly specific style clauses.",
+        "selector": "p.helper",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s3-recipe.html",
+        "bbox": {
+          "x": 1251.02,
+          "y": 894,
+          "width": 588.98,
+          "height": 60.09000000000003
+        },
+        "time": 7.469,
+        "words": 10,
+        "seconds": 2.367,
+        "floorSeconds": 2.625
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 3 text elements stay under it for 0.5 s or more, the smallest \"YOUR RECIPE · · 75% INTENSITY\" at 17 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "YOUR RECIPE · · 75% INTENSITY",
+        "selector": "p.tag",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s3-recipe.html",
+        "bbox": {
+          "x": 80,
+          "y": 1002,
+          "width": 529.75,
+          "height": 22
+        },
+        "time": 7.625,
+        "times": [
+          7.5,
+          7.625,
+          7.625
+        ],
+        "fontPx": 17,
+        "floorPx": 28,
+        "seconds": 2.25,
+        "elements": [
+          {
+            "selector": "p.tag",
+            "text": "YOUR RECIPE · · 75% INTENSITY",
+            "fontPx": 17,
+            "time": 7.625,
+            "seconds": 2.25
+          },
+          {
+            "selector": "p.tag > b:nth-of-type(1)",
+            "text": "2 LAYERS",
+            "fontPx": 17,
+            "time": 7.625,
+            "seconds": 2.25
+          },
+          {
+            "selector": "p.helper",
+            "text": "Layer order sets precedence. Intensity adds increasingly specific style clauses.",
+            "fontPx": 22,
+            "time": 7.5,
+            "seconds": 2.375
+          }
+        ]
+      },
+      {
+        "code": "line_unread",
+        "severity": "warning",
+        "message": "\"\"short_description\" : \"A quiet bookshop on a rainy evenin...\" (14 words) is on screen 3.07 s (±0.01 s), under its 3.53 s floor: hold it about 0.5 s + 0.3 s a word (4.70 s here) before it leaves or changes; see references/motion.md.",
+        "text": "\"short_description\" : \"A quiet bookshop on a rainy evening, a reader beside the window\"",
+        "selector": "#s4-json > div:nth-of-type(9)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s4-language.html",
+        "bbox": {
+          "x": 1043.89,
+          "y": 481.72,
+          "width": 763.8300000000002,
+          "height": 57.66999999999996
+        },
+        "time": 10.602,
+        "words": 14,
+        "seconds": 3.07,
+        "floorSeconds": 3.525
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 15 text elements stay under it for 0.5 s or more, the smallest \"Shared clause rendered by the model a...\" at 16 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "Shared clause rendered by the model adapter.",
+        "selector": "p.note",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s4-language.html",
+        "bbox": {
+          "x": 80,
+          "y": 880,
+          "width": 450.56,
+          "height": 21
+        },
+        "time": 11,
+        "times": [
+          10,
+          10,
+          10.125,
+          10.25,
+          10.375,
+          10.375,
+          10.5,
+          10.5,
+          10.5,
+          10.5,
+          10.5,
+          10.625,
+          10.625,
+          11,
+          11.5
+        ],
+        "fontPx": 16,
+        "floorPx": 28,
+        "seconds": 2.75,
+        "elements": [
+          {
+            "selector": "p.note",
+            "text": "Shared clause rendered by the model adapter.",
+            "fontPx": 16,
+            "time": 11,
+            "seconds": 2.75
+          },
+          {
+            "selector": "div.l-label",
+            "text": "SDXL · TAGS",
+            "fontPx": 17,
+            "time": 10,
+            "seconds": 3.75
+          },
+          {
+            "selector": "div.r-label",
+            "text": "FIBO 2 · STRUCTURED",
+            "fontPx": 17,
+            "time": 10,
+            "seconds": 3.75
+          },
+          {
+            "selector": "p.profiles",
+            "text": "11 model profiles",
+            "fontPx": 18,
+            "time": 11.5,
+            "seconds": 2.25
+          },
+          {
+            "selector": "#s4-json > div:nth-of-type(2) > span:nth-of-type(1)",
+            "text": "\"aesthetics\"",
+            "fontPx": 19,
+            "time": 10.25,
+            "seconds": 3.5
+          },
+          {
+            "selector": "#s4-json > div:nth-of-type(3) > span:nth-of-type(1)",
+            "text": "\"color_scheme\"",
+            "fontPx": 19,
+            "time": 10.375,
+            "seconds": 3.375
+          },
+          {
+            "selector": "#s4-json > div:nth-of-type(3) > span:nth-of-type(3)",
+            "text": "\"Use a black-and-white silver palette\"",
+            "fontPx": 19,
+            "time": 10.375,
+            "seconds": 3.375
+          },
+          {
+            "selector": "#s4-json > div:nth-of-type(5) > span:nth-of-type(1)",
+            "text": "\"artistic_style\"",
+            "fontPx": 19,
+            "time": 10.5,
+            "seconds": 3.25
+          },
+          {
+            "selector": "#s4-json > div:nth-of-type(5) > span:nth-of-type(3)",
+            "text": "\"Keep soft highlight spread over an otherwise readable image\"",
+            "fontPx": 19,
+            "time": 10.5,
+            "seconds": 3.25
+          },
+          {
+            "selector": "#s4-json > div:nth-of-type(6) > span:nth-of-type(1)",
+            "text": "\"lighting\"",
+            "fontPx": 19,
+            "time": 10.5,
+            "seconds": 3.25
+          },
+          {
+            "selector": "#s4-json > div:nth-of-type(7) > span:nth-of-type(1)",
+            "text": "\"conditions\"",
+            "fontPx": 19,
+            "time": 10.5,
+            "seconds": 3.25
+          },
+          {
+            "selector": "#s4-json > div:nth-of-type(7) > span:nth-of-type(3)",
+            "text": "\"Wrap the existing highlights in a gentle luminous veil\"",
+            "fontPx": 19,
+            "time": 10.5,
+            "seconds": 3.25
+          },
+          {
+            "selector": "#s4-json > div:nth-of-type(9) > span:nth-of-type(1)",
+            "text": "\"short_description\"",
+            "fontPx": 19,
+            "time": 10.625,
+            "seconds": 3.125
+          },
+          {
+            "selector": "#s4-json > div:nth-of-type(9) > span:nth-of-type(3)",
+            "text": "\"A quiet bookshop on a rainy evening, a reader beside the window\"",
+            "fontPx": 19,
+            "time": 10.625,
+            "seconds": 3.125
+          },
+          {
+            "selector": "p.tags",
+            "text": "black and white, silver monochrome, soft highlight diffusion, highlight spread, readable detail",
+            "fontPx": 27,
+            "time": 10.125,
+            "seconds": 3.625
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 15 text elements stay under it for 0.5 s or more, the smallest \"fingerprint\" at 16 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "fingerprint",
+        "selector": "div.foot > b:nth-of-type(1)",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s5-trace.html",
+        "bbox": {
+          "x": 1702.72,
+          "y": 947,
+          "width": 137.28,
+          "height": 21
+        },
+        "time": 16.25,
+        "times": [
+          13.875,
+          14.375,
+          14.375,
+          14.375,
+          14.875,
+          14.875,
+          14.875,
+          15.375,
+          15.375,
+          15.375,
+          16,
+          16,
+          16,
+          16.25,
+          16.25
+        ],
+        "fontPx": 16,
+        "floorPx": 28,
+        "seconds": 1.25,
+        "elements": [
+          {
+            "selector": "div.foot > b:nth-of-type(1)",
+            "text": "fingerprint",
+            "fontPx": 16,
+            "time": 16.25,
+            "seconds": 1.25
+          },
+          {
+            "selector": "#s5-head > div:nth-of-type(1)",
+            "text": "TRANSFORMATION TRACE",
+            "fontPx": 17,
+            "time": 13.875,
+            "seconds": 3.625
+          },
+          {
+            "selector": "div.foot > span:nth-of-type(1)",
+            "text": "Catalog 10375da75df6",
+            "fontPx": 18,
+            "time": 16.25,
+            "seconds": 1.25
+          },
+          {
+            "selector": "#s5-ledger > div:nth-of-type(1) > div:nth-of-type(1)",
+            "text": "suppressed",
+            "fontPx": 19,
+            "time": 14.375,
+            "seconds": 3.125
+          },
+          {
+            "selector": "div.verdict.v-applied",
+            "text": "applied",
+            "fontPx": 19,
+            "time": 14.875,
+            "seconds": 2.625
+          },
+          {
+            "selector": "div.verdict.v-skipped",
+            "text": "skipped",
+            "fontPx": 19,
+            "time": 15.375,
+            "seconds": 2.125
+          },
+          {
+            "selector": "#s5-ledger > div:nth-of-type(4) > div:nth-of-type(1)",
+            "text": "suppressed",
+            "fontPx": 19,
+            "time": 16,
+            "seconds": 1.5
+          },
+          {
+            "selector": "#s5-ledger > div:nth-of-type(1) > div:nth-of-type(3)",
+            "text": "Conflicting claim replaced by cinema.softfocus under last_wins.",
+            "fontPx": 21,
+            "time": 14.375,
+            "seconds": 3.125
+          },
+          {
+            "selector": "#s5-ledger > div:nth-of-type(2) > div:nth-of-type(3)",
+            "text": "Shared clause rendered by the model adapter.",
+            "fontPx": 21,
+            "time": 14.875,
+            "seconds": 2.625
+          },
+          {
+            "selector": "#s5-ledger > div:nth-of-type(3) > div:nth-of-type(3)",
+            "text": "Axis protected by the recipe or an existing structured-caption field.",
+            "fontPx": 21,
+            "time": 15.375,
+            "seconds": 2.125
+          },
+          {
+            "selector": "#s5-ledger > div:nth-of-type(4) > div:nth-of-type(3)",
+            "text": "Conflicting claim replaced by cinema.softfocus under last_wins.",
+            "fontPx": 21,
+            "time": 16,
+            "seconds": 1.5
+          },
+          {
+            "selector": "#s5-ledger > div:nth-of-type(1) > div:nth-of-type(2)",
+            "text": "lighting",
+            "fontPx": 24,
+            "time": 14.375,
+            "seconds": 3.125
+          },
+          {
+            "selector": "#s5-ledger > div:nth-of-type(2) > div:nth-of-type(2)",
+            "text": "palette",
+            "fontPx": 24,
+            "time": 14.875,
+            "seconds": 2.625
+          },
+          {
+            "selector": "#s5-ledger > div:nth-of-type(3) > div:nth-of-type(2)",
+            "text": "medium",
+            "fontPx": 24,
+            "time": 15.375,
+            "seconds": 2.125
+          },
+          {
+            "selector": "#s5-ledger > div:nth-of-type(4) > div:nth-of-type(2)",
+            "text": "texture",
+            "fontPx": 24,
+            "time": 16,
+            "seconds": 1.5
+          }
+        ]
+      },
+      {
+        "code": "text_below_floor",
+        "severity": "warning",
+        "message": "Type floor is 28 px (2.6% of the 1080 px short side, what a phone can read) and 2 text elements stay under it for 0.5 s or more, the smallest \"1,164 entries · 52 packs · offline\" at 17 px: set reading text to at least 28 px, or put data-layout-ignore on text that is texture rather than reading; see references/look.md.",
+        "text": "1,164 entries · 52 packs · offline",
+        "selector": "p.stats",
+        "dataAttributes": {},
+        "sourceFile": "compositions/s6-logo.html",
+        "bbox": {
+          "x": 80,
+          "y": 706,
+          "width": 381.48,
+          "height": 22
+        },
+        "time": 18.5,
+        "times": [
+          18.375,
+          18.5
+        ],
+        "fontPx": 17,
+        "floorPx": 28,
+        "seconds": 1.5,
+        "elements": [
+          {
+            "selector": "p.stats",
+            "text": "1,164 entries · 52 packs · offline",
+            "fontPx": 17,
+            "time": 18.5,
+            "seconds": 1.5
+          },
+          {
+            "selector": "p.surfaces",
+            "text": "COMFYUI · HEISS STUDIO · PYTHON",
+            "fontPx": 18,
+            "time": 18.375,
+            "seconds": 1.625
+          }
+        ]
+      }
+    ],
+    "enabled": true,
+    "step": 0.125,
+    "samples": 160
+  },
+  "hdr": {
+    "autoPromotion": null,
+    "inspection": "available"
+  },
+  "snapshots": {
+    "enabled": false,
+    "files": [],
+    "times": [],
+    "findingFiles": []
+  }
+}

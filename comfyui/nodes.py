@@ -100,6 +100,14 @@ class PSNextStyle(io.ComfyNode):
                     advanced=True,
                     tooltip="Skip style clauses on these axes to protect choices already in your prompt.",
                 ),
+                io.Boolean.Input(
+                    "enabled",
+                    default=True,
+                    optional=True,
+                    label_on="Enabled",
+                    label_off="Disabled",
+                    tooltip="When disabled, pass prompt and negative text through unchanged, without styling or model formatting.",
+                ),
             ],
             outputs=[
                 io.String.Output("positive", display_name="positive"),
@@ -117,7 +125,16 @@ class PSNextStyle(io.ComfyNode):
         intensity: float = 0.75,
         negative: str = "",
         locked_axes: list[str] | None = None,
+        enabled: bool = True,
     ) -> io.NodeOutput:
+        if not enabled:
+            inspection = json.dumps(
+                {"enabled": False, "positive": prompt, "negative": negative},
+                ensure_ascii=False,
+                sort_keys=True,
+                indent=2,
+            )
+            return io.NodeOutput(prompt, negative, inspection)
         return _outputs(
             get_engine().compose(
                 {

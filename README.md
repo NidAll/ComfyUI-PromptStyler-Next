@@ -60,6 +60,9 @@ scene description, choose a model profile, and open **Style explorer** to search
 and inspect visual directions before applying a style. Connect the resulting
 text to your workflow's native encoder.
 
+Set **enabled** to **Disabled** on the Style node to output your raw positive and
+negative prompts unchanged. Enable it again to reuse the selected style and settings.
+
 The styling nodes need no additional runtime packages. The optional VLM upscaler
 has separate [host and model requirements](docs/upscaler.md#setup-and-controls).
 The complete repository supplies the current V3 extension entry point; installing
