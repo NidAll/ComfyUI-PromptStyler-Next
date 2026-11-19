@@ -42,13 +42,17 @@ def test_validation_refuses_out_of_contract_inputs(arguments):
 
 def test_validation_trims_and_accepts_defaults():
     assert idea.validate("  a fox  ") == "a fox"
-    assert idea.validate("a fox", "wild", "detailed", "krea2", "light", "layered", 0.0, "", "", 256) == "a fox"
+    assert (
+        idea.validate("a fox", "wild", "detailed", "krea2", "light", "layered", 0.0, "", "", 256) == "a fox"
+    )
 
 
 def test_plan_is_seeded_and_skips_recent_keys():
     first = idea.plan(7, "explore", "balanced")
     assert first["lenses"] == idea.plan(7, "explore", "balanced")["lenses"]
-    recent = ",".join(lens.key for lens in idea.LENSES[:-2]) + "," + ",".join(s.key for s in idea.STRUCTURES[:-1])
+    recent = (
+        ",".join(lens.key for lens in idea.LENSES[:-2]) + "," + ",".join(s.key for s in idea.STRUCTURES[:-1])
+    )
     for seed in range(40):
         chosen = idea.plan(seed, "explore", "balanced", recent=recent)
         assert [lens.key for lens in chosen["lenses"]] == [idea.LENSES[-2].key]
@@ -62,7 +66,11 @@ def test_explore_uses_one_scene_lens_and_wild_combines_a_bold_lens():
         assert len(explore["lenses"]) == 1 and explore["lenses"][0].key != "medium"
         assert [lens.bold for lens in wild["lenses"]] == [True, False]
         assert len(wild["sparks"]) == 6 and wild["concepts"] == 4
-    assert {idea.plan(seed, "explore", "balanced")["lenses"][0].key for seed in range(200)} >= {"setting", "light", "viewpoint"}
+    assert {idea.plan(seed, "explore", "balanced")["lenses"][0].key for seed in range(200)} >= {
+        "setting",
+        "light",
+        "viewpoint",
+    }
 
 
 def test_explicit_lens_and_structure_are_honoured():
@@ -83,7 +91,11 @@ def test_brainstorm_request_carries_draft_lens_sparks_and_earlier_ideas():
 
 def test_develop_request_sets_structure_length_target_and_keeps_constraints():
     chosen = idea.plan(1, "wild", "detailed", structure="layered")
-    request = text_of(idea.develop_messages("two owls, no moon", "wild", "detailed", "moss_image", chosen, "owls in a library"))
+    request = text_of(
+        idea.develop_messages(
+            "two owls, no moon", "wild", "detailed", "moss_image", chosen, "owls in a library"
+        )
+    )
     system = idea.develop_messages("two owls", "wild", "detailed", "moss_image", chosen, "x")[0]["content"]
     assert "Concept: owls in a library" in request and idea.STRUCTURE_BY_KEY["layered"].instruction in request
     assert "6 to 9 sentences, 130 to 180 words" in request and "their number" in request
@@ -122,7 +134,9 @@ def test_concept_ranking_prefers_kept_subject_then_novelty():
         "A dragon sleeps on a mountain of gold coins in a cave.",
         "A lighthouse keeper feeds a whale from a rowboat under paper lanterns.",
     ]
-    ranked = idea.rank_concepts(concepts, ["keeper feeds whale beside a frozen waterfall at dawn"], draft, "explore", 5)
+    ranked = idea.rank_concepts(
+        concepts, ["keeper feeds whale beside a frozen waterfall at dawn"], draft, "explore", 5
+    )
     assert [item[0] for item in ranked] == [concepts[2], concepts[0], concepts[1]]
 
 
@@ -145,20 +159,35 @@ def test_missing_quoted_text_is_restored_verbatim():
 
 def test_assessment_flags_drift_shortness_and_repeats_and_reports_invented_text():
     draft = "portrait of an old woman"
-    good = idea.assess("An elderly woman sits for a portrait by a window, " * 8, draft, "explore", "balanced", [])
+    good = idea.assess(
+        "An elderly woman sits for a portrait by a window, " * 8, draft, "explore", "balanced", []
+    )
     assert good["issues"] == [] and good["coverage"] == 1.0
-    drift = idea.assess("A dragon flies over a burning castle at night. " * 10, draft, "explore", "balanced", [])
+    drift = idea.assess(
+        "A dragon flies over a burning castle at night. " * 10, draft, "explore", "balanced", []
+    )
     assert "lost_subject" in drift["issues"]
     assert "too_short" in idea.assess("An old woman.", draft, "explore", "balanced", [])["issues"]
     earlier = ["old woman knitting a red scarf beside a crackling fireplace with a sleeping cat"]
-    repeat = idea.assess("Portrait of an old woman knitting a red scarf by a crackling fireplace, a cat sleeping. " * 4,
-                         draft, "explore", "balanced", earlier)
+    repeat = idea.assess(
+        "Portrait of an old woman knitting a red scarf by a crackling fireplace, a cat sleeping. " * 4,
+        draft,
+        "explore",
+        "balanced",
+        earlier,
+    )
     assert "repeat" in repeat["issues"]
-    assert idea.assess('An old woman holds a sign "HELLO".', draft, "wild", "concise", [])["invented_text"] == ["HELLO"]
+    assert idea.assess('An old woman holds a sign "HELLO".', draft, "wild", "concise", [])[
+        "invented_text"
+    ] == ["HELLO"]
 
 
 def test_bias_words_are_recurring_additions_not_draft_or_stock_words():
-    avoid = ["a keeper in a navy coat on a cliff", "the keeper wears a navy cap near a cliff", "weathered keeper, weathered pier"]
+    avoid = [
+        "a keeper in a navy coat on a cliff",
+        "the keeper wears a navy cap near a cliff",
+        "weathered keeper, weathered pier",
+    ]
     words = idea.bias_words(avoid, "a lighthouse keeper")
     assert "navy" in words and "cliff" in words
     assert "keeper" not in words and "weathered" not in words and "coat" not in words
@@ -167,13 +196,22 @@ def test_bias_words_are_recurring_additions_not_draft_or_stock_words():
 def test_earlier_ideas_are_listed_without_their_quoted_words_and_subject_swaps_are_ruled_out():
     chosen = idea.plan(2, "explore", "balanced")
     earlier = ['The keeper feeds the whale at dusk, murmuring "Home finds us."']
-    request = text_of(idea.brainstorm_messages("a lighthouse keeper feeding a whale", "explore", chosen, earlier))
+    request = text_of(
+        idea.brainstorm_messages("a lighthouse keeper feeding a whale", "explore", chosen, earlier)
+    )
     assert "Home finds us" not in request and "- The keeper feeds the whale at dusk" in request
     assert "same main subject" in request and "no dialogue" in request
     # A concept that swaps the whale for a dolphin ranks below one that keeps it.
-    ranked = idea.rank_concepts(["A keeper serves a dolphin at a cliffside lighthouse under the moon.",
-                                 "A keeper feeds a whale from a lighthouse balcony under the moon."],
-                                [], "a lighthouse keeper feeding a whale", "explore", 1)
+    ranked = idea.rank_concepts(
+        [
+            "A keeper serves a dolphin at a cliffside lighthouse under the moon.",
+            "A keeper feeds a whale from a lighthouse balcony under the moon.",
+        ],
+        [],
+        "a lighthouse keeper feeding a whale",
+        "explore",
+        1,
+    )
     assert "whale" in ranked[0][0]
     assert idea.validate("a fox", earlier="x" * 100) == "a fox"
     with pytest.raises(ValueError):

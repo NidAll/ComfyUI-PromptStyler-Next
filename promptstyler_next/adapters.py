@@ -130,7 +130,9 @@ class TagAdapter:
         return ()
 
     def render(self, prompt: str, clauses: tuple[Clause, ...]) -> str:
-        present = {tag.strip().casefold() for tag in prompt.replace("\\(", "(").replace("\\)", ")").split(",")}
+        present = {
+            tag.strip().casefold() for tag in prompt.replace("\\(", "(").replace("\\)", ")").split(",")
+        }
         additions = [
             escape_tag(tag)
             for tag in dict.fromkeys(tag for clause in clauses for tag in (clause.tags or (clause.text,)))

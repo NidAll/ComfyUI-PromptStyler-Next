@@ -283,7 +283,9 @@ class Catalog:
         for pack in self.packs:
             for old, new in pack.retired:
                 if old in by_id or old in retired:
-                    raise StylerError("duplicate_style", "A retired ID must not name a live or retired style.", old)
+                    raise StylerError(
+                        "duplicate_style", "A retired ID must not name a live or retired style.", old
+                    )
                 retired[old] = new
         for old, new in retired.items():
             if new and new not in by_id:

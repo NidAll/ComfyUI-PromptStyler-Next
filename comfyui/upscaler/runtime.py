@@ -169,7 +169,9 @@ def _generate(owner, processor, request, picture, budget, slices, detail_mode, *
     )
 
 
-def _generate_lfm3(owner, processor, chat, picture, budget, slices, *, sampling=None, seed=0, paragraphs=True):
+def _generate_lfm3(
+    owner, processor, chat, picture, budget, slices, *, sampling=None, seed=0, paragraphs=True
+):
     """Greedy by default; ``sampling`` (temperature/top_p/min_p) samples reproducibly from ``seed``."""
     started = time.perf_counter()
     mm.throw_exception_if_processing_interrupted()
@@ -464,7 +466,11 @@ def upscale(
 
 def _idea_sampling(temperature: float, bias: list | None = None) -> dict:
     # min_p keeps high temperatures coherent on a small model; 0 means greedy.
-    settings = {"temperature": float(temperature), "top_p": 0.95, "min_p": 0.05} if temperature > 0 else {"do_sample": False}
+    settings = (
+        {"temperature": float(temperature), "top_p": 0.95, "min_p": 0.05}
+        if temperature > 0
+        else {"do_sample": False}
+    )
     return {**settings, **({"sequence_bias": bias} if bias else {})}
 
 
@@ -502,7 +508,17 @@ def ideate(
     """
     started = time.perf_counter()
     draft = idea_prompts.validate(
-        prompt, exploration, detail, target_model, lens, structure, temperature, avoid, recent, max_new_tokens, earlier
+        prompt,
+        exploration,
+        detail,
+        target_model,
+        lens,
+        structure,
+        temperature,
+        avoid,
+        recent,
+        max_new_tokens,
+        earlier,
     )
     if not isinstance(upscaler, UpscalerHandle) or upscaler.model_family != "lfm3_vl":
         raise ValueError("Prompt ideas need the LFM3-VL model; select an lfm3 file in Load Prompt Upscaler")
@@ -515,39 +531,62 @@ def ideate(
         owner, processor = upscaler.owner, upscaler.processor
         # Near-ban the model's stock adjectives; gently steer away from words earlier ideas kept reusing.
         penalised = idea_prompts.bias_words(idea_prompts.avoid_list(earlier) or earlier_ideas, draft)
-        bias = (_word_bias(processor.tokenizer, list(idea_prompts.OVERUSED), -6.0)
-                + _word_bias(processor.tokenizer, penalised, -1.5))
+        bias = _word_bias(processor.tokenizer, list(idea_prompts.OVERUSED), -6.0) + _word_bias(
+            processor.tokenizer, penalised, -1.5
+        )
         passes = []
         # Brainstorming is sampled hotter than the final prompt so the candidates really differ.
         raw, _, timing = _generate_lfm3(
-            owner, processor, idea_prompts.brainstorm_messages(draft, exploration, chosen, earlier_ideas), None,
-            40 * chosen["concepts"] + 40, 1,
+            owner,
+            processor,
+            idea_prompts.brainstorm_messages(draft, exploration, chosen, earlier_ideas),
+            None,
+            40 * chosen["concepts"] + 40,
+            1,
             sampling=_idea_sampling(min(1.5, temperature + 0.2) if temperature else 0, bias),
-            seed=seed, paragraphs=False,
+            seed=seed,
+            paragraphs=False,
         )
         passes.append({"stage": "brainstorm", **timing})
         concepts = idea_prompts.parse_concepts(raw)
         ranked = idea_prompts.rank_concepts(concepts, earlier_ideas, draft, exploration, chosen["rng_state"])
         attempts = []
         for attempt in range(2):
-            concept, concept_novelty = ranked[attempt] if attempt < len(ranked) else (ranked[0] if ranked else ("", 1.0))
+            concept, concept_novelty = (
+                ranked[attempt] if attempt < len(ranked) else (ranked[0] if ranked else ("", 1.0))
+            )
             raw, truncated, timing = _generate_lfm3(
-                owner, processor,
-                idea_prompts.develop_messages(draft, exploration, detail, target_model, chosen, concept), None,
-                budget, 1, sampling=_idea_sampling(temperature, bias), seed=seed + 1 + attempt * 7919,
+                owner,
+                processor,
+                idea_prompts.develop_messages(draft, exploration, detail, target_model, chosen, concept),
+                None,
+                budget,
+                1,
+                sampling=_idea_sampling(temperature, bias),
+                seed=seed + 1 + attempt * 7919,
             )
             passes.append({"stage": "develop" if not attempt else "retry", **timing})
             try:
                 text, warnings = idea_prompts.clean_idea(raw, truncated)
             except RuntimeError as error:
-                attempts.append({"text": "", "warnings": [str(error)], "quality": {"issues": ["control"], "novelty": 0}})
+                attempts.append(
+                    {"text": "", "warnings": [str(error)], "quality": {"issues": ["control"], "novelty": 0}}
+                )
                 continue
             text, restored_exclusions = lfm_prompts.restore_exclusions(text, draft)
             text, restored_quotes = idea_prompts.restore_quotes(text, draft)
             quality = idea_prompts.assess(text, draft, exploration, detail, earlier_ideas)
-            attempts.append({"text": text, "warnings": warnings, "quality": quality, "concept": concept,
-                             "concept_novelty": concept_novelty, "restored_exclusions": restored_exclusions,
-                             "restored_quotes": restored_quotes})
+            attempts.append(
+                {
+                    "text": text,
+                    "warnings": warnings,
+                    "quality": quality,
+                    "concept": concept,
+                    "concept_novelty": concept_novelty,
+                    "restored_exclusions": restored_exclusions,
+                    "restored_quotes": restored_quotes,
+                }
+            )
             # A retry develops the next-ranked concept with a new sample.
             if not quality["issues"]:
                 break
@@ -556,11 +595,18 @@ def ideate(
             raise RuntimeError("The prompt model returned no usable idea; try again")
         best = min(usable, key=lambda item: (len(item["quality"]["issues"]), -item["quality"]["novelty"]))
         warnings = list(best["warnings"])
-        labels = {"too_short": "The idea came out short", "lost_subject": "The idea may have drifted from your subject",
-                  "echo": "The idea stayed close to your draft", "repeat": "The idea resembles an earlier one"}
+        labels = {
+            "too_short": "The idea came out short",
+            "lost_subject": "The idea may have drifted from your subject",
+            "echo": "The idea stayed close to your draft",
+            "repeat": "The idea resembles an earlier one",
+        }
         warnings += [labels[issue] for issue in best["quality"]["issues"] if issue in labels]
         if best["quality"].get("invented_text"):
-            warnings.append("The idea added readable text you did not ask for: " + ", ".join(best["quality"]["invented_text"]))
+            warnings.append(
+                "The idea added readable text you did not ask for: "
+                + ", ".join(best["quality"]["invented_text"])
+            )
         inspection = {
             "schema_version": 2,
             "contract": idea_prompts.CONTRACT_VERSION,
@@ -603,8 +649,13 @@ def ideate(
             "warnings": warnings,
             "base_prompt": best["text"],
         }
-        logger.info("PromptStyler idea (%s, %s): %d tokens in %.3fs", exploration, chosen["structure"].key,
-                    inspection["generated_tokens"], inspection["seconds"]["generate"])
+        logger.info(
+            "PromptStyler idea (%s, %s): %d tokens in %.3fs",
+            exploration,
+            chosen["structure"].key,
+            inspection["generated_tokens"],
+            inspection["seconds"]["generate"],
+        )
         return best["text"], json.dumps(inspection, ensure_ascii=False, sort_keys=True, indent=2)
     finally:
         try:

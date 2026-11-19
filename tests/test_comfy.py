@@ -851,7 +851,18 @@ def test_prompt_idea_schema_keeps_optional_steering_inputs_and_lfm_only_contract
     schema = PROMPT_IDEA.define_schema()
     names = [item.id for item in schema.inputs]
     assert names[:2] == ["upscaler", "prompt"]
-    assert {"exploration", "detail", "target_model", "lens", "structure", "seed", "temperature", "avoid", "recent", "max_new_tokens"} <= set(names)
+    assert {
+        "exploration",
+        "detail",
+        "target_model",
+        "lens",
+        "structure",
+        "seed",
+        "temperature",
+        "avoid",
+        "recent",
+        "max_new_tokens",
+    } <= set(names)
     optional = {item.id for item in schema.inputs if getattr(item, "optional", False)}
     assert {"avoid", "recent"} <= optional
     assert [item.id for item in schema.outputs] == ["prompt", "inspection"]

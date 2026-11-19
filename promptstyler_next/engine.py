@@ -267,9 +267,7 @@ class Engine:
         def tier(clause: Clause) -> int:
             return sum(clause.min_intensity >= threshold for threshold in v.TIERS[1:])
 
-        eligible.sort(
-            key=lambda item: (tier(item[3]), item[0], v.AXIS_PRIORITY.index(item[3].axis), item[1])
-        )
+        eligible.sort(key=lambda item: (tier(item[3]), item[0], v.AXIS_PRIORITY.index(item[3].axis), item[1]))
         unit = "tags" if profile.format == "tags" else "words"
         budget = profile.style_budget
         used = 0
@@ -312,11 +310,7 @@ class Engine:
             )
         prompt = request.prompt
         removed: list[tuple[str, str]] = []
-        claimed = {
-            clause.axis
-            for clause in selected
-            if clause.axis in lexicon.AXES
-        }
+        claimed = {clause.axis for clause in selected if clause.axis in lexicon.AXES}
         if claimed and profile.format != "structured" and not prompt.lstrip().startswith("{"):
             finder = lexicon.find_tags if profile.format == "tags" else lexicon.find_prose
             cleaned, removed = finder(prompt, claimed)

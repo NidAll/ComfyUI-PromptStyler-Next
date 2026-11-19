@@ -36,7 +36,9 @@ COMMANDS = frozenset(
 )
 # Also adjectives or nouns ("open planes", "diffuse light", "frame edges"): an instruction
 # only when a determiner follows.
-AMBIGUOUS = frozenset("open frame diffuse paint print draw carve mark set place limit shift route show style turn".split())
+AMBIGUOUS = frozenset(
+    "open frame diffuse paint print draw carve mark set place limit shift route show style turn".split()
+)
 DETERMINERS = frozenset("the a an each every all its this these those any".split())
 META = re.compile(
     r"\b(?:the (?:scene|subject|image|picture|frame|prompt|base|user)|existing|supplied|requested|"
@@ -116,33 +118,77 @@ def audit(engine: Engine | None = None, vocabulary: frozenset[str] | None = None
         ]
         for axis, identity in style["claims"].items():
             if identity != style["id"]:
-                errors.append({"id": style["id"], "variant": "base", "axis": axis, "reason": "Claim identity must be the style ID."})
+                errors.append(
+                    {
+                        "id": style["id"],
+                        "variant": "base",
+                        "axis": axis,
+                        "reason": "Claim identity must be the style ID.",
+                    }
+                )
         expected = {"grade": "grades", "modifier": "effects"}.get(style["kind"])
         if expected and style["category"].split("/")[0] != expected:
-            errors.append({"id": style["id"], "variant": "base", "axis": "", "reason": f"{style['kind']} category must start with {expected}/."})
+            errors.append(
+                {
+                    "id": style["id"],
+                    "variant": "base",
+                    "axis": "",
+                    "reason": f"{style['kind']} category must start with {expected}/.",
+                }
+            )
         for variant_name, clauses in versions:
             tiers = [sum(c["min_intensity"] >= t for t in v.TIERS[1:]) for c in clauses]
             total = sum(len(c["text"].split()) for c in clauses)
             if style["kind"] == "style" and total > LIMITS["look_words"]:
-                errors.append({"id": style["id"], "variant": variant_name, "axis": "", "reason": "Look adds too many words at full strength."})
+                errors.append(
+                    {
+                        "id": style["id"],
+                        "variant": variant_name,
+                        "axis": "",
+                        "reason": "Look adds too many words at full strength.",
+                    }
+                )
             if not clauses or tiers[0] != 0:
-                errors.append({"id": style["id"], "variant": variant_name, "axis": "", "reason": "The first clause must be the core tier."})
+                errors.append(
+                    {
+                        "id": style["id"],
+                        "variant": variant_name,
+                        "axis": "",
+                        "reason": "The first clause must be the core tier.",
+                    }
+                )
             if style["kind"] == "style" and clauses and clauses[0]["axis"] != "medium":
-                errors.append({"id": style["id"], "variant": variant_name, "axis": "", "reason": "A look starts with its medium."})
+                errors.append(
+                    {
+                        "id": style["id"],
+                        "variant": variant_name,
+                        "axis": "",
+                        "reason": "A look starts with its medium.",
+                    }
+                )
             tag_variant = variant_name in vocab_profiles or (
                 variant_name == "base" and not (set(style["variants"]) >= vocab_profiles)
             )
             eligible_for_tags = not style["models"] or set(style["models"]) & vocab_profiles
             if vocabulary is not None and tag_variant and eligible_for_tags and style["kind"] == "style":
-                core = [tag.casefold() for c, t in zip(clauses, tiers) if t == 0 for tag in c["tags"]]
+                core = [
+                    tag.casefold() for c, t in zip(clauses, tiers, strict=True) if t == 0 for tag in c["tags"]
+                ]
                 known = [tag for clause in clauses for tag in clause["tags"] if tag.casefold() in vocabulary]
                 tag_stats["tags"] += sum(len(clause["tags"]) for clause in clauses)
                 tag_stats["known"] += len(known)
                 tag_stats["looks"] += 1
                 tag_stats["core_known"] += any(tag in vocabulary for tag in core)
                 if not known:
-                    errors.append({"id": style["id"], "variant": variant_name, "axis": "medium", "reason": "No recognized tag for tag models."})
-            for clause, tier in zip(clauses, tiers):
+                    errors.append(
+                        {
+                            "id": style["id"],
+                            "variant": variant_name,
+                            "axis": "medium",
+                            "reason": "No recognized tag for tag models.",
+                        }
+                    )
+            for clause, tier in zip(clauses, tiers, strict=True):
                 clause_count += 1
                 location = {"id": style["id"], "variant": variant_name, "axis": clause["axis"]}
                 if clause["axis"] not in style["claims"]:
@@ -165,7 +211,9 @@ def audit(engine: Engine | None = None, vocabulary: frozenset[str] | None = None
         "clauses_including_variants": clause_count,
         "error_reasons": dict(Counter(error["reason"] for error in errors).most_common()),
         "known_tag_share": round(tag_stats["known"] / tag_stats["tags"], 3) if tag_stats["tags"] else None,
-        "looks_with_known_core_tag": round(tag_stats["core_known"] / tag_stats["looks"], 3) if tag_stats["looks"] else None,
+        "looks_with_known_core_tag": round(tag_stats["core_known"] / tag_stats["looks"], 3)
+        if tag_stats["looks"]
+        else None,
         "authoring_errors": errors,
         "content_review_candidates": candidates,
         "limits": "Content hints are incomplete heuristics. No image quality or semantic fidelity is inferred.",

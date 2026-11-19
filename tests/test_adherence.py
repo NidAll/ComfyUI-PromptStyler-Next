@@ -67,8 +67,11 @@ def test_budget_trims_supporting_tiers_but_keeps_every_identity(library):
 
 def test_prompt_style_words_are_replaced_by_default(library):
     result = library.compose(
-        {"prompt": "A photo of a cat on a sofa, cinematic lighting, film grain.", "model": "flux",
-         "styles": [{"id": "anime.cel"}]}
+        {
+            "prompt": "A photo of a cat on a sofa, cinematic lighting, film grain.",
+            "model": "flux",
+            "styles": [{"id": "anime.cel"}],
+        }
     )
     # anime.cel sets medium, lighting and texture, so all three prompt phrases yield to it.
     assert result.positive.startswith("A cat on a sofa. Hand-inked anime cel art")

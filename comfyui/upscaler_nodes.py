@@ -2,8 +2,8 @@
 
 from comfy_api.latest import io
 
-from .upscaler.lfm_prompts import CONTRACT_VERSION as LFM_CONTRACT_VERSION
 from .upscaler import idea_prompts
+from .upscaler.lfm_prompts import CONTRACT_VERSION as LFM_CONTRACT_VERSION
 from .upscaler.models import DEFAULT_MODEL, bundle_fingerprint, model_choices
 from .upscaler.prompts import CONTRACT_VERSION, DETAIL_MODES
 
@@ -158,21 +158,60 @@ class PSNextPromptIdea(io.ComfyNode):
                     default="general",
                     tooltip="Adjusts the writing for the image model that reads the prompt.",
                 ),
-                io.Combo.Input("lens", options=["auto", *idea_prompts.LENS_BY_KEY], default="auto", advanced=True,
-                               tooltip="What to explore. Auto picks one by seed, skipping those listed in recent."),
-                io.Combo.Input("structure", options=["auto", *idea_prompts.STRUCTURE_BY_KEY], default="auto", advanced=True,
-                               tooltip="How the prompt is organised. Auto picks one by seed, skipping those listed in recent."),
+                io.Combo.Input(
+                    "lens",
+                    options=["auto", *idea_prompts.LENS_BY_KEY],
+                    default="auto",
+                    advanced=True,
+                    tooltip="What to explore. Auto picks one by seed, skipping those listed in recent.",
+                ),
+                io.Combo.Input(
+                    "structure",
+                    options=["auto", *idea_prompts.STRUCTURE_BY_KEY],
+                    default="auto",
+                    advanced=True,
+                    tooltip="How the prompt is organised. Auto picks one by seed, skipping those listed in recent.",
+                ),
                 io.Int.Input("seed", default=0, min=0, max=0xFFFFFFFFFFFFFFFF, control_after_generate=True),
-                io.Float.Input("temperature", default=0.85, min=0.0, max=1.5, step=0.05,
-                               tooltip="0 is repeatable greedy writing; higher values give more varied ideas. Brainstorming runs 0.2 hotter."),
-                io.String.Input("avoid", default="", multiline=True, optional=True, advanced=True,
-                                tooltip="Earlier ideas, one per line. New concepts that repeat their additions are avoided."),
-                io.String.Input("earlier", default="", multiline=True, optional=True, advanced=True,
-                                tooltip="Earlier full prompts, one per line. Wording they keep repeating is discouraged."),
-                io.String.Input("recent", default="", optional=True, advanced=True,
-                                tooltip="Lens and structure keys used recently (comma-separated); auto skips them while others remain."),
-                io.Int.Input("max_new_tokens", default=0, min=0, max=1024, advanced=True,
-                             tooltip="0 sizes the budget from detail and draft length."),
+                io.Float.Input(
+                    "temperature",
+                    default=0.85,
+                    min=0.0,
+                    max=1.5,
+                    step=0.05,
+                    tooltip="0 is repeatable greedy writing; higher values give more varied ideas. Brainstorming runs 0.2 hotter.",
+                ),
+                io.String.Input(
+                    "avoid",
+                    default="",
+                    multiline=True,
+                    optional=True,
+                    advanced=True,
+                    tooltip="Earlier ideas, one per line. New concepts that repeat their additions are avoided.",
+                ),
+                io.String.Input(
+                    "earlier",
+                    default="",
+                    multiline=True,
+                    optional=True,
+                    advanced=True,
+                    tooltip="Earlier full prompts, one per line. Wording they keep repeating is discouraged.",
+                ),
+                io.String.Input(
+                    "recent",
+                    default="",
+                    optional=True,
+                    advanced=True,
+                    tooltip="Lens and structure keys used recently (comma-separated); auto skips them while others remain.",
+                ),
+                io.Int.Input(
+                    "max_new_tokens",
+                    default=0,
+                    min=0,
+                    max=1024,
+                    advanced=True,
+                    tooltip="0 sizes the budget from detail and draft length.",
+                ),
             ],
             outputs=[io.String.Output("prompt"), io.String.Output("inspection")],
         )
@@ -182,12 +221,41 @@ class PSNextPromptIdea(io.ComfyNode):
         return idea_prompts.CONTRACT_VERSION
 
     @classmethod
-    def execute(cls, upscaler, prompt="", exploration="explore", detail="balanced", target_model="general", lens="auto",
-                structure="auto", seed=0, temperature=0.85, avoid="", earlier="", recent="", max_new_tokens=0):
+    def execute(
+        cls,
+        upscaler,
+        prompt="",
+        exploration="explore",
+        detail="balanced",
+        target_model="general",
+        lens="auto",
+        structure="auto",
+        seed=0,
+        temperature=0.85,
+        avoid="",
+        earlier="",
+        recent="",
+        max_new_tokens=0,
+    ):
         from .upscaler.runtime import ideate
 
-        return io.NodeOutput(*ideate(upscaler, prompt, exploration, detail, target_model, lens, structure, seed,
-                                     temperature, avoid or "", recent or "", max_new_tokens, earlier or ""))
+        return io.NodeOutput(
+            *ideate(
+                upscaler,
+                prompt,
+                exploration,
+                detail,
+                target_model,
+                lens,
+                structure,
+                seed,
+                temperature,
+                avoid or "",
+                recent or "",
+                max_new_tokens,
+                earlier or "",
+            )
+        )
 
 
 class PSNextPreviewPrompt(io.ComfyNode):
