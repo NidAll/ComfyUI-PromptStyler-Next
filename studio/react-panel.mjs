@@ -7,8 +7,17 @@ const listeners = new Set();
 let revision = 0;
 const subscribe = (listener) => { listeners.add(listener); return () => listeners.delete(listener); };
 const snapshot = () => revision;
-const keyOf = (profile) => profile?.id || profile?.profileId || 'unknown';
-const empty = () => ({ enabled: true, styles: [], model: '', conflict_policy: 'last_wins', locked_axes: [], mix: false });
+const legacyKeyOf = (profile) => profile?.id || profile?.profileId || 'unknown';
+// One look per model family, so every workflow of that family keeps the same style.
+const keyOf = (profile) => profile?.family ? `family:${String(profile.family).toLowerCase().replaceAll('_', '-')}` : legacyKeyOf(profile);
+const empty = () => ({ enabled: true, styles: [], model: '', conflict_policy: 'last_wins', locked_axes: [], mix: false, prompt_conflicts: 'replace' });
+// Strength names map to the engine's detail tiers (0 / 0.4 / 0.75).
+export const STRENGTHS = [{ label: 'Subtle', value: 0.25 }, { label: 'Balanced', value: 0.5 }, { label: 'Strong', value: 1 }];
+export const strengthOf = (intensity) => intensity < 0.4 ? STRENGTHS[0] : intensity < 0.75 ? STRENGTHS[1] : STRENGTHS[2];
+// Looks start complete, colors at their full grade, effects at their identity only.
+export const DEFAULT_STRENGTH = { style: 1, grade: 0.5, modifier: 0.25 };
+// Without "Mix looks freely": one look, one color and at most two effects.
+export const MAX_EFFECTS = 2;
 const storageKey = 'promptstyler-next.studiio.v1';
 const catalogs = new Map();
 let savedPresets;
@@ -31,6 +40,7 @@ export function normalizeStyleSelection(value) {
     conflict_policy: ['last_wins', 'first_wins', 'error'].includes(value.conflict_policy) ? value.conflict_policy : 'last_wins',
     locked_axes: Array.isArray(value.locked_axes) ? [...new Set(value.locked_axes.filter((axis) => ['medium', 'lighting', 'palette', 'composition', 'texture', 'mood', 'detail'].includes(axis)))] : [],
     mix: value.mix === true,
+    prompt_conflicts: value.prompt_conflicts === 'keep' ? 'keep' : 'replace',
   };
 }
 function readLibrary() {
@@ -43,7 +53,10 @@ function readLibrary() {
 }
 function configOf(profile) {
   const key = keyOf(profile);
-  if (!selections.has(key)) selections.set(key, normalizeStyleSelection(readLibrary().selections[key]));
+  if (!selections.has(key)) {
+    const saved = readLibrary().selections;
+    selections.set(key, normalizeStyleSelection(saved[key] ?? saved[legacyKeyOf(profile)]));
+  }
   return selections.get(key);
 }
 function persistLibrary(presets, selectionKey) {
@@ -101,7 +114,8 @@ export function restoreStudioPromptStylerState(profile, state) {
     throw new TypeError('The saved style selection is invalid.');
   }
   const recipe = { schema_version: 1, styles: state.styles, conflict_policy: state.conflict_policy,
-    locked_axes: state.locked_axes, ...(state.model ? { model: state.model } : {}) };
+    locked_axes: state.locked_axes, ...(state.prompt_conflicts ? { prompt_conflicts: state.prompt_conflicts } : {}),
+    ...(state.model ? { model: state.model } : {}) };
   const restored = validateStyleRecipe(profile, recipe);
   update(profile, normalizeStyleSelection({ ...state, styles: restored.styles }));
 }
@@ -115,6 +129,8 @@ export function studioPromptStylerSelection(profile) {
     styles: config.styles.map(({ id, intensity }) => ({ id, intensity })),
     conflict_policy: config.conflict_policy,
     locked_axes: [...config.locked_axes],
+    // Image Clone captions name a medium; the selected style always replaces it.
+    prompt_conflicts: profile?.capabilities?.promptFromImage ? 'replace' : config.prompt_conflicts,
   };
 }
 
@@ -126,6 +142,7 @@ function validateStyleRecipe(profile, recipe) {
   }
   if ((recipe.model !== undefined && (typeof recipe.model !== 'string' || !recipe.model || recipe.model.length > 128))
     || (recipe.conflict_policy !== undefined && !['last_wins', 'first_wins', 'error'].includes(recipe.conflict_policy))
+    || (recipe.prompt_conflicts !== undefined && !['replace', 'keep'].includes(recipe.prompt_conflicts))
     || (recipe.locked_axes !== undefined && (!Array.isArray(recipe.locked_axes) || recipe.locked_axes.length > 7
       || new Set(recipe.locked_axes).size !== recipe.locked_axes.length
       || recipe.locked_axes.some((axis) => !['medium', 'lighting', 'palette', 'composition', 'texture', 'mood', 'detail'].includes(axis))))) {
@@ -169,17 +186,39 @@ if (typeof window !== 'undefined') window.addEventListener('storage', (event) =>
   }
 });
 
-const recentPacks = new Set(['next.computational-surfaces', 'next.optical-materials', 'next.animation-finishing', 'next.information-hierarchy']);
-const counts = { style: 'looks', grade: 'color grades', modifier: 'effects', saved: 'saved styles' };
-const titles = { style: 'Looks', grade: 'Color', modifier: 'Effects', saved: 'Saved', presets: 'Presets' };
+const recentPacks = new Set(['next.computational-surfaces', 'next.weather', 'next.textile', 'next.garden-art', 'next.jewelry', 'next.lettering']);
+const counts = { style: 'looks', grade: 'color grades', modifier: 'effects', saved: 'favorites' };
+const titles = { style: 'Looks', grade: 'Color', modifier: 'Effects', saved: 'Favorites', presets: 'Presets' };
 const labelOf = (value) => value.replaceAll('-', ' ').replaceAll('/', ' / ').replace(/\b\w/g, (letter) => letter.toUpperCase());
 const featured = ['cinema.noir', 'anime.cel', 'cinema.anamorphic', 'anime.watercolor', 'computational.flow-engraving'];
+const hueOf = (style) => [...(style.category || '')].reduce((sum, letter) => sum + letter.charCodeAt(0), 0) % 360;
+
+// One authored icon family: 24px grid, 1.75 stroke, round joins.
+const iconPaths = {
+  styles: ['M12 3.5l1.8 4.4 4.7 1.6-4.7 1.6L12 15.5l-1.8-4.4L5.5 9.5l4.7-1.6z', 'M18.5 14.5l.8 1.9 1.9.8-1.9.8-.8 1.9-.8-1.9-1.9-.8 1.9-.8z'],
+  close: ['M6.5 6.5l11 11', 'M17.5 6.5l-11 11'],
+  search: ['M10.5 17.5a7 7 0 1 0 0-14 7 7 0 0 0 0 14z', 'M20 20l-4.5-4.5'],
+  star: ['M12 3.8l2.5 5.1 5.6.8-4 4 .9 5.6L12 16.6l-5 2.7.9-5.6-4-4 5.6-.8z'],
+  check: ['M5 12.5l4.5 4.5L19 7.5'],
+  look: ['M4.5 5.5h15v13h-15z', 'M4.5 15l4.5-4.5 4 4 2.5-2.5 4 4'],
+  grade: ['M12 3.8c3.3 4.1 5.6 7.1 5.6 10a5.6 5.6 0 0 1-11.2 0c0-2.9 2.3-5.9 5.6-10z', 'M12 19.4V9'],
+  modifier: ['M5 19l10-10', 'M14 4.5v2', 'M19.5 10h-2', 'M17.8 6.2l1.4-1.4', 'M13.5 7.5l3 3'],
+  up: ['M12 18.5v-13', 'M6.5 11L12 5.5l5.5 5.5'],
+  down: ['M12 5.5v13', 'M6.5 13l5.5 5.5 5.5-5.5'],
+  preset: ['M7 4.5h10v15l-5-3.5-5 3.5z'],
+  chevron: ['M8 10l4 4 4-4'],
+};
 
 /** React is supplied by the embedding host; no second runtime or styling engine. */
 export function createPromptStylerPanel(React) {
   const h = React.createElement;
+  const icon = (name, props = {}) => h('svg', { viewBox: '0 0 24 24', width: 16, height: 16, fill: 'none', stroke: 'currentColor', strokeWidth: 1.75,
+    strokeLinecap: 'round', strokeLinejoin: 'round', 'aria-hidden': true, focusable: 'false', className: `psn-icon psn-icon-${name}`, ...props },
+  iconPaths[name].map((d, index) => h('path', { key: index, d })));
   const button = (label, onClick, props = {}) => h('button', { type: 'button', onClick, ...props }, label);
-  const field = (label, input) => h('label', { className: 'psn-field' }, h('span', null, label), input);
+  const toggle = (label, checked, onChange, className = '') => h('label', { className: `psn-switch ${className}`.trim() },
+    h('input', { type: 'checkbox', role: 'switch', checked, onChange: (event) => onChange(event.target.checked) }),
+    h('span', { className: 'psn-switch-track', 'aria-hidden': true }), h('span', { className: 'psn-switch-label' }, label));
   return function PromptStylerPanel({ profile, prompt = '', negative = '', mode = 'image' }) {
     React.useSyncExternalStore(subscribe, snapshot, snapshot);
     const config = configOf(profile);
@@ -238,7 +277,7 @@ export function createPromptStylerPanel(React) {
       const preset = { id: existing?.id || `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 10)}`, name, selection: normalizeStyleSelection(config) };
       const next = [preset, ...presets.filter((item) => item.id !== preset.id)].slice(0, 40);
       savedPresets = next; changed(); setPresetName('');
-      setNotice(persistLibrary(next) ? `Saved “${name}”. Find it in Presets.` : 'Browser storage is full. This preset is available until you close the page.');
+      setNotice(persistLibrary(next) ? `Saved “${name}” to Presets.` : 'Browser storage is full. This preset lasts until you close the page.');
     }
     function removePreset(id) {
       const next = presets.filter((preset) => preset.id !== id);
@@ -258,11 +297,19 @@ export function createPromptStylerPanel(React) {
     function remove(id) { update(profile, { styles: config.styles.filter((layer) => layer.id !== id) }); }
     function choose(style) {
       if (config.styles.some((layer) => layer.id === style.id)) { remove(style.id); return; }
-      const layers = !config.mix && style.kind !== 'modifier'
-        ? config.styles.filter((layer) => (layer.kind || styles.find((item) => item.id === layer.id)?.kind) !== style.kind)
+      const kindOfLayer = (layer) => layer.kind || styles.find((item) => item.id === layer.id)?.kind;
+      let layers = !config.mix && style.kind !== 'modifier'
+        ? config.styles.filter((layer) => kindOfLayer(layer) !== style.kind)
         : config.styles;
+      if (!config.mix && style.kind === 'modifier') {
+        const effects = layers.filter((layer) => kindOfLayer(layer) === 'modifier');
+        if (effects.length >= MAX_EFFECTS) {
+          layers = layers.filter((layer) => layer.id !== effects[0].id);
+          setNotice(`Replaced ${effects[0].name || effects[0].id}: up to ${MAX_EFFECTS} effects keep the look readable. Turn on Mix looks freely to stack more.`);
+        }
+      }
       if (layers.length >= 16) return;
-      update(profile, { enabled: true, styles: [...layers, { id: style.id, name: style.name, kind: style.kind, intensity: 0.75 }] });
+      update(profile, { enabled: true, styles: [...layers, { id: style.id, name: style.name, kind: style.kind, intensity: DEFAULT_STRENGTH[style.kind] ?? 0.5 }] });
     }
     function changeLayer(index, patch) {
       update(profile, { styles: config.styles.map((layer, position) => position === index ? { ...layer, ...patch } : layer) });
@@ -293,72 +340,95 @@ export function createPromptStylerPanel(React) {
     const activeProfile = profiles.find((item) => item.id === model);
     const selected = (id) => config.styles.some((layer) => layer.id === id);
     const count = config.styles.length;
-    const chip = (layer) => button([layer.name || layer.id, h('span', { key: 'x', 'aria-hidden': true }, '×')], () => remove(layer.id), { key: layer.id, className: 'psn-chip', 'aria-label': `Remove ${layer.name || layer.id}` });
+    const kindOf = (layer) => layer.kind || styles.find((item) => item.id === layer.id)?.kind || 'style';
+    const kindIcon = (kind) => kind === 'grade' ? 'grade' : kind === 'modifier' ? 'modifier' : 'look';
+    const chip = (layer) => button([h('span', { key: 'name' }, layer.name || layer.id), icon('close', { key: 'x' })], () => remove(layer.id),
+      { key: layer.id, className: 'psn-chip', 'aria-label': `Remove ${layer.name || layer.id}` });
+    const meta = tab === 'presets' ? `${visiblePresets.length} ${visiblePresets.length === 1 ? 'preset' : 'presets'}`
+      : loading ? 'Loading styles…' : `${visible.length.toLocaleString()} ${visible.length === 1 ? counts[tab].replace(/s$/, '') : counts[tab]}`;
+    const action = (style) => selected(style.id) ? 'Selected' : config.mix || style.kind === 'modifier' ? 'Add' : style.kind === 'grade' ? 'Use color' : 'Use look';
+    const empty = (title, body, label, onClick, name = 'styles') => h('div', { className: 'psn-empty' },
+      h('span', { className: 'psn-empty-mark', 'aria-hidden': true }, icon(name, { width: 22, height: 22 })), h('h3', null, title), h('p', null, body), label && button(label, onClick, { className: 'psn-secondary' }));
+    const card = (style) => h('article', { key: style.id, className: `psn-card${selected(style.id) ? ' is-selected' : ''}` },
+      button([
+        h('span', { key: 'swatch', className: `psn-swatch psn-swatch-${style.kind}`, style: { '--psn-hue': hueOf(style) }, 'aria-hidden': true }, icon(selected(style.id) ? 'check' : kindIcon(style.kind))),
+        h('span', { key: 'text', className: 'psn-card-text' },
+          h('strong', null, style.name),
+          h('span', { className: 'psn-description' }, style.description),
+          h('span', { className: 'psn-card-meta' }, h('span', { className: 'psn-card-category' }, labelOf(style.category.split('/')[0])), h('span', { className: 'psn-card-action' }, action(style)))),
+      ], () => choose(style), { className: 'psn-card-pick', 'aria-label': `Select ${style.name}`, 'aria-pressed': selected(style.id), disabled: count >= 16 && !selected(style.id) && (config.mix || style.kind === 'modifier') }),
+      button(icon('star', { fill: favorites.has(style.id) ? 'currentColor' : 'none' }), () => favorite(style.id), { className: 'psn-save', 'aria-label': `${favorites.has(style.id) ? 'Remove' : 'Add'} ${style.name} ${favorites.has(style.id) ? 'from' : 'to'} favorites`, 'aria-pressed': favorites.has(style.id) }));
+    const results = tab === 'presets'
+      ? (!visiblePresets.length ? empty(presets.length ? 'No matching presets' : 'No presets yet', presets.length ? 'Try another name.' : 'Build a look, then save it under Your look to reuse it in one click.', presets.length ? '' : 'Browse looks', () => { setTab('style'); setQuery(''); }, 'preset')
+        : h('div', { className: 'psn-presets' }, visiblePresets.map((preset) => h('article', { key: preset.id, className: 'psn-preset' },
+          h('span', { className: 'psn-preset-mark', 'aria-hidden': true }, icon('preset')),
+          h('div', { className: 'psn-preset-text' }, h('h3', null, preset.name), h('p', { className: 'psn-muted' }, preset.selection.styles.map((layer) => layer.name).join(' · '))),
+          button('Apply', () => usePreset(preset), { className: 'psn-secondary', 'aria-label': `Apply preset ${preset.name}` }),
+          button(icon('close'), () => removePreset(preset.id), { className: 'psn-icon-button', 'aria-label': `Delete preset ${preset.name}` })))))
+      : loading ? h('div', { className: 'psn-grid', role: 'status', 'aria-label': 'Loading styles' }, Array.from({ length: 9 }, (_, index) => h('div', { key: index, className: 'psn-card psn-skeleton', 'aria-hidden': true })))
+        : !visible.length ? (tab === 'saved' && !favorites.size
+          ? empty('No favorites yet', 'Star any style to keep it here.', 'Browse looks', () => { resetFilters(); setTab('style'); }, 'star')
+          : empty('No styles match', 'Try other words or another collection.', 'Reset filters', resetFilters, 'search'))
+          : h('div', { className: 'psn-grid' }, visible.slice(0, shown).map(card));
     return h('section', { className: 'psn-panel', 'aria-label': 'Image styles' },
       h('div', { className: 'psn-launcher' },
-        button([h('span', { key: 'icon', className: 'psn-spark', 'aria-hidden': true }, '✦'), h('span', { key: 'text' }, 'Styles'), h('span', { key: 'count', className: 'psn-muted' }, count ? `${count} selected` : 'Choose a look'), h('span', { key: 'arrow', 'aria-hidden': true }, '↗')], () => setOpen(true), { className: 'psn-browse', 'aria-haspopup': 'dialog' }),
-        count > 0 && h('label', { className: 'psn-check' }, h('input', { type: 'checkbox', checked: config.enabled, onChange: (event) => update(profile, { enabled: event.target.checked }) }), 'Apply')),
+        button([icon('styles', { key: 'icon' }), h('span', { key: 'text' }, 'Styles'), count > 0 && h('span', { key: 'count', className: `psn-count${config.enabled ? '' : ' is-paused'}` }, count)],
+          () => setOpen(true), { className: 'psn-browse', 'aria-haspopup': 'dialog', 'aria-label': count ? `Styles, ${count} selected${config.enabled ? '' : ', paused'}` : 'Choose styles' }),
+        count > 0 && toggle('Apply', config.enabled, (checked) => update(profile, { enabled: checked }), 'psn-launcher-switch')),
       count > 0 && h('div', { className: `psn-chips${config.enabled ? '' : ' psn-paused'}`, 'aria-label': 'Selected styles' }, config.styles.map(chip)),
       h('dialog', { ref: dialog, className: 'psn-dialog', 'aria-labelledby': `${controlId}-title`, onClose: () => setOpen(false), onCancel: () => setOpen(false), onClick: (event) => { if (event.target === dialog.current) setOpen(false); } },
         h('div', { className: 'psn-shell' },
           h('header', { className: 'psn-header' },
-            h('div', null, h('p', { className: 'psn-eyebrow' }, 'YOUR CREATIVE DIRECTION'), h('h2', { id: `${controlId}-title` }, 'Find your look'), h('p', { className: 'psn-muted' }, 'Choose a look. Add a little color or texture. Make it yours.')),
-            button('×', () => setOpen(false), { className: 'psn-close', 'aria-label': 'Close style browser' })),
+            h('div', { className: 'psn-heading' },
+              h('h2', { id: `${controlId}-title` }, 'Styles'),
+              h('p', { className: 'psn-muted' }, `Pick a look, then finish it with color and effects${activeProfile ? `. Tuned for ${activeProfile.name}` : ''}.`)),
+            button(icon('close', { width: 20, height: 20 }), () => setOpen(false), { className: 'psn-icon-button psn-close', 'aria-label': 'Close styles' })),
           h('div', { className: 'psn-workspace' },
             h('div', { className: 'psn-library' },
               h('div', { className: 'psn-tools' },
-                field('Search styles', h('input', { type: 'search', value: query, placeholder: tab === 'presets' ? 'Search your presets…' : 'Search looks, moods, materials…', onChange: (event) => setQuery(event.target.value) })),
                 h('div', { className: 'psn-tabs', role: 'group', 'aria-label': 'Style type' }, Object.entries(titles).map(([value, label]) => button(label, () => { setTab(value); setCategory(''); }, { key: value, 'aria-pressed': tab === value }))),
-                tab !== 'presets' && h('div', { className: 'psn-filters' },
-                  field('Collection', h('select', { value: category, onChange: (event) => setCategory(event.target.value) }, h('option', { value: '' }, 'All collections'), ...categories.map((value) => h('option', { key: value, value }, labelOf(value))))),
-                  button('New', () => setLatest(!latest), { 'aria-pressed': latest, className: 'psn-new', title: 'New additions' }),
-                  field('Sort', h('select', { value: sort, onChange: (event) => setSort(event.target.value) }, h('option', { value: 'featured' }, 'Featured'), h('option', { value: 'name' }, 'Name A–Z'), h('option', { value: 'favorites' }, 'Favorites first')))),
-                h('div', { className: 'psn-library-meta' }, h('span', { role: 'status' }, tab === 'presets' ? `${visiblePresets.length} saved ${visiblePresets.length === 1 ? 'combination' : 'combinations'}` : loading ? 'Loading your library…' : `${visible.length.toLocaleString()} ${visible.length === 1 ? counts[tab].replace(/s$/, '') : counts[tab]}`), h('span', null, tab === 'presets' ? 'Stored on this browser' : 'Abstract style cues'))),
-              error && h('div', { role: 'alert', className: 'psn-error' }, h('p', null, error), button('Retry library', () => { catalogs.delete(model); setReload(reload + 1); })),
-              h('div', { className: 'psn-results', 'aria-busy': loading },
-                tab === 'presets' ? h('div', { className: 'psn-presets' },
-                  !visiblePresets.length ? h('div', { className: 'psn-empty' }, h('h3', null, presets.length ? 'No matching presets' : 'A signature look, one click away'), h('p', null, presets.length ? 'Try another name.' : 'Combine a look, color and effects, then save the combination in Your look.'), button('Explore looks', () => { setTab('style'); setQuery(''); })) :
-                  visiblePresets.map((preset) => h('article', { key: preset.id, className: 'psn-preset' },
-                    h('div', { className: 'psn-preset-mark', 'aria-hidden': true }, '✦'),
-                    h('div', null, h('h3', null, preset.name), h('p', { className: 'psn-muted' }, preset.selection.styles.map((layer) => layer.name).join(' · '))),
-                    button('Apply', () => usePreset(preset), { 'aria-label': `Apply preset ${preset.name}` }),
-                    button('×', () => removePreset(preset.id), { className: 'psn-preset-delete', 'aria-label': `Delete preset ${preset.name}` })))) :
-                loading ? h('p', { className: 'psn-empty', role: 'status' }, 'Getting the latest styles…') :
-                !visible.length ? h('div', { className: 'psn-empty' }, h('h3', null, tab === 'saved' && !favorites.size ? 'Keep your favorites close' : 'No styles found'), h('p', null, tab === 'saved' && !favorites.size ? 'Tap the star on any style to find it here.' : 'Try a different search or explore another collection.'), button(tab === 'saved' && !favorites.size ? 'Explore looks' : 'Reset filters', () => { resetFilters(); if (tab === 'saved' && !favorites.size) setTab('style'); })) :
-                h('div', { className: 'psn-grid' }, visible.slice(0, shown).map((style) => h('article', { key: style.id, className: `psn-card${selected(style.id) ? ' is-selected' : ''}` },
-                  button(h('span', { 'aria-hidden': true }, favorites.has(style.id) ? '★' : '☆'), () => favorite(style.id), { className: 'psn-save', 'aria-label': `${favorites.has(style.id) ? 'Unsave' : 'Save'} ${style.name}`, 'aria-pressed': favorites.has(style.id) }),
-                  button([
-                    h('span', { key: 'cue', className: `psn-cue psn-cue-${style.kind}`, 'aria-hidden': true, style: { '--psn-hue': [...style.category].reduce((n, c) => n + c.charCodeAt(0), 0) % 360 } }, h('span', null, selected(style.id) ? '✓' : style.kind === 'grade' ? '◐' : style.kind === 'modifier' ? '✧' : '◒')),
-                    h('span', { key: 'category', className: 'psn-card-category' }, labelOf(style.category.split('/')[0])),
-                    h('strong', { key: 'name' }, style.name), h('span', { key: 'description', className: 'psn-description' }, style.description),
-                    h('span', { key: 'action', className: 'psn-card-action' }, selected(style.id) ? '✓ Selected' : style.kind !== 'modifier' && !config.mix ? style.kind === 'grade' ? 'Choose color' : 'Choose look' : 'Add to look'),
-                  ], () => choose(style), { className: 'psn-card-pick', 'aria-label': `Select ${style.name}`, 'aria-pressed': selected(style.id), disabled: count >= 16 && !selected(style.id) && (config.mix || style.kind === 'modifier') })))),
-                tab !== 'presets' && !loading && visible.length > shown && button(`Show more (${visible.length - shown} remaining)`, () => setShown(shown + 24), { className: 'psn-more' }))),
+                h('div', { className: 'psn-toolbar' },
+                  h('label', { className: 'psn-search' }, icon('search'), h('span', { className: 'psn-sr' }, 'Search styles'),
+                    h('input', { type: 'search', value: query, placeholder: tab === 'presets' ? 'Search presets' : 'Search looks, moods, materials', onChange: (event) => setQuery(event.target.value) })),
+                  tab !== 'presets' && h('select', { 'aria-label': 'Collection', value: category, onChange: (event) => setCategory(event.target.value) }, h('option', { value: '' }, 'All collections'), ...categories.map((value) => h('option', { key: value, value }, labelOf(value)))),
+                  tab !== 'presets' && h('select', { 'aria-label': 'Sort', value: sort, onChange: (event) => setSort(event.target.value) }, h('option', { value: 'featured' }, 'Featured'), h('option', { value: 'name' }, 'Name A–Z'), h('option', { value: 'favorites' }, 'Favorites first')),
+                  tab !== 'presets' && button('New', () => setLatest(!latest), { 'aria-pressed': latest, className: 'psn-new', title: 'Show new additions only' })),
+                h('div', { className: 'psn-library-meta' }, h('span', { role: 'status' }, meta), h('span', null, tab === 'presets' ? 'Stored in this browser' : 'Swatches identify styles; they are not previews'))),
+              error && h('div', { role: 'alert', className: 'psn-error' }, h('p', null, `The style library did not load: ${error}`), button('Try again', () => { catalogs.delete(model); setReload(reload + 1); }, { className: 'psn-secondary' })),
+              h('div', { className: 'psn-results', 'aria-busy': loading }, results,
+                tab !== 'presets' && !loading && visible.length > shown && button(`Show ${Math.min(24, visible.length - shown)} more · ${visible.length - shown} left`, () => setShown(shown + 24), { className: 'psn-more psn-secondary' }))),
             h('aside', { className: `psn-selection${expanded ? ' is-expanded' : ''}`, 'aria-label': 'Your look' },
-              h('div', { className: 'psn-selection-heading' }, h('h3', null, 'Your look'), button(`Your look · ${count} selected ${expanded ? '−' : '+'}`, () => setExpanded(!expanded), { className: 'psn-selection-toggle', 'aria-expanded': expanded }), count > 0 && button('Clear all', () => update(profile, { styles: [] }))),
-              h('p', { className: 'psn-muted' }, profile?.capabilities?.promptFromImage ? 'Applied after your reference image is described.' : 'Applied when you generate. Your original prompt stays editable.'),
-              !count && h('div', { className: 'psn-empty psn-selection-empty' }, h('span', { 'aria-hidden': true }, '✧'), h('p', null, 'Start with a look'), h('p', { className: 'psn-muted' }, 'Then explore Color and Effects for finishing touches.')),
+              h('div', { className: 'psn-selection-heading' },
+                h('h3', null, 'Your look'),
+                button([h('span', { key: 't' }, count ? `Your look · ${count} selected` : 'Your look'), icon('chevron', { key: 'c' })], () => setExpanded(!expanded), { className: 'psn-selection-toggle', 'aria-expanded': expanded }),
+                count > 0 && button('Clear all', () => update(profile, { styles: [] }), { className: 'psn-link' })),
+              count > 0 && toggle('Apply when generating', config.enabled, (checked) => update(profile, { enabled: checked }), 'psn-apply'),
+              !count && empty('Start with a look', 'Then add a color grade and effects to finish it.', '', null, 'look'),
               count > 0 && h('ol', { className: 'psn-layers' }, config.styles.map((layer, index) => h('li', { key: layer.id },
-                h('div', { className: 'psn-layer-title' }, h('strong', null, layer.name || layer.id), button('×', () => remove(layer.id), { 'aria-label': `Remove ${layer.name || layer.id}` })),
-                h('label', { className: 'psn-intensity', htmlFor: `${controlId}-${index}` }, 'Strength', h('output', { htmlFor: `${controlId}-${index}` }, `${Math.round(layer.intensity * 100)}%`)),
-                h('input', { id: `${controlId}-${index}`, type: 'range', 'aria-label': `Strength for ${layer.name || layer.id}`, min: 0, max: 1, step: 0.05, value: layer.intensity, onChange: (event) => changeLayer(index, { intensity: Number(event.target.value) }) })))),
+                h('div', { className: 'psn-layer-title' }, h('span', { className: 'psn-layer-kind', 'aria-hidden': true }, icon(kindIcon(kindOf(layer)))), h('strong', null, layer.name || layer.id),
+                  button(icon('close'), () => remove(layer.id), { className: 'psn-icon-button', 'aria-label': `Remove ${layer.name || layer.id}` })),
+                h('div', { className: 'psn-strength', role: 'group', 'aria-label': `Strength for ${layer.name || layer.id}` },
+                  STRENGTHS.map((option) => button(option.label, () => changeLayer(index, { intensity: option.value }),
+                    { key: option.label, 'aria-pressed': strengthOf(layer.intensity) === option })))))),
+              count >= 16 && h('p', { role: 'status', className: 'psn-notice' }, 'Your look has 16 layers. Remove one to add another.'),
+              count > 0 && button(busy ? 'Preparing preview…' : profile?.capabilities?.promptFromImage ? 'Preview style directions' : 'Preview styled prompt', preview, { disabled: busy || !config.enabled, className: 'psn-preview-button psn-secondary' }),
+              result && h('section', { className: 'psn-preview', 'aria-label': 'Styled prompt preview' }, h('h3', null, 'Prompt preview'), pending && h('p', { role: 'status', className: 'psn-notice' }, 'Your selection or prompt changed. Preview again to refresh.'), h('pre', null, result.composition.positive), ...result.composition.warnings.map((warning) => h('p', { key: warning.code, className: 'psn-muted' }, warning.message))),
               count > 0 && h('form', { className: 'psn-save-preset', onSubmit: savePreset },
-                field('Save this combination', h('input', { type: 'text', maxLength: 60, value: presetName, placeholder: 'Name your preset…', onChange: (event) => setPresetName(event.target.value) })),
-                h('button', { type: 'submit', disabled: !presetName.trim(), 'aria-label': 'Save preset' }, 'Save')),
+                h('label', { className: 'psn-field' }, h('span', null, 'Save as preset'), h('input', { type: 'text', maxLength: 60, value: presetName, placeholder: 'Preset name', onChange: (event) => setPresetName(event.target.value) })),
+                h('button', { type: 'submit', disabled: !presetName.trim(), className: 'psn-secondary', 'aria-label': 'Save preset' }, 'Save')),
               notice && h('p', { className: 'psn-notice', role: 'status' }, notice),
-              count > 0 && h('label', { className: 'psn-check' }, h('input', { type: 'checkbox', checked: config.enabled, onChange: (event) => update(profile, { enabled: event.target.checked }) }), 'Apply styles'),
-              h('p', { className: 'psn-muted' }, config.mix ? 'Looks layer in order. Later directions take priority.' : 'One look, one color, layered effects. Your choices are saved in this browser.'),
-              count >= 16 && h('p', { role: 'status' }, 'Your look has 16 layers. Remove one to add another.'),
-              count > 0 && button(busy ? 'Preparing preview…' : profile?.capabilities?.promptFromImage ? 'Preview style directions' : 'Preview styled prompt', preview, { disabled: busy || !config.enabled, className: 'psn-preview-button' }),
-              result && h('section', { className: 'psn-preview', 'aria-label': 'Styled prompt preview' }, h('h3', null, 'Prompt preview'), pending && h('p', { role: 'status' }, 'Selection or prompt changed. Preview again to refresh.'), h('pre', null, result.composition.positive), ...result.composition.warnings.map((warning) => h('p', { key: warning.code }, warning.message))),
-              h('details', { className: 'psn-advanced' }, h('summary', null, 'Advanced controls'),
-                h('label', { className: 'psn-check' }, h('input', { type: 'checkbox', checked: config.mix, onChange: (event) => update(profile, { mix: event.target.checked }) }), 'Mix styles freely'),
-                field('Model profile', h('select', { value: config.model, onChange: (event) => update(profile, { model: event.target.value }) }, h('option', { value: '' }, 'Automatic for this workflow'), ...profiles.map((item) => h('option', { key: item.id, value: item.id }, item.name)))),
-                field('Conflicting directions', h('select', { value: config.conflict_policy, onChange: (event) => update(profile, { conflict_policy: event.target.value }) }, h('option', { value: 'last_wins' }, 'Later style wins'), h('option', { value: 'first_wins' }, 'Earlier style wins'), h('option', { value: 'error' }, 'Report a conflict'))),
-                h('fieldset', null, h('legend', null, 'Protect prompt attributes'), ...['medium', 'lighting', 'palette', 'composition', 'texture', 'mood', 'detail'].map((axis) => h('label', { key: axis, className: 'psn-check' }, h('input', { type: 'checkbox', checked: config.locked_axes.includes(axis), onChange: (event) => update(profile, { locked_axes: event.target.checked ? [...config.locked_axes, axis] : config.locked_axes.filter((item) => item !== axis) }) }), labelOf(axis)))),
-                count > 1 && h('div', { className: 'psn-order' }, h('h3', null, 'Layer order'), config.styles.map((layer, index) => h('div', { key: layer.id }, h('span', null, layer.name), button('↑', () => move(index, -1), { disabled: index === 0, 'aria-label': `Move up ${layer.name}` }), button('↓', () => move(index, 1), { disabled: index === count - 1, 'aria-label': `Move down ${layer.name}` })))),
+              h('details', { className: 'psn-advanced' }, h('summary', null, h('span', null, 'Advanced'), icon('chevron')),
+                toggle('Mix looks freely', config.mix, (checked) => update(profile, { mix: checked })),
+                !profile?.capabilities?.promptFromImage && toggle('Style wins over prompt words', config.prompt_conflicts !== 'keep', (checked) => update(profile, { prompt_conflicts: checked ? 'replace' : 'keep' })),
+                h('label', { className: 'psn-field' }, h('span', null, 'Model profile'), h('select', { value: config.model, onChange: (event) => update(profile, { model: event.target.value }) }, h('option', { value: '' }, 'Automatic for this workflow'), ...profiles.map((item) => h('option', { key: item.id, value: item.id }, item.name)))),
+                h('label', { className: 'psn-field' }, h('span', null, 'When styles conflict'), h('select', { value: config.conflict_policy, onChange: (event) => update(profile, { conflict_policy: event.target.value }) }, h('option', { value: 'last_wins' }, 'Later style wins'), h('option', { value: 'first_wins' }, 'Earlier style wins'), h('option', { value: 'error' }, 'Report a conflict'))),
+                h('fieldset', null, h('legend', null, 'Keep from your prompt'), h('div', { className: 'psn-axes' }, ...['medium', 'lighting', 'palette', 'composition', 'texture', 'mood', 'detail'].map((axis) => h('label', { key: axis, className: 'psn-axis' }, h('input', { type: 'checkbox', checked: config.locked_axes.includes(axis), onChange: (event) => update(profile, { locked_axes: event.target.checked ? [...config.locked_axes, axis] : config.locked_axes.filter((item) => item !== axis) }) }), h('span', null, labelOf(axis)))))),
+                count > 1 && h('div', { className: 'psn-order' }, h('h3', null, 'Layer order'), config.styles.map((layer, index) => h('div', { key: layer.id }, h('span', null, layer.name),
+                  button(icon('up'), () => move(index, -1), { className: 'psn-icon-button', disabled: index === 0, 'aria-label': `Move up ${layer.name}` }),
+                  button(icon('down'), () => move(index, 1), { className: 'psn-icon-button', disabled: index === count - 1, 'aria-label': `Move down ${layer.name}` })))),
                 activeProfile && h('p', { className: 'psn-muted' }, activeProfile.guidance),
-                result && h('details', null, h('summary', null, 'Inspect styling'), h('pre', null, JSON.stringify({ recipe: result.composition.recipe, fingerprint: result.composition.fingerprint, trace: result.composition.trace }, null, 2)))))),
-          h('footer', { className: 'psn-footer' }, h('span', { role: 'status' }, count ? `${count} selected${config.enabled ? ' · Ready to generate' : ' · Paused'}` : 'No style · Use your original prompt'), button('Done', () => setOpen(false), { className: 'psn-done' })))));
+                result && h('details', { className: 'psn-inspect' }, h('summary', null, 'Inspect styling'), h('pre', null, JSON.stringify({ recipe: result.composition.recipe, fingerprint: result.composition.fingerprint, trace: result.composition.trace }, null, 2)))),
+              h('p', { className: 'psn-muted psn-fineprint' }, `${profile?.capabilities?.promptFromImage ? 'Applied after your reference image is described; the selected style replaces any medium the description names.' : config.prompt_conflicts === 'keep' ? 'Applied when you generate; your prompt stays as typed.' : 'Applied when you generate; style words in your prompt that the selection also sets are replaced.'} ${config.mix ? 'Looks layer in order, and later ones take priority.' : `One look and one color at a time, up to ${MAX_EFFECTS} effects.`} Saved in this browser for this model family.`))),
+          h('footer', { className: 'psn-footer' }, h('span', { role: 'status' }, count ? `${count} selected · ${config.enabled ? 'Ready to generate' : 'Paused'}` : 'No styles · Your prompt is used as typed'), button('Done', () => setOpen(false), { className: 'psn-done' })))));
   };
 }

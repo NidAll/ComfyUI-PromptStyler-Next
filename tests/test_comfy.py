@@ -28,7 +28,7 @@ sys.modules[SPEC.name] = EXTENSION
 SPEC.loader.exec_module(EXTENSION)
 NODES = asyncio.run(EXTENSION.comfy_entrypoint())
 NODE_CLASSES = asyncio.run(NODES.get_node_list())
-STYLE, COMPOSE, ENCODE, LOAD_UPSCALER, UPSCALE_BASE, PREVIEW_PROMPT = NODE_CLASSES
+STYLE, COMPOSE, ENCODE, LOAD_UPSCALER, UPSCALE_BASE, PROMPT_IDEA, PREVIEW_PROMPT = NODE_CLASSES
 
 
 def literal_inputs(inputs: dict) -> dict:
@@ -43,7 +43,7 @@ def first_style() -> str:
 
 
 def test_real_v3_registration_and_schema() -> None:
-    assert len(NODE_CLASSES) == 6
+    assert len(NODE_CLASSES) == 7
     assert not hasattr(EXTENSION, "NODE_CLASS_MAPPINGS")
     expected = {
         "PSNextStyle",
@@ -51,6 +51,7 @@ def test_real_v3_registration_and_schema() -> None:
         "PSNextEncode",
         "PSNextLoadUpscaler",
         "PSNextUpscaleBase",
+        "PSNextPromptIdea",
         "PSNextPreviewPrompt",
     }
     assert {node.define_schema().node_id for node in NODE_CLASSES} == expected
@@ -76,13 +77,19 @@ def test_style_picker_metadata_matches_catalog_with_appended_enable_toggle():
         "negative",
         "locked_axes",
         "enabled",
+        "prompt_conflicts",
     ]
+    conflicts = STYLE.GET_NODE_INFO_V1()["input"]["optional"]["prompt_conflicts"]
+    assert conflicts[1]["default"] == "replace"
     enabled = STYLE.GET_NODE_INFO_V1()["input"]["optional"]["enabled"]
     assert enabled[0] == "BOOLEAN"
     assert enabled[1]["default"] is True
     options = STYLE.GET_NODE_INFO_V1()["input"]["required"]["style"][1]
     categories = options["psnext_categories"]
-    assert set(categories) == set(options["options"])
+    retired = module.get_engine().retired_styles()
+    # Retired IDs stay accepted for saved workflows but are not listed in the explorer.
+    assert set(options["options"]) == set(categories) | set(retired)
+    assert not set(categories) & set(retired)
     assert len(categories) > 1000  # Includes the second catalog page.
     assert all(module.get_engine().get_style(key)["category"] == value for key, value in categories.items())
     metadata = options["psnext_styles"]
@@ -91,7 +98,7 @@ def test_style_picker_metadata_matches_catalog_with_appended_enable_toggle():
         source = module.get_engine().get_style(style["id"])
         assert all(source[key] == value for key, value in style.items())
     noir = next(style for style in metadata if style["id"] == "cinema.noir")
-    assert "anime keyframe" in noir["variants"]["anima"]["clauses"][0]["tags"]
+    assert "anime screenshot" in noir["variants"]["anima"]["clauses"][0]["tags"]
     assert (ROOT / EXTENSION.WEB_DIRECTORY / "promptstyler.js").is_file()
 
 
@@ -334,7 +341,7 @@ def test_visual_graph_links_and_widget_contract() -> None:
     style_node = by_id[1]
     style_inputs = [item.id for item in STYLE.define_schema().inputs]
     saved = style_node["widgets_values"]
-    assert style_inputs[len(saved) :] == ["enabled"]
+    assert style_inputs[len(saved) :] == ["enabled", "prompt_conflicts"]
     actual = STYLE.execute(**dict(zip(style_inputs[: len(saved)], saved, strict=True)))
     recipe_output = COMPOSE.execute(by_id[2]["widgets_values"][0])
     assert actual.result[0] and json.loads(recipe_output.result[2])["recipe"]["locked_axes"] == [
@@ -838,3 +845,31 @@ def test_source_paragraphs_do_not_hide_a_truncated_continuation(runtime, model_d
     info = json.loads(inspection)
     assert info["generated_tokens"] == 32
     assert any(warning.startswith("Token limit reached") for warning in info["warnings"])
+
+
+def test_prompt_idea_schema_keeps_optional_steering_inputs_and_lfm_only_contract():
+    schema = PROMPT_IDEA.define_schema()
+    names = [item.id for item in schema.inputs]
+    assert names[:2] == ["upscaler", "prompt"]
+    assert {"exploration", "detail", "target_model", "lens", "structure", "seed", "temperature", "avoid", "recent", "max_new_tokens"} <= set(names)
+    optional = {item.id for item in schema.inputs if getattr(item, "optional", False)}
+    assert {"avoid", "recent"} <= optional
+    assert [item.id for item in schema.outputs] == ["prompt", "inspection"]
+    with pytest.raises(ValueError, match="LFM3-VL"):
+        PROMPT_IDEA.execute(object(), "a fox")
+
+
+def test_saved_retired_style_id_still_validates_and_maps_to_replacement() -> None:
+    options = STYLE.GET_NODE_INFO_V1()["input"]["required"]["style"][1]["options"]
+    assert "textilecraft.chiffon" in options
+    output = STYLE.execute("a scarf", "textilecraft.chiffon", "flux", 0.75)
+    inspection = json.loads(output.result[2])
+    assert "style_replaced" in {notice["code"] for notice in inspection["warnings"]}
+    assert "Organza fabric" in output.result[0]
+
+
+def test_prompt_conflicts_keep_leaves_prompt_style_words() -> None:
+    replaced = STYLE.execute("A photo of a cat", "anime.cel", "flux", 0.75)
+    kept = STYLE.execute("A photo of a cat", "anime.cel", "flux", 0.75, prompt_conflicts="keep")
+    assert replaced.result[0].startswith("A cat. ")
+    assert kept.result[0].startswith("A photo of a cat. ")

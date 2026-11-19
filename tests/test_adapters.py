@@ -79,7 +79,7 @@ def test_fibo_omits_unspecified_scene_fields_and_combines_only_style_text():
     )
     assert result == {
         "short_description": "a kettle",
-        "artistic_style": "Dry pigment Fine glazing",
+        "artistic_style": "Dry pigment, Fine glazing",
         "lighting": {"conditions": "Diffuse side light"},
     }
     assert adapter.locked_axes('{"artistic_style":""}') == ("texture", "detail")

@@ -65,6 +65,12 @@
       },
       "uniqueItems": true,
       "maxItems": 7
+    },
+    "prompt_conflicts": {
+      "enum": [
+        "replace",
+        "keep"
+      ]
     }
   },
   "required": [

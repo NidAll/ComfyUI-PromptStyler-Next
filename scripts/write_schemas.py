@@ -81,6 +81,11 @@ pack = obj(
         "license": {**TEXT, "maxLength": 128},
         "author": {**TEXT, "maxLength": 128},
         "styles": {"type": "array", "minItems": 1, "maxItems": 2048, "items": style},
+        "retired": {
+            "type": "array",
+            "maxItems": 2048,
+            "items": obj({"id": IDENTIFIER, "replacement": IDENTIFIER}, ["id"]),
+        },
     },
     ["schema_version", "id", "version", "name", "description", "license", "author", "styles"],
 )
@@ -97,6 +102,7 @@ recipe = obj(
         },
         "conflict_policy": {"enum": ["last_wins", "first_wins", "error"]},
         "locked_axes": {"type": "array", "items": {"enum": AXES}, "uniqueItems": True, "maxItems": len(AXES)},
+        "prompt_conflicts": {"enum": ["replace", "keep"]},
     },
     ["prompt"],
 )
@@ -112,6 +118,7 @@ profile = obj(
         "sources": {**strings(512), "items": {"type": "string", "maxLength": 512, "pattern": "^https://"}},
         "evidence": {"enum": ["documented", "conservative"]},
         "aliases": strings(128),
+        "style_budget": {"type": "integer", "minimum": 1, "maximum": 256},
     },
     ["id", "name", "format", "negative", "weighting", "conditioning", "guidance", "sources", "evidence"],
 )

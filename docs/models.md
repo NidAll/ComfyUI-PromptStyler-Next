@@ -16,6 +16,12 @@ Profiles describe the workflow contract. They do not load models, select sampler
 | `fibo` | JSON caption fields | Text interface unsupported | Use native Fibo workflow |
 | `fibo-edit` | Preserved edit instruction or caption JSON | Suppressed | Use native Fibo edit workflow |
 
+Each profile also sets a `style_budget` for the supporting style text it accepts:
+10 tags for tag profiles (`sdxl`, `anima`, `anima-turbo`), 30 words for prose
+profiles, and 48 words for `fibo` captions (30 for `fibo-edit`). A style's core
+identity always renders; lower-priority supporting tiers are trimmed first. The
+budgets are conservative authoring limits, not measured encoder capacities.
+
 “Supported” means the node uses the host's native scheduled text encoding with the supplied encoder. It does not verify that the user connected the right weights. Profiles marked `specialized` deliberately reject the generic encoding node; styled strings remain available for the correct native nodes.
 
 ## SDXL

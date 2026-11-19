@@ -31,12 +31,14 @@ class Recipe:
     styles: tuple[Layer, ...] = ()
     conflict_policy: str = "last_wins"
     locked_axes: tuple[str, ...] = ()
+    prompt_conflicts: str = "replace"
 
     def __post_init__(self) -> None:
         v.string(self.prompt, "prompt", maximum=32768, empty=True)
         v.string(self.negative, "negative", maximum=32768, empty=True)
         v.string(self.model, "model", maximum=128)
         v.choice(self.conflict_policy, ("last_wins", "first_wins", "error"), "conflict_policy")
+        v.choice(self.prompt_conflicts, v.PROMPT_CONFLICTS, "prompt_conflicts")
         for axis in v.strings(self.locked_axes, "locked_axes", maximum=len(v.AXES)):
             v.choice(axis, v.AXES, "locked_axes")
         v.array(self.styles, "styles", maximum=16)
@@ -53,7 +55,15 @@ class Recipe:
             value,
             "recipe",
             required=("prompt",),
-            optional=("schema_version", "negative", "model", "styles", "conflict_policy", "locked_axes"),
+            optional=(
+                "schema_version",
+                "negative",
+                "model",
+                "styles",
+                "conflict_policy",
+                "locked_axes",
+                "prompt_conflicts",
+            ),
         )
         v.schema_version(data.get("schema_version", 1), "recipe.schema_version")
         layers = []
@@ -72,6 +82,7 @@ class Recipe:
             styles=tuple(layers),
             conflict_policy=data.get("conflict_policy", "last_wins"),
             locked_axes=v.strings(data.get("locked_axes", []), "locked_axes", maximum=len(v.AXES)),
+            prompt_conflicts=data.get("prompt_conflicts", "replace"),
         )
 
     def to_dict(self) -> dict[str, Any]:
@@ -83,6 +94,7 @@ class Recipe:
             "styles": [layer.to_dict() for layer in self.styles],
             "conflict_policy": self.conflict_policy,
             "locked_axes": list(self.locked_axes),
+            "prompt_conflicts": self.prompt_conflicts,
         }
 
 

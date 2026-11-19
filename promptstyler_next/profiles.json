@@ -11,7 +11,8 @@
       "evidence": "conservative",
       "aliases": [],
       "guidance": "Preserve the subject and append plain visual language. Negative-prompt and encoder capabilities are unknown; choose an explicit profile before conditioning.",
-      "sources": []
+      "sources": [],
+      "style_budget": 30
     },
     {
       "id": "sdxl",
@@ -28,7 +29,8 @@
       "sources": [
         "https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0",
         "https://huggingface.co/docs/diffusers/api/pipelines/stable_diffusion/stable_diffusion_xl"
-      ]
+      ],
+      "style_budget": 10
     },
     {
       "id": "flux",
@@ -47,7 +49,8 @@
       "sources": [
         "https://github.com/black-forest-labs/skills/blob/master/README.md",
         "https://help.bfl.ai/articles/7734566352-does-flux-2-support-negative-prompting"
-      ]
+      ],
+      "style_budget": 30
     },
     {
       "id": "qwen-image",
@@ -64,7 +67,8 @@
       "sources": [
         "https://huggingface.co/Qwen/Qwen-Image",
         "https://huggingface.co/docs/diffusers/api/pipelines/qwenimage"
-      ]
+      ],
+      "style_budget": 30
     },
     {
       "id": "qwen-image-2.1",
@@ -80,7 +84,8 @@
       "guidance": "Use natural language for the requested result. This profile follows the guidance-free 2.1 default and suppresses ineffective negative text. Explicit CFG-enabled workflows can use a custom profile; edits require the native image-aware encoder.",
       "sources": [
         "https://huggingface.co/docs/diffusers/main/api/pipelines/qwenimage21"
-      ]
+      ],
+      "style_budget": 30
     },
     {
       "id": "moss-image",
@@ -97,7 +102,8 @@
       "sources": [
         "https://huggingface.co/OpenMOSS-Team/MOSS-Image-SFT",
         "https://github.com/OpenMOSS/MOSS-Image/blob/main/USERGUIDE.md"
-      ]
+      ],
+      "style_budget": 30
     },
     {
       "id": "moss-image-dmd",
@@ -115,7 +121,8 @@
       "sources": [
         "https://huggingface.co/lodestones/Kromoss",
         "https://huggingface.co/lodestones/MOSS-Image-Base-8-steps-dmd/commit/da05cb3b52899179e2bb5f7efe1058fefcbae21b"
-      ]
+      ],
+      "style_budget": 30
     },
     {
       "id": "anima",
@@ -132,7 +139,8 @@
       "guidance": "Lowercase tags with spaces, natural language, or a mixture. Aesthetic does not need score tags. No quality boosters, artist identities or safety labels are inserted automatically. Photographic styles are excluded because the model targets illustration.",
       "sources": [
         "https://huggingface.co/circlestone-labs/Anima"
-      ]
+      ],
+      "style_budget": 10
     },
     {
       "id": "anima-turbo",
@@ -148,7 +156,8 @@
       "guidance": "Use descriptive tags or mixed captions without automatic score tags. This profile follows Turbo at CFG 1, so negative text is suppressed; it does not choose a step count or modify the user workflow.",
       "sources": [
         "https://huggingface.co/circlestone-labs/Anima"
-      ]
+      ],
+      "style_budget": 10
     },
     {
       "id": "fibo",
@@ -166,7 +175,8 @@
       "sources": [
         "https://huggingface.co/docs/diffusers/main/api/pipelines/bria_fibo2",
         "https://raw.githubusercontent.com/Bria-AI/FIBO/main/default_json_caption.json"
-      ]
+      ],
+      "style_budget": 48
     },
     {
       "id": "fibo-edit",
@@ -183,7 +193,8 @@
       "sources": [
         "https://huggingface.co/briaai/Fibo-2.0-edit-turbo",
         "https://github.com/Bria-AI/FIBO"
-      ]
+      ],
+      "style_budget": 30
     }
   ]
 }

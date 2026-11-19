@@ -13,6 +13,13 @@ from typing import Any
 from .errors import StylerError
 
 AXES = ("medium", "lighting", "palette", "composition", "texture", "mood", "detail")
+# Identity first: when a word budget is tight, earlier axes are kept.
+AXIS_PRIORITY = ("medium", "palette", "lighting", "texture", "composition", "detail", "mood")
+# Standard authored tiers: core identity, supporting direction, finishing detail.
+TIERS = (0.0, 0.4, 0.75)
+# Named strengths used by hosts; any value in [0, 1] remains valid in recipes.
+STRENGTHS = {"subtle": 0.25, "balanced": 0.5, "strong": 1.0}
+PROMPT_CONFLICTS = ("replace", "keep")
 IDENTIFIER = re.compile(r"[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*\Z")
 SEMVER = re.compile(r"\d+\.\d+\.\d+(?:-[0-9A-Za-z.-]+)?\Z")
 MAX_PACK_BYTES = 4 * 1024 * 1024

@@ -1,899 +1,2676 @@
 {
-  "schema_version": 1,
-  "id": "next.grades",
-  "version": "1.0.0",
-  "name": "Color room",
-  "description": "Composable grade layers with explicit axes and progressive detail.",
-  "license": "CC0-1.0",
-  "author": "PromptStyler Next contributors",
-  "styles": [
+ "schema_version": 1,
+ "id": "next.grades",
+ "version": "2.0.0",
+ "name": "Color grades",
+ "description": "Palette-only color treatments that recolor any look without changing its medium.",
+ "license": "CC0-1.0",
+ "author": "PromptStyler Next contributors",
+ "styles": [
+  {
+   "id": "analog-horror.phosphor-green",
+   "name": "Green Phosphor",
+   "description": "Monochromatic surveillance-monitor glow with softened light trails.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "phosphor",
+    "green",
+    "monitor",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "analog-horror.phosphor-green",
+    "palette": "analog-horror.phosphor-green"
+   },
+   "clauses": [
     {
-      "id": "grade.amber-teal",
-      "name": "Amber and teal",
-      "description": "Favor amber highlights and restrained teal shadows. Keep neutral surfaces from drifting into oversaturated cyan.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "amber",
-        "teal",
-        "complementary"
-      ],
-      "claims": {
-        "palette": "grade-amber-teal"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor amber highlights and restrained teal shadows",
-          "tags": [
-            "amber and teal"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep neutral surfaces from drifting into oversaturated cyan",
-          "tags": [
-            "keep neutral surfaces from drifting into oversaturated cyan"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "palette",
+     "text": "deep green phosphor on near-black",
+     "tags": [
+      "green theme",
+      "monochrome"
+     ],
+     "min_intensity": 0.0
     },
     {
-      "id": "grade.warm-neutral",
-      "name": "Warm neutral",
-      "description": "Shift the midtones gently toward warm neutrals. Hold whites near ivory and keep shadow color restrained.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "warm",
-        "neutral",
-        "gentle"
-      ],
-      "claims": {
-        "palette": "grade-warm-neutral"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Shift the midtones gently toward warm neutrals",
-          "tags": [
-            "warm neutral"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Hold whites near ivory and keep shadow color restrained",
-          "tags": [
-            "hold whites near ivory and keep shadow color restrained"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.cool-neutral",
-      "name": "Cool neutral",
-      "description": "Shift neutral tones gently toward cool slate. Keep important warm local colors distinct from the cool balance.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "cool",
-        "neutral",
-        "gentle"
-      ],
-      "claims": {
-        "palette": "grade-cool-neutral"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Shift neutral tones gently toward cool slate",
-          "tags": [
-            "cool neutral"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep important warm local colors distinct from the cool balance",
-          "tags": [
-            "keep important warm local colors distinct from the cool balance"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.silver",
-      "name": "Silver monochrome",
-      "description": "Translate the colors into balanced silver monochrome. Keep a broad middle-gray scale between dense black and luminous white.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "silver",
-        "monochrome",
-        "black white"
-      ],
-      "claims": {
-        "palette": "grade-silver"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Translate the colors into balanced silver monochrome",
-          "tags": [
-            "silver monochrome"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep a broad middle-gray scale between dense black and luminous white",
-          "tags": [
-            "keep a broad middle-gray scale between dense black and luminous white"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.sepia",
-      "name": "Restrained sepia",
-      "description": "Translate color into warm sepia-brown tones. Keep highlights pale and avoid a uniform orange cast.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "sepia",
-        "brown",
-        "archival"
-      ],
-      "claims": {
-        "palette": "grade-sepia"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Translate color into warm sepia-brown tones",
-          "tags": [
-            "restrained sepia"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep highlights pale and avoid a uniform orange cast",
-          "tags": [
-            "keep highlights pale and avoid a uniform orange cast"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.copper",
-      "name": "Copper dusk",
-      "description": "Favor muted copper and russet midtones. Keep deep shadows neutral with small warm highlight accents.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "copper",
-        "dusk",
-        "warm"
-      ],
-      "claims": {
-        "palette": "grade-copper"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor muted copper and russet midtones",
-          "tags": [
-            "copper dusk"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep deep shadows neutral with small warm highlight accents",
-          "tags": [
-            "keep deep shadows neutral with small warm highlight accents"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.sage",
-      "name": "Sage and stone",
-      "description": "Favor muted sage greens and warm stone neutrals. Keep saturation low while preserving distinct local color boundaries.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "sage",
-        "stone",
-        "muted"
-      ],
-      "claims": {
-        "palette": "grade-sage"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor muted sage greens and warm stone neutrals",
-          "tags": [
-            "sage and stone"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep saturation low while preserving distinct local color boundaries",
-          "tags": [
-            "keep saturation low while preserving distinct local color boundaries"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.porcelain",
-      "name": "Porcelain cool",
-      "description": "Favor pale blue-white and softly cooled neutral tones. Retain gentle midtone separation rather than washing out the forms.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "pale",
-        "porcelain",
-        "cool"
-      ],
-      "claims": {
-        "palette": "grade-porcelain"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor pale blue-white and softly cooled neutral tones",
-          "tags": [
-            "porcelain cool"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Retain gentle midtone separation rather than washing out the forms",
-          "tags": [
-            "retain gentle midtone separation rather than washing out the forms"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.rose",
-      "name": "Rose ash",
-      "description": "Mix dusty rose highlights with soft ash-gray shadows. Keep the color impression understated and evenly balanced.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "rose",
-        "gray",
-        "muted"
-      ],
-      "claims": {
-        "palette": "grade-rose"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Mix dusty rose highlights with soft ash-gray shadows",
-          "tags": [
-            "rose ash"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep the color impression understated and evenly balanced",
-          "tags": [
-            "keep the color impression understated and evenly balanced"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.ochre",
-      "name": "Ochre earth",
-      "description": "Favor ochre, clay and muted earth colors. Let small pale accents separate adjacent warm masses.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "ochre",
-        "earth",
-        "pigment"
-      ],
-      "claims": {
-        "palette": "grade-ochre"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor ochre, clay and muted earth colors",
-          "tags": [
-            "ochre earth"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Let small pale accents separate adjacent warm masses",
-          "tags": [
-            "let small pale accents separate adjacent warm masses"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.jewel",
-      "name": "Jewel restraint",
-      "description": "Use deep jewel colors with restrained saturation. Preserve dark color separation rather than collapsing it into black.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "jewel",
-        "deep",
-        "rich"
-      ],
-      "claims": {
-        "palette": "grade-jewel"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Use deep jewel colors with restrained saturation",
-          "tags": [
-            "jewel restraint"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Preserve dark color separation rather than collapsing it into black",
-          "tags": [
-            "preserve dark color separation rather than collapsing it into black"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.pastel",
-      "name": "Chalk pastel",
-      "description": "Lift colors toward a chalky pastel range. Keep shadow values soft but maintain the main shape boundaries.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "pastel",
-        "chalk",
-        "pale"
-      ],
-      "claims": {
-        "palette": "grade-pastel"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Lift colors toward a chalky pastel range",
-          "tags": [
-            "chalk pastel"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep shadow values soft but maintain the main shape boundaries",
-          "tags": [
-            "keep shadow values soft but maintain the main shape boundaries"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.olive",
-      "name": "Olive film",
-      "description": "Favor muted olive shadows and warm neutral midtones. Keep pale highlights slightly creamy rather than green.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "olive",
-        "film",
-        "muted"
-      ],
-      "claims": {
-        "palette": "grade-olive"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor muted olive shadows and warm neutral midtones",
-          "tags": [
-            "olive film"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep pale highlights slightly creamy rather than green",
-          "tags": [
-            "keep pale highlights slightly creamy rather than green"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.cobalt",
-      "name": "Cobalt and cream",
-      "description": "Favor cobalt blue and warm cream color relationships. Concentrate saturated blue in the strongest existing color regions.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "cobalt",
-        "cream",
-        "blue"
-      ],
-      "claims": {
-        "palette": "grade-cobalt"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor cobalt blue and warm cream color relationships",
-          "tags": [
-            "cobalt and cream"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Concentrate saturated blue in the strongest existing color regions",
-          "tags": [
-            "concentrate saturated blue in the strongest existing color regions"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.indigo",
-      "name": "Indigo dusk",
-      "description": "Favor indigo shadows with gently violet midtones. Keep the brightest values softly cool and color-separated.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "indigo",
-        "blue",
-        "dusk"
-      ],
-      "claims": {
-        "palette": "grade-indigo"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor indigo shadows with gently violet midtones",
-          "tags": [
-            "indigo dusk"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep the brightest values softly cool and color-separated",
-          "tags": [
-            "keep the brightest values softly cool and color-separated"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.vermilion",
-      "name": "Vermilion accent",
-      "description": "Use restrained neutrals with a vermilion accent on existing focal colors. Keep the red accent localized rather than tinting the entire image.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "vermilion",
-        "red",
-        "limited"
-      ],
-      "claims": {
-        "palette": "grade-vermilion"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Use restrained neutrals with a vermilion accent on existing focal colors",
-          "tags": [
-            "vermilion accent"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep the red accent localized rather than tinting the entire image",
-          "tags": [
-            "keep the red accent localized rather than tinting the entire image"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.mossgold",
-      "name": "Moss and gold",
-      "description": "Favor deep moss green and muted golden tones. Keep highlights mineral and subdued rather than metallic yellow.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "moss",
-        "gold",
-        "earthy"
-      ],
-      "claims": {
-        "palette": "grade-mossgold"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor deep moss green and muted golden tones",
-          "tags": [
-            "moss and gold"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep highlights mineral and subdued rather than metallic yellow",
-          "tags": [
-            "keep highlights mineral and subdued rather than metallic yellow"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.lavender",
-      "name": "Lavender smoke",
-      "description": "Favor smoky lavender and cool gray color relationships. Keep soft warm highlights to preserve tonal depth.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "lavender",
-        "gray",
-        "soft"
-      ],
-      "claims": {
-        "palette": "grade-lavender"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor smoky lavender and cool gray color relationships",
-          "tags": [
-            "lavender smoke"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep soft warm highlights to preserve tonal depth",
-          "tags": [
-            "keep soft warm highlights to preserve tonal depth"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.sand",
-      "name": "Sand and ink",
-      "description": "Favor warm sand midtones and deep ink-colored shadows. Keep a small number of pale highlights for graphic separation.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "sand",
-        "ink",
-        "neutral"
-      ],
-      "claims": {
-        "palette": "grade-sand"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor warm sand midtones and deep ink-colored shadows",
-          "tags": [
-            "sand and ink"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep a small number of pale highlights for graphic separation",
-          "tags": [
-            "keep a small number of pale highlights for graphic separation"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.celadon",
-      "name": "Celadon wash",
-      "description": "Favor pale celadon greens and off-white neutrals. Keep the strongest local colors softly desaturated but recognizable.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "celadon",
-        "pale green",
-        "muted"
-      ],
-      "claims": {
-        "palette": "grade-celadon"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor pale celadon greens and off-white neutrals",
-          "tags": [
-            "celadon wash"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep the strongest local colors softly desaturated but recognizable",
-          "tags": [
-            "keep the strongest local colors softly desaturated but recognizable"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.charcoal",
-      "name": "Charcoal compression",
-      "description": "Compress color toward charcoal and subdued neutral midtones. Keep narrow luminous highlights and readable dark detail.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "charcoal",
-        "dark",
-        "muted"
-      ],
-      "claims": {
-        "palette": "grade-charcoal"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Compress color toward charcoal and subdued neutral midtones",
-          "tags": [
-            "charcoal compression"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep narrow luminous highlights and readable dark detail",
-          "tags": [
-            "keep narrow luminous highlights and readable dark detail"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.cream",
-      "name": "Cream lift",
-      "description": "Lift the darkest tones slightly and warm the pale values toward cream. Keep local color differences visible beneath the faded tonal balance.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "cream",
-        "faded",
-        "gentle"
-      ],
-      "claims": {
-        "palette": "grade-cream"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Lift the darkest tones slightly and warm the pale values toward cream",
-          "tags": [
-            "cream lift"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep local color differences visible beneath the faded tonal balance",
-          "tags": [
-            "keep local color differences visible beneath the faded tonal balance"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.acid",
-      "name": "Acid yellow-green",
-      "description": "Favor an intentional acid-yellow and dark green relationship. Keep the pale color field clean and the dark shapes distinctly separated.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "acid",
-        "yellow green",
-        "graphic"
-      ],
-      "claims": {
-        "palette": "grade-acid"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor an intentional acid-yellow and dark green relationship",
-          "tags": [
-            "acid yellow-green"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep the pale color field clean and the dark shapes distinctly separated",
-          "tags": [
-            "keep the pale color field clean and the dark shapes distinctly separated"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "grade.aubergine",
-      "name": "Aubergine and peach",
-      "description": "Favor aubergine shadows and muted peach midtones. Use pale warm highlights without excessive red saturation.",
-      "category": "grades",
-      "kind": "grade",
-      "tags": [
-        "grade",
-        "aubergine",
-        "peach",
-        "complementary"
-      ],
-      "claims": {
-        "palette": "grade-aubergine"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor aubergine shadows and muted peach midtones",
-          "tags": [
-            "aubergine and peach"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Use pale warm highlights without excessive red saturation",
-          "tags": [
-            "use pale warm highlights without excessive red saturation"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "lighting",
+     "text": "faint phosphor halo on bright contours",
+     "tags": [
+      "glow"
+     ],
+     "min_intensity": 0.4
     }
-  ]
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.vhs-degrade",
+   "name": "VHS Color Drift",
+   "description": "Soft displaced chroma from aging consumer videotape.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "vhs",
+    "chroma",
+    "degrade",
+    "grade"
+   ],
+   "claims": {
+    "palette": "analog-horror.vhs-degrade",
+    "texture": "analog-horror.vhs-degrade"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "slight horizontal chroma drift",
+     "tags": [
+      "chromatic aberration",
+      "vhs artifacts"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "neutrals drifting blue-green and amber",
+     "tags": [
+      "color shift"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.tobacco-monochrome",
+   "name": "Tobacco Monochrome",
+   "description": "Warm low-saturation archival palette with deep but not crushed blacks.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "tobacco",
+    "sepia",
+    "archive",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "analog-horror.tobacco-monochrome",
+    "palette": "analog-horror.tobacco-monochrome"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "tobacco brown and soot gray",
+     "tags": [
+      "sepia",
+      "desaturated"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "pale yellow highlights, dark soft shadows",
+     "tags": [
+      "low key"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.cel-sunset",
+   "name": "Cel-Animation Sunset",
+   "description": "Crisp cel-era evening hues and controlled shadow separation.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "sunset",
+    "cel",
+    "anime",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "subanime.cel-sunset",
+    "palette": "subanime.cel-sunset"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "coral orange highlights, cool violet shadows",
+     "tags": [
+      "orange theme",
+      "purple theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "firm colored edge light",
+     "tags": [
+      "rim lighting"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.night-city-ink",
+   "name": "Night City Ink",
+   "description": "Indigo nighttime palette with localized sign-like accent colors.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "night",
+    "city",
+    "indigo",
+    "anime"
+   ],
+   "claims": {
+    "lighting": "subanime.night-city-ink",
+    "palette": "subanime.night-city-ink"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "ink blue with cyan and magenta accents",
+     "tags": [
+      "blue theme",
+      "neon colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "crisp interior pools",
+     "tags": [
+      "night"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.watercolor-pearl",
+   "name": "Watercolor Pearl",
+   "description": "Pale watercolor palette with colored-paper translucency.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "watercolor",
+    "pearlescent",
+    "pale",
+    "anime"
+   ],
+   "claims": {
+    "palette": "subanime.watercolor-pearl",
+    "texture": "subanime.watercolor-pearl"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "pale pearl, faded lilac, mist blue",
+     "tags": [
+      "pastel colors",
+      "pale colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "transparent pigment over paper",
+     "tags": [
+      "watercolor (medium)"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "brutalgraphic.ink-black-white",
+   "name": "Ink Black and White",
+   "description": "High-value-contrast reproduction without destructive loss of the subject.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "blackwhite",
+    "print",
+    "graphic",
+    "grade"
+   ],
+   "claims": {
+    "palette": "brutalgraphic.ink-black-white",
+    "texture": "brutalgraphic.ink-black-white"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "dense black ink on warm white",
+     "tags": [
+      "black and white",
+      "high contrast"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "slight plate roughness in black",
+     "tags": [
+      "ink texture"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "brutalgraphic.acid-signal",
+   "name": "Acid Signal",
+   "description": "A single high-voltage yellow-green against deep neutral graphic values.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "acid",
+    "chartreuse",
+    "black",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "brutalgraphic.acid-signal",
+    "palette": "brutalgraphic.acid-signal"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "chartreuse accents on graphite and ivory",
+     "tags": [
+      "green accent",
+      "limited palette"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "flat ink-like accent color",
+     "tags": [
+      "flat color"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "brutalgraphic.oxide-copper",
+   "name": "Oxide Copper",
+   "description": "Oxidized copper orange with cold concrete and paper whites.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "copper",
+    "oxide",
+    "industrial",
+    "grade"
+   ],
+   "claims": {
+    "palette": "brutalgraphic.oxide-copper",
+    "texture": "brutalgraphic.oxide-copper"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "oxidized copper orange and cold concrete gray",
+     "tags": [
+      "orange theme",
+      "grey theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "dry mineral pigment",
+     "tags": [
+      "matte"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "cozynostalgia.honey-hour",
+   "name": "Honey Hour",
+   "description": "Warm honey highlights and muted amber midtones without orange saturation.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "honey",
+    "golden",
+    "warm",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "cozynostalgia.honey-hour",
+    "palette": "cozynostalgia.honey-hour"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "honey gold highlights, warm stone shadows",
+     "tags": [
+      "warm tones",
+      "golden"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "gradual warm falloff",
+     "tags": [
+      "warm lighting"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "cozynostalgia.rainy-sage",
+   "name": "Rainy Sage",
+   "description": "Muted green and slate-blue rainy-day tones with paper-warm near-whites.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "sage",
+    "rain",
+    "cool",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "cozynostalgia.rainy-sage",
+    "palette": "cozynostalgia.rainy-sage"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "sage green and slate blue with warm whites",
+     "tags": [
+      "muted color",
+      "green theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "soft even gray-day diffusion",
+     "tags": [
+      "overcast"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "cozynostalgia.lamplit-cocoa",
+   "name": "Lamplit Cocoa",
+   "description": "Deep cocoa midtones and warm lamplight with plush, low-contrast warmth.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "cocoa",
+    "lamp",
+    "brown",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "cozynostalgia.lamplit-cocoa",
+    "palette": "cozynostalgia.lamplit-cocoa"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "cocoa brown, cream and soft plum",
+     "tags": [
+      "brown theme",
+      "warm tones"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "contained warm lamplight",
+     "tags": [
+      "lamp"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "dreamcore.faded-lullaby",
+   "name": "Faded Lullaby",
+   "description": "Old-paper softness applied as a color treatment.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "faded",
+    "pastel",
+    "nostalgia",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "dreamcore.faded-lullaby",
+    "palette": "dreamcore.faded-lullaby"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "faded apricot, dusty lavender and cream",
+     "tags": [
+      "pastel colors",
+      "faded colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "softly luminous highlights",
+     "tags": [
+      "bloom"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "dreamcore.milkglass",
+   "name": "Milk-Glass Glow",
+   "description": "Translucent luminous highlights and gentle low contrast.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "milky",
+    "glow",
+    "glass",
+    "soft"
+   ],
+   "claims": {
+    "lighting": "dreamcore.milkglass",
+    "palette": "dreamcore.milkglass"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "pale airy midtones",
+     "tags": [
+      "pale colors",
+      "pastel colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "translucent milk-glass halo",
+     "tags": [
+      "glow"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "dreamcore.moon-pastel",
+   "name": "Moonlit Pastels",
+   "description": "Quiet powder hues lit with cool lunar light.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "moon",
+    "pastel",
+    "cool",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "dreamcore.moon-pastel",
+    "palette": "dreamcore.moon-pastel"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "powder blue, lilac and moon white",
+     "tags": [
+      "pastel colors",
+      "blue theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "cool side light with silvered edges",
+     "tags": [
+      "moonlight"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.xerox-red",
+   "name": "Xerox Red",
+   "description": "High-contrast toner blacks and a single red editorial spot color.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "xerox",
+    "red",
+    "black",
+    "grade"
+   ],
+   "claims": {
+    "palette": "subedit.xerox-red",
+    "texture": "subedit.xerox-red"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "toner black, warm paper white, scarlet accent",
+     "tags": [
+      "red accent",
+      "limited palette"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "gritty ink on paper fibers",
+     "tags": [
+      "xerox texture"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.washed-fanzine",
+   "name": "Washed Fanzine",
+   "description": "Age-softened magazine colors and paper-bleached highlights.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "fanzine",
+    "washed",
+    "nostalgia",
+    "grade"
+   ],
+   "claims": {
+    "palette": "subedit.washed-fanzine",
+    "texture": "subedit.washed-fanzine"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "powdery faded magazine inks",
+     "tags": [
+      "faded colors",
+      "pastel colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "thin irregular screening in shadows",
+     "tags": [
+      "halftone"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.chrome-pop",
+   "name": "Chrome Pop",
+   "description": "Icy reflective metallic accents against restrained warm neutral backgrounds.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "chrome",
+    "glossy",
+    "pop",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "subedit.chrome-pop",
+    "palette": "subedit.chrome-pop"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "steel-blue silvers and warm stone neutrals",
+     "tags": [
+      "silver theme",
+      "cool colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "small sharp reflection streaks",
+     "tags": [
+      "shiny"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "gameera.handheld-lcd",
+   "name": "Handheld LCD Tint",
+   "description": "Muted pale-green portable-screen colors and darker green pixel tones.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "lcd",
+    "green",
+    "handheld",
+    "grade"
+   ],
+   "claims": {
+    "palette": "gameera.handheld-lcd",
+    "texture": "gameera.handheld-lcd"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "olive-glass and moss display levels",
+     "tags": [
+      "green theme",
+      "limited palette"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "faint horizontal panel irregularity",
+     "tags": [
+      "lcd"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "gameera.arcade-purple",
+   "name": "Arcade Electric Purple",
+   "description": "Purple-blue display glow and focused candy-color accents.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "arcade",
+    "purple",
+    "blue",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "gameera.arcade-purple",
+    "palette": "gameera.arcade-purple"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "midnight violet with electric violet-blue",
+     "tags": [
+      "purple theme",
+      "neon colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "short-falloff vivid accents",
+     "tags": [
+      "neon lights"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "gameera.retro-amber",
+   "name": "Retro HUD Amber",
+   "description": "Amber terminal-inspired color balance for information-heavy game imagery.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "hud",
+    "amber",
+    "terminal",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "gameera.retro-amber",
+    "palette": "gameera.retro-amber"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "warm amber on dark smoky neutrals",
+     "tags": [
+      "orange theme",
+      "dark"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "restrained bloom on brightest areas",
+     "tags": [
+      "bloom"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.amber-teal",
+   "name": "Amber and teal",
+   "description": "Favor amber highlights and restrained teal shadows. Keep neutral surfaces from drifting into oversaturated cyan.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "amber",
+    "teal",
+    "complementary"
+   ],
+   "claims": {
+    "palette": "grade.amber-teal"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "amber highlights and teal shadows",
+     "tags": [
+      "orange and teal",
+      "teal shadows"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "clean neutral midtones",
+     "tags": [
+      "balanced colors"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.warm-neutral",
+   "name": "Warm neutral",
+   "description": "Shift the midtones gently toward warm neutrals. Hold whites near ivory and keep shadow color restrained.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "warm",
+    "neutral",
+    "gentle"
+   ],
+   "claims": {
+    "palette": "grade.warm-neutral"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "warm neutral color grade",
+     "tags": [
+      "warm tones",
+      "neutral colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "ivory whites, soft brown shadows",
+     "tags": [
+      "ivory"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.cool-neutral",
+   "name": "Cool neutral",
+   "description": "Shift neutral tones gently toward cool slate. Keep important warm local colors distinct from the cool balance.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "cool",
+    "neutral",
+    "gentle"
+   ],
+   "claims": {
+    "palette": "grade.cool-neutral"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "cool slate color grade",
+     "tags": [
+      "cool tones",
+      "grey theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "warm accents against cool neutrals",
+     "tags": [
+      "color contrast"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.silver",
+   "name": "Silver monochrome",
+   "description": "Translate the colors into balanced silver monochrome. Keep a broad middle-gray scale between dense black and luminous white.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "silver",
+    "monochrome",
+    "black white"
+   ],
+   "claims": {
+    "palette": "grade.silver"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "silver black-and-white monochrome",
+     "tags": [
+      "monochrome",
+      "greyscale"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "full gray scale from deep black to bright white",
+     "tags": [
+      "high contrast"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.sepia",
+   "name": "Restrained sepia",
+   "description": "Translate color into warm sepia-brown tones. Keep highlights pale and avoid a uniform orange cast.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "sepia",
+    "brown",
+    "archival"
+   ],
+   "claims": {
+    "palette": "grade.sepia"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "warm sepia tones",
+     "tags": [
+      "sepia"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "pale cream highlights",
+     "tags": [
+      "cream"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.copper",
+   "name": "Copper dusk",
+   "description": "Favor muted copper and russet midtones. Keep deep shadows neutral with small warm highlight accents.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "copper",
+    "dusk",
+    "warm"
+   ],
+   "claims": {
+    "palette": "grade.copper"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "muted copper and russet tones",
+     "tags": [
+      "copper",
+      "brown theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "neutral deep shadows, warm accents",
+     "tags": [
+      "warm highlights"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.sage",
+   "name": "Sage and stone",
+   "description": "Favor muted sage greens and warm stone neutrals. Keep saturation low while preserving distinct local color boundaries.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "sage",
+    "stone",
+    "muted"
+   ],
+   "claims": {
+    "palette": "grade.sage"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "muted sage green and stone neutrals",
+     "tags": [
+      "sage green",
+      "muted color"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "low saturation, clear color boundaries",
+     "tags": [
+      "desaturated"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.porcelain",
+   "name": "Porcelain cool",
+   "description": "Favor pale blue-white and softly cooled neutral tones. Retain gentle midtone separation rather than washing out the forms.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "pale",
+    "porcelain",
+    "cool"
+   ],
+   "claims": {
+    "palette": "grade.porcelain"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "pale porcelain blue-white tones",
+     "tags": [
+      "pale blue",
+      "white theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "soft cool midtone separation",
+     "tags": [
+      "cool tones"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.rose",
+   "name": "Rose ash",
+   "description": "Mix dusty rose highlights with soft ash-gray shadows. Keep the color impression understated and evenly balanced.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "rose",
+    "gray",
+    "muted"
+   ],
+   "claims": {
+    "palette": "grade.rose"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "dusty rose highlights, ash-gray shadows",
+     "tags": [
+      "dusty pink",
+      "grey theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "soft balanced muted color",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.ochre",
+   "name": "Ochre earth",
+   "description": "Favor ochre, clay and muted earth colors. Let small pale accents separate adjacent warm masses.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "ochre",
+    "earth",
+    "pigment"
+   ],
+   "claims": {
+    "palette": "grade.ochre"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "ochre, clay and earth colors",
+     "tags": [
+      "earth tones",
+      "brown theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "small pale accents",
+     "tags": [
+      "pale highlights"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.jewel",
+   "name": "Jewel restraint",
+   "description": "Use deep jewel colors with restrained saturation. Preserve dark color separation rather than collapsing it into black.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "jewel",
+    "deep",
+    "rich"
+   ],
+   "claims": {
+    "palette": "grade.jewel"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "deep jewel tones",
+     "tags": [
+      "jewel tones",
+      "dark"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "rich emerald, sapphire and ruby shadows",
+     "tags": [
+      "vivid colors"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.pastel",
+   "name": "Chalk pastel",
+   "description": "Lift colors toward a chalky pastel range. Keep shadow values soft but maintain the main shape boundaries.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "pastel",
+    "chalk",
+    "pale"
+   ],
+   "claims": {
+    "palette": "grade.pastel"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "chalky pastel colors",
+     "tags": [
+      "pastel colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "soft light shadows",
+     "tags": [
+      "pale color"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.olive",
+   "name": "Olive film",
+   "description": "Favor muted olive shadows and warm neutral midtones. Keep pale highlights slightly creamy rather than green.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "olive",
+    "film",
+    "muted"
+   ],
+   "claims": {
+    "palette": "grade.olive"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "olive-green shadows, warm neutral midtones",
+     "tags": [
+      "olive green",
+      "green theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "creamy highlights",
+     "tags": [
+      "cream"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.cobalt",
+   "name": "Cobalt and cream",
+   "description": "Favor cobalt blue and warm cream color relationships. Concentrate saturated blue in the strongest existing color regions.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "cobalt",
+    "cream",
+    "blue"
+   ],
+   "claims": {
+    "palette": "grade.cobalt"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "cobalt blue and cream",
+     "tags": [
+      "blue and white",
+      "blue theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "saturated blue focal colors",
+     "tags": [
+      "blue"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.indigo",
+   "name": "Indigo dusk",
+   "description": "Favor indigo shadows with gently violet midtones. Keep the brightest values softly cool and color-separated.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "indigo",
+    "blue",
+    "dusk"
+   ],
+   "claims": {
+    "palette": "grade.indigo"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "indigo shadows with violet midtones",
+     "tags": [
+      "indigo",
+      "purple theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "cool pale highlights",
+     "tags": [
+      "cool tones"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.vermilion",
+   "name": "Vermilion accent",
+   "description": "Use restrained neutrals with a vermilion accent on existing focal colors. Keep the red accent localized rather than tinting the entire image.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "vermilion",
+    "red",
+    "limited"
+   ],
+   "claims": {
+    "palette": "grade.vermilion"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "neutral tones with one vermilion red accent",
+     "tags": [
+      "spot color",
+      "red theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "gray and beige surroundings",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.mossgold",
+   "name": "Moss and gold",
+   "description": "Favor deep moss green and muted golden tones. Keep highlights mineral and subdued rather than metallic yellow.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "moss",
+    "gold",
+    "earthy"
+   ],
+   "claims": {
+    "palette": "grade.mossgold"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "deep moss green and muted gold",
+     "tags": [
+      "green and gold",
+      "green theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "soft mineral highlights",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.lavender",
+   "name": "Lavender smoke",
+   "description": "Favor smoky lavender and cool gray color relationships. Keep soft warm highlights to preserve tonal depth.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "lavender",
+    "gray",
+    "soft"
+   ],
+   "claims": {
+    "palette": "grade.lavender"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "smoky lavender and cool gray",
+     "tags": [
+      "lavender",
+      "purple theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "soft warm highlights",
+     "tags": [
+      "warm highlights"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.sand",
+   "name": "Sand and ink",
+   "description": "Favor warm sand midtones and deep ink-colored shadows. Keep a small number of pale highlights for graphic separation.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "sand",
+    "ink",
+    "neutral"
+   ],
+   "claims": {
+    "palette": "grade.sand"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "warm sand midtones, deep ink shadows",
+     "tags": [
+      "beige",
+      "dark shadows"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "few crisp pale highlights",
+     "tags": [
+      "high contrast"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.celadon",
+   "name": "Celadon wash",
+   "description": "Favor pale celadon greens and off-white neutrals. Keep the strongest local colors softly desaturated but recognizable.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "celadon",
+    "pale green",
+    "muted"
+   ],
+   "claims": {
+    "palette": "grade.celadon"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "pale celadon green and off-white",
+     "tags": [
+      "celadon",
+      "pale color"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "softly desaturated local color",
+     "tags": [
+      "desaturated"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.charcoal",
+   "name": "Charcoal compression",
+   "description": "Compress color toward charcoal and subdued neutral midtones. Keep narrow luminous highlights and readable dark detail.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "charcoal",
+    "dark",
+    "muted"
+   ],
+   "claims": {
+    "palette": "grade.charcoal"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "charcoal and subdued neutral tones",
+     "tags": [
+      "dark",
+      "grey theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "narrow bright highlights",
+     "tags": [
+      "high contrast"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.cream",
+   "name": "Cream lift",
+   "description": "Lift the darkest tones slightly and warm the pale values toward cream. Keep local color differences visible beneath the faded tonal balance.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "cream",
+    "faded",
+    "gentle"
+   ],
+   "claims": {
+    "palette": "grade.cream"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "faded cream-lifted tones",
+     "tags": [
+      "faded colors",
+      "cream"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "lifted soft blacks",
+     "tags": [
+      "low contrast"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.acid",
+   "name": "Acid yellow-green",
+   "description": "Favor an intentional acid-yellow and dark green relationship. Keep the pale color field clean and the dark shapes distinctly separated.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "acid",
+    "yellow green",
+    "graphic"
+   ],
+   "claims": {
+    "palette": "grade.acid"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "acid yellow-green and dark green",
+     "tags": [
+      "yellow theme",
+      "green theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "clean pale fields, dark shapes",
+     "tags": [
+      "high contrast"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "grade.aubergine",
+   "name": "Aubergine and peach",
+   "description": "Favor aubergine shadows and muted peach midtones. Use pale warm highlights without excessive red saturation.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "grade",
+    "aubergine",
+    "peach",
+    "complementary"
+   ],
+   "claims": {
+    "palette": "grade.aubergine"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "aubergine shadows and peach midtones",
+     "tags": [
+      "purple theme",
+      "peach"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "pale warm highlights",
+     "tags": [
+      "warm highlights"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "netculture.candy-plastic",
+   "name": "Candy Plastic",
+   "description": "Synthetic glossy candy hues without changing the underlying visual medium.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "candy",
+    "glossy",
+    "pink",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "netculture.candy-plastic",
+    "palette": "netculture.candy-plastic"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "bubblegum pink, cherry red, creamy cyan",
+     "tags": [
+      "pink theme",
+      "vivid colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "soft specular sheen",
+     "tags": [
+      "glossy"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "netculture.early-lcd",
+   "name": "Early LCD Bloom",
+   "description": "Pale consumer-display light with barely separated highlight channels.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "lcd",
+    "screen",
+    "bloom",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "netculture.early-lcd",
+    "palette": "netculture.early-lcd"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "neutrals shifted to blue backlit white",
+     "tags": [
+      "cool tones",
+      "blue tint"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "diffused bright edges",
+     "tags": [
+      "glow"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "netculture.peach-cyan",
+   "name": "Peach and Cyan",
+   "description": "Warm peach air balanced against clean blue-cyan accents.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "peach",
+    "cyan",
+    "pastel",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "netculture.peach-cyan",
+    "palette": "netculture.peach-cyan"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "light peach and airy cyan",
+     "tags": [
+      "pastel colors",
+      "peach"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "luminous soft color",
+     "tags": [
+      "soft lighting"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.green-fluorescence",
+   "name": "Sickly Fluorescence",
+   "description": "Subtle green-cyan institutional light without forcing a new location.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "green",
+    "fluorescent",
+    "grade",
+    "clinical"
+   ],
+   "claims": {
+    "lighting": "liminal.green-fluorescence",
+    "palette": "liminal.green-fluorescence"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "off-white highlights with pale green shadows",
+     "tags": [
+      "green tint",
+      "desaturated"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "faint green-cyan fluorescent cast",
+     "tags": [
+      "fluorescent lighting"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.sodium-night",
+   "name": "Sodium-Vapor Midnight",
+   "description": "Deep night treated with narrow amber public-light highlights.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "amber",
+    "sodium",
+    "night",
+    "street"
+   ],
+   "claims": {
+    "lighting": "liminal.sodium-night",
+    "palette": "liminal.sodium-night"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "sodium amber against blue-black shadows",
+     "tags": [
+      "orange theme",
+      "dark"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "wide unlit areas",
+     "tags": [
+      "dim lighting"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.washed-commercial",
+   "name": "Faded Commercial Interior",
+   "description": "A drained institutional retail palette that preserves subject details.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "faded",
+    "pastel",
+    "commercial",
+    "grade"
+   ],
+   "claims": {
+    "palette": "liminal.washed-commercial",
+    "texture": "liminal.washed-commercial"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "worn beige, pale seafoam, muted blue",
+     "tags": [
+      "faded colors",
+      "muted color"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "patina of long indoor lighting",
+     "tags": [
+      "worn"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "esoteric.aged-gold-ink",
+   "name": "Aged Gold and Ink",
+   "description": "Antique gold-color accents against deep neutral ink and pale paper.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "gold",
+    "ink",
+    "antique",
+    "grade"
+   ],
+   "claims": {
+    "palette": "esoteric.aged-gold-ink",
+    "texture": "esoteric.aged-gold-ink"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "ochre gold on brown-black ink and parchment",
+     "tags": [
+      "gold theme",
+      "sepia"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "minute metallic granulation",
+     "tags": [
+      "gold"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "esoteric.moonstone-blue",
+   "name": "Moonstone Blue",
+   "description": "Cool mineral blues against luminous ivory with quiet shadow color.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "moonstone",
+    "blue",
+    "ivory",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "esoteric.moonstone-blue",
+    "palette": "esoteric.moonstone-blue"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "mineral blue-gray with silver over ivory",
+     "tags": [
+      "blue theme",
+      "muted color"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "small controlled moonlight accents",
+     "tags": [
+      "moonlight"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "esoteric.candle-umber",
+   "name": "Candle Umber",
+   "description": "Dim candle-yellow highlights and rich dark umber midtones.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "candle",
+    "umber",
+    "sepia",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "esoteric.candle-umber",
+    "palette": "esoteric.candle-umber"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "burnt umber with candle-yellow highlights",
+     "tags": [
+      "brown theme",
+      "warm tones"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "forms emerging from warm shadow",
+     "tags": [
+      "candlelight"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "retromedia.faded-tungsten",
+   "name": "Faded Tungsten",
+   "description": "Consumer-film warmth with slightly greenish shadows and gently faded highlights.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "film",
+    "grade",
+    "warm",
+    "nostalgia"
+   ],
+   "claims": {
+    "lighting": "retromedia.faded-tungsten",
+    "palette": "retromedia.faded-tungsten"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "soft tungsten amber mids, restrained cool shadows",
+     "tags": [
+      "warm tones",
+      "orange theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "delicately blooming warm highlights",
+     "tags": [
+      "bloom"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "retromedia.composite-color",
+   "name": "Composite Color Fringe",
+   "description": "A restrained analog composite-video color separation overlay.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "video",
+    "analog",
+    "chroma",
+    "grade"
+   ],
+   "claims": {
+    "palette": "retromedia.composite-color",
+    "texture": "retromedia.composite-color"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "subtle red and blue channel offset",
+     "tags": [
+      "chromatic aberration",
+      "color fringing"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "softened fine chroma",
+     "tags": [
+      "blurry"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "retromedia.photo-lab-cyan",
+   "name": "Photo-Lab Cyan Shift",
+   "description": "Mild aged consumer-print cyan balance with warm paper whites.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "photolab",
+    "cyan",
+    "print",
+    "grade"
+   ],
+   "claims": {
+    "palette": "retromedia.photo-lab-cyan",
+    "texture": "retromedia.photo-lab-cyan"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "muted cyan shadows, ivory highlights",
+     "tags": [
+      "cyan theme",
+      "faded colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "subtle chemical unevenness",
+     "tags": [
+      "film grain"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "psychsurreal.uncertain-daylight",
+   "name": "Uncertain Daylight",
+   "description": "Pale near-real daylight with faint opposing temperature cues.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "daylight",
+    "pale",
+    "uncanny",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "psychsurreal.uncertain-daylight",
+    "palette": "psychsurreal.uncertain-daylight"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "neutral gray daylight with green-cyan shadows",
+     "tags": [
+      "desaturated",
+      "green tint"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "soft nondirectional light",
+     "tags": [
+      "flat lighting"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "psychsurreal.cobalt-interruption",
+   "name": "Cobalt Interruption",
+   "description": "Restricted cool color accented by a localized unreal blue.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "cobalt",
+    "cool",
+    "dream",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "psychsurreal.cobalt-interruption",
+    "palette": "psychsurreal.cobalt-interruption"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "one cobalt accent among concrete and paper neutrals",
+     "tags": [
+      "blue accent",
+      "neutral colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "soft blue spill on nearby shadow",
+     "tags": [
+      "color spill"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "psychsurreal.warm-unreal",
+   "name": "Warm but Unreal",
+   "description": "Domestic amber warmth with a small discordant cool cast in the distance.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "warm",
+    "discordant",
+    "dream",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "psychsurreal.warm-unreal",
+    "palette": "psychsurreal.warm-unreal"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "warm ivory and faded amber with cold gray",
+     "tags": [
+      "warm tones",
+      "faded colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "credible warm light, unresolved cool distance",
+     "tags": [
+      "warm and cool"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "metaphysical.faded-ochre",
+   "name": "Faded Ochre",
+   "description": "Old paint yellow-ochre warmth with stable shadow neutrals.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "ochre",
+    "oldpaint",
+    "grade",
+    "pigment"
+   ],
+   "claims": {
+    "palette": "metaphysical.faded-ochre",
+    "texture": "metaphysical.faded-ochre"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "weathered yellow ochre and parchment cream",
+     "tags": [
+      "yellow theme",
+      "faded colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "faint chalky pigment breakup",
+     "tags": [
+      "matte"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "metaphysical.jade-wine",
+   "name": "Jade and Wine",
+   "description": "Muted cool green balanced against deep burgundy and antique brass.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "jade",
+    "wine",
+    "jewel",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "metaphysical.jade-wine",
+    "palette": "metaphysical.jade-wine"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "tarnished jade with wine red and brass",
+     "tags": [
+      "jewel tones",
+      "green theme"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "controlled warm highlights",
+     "tags": [
+      "warm lighting"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "metaphysical.twilight-stone",
+   "name": "Twilight Stone",
+   "description": "Muted stone, ash-blue and gentle violet dusk without obvious neon color.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "twilight",
+    "stone",
+    "ash",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "metaphysical.twilight-stone",
+    "palette": "metaphysical.twilight-stone"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "stone neutrals toward ash blue and violet-gray",
+     "tags": [
+      "muted color",
+      "cool tones"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "soft horizontal twilight",
+     "tags": [
+      "twilight"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "visionary.opal-spectrum",
+   "name": "Opal Spectrum",
+   "description": "Subtle opal iridescence with restrained warm-cool separation.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "opal",
+    "iridescent",
+    "spectrum",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "visionary.opal-spectrum",
+    "palette": "visionary.opal-spectrum"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "opalescent blue with pale coral edges",
+     "tags": [
+      "iridescent",
+      "pastel colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "soft localized iridescence",
+     "tags": [
+      "shimmer"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "visionary.deep-void-blue",
+   "name": "Deep Void Blue",
+   "description": "Dark blue tonal field illuminated by sparse crystalline cyan accents.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "void",
+    "blue",
+    "deep",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "visionary.deep-void-blue",
+    "palette": "visionary.deep-void-blue"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "indigo-black with crystalline cyan edges",
+     "tags": [
+      "dark blue",
+      "cyan accent"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "tiny isolated bright regions",
+     "tags": [
+      "dark"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "visionary.amber-ether",
+   "name": "Amber Ether",
+   "description": "Warm luminous atmosphere against restrained mineral-gray surroundings.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "amber",
+    "warm",
+    "ether",
+    "grade"
+   ],
+   "claims": {
+    "palette": "visionary.amber-ether",
+    "texture": "visionary.amber-ether"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "honey amber against pale mineral gray",
+     "tags": [
+      "orange theme",
+      "muted color"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "fine transparent pigment haze",
+     "tags": [
+      "hazy"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "weirdcore.acid-primary",
+   "name": "Acid Primary Clash",
+   "description": "Unmodulated primary and fluorescent hues for maximal visual friction.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "acid",
+    "primary",
+    "fluorescent",
+    "grade"
+   ],
+   "claims": {
+    "lighting": "weirdcore.acid-primary",
+    "palette": "weirdcore.acid-primary"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "sharp primaries with fluorescent accents",
+     "tags": [
+      "primary colors",
+      "neon colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "stark electronic highlights",
+     "tags": [
+      "high contrast"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "weirdcore.washed-lcd",
+   "name": "Washed LCD",
+   "description": "Old flat-panel backlight behavior with lifted blacks and pale cyan.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "lcd",
+    "washed",
+    "digital",
+    "grade"
+   ],
+   "claims": {
+    "palette": "weirdcore.washed-lcd",
+    "texture": "weirdcore.washed-lcd"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "charcoal gray and pale cyan",
+     "tags": [
+      "cyan theme",
+      "washed out"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "subtle subpixel fringing",
+     "tags": [
+      "chromatic aberration"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "weirdcore.printer-misalignment",
+   "name": "Printer Misregistration",
+   "description": "CMY channel offsets applied as a printed-image treatment.",
+   "category": "grades",
+   "kind": "grade",
+   "tags": [
+    "print",
+    "offset",
+    "cmyk",
+    "grade"
+   ],
+   "claims": {
+    "palette": "weirdcore.printer-misalignment",
+    "texture": "weirdcore.printer-misalignment"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "cheap print inks, imperfect gray balance",
+     "tags": [
+      "cmyk",
+      "color shift"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "slight cyan-magenta separation",
+     "tags": [
+      "misregistration"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  }
+ ]
 }

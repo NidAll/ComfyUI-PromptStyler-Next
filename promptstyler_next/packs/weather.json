@@ -1,0 +1,591 @@
+{
+ "schema_version": 1,
+ "id": "next.weather",
+ "version": "2.0.0",
+ "name": "Weather and atmosphere",
+ "description": "Weather, air and daylight treatments for any subject.",
+ "license": "CC0-1.0",
+ "author": "PromptStyler Next contributors",
+ "styles": [
+  {
+   "id": "weatherfield.frontalrain",
+   "name": "Frontal-rain observation",
+   "description": "A landscape-photography treatment under a broad frontal-rain atmosphere. Flatten the distant illumination while preserving nearby form separation.",
+   "category": "weather/weather",
+   "kind": "style",
+   "tags": [
+    "rain front",
+    "soft visibility",
+    "muted distance",
+    "wet atmosphere"
+   ],
+   "claims": {
+    "lighting": "weatherfield.frontalrain",
+    "medium": "weatherfield.frontalrain",
+    "texture": "weatherfield.frontalrain"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "rainy landscape photograph",
+     "tags": [
+      "rain",
+      "landscape"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "flat overcast distance light",
+     "tags": [
+      "overcast"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "wet reflective surfaces",
+     "tags": [
+      "wet"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "sdxl",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "weatherfield.coastalmist",
+   "name": "Coastal-mist intervals",
+   "description": "A coastal-mist landscape interpretation. Separate existing depth layers through gradually softened intervals.",
+   "category": "weather/weather",
+   "kind": "style",
+   "tags": [
+    "coastal mist",
+    "layered distance",
+    "soft horizon",
+    "cool neutral"
+   ],
+   "claims": {
+    "composition": "weatherfield.coastalmist",
+    "medium": "weatherfield.coastalmist",
+    "palette": "weatherfield.coastalmist"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "coastal mist landscape",
+     "tags": [
+      "mist",
+      "coast"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "depth layers fading into mist",
+     "tags": [
+      "atmospheric perspective"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "cool neutrals with small warm accents",
+     "tags": [
+      "cool colors"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "sdxl",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "weatherfield.heatveil",
+   "name": "Heat-veil distance",
+   "description": "A landscape interpretation viewed through a restrained heat veil. Soften fine detail progressively with distance while keeping nearby edges intact.",
+   "category": "weather/weather",
+   "kind": "style",
+   "tags": [
+    "heat haze",
+    "distance compression",
+    "warm air",
+    "soft detail"
+   ],
+   "claims": {
+    "medium": "weatherfield.heatveil",
+    "palette": "weatherfield.heatveil",
+    "texture": "weatherfield.heatveil"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "landscape through heat haze",
+     "tags": [
+      "heat haze",
+      "landscape"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "detail softening with distance",
+     "tags": [
+      "haze"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "dry warm atmosphere",
+     "tags": [
+      "warm tones"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "sdxl",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "weatherfield.frostmorning",
+   "name": "Frost-morning stillness",
+   "description": "A quiet cold-morning landscape interpretation. Use pale directional daylight with gentle cool reflected fill.",
+   "category": "weather/weather",
+   "kind": "style",
+   "tags": [
+    "frost morning",
+    "cold daylight",
+    "quiet contrast",
+    "pale highlights"
+   ],
+   "claims": {
+    "lighting": "weatherfield.frostmorning",
+    "medium": "weatherfield.frostmorning",
+    "palette": "weatherfield.frostmorning"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "frosty morning landscape",
+     "tags": [
+      "frost",
+      "morning"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "pale low sunlight with cool fill",
+     "tags": [
+      "sunrise"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "subdued, lightly desaturated brights",
+     "tags": [
+      "desaturated"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "sdxl",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "weatherfield.snowlight",
+   "name": "Reflected-snow illumination",
+   "description": "A landscape lighting treatment informed by diffuse snow reflection. Lift lower-facing existing planes with broad cool reflected light.",
+   "category": "weather/weather",
+   "kind": "style",
+   "tags": [
+    "snow light",
+    "upward fill",
+    "soft contrast",
+    "cool white"
+   ],
+   "claims": {
+    "lighting": "weatherfield.snowlight",
+    "medium": "weatherfield.snowlight",
+    "palette": "weatherfield.snowlight"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "snowy landscape in reflected light",
+     "tags": [
+      "snow",
+      "winter"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "broad cool light reflected from snow",
+     "tags": [
+      "soft lighting"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "carefully separated pale neutrals",
+     "tags": [
+      "white theme"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "sdxl",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "weatherfield.bluehour",
+   "name": "Blue-hour spatial quiet",
+   "description": "A blue-hour landscape interpretation with quiet spatial separation. Let cool ambient color dominate while preserving subtle local hue differences.",
+   "category": "weather/weather",
+   "kind": "style",
+   "tags": [
+    "blue hour",
+    "low luminance",
+    "cool ambient",
+    "held detail"
+   ],
+   "claims": {
+    "lighting": "weatherfield.bluehour",
+    "medium": "weatherfield.bluehour",
+    "palette": "weatherfield.bluehour"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "blue hour landscape",
+     "tags": [
+      "blue hour",
+      "twilight"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "cool ambient blue dominance",
+     "tags": [
+      "blue theme"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "readable low-level detail",
+     "tags": [
+      "dim lighting"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "sdxl",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "weatherfield.afterrain",
+   "name": "After-rain surface response",
+   "description": "A landscape interpretation with clear after-rain illumination. Let existing smooth wet areas reflect softly while rough areas remain granular.",
+   "category": "weather/weather",
+   "kind": "style",
+   "tags": [
+    "after rain",
+    "wet surfaces",
+    "clear air",
+    "reflected light"
+   ],
+   "claims": {
+    "lighting": "weatherfield.afterrain",
+    "medium": "weatherfield.afterrain",
+    "texture": "weatherfield.afterrain"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "landscape after rain",
+     "tags": [
+      "after rain",
+      "wet"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "soft reflections on wet ground",
+     "tags": [
+      "puddle"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "clean broad light",
+     "tags": [
+      "clear sky"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "sdxl",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "weatherfield.seafog",
+   "name": "Sea-fog dissolution",
+   "description": "A landscape interpretation that dissolves gently into sea-fog tones. Let the farthest existing contours merge into a continuous atmospheric field.",
+   "category": "weather/weather",
+   "kind": "style",
+   "tags": [
+    "sea fog",
+    "soft edge",
+    "limited depth",
+    "cool field"
+   ],
+   "claims": {
+    "composition": "weatherfield.seafog",
+    "medium": "weatherfield.seafog",
+    "palette": "weatherfield.seafog"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "sea fog landscape",
+     "tags": [
+      "fog",
+      "sea"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "far contours merging into fog",
+     "tags": [
+      "atmospheric perspective"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "narrow range of cool grays",
+     "tags": [
+      "grey theme"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "sdxl",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "weatherfield.canopylight",
+   "name": "Canopy-filtered illumination",
+   "description": "A landscape lighting treatment with softly filtered overhead illumination. Place restrained irregular light patches across the existing forms.",
+   "category": "weather/weather",
+   "kind": "style",
+   "tags": [
+    "canopy light",
+    "broken shade",
+    "soft patches",
+    "ambient fill"
+   ],
+   "claims": {
+    "lighting": "weatherfield.canopylight",
+    "medium": "weatherfield.canopylight",
+    "texture": "weatherfield.canopylight"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "forest canopy light",
+     "tags": [
+      "forest",
+      "dappled sunlight"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "irregular patches of filtered light",
+     "tags": [
+      "light rays"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "legible detail in light and shade",
+     "tags": [
+      "detailed"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "sdxl",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "weatherfield.poststorm",
+   "name": "Post-storm tonal opening",
+   "description": "A landscape interpretation after a tonal clearing in the weather. Balance a brighter existing depth interval against still-subdued surroundings.",
+   "category": "weather/weather",
+   "kind": "style",
+   "tags": [
+    "post storm",
+    "clear interval",
+    "grounded contrast",
+    "quiet atmosphere"
+   ],
+   "claims": {
+    "composition": "weatherfield.poststorm",
+    "lighting": "weatherfield.poststorm",
+    "medium": "weatherfield.poststorm"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "landscape after a storm",
+     "tags": [
+      "after storm",
+      "clouds"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "bright break in dark clouds",
+     "tags": [
+      "sunbeam"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "composition",
+     "text": "clearing sky over subdued land",
+     "tags": [
+      "dramatic sky"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "sdxl",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  }
+ ]
+}

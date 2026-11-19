@@ -1,0 +1,494 @@
+{
+ "schema_version": 1,
+ "id": "next.jewelry",
+ "version": "2.0.0",
+ "name": "Jewelry craft",
+ "description": "Metalwork, gem setting and small-object craft treatments.",
+ "license": "CC0-1.0",
+ "author": "PromptStyler Next contributors",
+ "styles": [
+  {
+   "id": "jewelrycraft.granulation",
+   "name": "Granulated surface rhythm",
+   "description": "A craft interpretation emphasizing small granular surface relief. Keep the granular detail varied but scaled consistently to the existing form.",
+   "category": "jewelry/jewelry",
+   "kind": "style",
+   "tags": [
+    "granulation",
+    "small spheres",
+    "worked surface",
+    "restrained sparkle"
+   ],
+   "claims": {
+    "lighting": "jewelrycraft.granulation",
+    "medium": "jewelrycraft.granulation",
+    "texture": "jewelrycraft.granulation"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "granulated gold jewelry",
+     "tags": [
+      "granulation",
+      "gold"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "tiny even metal granules",
+     "tags": [
+      "beads"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "subdued highlights",
+     "tags": [
+      "soft lighting"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "jewelrycraft.guilloche",
+   "name": "Engine-turned linework",
+   "description": "An engine-turned metalwork interpretation of the existing surface. Let fine intersecting cut curves follow a coherent repeated construction.",
+   "category": "jewelry/jewelry",
+   "kind": "style",
+   "tags": [
+    "engine turning",
+    "guilloche",
+    "intersecting cuts",
+    "coherent curves"
+   ],
+   "claims": {
+    "lighting": "jewelrycraft.guilloche",
+    "medium": "jewelrycraft.guilloche",
+    "texture": "jewelrycraft.guilloche"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "guilloche engraved metal",
+     "tags": [
+      "guilloche",
+      "engraving",
+      "jewelry"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "fine intersecting engine-turned lines",
+     "tags": [
+      "pattern"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "angle-dependent reflections",
+     "tags": [
+      "metallic"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "jewelrycraft.champleve",
+   "name": "Recessed-enamel planes",
+   "description": "A recessed-enamel craft interpretation. Let existing colored areas sit slightly below their surrounding planes.",
+   "category": "jewelry/jewelry",
+   "kind": "style",
+   "tags": [
+    "champleve",
+    "recessed color",
+    "metal ground",
+    "shallow depth"
+   ],
+   "claims": {
+    "lighting": "jewelrycraft.champleve",
+    "medium": "jewelrycraft.champleve",
+    "texture": "jewelrycraft.champleve"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "champleve enamel metalwork",
+     "tags": [
+      "enamel",
+      "cloisonne",
+      "jewelry"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "color sunk into metal recesses",
+     "tags": [
+      "inlay"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "reflective metal, glassy enamel",
+     "tags": [
+      "glossy"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "jewelrycraft.plique",
+   "name": "Translucent-enamel light",
+   "description": "A translucent-enamel interpretation of the existing forms. Transmit restrained light through thin color areas without uniform glow.",
+   "category": "jewelry/jewelry",
+   "kind": "style",
+   "tags": [
+    "translucent enamel",
+    "thin color",
+    "edge structure",
+    "transmitted glow"
+   ],
+   "claims": {
+    "lighting": "jewelrycraft.plique",
+    "medium": "jewelrycraft.plique",
+    "palette": "jewelrycraft.plique"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "plique-a-jour translucent enamel",
+     "tags": [
+      "stained glass",
+      "enamel"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "light passing through thin color",
+     "tags": [
+      "backlighting"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "distinct transparent colors",
+     "tags": [
+      "translucent"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "jewelrycraft.mokume",
+   "name": "Layered-metal grain",
+   "description": "A layered-metal material interpretation. Let flowing layer boundaries follow the existing curved surfaces.",
+   "category": "jewelry/jewelry",
+   "kind": "style",
+   "tags": [
+    "layered metal",
+    "mokume",
+    "flowing grain",
+    "subtle contrast"
+   ],
+   "claims": {
+    "medium": "jewelrycraft.mokume",
+    "palette": "jewelrycraft.mokume",
+    "texture": "jewelrycraft.mokume"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "mokume-gane layered metal",
+     "tags": [
+      "mokume-gane",
+      "metal",
+      "jewelry"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "flowing wood-grain layer lines",
+     "tags": [
+      "wood grain"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "close metal tones",
+     "tags": [
+      "metallic"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "jewelrycraft.hammered",
+   "name": "Hammered reflective planes",
+   "description": "A hammered-metal craft interpretation. Vary the small worked facets without making them randomly dented.",
+   "category": "jewelry/jewelry",
+   "kind": "style",
+   "tags": [
+    "hammered metal",
+    "small facets",
+    "tool evidence",
+    "broken reflection"
+   ],
+   "claims": {
+    "lighting": "jewelrycraft.hammered",
+    "medium": "jewelrycraft.hammered",
+    "texture": "jewelrycraft.hammered"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "hammered metal jewelry",
+     "tags": [
+      "hammered metal",
+      "jewelry"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "small worked facets",
+     "tags": [
+      "metal texture"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "broad reflection broken into fragments",
+     "tags": [
+      "reflections"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "jewelrycraft.wiredrawn",
+   "name": "Drawn-wire precision",
+   "description": "A craft interpretation that emphasizes continuous drawn-wire structure. Keep the cross-section of thin existing forms consistent through curves.",
+   "category": "jewelry/jewelry",
+   "kind": "style",
+   "tags": [
+    "drawn wire",
+    "continuous line",
+    "even section",
+    "precise curve"
+   ],
+   "claims": {
+    "lighting": "jewelrycraft.wiredrawn",
+    "medium": "jewelrycraft.wiredrawn",
+    "texture": "jewelrycraft.wiredrawn"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "fine wirework jewelry",
+     "tags": [
+      "wire",
+      "filigree"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "consistent thin wire through curves",
+     "tags": [
+      "lineart"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "fine continuous highlight",
+     "tags": [
+      "shiny"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "jewelrycraft.cabochon",
+   "name": "Cabochon volume study",
+   "description": "A smooth cabochon-like craft interpretation. Use one broad curved reflection to describe the existing rounded form.",
+   "category": "jewelry/jewelry",
+   "kind": "style",
+   "tags": [
+    "cabochon",
+    "smooth curvature",
+    "depth of color",
+    "broad reflection"
+   ],
+   "claims": {
+    "lighting": "jewelrycraft.cabochon",
+    "medium": "jewelrycraft.cabochon",
+    "palette": "jewelrycraft.cabochon"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "polished cabochon gemstone",
+     "tags": [
+      "cabochon",
+      "gem"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "one broad curved reflection",
+     "tags": [
+      "glossy"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "color deepening toward the center",
+     "tags": [
+      "gradient"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "jewelrycraft.facetwork",
+   "name": "Facet-junction precision",
+   "description": "A craft interpretation emphasizing the existing planar junctions. Keep adjacent planes and their intersections geometrically coherent.",
+   "category": "jewelry/jewelry",
+   "kind": "style",
+   "tags": [
+    "facetwork",
+    "plane junction",
+    "clean edge",
+    "controlled brilliance"
+   ],
+   "claims": {
+    "composition": "jewelrycraft.facetwork",
+    "lighting": "jewelrycraft.facetwork",
+    "medium": "jewelrycraft.facetwork"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "faceted gemstone jewelry",
+     "tags": [
+      "faceted gem",
+      "gem"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "crisp planar junctions",
+     "tags": [
+      "geometric"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "few clear reflection regions",
+     "tags": [
+      "sparkle"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "jewelrycraft.cameo",
+   "name": "Cameo layered relief",
+   "description": "A cameo-like relief interpretation of the existing forms. Use two close but clearly separated material tones.",
+   "category": "jewelry/jewelry",
+   "kind": "style",
+   "tags": [
+    "cameo",
+    "layered relief",
+    "two-tone material",
+    "profile clarity"
+   ],
+   "claims": {
+    "medium": "jewelrycraft.cameo",
+    "palette": "jewelrycraft.cameo",
+    "texture": "jewelrycraft.cameo"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "carved cameo relief",
+     "tags": [
+      "cameo",
+      "relief"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "two close material tones",
+     "tags": [
+      "two-tone"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "smooth raised contours",
+     "tags": [
+      "carved"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  }
+ ]
+}

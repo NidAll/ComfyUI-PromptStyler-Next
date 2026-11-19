@@ -26,7 +26,7 @@ test('search matches separate words in any metadata field and ignores accents', 
 
 test('generation restores workflow selection without prompts and honors paused/video recipes', () => {
   globalThis.localStorage = { getItem: () => JSON.stringify({ selections: { 'saved-workflow': { styles: [layer('cinema.noir')], locked_axes: ['composition'], model: 'moss-image' }, paused: { enabled: false, styles: [layer('cinema.noir')] } } }) };
-  assert.deepEqual(studioPromptStylerSelection({ id: 'saved-workflow' }), { schema_version: 1, model: 'moss-image', styles: [{ id: 'cinema.noir', intensity: 0.75 }], conflict_policy: 'last_wins', locked_axes: ['composition'] });
+  assert.deepEqual(studioPromptStylerSelection({ id: 'saved-workflow' }), { schema_version: 1, model: 'moss-image', styles: [{ id: 'cinema.noir', intensity: 0.75 }], conflict_policy: 'last_wins', locked_axes: ['composition'], prompt_conflicts: 'replace' });
   assert.equal(studioPromptStylerSelection({ id: 'paused' }), undefined);
   assert.equal(studioPromptStylerSelection({ id: 'saved-workflow', kind: 'video' }), undefined);
   globalThis.localStorage = { getItem: () => '{bad' };
@@ -39,7 +39,7 @@ test('replay restores exact ordered strengths and uses the normal persisted sele
   const writes = new Map();
   globalThis.localStorage = { getItem: (key) => writes.get(key) || null, setItem: (key, value) => writes.set(key, value) };
   const profile = { id: 'replayed-workflow' };
-  const recipe = { schema_version: 1, model: 'fibo-edit', styles: [{ id: 'cinema.noir', intensity: 0.4 }, { id: 'anime.cel', intensity: 1 }], conflict_policy: 'first_wins', locked_axes: ['composition', 'palette'] };
+  const recipe = { schema_version: 1, model: 'fibo-edit', styles: [{ id: 'cinema.noir', intensity: 0.4 }, { id: 'anime.cel', intensity: 1 }], conflict_policy: 'first_wins', locked_axes: ['composition', 'palette'], prompt_conflicts: 'replace' };
   restoreStudioPromptStylerSelection(profile, recipe);
   assert.deepEqual(studioPromptStylerSelection(profile), recipe);
   const saved = JSON.parse(writes.get('promptstyler-next.studiio.v1'));
@@ -59,7 +59,7 @@ test('full saved recipe restores paused state and mixing atomically', () => {
   const writes = new Map();
   globalThis.localStorage = { getItem: (key) => writes.get(key) || null, setItem: (key, value) => writes.set(key, value) };
   const profile = { id: 'complete-state' };
-  const state = { enabled: false, mix: true, model: '', conflict_policy: 'first_wins', locked_axes: ['palette'], styles: [layer('cinema.noir', .4), layer('anime.cel', .8)] };
+  const state = { enabled: false, mix: true, model: '', conflict_policy: 'first_wins', locked_axes: ['palette'], prompt_conflicts: 'replace', styles: [layer('cinema.noir', .4), layer('anime.cel', .8)] };
   restoreStudioPromptStylerState(profile, state);
   assert.deepEqual(getStudioPromptStylerState(profile), state);
   assert.equal(studioPromptStylerSelection(profile), undefined);
@@ -83,5 +83,32 @@ test('updating one workflow does not overwrite changes made in another tab', () 
   writes.set(key, JSON.stringify(remote));
   restoreStudioPromptStylerSelection(a, { styles: [layer('cinema.noir', 0.4)] });
   assert.equal(JSON.parse(writes.get(key)).selections[b.id].styles[0].intensity, 0.2);
+  delete globalThis.localStorage;
+});
+
+test('strength names map to engine tiers and kinds start at their defaults', async () => {
+  const { STRENGTHS, strengthOf, DEFAULT_STRENGTH, MAX_EFFECTS } = await import('../react-panel.mjs');
+  assert.deepEqual(STRENGTHS.map(({ label, value }) => [label, value]), [['Subtle', 0.25], ['Balanced', 0.5], ['Strong', 1]]);
+  // Subtle stays below the 0.4 tier, Balanced below 0.75, Strong reaches every tier.
+  assert.equal(strengthOf(0.25).label, 'Subtle');
+  assert.equal(strengthOf(0.4).label, 'Balanced');
+  assert.equal(strengthOf(0.75).label, 'Strong');
+  assert.deepEqual(DEFAULT_STRENGTH, { style: 1, grade: 0.5, modifier: 0.25 });
+  assert.equal(MAX_EFFECTS, 2);
+});
+
+test('one look per model family, migrating the old workflow key', () => {
+  const writes = new Map([['promptstyler-next.studiio.v1', JSON.stringify({ selections: { 'old-anima-workflow': { styles: [layer('anime.cel', 1)] } } })]]);
+  globalThis.localStorage = { getItem: (key) => writes.get(key) || null, setItem: (key, value) => writes.set(key, value) };
+  const first = { id: 'old-anima-workflow', family: 'anima' };
+  const second = { id: 'anima-lightning-4step', family: 'anima', capabilities: { promptFromImage: true } };
+  assert.deepEqual(studioPromptStylerSelection(first).styles, [{ id: 'anime.cel', intensity: 1 }]);
+  restoreStudioPromptStylerSelection(first, { styles: [{ id: 'cinema.noir', intensity: 0.5 }], prompt_conflicts: 'keep' });
+  // Same family shares the look; Image Clone always replaces caption style words.
+  assert.deepEqual(studioPromptStylerSelection(second).styles, [{ id: 'cinema.noir', intensity: 0.5 }]);
+  assert.equal(studioPromptStylerSelection(first).prompt_conflicts, 'keep');
+  assert.equal(studioPromptStylerSelection(second).prompt_conflicts, 'replace');
+  assert.ok(JSON.parse(writes.get('promptstyler-next.studiio.v1')).selections['family:anima']);
+  assert.throws(() => restoreStudioPromptStylerSelection(first, { styles: [], prompt_conflicts: 'sometimes' }), TypeError);
   delete globalThis.localStorage;
 });

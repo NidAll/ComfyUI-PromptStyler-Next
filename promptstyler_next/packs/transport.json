@@ -1,1165 +1,1152 @@
 {
-  "schema_version": 1,
-  "id": "next.transport",
-  "version": "1.0.0",
-  "name": "Transport and mobility design",
-  "description": "Visual directions for supplied vehicles and mobility concepts, from technical studies to historical presentation.",
-  "license": "CC0-1.0",
-  "author": "PromptStyler Next contributors",
-  "styles": [
+ "schema_version": 1,
+ "id": "next.transport",
+ "version": "2.0.0",
+ "name": "Transport and mobility design",
+ "description": "Visual directions for supplied vehicles and mobility concepts, from technical studies to historical presentation.",
+ "license": "CC0-1.0",
+ "author": "PromptStyler Next contributors",
+ "styles": [
+  {
+   "id": "transport.coachwork-profile",
+   "name": "Coachwork profile study",
+   "description": "Use a carefully drawn coachwork-profile study. Keep the supplied vehicle silhouette continuous and readable.",
+   "category": "transport/automotive",
+   "kind": "style",
+   "tags": [
+    "coachwork",
+    "vehicle",
+    "profile",
+    "design"
+   ],
+   "claims": {
+    "composition": "transport.coachwork-profile",
+    "medium": "transport.coachwork-profile",
+    "palette": "transport.coachwork-profile",
+    "texture": "transport.coachwork-profile"
+   },
+   "clauses": [
     {
-      "id": "transport.coachwork-profile",
-      "name": "Coachwork profile study",
-      "description": "Use a carefully drawn coachwork-profile study. Keep the supplied vehicle silhouette continuous and readable.",
-      "category": "transport/automotive",
-      "kind": "style",
-      "tags": [
-        "coachwork",
-        "vehicle",
-        "profile",
-        "design"
-      ],
-      "claims": {
-        "medium": "transport.coachwork-profile",
-        "composition": "transport-coachwork-profile",
-        "palette": "transport-coachwork-profile",
-        "texture": "transport.coachwork-profile"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a carefully drawn coachwork-profile study",
-          "tags": [
-            "coachwork side profile"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Keep the supplied vehicle silhouette continuous and readable",
-          "tags": [
-            "continuous vehicle silhouette"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Reveal panel divisions with fine restrained linework",
-          "tags": [
-            "fine panel divisions"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use muted body color against warm drafting paper",
-          "tags": [
-            "muted body color",
-            "drafting paper"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "medium",
+     "text": "coachwork profile drawing",
+     "tags": [
+      "car",
+      "from side"
+     ],
+     "min_intensity": 0.0
     },
     {
-      "id": "transport.clay-surface",
-      "name": "Automotive clay surface",
-      "description": "Render the vehicle as an automotive clay-design study. Read the supplied proportions through broad surface transitions.",
-      "category": "transport/automotive",
-      "kind": "style",
-      "tags": [
-        "automotive",
-        "clay",
-        "surface",
-        "design"
-      ],
-      "claims": {
-        "medium": "transport.clay-surface",
-        "composition": "transport-clay-surface",
-        "palette": "transport-clay-surface",
-        "texture": "transport.clay-surface"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Render the vehicle as an automotive clay-design study",
-          "tags": [
-            "automotive clay model"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Read the supplied proportions through broad surface transitions",
-          "tags": [
-            "broad vehicle surfaces"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Use long soft reflections that reveal curvature",
-          "tags": [
-            "long soft reflections"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use warm brown clay against cool neutral gray",
-          "tags": [
-            "brown modeling clay",
-            "cool gray"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "composition",
+     "text": "continuous vehicle silhouette",
+     "tags": [
+      "side view"
+     ],
+     "min_intensity": 0.4
     },
     {
-      "id": "transport.tape-drawing",
-      "name": "Full-scale tape drawing",
-      "description": "Use a full-scale automotive tape-drawing aesthetic. Keep the supplied vehicle's primary proportion lines decisive.",
-      "category": "transport/automotive",
-      "kind": "style",
-      "tags": [
-        "tape",
-        "drawing",
-        "vehicle",
-        "profile"
-      ],
-      "claims": {
-        "medium": "transport.tape-drawing",
-        "composition": "transport-tape-drawing",
-        "palette": "transport-tape-drawing",
-        "texture": "transport.tape-drawing"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a full-scale automotive tape-drawing aesthetic",
-          "tags": [
-            "automotive tape drawing"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Keep the supplied vehicle's primary proportion lines decisive",
-          "tags": [
-            "decisive proportion lines"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Use crisp taped curves with sparse supporting marks",
-          "tags": [
-            "crisp tape curves"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use black lines on a pale neutral wall",
-          "tags": [
-            "black tape",
-            "pale neutral"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "texture",
+     "text": "fine panel linework",
+     "tags": [
+      "lineart"
+     ],
+     "min_intensity": 0.75
     },
     {
-      "id": "transport.marker-concept",
-      "name": "Marker transport sketch",
-      "description": "Use an expressive transport-design marker sketch. Emphasize the supplied form through confident perspective lines.",
-      "category": "transport/automotive",
-      "kind": "style",
-      "tags": [
-        "marker",
-        "vehicle",
-        "concept",
-        "sketch"
-      ],
-      "claims": {
-        "medium": "transport.marker-concept",
-        "composition": "transport-marker-concept",
-        "palette": "transport-marker-concept",
-        "texture": "transport.marker-concept"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use an expressive transport-design marker sketch",
-          "tags": [
-            "transport marker sketch"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Emphasize the supplied form through confident perspective lines",
-          "tags": [
-            "confident vehicle perspective"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Combine broad marker tone with selective edge highlights",
-          "tags": [
-            "marker tone",
-            "edge highlights"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use cool grays with one muted body-color accent",
-          "tags": [
-            "cool gray",
-            "body color accent"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.pencil-mechanics",
-      "name": "Mechanical pencil vehicle study",
-      "description": "Use a meticulous mechanical-pencil transport study. Make supplied structure and wheel relationships legible.",
-      "category": "transport/technical",
-      "kind": "style",
-      "tags": [
-        "vehicle",
-        "pencil",
-        "mechanical",
-        "study"
-      ],
-      "claims": {
-        "medium": "transport.pencil-mechanics",
-        "composition": "transport-pencil-mechanics",
-        "palette": "transport-pencil-mechanics",
-        "texture": "transport.pencil-mechanics"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a meticulous mechanical-pencil transport study",
-          "tags": [
-            "pencil vehicle study"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Make supplied structure and wheel relationships legible",
-          "tags": [
-            "structural vehicle proportions"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Build volume from fine overlapping pencil strokes",
-          "tags": [
-            "fine pencil layering"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Keep graphite tonal variation on warm white",
-          "tags": [
-            "graphite",
-            "warm white"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.wind-tunnel",
-      "name": "Wind-tunnel presentation",
-      "description": "Use a restrained wind-tunnel design-presentation style. Keep the supplied vehicle silhouette distinct from flow visualization.",
-      "category": "transport/technical",
-      "kind": "style",
-      "tags": [
-        "wind-tunnel",
-        "flow",
-        "vehicle",
-        "aerodynamic"
-      ],
-      "claims": {
-        "medium": "transport.wind-tunnel",
-        "composition": "transport-wind-tunnel",
-        "palette": "transport-wind-tunnel",
-        "texture": "transport.wind-tunnel"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a restrained wind-tunnel design-presentation style",
-          "tags": [
-            "wind tunnel presentation"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Keep the supplied vehicle silhouette distinct from flow visualization",
-          "tags": [
-            "vehicle flow separation"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Use thin continuous flow paths over clean body surfaces",
-          "tags": [
-            "thin flow paths",
-            "clean surfaces"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use neutral body tones with a subtle cool flow accent",
-          "tags": [
-            "neutral body",
-            "cool flow accent"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.railway-works",
-      "name": "Railway works portrait",
-      "description": "Use an industrial railway-works portrait treatment. Keep the supplied vehicle's long structural rhythm readable.",
-      "category": "transport/rail",
-      "kind": "style",
-      "tags": [
-        "railway",
-        "works",
-        "industrial",
-        "vehicle"
-      ],
-      "claims": {
-        "medium": "transport.railway-works",
-        "composition": "transport-railway-works",
-        "palette": "transport-railway-works",
-        "texture": "transport.railway-works"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use an industrial railway-works portrait treatment",
-          "tags": [
-            "railway works photograph"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Keep the supplied vehicle's long structural rhythm readable",
-          "tags": [
-            "longitudinal vehicle rhythm"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Reveal rivets paint wear and large metal planes",
-          "tags": [
-            "rivets",
-            "paint wear",
-            "metal planes"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use muted iron red gray and soot-black",
-          "tags": [
-            "iron red",
-            "gray",
-            "soot black"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.railway-cutaway",
-      "name": "Rail vehicle cutaway",
-      "description": "Use a clear rail-vehicle cutaway illustration. Expose the supplied interior while preserving exterior proportions.",
-      "category": "transport/rail",
-      "kind": "style",
-      "tags": [
-        "rail",
-        "cutaway",
-        "vehicle",
-        "engineering"
-      ],
-      "claims": {
-        "medium": "transport.railway-cutaway",
-        "composition": "transport-railway-cutaway",
-        "palette": "transport-railway-cutaway",
-        "texture": "transport.railway-cutaway"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a clear rail-vehicle cutaway illustration",
-          "tags": [
-            "rail vehicle cutaway"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Expose the supplied interior while preserving exterior proportions",
-          "tags": [
-            "proportional vehicle cutaway"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Keep section edges crisp and interior detail subordinate",
-          "tags": [
-            "crisp section edges"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use neutral structure with restrained functional color",
-          "tags": [
-            "neutral rail structure",
-            "functional color"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.transit-future",
-      "name": "Civic transit concept",
-      "description": "Use a calm civic-transit design-presentation style. Read the supplied vehicle through accessible open proportions.",
-      "category": "transport/public",
-      "kind": "style",
-      "tags": [
-        "transit",
-        "civic",
-        "public",
-        "design"
-      ],
-      "claims": {
-        "medium": "transport.transit-future",
-        "composition": "transport-transit-future",
-        "palette": "transport-transit-future",
-        "texture": "transport.transit-future"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a calm civic-transit design-presentation style",
-          "tags": [
-            "civic transit concept"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Read the supplied vehicle through accessible open proportions",
-          "tags": [
-            "open transit proportions"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Use matte body surfaces and controlled glass reflections",
-          "tags": [
-            "matte body",
-            "controlled glazing"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use light neutral bodywork with one civic accent",
-          "tags": [
-            "light neutral",
-            "civic accent"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.bicycle-frame",
-      "name": "Bicycle frame study",
-      "description": "Use a precise bicycle-frame design illustration. Make the supplied frame geometry clearly traceable.",
-      "category": "transport/cycle",
-      "kind": "style",
-      "tags": [
-        "bicycle",
-        "frame",
-        "geometry",
-        "design"
-      ],
-      "claims": {
-        "medium": "transport.bicycle-frame",
-        "composition": "transport-bicycle-frame",
-        "palette": "transport-bicycle-frame",
-        "texture": "transport.bicycle-frame"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a precise bicycle-frame design illustration",
-          "tags": [
-            "bicycle frame study"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Make the supplied frame geometry clearly traceable",
-          "tags": [
-            "traceable frame geometry"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Separate slender tubes joints and wheel edges cleanly",
-          "tags": [
-            "slender tubes",
-            "clean joints"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use dark linework with a single frame-color accent",
-          "tags": [
-            "dark lines",
-            "frame color"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.cycle-lifestyle",
-      "name": "Cycling editorial portrait",
-      "description": "Use an understated cycling-editorial treatment. Let the supplied bicycle and setting share a balanced frame.",
-      "category": "transport/cycle",
-      "kind": "style",
-      "tags": [
-        "cycling",
-        "editorial",
-        "vehicle",
-        "lifestyle"
-      ],
-      "claims": {
-        "medium": "transport.cycle-lifestyle",
-        "composition": "transport-cycle-lifestyle",
-        "palette": "transport-cycle-lifestyle",
-        "texture": "transport.cycle-lifestyle"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use an understated cycling-editorial treatment",
-          "tags": [
-            "cycling editorial photograph"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Let the supplied bicycle and setting share a balanced frame",
-          "tags": [
-            "balanced cycle framing"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Reveal road wear grips and material details without gloss",
-          "tags": [
-            "road wear",
-            "grip texture"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use muted outdoor color with restrained metal highlights",
-          "tags": [
-            "muted outdoor color"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.motorcycle-studio",
-      "name": "Motorcycle form studio",
-      "description": "Use a controlled motorcycle form-study photograph. Separate the supplied mechanical masses through directional light.",
-      "category": "transport/motorcycle",
-      "kind": "style",
-      "tags": [
-        "motorcycle",
-        "studio",
-        "mechanical",
-        "form"
-      ],
-      "claims": {
-        "medium": "transport.motorcycle-studio",
-        "composition": "transport-motorcycle-studio",
-        "palette": "transport-motorcycle-studio",
-        "texture": "transport.motorcycle-studio"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a controlled motorcycle form-study photograph",
-          "tags": [
-            "motorcycle studio study"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Separate the supplied mechanical masses through directional light",
-          "tags": [
-            "separated mechanical masses"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Distinguish rubber painted metal and machined edges",
-          "tags": [
-            "rubber",
-            "painted metal",
-            "machined edges"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use charcoal surroundings and descriptive machine color",
-          "tags": [
-            "charcoal studio",
-            "machine color"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.scooter-catalog",
-      "name": "Urban scooter catalog",
-      "description": "Use a restrained urban-mobility catalog treatment. Keep the supplied silhouette compact and plainly readable.",
-      "category": "transport/public",
-      "kind": "style",
-      "tags": [
-        "scooter",
-        "urban",
-        "catalog",
-        "mobility"
-      ],
-      "claims": {
-        "medium": "transport.scooter-catalog",
-        "composition": "transport-scooter-catalog",
-        "palette": "transport-scooter-catalog",
-        "texture": "transport.scooter-catalog"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a restrained urban-mobility catalog treatment",
-          "tags": [
-            "urban scooter catalog"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Keep the supplied silhouette compact and plainly readable",
-          "tags": [
-            "clear compact silhouette"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Use soft commercial light with visible material distinctions",
-          "tags": [
-            "soft light",
-            "material distinctions"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use pale urban neutrals and a muted vehicle accent",
-          "tags": [
-            "pale neutral",
-            "muted vehicle color"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.aviation-orthographic",
-      "name": "Aviation orthographic sheet",
-      "description": "Use an aviation orthographic-presentation style. Keep supplied views aligned at consistent scale.",
-      "category": "transport/aviation",
-      "kind": "style",
-      "tags": [
-        "aviation",
-        "orthographic",
-        "aircraft",
-        "drawing"
-      ],
-      "claims": {
-        "medium": "transport.aviation-orthographic",
-        "composition": "transport-aviation-orthographic",
-        "palette": "transport-aviation-orthographic",
-        "texture": "transport.aviation-orthographic"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use an aviation orthographic-presentation style",
-          "tags": [
-            "aircraft orthographic drawing"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Keep supplied views aligned at consistent scale",
-          "tags": [
-            "aligned orthographic views"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Use fine panel lines and restrained sectional emphasis",
-          "tags": [
-            "fine aircraft lines"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use graphite gray with pale drafting blue",
-          "tags": [
-            "graphite",
-            "drafting blue"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.airfield-documentary",
-      "name": "Airfield documentary frame",
-      "description": "Use an attentive airfield-documentary treatment. Let supplied aircraft and working context remain spatially clear.",
-      "category": "transport/aviation",
-      "kind": "style",
-      "tags": [
-        "airfield",
-        "aircraft",
-        "documentary",
-        "transport"
-      ],
-      "claims": {
-        "medium": "transport.airfield-documentary",
-        "composition": "transport-airfield-documentary",
-        "palette": "transport-airfield-documentary",
-        "texture": "transport.airfield-documentary"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use an attentive airfield-documentary treatment",
-          "tags": [
-            "airfield documentary photograph"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Let supplied aircraft and working context remain spatially clear",
-          "tags": [
-            "aircraft context framing"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Keep atmospheric depth and worn operational surfaces",
-          "tags": [
-            "atmospheric depth",
-            "operational wear"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use subdued sky gray and muted utility colors",
-          "tags": [
-            "sky gray",
-            "utility colors"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.marine-hull",
-      "name": "Marine hull study",
-      "description": "Use a refined marine-hull design study. Read the supplied hull through continuous flowing section lines.",
-      "category": "transport/marine",
-      "kind": "style",
-      "tags": [
-        "marine",
-        "hull",
-        "boat",
-        "design"
-      ],
-      "claims": {
-        "medium": "transport.marine-hull",
-        "composition": "transport-marine-hull",
-        "palette": "transport-marine-hull",
-        "texture": "transport.marine-hull"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a refined marine-hull design study",
-          "tags": [
-            "marine hull design"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Read the supplied hull through continuous flowing section lines",
-          "tags": [
-            "flowing hull lines"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Use soft broad reflections that describe surface fairness",
-          "tags": [
-            "broad hull reflections"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use cool white with muted sea-gray shadows",
-          "tags": [
-            "cool white",
-            "sea gray"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.shipyard-plan",
-      "name": "Shipyard construction plate",
-      "description": "Use a shipyard construction-plate illustration. Keep supplied structural ribs and outer profile visually distinct.",
-      "category": "transport/marine",
-      "kind": "style",
-      "tags": [
-        "shipyard",
-        "construction",
-        "marine",
-        "plan"
-      ],
-      "claims": {
-        "medium": "transport.shipyard-plan",
-        "composition": "transport-shipyard-plan",
-        "palette": "transport-shipyard-plan",
-        "texture": "transport.shipyard-plan"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a shipyard construction-plate illustration",
-          "tags": [
-            "ship construction plate"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Keep supplied structural ribs and outer profile visually distinct",
-          "tags": [
-            "rib and profile hierarchy"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Use disciplined fine lines with selective sectional hatching",
-          "tags": [
-            "fine shipyard lines",
-            "section hatching"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use blue-gray drawing on uncoated ivory",
-          "tags": [
-            "blue gray",
-            "uncoated ivory"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.utility-vehicle",
-      "name": "Utility vehicle record",
-      "description": "Use a straightforward utility-vehicle record photograph. Keep the supplied working form legible without heroic distortion.",
-      "category": "transport/industrial",
-      "kind": "style",
-      "tags": [
-        "utility",
-        "vehicle",
-        "work",
-        "industrial"
-      ],
-      "claims": {
-        "medium": "transport.utility-vehicle",
-        "composition": "transport-utility-vehicle",
-        "palette": "transport-utility-vehicle",
-        "texture": "transport.utility-vehicle"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a straightforward utility-vehicle record photograph",
-          "tags": [
-            "utility vehicle record"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Keep the supplied working form legible without heroic distortion",
-          "tags": [
-            "straight utility framing"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Reveal durable materials repaired surfaces and functional wear",
-          "tags": [
-            "durable materials",
-            "functional wear"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use measured industrial colors and neutral daylight",
-          "tags": [
-            "industrial colors",
-            "neutral daylight"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.concept-model",
-      "name": "Transport scale model",
-      "description": "Present the supplied design as a physical transport scale model. Use a calm viewpoint that makes miniature proportions clear.",
-      "category": "transport/model",
-      "kind": "style",
-      "tags": [
-        "transport",
-        "scale-model",
-        "prototype",
-        "design"
-      ],
-      "claims": {
-        "medium": "transport.concept-model",
-        "composition": "transport-concept-model",
-        "palette": "transport-concept-model",
-        "texture": "transport.concept-model"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Present the supplied design as a physical transport scale model",
-          "tags": [
-            "transport scale model"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use a calm viewpoint that makes miniature proportions clear",
-          "tags": [
-            "readable miniature proportions"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Reveal model-scale glazing seams and crafted edges",
-          "tags": [
-            "model glazing",
-            "crafted edges"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use neutral presentation tones with restrained body color",
-          "tags": [
-            "neutral model presentation"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "transport.vintage-brochure",
-      "name": "Vintage transport brochure",
-      "description": "Use a restrained historical transport-brochure illustration. Let the supplied vehicle dominate a clean illustrated field.",
-      "category": "transport/historical",
-      "kind": "style",
-      "tags": [
-        "brochure",
-        "vintage",
-        "transport",
-        "print"
-      ],
-      "claims": {
-        "medium": "transport.vintage-brochure",
-        "composition": "transport-vintage-brochure",
-        "palette": "transport-vintage-brochure",
-        "texture": "transport.vintage-brochure"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a restrained historical transport-brochure illustration",
-          "tags": [
-            "vintage transport brochure"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Let the supplied vehicle dominate a clean illustrated field",
-          "tags": [
-            "vehicle-led brochure"
-          ],
-          "min_intensity": 0.35
-        },
-        {
-          "axis": "texture",
-          "text": "Combine airbrushed volume with lightly textured print edges",
-          "tags": [
-            "airbrushed form",
-            "print texture"
-          ],
-          "min_intensity": 0.65
-        },
-        {
-          "axis": "palette",
-          "text": "Use muted period pigments with warm paper",
-          "tags": [
-            "muted period colors",
-            "warm paper"
-          ],
-          "min_intensity": 0.85
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "palette",
+     "text": "muted body color on drafting paper",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.75
     }
-  ]
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.clay-surface",
+   "name": "Automotive clay surface",
+   "description": "Render the vehicle as an automotive clay-design study. Read the supplied proportions through broad surface transitions.",
+   "category": "transport/automotive",
+   "kind": "style",
+   "tags": [
+    "automotive",
+    "clay",
+    "surface",
+    "design"
+   ],
+   "claims": {
+    "composition": "transport.clay-surface",
+    "medium": "transport.clay-surface",
+    "palette": "transport.clay-surface",
+    "texture": "transport.clay-surface"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "automotive clay design model",
+     "tags": [
+      "clay model",
+      "car"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "proportions in broad surface transitions",
+     "tags": [
+      "three-quarter view"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "long soft reflections across curvature",
+     "tags": [
+      "reflections"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "brown clay on cool gray",
+     "tags": [
+      "grey background"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.tape-drawing",
+   "name": "Full-scale tape drawing",
+   "description": "Use a full-scale automotive tape-drawing aesthetic. Keep the supplied vehicle's primary proportion lines decisive.",
+   "category": "transport/automotive",
+   "kind": "style",
+   "tags": [
+    "tape",
+    "drawing",
+    "vehicle",
+    "profile"
+   ],
+   "claims": {
+    "composition": "transport.tape-drawing",
+    "medium": "transport.tape-drawing",
+    "palette": "transport.tape-drawing",
+    "texture": "transport.tape-drawing"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "automotive tape drawing",
+     "tags": [
+      "car",
+      "lineart"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "decisive proportion lines",
+     "tags": [
+      "side view"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "crisp taped curves",
+     "tags": [
+      "clean lines"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "black lines on a pale wall",
+     "tags": [
+      "monochrome"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.marker-concept",
+   "name": "Marker transport sketch",
+   "description": "Use an expressive transport-design marker sketch. Emphasize the supplied form through confident perspective lines.",
+   "category": "transport/automotive",
+   "kind": "style",
+   "tags": [
+    "marker",
+    "vehicle",
+    "concept",
+    "sketch"
+   ],
+   "claims": {
+    "composition": "transport.marker-concept",
+    "medium": "transport.marker-concept",
+    "palette": "transport.marker-concept",
+    "texture": "transport.marker-concept"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "transport design marker sketch",
+     "tags": [
+      "marker (medium)",
+      "car"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "confident perspective lines",
+     "tags": [
+      "dynamic angle"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "broad marker tone, edge highlights",
+     "tags": [
+      "sketch"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "cool grays with one body-color accent",
+     "tags": [
+      "grey theme"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.pencil-mechanics",
+   "name": "Mechanical pencil vehicle study",
+   "description": "Use a meticulous mechanical-pencil transport study. Make supplied structure and wheel relationships legible.",
+   "category": "transport/technical",
+   "kind": "style",
+   "tags": [
+    "vehicle",
+    "pencil",
+    "mechanical",
+    "study"
+   ],
+   "claims": {
+    "composition": "transport.pencil-mechanics",
+    "medium": "transport.pencil-mechanics",
+    "palette": "transport.pencil-mechanics",
+    "texture": "transport.pencil-mechanics"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "mechanical pencil vehicle drawing",
+     "tags": [
+      "pencil",
+      "vehicle"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "legible structure and wheels",
+     "tags": [
+      "side view"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "fine overlapping strokes",
+     "tags": [
+      "graphite (medium)"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "graphite tones on warm white",
+     "tags": [
+      "greyscale"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.wind-tunnel",
+   "name": "Wind-tunnel presentation",
+   "description": "Use a restrained wind-tunnel design-presentation style. Keep the supplied vehicle silhouette distinct from flow visualization.",
+   "category": "transport/technical",
+   "kind": "style",
+   "tags": [
+    "wind-tunnel",
+    "flow",
+    "vehicle",
+    "aerodynamic"
+   ],
+   "claims": {
+    "composition": "transport.wind-tunnel",
+    "medium": "transport.wind-tunnel",
+    "palette": "transport.wind-tunnel",
+    "texture": "transport.wind-tunnel"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "wind tunnel design presentation",
+     "tags": [
+      "wind tunnel",
+      "vehicle",
+      "vehicle focus"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "silhouette distinct from flow lines",
+     "tags": [
+      "side view"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "thin continuous flow paths",
+     "tags": [
+      "flowing lines"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "neutral body with cool flow accent",
+     "tags": [
+      "cool colors"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.railway-works",
+   "name": "Railway works portrait",
+   "description": "Use an industrial railway-works portrait treatment. Keep the supplied vehicle's long structural rhythm readable.",
+   "category": "transport/rail",
+   "kind": "style",
+   "tags": [
+    "railway",
+    "works",
+    "industrial",
+    "vehicle"
+   ],
+   "claims": {
+    "composition": "transport.railway-works",
+    "medium": "transport.railway-works",
+    "palette": "transport.railway-works",
+    "texture": "transport.railway-works"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "industrial railway works photograph",
+     "tags": [
+      "train",
+      "industrial"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "long structural rhythm",
+     "tags": [
+      "side view"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "rivets, paint wear, metal planes",
+     "tags": [
+      "rust"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "muted iron red, gray and soot black",
+     "tags": [
+      "red theme"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.railway-cutaway",
+   "name": "Rail vehicle cutaway",
+   "description": "Use a clear rail-vehicle cutaway illustration. Expose the supplied interior while preserving exterior proportions.",
+   "category": "transport/rail",
+   "kind": "style",
+   "tags": [
+    "rail",
+    "cutaway",
+    "vehicle",
+    "engineering"
+   ],
+   "claims": {
+    "composition": "transport.railway-cutaway",
+    "medium": "transport.railway-cutaway",
+    "palette": "transport.railway-cutaway",
+    "texture": "transport.railway-cutaway"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "rail vehicle cutaway illustration",
+     "tags": [
+      "train",
+      "cutaway"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "interior within exterior proportion",
+     "tags": [
+      "cross-section"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "crisp section edges",
+     "tags": [
+      "technical drawing"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "neutral structure with functional color",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.transit-future",
+   "name": "Civic transit concept",
+   "description": "Use a calm civic-transit design-presentation style. Read the supplied vehicle through accessible open proportions.",
+   "category": "transport/public",
+   "kind": "style",
+   "tags": [
+    "transit",
+    "civic",
+    "public",
+    "design"
+   ],
+   "claims": {
+    "composition": "transport.transit-future",
+    "medium": "transport.transit-future",
+    "palette": "transport.transit-future",
+    "texture": "transport.transit-future"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "civic transit concept presentation",
+     "tags": [
+      "tram",
+      "concept art"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "open accessible proportions",
+     "tags": [
+      "three-quarter view"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "matte body, controlled glass reflections",
+     "tags": [
+      "matte"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "light neutral body with civic accent",
+     "tags": [
+      "white theme"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.bicycle-frame",
+   "name": "Bicycle frame study",
+   "description": "Use a precise bicycle-frame design illustration. Make the supplied frame geometry clearly traceable.",
+   "category": "transport/cycle",
+   "kind": "style",
+   "tags": [
+    "bicycle",
+    "frame",
+    "geometry",
+    "design"
+   ],
+   "claims": {
+    "composition": "transport.bicycle-frame",
+    "medium": "transport.bicycle-frame",
+    "palette": "transport.bicycle-frame",
+    "texture": "transport.bicycle-frame"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "bicycle frame design drawing",
+     "tags": [
+      "bicycle",
+      "technical drawing"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "traceable frame geometry",
+     "tags": [
+      "side view"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "slender tubes and wheel edges",
+     "tags": [
+      "lineart"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "dark lines with one frame accent",
+     "tags": [
+      "spot color"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.cycle-lifestyle",
+   "name": "Cycling editorial portrait",
+   "description": "Use an understated cycling-editorial treatment. Let the supplied bicycle and setting share a balanced frame.",
+   "category": "transport/cycle",
+   "kind": "style",
+   "tags": [
+    "cycling",
+    "editorial",
+    "vehicle",
+    "lifestyle"
+   ],
+   "claims": {
+    "composition": "transport.cycle-lifestyle",
+    "medium": "transport.cycle-lifestyle",
+    "palette": "transport.cycle-lifestyle",
+    "texture": "transport.cycle-lifestyle"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "cycling editorial photograph",
+     "tags": [
+      "bicycle",
+      "outdoors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "bicycle and setting in balance",
+     "tags": [
+      "wide shot"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "road wear, grips, material detail",
+     "tags": [
+      "detailed"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "muted outdoor color, metal highlights",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.motorcycle-studio",
+   "name": "Motorcycle form studio",
+   "description": "Use a controlled motorcycle form-study photograph. Separate the supplied mechanical masses through directional light.",
+   "category": "transport/motorcycle",
+   "kind": "style",
+   "tags": [
+    "motorcycle",
+    "studio",
+    "mechanical",
+    "form"
+   ],
+   "claims": {
+    "composition": "transport.motorcycle-studio",
+    "medium": "transport.motorcycle-studio",
+    "palette": "transport.motorcycle-studio",
+    "texture": "transport.motorcycle-studio"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "studio motorcycle photograph",
+     "tags": [
+      "motorcycle",
+      "studio photo"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "masses separated by directional light",
+     "tags": [
+      "three-quarter view"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "rubber, paint and machined edges",
+     "tags": [
+      "metallic"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "charcoal surroundings",
+     "tags": [
+      "dark background"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.scooter-catalog",
+   "name": "Urban scooter catalog",
+   "description": "Use a restrained urban-mobility catalog treatment. Keep the supplied silhouette compact and plainly readable.",
+   "category": "transport/public",
+   "kind": "style",
+   "tags": [
+    "scooter",
+    "urban",
+    "catalog",
+    "mobility"
+   ],
+   "claims": {
+    "composition": "transport.scooter-catalog",
+    "medium": "transport.scooter-catalog",
+    "palette": "transport.scooter-catalog",
+    "texture": "transport.scooter-catalog"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "urban scooter catalog photograph",
+     "tags": [
+      "scooter",
+      "product photo"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "compact readable silhouette",
+     "tags": [
+      "side view"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "soft commercial light",
+     "tags": [
+      "soft lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "pale neutrals with a muted accent",
+     "tags": [
+      "simple background"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.aviation-orthographic",
+   "name": "Aviation orthographic sheet",
+   "description": "Use an aviation orthographic-presentation style. Keep supplied views aligned at consistent scale.",
+   "category": "transport/aviation",
+   "kind": "style",
+   "tags": [
+    "aviation",
+    "orthographic",
+    "aircraft",
+    "drawing"
+   ],
+   "claims": {
+    "composition": "transport.aviation-orthographic",
+    "medium": "transport.aviation-orthographic",
+    "palette": "transport.aviation-orthographic",
+    "texture": "transport.aviation-orthographic"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "aircraft orthographic drawing",
+     "tags": [
+      "airplane",
+      "technical drawing"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "aligned views at one scale",
+     "tags": [
+      "multiple views"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "fine panel lines",
+     "tags": [
+      "lineart"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "graphite gray and drafting blue",
+     "tags": [
+      "blueprint"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.airfield-documentary",
+   "name": "Airfield documentary frame",
+   "description": "Use an attentive airfield-documentary treatment. Let supplied aircraft and working context remain spatially clear.",
+   "category": "transport/aviation",
+   "kind": "style",
+   "tags": [
+    "airfield",
+    "aircraft",
+    "documentary",
+    "transport"
+   ],
+   "claims": {
+    "composition": "transport.airfield-documentary",
+    "medium": "transport.airfield-documentary",
+    "palette": "transport.airfield-documentary",
+    "texture": "transport.airfield-documentary"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "airfield documentary photograph",
+     "tags": [
+      "airport",
+      "aircraft"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "aircraft with working context",
+     "tags": [
+      "wide shot"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "atmospheric depth, worn surfaces",
+     "tags": [
+      "haze"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "sky gray and utility colors",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.marine-hull",
+   "name": "Marine hull study",
+   "description": "Use a refined marine-hull design study. Read the supplied hull through continuous flowing section lines.",
+   "category": "transport/marine",
+   "kind": "style",
+   "tags": [
+    "marine",
+    "hull",
+    "boat",
+    "design"
+   ],
+   "claims": {
+    "composition": "transport.marine-hull",
+    "medium": "transport.marine-hull",
+    "palette": "transport.marine-hull",
+    "texture": "transport.marine-hull"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "marine hull design study",
+     "tags": [
+      "boat",
+      "ship"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "continuous flowing section lines",
+     "tags": [
+      "side view"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "broad soft reflections",
+     "tags": [
+      "smooth"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "cool white with sea-gray shadows",
+     "tags": [
+      "white theme"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.shipyard-plan",
+   "name": "Shipyard construction plate",
+   "description": "Use a shipyard construction-plate illustration. Keep supplied structural ribs and outer profile visually distinct.",
+   "category": "transport/marine",
+   "kind": "style",
+   "tags": [
+    "shipyard",
+    "construction",
+    "marine",
+    "plan"
+   ],
+   "claims": {
+    "composition": "transport.shipyard-plan",
+    "medium": "transport.shipyard-plan",
+    "palette": "transport.shipyard-plan",
+    "texture": "transport.shipyard-plan"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "shipyard construction plate",
+     "tags": [
+      "ship",
+      "technical drawing"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "ribs and outer profile",
+     "tags": [
+      "cross-section"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "fine lines, section hatching",
+     "tags": [
+      "hatching (texture)"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "blue-gray drawing on ivory",
+     "tags": [
+      "blue theme"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.utility-vehicle",
+   "name": "Utility vehicle record",
+   "description": "Use a straightforward utility-vehicle record photograph. Keep the supplied working form legible without heroic distortion.",
+   "category": "transport/industrial",
+   "kind": "style",
+   "tags": [
+    "utility",
+    "vehicle",
+    "work",
+    "industrial"
+   ],
+   "claims": {
+    "composition": "transport.utility-vehicle",
+    "medium": "transport.utility-vehicle",
+    "palette": "transport.utility-vehicle",
+    "texture": "transport.utility-vehicle"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "utility vehicle record photograph",
+     "tags": [
+      "truck",
+      "documentary photo"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "level working view",
+     "tags": [
+      "straight-on"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "durable materials, functional wear",
+     "tags": [
+      "dirty"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "industrial colors in daylight",
+     "tags": [
+      "natural light"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.concept-model",
+   "name": "Transport scale model",
+   "description": "Present the supplied design as a physical transport scale model. Use a calm viewpoint that makes miniature proportions clear.",
+   "category": "transport/model",
+   "kind": "style",
+   "tags": [
+    "transport",
+    "scale-model",
+    "prototype",
+    "design"
+   ],
+   "claims": {
+    "composition": "transport.concept-model",
+    "medium": "transport.concept-model",
+    "palette": "transport.concept-model",
+    "texture": "transport.concept-model"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "transport scale model",
+     "tags": [
+      "scale model",
+      "miniature"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "calm viewpoint",
+     "tags": [
+      "three-quarter view"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "model seams, crafted edges",
+     "tags": [
+      "model kit"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "neutral tones with body color",
+     "tags": [
+      "simple background"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "transport.vintage-brochure",
+   "name": "Vintage transport brochure",
+   "description": "Use a restrained historical transport-brochure illustration. Let the supplied vehicle dominate a clean illustrated field.",
+   "category": "transport/historical",
+   "kind": "style",
+   "tags": [
+    "brochure",
+    "vintage",
+    "transport",
+    "print"
+   ],
+   "claims": {
+    "composition": "transport.vintage-brochure",
+    "medium": "transport.vintage-brochure",
+    "palette": "transport.vintage-brochure",
+    "texture": "transport.vintage-brochure"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "vintage transport brochure illustration",
+     "tags": [
+      "retro artstyle",
+      "vehicle"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "vehicle dominating a clean field",
+     "tags": [
+      "simple background"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "airbrushed volume, print texture",
+     "tags": [
+      "airbrush (medium)"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "muted period pigments on warm paper",
+     "tags": [
+      "vintage"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  }
+ ]
 }

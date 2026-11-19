@@ -23,6 +23,9 @@ class Profile:
     sources: tuple[str, ...]
     evidence: str
     aliases: tuple[str, ...] = ()
+    # Upper bound for supporting style text: words for prose/captions, tags for tag profiles.
+    # Core identity clauses always render; the budget only trims supporting tiers.
+    style_budget: int = 32
 
     @classmethod
     def from_dict(cls, value: object) -> Profile:
@@ -40,7 +43,7 @@ class Profile:
                 "sources",
                 "evidence",
             ),
-            optional=("aliases",),
+            optional=("aliases", "style_budget"),
         )
         for key in ("negative", "weighting"):
             if type(data[key]) is not bool:
@@ -59,6 +62,7 @@ class Profile:
             sources,
             v.choice(data["evidence"], ("documented", "conservative"), "profile.evidence"),
             v.strings(data.get("aliases", []), "profile.aliases", maximum=32, length=128),
+            v.integer(data.get("style_budget", 32), "profile.style_budget", minimum=1, maximum=256),
         )
 
     def to_dict(self) -> dict[str, Any]:
@@ -73,6 +77,7 @@ class Profile:
             "sources": list(self.sources),
             "evidence": self.evidence,
             "aliases": list(self.aliases),
+            "style_budget": self.style_budget,
         }
 
 
@@ -87,33 +92,54 @@ class ModelAdapter(Protocol):
     def render(self, prompt: str, clauses: tuple[Clause, ...]) -> str: ...
 
 
+def style_phrase(clauses: tuple[Clause, ...]) -> str:
+    """Join clauses into one compact descriptive phrase, identity first."""
+    parts = list(dict.fromkeys(clause.text.strip().rstrip(" .,;") for clause in clauses))
+    text = ", ".join(part for part in parts if part)
+    return text[:1].upper() + text[1:] if text else ""
+
+
+def escape_tag(tag: str) -> str:
+    """Escape brackets so ComfyUI encoders read them literally, not as weights."""
+    return tag.replace("\\(", "(").replace("\\)", ")").replace("(", "\\(").replace(")", "\\)")
+
+
 @dataclass(frozen=True, slots=True)
 class NaturalAdapter:
-    revision: str = "natural/1"
+    revision: str = "natural/2"
 
     def locked_axes(self, prompt: str) -> tuple[str, ...]:
         return ()
 
     def render(self, prompt: str, clauses: tuple[Clause, ...]) -> str:
-        additions = " ".join(clause.text.rstrip(" .") + "." for clause in clauses)
+        additions = style_phrase(clauses)
         if not additions:
             return prompt
-        separator = " " if prompt.rstrip().endswith((".", "!", "?")) else ". "
-        return prompt + (separator if prompt else "") + additions
+        stripped = prompt.rstrip()
+        if not stripped:
+            return additions + "."
+        separator = " " if stripped.endswith((".", "!", "?")) else ". "
+        return stripped + separator + additions + "."
 
 
 @dataclass(frozen=True, slots=True)
 class TagAdapter:
-    revision: str = "tags/1"
+    revision: str = "tags/2"
 
     def locked_axes(self, prompt: str) -> tuple[str, ...]:
         return ()
 
     def render(self, prompt: str, clauses: tuple[Clause, ...]) -> str:
-        additions = list(dict.fromkeys(tag for clause in clauses for tag in (clause.tags or (clause.text,))))
+        present = {tag.strip().casefold() for tag in prompt.replace("\\(", "(").replace("\\)", ")").split(",")}
+        additions = [
+            escape_tag(tag)
+            for tag in dict.fromkeys(tag for clause in clauses for tag in (clause.tags or (clause.text,)))
+            if tag.casefold() not in present
+        ]
         if not additions:
             return prompt
-        return prompt + (", " if prompt else "") + ", ".join(additions)
+        stripped = prompt.rstrip().rstrip(",")
+        return stripped + (", " if stripped else "") + ", ".join(additions)
 
 
 _FIBO_PATHS = {
@@ -154,7 +180,7 @@ def _fibo_caption(prompt: str) -> dict[str, Any]:
 class FiboAdapter:
     """Map declared style axes into published Fibo caption fields, never invent scene objects."""
 
-    revision: str = "fibo-caption/1"
+    revision: str = "fibo-caption/2"
 
     def locked_axes(self, prompt: str) -> tuple[str, ...]:
         caption = _fibo_caption(prompt)
@@ -180,7 +206,7 @@ class FiboAdapter:
                 parent = parent.setdefault(field, {})
             # Existing user-specified fields always win, even empty strings.
             if path[-1] not in parent:
-                parent[path[-1]] = " ".join(text)
+                parent[path[-1]] = ", ".join(dict.fromkeys(text))
         return v.canonical(caption)
 
 

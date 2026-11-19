@@ -4,7 +4,7 @@ A modular creative styling platform for **ComfyUI**, **HEISS Studio**, and
 **standalone Python workflows**. Build a scene description, combine visual
 styles, and render the additions using the prompting convention of your model.
 
-**Version 0.5.0 · 1,164 library entries · 52 packs · 11 model profiles · 6 ComfyUI V3 nodes**
+**Version 0.6.0a1 (experimental) · 1,003 library entries · 49 packs · 11 model profiles · 6 ComfyUI V3 nodes**
 
 The shared deterministic engine runs offline on Python 3.11+ with **zero runtime
 dependencies**. Optional local MiniCPM and LFM3-VL models add base-prompt upscaling
@@ -96,6 +96,7 @@ are optional for this route.
 | --- | --- | --- |
 | **Load Prompt Upscaler** | Load a supported local MiniCPM or LFM3-VL INT8 artifact into a cacheable, native-managed handle | Upscaler handle |
 | **Upscale Base Prompt** | Author a base from text, one RGB IMAGE, or both | Base prompt, inspection JSON |
+| **Prompt Idea** | Turn a draft into a new, fully written idea per seed: rotating lenses (setting, light, viewpoint…) and prompt structures; LFM3-VL only, see [docs/prompt-ideas.md](docs/prompt-ideas.md) | Prompt, inspection JSON |
 | **Preview Base Prompt** | Preview the base prompt and inspection without writing a file | UI preview |
 | **Style** | Apply one style with model selection, intensity, optional negative text, and protected axes | Positive text, negative text, inspection JSON |
 | **Compose Recipe** | Apply an ordered JSON recipe with conflict controls; an optional connected `prompt` overrides the recipe's base | Positive text, negative text, inspection JSON |
@@ -220,13 +221,13 @@ separate authoring output; LLM-generated recipes still require engine validation
 
 ## Style library and composition
 
-The library contains **1,164 entries across 52 packs**:
+The library contains **1,003 entries across 49 packs**:
 
 | Kind | Entries | Role |
 | --- | ---: | --- |
-| Visual treatments | 1,017 | Establish a recognizable medium or aesthetic |
-| Color grades | 69 | Supply a palette direction |
-| Modifiers | 78 | Adjust specific lighting, texture, composition, or detail choices |
+| Visual treatments | 867 | Establish a recognizable medium or aesthetic |
+| Color grades | 69 | Supply a palette direction (all in one Color set) |
+| Effects (modifiers) | 67 | Small light, finish, frame or detail adjustments that stack on a look |
 
 Coverage includes cinematography, photography, anime, manga, illustration, fine
 art, printmaking, historical media, graphic design, 3D, architecture, concept art,
@@ -234,8 +235,12 @@ regional crafts, fashion, textiles, botanical and culinary imagery, typography,
 technical diagrams, analog horror, retro media, gaming eras, internet aesthetics,
 and experimental approaches.
 
-Recent focused packs add **Computational Surfaces**, **Optical Material Accents**,
-**Animation Finishing**, and **Information Hierarchy**. Entries carry stable IDs,
+Every clause is a short visual description written for text encoders, with known
+model tags where they exist (for example `watercolor (medium)` for Anima); there are
+no instructions, scene references or negations for a model to misread. The 2026-11
+cleanup merged near-duplicates, retired 161 IDs (each mapped to a replacement where
+one exists, so saved recipes and workflows still load), moved effects into one
+Effects set and restricted lettering to text-capable models. Entries carry stable IDs,
 descriptions, categories, search tags, model eligibility, axis claims, and prose/tag
 clauses with authored intensity thresholds. See the [complete library inventory](docs/style-library.md)
 and [style review](docs/style-review.md).
@@ -244,13 +249,15 @@ Composition operates on seven axes: **medium, lighting, palette, composition,
 texture, mood, and detail**.
 
 - **Layer order and conflicts:** choose `last_wins`, `first_wins`, or `error` for competing declared claims. Only the conflicting axis is suppressed, so a grade can replace a palette while retaining a medium.
-- **Intensity:** each layer activates curated clause tiers between 0 and 1. Zero bypasses that layer. Intensity is a semantic detail control, not an embedding weight or sampler strength.
+- **Intensity:** each layer activates standard clause tiers: below 0.4 only the style's identity (Studio's Subtle), from 0.4 supporting detail (Balanced), from 0.75 everything (Strong). Zero bypasses that layer. Intensity is a semantic detail control, not an embedding weight or sampler strength.
+- **Style budget:** each model profile caps the added supporting text (10 tags for tag models, 30 words for prose). Every style keeps its identity; lower-priority detail is trimmed first.
+- **Prompt style words:** by default (`prompt_conflicts: "replace"`), style words in your prompt on an axis the selection sets, such as "A photo of", `realistic` or `cinematic lighting`, are left out of the styled prompt so the model follows the selected style. `"keep"` leaves them and reports the conflict.
 - **Protected axes:** `locked_axes` suppresses style clauses on selected axes so those directions remain under your control.
 - **Model variants and negatives:** exact profile variants can supply different authored clauses. Unsupported negative text remains in the recipe and produces a capability warning.
 - **Inspection and replay:** every applied, skipped, duplicate, or suppressed clause has a trace entry. Save the recipe, catalog snapshot, and matching engine/adapter version to reproduce its text output.
 
-The deterministic engine preserves the supplied base verbatim in prose/tag
-profiles. Fibo maps it into caption fields while preserving supplied caption data.
+The deterministic engine keeps the supplied base verbatim in prose/tag profiles,
+apart from whole style-word segments removed under `prompt_conflicts: "replace"`. Fibo maps it into caption fields while preserving supplied caption data.
 Declared claims and explicit locks govern composition; the engine does not parse
 free-form scene contradictions or verify generated pixels.
 

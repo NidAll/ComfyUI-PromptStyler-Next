@@ -1,1043 +1,866 @@
 {
-  "schema_version": 1,
-  "id": "community.analog-horror",
-  "version": "1.2.0",
-  "name": "Analog Horror",
-  "description": "Obsolete broadcast aesthetics, institutional unease, and tape-era visual disturbance without gore.",
-  "license": "CC0-1.0",
-  "author": "NidAll / original community pack",
-  "styles": [
+ "schema_version": 1,
+ "id": "community.analog-horror",
+ "version": "2.0.0",
+ "name": "Analog Horror",
+ "description": "Obsolete broadcast aesthetics, institutional unease, and tape-era visual disturbance without gore.",
+ "license": "CC0-1.0",
+ "author": "PromptStyler Next contributors",
+ "styles": [
+  {
+   "id": "analog-horror.broadcast-interruption",
+   "name": "Interrupted Broadcast",
+   "description": "A television feed suspended between transmission and silence.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "broadcast",
+    "television",
+    "static",
+    "uncanny"
+   ],
+   "claims": {
+    "composition": "analog-horror.broadcast-interruption",
+    "lighting": "analog-horror.broadcast-interruption",
+    "medium": "analog-horror.broadcast-interruption",
+    "texture": "analog-horror.broadcast-interruption"
+   },
+   "clauses": [
     {
-      "id": "analog-horror.broadcast-interruption",
-      "name": "Interrupted Broadcast",
-      "description": "A television feed suspended between transmission and silence.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "broadcast",
-        "television",
-        "static",
-        "uncanny"
-      ],
-      "claims": {
-        "medium": "analog-horror.broadcast-interruption",
-        "texture": "analog-horror.broadcast-interruption",
-        "composition": "analog-horror.broadcast-interruption",
-        "lighting": "analog-horror.broadcast-interruption"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Render the scene as a disrupted analog television transmission",
-          "tags": [
-            "disturbed analog tv broadcast"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Give the frame the strict centered grammar of an interrupted program feed",
-          "tags": [
-            "central broadcast interruption frame"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Allow weak phosphor glow and uneven screen luminance",
-          "tags": [
-            "dim crt phosphor glow"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Add faint tracking noise with occasional horizontal instability",
-          "tags": [
-            "vhs tracking interference"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "medium",
+     "text": "disrupted analog television broadcast",
+     "tags": [
+      "analog tv",
+      "signal interference"
+     ],
+     "min_intensity": 0.0
     },
     {
-      "id": "analog-horror.psa-reel",
-      "name": "Public-Service Reel",
-      "description": "Reassuring instructional broadcast language turned quietly unsettling.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "psa",
-        "instructional",
-        "television",
-        "archive"
-      ],
-      "claims": {
-        "medium": "analog-horror.psa-reel",
-        "texture": "analog-horror.psa-reel",
-        "composition": "analog-horror.psa-reel",
-        "palette": "analog-horror.psa-reel"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use the formal visual language of an old public-service informational reel",
-          "tags": [
-            "archival psa video still"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Frame the subject clearly and symmetrically like an institutional lesson",
-          "tags": [
-            "instructional centered shot"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Keep colors controlled, dated and slightly faded toward olive and tan",
-          "tags": [
-            "muted seventies instructional colors"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Carry light film weave and repeated analog grain",
-          "tags": [
-            "old educational film grain"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "composition",
+     "text": "centered program-feed framing",
+     "tags": [
+      "centered"
+     ],
+     "min_intensity": 0.4
     },
     {
-      "id": "analog-horror.security-room",
-      "name": "Empty Security Monitor",
-      "description": "A grainy fixed camera viewpoint observed long after ordinary hours.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "security",
-        "cctv",
-        "night",
-        "monitor"
-      ],
-      "claims": {
-        "medium": "analog-horror.security-room",
-        "texture": "analog-horror.security-room",
-        "composition": "analog-horror.security-room",
-        "lighting": "analog-horror.security-room"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Present the scene as a degraded fixed-angle security camera image",
-          "tags": [
-            "old security camera still"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use a fixed high vantage while retaining all supplied people, objects and required framing",
-          "tags": [
-            "fixed high vantage with supplied subjects retained"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Keep uneven facility lights and weak dark-area detail",
-          "tags": [
-            "dim surveillance exposure"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Use temporal ghosting and coarse scanline noise",
-          "tags": [
-            "surveillance video grain"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "lighting",
+     "text": "weak phosphor glow",
+     "tags": [
+      "screen glow"
+     ],
+     "min_intensity": 0.75
     },
     {
-      "id": "analog-horror.emergency-test",
-      "name": "Emergency Test Screen",
-      "description": "Institutional urgency expressed through rigid shapes and imperfect signal integrity.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "emergency",
-        "alert",
-        "broadcast",
-        "test"
-      ],
-      "claims": {
-        "medium": "analog-horror.emergency-test",
-        "texture": "analog-horror.emergency-test",
-        "composition": "analog-horror.emergency-test",
-        "palette": "analog-horror.emergency-test"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Compose the visual treatment like an obsolete televised emergency-system test",
-          "tags": [
-            "old emergency test screen"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Anchor the image with rigid bands, blocks and deliberate broadcast-safe margins",
-          "tags": [
-            "emergency broadcast graphics"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Favor limited red, cream and charcoal with muted signal tones",
-          "tags": [
-            "emergency test limited colors"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Keep phosphor bleed and intermittent line tearing on high-contrast graphics",
-          "tags": [
-            "old tv signal tear"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.tape-training",
-      "name": "Employee Training Tape",
-      "description": "Corporate instructional footage with oddly impersonal staging.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "training",
-        "vhs",
-        "office",
-        "corporate"
-      ],
-      "claims": {
-        "medium": "analog-horror.tape-training",
-        "texture": "analog-horror.tape-training",
-        "composition": "analog-horror.tape-training",
-        "lighting": "analog-horror.tape-training"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Make the scene resemble an archived workplace training video",
-          "tags": [
-            "archival corporate training tape"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Position the subject in an overly tidy didactic frame",
-          "tags": [
-            "corporate training shot"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Use uncomplicated interior fill light with awkward flatness",
-          "tags": [
-            "flat corporate video lighting"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Keep analog color smear and mild tape head noise",
-          "tags": [
-            "tape color smear"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.midnight-newsroom",
-      "name": "Local News at Midnight",
-      "description": "Low-budget late-night local broadcast visual language.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "news",
-        "midnight",
-        "studio",
-        "broadcast"
-      ],
-      "claims": {
-        "medium": "analog-horror.midnight-newsroom",
-        "texture": "analog-horror.midnight-newsroom",
-        "composition": "analog-horror.midnight-newsroom",
-        "palette": "analog-horror.midnight-newsroom"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Render the image like a low-budget local late-night news broadcast",
-          "tags": [
-            "retro local news broadcast"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use restrained presenter-style framing with empty or underused surrounding space",
-          "tags": [
-            "awkward local news framing"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Balance dated cobalt accents with dusty neutral studio tones",
-          "tags": [
-            "old studio cobalt palette"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Show worn broadcast video softness and faint composite color crawl",
-          "tags": [
-            "composite tv color crawl"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.field-recording",
-      "name": "Unmarked Field Tape",
-      "description": "Uneasy handheld footage with an uncertain reason for recording.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "camcorder",
-        "handheld",
-        "found-footage",
-        "field"
-      ],
-      "claims": {
-        "medium": "analog-horror.field-recording",
-        "texture": "analog-horror.field-recording",
-        "composition": "analog-horror.field-recording",
-        "lighting": "analog-horror.field-recording"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Give the image the visual qualities of anonymous handheld analog field footage",
-          "tags": [
-            "unknown camcorder field recording"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Hold a slightly late off-center framing with awkward headroom",
-          "tags": [
-            "accidental camcorder framing"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Rely on weak available light with unresolved dark corners",
-          "tags": [
-            "underexposed camcorder light"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Retain chroma noise, soft focus and faint tape dropout",
-          "tags": [
-            "noisy analog field tape"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.institutional-orientation",
-      "name": "Orientation Film",
-      "description": "Old institutional welcome footage whose formality feels displaced.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "institutional",
-        "orientation",
-        "retro",
-        "film"
-      ],
-      "claims": {
-        "medium": "analog-horror.institutional-orientation",
-        "composition": "analog-horror.institutional-orientation",
-        "lighting": "analog-horror.institutional-orientation",
-        "mood": "analog-horror.institutional-orientation"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Present the scene as a dated institutional orientation film frame",
-          "tags": [
-            "old institutional orientation film"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use rigid demonstration-shot symmetry and generous dull background",
-          "tags": [
-            "institutional orientation framing"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Keep broad even indoor exposure with mild spill and no dramatic contrast",
-          "tags": [
-            "institutional flat lighting"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "mood",
-          "text": "Let the atmosphere feel over-rehearsed and emotionally distant",
-          "tags": [
-            "sterile uncanny welcome mood"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.family-tape",
-      "name": "Family Tape Unease",
-      "description": "Home-video color and softness with a strangely unoccupied feeling.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "homevideo",
-        "family",
-        "nostalgia",
-        "uncanny"
-      ],
-      "claims": {
-        "medium": "analog-horror.family-tape",
-        "texture": "analog-horror.family-tape",
-        "composition": "analog-horror.family-tape",
-        "palette": "analog-horror.family-tape"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Translate the scene into an imperfect personal home-video still",
-          "tags": [
-            "uncanny family camcorder frame"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Preserve a casual handheld composition with slightly missed timing",
-          "tags": [
-            "imperfect family video crop"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Let warm skin-adjacent tones drift into greenish tape color",
-          "tags": [
-            "home video aged color balance"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Add streaky interlace edges and subdued magnetic-tape noise",
-          "tags": [
-            "interlaced home video noise"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.station-ident",
-      "name": "Forgotten Station Ident",
-      "description": "Aged broadcast signal edges, quiet existing margins and restrained analog bloom; the supplied scene remains the content.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "station",
-        "ident",
-        "television",
-        "logo"
-      ],
-      "claims": {
-        "medium": "analog-horror.station-ident",
-        "texture": "analog-horror.station-ident",
-        "composition": "analog-horror.station-ident",
-        "lighting": "analog-horror.station-ident"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Treat the supplied scene as aged analog broadcast artwork, retaining its silhouettes through soft signal edges and slight registration offset",
-          "tags": [
-            "aged analog broadcast rendering",
-            "soft signal contours on supplied forms"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use existing negative space as quiet margins around the supplied subject without replacing its layout",
-          "tags": [
-            "quiet margins in existing negative space"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Apply faint emissive highlight rolloff within existing lit areas while retaining the supplied background",
-          "tags": [
-            "faint video highlight rolloff"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Show soft analog bloom and imperfect edge registration",
-          "tags": [
-            "analog bloom",
-            "imperfect edge registration"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.masked-transmission",
-      "name": "Distorted Transmission",
-      "description": "Selective obscuration through analog dropout rather than visible violence.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "masked",
-        "transmission",
-        "distortion",
-        "horror"
-      ],
-      "claims": {
-        "medium": "analog-horror.masked-transmission",
-        "texture": "analog-horror.masked-transmission",
-        "composition": "analog-horror.masked-transmission",
-        "lighting": "analog-horror.masked-transmission"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Present the existing subject as an interrupted and partly obscured broadcast image",
-          "tags": [
-            "partially obscured analog transmission"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Leave intentional uncertain regions behind horizontal signal dropouts",
-          "tags": [
-            "obscured signal bands"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Keep dark tonal blocks with occasional harsh white video peaks",
-          "tags": [
-            "blackout and white signal peaks"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Let tape tracking and unstable color alignment disrupt selected edges",
-          "tags": [
-            "tracking dropout distortion"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.obsolete-device",
-      "name": "Obsolete Monitoring Device",
-      "description": "A close observational frame as if captured from unreliable vintage monitoring hardware.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "obsolete",
-        "device",
-        "monitor",
-        "retro"
-      ],
-      "claims": {
-        "medium": "analog-horror.obsolete-device",
-        "texture": "analog-horror.obsolete-device",
-        "composition": "analog-horror.obsolete-device",
-        "palette": "analog-horror.obsolete-device"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Filter the scene through an aged electronic monitoring apparatus",
-          "tags": [
-            "obsolete monitoring equipment image"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use cautious utilitarian framing focused on existing measured details",
-          "tags": [
-            "utilitarian monitor framing"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Limit colors to washed yellow-gray and desaturated cool green",
-          "tags": [
-            "aged monitoring display color"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Preserve phosphor persistence and small analog scan discontinuities",
-          "tags": [
-            "fading crt screen persistence"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.found-frame",
-      "name": "Found Frame 004",
-      "description": "One isolated moment from an otherwise contextless tape archive.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "found-footage",
-        "archive",
-        "frame",
-        "uncanny"
-      ],
-      "claims": {
-        "medium": "analog-horror.found-frame",
-        "texture": "analog-horror.found-frame",
-        "composition": "analog-horror.found-frame",
-        "lighting": "analog-horror.found-frame"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Treat the composition as an anonymous frame recovered from an unlabeled videotape",
-          "tags": [
-            "recovered forgotten video frame"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Capture a moment that feels cut off before its action becomes legible",
-          "tags": [
-            "out of context frozen moment"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Allow inconsistent autoexposure and blown local highlights",
-          "tags": [
-            "uneven tape autoexposure"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Use age-softened analog edges and a mild lower-frame tracking fault",
-          "tags": [
-            "damaged recovered tape image"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.archive-suppression",
-      "name": "Redacted Archive Feed",
-      "description": "Clinical archival presentation with heavy blocks of missing visual information.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "archive",
-        "redaction",
-        "suppression",
-        "found"
-      ],
-      "claims": {
-        "medium": "analog-horror.archive-suppression",
-        "composition": "analog-horror.archive-suppression",
-        "palette": "analog-horror.archive-suppression",
-        "mood": "analog-horror.archive-suppression"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Compose the image as a suppressed archival video reference",
-          "tags": [
-            "redacted archive video image"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Obscure limited peripheral information using rectangular signal-loss regions",
-          "tags": [
-            "redacted signal blocks"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Use institutional gray, dirty white and dark graphite",
-          "tags": [
-            "archival utility colors"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "mood",
-          "text": "Imply missing context without claiming a specific forbidden event",
-          "tags": [
-            "quiet archival uncertainty"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.elevator-monitor",
-      "name": "Elevator Camera",
-      "description": "Static enclosed-space monitoring with difficult scale and little movement.",
-      "category": "analog-horror/broadcast",
-      "kind": "style",
-      "tags": [
-        "elevator",
-        "cctv",
-        "monitor",
-        "claustrophobic"
-      ],
-      "claims": {
-        "medium": "analog-horror.elevator-monitor",
-        "texture": "analog-horror.elevator-monitor",
-        "composition": "analog-horror.elevator-monitor",
-        "lighting": "analog-horror.elevator-monitor"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Frame the subject as a still from an aging elevator surveillance camera",
-          "tags": [
-            "old elevator security camera"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use a high corner-like viewpoint and restrained convergence of existing edges",
-          "tags": [
-            "high corner viewpoint and existing edge convergence"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Let a single ceiling source flatten surfaces with dark outer corners",
-          "tags": [
-            "elevator fluorescent ceiling light"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Maintain low-bit-depth shadow noise and tape-era video blur",
-          "tags": [
-            "low bitrate analog surveillance"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.phosphor-green",
-      "name": "Green Phosphor",
-      "description": "Monochromatic surveillance-monitor glow with softened light trails.",
-      "category": "analog-horror/grades",
-      "kind": "grade",
-      "tags": [
-        "phosphor",
-        "green",
-        "monitor",
-        "grade"
-      ],
-      "claims": {
-        "palette": "analog-horror.phosphor-green",
-        "lighting": "analog-horror.phosphor-green"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Render emitted highlights in deep green phosphor against near-black",
-          "tags": [
-            "monochrome green phosphor"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Allow bright contours to leave a faint phosphor-persistence halo",
-          "tags": [
-            "phosphor afterglow"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.vhs-degrade",
-      "name": "VHS Color Drift",
-      "description": "Soft displaced chroma from aging consumer videotape.",
-      "category": "analog-horror/grades",
-      "kind": "grade",
-      "tags": [
-        "vhs",
-        "chroma",
-        "degrade",
-        "grade"
-      ],
-      "claims": {
-        "texture": "analog-horror.vhs-degrade",
-        "palette": "analog-horror.vhs-degrade"
-      },
-      "clauses": [
-        {
-          "axis": "texture",
-          "text": "Introduce low-amplitude horizontal chroma drift at selected edges",
-          "tags": [
-            "vhs chroma bleed"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Let nominally neutral colors drift subtly toward blue-green and amber",
-          "tags": [
-            "aged vhs color shift"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.tobacco-monochrome",
-      "name": "Tobacco Monochrome",
-      "description": "Warm low-saturation archival palette with deep but not crushed blacks.",
-      "category": "analog-horror/grades",
-      "kind": "grade",
-      "tags": [
-        "tobacco",
-        "sepia",
-        "archive",
-        "grade"
-      ],
-      "claims": {
-        "palette": "analog-horror.tobacco-monochrome",
-        "lighting": "analog-horror.tobacco-monochrome"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Drain most chroma into subdued tobacco-brown and soot gray",
-          "tags": [
-            "tobacco gray archival palette"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Hold pale nicotine-yellow highlights over dark soft shadows",
-          "tags": [
-            "warm faded analog highlights"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.timecode-imprint",
-      "name": "Timecode Imprint",
-      "description": "A subdued corner timing overlay, without inventing narrative text.",
-      "category": "analog-horror/modifiers",
-      "kind": "modifier",
-      "tags": [
-        "timecode",
-        "overlay",
-        "recording",
-        "modifier"
-      ],
-      "claims": {
-        "detail": "analog-horror.timecode-imprint",
-        "texture": "analog-horror.timecode-imprint"
-      },
-      "clauses": [
-        {
-          "axis": "detail",
-          "text": "If the base supplies a timecode, render only those exact characters with restrained raster edges; otherwise add no readout",
-          "tags": [
-            "preserve only explicitly supplied timecode text"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "texture",
-          "text": "Apply slight corner raster wear without covering requested lettering",
-          "tags": [
-            "corner raster wear preserving supplied lettering"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "analog-horror.tracking-tear",
-      "name": "Tracking Tear",
-      "description": "Localized horizontal tracking disturbance while keeping the main subject legible.",
-      "category": "analog-horror/modifiers",
-      "kind": "modifier",
-      "tags": [
-        "tracking",
-        "tear",
-        "vhs",
-        "modifier"
-      ],
-      "claims": {
-        "texture": "analog-horror.tracking-tear",
-        "composition": "analog-horror.tracking-tear"
-      },
-      "clauses": [
-        {
-          "axis": "texture",
-          "text": "Introduce a short horizontal tape-tracking tear at the frame periphery",
-          "tags": [
-            "peripheral vhs tracking tear"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Preserve the central subject and essential requested text outside the distortion",
-          "tags": [
-            "readable center frame despite damage"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "texture",
+     "text": "faint tracking noise, horizontal jitter",
+     "tags": [
+      "vhs artifacts"
+     ],
+     "min_intensity": 0.75
     }
-  ]
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.psa-reel",
+   "name": "Public-Service Reel",
+   "description": "Reassuring instructional broadcast language turned quietly unsettling.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "psa",
+    "instructional",
+    "television",
+    "archive"
+   ],
+   "claims": {
+    "composition": "analog-horror.psa-reel",
+    "medium": "analog-horror.psa-reel",
+    "palette": "analog-horror.psa-reel",
+    "texture": "analog-horror.psa-reel"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "old public service film frame",
+     "tags": [
+      "1970s (style)",
+      "film still"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "clear symmetrical lesson framing",
+     "tags": [
+      "symmetry"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "faded olive and tan",
+     "tags": [
+      "faded colors"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "light film weave and grain",
+     "tags": [
+      "film grain"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.security-room",
+   "name": "Empty Security Monitor",
+   "description": "A grainy fixed camera viewpoint observed long after ordinary hours.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "security",
+    "cctv",
+    "night",
+    "monitor"
+   ],
+   "claims": {
+    "composition": "analog-horror.security-room",
+    "lighting": "analog-horror.security-room",
+    "medium": "analog-horror.security-room",
+    "texture": "analog-horror.security-room"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "degraded security camera footage",
+     "tags": [
+      "security camera",
+      "cctv"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "fixed high corner angle",
+     "tags": [
+      "from above"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "uneven facility lights",
+     "tags": [
+      "dim lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "ghosting and coarse scanlines",
+     "tags": [
+      "scanlines"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.emergency-test",
+   "name": "Emergency Test Screen",
+   "description": "Institutional urgency expressed through rigid shapes and imperfect signal integrity.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "emergency",
+    "alert",
+    "broadcast",
+    "test"
+   ],
+   "claims": {
+    "composition": "analog-horror.emergency-test",
+    "medium": "analog-horror.emergency-test",
+    "palette": "analog-horror.emergency-test",
+    "texture": "analog-horror.emergency-test"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "obsolete emergency broadcast test screen",
+     "tags": [
+      "test card",
+      "analog tv"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "rigid bands and blocks",
+     "tags": [
+      "color bars"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "limited red, cream and charcoal",
+     "tags": [
+      "limited palette"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "phosphor bleed, line tearing",
+     "tags": [
+      "scanlines"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.tape-training",
+   "name": "Employee Training Tape",
+   "description": "Corporate instructional footage with oddly impersonal staging.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "training",
+    "vhs",
+    "office",
+    "corporate"
+   ],
+   "claims": {
+    "composition": "analog-horror.tape-training",
+    "lighting": "analog-horror.tape-training",
+    "medium": "analog-horror.tape-training",
+    "texture": "analog-horror.tape-training"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "archived workplace training video",
+     "tags": [
+      "training video",
+      "vhs"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "overly tidy didactic frame",
+     "tags": [
+      "straight-on"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "flat interior fill light",
+     "tags": [
+      "flat lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "analog color smear, tape noise",
+     "tags": [
+      "vhs artifacts"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.midnight-newsroom",
+   "name": "Local News at Midnight",
+   "description": "Low-budget late-night local broadcast visual language.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "news",
+    "midnight",
+    "studio",
+    "broadcast"
+   ],
+   "claims": {
+    "composition": "analog-horror.midnight-newsroom",
+    "medium": "analog-horror.midnight-newsroom",
+    "palette": "analog-horror.midnight-newsroom",
+    "texture": "analog-horror.midnight-newsroom"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "low-budget late-night local news broadcast",
+     "tags": [
+      "news studio",
+      "analog tv"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "presenter framing with empty space",
+     "tags": [
+      "negative space"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "dated cobalt and dusty neutrals",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "soft composite video",
+     "tags": [
+      "vhs artifacts"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.field-recording",
+   "name": "Unmarked Field Tape",
+   "description": "Uneasy handheld footage with an uncertain reason for recording.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "camcorder",
+    "handheld",
+    "found-footage",
+    "field"
+   ],
+   "claims": {
+    "composition": "analog-horror.field-recording",
+    "lighting": "analog-horror.field-recording",
+    "medium": "analog-horror.field-recording",
+    "texture": "analog-horror.field-recording"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "anonymous handheld analog field footage",
+     "tags": [
+      "found footage",
+      "camcorder"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "late off-center framing",
+     "tags": [
+      "dutch angle"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "weak available light, dark corners",
+     "tags": [
+      "dark"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "chroma noise, tape dropout",
+     "tags": [
+      "vhs artifacts"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.institutional-orientation",
+   "name": "Orientation Film",
+   "description": "Old institutional welcome footage whose formality feels displaced.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "institutional",
+    "orientation",
+    "retro",
+    "film"
+   ],
+   "claims": {
+    "composition": "analog-horror.institutional-orientation",
+    "lighting": "analog-horror.institutional-orientation",
+    "medium": "analog-horror.institutional-orientation",
+    "texture": "analog-horror.institutional-orientation"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "dated institutional orientation film frame",
+     "tags": [
+      "film still",
+      "1980s (style)"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "rigid demonstration symmetry",
+     "tags": [
+      "symmetry"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "broad even indoor exposure",
+     "tags": [
+      "flat lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "soft aged film",
+     "tags": [
+      "film grain"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.family-tape",
+   "name": "Family Tape Unease",
+   "description": "Home-video color and softness with a strangely unoccupied feeling.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "homevideo",
+    "family",
+    "nostalgia",
+    "uncanny"
+   ],
+   "claims": {
+    "composition": "analog-horror.family-tape",
+    "medium": "analog-horror.family-tape",
+    "palette": "analog-horror.family-tape",
+    "texture": "analog-horror.family-tape"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "imperfect home video still",
+     "tags": [
+      "home video",
+      "camcorder"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "casual handheld framing",
+     "tags": [
+      "candid"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "warm tones drifting green",
+     "tags": [
+      "green tint"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "interlace streaks, tape noise",
+     "tags": [
+      "vhs artifacts"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.station-ident",
+   "name": "Forgotten Station Ident",
+   "description": "Aged broadcast signal edges, quiet existing margins and restrained analog bloom; the supplied scene remains the content.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "station",
+    "ident",
+    "television",
+    "logo"
+   ],
+   "claims": {
+    "composition": "analog-horror.station-ident",
+    "lighting": "analog-horror.station-ident",
+    "medium": "analog-horror.station-ident",
+    "texture": "analog-horror.station-ident"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "aged analog station ident graphic",
+     "tags": [
+      "analog tv",
+      "retro graphics"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "quiet margins around one shape",
+     "tags": [
+      "negative space"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "faint emissive highlight rolloff",
+     "tags": [
+      "glow"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "soft bloom, registration offset",
+     "tags": [
+      "chromatic aberration"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.masked-transmission",
+   "name": "Distorted Transmission",
+   "description": "Selective obscuration through analog dropout rather than visible violence.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "masked",
+    "transmission",
+    "distortion",
+    "horror"
+   ],
+   "claims": {
+    "composition": "analog-horror.masked-transmission",
+    "lighting": "analog-horror.masked-transmission",
+    "medium": "analog-horror.masked-transmission",
+    "texture": "analog-horror.masked-transmission"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "obscured interrupted broadcast image",
+     "tags": [
+      "signal interference",
+      "glitch"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "horizontal signal dropout bands",
+     "tags": [
+      "horizontal lines"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "dark blocks with harsh white peaks",
+     "tags": [
+      "high contrast"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "unstable color alignment",
+     "tags": [
+      "chromatic aberration"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.obsolete-device",
+   "name": "Obsolete Monitoring Device",
+   "description": "A close observational frame as if captured from unreliable vintage monitoring hardware.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "obsolete",
+    "device",
+    "monitor",
+    "retro"
+   ],
+   "claims": {
+    "composition": "analog-horror.obsolete-device",
+    "medium": "analog-horror.obsolete-device",
+    "palette": "analog-horror.obsolete-device",
+    "texture": "analog-horror.obsolete-device"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "aged monitoring apparatus screen",
+     "tags": [
+      "crt monitor",
+      "screen"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "utilitarian measured framing",
+     "tags": [
+      "straight-on"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "washed yellow-gray and cool green",
+     "tags": [
+      "green theme"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "phosphor persistence, scan gaps",
+     "tags": [
+      "scanlines"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.found-frame",
+   "name": "Found Frame 004",
+   "description": "One isolated moment from an otherwise contextless tape archive.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "found-footage",
+    "archive",
+    "frame",
+    "uncanny"
+   ],
+   "claims": {
+    "composition": "analog-horror.found-frame",
+    "lighting": "analog-horror.found-frame",
+    "medium": "analog-horror.found-frame",
+    "texture": "analog-horror.found-frame"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "frame from an unlabeled videotape",
+     "tags": [
+      "found footage",
+      "vhs"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "cut-off moment",
+     "tags": [
+      "motion blur"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "inconsistent autoexposure",
+     "tags": [
+      "overexposure"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "soft edges, lower-frame tracking fault",
+     "tags": [
+      "vhs artifacts"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.archive-suppression",
+   "name": "Redacted Archive Feed",
+   "description": "Clinical archival presentation with heavy blocks of missing visual information.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "archive",
+    "redaction",
+    "suppression",
+    "found"
+   ],
+   "claims": {
+    "composition": "analog-horror.archive-suppression",
+    "medium": "analog-horror.archive-suppression",
+    "palette": "analog-horror.archive-suppression",
+    "texture": "analog-horror.archive-suppression"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "redacted archival video frame",
+     "tags": [
+      "archive footage",
+      "censored"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "rectangular signal-loss regions",
+     "tags": [
+      "black bars"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "institutional gray, dirty white, graphite",
+     "tags": [
+      "grey theme"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "worn video softness",
+     "tags": [
+      "vhs artifacts"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "analog-horror.elevator-monitor",
+   "name": "Elevator Camera",
+   "description": "Static enclosed-space monitoring with difficult scale and little movement.",
+   "category": "analog-horror",
+   "kind": "style",
+   "tags": [
+    "elevator",
+    "cctv",
+    "monitor",
+    "claustrophobic"
+   ],
+   "claims": {
+    "composition": "analog-horror.elevator-monitor",
+    "lighting": "analog-horror.elevator-monitor",
+    "medium": "analog-horror.elevator-monitor",
+    "texture": "analog-horror.elevator-monitor"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "aging elevator surveillance still",
+     "tags": [
+      "security camera",
+      "elevator"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "high corner viewpoint",
+     "tags": [
+      "from above"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "single ceiling light, dark corners",
+     "tags": [
+      "vignette"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "low-bit shadow noise, video blur",
+     "tags": [
+      "noise"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  }
+ ]
 }

@@ -1,899 +1,3150 @@
 {
-  "schema_version": 1,
-  "id": "next.modifiers",
-  "version": "1.0.0",
-  "name": "Light, framing and finish",
-  "description": "Composable modifier layers with explicit axes and progressive detail.",
-  "license": "CC0-1.0",
-  "author": "PromptStyler Next contributors",
-  "styles": [
+ "schema_version": 1,
+ "id": "next.modifiers",
+ "version": "2.0.0",
+ "name": "Effects",
+ "description": "Small light, finish, framing and detail effects that stack on any look.",
+ "license": "CC0-1.0",
+ "author": "PromptStyler Next contributors",
+ "styles": [
+  {
+   "id": "analog-horror.tracking-tear",
+   "name": "Tracking Tear",
+   "description": "Localized horizontal tracking disturbance while keeping the main subject legible.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "tracking",
+    "tear",
+    "vhs",
+    "modifier"
+   ],
+   "claims": {
+    "composition": "analog-horror.tracking-tear",
+    "texture": "analog-horror.tracking-tear"
+   },
+   "clauses": [
     {
-      "id": "light.softbox",
-      "name": "Broad softbox",
-      "description": "Illuminate the supplied subject with a broad soft source. Let the shadow side remain gentle while retaining dimensional modeling.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "light",
-        "softbox",
-        "studio"
-      ],
-      "claims": {
-        "lighting": "light-softbox"
-      },
-      "clauses": [
-        {
-          "axis": "lighting",
-          "text": "Illuminate the supplied subject with a broad soft source",
-          "tags": [
-            "broad softbox"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Let the shadow side remain gentle while retaining dimensional modeling",
-          "tags": [
-            "let the shadow side remain gentle while retaining dimensional modeling"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "texture",
+     "text": "short tape-tracking tear at the edge",
+     "tags": [
+      "vhs artifacts",
+      "distortion"
+     ],
+     "min_intensity": 0.0
     },
     {
-      "id": "light.raking",
-      "name": "Raking light",
-      "description": "Let a low raking light describe the existing surface relief. Use long shallow shadows to reveal tactile structure.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "light",
-        "raking",
-        "texture"
-      ],
-      "claims": {
-        "lighting": "light-raking"
-      },
-      "clauses": [
-        {
-          "axis": "lighting",
-          "text": "Let a low raking light describe the existing surface relief",
-          "tags": [
-            "raking light"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Use long shallow shadows to reveal tactile structure",
-          "tags": [
-            "use long shallow shadows to reveal tactile structure"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "light.overcast",
-      "name": "Overcast diffusion",
-      "description": "Use diffuse overcast illumination. Keep color neutral and shadow boundaries broad and soft.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "light",
-        "overcast",
-        "diffuse"
-      ],
-      "claims": {
-        "lighting": "light-overcast"
-      },
-      "clauses": [
-        {
-          "axis": "lighting",
-          "text": "Use diffuse overcast illumination",
-          "tags": [
-            "overcast diffusion"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Keep color neutral and shadow boundaries broad and soft",
-          "tags": [
-            "keep color neutral and shadow boundaries broad and soft"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "light.rim",
-      "name": "Restrained rim light",
-      "description": "Use a narrow rim of light to separate the existing outer contour. Keep the rim localized rather than outlining every surface.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "light",
-        "rim",
-        "contour"
-      ],
-      "claims": {
-        "lighting": "light-rim"
-      },
-      "clauses": [
-        {
-          "axis": "lighting",
-          "text": "Use a narrow rim of light to separate the existing outer contour",
-          "tags": [
-            "restrained rim light"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Keep the rim localized rather than outlining every surface",
-          "tags": [
-            "keep the rim localized rather than outlining every surface"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "light.split",
-      "name": "Split illumination",
-      "description": "Divide the principal form between a lit side and a clear shadow side. Keep the lighting boundary purposeful and the shadow detail readable.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "light",
-        "split",
-        "contrast"
-      ],
-      "claims": {
-        "lighting": "light-split"
-      },
-      "clauses": [
-        {
-          "axis": "lighting",
-          "text": "Divide the principal form between a lit side and a clear shadow side",
-          "tags": [
-            "split illumination"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Keep the lighting boundary purposeful and the shadow detail readable",
-          "tags": [
-            "keep the lighting boundary purposeful and the shadow detail readable"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "light.bounce",
-      "name": "Warm bounced light",
-      "description": "Let warm reflected light gently fill the shadow side. Preserve the direction of the main light source.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "light",
-        "bounce",
-        "warm"
-      ],
-      "claims": {
-        "lighting": "light-bounce"
-      },
-      "clauses": [
-        {
-          "axis": "lighting",
-          "text": "Let warm reflected light gently fill the shadow side",
-          "tags": [
-            "warm bounced light"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Preserve the direction of the main light source",
-          "tags": [
-            "preserve the direction of the main light source"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "frame.negative-space",
-      "name": "Deliberate negative space",
-      "description": "Give the supplied subject deliberate breathing room. Keep large quiet areas subordinate to the original focus.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "composition",
-        "negative space",
-        "quiet"
-      ],
-      "claims": {
-        "composition": "frame-negative-space"
-      },
-      "clauses": [
-        {
-          "axis": "composition",
-          "text": "Give the supplied subject deliberate breathing room",
-          "tags": [
-            "deliberate negative space"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Keep large quiet areas subordinate to the original focus",
-          "tags": [
-            "keep large quiet areas subordinate to the original focus"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "frame.symmetry",
-      "name": "Measured symmetry",
-      "description": "Arrange the supplied forms around a balanced central axis. Keep bilateral visual weight measured without duplicating the subject.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "composition",
-        "symmetry",
-        "balance"
-      ],
-      "claims": {
-        "composition": "frame-symmetry"
-      },
-      "clauses": [
-        {
-          "axis": "composition",
-          "text": "Arrange the supplied forms around a balanced central axis",
-          "tags": [
-            "measured symmetry"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Keep bilateral visual weight measured without duplicating the subject",
-          "tags": [
-            "keep bilateral visual weight measured without duplicating the subject"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "frame.diagonal",
-      "name": "Diagonal rhythm",
-      "description": "Emphasize diagonal relationships already present in the forms. Use the diagonal flow to lead attention toward the main focus.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "composition",
-        "diagonal",
-        "movement"
-      ],
-      "claims": {
-        "composition": "frame-diagonal"
-      },
-      "clauses": [
-        {
-          "axis": "composition",
-          "text": "Emphasize diagonal relationships already present in the forms",
-          "tags": [
-            "diagonal rhythm"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use the diagonal flow to lead attention toward the main focus",
-          "tags": [
-            "use the diagonal flow to lead attention toward the main focus"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "frame.depth",
-      "name": "Layered depth",
-      "description": "Separate the existing foreground, middle distance and background. Use overlap and value differences to maintain a clear depth read.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "composition",
-        "depth",
-        "layers"
-      ],
-      "claims": {
-        "composition": "frame-depth"
-      },
-      "clauses": [
-        {
-          "axis": "composition",
-          "text": "Separate the existing foreground, middle distance and background",
-          "tags": [
-            "layered depth"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use overlap and value differences to maintain a clear depth read",
-          "tags": [
-            "use overlap and value differences to maintain a clear depth read"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "frame.close",
-      "name": "Close crop",
-      "description": "Use a close crop around the supplied focal subject. Let peripheral details fall outside the frame while retaining the intended action.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "composition",
-        "crop",
-        "intimate"
-      ],
-      "claims": {
-        "composition": "frame-close"
-      },
-      "clauses": [
-        {
-          "axis": "composition",
-          "text": "Use a close crop around the supplied focal subject",
-          "tags": [
-            "close crop"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Let peripheral details fall outside the frame while retaining the intended action",
-          "tags": [
-            "let peripheral details fall outside the frame while retaining the intended action"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "frame.frontal",
-      "name": "Frontal clarity",
-      "description": "Use a direct frontal presentation of the supplied forms. Keep horizontal and vertical relationships deliberate and easy to read.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "composition",
-        "frontal",
-        "direct"
-      ],
-      "claims": {
-        "composition": "frame-frontal"
-      },
-      "clauses": [
-        {
-          "axis": "composition",
-          "text": "Use a direct frontal presentation of the supplied forms",
-          "tags": [
-            "frontal clarity"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Keep horizontal and vertical relationships deliberate and easy to read",
-          "tags": [
-            "keep horizontal and vertical relationships deliberate and easy to read"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "finish.paper",
-      "name": "Uncoated paper",
-      "description": "Give the image a restrained uncoated-paper surface. Keep visible fine fibers without obscuring small important details.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "texture",
-        "paper",
-        "printed"
-      ],
-      "claims": {
-        "texture": "finish-paper"
-      },
-      "clauses": [
-        {
-          "axis": "texture",
-          "text": "Give the image a restrained uncoated-paper surface",
-          "tags": [
-            "uncoated paper"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "texture",
-          "text": "Keep visible fine fibers without obscuring small important details",
-          "tags": [
-            "keep visible fine fibers without obscuring small important details"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "finish.grain",
-      "name": "Fine organic grain",
-      "description": "Add fine organic grain to the image texture. Let the grain vary gently with tone rather than forming a uniform overlay.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "texture",
-        "grain",
-        "film"
-      ],
-      "claims": {
-        "texture": "finish-grain"
-      },
-      "clauses": [
-        {
-          "axis": "texture",
-          "text": "Add fine organic grain to the image texture",
-          "tags": [
-            "fine organic grain"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "texture",
-          "text": "Let the grain vary gently with tone rather than forming a uniform overlay",
-          "tags": [
-            "let the grain vary gently with tone rather than forming a uniform overlay"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "finish.halation",
-      "name": "Restrained halation",
-      "description": "Allow a restrained glow around the brightest existing highlights. Keep dark edges and the main subject clearly defined.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "texture",
-        "halation",
-        "glow"
-      ],
-      "claims": {
-        "texture": "finish-halation"
-      },
-      "clauses": [
-        {
-          "axis": "texture",
-          "text": "Allow a restrained glow around the brightest existing highlights",
-          "tags": [
-            "restrained halation"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "texture",
-          "text": "Keep dark edges and the main subject clearly defined",
-          "tags": [
-            "keep dark edges and the main subject clearly defined"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "finish.drybrush",
-      "name": "Dry-brush edge",
-      "description": "Let selected painted edges break into dry-brush marks. Keep larger masses coherent while exposing the underlying surface.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "texture",
-        "dry brush",
-        "paint"
-      ],
-      "claims": {
-        "texture": "finish-drybrush"
-      },
-      "clauses": [
-        {
-          "axis": "texture",
-          "text": "Let selected painted edges break into dry-brush marks",
-          "tags": [
-            "dry-brush edge"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "texture",
-          "text": "Keep larger masses coherent while exposing the underlying surface",
-          "tags": [
-            "keep larger masses coherent while exposing the underlying surface"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "finish.hatching",
-      "name": "Directional hatching",
-      "description": "Use directional hatching to describe existing volume. Follow the curvature of the forms with changes in line density.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "texture",
-        "hatching",
-        "line"
-      ],
-      "claims": {
-        "texture": "finish-hatching"
-      },
-      "clauses": [
-        {
-          "axis": "texture",
-          "text": "Use directional hatching to describe existing volume",
-          "tags": [
-            "directional hatching"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "texture",
-          "text": "Follow the curvature of the forms with changes in line density",
-          "tags": [
-            "follow the curvature of the forms with changes in line density"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "finish.granulation",
-      "name": "Pigment granulation",
-      "description": "Let visible pigment granulation enrich painted tonal areas. Concentrate granules in pooled color rather than every bright region.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "texture",
-        "pigment",
-        "watercolor"
-      ],
-      "claims": {
-        "texture": "finish-granulation"
-      },
-      "clauses": [
-        {
-          "axis": "texture",
-          "text": "Let visible pigment granulation enrich painted tonal areas",
-          "tags": [
-            "pigment granulation"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "texture",
-          "text": "Concentrate granules in pooled color rather than every bright region",
-          "tags": [
-            "concentrate granules in pooled color rather than every bright region"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "mood.hushed",
-      "name": "Hushed restraint",
-      "description": "Keep the visual mood hushed and restrained. Favor gentle transitions and unhurried relationships between forms.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "mood",
-        "quiet",
-        "restrained"
-      ],
-      "claims": {
-        "mood": "mood-hushed"
-      },
-      "clauses": [
-        {
-          "axis": "mood",
-          "text": "Keep the visual mood hushed and restrained",
-          "tags": [
-            "hushed restraint"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "mood",
-          "text": "Favor gentle transitions and unhurried relationships between forms",
-          "tags": [
-            "favor gentle transitions and unhurried relationships between forms"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "mood.tension",
-      "name": "Held tension",
-      "description": "Give the supplied scene a sense of held visual tension. Keep relationships slightly unresolved without introducing new story elements.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "mood",
-        "tension",
-        "uneasy"
-      ],
-      "claims": {
-        "mood": "mood-tension"
-      },
-      "clauses": [
-        {
-          "axis": "mood",
-          "text": "Give the supplied scene a sense of held visual tension",
-          "tags": [
-            "held tension"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "mood",
-          "text": "Keep relationships slightly unresolved without introducing new story elements",
-          "tags": [
-            "keep relationships slightly unresolved without introducing new story elements"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "mood.celebratory",
-      "name": "Open celebration",
-      "description": "Give the supplied scene an open celebratory visual mood. Use lively visual rhythm while retaining the original content.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "mood",
-        "bright",
-        "celebratory"
-      ],
-      "claims": {
-        "mood": "mood-celebratory"
-      },
-      "clauses": [
-        {
-          "axis": "mood",
-          "text": "Give the supplied scene an open celebratory visual mood",
-          "tags": [
-            "open celebration"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "mood",
-          "text": "Use lively visual rhythm while retaining the original content",
-          "tags": [
-            "use lively visual rhythm while retaining the original content"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "detail.selective",
-      "name": "Selective focal detail",
-      "description": "Concentrate small descriptive detail at the existing focus. Let secondary forms remain deliberately simpler.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "detail",
-        "focal",
-        "hierarchy"
-      ],
-      "claims": {
-        "detail": "detail-selective"
-      },
-      "clauses": [
-        {
-          "axis": "detail",
-          "text": "Concentrate small descriptive detail at the existing focus",
-          "tags": [
-            "selective focal detail"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "detail",
-          "text": "Let secondary forms remain deliberately simpler",
-          "tags": [
-            "let secondary forms remain deliberately simpler"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "detail.economy",
-      "name": "Economy of marks",
-      "description": "Describe the supplied forms with an economical number of marks. Remove redundant small detail while preserving identifying structure.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "detail",
-        "minimal",
-        "economy"
-      ],
-      "claims": {
-        "detail": "detail-economy"
-      },
-      "clauses": [
-        {
-          "axis": "detail",
-          "text": "Describe the supplied forms with an economical number of marks",
-          "tags": [
-            "economy of marks"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "detail",
-          "text": "Remove redundant small detail while preserving identifying structure",
-          "tags": [
-            "remove redundant small detail while preserving identifying structure"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "detail.tactile",
-      "name": "Tactile observation",
-      "description": "Emphasize the material qualities of the existing surfaces. Let small wear, weave or grain details follow the supplied materials.",
-      "category": "modifiers",
-      "kind": "modifier",
-      "tags": [
-        "modifier",
-        "detail",
-        "tactile",
-        "surface"
-      ],
-      "claims": {
-        "detail": "detail-tactile"
-      },
-      "clauses": [
-        {
-          "axis": "detail",
-          "text": "Emphasize the material qualities of the existing surfaces",
-          "tags": [
-            "tactile observation"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "detail",
-          "text": "Let small wear, weave or grain details follow the supplied materials",
-          "tags": [
-            "let small wear, weave or grain details follow the supplied materials"
-          ],
-          "min_intensity": 0.65
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "composition",
+     "text": "distortion kept at the periphery",
+     "tags": [
+      "border"
+     ],
+     "min_intensity": 0.4
     }
-  ]
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "animfinish.contour-cadence",
+   "name": "Contour cadence",
+   "description": "Line thickness changes deliberately along supplied silhouettes.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "line weight",
+    "contour",
+    "animation",
+    "finishing"
+   ],
+   "claims": {
+    "detail": "animfinish.contour-cadence",
+    "texture": "animfinish.contour-cadence"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "varied line weight along outlines",
+     "tags": [
+      "line weight variation",
+      "lineart"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "crisp defining contours",
+     "tags": [
+      "clean lineart"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "animfinish.shadow-cel",
+   "name": "Two-zone shadow cel",
+   "description": "Two broad shadow groups simplify illumination while retaining form.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "cel shadow",
+    "two value",
+    "animation",
+    "finishing"
+   ],
+   "claims": {
+    "detail": "animfinish.shadow-cel",
+    "lighting": "animfinish.shadow-cel"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "two-tone cel shading",
+     "tags": [
+      "cel shading",
+      "anime coloring"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "one light group, one shadow group",
+     "tags": [
+      "flat color"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "animfinish.colored-shadow-line",
+   "name": "Colored shadow-side line",
+   "description": "Contour hue changes only inside existing shadow regions.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "colored line",
+    "shadow",
+    "animation",
+    "finishing"
+   ],
+   "claims": {
+    "detail": "animfinish.colored-shadow-line",
+    "texture": "animfinish.colored-shadow-line"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "colored lineart on shadow sides",
+     "tags": [
+      "colored lineart"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "dark lines at overlaps",
+     "tags": [
+      "lineart"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "animfinish.graphite-cleanup",
+   "name": "Dry graphite cleanup",
+   "description": "Dry, broken drawing edges retain controlled construction.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "graphite",
+    "cleanup",
+    "dry line",
+    "animation"
+   ],
+   "claims": {
+    "detail": "animfinish.graphite-cleanup",
+    "texture": "animfinish.graphite-cleanup"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "dry graphite cleanup lines",
+     "tags": [
+      "graphite (medium)",
+      "sketch"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "firm main strokes, light construction",
+     "tags": [
+      "unfinished"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "animfinish.paint-edge-drift",
+   "name": "Paint-edge drift",
+   "description": "Slightly imperfect fill registration creates a handmade cel surface.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "paint fill",
+    "edge drift",
+    "registration",
+    "animation"
+   ],
+   "claims": {
+    "detail": "animfinish.paint-edge-drift",
+    "texture": "animfinish.paint-edge-drift"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "slightly offset paint fills",
+     "tags": [
+      "misregistration",
+      "flat color"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "paint inside clean outlines",
+     "tags": [
+      "cel shading"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "animfinish.optical-composite",
+   "name": "Optical composite bloom",
+   "description": "Bright cel regions meet a soft optical compositing fringe.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "optical printer",
+    "composite",
+    "bloom",
+    "animation"
+   ],
+   "claims": {
+    "lighting": "animfinish.optical-composite",
+    "texture": "animfinish.optical-composite"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "soft bloom where light meets dark",
+     "tags": [
+      "bloom",
+      "glow"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "fine unifying film grain",
+     "tags": [
+      "film grain"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "animfinish.background-economy",
+   "name": "Background paint economy",
+   "description": "Secondary depth receives broader marks than the supplied focal content.",
+   "category": "effects/detail",
+   "kind": "modifier",
+   "tags": [
+    "background",
+    "economy",
+    "depth",
+    "animation"
+   ],
+   "claims": {
+    "detail": "animfinish.background-economy",
+    "texture": "animfinish.background-economy"
+   },
+   "clauses": [
+    {
+     "axis": "detail",
+     "text": "painterly simplified background",
+     "tags": [
+      "painterly",
+      "blurry background"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "crisp focal outlines",
+     "tags": [
+      "clean lineart"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "animfinish.ink-trap-junction",
+   "name": "Ink-trap junctions",
+   "description": "Line junctions open slightly instead of forming clogged dark knots.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "ink trap",
+    "junction",
+    "line art",
+    "animation"
+   ],
+   "claims": {
+    "detail": "animfinish.ink-trap-junction",
+    "texture": "animfinish.ink-trap-junction"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "open line junctions",
+     "tags": [
+      "lineart",
+      "thin lineart"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "clean separated shapes",
+     "tags": [
+      "clean lineart"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.speedline-edge",
+   "name": "Peripheral Speed Lines",
+   "description": "Motion lines pushed toward the margins to preserve the subject.",
+   "category": "effects/detail",
+   "kind": "modifier",
+   "tags": [
+    "speedlines",
+    "motion",
+    "anime",
+    "modifier"
+   ],
+   "claims": {
+    "composition": "subanime.speedline-edge",
+    "detail": "subanime.speedline-edge"
+   },
+   "clauses": [
+    {
+     "axis": "detail",
+     "text": "sparse radiating ink motion lines at the edges",
+     "tags": [
+      "speed lines",
+      "emphasis lines"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "clear calm center",
+     "tags": [
+      "centered"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.animation-hold",
+   "name": "Animation Hold",
+   "description": "Slightly imperfect held-animation-frame character without full film aging.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "cel",
+    "framehold",
+    "texture",
+    "modifier"
+   ],
+   "claims": {
+    "detail": "subanime.animation-hold",
+    "texture": "subanime.animation-hold"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "barely visible cel registration jitter",
+     "tags": [
+      "cel animation",
+      "retro artstyle"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "slightly varied line widths",
+     "tags": [
+      "lineart"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "brutalgraphic.registration-crop",
+   "name": "Registration Crop",
+   "description": "Decorative print-shop registration fragments away from requested lettering.",
+   "category": "effects/detail",
+   "kind": "modifier",
+   "tags": [
+    "registration",
+    "crop",
+    "mark",
+    "modifier"
+   ],
+   "claims": {
+    "composition": "brutalgraphic.registration-crop",
+    "detail": "brutalgraphic.registration-crop"
+   },
+   "clauses": [
+    {
+     "axis": "detail",
+     "text": "sparse printer registration marks at the margins",
+     "tags": [
+      "registration marks"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "quiet margins",
+     "tags": [
+      "negative space"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "brutalgraphic.hard-rule",
+   "name": "Hard Rule",
+   "description": "Heavy editorial rule lines used to stabilize an otherwise chaotic composition.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "rule",
+    "line",
+    "editorial",
+    "modifier"
+   ],
+   "claims": {
+    "composition": "brutalgraphic.hard-rule",
+    "texture": "brutalgraphic.hard-rule"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "one or two thick divider rules",
+     "tags": [
+      "horizontal lines",
+      "border"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "slightly imperfect printed edges",
+     "tags": [
+      "ink texture"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "cozynostalgia.gentle-bokeh",
+   "name": "Gentle Background Bokeh",
+   "description": "Sparing peripheral softness that preserves the requested subject and text.",
+   "category": "effects/detail",
+   "kind": "modifier",
+   "tags": [
+    "bokeh",
+    "soft",
+    "focus",
+    "modifier"
+   ],
+   "claims": {
+    "composition": "cozynostalgia.gentle-bokeh",
+    "detail": "cozynostalgia.gentle-bokeh"
+   },
+   "clauses": [
+    {
+     "axis": "detail",
+     "text": "soft distant background bokeh",
+     "tags": [
+      "bokeh",
+      "depth of field"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "sharp main subject",
+     "tags": [
+      "blurry background"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "cozynostalgia.soft-film-grain",
+   "name": "Soft Film Grain",
+   "description": "Barely perceptible organic grain for warm everyday memories.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "grain",
+    "film",
+    "nostalgia",
+    "modifier"
+   ],
+   "claims": {
+    "lighting": "cozynostalgia.soft-film-grain",
+    "texture": "cozynostalgia.soft-film-grain"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "very fine organic film grain",
+     "tags": [
+      "film grain"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "smooth natural highlights",
+     "tags": [
+      "soft lighting"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "dreamcore.dream-discontinuity",
+   "name": "Dream Discontinuity",
+   "description": "Subtle spatial mismatch while retaining recognizable subject identity.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "disjointed",
+    "space",
+    "dream",
+    "modifier"
+   ],
+   "claims": {
+    "composition": "dreamcore.dream-discontinuity",
+    "detail": "dreamcore.dream-discontinuity"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "background joining a little impossibly",
+     "tags": [
+      "surreal",
+      "impossible geometry"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "interrupted tonal edge cadence",
+     "tags": [
+      "soft focus"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "dreamcore.memory-bleed",
+   "name": "Memory Bleed",
+   "description": "Peripheral doubling reminiscent of overlapping recollections.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "memory",
+    "soft",
+    "double",
+    "modifier"
+   ],
+   "claims": {
+    "lighting": "dreamcore.memory-bleed",
+    "texture": "dreamcore.memory-bleed"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "faint overlapping memory softness",
+     "tags": [
+      "double exposure",
+      "soft focus"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "soft hazy glow",
+     "tags": [
+      "hazy"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.ragged-trim",
+   "name": "Ragged Crop Marks",
+   "description": "Asymmetric cut-paper edges suitable for adding typesetting later.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "cutpaper",
+    "editorial",
+    "collage",
+    "modifier"
+   ],
+   "claims": {
+    "composition": "subedit.ragged-trim",
+    "texture": "subedit.ragged-trim"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "torn and scissor-cut paper margins",
+     "tags": [
+      "torn paper",
+      "cutout"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "open margin space",
+     "tags": [
+      "border"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.risograph-registration",
+   "name": "Risograph Registration",
+   "description": "Small-scale spot-color plate misalignment without corrupting requested text.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "riso",
+    "print",
+    "misregistration",
+    "modifier"
+   ],
+   "claims": {
+    "detail": "subedit.risograph-registration",
+    "texture": "subedit.risograph-registration"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "slightly offset riso ink layers",
+     "tags": [
+      "misregistration",
+      "risograph"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "tactile overprint edges",
+     "tags": [
+      "print texture"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "gameera.pixel-edge",
+   "name": "Intentional Pixel Edges",
+   "description": "Pixelation confined to existing edges while preserving overall scene content.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "pixel",
+    "edge",
+    "texture",
+    "modifier"
+   ],
+   "claims": {
+    "detail": "gameera.pixel-edge",
+    "texture": "gameera.pixel-edge"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "pixel clusters along fine contours",
+     "tags": [
+      "pixelated",
+      "pixel art"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "clear large silhouette",
+     "tags": [
+      "silhouette"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "gameera.screen-ui-safe",
+   "name": "HUD-Safe Framing",
+   "description": "A generous peripheral margin suitable for adding interface widgets later.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "hud",
+    "ui",
+    "framing",
+    "modifier"
+   ],
+   "claims": {
+    "composition": "gameera.screen-ui-safe",
+    "detail": "gameera.screen-ui-safe"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "uncluttered peripheral margins",
+     "tags": [
+      "negative space",
+      "centered"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "clear central focal details",
+     "tags": [
+      "sharp focus"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "netculture.cursor-trail",
+   "name": "Cursor-Trail Accent",
+   "description": "A delicate digital movement effect integrated around existing points of interaction.",
+   "category": "effects/detail",
+   "kind": "modifier",
+   "tags": [
+    "cursor",
+    "trail",
+    "digital",
+    "modifier"
+   ],
+   "claims": {
+    "composition": "netculture.cursor-trail",
+    "detail": "netculture.cursor-trail"
+   },
+   "clauses": [
+    {
+     "axis": "detail",
+     "text": "sparse displaced highlight trail",
+     "tags": [
+      "afterimage",
+      "motion trail"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "subordinate peripheral detail",
+     "tags": [
+      "sharp focus"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "netculture.sticker-chaos",
+   "name": "Sticker Chaos",
+   "description": "Collaged sticker edges and playful graphic layering.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "sticker",
+    "collage",
+    "overlay",
+    "modifier"
+   ],
+   "claims": {
+    "composition": "netculture.sticker-chaos",
+    "texture": "netculture.sticker-chaos"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "die-cut sticker borders",
+     "tags": [
+      "sticker",
+      "white outline"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "playful imperfect alignment",
+     "tags": [
+      "collage"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.repeating-geometry",
+   "name": "Repetitive Geometry",
+   "description": "Increases architectural rhythm without introducing a specific building type.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "repetition",
+    "architecture",
+    "geometry",
+    "mod"
+   ],
+   "claims": {
+    "composition": "liminal.repeating-geometry",
+    "detail": "liminal.repeating-geometry"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "rhythmic repeated spacing",
+     "tags": [
+      "repetition",
+      "symmetry"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "small spacing variations",
+     "tags": [
+      "uncanny"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.offhour-stillness",
+   "name": "Off-Hour Stillness",
+   "description": "A restrained emotional treatment emphasizing pauses and absence.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "empty",
+    "stillness",
+    "quiet",
+    "mod"
+   ],
+   "claims": {
+    "composition": "liminal.offhour-stillness",
+    "lighting": "liminal.offhour-stillness"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "broad quiet empty areas",
+     "tags": [
+      "negative space",
+      "empty"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "quiet still light",
+     "tags": [
+      "dim lighting"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "light.softbox",
+   "name": "Broad softbox",
+   "description": "Illuminate the supplied subject with a broad soft source. Let the shadow side remain gentle while retaining dimensional modeling.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "light",
+    "softbox",
+    "studio"
+   ],
+   "claims": {
+    "lighting": "light.softbox"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "broad softbox light",
+     "tags": [
+      "soft lighting",
+      "studio lighting"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "gentle shadow side",
+     "tags": [
+      "soft shadows"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "light.raking",
+   "name": "Raking light",
+   "description": "Let a low raking light describe the existing surface relief. Use long shallow shadows to reveal tactile structure.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "light",
+    "raking",
+    "texture"
+   ],
+   "claims": {
+    "lighting": "light.raking"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "low raking side light",
+     "tags": [
+      "sidelighting",
+      "raking light"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "long shallow shadows across texture",
+     "tags": [
+      "long shadows"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "light.overcast",
+   "name": "Overcast diffusion",
+   "description": "Use diffuse overcast illumination. Keep color neutral and shadow boundaries broad and soft.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "light",
+    "overcast",
+    "diffuse"
+   ],
+   "claims": {
+    "lighting": "light.overcast"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "soft overcast daylight",
+     "tags": [
+      "overcast",
+      "soft lighting"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "broad soft shadow edges",
+     "tags": [
+      "soft shadows"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "light.rim",
+   "name": "Restrained rim light",
+   "description": "Use a narrow rim of light to separate the existing outer contour. Keep the rim localized rather than outlining every surface.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "light",
+    "rim",
+    "contour"
+   ],
+   "claims": {
+    "lighting": "light.rim"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "narrow rim light on outer edges",
+     "tags": [
+      "rim light"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "dark surroundings",
+     "tags": [
+      "dark background"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "light.split",
+   "name": "Split illumination",
+   "description": "Divide the principal form between a lit side and a clear shadow side. Keep the lighting boundary purposeful and the shadow detail readable.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "light",
+    "split",
+    "contrast"
+   ],
+   "claims": {
+    "lighting": "light.split"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "split lighting, half lit and half shadow",
+     "tags": [
+      "split lighting",
+      "sidelighting"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "clear shadow side with visible detail",
+     "tags": [
+      "chiaroscuro"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "light.bounce",
+   "name": "Warm bounced light",
+   "description": "Let warm reflected light gently fill the shadow side. Preserve the direction of the main light source.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "light",
+    "bounce",
+    "warm"
+   ],
+   "claims": {
+    "lighting": "light.bounce"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "warm bounced fill light",
+     "tags": [
+      "warm lighting"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "soft warm glow in shadows",
+     "tags": [
+      "bounce light"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "frame.negative-space",
+   "name": "Deliberate negative space",
+   "description": "Give the supplied subject deliberate breathing room. Keep large quiet areas subordinate to the original focus.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "composition",
+    "negative space",
+    "quiet"
+   ],
+   "claims": {
+    "composition": "frame.negative-space"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "generous negative space",
+     "tags": [
+      "negative space"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "small focal subject in open space",
+     "tags": [
+      "minimalism"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "frame.symmetry",
+   "name": "Measured symmetry",
+   "description": "Arrange the supplied forms around a balanced central axis. Keep bilateral visual weight measured without duplicating the subject.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "composition",
+    "symmetry",
+    "balance"
+   ],
+   "claims": {
+    "composition": "frame.symmetry"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "centered symmetrical composition",
+     "tags": [
+      "symmetry",
+      "centered"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "balanced central axis",
+     "tags": [
+      "straight-on"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "frame.diagonal",
+   "name": "Diagonal rhythm",
+   "description": "Emphasize diagonal relationships already present in the forms. Use the diagonal flow to lead attention toward the main focus.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "composition",
+    "diagonal",
+    "movement"
+   ],
+   "claims": {
+    "composition": "frame.diagonal"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "strong diagonal composition",
+     "tags": [
+      "diagonal",
+      "dynamic composition"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "leading lines toward the focus",
+     "tags": [
+      "leading lines"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "frame.depth",
+   "name": "Layered depth",
+   "description": "Separate the existing foreground, middle distance and background. Use overlap and value differences to maintain a clear depth read.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "composition",
+    "depth",
+    "layers"
+   ],
+   "claims": {
+    "composition": "frame.depth"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "layered foreground, midground and background",
+     "tags": [
+      "depth",
+      "layered"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "strong overlap and atmospheric depth",
+     "tags": [
+      "depth of field"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "frame.close",
+   "name": "Close crop",
+   "description": "Use a close crop around the supplied focal subject. Let peripheral details fall outside the frame while retaining the intended action.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "composition",
+    "crop",
+    "intimate"
+   ],
+   "claims": {
+    "composition": "frame.close"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "tight close-up crop",
+     "tags": [
+      "close-up"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "edges cropped tightly",
+     "tags": [
+      "cropped"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "frame.frontal",
+   "name": "Frontal clarity",
+   "description": "Use a direct frontal presentation of the supplied forms. Keep horizontal and vertical relationships deliberate and easy to read.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "composition",
+    "frontal",
+    "direct"
+   ],
+   "claims": {
+    "composition": "frame.frontal"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "straight-on frontal view",
+     "tags": [
+      "straight-on",
+      "front view"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "clean horizontal and vertical lines",
+     "tags": [
+      "symmetry"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "finish.paper",
+   "name": "Uncoated paper",
+   "description": "Give the image a restrained uncoated-paper surface. Keep visible fine fibers without obscuring small important details.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "texture",
+    "paper",
+    "printed"
+   ],
+   "claims": {
+    "texture": "finish.paper"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "uncoated paper texture",
+     "tags": [
+      "paper texture"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "fine visible paper fibers",
+     "tags": [
+      "traditional media"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "finish.grain",
+   "name": "Fine organic grain",
+   "description": "Add fine organic grain to the image texture. Let the grain vary gently with tone rather than forming a uniform overlay.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "texture",
+    "grain",
+    "film"
+   ],
+   "claims": {
+    "texture": "finish.grain"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "fine film grain",
+     "tags": [
+      "film grain"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "organic grain in midtones",
+     "tags": [
+      "noise"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "finish.halation",
+   "name": "Restrained halation",
+   "description": "Allow a restrained glow around the brightest existing highlights. Keep dark edges and the main subject clearly defined.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "texture",
+    "halation",
+    "glow"
+   ],
+   "claims": {
+    "texture": "finish.halation"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "soft halation glow on highlights",
+     "tags": [
+      "bloom",
+      "glow"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "crisp dark edges",
+     "tags": [
+      "high contrast"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "finish.drybrush",
+   "name": "Dry-brush edge",
+   "description": "Let selected painted edges break into dry-brush marks. Keep larger masses coherent while exposing the underlying surface.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "texture",
+    "dry brush",
+    "paint"
+   ],
+   "claims": {
+    "texture": "finish.drybrush"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "dry-brush edges",
+     "tags": [
+      "dry brush",
+      "brush strokes"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "broken paint showing the surface",
+     "tags": [
+      "texture"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "finish.hatching",
+   "name": "Directional hatching",
+   "description": "Use directional hatching to describe existing volume. Follow the curvature of the forms with changes in line density.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "texture",
+    "hatching",
+    "line"
+   ],
+   "claims": {
+    "texture": "finish.hatching"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "directional hatching",
+     "tags": [
+      "hatching (texture)",
+      "crosshatching"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "hatch density following form",
+     "tags": [
+      "lineart"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "finish.granulation",
+   "name": "Pigment granulation",
+   "description": "Let visible pigment granulation enrich painted tonal areas. Concentrate granules in pooled color rather than every bright region.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "texture",
+    "pigment",
+    "watercolor"
+   ],
+   "claims": {
+    "texture": "finish.granulation"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "watercolor pigment granulation",
+     "tags": [
+      "watercolor effect",
+      "granulation"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "pooled color granules",
+     "tags": [
+      "paper texture"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "mood.hushed",
+   "name": "Hushed restraint",
+   "description": "Keep the visual mood hushed and restrained. Favor gentle transitions and unhurried relationships between forms.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "mood",
+    "quiet",
+    "restrained"
+   ],
+   "claims": {
+    "lighting": "mood.hushed",
+    "palette": "mood.hushed"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "soft low-contrast hushed light",
+     "tags": [
+      "soft lighting",
+      "low contrast"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "quiet muted tones",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "mood.tension",
+   "name": "Held tension",
+   "description": "Give the supplied scene a sense of held visual tension. Keep relationships slightly unresolved without introducing new story elements.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "mood",
+    "tension",
+    "uneasy"
+   ],
+   "claims": {
+    "composition": "mood.tension",
+    "lighting": "mood.tension"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "hard side light with tense shadows",
+     "tags": [
+      "hard shadows",
+      "dramatic lighting"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "slightly tilted frame",
+     "tags": [
+      "dutch angle"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "mood.celebratory",
+   "name": "Open celebration",
+   "description": "Give the supplied scene an open celebratory visual mood. Use lively visual rhythm while retaining the original content.",
+   "category": "effects/color",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "mood",
+    "bright",
+    "celebratory"
+   ],
+   "claims": {
+    "lighting": "mood.celebratory",
+    "palette": "mood.celebratory"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "bright festive colors",
+     "tags": [
+      "colorful",
+      "vivid colors"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "warm sparkling light",
+     "tags": [
+      "sparkle",
+      "bloom"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "detail.selective",
+   "name": "Selective focal detail",
+   "description": "Concentrate small descriptive detail at the existing focus. Let secondary forms remain deliberately simpler.",
+   "category": "effects/detail",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "detail",
+    "focal",
+    "hierarchy"
+   ],
+   "claims": {
+    "detail": "detail.selective"
+   },
+   "clauses": [
+    {
+     "axis": "detail",
+     "text": "fine detail on the focal subject only",
+     "tags": [
+      "depth of field",
+      "detailed"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "simplified background",
+     "tags": [
+      "blurry background"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "detail.economy",
+   "name": "Economy of marks",
+   "description": "Describe the supplied forms with an economical number of marks. Remove redundant small detail while preserving identifying structure.",
+   "category": "effects/detail",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "detail",
+    "minimal",
+    "economy"
+   ],
+   "claims": {
+    "detail": "detail.economy"
+   },
+   "clauses": [
+    {
+     "axis": "detail",
+     "text": "economical minimal marks",
+     "tags": [
+      "minimalism",
+      "simple"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "few defining lines",
+     "tags": [
+      "lineart"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "detail.tactile",
+   "name": "Tactile observation",
+   "description": "Emphasize the material qualities of the existing surfaces. Let small wear, weave or grain details follow the supplied materials.",
+   "category": "effects/detail",
+   "kind": "modifier",
+   "tags": [
+    "modifier",
+    "detail",
+    "tactile",
+    "surface"
+   ],
+   "claims": {
+    "detail": "detail.tactile"
+   },
+   "clauses": [
+    {
+     "axis": "detail",
+     "text": "tactile material detail",
+     "tags": [
+      "detailed texture",
+      "realistic"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "visible weave, grain and wear",
+     "tags": [
+      "texture"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "esoteric.fine-compass-lines",
+   "name": "Fine Compass Lines",
+   "description": "Decorative circular construction lines that do not overwhelm the subject.",
+   "category": "effects/detail",
+   "kind": "modifier",
+   "tags": [
+    "compass",
+    "geometry",
+    "lines",
+    "modifier"
+   ],
+   "claims": {
+    "composition": "esoteric.fine-compass-lines",
+    "detail": "esoteric.fine-compass-lines"
+   },
+   "clauses": [
+    {
+     "axis": "detail",
+     "text": "thin circular construction lines",
+     "tags": [
+      "geometric",
+      "concentric circles"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "sparse outer guides",
+     "tags": [
+      "negative space"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "esoteric.paper-gilt",
+   "name": "Paper Gilt Edges",
+   "description": "A subtle raised gilding treatment along selected graphic borders.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "gold",
+    "relief",
+    "ornament",
+    "modifier"
+   ],
+   "claims": {
+    "lighting": "esoteric.paper-gilt",
+    "texture": "esoteric.paper-gilt"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "raised gilt-foil outlines",
+     "tags": [
+      "gold trim",
+      "foil"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "tiny glints on gilt edges",
+     "tags": [
+      "sparkle"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "optics.stress-colors",
+   "name": "Stress-color interference",
+   "description": "Localized interference bands follow existing translucent forms.",
+   "category": "effects/color",
+   "kind": "modifier",
+   "tags": [
+    "birefringence",
+    "stress",
+    "interference",
+    "optical"
+   ],
+   "claims": {
+    "palette": "optics.stress-colors",
+    "texture": "optics.stress-colors"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "rainbow interference colors in clear materials",
+     "tags": [
+      "iridescent",
+      "rainbow"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "color bands following curvature",
+     "tags": [
+      "gradient"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "optics.dichroic-edge",
+   "name": "Dichroic edge shift",
+   "description": "A thin-film hue split is confined to oblique highlights.",
+   "category": "effects/color",
+   "kind": "modifier",
+   "tags": [
+    "dichroic",
+    "thin film",
+    "edge",
+    "optical"
+   ],
+   "claims": {
+    "lighting": "optics.dichroic-edge",
+    "palette": "optics.dichroic-edge"
+   },
+   "clauses": [
+    {
+     "axis": "palette",
+     "text": "dichroic color-shift edges",
+     "tags": [
+      "iridescent",
+      "dichroic"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "hue shift on grazing highlights",
+     "tags": [
+      "rim light"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "optics.index-match",
+   "name": "Index-matched quiet",
+   "description": "Low-contrast internal boundaries retain the supplied outer silhouette.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "index matching",
+    "transparency",
+    "boundary",
+    "optical"
+   ],
+   "claims": {
+    "detail": "optics.index-match",
+    "texture": "optics.index-match"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "soft clear translucent material",
+     "tags": [
+      "transparent",
+      "translucent"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "softened internal edges",
+     "tags": [
+      "soft focus"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "optics.retroreturn",
+   "name": "Retroreflective return",
+   "description": "A compact near-view highlight reads as light returning toward the observer.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "retroreflective",
+    "bead",
+    "return",
+    "optical"
+   ],
+   "claims": {
+    "lighting": "optics.retroreturn",
+    "texture": "optics.retroreturn"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "retroreflective highlight glint",
+     "tags": [
+      "sparkle",
+      "reflection"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "fine bead-like sparkle",
+     "tags": [
+      "glitter"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "optics.edge-transmission",
+   "name": "Subsurface edge transmission",
+   "description": "Thin existing edges carry soft transmitted illumination.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "subsurface",
+    "transmission",
+    "thin edge",
+    "optical"
+   ],
+   "claims": {
+    "detail": "optics.edge-transmission",
+    "lighting": "optics.edge-transmission"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "light glowing through thin edges",
+     "tags": [
+      "subsurface scattering",
+      "translucent"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "opaque solid interior forms",
+     "tags": [
+      "backlighting"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "optics.frosted-rim",
+   "name": "Frosted rim scatter",
+   "description": "Roughened edge highlights soften without an overall image blur.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "frosted",
+    "rim",
+    "scatter",
+    "optical"
+   ],
+   "claims": {
+    "lighting": "optics.frosted-rim",
+    "texture": "optics.frosted-rim"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "frosted rim glow",
+     "tags": [
+      "rim light",
+      "frost"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "fine rough edge grain",
+     "tags": [
+      "texture"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "optics.fluorescent-spill",
+   "name": "Fluorescent surface spill",
+   "description": "Small emissive-looking regions lift adjacent tones with controlled falloff.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "fluorescent",
+    "spill",
+    "emission",
+    "optical"
+   ],
+   "claims": {
+    "detail": "optics.fluorescent-spill",
+    "lighting": "optics.fluorescent-spill"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "soft fluorescent glow spill",
+     "tags": [
+      "glowing",
+      "neon lights"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "narrow glow around bright areas",
+     "tags": [
+      "bloom"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "optics.anisotropic-streak",
+   "name": "Anisotropic highlight streak",
+   "description": "Long highlights follow one supplied material direction.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "anisotropic",
+    "highlight",
+    "brushed",
+    "optical"
+   ],
+   "claims": {
+    "lighting": "optics.anisotropic-streak",
+    "texture": "optics.anisotropic-streak"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "streaked brushed-metal highlights",
+     "tags": [
+      "metallic",
+      "reflection"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "fine aligned surface striations",
+     "tags": [
+      "brushed metal"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "retromedia.tape-edge",
+   "name": "Tape Edge Wear",
+   "description": "Modest frame-edge tape damage that leaves focal information intact.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "tape",
+    "edge",
+    "damage",
+    "analog"
+   ],
+   "claims": {
+    "composition": "retromedia.tape-edge",
+    "texture": "retromedia.tape-edge"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "short tape disturbances at outer margins",
+     "tags": [
+      "vhs artifacts",
+      "distortion"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "clear calm center",
+     "tags": [
+      "centered"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "psychsurreal.off-axis-repeat",
+   "name": "Off-Axis Repeat",
+   "description": "A single spatial echo that disturbs geometry without replacing the primary subject.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "echo",
+    "geometry",
+    "repetition",
+    "modifier"
+   ],
+   "claims": {
+    "composition": "psychsurreal.off-axis-repeat",
+    "detail": "psychsurreal.off-axis-repeat"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "one framing line echoed at a near angle",
+     "tags": [
+      "repetition",
+      "tilted"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "sparse repeated structure",
+     "tags": [
+      "minimalism"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "psychsurreal.edge-awareness",
+   "name": "Peripheral Awareness",
+   "description": "Soft visual tension held at the margins of a scene.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "peripheral",
+    "unease",
+    "edge",
+    "modifier"
+   ],
+   "claims": {
+    "composition": "psychsurreal.edge-awareness",
+    "lighting": "psychsurreal.edge-awareness"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "peripheral cropping implying continuation",
+     "tags": [
+      "cropped",
+      "out of frame"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "quiet dim edges",
+     "tags": [
+      "vignette"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "metaphysical.long-shadow",
+   "name": "Long Metaphysical Shadow",
+   "description": "Elongated geometrically readable shadows for allegorical atmospheres.",
+   "category": "effects/light",
+   "kind": "modifier",
+   "tags": [
+    "shadow",
+    "allegory",
+    "modifier",
+    "light"
+   ],
+   "claims": {
+    "composition": "metaphysical.long-shadow",
+    "lighting": "metaphysical.long-shadow"
+   },
+   "clauses": [
+    {
+     "axis": "lighting",
+     "text": "long geometric cast shadows",
+     "tags": [
+      "long shadows",
+      "low sun"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "open space for the shadow",
+     "tags": [
+      "negative space"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "metaphysical.symbolic-pause",
+   "name": "Symbolic Pause",
+   "description": "Calm emotional suspension conveyed by negative space and measured detail.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "stillness",
+    "emotion",
+    "modifier",
+    "space"
+   ],
+   "claims": {
+    "composition": "metaphysical.symbolic-pause",
+    "lighting": "metaphysical.symbolic-pause"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "intentional breathing space",
+     "tags": [
+      "negative space",
+      "centered"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "calm still light",
+     "tags": [
+      "soft lighting"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "visionary.filament-highlights",
+   "name": "Filament Highlights",
+   "description": "Hairline luminous contour traces around existing forms.",
+   "category": "effects/detail",
+   "kind": "modifier",
+   "tags": [
+    "filament",
+    "glow",
+    "outline",
+    "modifier"
+   ],
+   "claims": {
+    "detail": "visionary.filament-highlights",
+    "lighting": "visionary.filament-highlights"
+   },
+   "clauses": [
+    {
+     "axis": "detail",
+     "text": "a few thin luminous contour filaments",
+     "tags": [
+      "glowing lines",
+      "rim light"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "short light spill",
+     "tags": [
+      "glow"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "visionary.radial-breath",
+   "name": "Radial Breath",
+   "description": "Subtle expansion and contraction rhythm built from nested negative space.",
+   "category": "effects/frame",
+   "kind": "modifier",
+   "tags": [
+    "radial",
+    "rhythm",
+    "breathing",
+    "modifier"
+   ],
+   "claims": {
+    "composition": "visionary.radial-breath",
+    "lighting": "visionary.radial-breath"
+   },
+   "clauses": [
+    {
+     "axis": "composition",
+     "text": "widely spaced concentric echoes",
+     "tags": [
+      "concentric circles",
+      "radial"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "calm soft light",
+     "tags": [
+      "soft lighting"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "weirdcore.intentional-jpeg",
+   "name": "Intentional JPEG Damage",
+   "description": "Low-quality digital compression as a deliberate material treatment.",
+   "category": "effects/finish",
+   "kind": "modifier",
+   "tags": [
+    "jpeg",
+    "compression",
+    "artifacts",
+    "modifier"
+   ],
+   "claims": {
+    "detail": "weirdcore.intentional-jpeg",
+    "texture": "weirdcore.intentional-jpeg"
+   },
+   "clauses": [
+    {
+     "axis": "texture",
+     "text": "visible JPEG blocks and mosquito noise",
+     "tags": [
+      "jpeg artifacts",
+      "compression artifacts"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "detail",
+     "text": "legible main contours",
+     "tags": [
+      "sharp focus"
+     ],
+     "min_intensity": 0.4
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  }
+ ],
+ "retired": [
+  {
+   "id": "analog-horror.timecode-imprint",
+   "replacement": "analog-horror.tracking-tear"
+  },
+  {
+   "id": "fashiondetail.atelier",
+   "replacement": "fashiondetail.lookbook"
+  },
+  {
+   "id": "fashiondetail.biasbinding"
+  },
+  {
+   "id": "fashiondetail.buttonhole"
+  },
+  {
+   "id": "fashiondetail.facing"
+  },
+  {
+   "id": "fashiondetail.garmentflat"
+  },
+  {
+   "id": "fashiondetail.movementcloth",
+   "replacement": "fashiondetail.lookbook"
+  },
+  {
+   "id": "fashiondetail.patterncut"
+  },
+  {
+   "id": "fashiondetail.piping"
+  },
+  {
+   "id": "fashiondetail.rolledhem"
+  },
+  {
+   "id": "fashiondetail.selvedge"
+  },
+  {
+   "id": "fashiondetail.tailored",
+   "replacement": "fashiondetail.lookbook"
+  },
+  {
+   "id": "fashiondetail.textilearchive"
+  },
+  {
+   "id": "fashiondetail.wearmap",
+   "replacement": "fashiondetail.repairvisible"
+  },
+  {
+   "id": "fashiondetail.welt"
+  },
+  {
+   "id": "gardenart.allotment"
+  },
+  {
+   "id": "gardenart.borrowedview",
+   "replacement": "gardenart.axialgarden"
+  },
+  {
+   "id": "gardenart.clippedvolume",
+   "replacement": "gardenart.parterre"
+  },
+  {
+   "id": "gardenart.courtyardshade",
+   "replacement": "gardenart.walledgarden"
+  },
+  {
+   "id": "gardenart.enclosure",
+   "replacement": "gardenart.walledgarden"
+  },
+  {
+   "id": "gardenart.flowingborder",
+   "replacement": "gardenart.meadowmatrix"
+  },
+  {
+   "id": "gardenart.gravelplane",
+   "replacement": "gardenart.rockgarden"
+  },
+  {
+   "id": "gardenart.landartalignment",
+   "replacement": "gardenart.landartline"
+  },
+  {
+   "id": "gardenart.landartcolor"
+  },
+  {
+   "id": "gardenart.landartcut",
+   "replacement": "gardenart.landartline"
+  },
+  {
+   "id": "gardenart.landartfloating"
+  },
+  {
+   "id": "gardenart.landartfold"
+  },
+  {
+   "id": "gardenart.landartfragment"
+  },
+  {
+   "id": "gardenart.landartlistening"
+  },
+  {
+   "id": "gardenart.landartmass"
+  },
+  {
+   "id": "gardenart.landartshadow"
+  },
+  {
+   "id": "gardenart.landarttemporary"
+  },
+  {
+   "id": "gardenart.landartvoid"
+  },
+  {
+   "id": "gardenart.landartweathered"
+  },
+  {
+   "id": "gardenart.linearpark"
+  },
+  {
+   "id": "gardenart.naturalisticdrift",
+   "replacement": "gardenart.meadowmatrix"
+  },
+  {
+   "id": "gardenart.orchardgrid"
+  },
+  {
+   "id": "gardenart.pocketgarden"
+  },
+  {
+   "id": "gardenart.prairierhythm",
+   "replacement": "gardenart.meadowmatrix"
+  },
+  {
+   "id": "gardenart.rain_garden"
+  },
+  {
+   "id": "gardenart.roofscape"
+  },
+  {
+   "id": "gardenart.sunkencourt"
+  },
+  {
+   "id": "gardenart.watercourt"
+  },
+  {
+   "id": "gardenart.woodlandgarden",
+   "replacement": "gardenart.mossquiet"
+  },
+  {
+   "id": "gardenart.xeric",
+   "replacement": "gardenart.rockgarden"
+  },
+  {
+   "id": "hierarchy.counter-space"
+  },
+  {
+   "id": "hierarchy.depth-labels"
+  },
+  {
+   "id": "hierarchy.entity-readability"
+  },
+  {
+   "id": "hierarchy.leader-clearance"
+  },
+  {
+   "id": "hierarchy.lettering-clearance"
+  },
+  {
+   "id": "hierarchy.parallel-scripts"
+  },
+  {
+   "id": "hierarchy.relation-continuity"
+  },
+  {
+   "id": "hierarchy.surface-inscription"
+  },
+  {
+   "id": "jewelrycraft.bezel",
+   "replacement": "jewelrycraft.cabochon"
+  },
+  {
+   "id": "jewelrycraft.burnishset"
+  },
+  {
+   "id": "jewelrycraft.chainmail"
+  },
+  {
+   "id": "jewelrycraft.chasing",
+   "replacement": "jewelrycraft.hammered"
+  },
+  {
+   "id": "jewelrycraft.cordcraft"
+  },
+  {
+   "id": "jewelrycraft.damascene",
+   "replacement": "jewelrycraft.mokume"
+  },
+  {
+   "id": "jewelrycraft.edgepaint"
+  },
+  {
+   "id": "jewelrycraft.foldformed"
+  },
+  {
+   "id": "jewelrycraft.handengrave",
+   "replacement": "jewelrycraft.guilloche"
+  },
+  {
+   "id": "jewelrycraft.hinge"
+  },
+  {
+   "id": "jewelrycraft.intaglio",
+   "replacement": "jewelrycraft.cameo"
+  },
+  {
+   "id": "jewelrycraft.keumboo"
+  },
+  {
+   "id": "jewelrycraft.knotwork",
+   "replacement": "jewelrycraft.wiredrawn"
+  },
+  {
+   "id": "jewelrycraft.metalpleat"
+  },
+  {
+   "id": "jewelrycraft.niello",
+   "replacement": "jewelrycraft.champleve"
+  },
+  {
+   "id": "jewelrycraft.oxidizedrecess"
+  },
+  {
+   "id": "jewelrycraft.pavements",
+   "replacement": "jewelrycraft.facetwork"
+  },
+  {
+   "id": "jewelrycraft.pearluster",
+   "replacement": "jewelrycraft.cabochon"
+  },
+  {
+   "id": "jewelrycraft.piercedplate"
+  },
+  {
+   "id": "jewelrycraft.planished",
+   "replacement": "jewelrycraft.hammered"
+  },
+  {
+   "id": "jewelrycraft.prong",
+   "replacement": "jewelrycraft.facetwork"
+  },
+  {
+   "id": "jewelrycraft.reticulated"
+  },
+  {
+   "id": "jewelrycraft.rivet"
+  },
+  {
+   "id": "jewelrycraft.satinengrave",
+   "replacement": "jewelrycraft.guilloche"
+  },
+  {
+   "id": "jewelrycraft.scrimshaw"
+  },
+  {
+   "id": "jewelrycraft.shellinlay"
+  },
+  {
+   "id": "jewelrycraft.solderflow"
+  },
+  {
+   "id": "jewelrycraft.springtension"
+  },
+  {
+   "id": "jewelrycraft.stoneinlay",
+   "replacement": "jewelrycraft.champleve"
+  },
+  {
+   "id": "jewelrycraft.wovenwire",
+   "replacement": "jewelrycraft.wiredrawn"
+  },
+  {
+   "id": "letterform.blueprinttext"
+  },
+  {
+   "id": "letterform.carboncopy"
+  },
+  {
+   "id": "letterform.casualscript",
+   "replacement": "letterform.brushsign"
+  },
+  {
+   "id": "letterform.ceramicletters"
+  },
+  {
+   "id": "letterform.channelletters",
+   "replacement": "letterform.neontext"
+  },
+  {
+   "id": "letterform.charcoaltext",
+   "replacement": "letterform.chalk"
+  },
+  {
+   "id": "letterform.clayletters"
+  },
+  {
+   "id": "letterform.condensed"
+  },
+  {
+   "id": "letterform.cutpapertext"
+  },
+  {
+   "id": "letterform.debossed",
+   "replacement": "letterform.embossed"
+  },
+  {
+   "id": "letterform.dotmatrix"
+  },
+  {
+   "id": "letterform.foilstamp",
+   "replacement": "letterform.goldleaf"
+  },
+  {
+   "id": "letterform.foldedtext"
+  },
+  {
+   "id": "letterform.incisedroman",
+   "replacement": "letterform.handdrawnserif"
+  },
+  {
+   "id": "letterform.knittedtext",
+   "replacement": "letterform.stitchedtext"
+  },
+  {
+   "id": "letterform.metaltype",
+   "replacement": "letterform.woodtype"
+  },
+  {
+   "id": "letterform.monoline"
+  },
+  {
+   "id": "letterform.paintedglass",
+   "replacement": "letterform.goldleaf"
+  },
+  {
+   "id": "letterform.plotter"
+  },
+  {
+   "id": "letterform.pointedpen",
+   "replacement": "letterform.broadnib"
+  },
+  {
+   "id": "letterform.reverseglass",
+   "replacement": "letterform.goldleaf"
+  },
+  {
+   "id": "letterform.risotext"
+  },
+  {
+   "id": "letterform.roundedblock"
+  },
+  {
+   "id": "letterform.rubberstamp"
+  },
+  {
+   "id": "letterform.slab",
+   "replacement": "letterform.woodtype"
+  },
+  {
+   "id": "letterform.splitbrush",
+   "replacement": "letterform.brushsign"
+  },
+  {
+   "id": "letterform.stoneletters",
+   "replacement": "letterform.handdrawnserif"
+  },
+  {
+   "id": "letterform.thermal"
+  },
+  {
+   "id": "letterform.wiretext"
+  },
+  {
+   "id": "letterform.wovenletters",
+   "replacement": "letterform.stitchedtext"
+  },
+  {
+   "id": "retromedia.date-stamp",
+   "replacement": "retromedia.tape-edge"
+  },
+  {
+   "id": "textilecraft.biasdrape"
+  },
+  {
+   "id": "textilecraft.bondedseam"
+  },
+  {
+   "id": "textilecraft.boucle",
+   "replacement": "textilecraft.tweed"
+  },
+  {
+   "id": "textilecraft.brushedwool",
+   "replacement": "textilecraft.tweed"
+  },
+  {
+   "id": "textilecraft.chiffon",
+   "replacement": "textilecraft.organza"
+  },
+  {
+   "id": "textilecraft.corduroy",
+   "replacement": "textilecraft.velvet"
+  },
+  {
+   "id": "textilecraft.herringbone",
+   "replacement": "textilecraft.tweed"
+  },
+  {
+   "id": "textilecraft.patternmatch"
+  },
+  {
+   "id": "textilecraft.rawedge"
+  },
+  {
+   "id": "textilecraft.ribknit",
+   "replacement": "textilecraft.cableknit"
+  },
+  {
+   "id": "textilecraft.seersucker"
+  },
+  {
+   "id": "textilecraft.smocking",
+   "replacement": "textilecraft.pleating"
+  },
+  {
+   "id": "textilecraft.topstitch",
+   "replacement": "fashiondetail.repairvisible"
+  },
+  {
+   "id": "textilecraft.tulle",
+   "replacement": "textilecraft.organza"
+  },
+  {
+   "id": "textilecraft.waffle"
+  },
+  {
+   "id": "textilecraft.weaveatlas",
+   "replacement": "textilecraft.jacquard"
+  },
+  {
+   "id": "weatherfield.brokenreflection",
+   "replacement": "weatherfield.afterrain"
+  },
+  {
+   "id": "weatherfield.clayground"
+  },
+  {
+   "id": "weatherfield.cloudbreak",
+   "replacement": "weatherfield.poststorm"
+  },
+  {
+   "id": "weatherfield.depthveil",
+   "replacement": "weatherfield.coastalmist"
+  },
+  {
+   "id": "weatherfield.dryriver"
+  },
+  {
+   "id": "weatherfield.dunecontour"
+  },
+  {
+   "id": "weatherfield.flatwater"
+  },
+  {
+   "id": "weatherfield.forestdepth",
+   "replacement": "weatherfield.canopylight"
+  },
+  {
+   "id": "weatherfield.hazyhighnoon",
+   "replacement": "weatherfield.heatveil"
+  },
+  {
+   "id": "weatherfield.highaltitude"
+  },
+  {
+   "id": "weatherfield.horizonband"
+  },
+  {
+   "id": "weatherfield.humidity",
+   "replacement": "weatherfield.coastalmist"
+  },
+  {
+   "id": "weatherfield.limestone"
+  },
+  {
+   "id": "weatherfield.longshadow"
+  },
+  {
+   "id": "weatherfield.lowcloud",
+   "replacement": "weatherfield.seafog"
+  },
+  {
+   "id": "weatherfield.moorland"
+  },
+  {
+   "id": "weatherfield.rainshadow"
+  },
+  {
+   "id": "weatherfield.rockstrata"
+  },
+  {
+   "id": "weatherfield.saltplane"
+  },
+  {
+   "id": "weatherfield.shadowmap"
+  },
+  {
+   "id": "weatherfield.sidelitfield"
+  },
+  {
+   "id": "weatherfield.siltdetail"
+  },
+  {
+   "id": "weatherfield.squall",
+   "replacement": "weatherfield.frontalrain"
+  },
+  {
+   "id": "weatherfield.stillair"
+  },
+  {
+   "id": "weatherfield.summerhaze",
+   "replacement": "weatherfield.heatveil"
+  },
+  {
+   "id": "weatherfield.thaw",
+   "replacement": "weatherfield.afterrain"
+  },
+  {
+   "id": "weatherfield.volcanic"
+  },
+  {
+   "id": "weatherfield.wetstone",
+   "replacement": "weatherfield.afterrain"
+  },
+  {
+   "id": "weatherfield.windtrace"
+  },
+  {
+   "id": "weatherfield.winterovercast",
+   "replacement": "weatherfield.snowlight"
+  },
+  {
+   "id": "weirdcore.text-as-artifact",
+   "replacement": "weirdcore.intentional-jpeg"
+  }
+ ]
 }

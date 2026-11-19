@@ -1,1041 +1,866 @@
 {
-  "schema_version": 1,
-  "id": "community.next.anime-subgenres",
-  "version": "1.1.0",
-  "name": "Anime Subgenres",
-  "description": "Genre-level anime presentation conventions without franchise or studio imitation.",
-  "license": "CC0-1.0",
-  "author": "NidAll / original community pack",
-  "styles": [
+ "schema_version": 1,
+ "id": "community.anime-subgenres",
+ "version": "2.0.0",
+ "name": "Anime Subgenres",
+ "description": "Genre-level anime presentation conventions without franchise or studio imitation.",
+ "license": "CC0-1.0",
+ "author": "PromptStyler Next contributors",
+ "styles": [
+  {
+   "id": "subanime.shonen-impact",
+   "name": "Battle-Arc Impact",
+   "description": "Energetic illustrated action vocabulary built from foreshortening and selective motion.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "shonen",
+    "action",
+    "anime",
+    "battle"
+   ],
+   "claims": {
+    "composition": "subanime.shonen-impact",
+    "lighting": "subanime.shonen-impact",
+    "medium": "subanime.shonen-impact",
+    "texture": "subanime.shonen-impact"
+   },
+   "clauses": [
     {
-      "id": "subanime.shonen-impact",
-      "name": "Battle-Arc Impact",
-      "description": "Energetic illustrated action vocabulary built from foreshortening and selective motion.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "shonen",
-        "action",
-        "anime",
-        "battle"
-      ],
-      "claims": {
-        "medium": "subanime.shonen-impact",
-        "texture": "subanime.shonen-impact",
-        "composition": "subanime.shonen-impact",
-        "lighting": "subanime.shonen-impact"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Render the given subject as a heightened action-anime key visual with decisive shape design",
-          "tags": [
-            "shonen action anime illustration"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use controlled foreshortening and diagonals to drive visual energy toward the existing subject",
-          "tags": [
-            "dynamic foreshortened framing"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Set a clear rim-light separation against a compressed shadow structure",
-          "tags": [
-            "bold anime rim light"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Keep precise ink outlines while motion is suggested with sparse speed marks",
-          "tags": [
-            "clean anime line art speed marks"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "medium",
+     "text": "action anime key visual",
+     "tags": [
+      "anime screenshot",
+      "shounen"
+     ],
+     "min_intensity": 0.0
     },
     {
-      "id": "subanime.slice-of-life",
-      "name": "Afternoon Slice of Life",
-      "description": "Quietly observed everyday anime with natural gestures and small environmental details.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "sliceoflife",
-        "anime",
-        "everyday",
-        "quiet"
-      ],
-      "claims": {
-        "medium": "subanime.slice-of-life",
-        "composition": "subanime.slice-of-life",
-        "lighting": "subanime.slice-of-life",
-        "mood": "subanime.slice-of-life"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Translate the scene into a softly observed slice-of-life anime frame",
-          "tags": [
-            "slice of life anime background"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Favor comfortable conversational distances and believable ordinary perspective",
-          "tags": [
-            "natural anime everyday framing"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Let late-day ambient light settle gently across surfaces",
-          "tags": [
-            "warm late afternoon anime light"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "mood",
-          "text": "Keep the moment unforced, intimate and pleasantly uneventful",
-          "tags": [
-            "gentle everyday atmosphere"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "composition",
+     "text": "controlled foreshortening, strong diagonals",
+     "tags": [
+      "foreshortening"
+     ],
+     "min_intensity": 0.4
     },
     {
-      "id": "subanime.magical-transformation",
-      "name": "Transformation Interlude",
-      "description": "Stylized magical transformation graphics emphasizing ribbons, glints and graceful motion.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "magicalgirl",
-        "transformation",
-        "sparkle",
-        "anime"
-      ],
-      "claims": {
-        "medium": "subanime.magical-transformation",
-        "palette": "subanime.magical-transformation",
-        "composition": "subanime.magical-transformation",
-        "lighting": "subanime.magical-transformation"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Present the subject through the elegant graphic language of a magical transformation interlude",
-          "tags": [
-            "magical transformation anime aesthetic"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use flowing circular motion paths and symmetrical decorative framing",
-          "tags": [
-            "spiraling transformation composition"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Combine luminous edge glints with a restrained inner glow",
-          "tags": [
-            "sparkling transformation light"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "palette",
-          "text": "Layer airy jewel accents over a clean luminous tonal base",
-          "tags": [
-            "luminous jewel tone anime palette"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "lighting",
+     "text": "clear rim light, compressed shadows",
+     "tags": [
+      "rim lighting"
+     ],
+     "min_intensity": 0.75
     },
     {
-      "id": "subanime.mecha-technical",
-      "name": "Mecha Design Drama",
-      "description": "Engineered anime aesthetics with panel logic, material highlights and disciplined scale.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "mecha",
-        "mechanical",
-        "anime",
-        "engineering"
-      ],
-      "claims": {
-        "medium": "subanime.mecha-technical",
-        "texture": "subanime.mecha-technical",
-        "composition": "subanime.mecha-technical",
-        "lighting": "subanime.mecha-technical"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Describe the existing subject with the mechanical drawing language of mature mecha animation",
-          "tags": [
-            "mecha anime technical keyframe"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use strong three-quarter form reading and purposeful panel divisions",
-          "tags": [
-            "mechanical three quarter framing"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Let metallic edges catch hard industrial light without overexposing surfaces",
-          "tags": [
-            "hard industrial mecha lighting"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Separate painted armor planes with clear mechanical seam definition",
-          "tags": [
-            "crisp mecha panel linework"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.dark-fantasy",
-      "name": "Dark-Fantasy Overture",
-      "description": "Somber hand-drawn fantasy atmosphere with heavy masses and eerie environmental glow.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "fantasy",
-        "dark",
-        "anime",
-        "gothic"
-      ],
-      "claims": {
-        "medium": "subanime.dark-fantasy",
-        "texture": "subanime.dark-fantasy",
-        "composition": "subanime.dark-fantasy",
-        "lighting": "subanime.dark-fantasy"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Render the given subject in a serious dark-fantasy anime illustration language",
-          "tags": [
-            "dark fantasy anime key art"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Anchor the supplied silhouette within layered tonal depth",
-          "tags": [
-            "supplied silhouette and layered tonal depth"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Use narrow pools of candlelike or moonlike illumination against broad shadow",
-          "tags": [
-            "gothic anime chiaroscuro"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Retain elaborate inked edges and rough brush shadows instead of glossy plastic gradients",
-          "tags": [
-            "inked dark fantasy rendering"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.romance-pastel",
-      "name": "Shoujo Letter Scene",
-      "description": "Expressive character-oriented framing with light decorative space and gentle chroma.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "shoujo",
-        "romance",
-        "pastel",
-        "anime"
-      ],
-      "claims": {
-        "medium": "subanime.romance-pastel",
-        "palette": "subanime.romance-pastel",
-        "texture": "subanime.romance-pastel",
-        "composition": "subanime.romance-pastel"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Treat the existing scene as a tender illustrated romance-anime moment",
-          "tags": [
-            "shoujo romance anime style"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use floating negative space and delicate emphasis around the supplied focal forms",
-          "tags": [
-            "floating negative space and delicate focal emphasis"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Favor airy rose and lavender tints with clear natural skin-tone relationships",
-          "tags": [
-            "soft pastel romance palette"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Use thin tapering linework and restrained petal-like graphic accents",
-          "tags": [
-            "delicate shoujo linework"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.seinen-noir",
-      "name": "Adult Noir Animation",
-      "description": "Grounded adult-oriented anime framing with restrained expression and cinematic value control.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "seinen",
-        "noir",
-        "anime",
-        "cinematic"
-      ],
-      "claims": {
-        "medium": "subanime.seinen-noir",
-        "texture": "subanime.seinen-noir",
-        "composition": "subanime.seinen-noir",
-        "lighting": "subanime.seinen-noir"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Give the subject the mature restrained drawing style of a noir-inflected seinen frame",
-          "tags": [
-            "mature noir anime illustration"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Hold asymmetric, observational camera positions rather than heroic symmetry",
-          "tags": [
-            "asymmetric seinen framing"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Use motivated interior light with sharply defined areas of shadow",
-          "tags": [
-            "motivated anime noir light"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Preserve economical ink detail and hand-painted tonal transitions",
-          "tags": [
-            "restrained animation paint texture"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.sports-climax",
-      "name": "Sports-Drama Crescendo",
-      "description": "Stylized sport-anime tension using stretched perspective and decisive action reading.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "sports",
-        "anime",
-        "action",
-        "dramatic"
-      ],
-      "claims": {
-        "medium": "subanime.sports-climax",
-        "texture": "subanime.sports-climax",
-        "composition": "subanime.sports-climax",
-        "lighting": "subanime.sports-climax"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Frame the supplied subject with the urgency of a high-stakes sports anime climax",
-          "tags": [
-            "sports anime climax keyframe"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Compress depth along the line of action and favor readable opposing diagonals",
-          "tags": [
-            "sports anime compressed perspective"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Use brilliant arena-adjacent highlights with sharply contrasted secondary values",
-          "tags": [
-            "bright stadium style highlights"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Add limited directional ink strokes to imply acceleration without hiding the main form",
-          "tags": [
-            "sparse anime motion hatching"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.idol-stage",
-      "name": "Idol Stage Key Visual",
-      "description": "Concert-era anime staging emphasizing colored spotlights and lively coordinated composition.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "idol",
-        "music",
-        "anime",
-        "stage"
-      ],
-      "claims": {
-        "medium": "subanime.idol-stage",
-        "palette": "subanime.idol-stage",
-        "composition": "subanime.idol-stage",
-        "lighting": "subanime.idol-stage"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Translate the original subject into an upbeat music-idol anime promotional visual",
-          "tags": [
-            "idol anime stage visual"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use rhythmic vertical framing and open gesture-friendly space",
-          "tags": [
-            "idol performance key art framing"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Build layered colored stage lights with crisp reflected accents",
-          "tags": [
-            "idol stage spotlight glow"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "palette",
-          "text": "Balance lively saturated accents with legible midtone faces or focal details",
-          "tags": [
-            "bright cohesive concert palette"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.isekai-vista",
-      "name": "Portal-Fantasy Vista",
-      "description": "Exploratory fantasy anime worldbuilding without introducing named realms or characters.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "isekai",
-        "adventure",
-        "anime",
-        "landscape"
-      ],
-      "claims": {
-        "medium": "subanime.isekai-vista",
-        "composition": "subanime.isekai-vista",
-        "lighting": "subanime.isekai-vista",
-        "mood": "subanime.isekai-vista"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Present the existing scene through expansive portal-fantasy anime worldbuilding",
-          "tags": [
-            "isekai adventure anime landscape"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Layer foreground texture against a broad distant horizon to suggest discovery",
-          "tags": [
-            "expansive fantasy vista depth"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Use clear atmospheric sunlight fading naturally into distant layers",
-          "tags": [
-            "fantasy anime atmospheric daylight"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "mood",
-          "text": "Keep the feeling of unfamiliar possibility rather than immediate confrontation",
-          "tags": [
-            "open world wonder"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.retro-scifi-ova",
-      "name": "Retro Sci-Fi OVA",
-      "description": "Dense hand-painted science-fiction anime with late twentieth-century film-transfer character.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "ova",
-        "scifi",
-        "retro",
-        "anime"
-      ],
-      "claims": {
-        "medium": "subanime.retro-scifi-ova",
-        "palette": "subanime.retro-scifi-ova",
-        "texture": "subanime.retro-scifi-ova",
-        "composition": "subanime.retro-scifi-ova"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Draw the scene as a late-1980s science-fiction OVA frame with painted cels",
-          "tags": [
-            "1980s sci fi ova animation"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use precise layered machinery-like shape grouping and cinematic close cuts",
-          "tags": [
-            "retro ova cinematic framing"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Hold subdued electric blue and rust accents against rich cel shadows",
-          "tags": [
-            "retro sci fi cel palette"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Suggest photographic film transfer through fine grain and slight cel-edge variation",
-          "tags": [
-            "ova film transfer grain"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.psychological-thriller",
-      "name": "Psychological Anime Still",
-      "description": "Uneasy anime suspense with observational framing and disproportionate negative space.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "psychological",
-        "thriller",
-        "anime",
-        "unease"
-      ],
-      "claims": {
-        "medium": "subanime.psychological-thriller",
-        "composition": "subanime.psychological-thriller",
-        "lighting": "subanime.psychological-thriller",
-        "mood": "subanime.psychological-thriller"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Render the scene as a reserved psychological anime thriller still",
-          "tags": [
-            "psychological thriller anime frame"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Allow a conspicuous blank area to compete with the existing subject for attention",
-          "tags": [
-            "unsettling negative space framing"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Hold cold practical light with isolated warm highlights at narrative focal points",
-          "tags": [
-            "cold anime psychological lighting"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "mood",
-          "text": "Suggest unanswered tension without adding entities or explicit events",
-          "tags": [
-            "suspended psychological tension"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.historical-tragedy",
-      "name": "Historical Drama Wash",
-      "description": "Period-anime emotional restraint using ink washes, handmade textures and quiet movement.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "historical",
-        "drama",
-        "anime",
-        "ink"
-      ],
-      "claims": {
-        "medium": "subanime.historical-tragedy",
-        "palette": "subanime.historical-tragedy",
-        "texture": "subanime.historical-tragedy",
-        "composition": "subanime.historical-tragedy"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Treat the subject as an emotionally restrained historical-anime illustration",
-          "tags": [
-            "historical anime ink wash"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Favor measured profiles and generous environmental breathing room",
-          "tags": [
-            "historical drama composed stillness"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Use muted natural pigments rather than vivid digital color accents",
-          "tags": [
-            "historical anime earth pigments"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Combine thin ink contour with transparent wash and fibrous paper grain",
-          "tags": [
-            "hand painted anime paper texture"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.comedy-deformation",
-      "name": "Comedy Cutaway",
-      "description": "Graphic anime reaction language with simplified forms and hard visual timing.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "comedy",
-        "chibi",
-        "anime",
-        "expressive"
-      ],
-      "claims": {
-        "medium": "subanime.comedy-deformation",
-        "palette": "subanime.comedy-deformation",
-        "texture": "subanime.comedy-deformation",
-        "composition": "subanime.comedy-deformation"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Translate the existing subject into an intentionally simplified anime comedic cutaway",
-          "tags": [
-            "anime comedic reaction cutaway"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use sharply readable silhouette changes and abrupt close framing",
-          "tags": [
-            "anime slapstick graphic crop"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Choose simple bright color masses with high separation between forms",
-          "tags": [
-            "bold anime comedy colors"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Simplify shading into crisp flat cel regions and exaggerated contour rhythms",
-          "tags": [
-            "flat chibi anime shading"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.postapocalyptic-wander",
-      "name": "After-the-End Journey",
-      "description": "Quiet post-collapse anime atmosphere centered on weathered surfaces and contemplative distance.",
-      "category": "anime-subgenres/looks",
-      "kind": "style",
-      "tags": [
-        "postapocalyptic",
-        "anime",
-        "travel",
-        "quiet"
-      ],
-      "claims": {
-        "medium": "subanime.postapocalyptic-wander",
-        "texture": "subanime.postapocalyptic-wander",
-        "composition": "subanime.postapocalyptic-wander",
-        "lighting": "subanime.postapocalyptic-wander"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a weathered, contemplative travel-anime illustration treatment without changing the supplied setting",
-          "tags": [
-            "weathered contemplative anime illustration"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Favor small-scale human or object perspective relative to open environmental masses",
-          "tags": [
-            "post collapse quiet vista"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Use thin overcast sun filtered through dusty atmospheric layers",
-          "tags": [
-            "muted wasteland anime daylight"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Keep hand-painted weathering and worn built surfaces present but not overdecorated",
-          "tags": [
-            "weathered anime environment art"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.cel-sunset",
-      "name": "Cel-Animation Sunset",
-      "description": "Crisp cel-era evening hues and controlled shadow separation.",
-      "category": "anime-subgenres/grades",
-      "kind": "grade",
-      "tags": [
-        "sunset",
-        "cel",
-        "anime",
-        "grade"
-      ],
-      "claims": {
-        "palette": "subanime.cel-sunset",
-        "lighting": "subanime.cel-sunset"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Spread coral-orange highlights against restrained cool-violet shadow blocks",
-          "tags": [
-            "cel animation sunset colors"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Use a firm colored edge light rather than broad photorealistic bloom",
-          "tags": [
-            "clean cel sunset rimlight"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.night-city-ink",
-      "name": "Night City Ink",
-      "description": "Indigo nighttime palette with localized sign-like accent colors.",
-      "category": "anime-subgenres/grades",
-      "kind": "grade",
-      "tags": [
-        "night",
-        "city",
-        "indigo",
-        "anime"
-      ],
-      "claims": {
-        "palette": "subanime.night-city-ink",
-        "lighting": "subanime.night-city-ink"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Use ink-blue masses with occasional saturated cyan or magenta accents",
-          "tags": [
-            "ink blue with cyan and magenta accents"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Keep interior pools crisp and avoid overbright diffusion",
-          "tags": [
-            "controlled anime city glow"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.watercolor-pearl",
-      "name": "Watercolor Pearl",
-      "description": "Pale watercolor palette with colored-paper translucency.",
-      "category": "anime-subgenres/grades",
-      "kind": "grade",
-      "tags": [
-        "watercolor",
-        "pearlescent",
-        "pale",
-        "anime"
-      ],
-      "claims": {
-        "palette": "subanime.watercolor-pearl",
-        "texture": "subanime.watercolor-pearl"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Use pale pearl, faded lilac and mist-blue washes with ample unpainted light areas",
-          "tags": [
-            "pearl watercolor pastel palette"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "texture",
-          "text": "Allow transparent layered pigment to show the paper beneath",
-          "tags": [
-            "translucent watercolor paper"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.speedline-edge",
-      "name": "Peripheral Speed Lines",
-      "description": "Motion lines pushed toward the margins to preserve the subject.",
-      "category": "anime-subgenres/modifiers",
-      "kind": "modifier",
-      "tags": [
-        "speedlines",
-        "motion",
-        "anime",
-        "modifier"
-      ],
-      "claims": {
-        "detail": "subanime.speedline-edge",
-        "composition": "subanime.speedline-edge"
-      },
-      "clauses": [
-        {
-          "axis": "detail",
-          "text": "Place sparse radiating ink motion strokes outside the central subject outline",
-          "tags": [
-            "peripheral manga speed lines"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Keep essential user-supplied text and facial details unobstructed",
-          "tags": [
-            "protected main subject readability"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subanime.animation-hold",
-      "name": "Animation Hold",
-      "description": "Slightly imperfect held-animation-frame character without full film aging.",
-      "category": "anime-subgenres/modifiers",
-      "kind": "modifier",
-      "tags": [
-        "cel",
-        "framehold",
-        "texture",
-        "modifier"
-      ],
-      "claims": {
-        "texture": "subanime.animation-hold",
-        "detail": "subanime.animation-hold"
-      },
-      "clauses": [
-        {
-          "axis": "texture",
-          "text": "Introduce barely visible cel registration jitter at noncritical edges",
-          "tags": [
-            "subtle animation cel jitter"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "detail",
-          "text": "Let isolated line widths change naturally as if inked on separate cels",
-          "tags": [
-            "hand inked frame variation"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "texture",
+     "text": "precise ink lines, sparse speed lines",
+     "tags": [
+      "speed lines"
+     ],
+     "min_intensity": 0.75
     }
-  ]
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.slice-of-life",
+   "name": "Afternoon Slice of Life",
+   "description": "Quietly observed everyday anime with natural gestures and small environmental details.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "sliceoflife",
+    "anime",
+    "everyday",
+    "quiet"
+   ],
+   "claims": {
+    "composition": "subanime.slice-of-life",
+    "lighting": "subanime.slice-of-life",
+    "medium": "subanime.slice-of-life",
+    "palette": "subanime.slice-of-life"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "soft slice-of-life anime frame",
+     "tags": [
+      "anime screenshot",
+      "slice of life"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "ordinary conversational distance",
+     "tags": [
+      "eye level"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "gentle late-day ambient light",
+     "tags": [
+      "afternoon"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "soft warm everyday colors",
+     "tags": [
+      "warm colors"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.magical-transformation",
+   "name": "Transformation Interlude",
+   "description": "Stylized magical transformation graphics emphasizing ribbons, glints and graceful motion.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "magicalgirl",
+    "transformation",
+    "sparkle",
+    "anime"
+   ],
+   "claims": {
+    "composition": "subanime.magical-transformation",
+    "lighting": "subanime.magical-transformation",
+    "medium": "subanime.magical-transformation",
+    "palette": "subanime.magical-transformation"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "magical girl transformation anime frame",
+     "tags": [
+      "magical girl",
+      "anime coloring"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "flowing circular motion, symmetric frame",
+     "tags": [
+      "symmetry"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "luminous edge glints, inner glow",
+     "tags": [
+      "glowing"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "airy jewel accents on light base",
+     "tags": [
+      "sparkle"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.mecha-technical",
+   "name": "Mecha Design Drama",
+   "description": "Engineered anime aesthetics with panel logic, material highlights and disciplined scale.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "mecha",
+    "mechanical",
+    "anime",
+    "engineering"
+   ],
+   "claims": {
+    "composition": "subanime.mecha-technical",
+    "lighting": "subanime.mecha-technical",
+    "medium": "subanime.mecha-technical",
+    "texture": "subanime.mecha-technical"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "mature mecha anime design",
+     "tags": [
+      "mecha",
+      "anime screenshot"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "strong three-quarter view",
+     "tags": [
+      "three-quarter view"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "hard industrial light on metal edges",
+     "tags": [
+      "hard light"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "clear armor panel seams",
+     "tags": [
+      "mechanical parts"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.dark-fantasy",
+   "name": "Dark-Fantasy Overture",
+   "description": "Somber hand-drawn fantasy atmosphere with heavy masses and eerie environmental glow.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "fantasy",
+    "dark",
+    "anime",
+    "gothic"
+   ],
+   "claims": {
+    "composition": "subanime.dark-fantasy",
+    "lighting": "subanime.dark-fantasy",
+    "medium": "subanime.dark-fantasy",
+    "texture": "subanime.dark-fantasy"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "dark fantasy anime illustration",
+     "tags": [
+      "dark fantasy",
+      "anime coloring"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "silhouette in layered tonal depth",
+     "tags": [
+      "depth"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "narrow pools of moonlight or candlelight",
+     "tags": [
+      "dim lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "elaborate ink edges, rough brush shadows",
+     "tags": [
+      "ink"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.romance-pastel",
+   "name": "Shoujo Letter Scene",
+   "description": "Expressive character-oriented framing with light decorative space and gentle chroma.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "shoujo",
+    "romance",
+    "pastel",
+    "anime"
+   ],
+   "claims": {
+    "composition": "subanime.romance-pastel",
+    "medium": "subanime.romance-pastel",
+    "palette": "subanime.romance-pastel",
+    "texture": "subanime.romance-pastel"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "shoujo romance anime illustration",
+     "tags": [
+      "shoujo",
+      "anime coloring"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "floating negative space",
+     "tags": [
+      "negative space"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "airy rose and lavender",
+     "tags": [
+      "pastel colors"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "thin tapering lines, petal accents",
+     "tags": [
+      "petals"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.seinen-noir",
+   "name": "Adult Noir Animation",
+   "description": "Grounded adult-oriented anime framing with restrained expression and cinematic value control.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "seinen",
+    "noir",
+    "anime",
+    "cinematic"
+   ],
+   "claims": {
+    "composition": "subanime.seinen-noir",
+    "lighting": "subanime.seinen-noir",
+    "medium": "subanime.seinen-noir",
+    "texture": "subanime.seinen-noir"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "seinen noir anime frame",
+     "tags": [
+      "seinen",
+      "anime screenshot"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "asymmetric observational camera",
+     "tags": [
+      "dutch angle"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "motivated interior light, sharp shadow",
+     "tags": [
+      "chiaroscuro"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "economical ink, painted tones",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.sports-climax",
+   "name": "Sports-Drama Crescendo",
+   "description": "Stylized sport-anime tension using stretched perspective and decisive action reading.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "sports",
+    "anime",
+    "action",
+    "dramatic"
+   ],
+   "claims": {
+    "composition": "subanime.sports-climax",
+    "lighting": "subanime.sports-climax",
+    "medium": "subanime.sports-climax",
+    "texture": "subanime.sports-climax"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "sports anime climax frame",
+     "tags": [
+      "sports anime",
+      "anime screenshot"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "compressed depth, opposing diagonals",
+     "tags": [
+      "dynamic angle"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "brilliant arena highlights",
+     "tags": [
+      "stadium lights"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "directional ink speed strokes",
+     "tags": [
+      "speed lines"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.idol-stage",
+   "name": "Idol Stage Key Visual",
+   "description": "Concert-era anime staging emphasizing colored spotlights and lively coordinated composition.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "idol",
+    "music",
+    "anime",
+    "stage"
+   ],
+   "claims": {
+    "composition": "subanime.idol-stage",
+    "lighting": "subanime.idol-stage",
+    "medium": "subanime.idol-stage",
+    "palette": "subanime.idol-stage"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "idol anime promotional visual",
+     "tags": [
+      "idol",
+      "anime coloring"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "rhythmic vertical framing",
+     "tags": [
+      "full body"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "layered colored stage lights",
+     "tags": [
+      "stage lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "lively saturated accents",
+     "tags": [
+      "vibrant colors"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.isekai-vista",
+   "name": "Portal-Fantasy Vista",
+   "description": "Exploratory fantasy anime worldbuilding without introducing named realms or characters.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "isekai",
+    "adventure",
+    "anime",
+    "landscape"
+   ],
+   "claims": {
+    "composition": "subanime.isekai-vista",
+    "lighting": "subanime.isekai-vista",
+    "medium": "subanime.isekai-vista",
+    "palette": "subanime.isekai-vista"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "portal fantasy anime vista",
+     "tags": [
+      "isekai",
+      "scenery"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "foreground against a broad horizon",
+     "tags": [
+      "horizon"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "clear atmospheric sunlight",
+     "tags": [
+      "sunlight"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "fresh open-air colors",
+     "tags": [
+      "blue sky"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.retro-scifi-ova",
+   "name": "Retro Sci-Fi OVA",
+   "description": "Dense hand-painted science-fiction anime with late twentieth-century film-transfer character.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "ova",
+    "scifi",
+    "retro",
+    "anime"
+   ],
+   "claims": {
+    "composition": "subanime.retro-scifi-ova",
+    "medium": "subanime.retro-scifi-ova",
+    "palette": "subanime.retro-scifi-ova",
+    "texture": "subanime.retro-scifi-ova"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "late-1980s sci-fi OVA cel frame",
+     "tags": [
+      "1980s (style)",
+      "retro artstyle"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "layered machinery shapes, close cuts",
+     "tags": [
+      "cinematic"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "electric blue and rust on rich shadows",
+     "tags": [
+      "blue and orange"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "fine film grain, cel edges",
+     "tags": [
+      "film grain"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.psychological-thriller",
+   "name": "Psychological Anime Still",
+   "description": "Uneasy anime suspense with observational framing and disproportionate negative space.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "psychological",
+    "thriller",
+    "anime",
+    "unease"
+   ],
+   "claims": {
+    "composition": "subanime.psychological-thriller",
+    "lighting": "subanime.psychological-thriller",
+    "medium": "subanime.psychological-thriller",
+    "palette": "subanime.psychological-thriller"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "psychological thriller anime still",
+     "tags": [
+      "anime screenshot",
+      "psychological"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "conspicuous blank area",
+     "tags": [
+      "negative space"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "cold practical light with warm accents",
+     "tags": [
+      "cold lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "desaturated cold tones",
+     "tags": [
+      "desaturated"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.historical-tragedy",
+   "name": "Historical Drama Wash",
+   "description": "Period-anime emotional restraint using ink washes, handmade textures and quiet movement.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "historical",
+    "drama",
+    "anime",
+    "ink"
+   ],
+   "claims": {
+    "composition": "subanime.historical-tragedy",
+    "medium": "subanime.historical-tragedy",
+    "palette": "subanime.historical-tragedy",
+    "texture": "subanime.historical-tragedy"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "restrained historical anime illustration",
+     "tags": [
+      "historical",
+      "anime coloring"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "measured profiles with environmental space",
+     "tags": [
+      "from side"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "muted natural pigments",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "thin ink with transparent wash, paper grain",
+     "tags": [
+      "watercolor (medium)"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.comedy-deformation",
+   "name": "Comedy Cutaway",
+   "description": "Graphic anime reaction language with simplified forms and hard visual timing.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "comedy",
+    "chibi",
+    "anime",
+    "expressive"
+   ],
+   "claims": {
+    "composition": "subanime.comedy-deformation",
+    "medium": "subanime.comedy-deformation",
+    "palette": "subanime.comedy-deformation",
+    "texture": "subanime.comedy-deformation"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "comedic chibi anime cutaway",
+     "tags": [
+      "chibi",
+      "comedy"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "abrupt close framing",
+     "tags": [
+      "close-up"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "simple bright color masses",
+     "tags": [
+      "flat color"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "crisp flat cel shading",
+     "tags": [
+      "cel shading"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subanime.postapocalyptic-wander",
+   "name": "After-the-End Journey",
+   "description": "Quiet post-collapse anime atmosphere centered on weathered surfaces and contemplative distance.",
+   "category": "anime-subgenres",
+   "kind": "style",
+   "tags": [
+    "postapocalyptic",
+    "anime",
+    "travel",
+    "quiet"
+   ],
+   "claims": {
+    "composition": "subanime.postapocalyptic-wander",
+    "lighting": "subanime.postapocalyptic-wander",
+    "medium": "subanime.postapocalyptic-wander",
+    "texture": "subanime.postapocalyptic-wander"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "weathered post-apocalyptic travel anime",
+     "tags": [
+      "post-apocalypse",
+      "anime screenshot"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "small figure in open environment",
+     "tags": [
+      "wide shot"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "thin overcast sun in dust",
+     "tags": [
+      "hazy"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "hand-painted weathering",
+     "tags": [
+      "ruins"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  }
+ ]
 }

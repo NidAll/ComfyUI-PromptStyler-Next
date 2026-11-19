@@ -51,7 +51,23 @@ stable fields; `to_dict()` provides those fields for integrations. Example codes
 | `invalid_caption` | Invalid structured caption field |
 
 Unsupported negative text and unknown-model fallback are warnings in the result,
-not hidden behavior. Invalid recipes fail before any encoder is called.
+not hidden behavior. Other warning codes:
+
+| Code | Meaning |
+| --- | --- |
+| `prompt_style_replaced` | Style words in the prompt on an axis the selection sets were removed (`prompt_conflicts: "replace"`, the default). |
+| `prompt_style_conflict` | The same words were kept (`prompt_conflicts: "keep"`) and may weaken the style. |
+| `style_replaced`, `style_retired` | A retired style ID was mapped to its replacement, or skipped. |
+
+Prompt style words are found with a small curated word list (`promptstyler_next.lexicon`),
+not semantic inference: only whole comma or sentence segments such as `film grain`,
+`watercolor (medium)` or `cinematic lighting`, plus openings such as "A photo of" and
+trailing "in anime style". Words inside a subject description are never touched,
+the recipe keeps the prompt as typed, and structured or JSON prompts are left
+unchanged. The trace records each removal as `prompt_removed` (or `prompt_conflict`),
+and supporting clauses dropped by the profile's style budget as `budget_skipped`.
+`structured` adds `style_budget {limit, used, unit}`, `prompt_style_words` and the
+cleaned `subject`. `Engine.retired_styles()` maps retired IDs to replacements. Invalid recipes fail before any encoder is called.
 
 ## Add a pack
 

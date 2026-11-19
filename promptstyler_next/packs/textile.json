@@ -1,0 +1,492 @@
+{
+ "schema_version": 1,
+ "id": "next.textile",
+ "version": "2.0.0",
+ "name": "Textile and fashion craft",
+ "description": "Fabric, stitch and garment-making treatments.",
+ "license": "CC0-1.0",
+ "author": "PromptStyler Next contributors",
+ "styles": [
+  {
+   "id": "textilecraft.jacquard",
+   "name": "Jacquard relief study",
+   "description": "A jacquard-textile interpretation with pattern built into the weave. Let changes in weave density create the existing pattern's relief.",
+   "category": "textile/craft",
+   "kind": "style",
+   "tags": [
+    "jacquard",
+    "woven relief",
+    "tonal pattern",
+    "thread sheen"
+   ],
+   "claims": {
+    "lighting": "textilecraft.jacquard",
+    "medium": "textilecraft.jacquard",
+    "texture": "textilecraft.jacquard"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "jacquard woven textile",
+     "tags": [
+      "jacquard",
+      "fabric"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "pattern woven into raised relief",
+     "tags": [
+      "fabric texture"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "directional light on thread sheen",
+     "tags": [
+      "sidelighting"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "textilecraft.brocade",
+   "name": "Brocade surface depth",
+   "description": "A brocade-textile interpretation of the existing forms. Give the raised woven structure a coherent depth and scale.",
+   "category": "textile/craft",
+   "kind": "style",
+   "tags": [
+    "brocade",
+    "raised weave",
+    "dense cloth",
+    "subtle lustre"
+   ],
+   "claims": {
+    "lighting": "textilecraft.brocade",
+    "medium": "textilecraft.brocade",
+    "texture": "textilecraft.brocade"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "brocade woven textile",
+     "tags": [
+      "brocade",
+      "fabric"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "raised woven pattern with depth",
+     "tags": [
+      "embroidery"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "broad side light on raised areas",
+     "tags": [
+      "sidelighting"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "textilecraft.organza",
+   "name": "Organza crisp translucency",
+   "description": "An organza-textile interpretation. Use crisp lightweight folds with a slight memory of shape.",
+   "category": "textile/craft",
+   "kind": "style",
+   "tags": [
+    "organza",
+    "crisp fold",
+    "sheer cloth",
+    "edge sheen"
+   ],
+   "claims": {
+    "lighting": "textilecraft.organza",
+    "medium": "textilecraft.organza",
+    "texture": "textilecraft.organza"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "organza fabric",
+     "tags": [
+      "organza",
+      "sheer fabric",
+      "fabric"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "crisp lightweight translucent folds",
+     "tags": [
+      "see-through"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "fine directional edge sheen",
+     "tags": [
+      "rim lighting"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "textilecraft.velvet",
+   "name": "Velvet pile direction",
+   "description": "A velvet-textile interpretation of the existing surfaces. Let the pile direction subtly shift the apparent tone.",
+   "category": "textile/craft",
+   "kind": "style",
+   "tags": [
+    "velvet",
+    "pile direction",
+    "dense shadow",
+    "soft lustre"
+   ],
+   "claims": {
+    "lighting": "textilecraft.velvet",
+    "medium": "textilecraft.velvet",
+    "texture": "textilecraft.velvet"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "velvet fabric",
+     "tags": [
+      "velvet",
+      "fabric"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "pile shifting tone with direction",
+     "tags": [
+      "soft texture"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "low broad light, deep soft shadows",
+     "tags": [
+      "soft shadows"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "textilecraft.denim",
+   "name": "Denim wear structure",
+   "description": "A denim-textile interpretation of the existing surfaces. Resolve diagonal twill and localized wear at plausible contact points.",
+   "category": "textile/craft",
+   "kind": "style",
+   "tags": [
+    "denim",
+    "twill weave",
+    "indigo variation",
+    "contact wear"
+   ],
+   "claims": {
+    "medium": "textilecraft.denim",
+    "palette": "textilecraft.denim",
+    "texture": "textilecraft.denim"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "denim fabric",
+     "tags": [
+      "denim",
+      "fabric"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "diagonal twill with worn edges",
+     "tags": [
+      "worn"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "deep indigo with faded fibers",
+     "tags": [
+      "blue theme"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "textilecraft.tweed",
+   "name": "Tweed fiber mixture",
+   "description": "A tweed-textile interpretation. Make differently spun yarns form a coherent coarse weave.",
+   "category": "textile/craft",
+   "kind": "style",
+   "tags": [
+    "tweed",
+    "mixed yarn",
+    "coarse weave",
+    "muted flecks"
+   ],
+   "claims": {
+    "medium": "textilecraft.tweed",
+    "palette": "textilecraft.tweed",
+    "texture": "textilecraft.tweed"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "tweed fabric",
+     "tags": [
+      "tweed",
+      "wool"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "coarse weave of mixed yarns",
+     "tags": [
+      "fabric texture"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "subdued mixed fiber colors",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "textilecraft.cableknit",
+   "name": "Cable-knit interlace",
+   "description": "A cable-knit textile interpretation of the existing surface. Keep raised yarn paths interlaced rather than pasted onto the form.",
+   "category": "textile/craft",
+   "kind": "style",
+   "tags": [
+    "cable knit",
+    "interlaced yarn",
+    "raised structure",
+    "soft wool"
+   ],
+   "claims": {
+    "lighting": "textilecraft.cableknit",
+    "medium": "textilecraft.cableknit",
+    "texture": "textilecraft.cableknit"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "cable-knit wool",
+     "tags": [
+      "cable knit",
+      "knitted"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "raised interlaced yarn paths",
+     "tags": [
+      "knit texture"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "gentle side light",
+     "tags": [
+      "sidelighting"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "textilecraft.pleating",
+   "name": "Pleat memory study",
+   "description": "A pleated-textile interpretation of the existing surface. Let repeated narrow planes follow the original silhouette.",
+   "category": "textile/craft",
+   "kind": "style",
+   "tags": [
+    "pleating",
+    "fold memory",
+    "repeated planes",
+    "crisp cloth"
+   ],
+   "claims": {
+    "composition": "textilecraft.pleating",
+    "lighting": "textilecraft.pleating",
+    "medium": "textilecraft.pleating"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "pleated fabric",
+     "tags": [
+      "pleats",
+      "fabric"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "repeating narrow pleat planes",
+     "tags": [
+      "pattern"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "oblique light on alternating pleats",
+     "tags": [
+      "sidelighting"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "fashiondetail.lookbook",
+   "name": "Quiet lookbook presentation",
+   "description": "A quiet fashion-image interpretation of the existing subject. Keep the presentation direct and the original silhouette fully readable.",
+   "category": "textile/fashion",
+   "kind": "style",
+   "tags": [
+    "lookbook",
+    "unforced presentation",
+    "cloth behavior",
+    "neutral palette"
+   ],
+   "claims": {
+    "composition": "fashiondetail.lookbook",
+    "medium": "fashiondetail.lookbook",
+    "palette": "fashiondetail.lookbook"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "quiet fashion lookbook photograph",
+     "tags": [
+      "fashion photography",
+      "lookbook"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "direct, fully readable silhouette",
+     "tags": [
+      "full body"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "neutral surroundings",
+     "tags": [
+      "simple background"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "fashiondetail.repairvisible",
+   "name": "Visible-repair cloth study",
+   "description": "A textile craft interpretation of existing repaired or joined surfaces. Let joining marks reveal how the material is held together.",
+   "category": "textile/fashion",
+   "kind": "style",
+   "tags": [
+    "visible repair",
+    "material care",
+    "joined textile",
+    "thread evidence"
+   ],
+   "claims": {
+    "medium": "fashiondetail.repairvisible",
+    "palette": "fashiondetail.repairvisible",
+    "texture": "fashiondetail.repairvisible"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "visible mending textile",
+     "tags": [
+      "visible mending",
+      "sashiko"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "stitches holding the material together",
+     "tags": [
+      "stitches"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "restrained thread contrast",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  }
+ ]
+}

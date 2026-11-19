@@ -3,6 +3,7 @@
 from comfy_api.latest import io
 
 from .upscaler.lfm_prompts import CONTRACT_VERSION as LFM_CONTRACT_VERSION
+from .upscaler import idea_prompts
 from .upscaler.models import DEFAULT_MODEL, bundle_fingerprint, model_choices
 from .upscaler.prompts import CONTRACT_VERSION, DETAIL_MODES
 
@@ -128,6 +129,65 @@ class PSNextUpscaleBase(io.ComfyNode):
                 target_model,
             )
         )
+
+
+class PSNextPromptIdea(io.ComfyNode):
+    """Each run turns a draft into a new prompt idea; vary the seed for another one."""
+
+    @classmethod
+    def define_schema(cls) -> io.Schema:
+        return io.Schema(
+            node_id="PSNextPromptIdea",
+            display_name="PromptStyler Next: Prompt Idea",
+            category="PromptStyler Next/upscaling",
+            description="Turn a draft into a new, fully written prompt idea. Each seed explores a different element (setting, light, viewpoint, moment, color...) in a different prompt structure while keeping your subject and explicit details. LFM3-VL only. Unlike Upscale Base Prompt it invents on purpose: review the result.",
+            search_aliases=["idea", "brainstorm", "explore", "variation", "creative prompt", "enhance"],
+            inputs=[
+                UPSCALER.Input("upscaler"),
+                io.String.Input("prompt", default="", multiline=True, dynamic_prompts=False),
+                io.Combo.Input(
+                    "exploration",
+                    options=list(idea_prompts.EXPLORATIONS),
+                    default="explore",
+                    tooltip="Explore keeps your subject, action and explicit details and develops one new element. Wild keeps only the subject, quoted text and exclusions and combines a bold element with another one.",
+                ),
+                io.Combo.Input("detail", options=list(idea_prompts.DETAILS), default="balanced"),
+                io.Combo.Input(
+                    "target_model",
+                    options=list(idea_prompts.TARGETS),
+                    default="general",
+                    tooltip="Adjusts the writing for the image model that reads the prompt.",
+                ),
+                io.Combo.Input("lens", options=["auto", *idea_prompts.LENS_BY_KEY], default="auto", advanced=True,
+                               tooltip="What to explore. Auto picks one by seed, skipping those listed in recent."),
+                io.Combo.Input("structure", options=["auto", *idea_prompts.STRUCTURE_BY_KEY], default="auto", advanced=True,
+                               tooltip="How the prompt is organised. Auto picks one by seed, skipping those listed in recent."),
+                io.Int.Input("seed", default=0, min=0, max=0xFFFFFFFFFFFFFFFF, control_after_generate=True),
+                io.Float.Input("temperature", default=0.85, min=0.0, max=1.5, step=0.05,
+                               tooltip="0 is repeatable greedy writing; higher values give more varied ideas. Brainstorming runs 0.2 hotter."),
+                io.String.Input("avoid", default="", multiline=True, optional=True, advanced=True,
+                                tooltip="Earlier ideas, one per line. New concepts that repeat their additions are avoided."),
+                io.String.Input("earlier", default="", multiline=True, optional=True, advanced=True,
+                                tooltip="Earlier full prompts, one per line. Wording they keep repeating is discouraged."),
+                io.String.Input("recent", default="", optional=True, advanced=True,
+                                tooltip="Lens and structure keys used recently (comma-separated); auto skips them while others remain."),
+                io.Int.Input("max_new_tokens", default=0, min=0, max=1024, advanced=True,
+                             tooltip="0 sizes the budget from detail and draft length."),
+            ],
+            outputs=[io.String.Output("prompt"), io.String.Output("inspection")],
+        )
+
+    @classmethod
+    def fingerprint_inputs(cls, **kwargs):
+        return idea_prompts.CONTRACT_VERSION
+
+    @classmethod
+    def execute(cls, upscaler, prompt="", exploration="explore", detail="balanced", target_model="general", lens="auto",
+                structure="auto", seed=0, temperature=0.85, avoid="", earlier="", recent="", max_new_tokens=0):
+        from .upscaler.runtime import ideate
+
+        return io.NodeOutput(*ideate(upscaler, prompt, exploration, detail, target_model, lens, structure, seed,
+                                     temperature, avoid or "", recent or "", max_new_tokens, earlier or ""))
 
 
 class PSNextPreviewPrompt(io.ComfyNode):

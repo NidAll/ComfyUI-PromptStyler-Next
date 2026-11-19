@@ -16,7 +16,7 @@ import torch
 from PIL import Image
 from transformers import StoppingCriteria, StoppingCriteriaList
 
-from . import lfm_prompts
+from . import idea_prompts, lfm_prompts
 from .models import bundle_fingerprint, resolve_bundle
 from .prompts import (
     CONTRACT_VERSION,
@@ -68,8 +68,10 @@ def load_upscaler(model_name: str) -> UpscalerHandle:
 class ParagraphComplete(StoppingCriteria):
     """Match a few token IDs on-device instead of decoding the whole prefix per token."""
 
-    def __init__(self, tokenizer: Any, input_length: int, device: Any):
+    def __init__(self, tokenizer: Any, input_length: int, device: Any, paragraphs: bool = True):
         self.input_length = input_length
+        # False keeps only the interrupt check, for answers that are several lines long.
+        self.paragraphs = paragraphs
         # Tokenizers can merge repeated newlines into one token. Include their encodings.
         ids = {
             token
@@ -83,6 +85,8 @@ class ParagraphComplete(StoppingCriteria):
 
     def __call__(self, input_ids, scores, **kwargs):
         mm.throw_exception_if_processing_interrupted()
+        if not self.paragraphs:
+            return torch.zeros(input_ids.shape[0], dtype=torch.bool, device=input_ids.device)
         last = input_ids[:, -1:]
         done = (last == self.ids).any(dim=-1)
         if input_ids.shape[1] >= self.input_length + 2:
@@ -165,7 +169,8 @@ def _generate(owner, processor, request, picture, budget, slices, detail_mode, *
     )
 
 
-def _generate_lfm3(owner, processor, chat, picture, budget, slices):
+def _generate_lfm3(owner, processor, chat, picture, budget, slices, *, sampling=None, seed=0, paragraphs=True):
+    """Greedy by default; ``sampling`` (temperature/top_p/min_p) samples reproducibly from ``seed``."""
     started = time.perf_counter()
     mm.throw_exception_if_processing_interrupted()
     text = processor.apply_chat_template(
@@ -187,14 +192,16 @@ def _generate_lfm3(owner, processor, chat, picture, budget, slices):
     mm.load_models_gpu([owner], memory_required=640 * 1024**2, force_full_load=True)
     inputs = inputs.to(owner.load_device, dtype=torch.bfloat16)
     placed = time.perf_counter()
+    if sampling:
+        torch.manual_seed(int(seed) & 0xFFFFFFFFFFFFFFFF)
     tokens = owner.model.generate(
         **inputs,
-        do_sample=False,
+        **({"do_sample": True, **sampling} if sampling else {"do_sample": False}),
         max_new_tokens=budget,
         use_cache=True,
         pad_token_id=processor.tokenizer.pad_token_id,
         stopping_criteria=StoppingCriteriaList(
-            [ParagraphComplete(processor.tokenizer, input_length, owner.load_device)]
+            [ParagraphComplete(processor.tokenizer, input_length, owner.load_device, paragraphs)]
         ),
     )[0, input_length:].cpu()
     generated = time.perf_counter()
@@ -450,6 +457,158 @@ def upscale(
         # Cached handles remain owned by ComfyUI, which can offload them for diffusion.
         try:
             if offload_after or sys.exc_info()[0] is not None:
+                mm.unload_model_and_clones(upscaler.owner)
+        finally:
+            upscaler.lock.release()
+
+
+def _idea_sampling(temperature: float, bias: list | None = None) -> dict:
+    # min_p keeps high temperatures coherent on a small model; 0 means greedy.
+    settings = {"temperature": float(temperature), "top_p": 0.95, "min_p": 0.05} if temperature > 0 else {"do_sample": False}
+    return {**settings, **({"sequence_bias": bias} if bias else {})}
+
+
+def _word_bias(tokenizer, words: list[str], strength: float) -> list:
+    """Soft penalties (not bans) for whole words, in lower and capitalised forms after a space."""
+    seen, bias = set(), []
+    for word in words:
+        for form in (" " + word, " " + word.capitalize()):
+            ids = tuple(tokenizer.encode(form, add_special_tokens=False))
+            if ids and ids not in seen:
+                seen.add(ids)
+                bias.append([list(ids), strength])
+    return bias
+
+
+def ideate(
+    upscaler: UpscalerHandle,
+    prompt: str,
+    exploration: str = "explore",
+    detail: str = "balanced",
+    target_model: str = "general",
+    lens: str = "auto",
+    structure: str = "auto",
+    seed: int = 0,
+    temperature: float = 0.85,
+    avoid: str = "",
+    recent: str = "",
+    max_new_tokens: int = 0,
+    earlier: str = "",
+) -> tuple[str, str]:
+    """A new prompt idea from a draft: seeded lens/structure, brainstorm, novelty pick, develop, check.
+
+    ``avoid`` lists earlier concepts (novelty and brainstorm); ``earlier`` lists earlier full prompts, whose
+    recurring wording is penalised during decoding so each idea is described in fresh words too.
+    """
+    started = time.perf_counter()
+    draft = idea_prompts.validate(
+        prompt, exploration, detail, target_model, lens, structure, temperature, avoid, recent, max_new_tokens, earlier
+    )
+    if not isinstance(upscaler, UpscalerHandle) or upscaler.model_family != "lfm3_vl":
+        raise ValueError("Prompt ideas need the LFM3-VL model; select an lfm3 file in Load Prompt Upscaler")
+    earlier_ideas = idea_prompts.avoid_list(avoid)
+    chosen = idea_prompts.plan(seed, exploration, detail, lens, structure, recent)
+    budget = idea_prompts.token_budget(detail, draft, max_new_tokens)
+    while not upscaler.lock.acquire(timeout=0.1):
+        mm.throw_exception_if_processing_interrupted()
+    try:
+        owner, processor = upscaler.owner, upscaler.processor
+        # Near-ban the model's stock adjectives; gently steer away from words earlier ideas kept reusing.
+        penalised = idea_prompts.bias_words(idea_prompts.avoid_list(earlier) or earlier_ideas, draft)
+        bias = (_word_bias(processor.tokenizer, list(idea_prompts.OVERUSED), -6.0)
+                + _word_bias(processor.tokenizer, penalised, -1.5))
+        passes = []
+        # Brainstorming is sampled hotter than the final prompt so the candidates really differ.
+        raw, _, timing = _generate_lfm3(
+            owner, processor, idea_prompts.brainstorm_messages(draft, exploration, chosen, earlier_ideas), None,
+            40 * chosen["concepts"] + 40, 1,
+            sampling=_idea_sampling(min(1.5, temperature + 0.2) if temperature else 0, bias),
+            seed=seed, paragraphs=False,
+        )
+        passes.append({"stage": "brainstorm", **timing})
+        concepts = idea_prompts.parse_concepts(raw)
+        ranked = idea_prompts.rank_concepts(concepts, earlier_ideas, draft, exploration, chosen["rng_state"])
+        attempts = []
+        for attempt in range(2):
+            concept, concept_novelty = ranked[attempt] if attempt < len(ranked) else (ranked[0] if ranked else ("", 1.0))
+            raw, truncated, timing = _generate_lfm3(
+                owner, processor,
+                idea_prompts.develop_messages(draft, exploration, detail, target_model, chosen, concept), None,
+                budget, 1, sampling=_idea_sampling(temperature, bias), seed=seed + 1 + attempt * 7919,
+            )
+            passes.append({"stage": "develop" if not attempt else "retry", **timing})
+            try:
+                text, warnings = idea_prompts.clean_idea(raw, truncated)
+            except RuntimeError as error:
+                attempts.append({"text": "", "warnings": [str(error)], "quality": {"issues": ["control"], "novelty": 0}})
+                continue
+            text, restored_exclusions = lfm_prompts.restore_exclusions(text, draft)
+            text, restored_quotes = idea_prompts.restore_quotes(text, draft)
+            quality = idea_prompts.assess(text, draft, exploration, detail, earlier_ideas)
+            attempts.append({"text": text, "warnings": warnings, "quality": quality, "concept": concept,
+                             "concept_novelty": concept_novelty, "restored_exclusions": restored_exclusions,
+                             "restored_quotes": restored_quotes})
+            # A retry develops the next-ranked concept with a new sample.
+            if not quality["issues"]:
+                break
+        usable = [item for item in attempts if item["text"]]
+        if not usable:
+            raise RuntimeError("The prompt model returned no usable idea; try again")
+        best = min(usable, key=lambda item: (len(item["quality"]["issues"]), -item["quality"]["novelty"]))
+        warnings = list(best["warnings"])
+        labels = {"too_short": "The idea came out short", "lost_subject": "The idea may have drifted from your subject",
+                  "echo": "The idea stayed close to your draft", "repeat": "The idea resembles an earlier one"}
+        warnings += [labels[issue] for issue in best["quality"]["issues"] if issue in labels]
+        if best["quality"].get("invented_text"):
+            warnings.append("The idea added readable text you did not ask for: " + ", ".join(best["quality"]["invented_text"]))
+        inspection = {
+            "schema_version": 2,
+            "contract": idea_prompts.CONTRACT_VERSION,
+            "input_prompt": draft,
+            "model_family": "lfm3_vl",
+            "model": upscaler.identity[0].rsplit("/", 1)[-1],
+            "mode": "idea",
+            "authoring": "idea",
+            "idea": {
+                "exploration": exploration,
+                "lenses": [{"key": item.key, "label": item.label} for item in chosen["lenses"]],
+                "structure": {"key": chosen["structure"].key, "label": chosen["structure"].label},
+                "sparks": chosen["sparks"],
+                "concepts": concepts,
+                "concept": best["concept"],
+                "concept_novelty": best["concept_novelty"],
+            },
+            "quality": best["quality"],
+            "attempts": len(attempts),
+            "attempt_issues": [item["quality"]["issues"] for item in attempts],
+            "penalised_words": penalised,
+            "restored_exclusions": best["restored_exclusions"],
+            "restored_quotes": best["restored_quotes"],
+            "settings": {
+                "detail": detail,
+                "target_model": target_model,
+                "max_new_tokens": budget,
+                "seed": seed,
+                "temperature": temperature,
+                "sampling": {key: value for key, value in _idea_sampling(temperature).items()},
+                "thinking": False,
+            },
+            "passes": passes,
+            "generated_tokens": sum(item["generated_tokens"] for item in passes),
+            "seconds": {
+                "model_load": upscaler.load_seconds,
+                "generate": sum(item["generate_seconds"] for item in passes),
+                "total": time.perf_counter() - started,
+            },
+            "warnings": warnings,
+            "base_prompt": best["text"],
+        }
+        logger.info("PromptStyler idea (%s, %s): %d tokens in %.3fs", exploration, chosen["structure"].key,
+                    inspection["generated_tokens"], inspection["seconds"]["generate"])
+        return best["text"], json.dumps(inspection, ensure_ascii=False, sort_keys=True, indent=2)
+    finally:
+        try:
+            if sys.exc_info()[0] is not None:
                 mm.unload_model_and_clones(upscaler.owner)
         finally:
             upscaler.lock.release()

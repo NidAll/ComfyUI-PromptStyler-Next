@@ -1,1044 +1,866 @@
 {
-  "schema_version": 1,
-  "id": "community.liminal-spaces",
-  "version": "1.2.0",
-  "name": "Liminal Spaces",
-  "description": "After-hours institutional emptiness, threshold architecture, and uncanny everyday geometry.",
-  "license": "CC0-1.0",
-  "author": "NidAll / original community pack",
-  "styles": [
+ "schema_version": 1,
+ "id": "community.liminal-spaces",
+ "version": "2.0.0",
+ "name": "Liminal Spaces",
+ "description": "After-hours institutional emptiness, threshold architecture, and uncanny everyday geometry.",
+ "license": "CC0-1.0",
+ "author": "PromptStyler Next contributors",
+ "styles": [
+  {
+   "id": "liminal.empty-mall",
+   "name": "After-hours Concourse",
+   "description": "A vacant retail concourse, built around long sightlines and the uneasy stillness after closing.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "liminal",
+    "mall",
+    "commercial",
+    "empty"
+   ],
+   "claims": {
+    "composition": "liminal.empty-mall",
+    "lighting": "liminal.empty-mall",
+    "medium": "liminal.empty-mall",
+    "texture": "liminal.empty-mall"
+   },
+   "clauses": [
     {
-      "id": "liminal.empty-mall",
-      "name": "After-hours Concourse",
-      "description": "A vacant retail concourse, built around long sightlines and the uneasy stillness after closing.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "liminal",
-        "mall",
-        "commercial",
-        "empty"
-      ],
-      "claims": {
-        "medium": "liminal.empty-mall",
-        "texture": "liminal.empty-mall",
-        "composition": "liminal.empty-mall",
-        "lighting": "liminal.empty-mall"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Give the supplied scene an impersonal commercial-image stillness without changing its occupants or setting",
-          "tags": [
-            "restrained institutional still-image treatment"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Emphasize long sightlines and measured intervals already available between the supplied forms",
-          "tags": [
-            "measured existing spatial intervals"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Use uneven pools of pale overhead light with quiet shadow transitions",
-          "tags": [
-            "uneven pale overhead light"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Give existing smooth surfaces a faintly worn low-gloss finish",
-          "tags": [
-            "worn low-gloss surface finish"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "medium",
+     "text": "liminal shopping mall photograph",
+     "tags": [
+      "liminal space",
+      "shopping mall"
+     ],
+     "min_intensity": 0.0
     },
     {
-      "id": "liminal.school-hallway",
-      "name": "School After the Bell",
-      "description": "Vacant school-corridor perspective and ordinary institutional surfaces.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "school",
-        "hallway",
-        "institutional",
-        "nostalgia"
-      ],
-      "claims": {
-        "medium": "liminal.school-hallway",
-        "texture": "liminal.school-hallway",
-        "composition": "liminal.school-hallway",
-        "lighting": "liminal.school-hallway"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use the understated institutional visual language associated with after-hours school imagery",
-          "tags": [
-            "understated institutional image treatment"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Align the supplied forms along a sustained directional rhythm while retaining their identities and count",
-          "tags": [
-            "sustained directional framing"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Combine cool lateral diffusion with dim neutral overhead light",
-          "tags": [
-            "cool lateral and dim overhead light"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Apply restrained scuff-like grain to appropriate existing surfaces",
-          "tags": [
-            "restrained scuffed surface grain"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "composition",
+     "text": "long sightlines, measured intervals",
+     "tags": [
+      "one-point perspective"
+     ],
+     "min_intensity": 0.4
     },
     {
-      "id": "liminal.poolrooms",
-      "name": "Silent Poolrooms",
-      "description": "Pale undulating reflected light, smooth tonal surfaces and measured depth intervals applied to the existing scene.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "poolrooms",
-        "water",
-        "tiles",
-        "indoor"
-      ],
-      "claims": {
-        "medium": "liminal.poolrooms",
-        "texture": "liminal.poolrooms",
-        "lighting": "liminal.poolrooms",
-        "composition": "liminal.poolrooms"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "A softly uncanny illustration with continuous contours and smooth evenly graded tonal planes on the supplied forms",
-          "tags": [
-            "softly uncanny illustration",
-            "continuous supplied-form contours",
-            "smooth tonal planes"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Use pale undulating reflected-light patterns over the existing forms",
-          "tags": [
-            "pale undulating reflected light on existing forms"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Emphasize existing depth intervals through offset tonal planes without adding openings or structures",
-          "tags": [
-            "offset tonal depth intervals on existing forms"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Use smooth low-contrast surface rendering with subtle ripple-like tonal variation",
-          "tags": [
-            "smooth low-contrast finish",
-            "ripple-like tonal variation"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "lighting",
+     "text": "uneven pale overhead pools",
+     "tags": [
+      "fluorescent lighting"
+     ],
+     "min_intensity": 0.75
     },
     {
-      "id": "liminal.hotel-transition",
-      "name": "Endless Hotel Landing",
-      "description": "Transitional hospitality architecture where every turn appears familiar.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "hotel",
-        "corridor",
-        "carpet",
-        "transition"
-      ],
-      "claims": {
-        "medium": "liminal.hotel-transition",
-        "texture": "liminal.hotel-transition",
-        "composition": "liminal.hotel-transition",
-        "lighting": "liminal.hotel-transition"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Apply a hushed transitional-space image treatment to the supplied scene",
-          "tags": [
-            "hushed transitional-space rendering"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Organize existing contours into a calm sequence of similar visual intervals",
-          "tags": [
-            "calm repeated visual intervals"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Use sparse amber illumination with soft dark transitions",
-          "tags": [
-            "sparse amber illumination"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Give appropriate existing surfaces a softly worn patterned finish",
-          "tags": [
-            "softly worn patterned finish"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.office-maze",
-      "name": "Unoccupied Office Maze",
-      "description": "Cubicles and partitions seen through an eerily tidy after-hours office.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "office",
-        "cubicles",
-        "corporate",
-        "empty"
-      ],
-      "claims": {
-        "medium": "liminal.office-maze",
-        "texture": "liminal.office-maze",
-        "composition": "liminal.office-maze",
-        "lighting": "liminal.office-maze"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Give the supplied scene a quiet procedural visual treatment associated with corporate interiors",
-          "tags": [
-            "quiet procedural visual treatment"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Emphasize orthogonal relationships already present without adding partitions or objects",
-          "tags": [
-            "existing orthogonal relationships"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Use flat overhead diffusion with a few locally brighter regions",
-          "tags": [
-            "flat overhead diffusion"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Keep matte surfaces and restrained plastic-like reflections where materials allow them",
-          "tags": [
-            "matte finish and restrained reflections"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.airport-night",
-      "name": "Last Flight Terminal",
-      "description": "Airport infrastructure at the moment after the final departure.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "airport",
-        "terminal",
-        "night",
-        "transit"
-      ],
-      "claims": {
-        "medium": "liminal.airport-night",
-        "texture": "liminal.airport-night",
-        "composition": "liminal.airport-night",
-        "lighting": "liminal.airport-night"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Apply the suspended visual rhythm of off-hour transit imagery while retaining the supplied location and people",
-          "tags": [
-            "suspended transit-image rhythm"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use long horizontal alignments and clear existing depth transitions",
-          "tags": [
-            "long horizontal alignments"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Place sparse cool highlights against deep neutral surrounding tones",
-          "tags": [
-            "sparse cool highlights"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Render existing reflective surfaces with broad isolated highlights",
-          "tags": [
-            "broad isolated surface reflections"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.parking-spiral",
-      "name": "Concrete Parking Spiral",
-      "description": "An architectural maze of ramps, pillars and open concrete levels.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "parking",
-        "concrete",
-        "spiral",
-        "garage"
-      ],
-      "claims": {
-        "medium": "liminal.parking-spiral",
-        "texture": "liminal.parking-spiral",
-        "composition": "liminal.parking-spiral",
-        "lighting": "liminal.parking-spiral"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use austere utilitarian-image rendering without replacing the supplied setting",
-          "tags": [
-            "austere utilitarian image rendering"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Emphasize existing curves and upright forms as a slow alternating rhythm",
-          "tags": [
-            "alternating curves and upright rhythms"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Break cool illumination into distinct light and shadow bands",
-          "tags": [
-            "intermittent cool light bands"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Use powdery grain and subdued painted-surface wear where appropriate",
-          "tags": [
-            "powdery surface grain"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.suburban-bluehour",
-      "name": "Suburb Without Footsteps",
-      "description": "The hush of suburban streets at twilight, with no visible activity.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "suburb",
-        "twilight",
-        "streets",
-        "quiet"
-      ],
-      "claims": {
-        "medium": "liminal.suburban-bluehour",
-        "lighting": "liminal.suburban-bluehour",
-        "composition": "liminal.suburban-bluehour",
-        "mood": "liminal.suburban-bluehour"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Give the supplied scene the suspended stillness associated with blue-hour observations",
-          "tags": [
-            "suspended observational stillness"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Balance cool ambient fill with isolated warmer highlights",
-          "tags": [
-            "cool ambient fill and warm highlights"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "composition",
-          "text": "Let existing negative space separate the supplied silhouettes without removing subjects",
-          "tags": [
-            "separated supplied silhouettes"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "mood",
-          "text": "Hold a quiet anticipatory pause without changing the scene's inhabitants",
-          "tags": [
-            "quiet anticipatory pause"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.playground-rain",
-      "name": "Rain-Soaked Playground",
-      "description": "Wet playground geometry under overcast light, treated with documentary restraint.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "playground",
-        "rain",
-        "nostalgia",
-        "empty"
-      ],
-      "claims": {
-        "medium": "liminal.playground-rain",
-        "texture": "liminal.playground-rain",
-        "composition": "liminal.playground-rain",
-        "lighting": "liminal.playground-rain"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a subdued, recently weathered observational treatment of the existing scene",
-          "tags": [
-            "subdued weathered observation"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Space the existing forms deliberately while preserving all requested entities",
-          "tags": [
-            "deliberately spaced existing forms"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Use diffuse gray light with shallow shadow contrast",
-          "tags": [
-            "diffuse gray light"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Suggest a faint damp sheen only on surfaces that can plausibly carry it",
-          "tags": [
-            "subtle plausible damp sheen"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.arcade-shutdown",
-      "name": "Arcade After Closing",
-      "description": "An idle amusement arcade after its music and crowds have vanished.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "arcade",
-        "neon",
-        "afterhours",
-        "nostalgia"
-      ],
-      "claims": {
-        "medium": "liminal.arcade-shutdown",
-        "texture": "liminal.arcade-shutdown",
-        "lighting": "liminal.arcade-shutdown",
-        "composition": "liminal.arcade-shutdown"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Apply the subdued electronic-media atmosphere associated with off-hour arcade imagery",
-          "tags": [
-            "subdued electronic-media atmosphere"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Use rare saturated light accents within a broadly subdued exposure",
-          "tags": [
-            "rare saturated light accents"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "composition",
-          "text": "Emphasize existing vertical rhythms and receding intervals without introducing cabinets",
-          "tags": [
-            "receding vertical rhythms"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Use soft display-like reflections and fine dustlike grain on existing surfaces",
-          "tags": [
-            "soft display reflections and fine grain"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.hospital-nightwing",
-      "name": "Night-Wing Corridor",
-      "description": "Clinical emptiness shaped by cool lights and interrupted wayfinding.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "hospital",
-        "clinical",
-        "corridor",
-        "empty"
-      ],
-      "claims": {
-        "medium": "liminal.hospital-nightwing",
-        "texture": "liminal.hospital-nightwing",
-        "composition": "liminal.hospital-nightwing",
-        "lighting": "liminal.hospital-nightwing"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Give the scene a restrained clinical-image treatment while keeping its supplied location and people",
-          "tags": [
-            "restrained clinical-image treatment"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use long uninterrupted alignments drawn from existing scene geometry",
-          "tags": [
-            "long existing alignments"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Use cool overhead illumination interrupted by gentle shadow pockets",
-          "tags": [
-            "cool overhead illumination"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Give appropriate surfaces a clean but subtly aged painted finish",
-          "tags": [
-            "subtly aged clean surface finish"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.service-stairwell",
-      "name": "Service Stairwell Echo",
-      "description": "Minimal stair geometry and hard surfaces that amplify a sense of absence.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "stairs",
-        "utility",
-        "concrete",
-        "geometry"
-      ],
-      "claims": {
-        "medium": "liminal.service-stairwell",
-        "texture": "liminal.service-stairwell",
-        "composition": "liminal.service-stairwell",
-        "lighting": "liminal.service-stairwell"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Apply a spare service-architecture visual treatment to the supplied subject",
-          "tags": [
-            "spare utilitarian visual treatment"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Emphasize angular directional changes in the supplied contours without inventing stairs",
-          "tags": [
-            "angular supplied contour rhythm"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Use a narrow cool light source with broad falloff",
-          "tags": [
-            "narrow cool light source"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Show fine mineral-like grain and restrained edge wear on suitable existing materials",
-          "tags": [
-            "fine mineral grain and edge wear"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.transit-underpass",
-      "name": "Transit Underpass",
-      "description": "An anonymous pedestrian tunnel whose distant exit seems unreachable.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "underpass",
-        "transit",
-        "tunnel",
-        "perspective"
-      ],
-      "claims": {
-        "medium": "liminal.transit-underpass",
-        "texture": "liminal.transit-underpass",
-        "composition": "liminal.transit-underpass",
-        "lighting": "liminal.transit-underpass"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use the compressed spatial tension associated with underpass imagery without relocating the scene",
-          "tags": [
-            "compressed spatial tension"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Guide existing parallel edges toward one quiet focal region",
-          "tags": [
-            "converging existing parallel edges"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Repeat pale bands of illumination through existing depth",
-          "tags": [
-            "repeated pale illumination bands"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Keep faint streaklike wear on suitable existing surfaces",
-          "tags": [
-            "faint streaklike surface wear"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.banquet-empty",
-      "name": "Vacant Banquet Room",
-      "description": "Event architecture seen after the guests and celebration have disappeared.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "banquet",
-        "event",
-        "ballroom",
-        "empty"
-      ],
-      "claims": {
-        "medium": "liminal.banquet-empty",
-        "texture": "liminal.banquet-empty",
-        "composition": "liminal.banquet-empty",
-        "lighting": "liminal.banquet-empty"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Give the supplied scene a formal after-event stillness without removing people or adding furniture",
-          "tags": [
-            "formal after-event stillness"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use evenly measured intervals between existing forms while preserving entity counts",
-          "tags": [
-            "evenly measured supplied-form intervals"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Use soft overhead light above a dimmer surrounding field",
-          "tags": [
-            "soft overhead light and dim surroundings"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Let subtle surface folds and repeating material patterns carry the detail where present",
-          "tags": [
-            "subtle existing material rhythms"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.convenience-midnight",
-      "name": "Convenience Store at Midnight",
-      "description": "A fluorescent retail microcosm isolated by deep night beyond the windows.",
-      "category": "liminal/spaces",
-      "kind": "style",
-      "tags": [
-        "retail",
-        "convenience",
-        "midnight",
-        "fluorescent"
-      ],
-      "claims": {
-        "medium": "liminal.convenience-midnight",
-        "texture": "liminal.convenience-midnight",
-        "composition": "liminal.convenience-midnight",
-        "lighting": "liminal.convenience-midnight"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Use a crisp fluorescent retail-image treatment without changing the supplied setting",
-          "tags": [
-            "crisp fluorescent retail-image treatment"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Organize the existing forms into clear receding visual bands",
-          "tags": [
-            "clear receding visual bands"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Contrast blue-white local illumination with subdued ambient exposure",
-          "tags": [
-            "blue-white local illumination"
-          ],
-          "min_intensity": 0.78
-        },
-        {
-          "axis": "texture",
-          "text": "Use small glossy reflections on existing smooth surfaces as visual accents",
-          "tags": [
-            "small glossy surface accents"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.green-fluorescence",
-      "name": "Sickly Fluorescence",
-      "description": "Subtle green-cyan institutional light without forcing a new location.",
-      "category": "liminal/grades",
-      "kind": "grade",
-      "tags": [
-        "green",
-        "fluorescent",
-        "grade",
-        "clinical"
-      ],
-      "claims": {
-        "lighting": "liminal.green-fluorescence",
-        "palette": "liminal.green-fluorescence"
-      },
-      "clauses": [
-        {
-          "axis": "lighting",
-          "text": "Wash existing lighting in a faint green-cyan fluorescent cast",
-          "tags": [
-            "sickly fluorescent glow"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "palette",
-          "text": "Keep highlights off-white with pale green shadow contamination",
-          "tags": [
-            "green cast highlights"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.sodium-night",
-      "name": "Sodium-Vapor Midnight",
-      "description": "Deep night treated with narrow amber public-light highlights.",
-      "category": "liminal/grades",
-      "kind": "grade",
-      "tags": [
-        "amber",
-        "sodium",
-        "night",
-        "street"
-      ],
-      "claims": {
-        "palette": "liminal.sodium-night",
-        "lighting": "liminal.sodium-night"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Bias illuminated areas toward dusty sodium amber against blue-black shadows",
-          "tags": [
-            "sodium orange and blue black"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Allow nearby artificial lights to leave wide areas unlit",
-          "tags": [
-            "deep streetlight shadow pools"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.washed-commercial",
-      "name": "Faded Commercial Interior",
-      "description": "A drained institutional retail palette that preserves subject details.",
-      "category": "liminal/grades",
-      "kind": "grade",
-      "tags": [
-        "faded",
-        "pastel",
-        "commercial",
-        "grade"
-      ],
-      "claims": {
-        "palette": "liminal.washed-commercial",
-        "texture": "liminal.washed-commercial"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Desaturate toward worn beige, pale seafoam and muted upholstery blue",
-          "tags": [
-            "faded retail pastel palette"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "texture",
-          "text": "Give painted and laminated surfaces the patina of prolonged indoor lighting",
-          "tags": [
-            "aged commercial finishes"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.repeating-geometry",
-      "name": "Repetitive Geometry",
-      "description": "Increases architectural rhythm without introducing a specific building type.",
-      "category": "liminal/modifiers",
-      "kind": "modifier",
-      "tags": [
-        "repetition",
-        "architecture",
-        "geometry",
-        "mod"
-      ],
-      "claims": {
-        "composition": "liminal.repeating-geometry",
-        "detail": "liminal.repeating-geometry"
-      },
-      "clauses": [
-        {
-          "axis": "composition",
-          "text": "Emphasize rhythmic spacing already present in the supplied forms without adding repeated entities",
-          "tags": [
-            "rhythmic existing spacing without added entities"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "detail",
-          "text": "Keep the small spacing variations that make an ordinary structure feel uncanny",
-          "tags": [
-            "slightly irregular geometry"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "liminal.offhour-stillness",
-      "name": "Off-Hour Stillness",
-      "description": "A restrained emotional treatment emphasizing pauses and absence.",
-      "category": "liminal/modifiers",
-      "kind": "modifier",
-      "tags": [
-        "empty",
-        "stillness",
-        "quiet",
-        "mod"
-      ],
-      "claims": {
-        "mood": "liminal.offhour-stillness",
-        "composition": "liminal.offhour-stillness"
-      },
-      "clauses": [
-        {
-          "axis": "mood",
-          "text": "Give the atmosphere the hush of a place between scheduled activities",
-          "tags": [
-            "after hours emptiness"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Preserve broad inactive areas around the subject to heighten the pause",
-          "tags": [
-            "quiet negative space"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "texture",
+     "text": "worn low-gloss floors",
+     "tags": [
+      "tiled floor"
+     ],
+     "min_intensity": 0.75
     }
-  ]
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.school-hallway",
+   "name": "School After the Bell",
+   "description": "Vacant school-corridor perspective and ordinary institutional surfaces.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "school",
+    "hallway",
+    "institutional",
+    "nostalgia"
+   ],
+   "claims": {
+    "composition": "liminal.school-hallway",
+    "lighting": "liminal.school-hallway",
+    "medium": "liminal.school-hallway",
+    "texture": "liminal.school-hallway"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "after-hours school hallway photograph",
+     "tags": [
+      "liminal space",
+      "hallway"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "sustained directional rhythm",
+     "tags": [
+      "vanishing point"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "cool side light, dim overhead",
+     "tags": [
+      "dim lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "light scuffs and grain",
+     "tags": [
+      "film grain"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.poolrooms",
+   "name": "Silent Poolrooms",
+   "description": "Pale undulating reflected light, smooth tonal surfaces and measured depth intervals applied to the existing scene.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "poolrooms",
+    "water",
+    "tiles",
+    "indoor"
+   ],
+   "claims": {
+    "composition": "liminal.poolrooms",
+    "lighting": "liminal.poolrooms",
+    "medium": "liminal.poolrooms",
+    "texture": "liminal.poolrooms"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "softly uncanny poolrooms illustration",
+     "tags": [
+      "poolrooms",
+      "liminal space"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "pale rippling reflected light",
+     "tags": [
+      "caustics"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "composition",
+     "text": "offset tonal planes in depth",
+     "tags": [
+      "depth"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "smooth low-contrast tile surfaces",
+     "tags": [
+      "tiles"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.hotel-transition",
+   "name": "Endless Hotel Landing",
+   "description": "Transitional hospitality architecture where every turn appears familiar.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "hotel",
+    "corridor",
+    "carpet",
+    "transition"
+   ],
+   "claims": {
+    "composition": "liminal.hotel-transition",
+    "lighting": "liminal.hotel-transition",
+    "medium": "liminal.hotel-transition",
+    "texture": "liminal.hotel-transition"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "hushed hotel corridor image",
+     "tags": [
+      "hotel",
+      "liminal space"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "calm sequence of similar intervals",
+     "tags": [
+      "repetition"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "sparse amber light, soft dark",
+     "tags": [
+      "dim lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "softly worn patterned carpet",
+     "tags": [
+      "carpet"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.office-maze",
+   "name": "Unoccupied Office Maze",
+   "description": "Cubicles and partitions seen through an eerily tidy after-hours office.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "office",
+    "cubicles",
+    "corporate",
+    "empty"
+   ],
+   "claims": {
+    "composition": "liminal.office-maze",
+    "lighting": "liminal.office-maze",
+    "medium": "liminal.office-maze",
+    "texture": "liminal.office-maze"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "quiet corporate interior image",
+     "tags": [
+      "office",
+      "liminal space"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "orthogonal relationships",
+     "tags": [
+      "straight-on"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "flat overhead diffusion",
+     "tags": [
+      "fluorescent lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "matte surfaces, plastic reflections",
+     "tags": [
+      "matte"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.airport-night",
+   "name": "Last Flight Terminal",
+   "description": "Airport infrastructure at the moment after the final departure.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "airport",
+    "terminal",
+    "night",
+    "transit"
+   ],
+   "claims": {
+    "composition": "liminal.airport-night",
+    "lighting": "liminal.airport-night",
+    "medium": "liminal.airport-night",
+    "texture": "liminal.airport-night"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "off-hour airport terminal photograph",
+     "tags": [
+      "airport",
+      "night"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "long horizontal alignments",
+     "tags": [
+      "wide shot"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "sparse cool highlights on neutrals",
+     "tags": [
+      "dim lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "broad isolated floor reflections",
+     "tags": [
+      "reflections"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.parking-spiral",
+   "name": "Concrete Parking Spiral",
+   "description": "An architectural maze of ramps, pillars and open concrete levels.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "parking",
+    "concrete",
+    "spiral",
+    "garage"
+   ],
+   "claims": {
+    "composition": "liminal.parking-spiral",
+    "lighting": "liminal.parking-spiral",
+    "medium": "liminal.parking-spiral",
+    "texture": "liminal.parking-spiral"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "austere concrete parking garage photograph",
+     "tags": [
+      "parking garage",
+      "concrete"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "slow curved rhythm",
+     "tags": [
+      "curves"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "cool light and shadow bands",
+     "tags": [
+      "fluorescent lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "powdery grain, painted wear",
+     "tags": [
+      "concrete texture"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.suburban-bluehour",
+   "name": "Suburb Without Footsteps",
+   "description": "The hush of suburban streets at twilight, with no visible activity.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "suburb",
+    "twilight",
+    "streets",
+    "quiet"
+   ],
+   "claims": {
+    "composition": "liminal.suburban-bluehour",
+    "lighting": "liminal.suburban-bluehour",
+    "medium": "liminal.suburban-bluehour",
+    "palette": "liminal.suburban-bluehour"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "still suburban blue hour photograph",
+     "tags": [
+      "suburbs",
+      "blue hour"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "cool fill with warm window highlights",
+     "tags": [
+      "warm and cool"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "composition",
+     "text": "separated silhouettes in open space",
+     "tags": [
+      "negative space"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "deep blue ambient color",
+     "tags": [
+      "blue theme"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.playground-rain",
+   "name": "Rain-Soaked Playground",
+   "description": "Wet playground geometry under overcast light, treated with documentary restraint.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "playground",
+    "rain",
+    "nostalgia",
+    "empty"
+   ],
+   "claims": {
+    "composition": "liminal.playground-rain",
+    "lighting": "liminal.playground-rain",
+    "medium": "liminal.playground-rain",
+    "texture": "liminal.playground-rain"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "rain-soaked playground photograph",
+     "tags": [
+      "playground",
+      "rain"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "deliberately spaced forms",
+     "tags": [
+      "wide shot"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "diffuse gray light",
+     "tags": [
+      "overcast"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "faint damp sheen",
+     "tags": [
+      "wet"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.arcade-shutdown",
+   "name": "Arcade After Closing",
+   "description": "An idle amusement arcade after its music and crowds have vanished.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "arcade",
+    "neon",
+    "afterhours",
+    "nostalgia"
+   ],
+   "claims": {
+    "composition": "liminal.arcade-shutdown",
+    "lighting": "liminal.arcade-shutdown",
+    "medium": "liminal.arcade-shutdown",
+    "texture": "liminal.arcade-shutdown"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "closed arcade at night photograph",
+     "tags": [
+      "arcade",
+      "night"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "rare saturated accents in dim exposure",
+     "tags": [
+      "neon lights"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "composition",
+     "text": "vertical rhythms receding",
+     "tags": [
+      "depth"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "soft screen reflections, fine dust",
+     "tags": [
+      "dust"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.hospital-nightwing",
+   "name": "Night-Wing Corridor",
+   "description": "Clinical emptiness shaped by cool lights and interrupted wayfinding.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "hospital",
+    "clinical",
+    "corridor",
+    "empty"
+   ],
+   "claims": {
+    "composition": "liminal.hospital-nightwing",
+    "lighting": "liminal.hospital-nightwing",
+    "medium": "liminal.hospital-nightwing",
+    "texture": "liminal.hospital-nightwing"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "night hospital corridor photograph",
+     "tags": [
+      "hospital",
+      "hallway"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "long uninterrupted alignments",
+     "tags": [
+      "one-point perspective"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "cool overhead with shadow pockets",
+     "tags": [
+      "fluorescent lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "clean but aged paint",
+     "tags": [
+      "worn"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.service-stairwell",
+   "name": "Service Stairwell Echo",
+   "description": "Minimal stair geometry and hard surfaces that amplify a sense of absence.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "stairs",
+    "utility",
+    "concrete",
+    "geometry"
+   ],
+   "claims": {
+    "composition": "liminal.service-stairwell",
+    "lighting": "liminal.service-stairwell",
+    "medium": "liminal.service-stairwell",
+    "texture": "liminal.service-stairwell"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "spare service stairwell photograph",
+     "tags": [
+      "stairwell",
+      "concrete"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "angular directional changes",
+     "tags": [
+      "dutch angle"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "narrow cool light, broad falloff",
+     "tags": [
+      "dim lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "fine mineral grain, edge wear",
+     "tags": [
+      "concrete texture"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.transit-underpass",
+   "name": "Transit Underpass",
+   "description": "An anonymous pedestrian tunnel whose distant exit seems unreachable.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "underpass",
+    "transit",
+    "tunnel",
+    "perspective"
+   ],
+   "claims": {
+    "composition": "liminal.transit-underpass",
+    "lighting": "liminal.transit-underpass",
+    "medium": "liminal.transit-underpass",
+    "texture": "liminal.transit-underpass"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "pedestrian underpass photograph",
+     "tags": [
+      "underpass",
+      "tunnel"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "parallel edges to one focus",
+     "tags": [
+      "vanishing point"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "repeated pale light bands",
+     "tags": [
+      "fluorescent lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "faint streaked wear",
+     "tags": [
+      "grime"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.banquet-empty",
+   "name": "Vacant Banquet Room",
+   "description": "Event architecture seen after the guests and celebration have disappeared.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "banquet",
+    "event",
+    "ballroom",
+    "empty"
+   ],
+   "claims": {
+    "composition": "liminal.banquet-empty",
+    "lighting": "liminal.banquet-empty",
+    "medium": "liminal.banquet-empty",
+    "texture": "liminal.banquet-empty"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "formal after-event banquet room photograph",
+     "tags": [
+      "banquet hall",
+      "liminal space"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "evenly measured intervals",
+     "tags": [
+      "symmetry"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "soft overhead pool, dim surroundings",
+     "tags": [
+      "dim lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "folds and repeating patterns",
+     "tags": [
+      "tablecloth"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "liminal.convenience-midnight",
+   "name": "Convenience Store at Midnight",
+   "description": "A fluorescent retail microcosm isolated by deep night beyond the windows.",
+   "category": "liminal-spaces",
+   "kind": "style",
+   "tags": [
+    "retail",
+    "convenience",
+    "midnight",
+    "fluorescent"
+   ],
+   "claims": {
+    "composition": "liminal.convenience-midnight",
+    "lighting": "liminal.convenience-midnight",
+    "medium": "liminal.convenience-midnight",
+    "texture": "liminal.convenience-midnight"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "fluorescent convenience store at midnight",
+     "tags": [
+      "convenience store",
+      "night"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "clear receding bands",
+     "tags": [
+      "one-point perspective"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "blue-white local light",
+     "tags": [
+      "fluorescent lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "small glossy reflections",
+     "tags": [
+      "reflections"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  }
+ ]
 }

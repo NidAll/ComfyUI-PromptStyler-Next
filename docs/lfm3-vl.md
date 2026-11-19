@@ -19,6 +19,8 @@ satisfied lexical check or fails to improve the checks. Explicit standalone
 Repeated descriptions of the same requested label do not count as new wording.
 No assistant premise is copied into the generation prefix.
 
+To invent rather than preserve, use [Prompt Idea](prompt-ideas.md) with the same loader.
+
 This is inference-time behavior guidance, not teacher-model training or weight
 distillation. Artistic treatment belongs in Style/Compose. Inspection flags a
 limited set of style terms outside quoted display text and can request a repair;

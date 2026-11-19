@@ -1,1050 +1,867 @@
 {
-  "schema_version": 1,
-  "id": "community.next.editorial-subcultures",
-  "version": "1.1.0",
-  "name": "Editorial Subcultures",
-  "description": "Independent print, fashion, zine and youth-culture editorial aesthetics.",
-  "license": "CC0-1.0",
-  "author": "NidAll / original community pack",
-  "styles": [
+ "schema_version": 1,
+ "id": "community.editorial-subcultures",
+ "version": "2.0.0",
+ "name": "Editorial Subcultures",
+ "description": "Independent print, fashion, zine and youth-culture editorial aesthetics.",
+ "license": "CC0-1.0",
+ "author": "PromptStyler Next contributors",
+ "styles": [
+  {
+   "id": "subedit.punk-photocopy",
+   "name": "Punk Photocopy Zine",
+   "description": "DIY xerox-zine collage with distressed type-safe space and stark photocopied matter.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "punk",
+    "zine",
+    "xerox",
+    "diy"
+   ],
+   "claims": {
+    "composition": "subedit.punk-photocopy",
+    "medium": "subedit.punk-photocopy",
+    "palette": "subedit.punk-photocopy",
+    "texture": "subedit.punk-photocopy"
+   },
+   "clauses": [
     {
-      "id": "subedit.punk-photocopy",
-      "name": "Punk Photocopy Zine",
-      "description": "DIY xerox-zine collage with distressed type-safe space and stark photocopied matter.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "punk",
-        "zine",
-        "xerox",
-        "diy"
-      ],
-      "claims": {
-        "medium": "subedit.punk-photocopy",
-        "palette": "subedit.punk-photocopy",
-        "texture": "subedit.punk-photocopy",
-        "composition": "subedit.punk-photocopy"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Render the subject as a rough hand-assembled punk photocopy zine spread",
-          "tags": [
-            "punk xerox fanzine"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use torn-angle cutouts and asymmetric text-safe columns",
-          "tags": [
-            "diy punk zine collage layout"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Prefer black ink and a single aggressively saturated spot-color accent",
-          "tags": [
-            "punk single spot color palette"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Add rough toner thresholds and crumpled photocopy-sheet fibers",
-          "tags": [
-            "photocopied xerox texture"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "medium",
+     "text": "punk photocopy zine",
+     "tags": [
+      "punk",
+      "zine"
+     ],
+     "min_intensity": 0.0
     },
     {
-      "id": "subedit.streetwear-drop",
-      "name": "Streetwear Capsule Drop",
-      "description": "Modern streetwear campaign presentation with assertive negative space and material focus.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "streetwear",
-        "editorial",
-        "fashion",
-        "campaign"
-      ],
-      "claims": {
-        "medium": "subedit.streetwear-drop",
-        "texture": "subedit.streetwear-drop",
-        "composition": "subedit.streetwear-drop",
-        "lighting": "subedit.streetwear-drop"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Show the subject through a tightly directed independent streetwear campaign language",
-          "tags": [
-            "streetwear editorial campaign"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use a bold off-axis hero crop with plenty of intentional blank graphic space",
-          "tags": [
-            "streetwear graphic hero crop"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Separate material edges with firm softbox light against a grounded dark field",
-          "tags": [
-            "studio streetwear contrast"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Retain real garment or object texture and faint coated-print grain",
-          "tags": [
-            "material focused fashion print"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "composition",
+     "text": "torn-angle cutouts, asymmetric columns",
+     "tags": [
+      "collage"
+     ],
+     "min_intensity": 0.4
     },
     {
-      "id": "subedit.indie-music-zine",
-      "name": "Indie Music Fanzine",
-      "description": "Photocopied venue photography and restrained independent music editorial.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "indie",
-        "music",
-        "zine",
-        "concert"
-      ],
-      "claims": {
-        "medium": "subedit.indie-music-zine",
-        "palette": "subedit.indie-music-zine",
-        "texture": "subedit.indie-music-zine",
-        "composition": "subedit.indie-music-zine",
-        "lighting": "subedit.indie-music-zine"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Translate the scene into a small-run independent music magazine spread",
-          "tags": [
-            "indie music zine photography"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Mix informal image crops with irregular white-space rhythm",
-          "tags": [
-            "indie zine staggered photo layout"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Favor available light and intimate flash imperfections",
-          "tags": [
-            "backstage candid flash"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "palette",
-          "text": "Keep the imagery in a muted black-and-white photocopy palette",
-          "tags": [
-            "muted black and white"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Show fine toner dots and slight paper-fiber abrasion",
-          "tags": [
-            "photocopied concert zine texture"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "palette",
+     "text": "black ink with one saturated spot color",
+     "tags": [
+      "spot color"
+     ],
+     "min_intensity": 0.75
     },
     {
-      "id": "subedit.alt-beauty-editorial",
-      "name": "Alternative Beauty Study",
-      "description": "Directional beauty-editorial closeup language with restrained experimental surfaces.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "beauty",
-        "editorial",
-        "alternative",
-        "makeup"
-      ],
-      "claims": {
-        "medium": "subedit.alt-beauty-editorial",
-        "texture": "subedit.alt-beauty-editorial",
-        "composition": "subedit.alt-beauty-editorial",
-        "lighting": "subedit.alt-beauty-editorial"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Frame the supplied subject as a contemporary alternative-beauty editorial",
-          "tags": [
-            "avant garde beauty editorial"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use graphic close framing and deliberately interrupted symmetry",
-          "tags": [
-            "editorial beauty asymmetric crop"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Combine a broad diffuse key with a single narrow reflective accent",
-          "tags": [
-            "sculpted editorial skin light"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Keep pores and material tactility apparent beneath light retouching",
-          "tags": [
-            "natural beauty editorial texture"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.club-flyer",
-      "name": "Club Night Flyer",
-      "description": "Independent dance-culture event graphics with forceful motion and readable emptiness.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "club",
-        "rave",
-        "flyer",
-        "nightlife"
-      ],
-      "claims": {
-        "medium": "subedit.club-flyer",
-        "palette": "subedit.club-flyer",
-        "texture": "subedit.club-flyer",
-        "composition": "subedit.club-flyer"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Render the subject as a striking independent club-night promotional visual",
-          "tags": [
-            "underground club flyer"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Build a fast diagonal hierarchy with a disciplined central focal field",
-          "tags": [
-            "rave flyer sharp hierarchy"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Use acid chartreuse and ultraviolet against dense charcoal masses",
-          "tags": [
-            "acid club flyer palette"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Give shapes slightly misregistered risograph edges",
-          "tags": [
-            "riso club flyer texture"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.fashion-contact-sheet",
-      "name": "Casting Contact Sheet",
-      "description": "Fashion-casting print proof with observational portrait spacing and authentic film notes.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "fashion",
-        "casting",
-        "contactsheet",
-        "editorial"
-      ],
-      "claims": {
-        "medium": "subedit.fashion-contact-sheet",
-        "texture": "subedit.fashion-contact-sheet",
-        "composition": "subedit.fashion-contact-sheet",
-        "lighting": "subedit.fashion-contact-sheet"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Treat the image as a fashion editorial selection contact sheet",
-          "tags": [
-            "fashion casting contact sheet"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Keep one supplied scene inside a contact-print-inspired gridlike margin without repeating people or objects",
-          "tags": [
-            "single scene with contact-print-inspired margins"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Use nearly unmodified overhead daylight or direct studio flash",
-          "tags": [
-            "raw casting portrait light"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Keep fine paper grain and understated print density variation",
-          "tags": [
-            "editorial photo proof print"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.rave-documentary",
-      "name": "Rave Documentary Essay",
-      "description": "Low-light crowd-culture photography and high-energy print sequencing without branded references.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "rave",
-        "documentary",
-        "flash",
-        "music"
-      ],
-      "claims": {
-        "medium": "subedit.rave-documentary",
-        "texture": "subedit.rave-documentary",
-        "composition": "subedit.rave-documentary",
-        "lighting": "subedit.rave-documentary"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Translate the scene into an intimate documentary rave photo essay",
-          "tags": [
-            "underground rave photo essay"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use close, imperfect movement-led framing that feels present rather than staged",
-          "tags": [
-            "immersive rave documentary crop"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Mix direct flash with diffuse saturated venue spill",
-          "tags": [
-            "club photography flash and haze"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Preserve high-ISO film grain and small motion smears",
-          "tags": [
-            "grainy rave film photography"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.fashion-grunge",
-      "name": "Soft Grunge Lookbook",
-      "description": "Washed fashion photography balanced against rough alternative print surfaces.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "grunge",
-        "lookbook",
-        "fashion",
-        "alternative"
-      ],
-      "claims": {
-        "medium": "subedit.fashion-grunge",
-        "palette": "subedit.fashion-grunge",
-        "texture": "subedit.fashion-grunge",
-        "composition": "subedit.fashion-grunge"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Show the existing subject in a softly distressed independent fashion lookbook",
-          "tags": [
-            "soft grunge fashion imagery"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use loosely cropped candid frames and asymmetric magazine gutters",
-          "tags": [
-            "grunge lookbook collage"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Hold washed denim blues and dusty rose neutrals against deep black accents",
-          "tags": [
-            "desaturated grunge editorial palette"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Give the print tactile matte grain and gently rubbed edges",
-          "tags": [
-            "faded matte zine paper"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.girlblog-diary",
-      "name": "Personal Blog Diary",
-      "description": "Early personal-blog and camera-diary collage with quiet intimacy and mixed media.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "girlblog",
-        "diary",
-        "web",
-        "nostalgia"
-      ],
-      "claims": {
-        "medium": "subedit.girlblog-diary",
-        "texture": "subedit.girlblog-diary",
-        "composition": "subedit.girlblog-diary",
-        "lighting": "subedit.girlblog-diary"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Compose the image as a private early-blog photo diary page",
-          "tags": [
-            "early blog diary collage"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Arrange small personal snapshots and handwritten-space fragments with airy margins",
-          "tags": [
-            "diary page photo montage"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Favor unfussy bedroom daylight and warm practical corner illumination",
-          "tags": [
-            "diary bedroom ambient light"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Use paper cut edges, mild digital-camera noise and scanned stationery fibers",
-          "tags": [
-            "scanned diary ephemera"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.luxury-understatement",
-      "name": "Quiet Luxury Editorial",
-      "description": "Restrained high-end print layouts where tone, spacing and fabric quality lead.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "luxury",
-        "minimal",
-        "editorial",
-        "fashion"
-      ],
-      "claims": {
-        "medium": "subedit.luxury-understatement",
-        "texture": "subedit.luxury-understatement",
-        "composition": "subedit.luxury-understatement",
-        "lighting": "subedit.luxury-understatement"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Render the subject through the quiet composure of an independent luxury editorial",
-          "tags": [
-            "understated luxury magazine image"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use confident negative space with a single precisely balanced focal shape",
-          "tags": [
-            "minimalist editorial spatial balance"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Allow broad diffuse side light to describe fine materials subtly",
-          "tags": [
-            "diffused premium material light"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Preserve believable matte material response and delicate fine paper grain",
-          "tags": [
-            "restrained premium editorial texture"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.skate-photozine",
-      "name": "Skate Photozine",
-      "description": "Wide-angle urban youth-culture photography with dense print texture.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "skate",
-        "photozine",
-        "wideangle",
-        "street"
-      ],
-      "claims": {
-        "medium": "subedit.skate-photozine",
-        "texture": "subedit.skate-photozine",
-        "composition": "subedit.skate-photozine",
-        "lighting": "subedit.skate-photozine"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Translate the given subject into the visual language of an underground skate photozine",
-          "tags": [
-            "skate culture photo magazine"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use low wide-angle perspective with open space for movement",
-          "tags": [
-            "low angle skate photo framing"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Favor hard midday city light or single-speedlight flash with truthful shadows",
-          "tags": [
-            "skate scene hard flash"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Combine visible film grain with coarse newspaper-style halftones",
-          "tags": [
-            "gritty street photo halftone"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.typographic-new-wave",
-      "name": "New-Wave Magazine Spread",
-      "description": "Experimental editorial rhythm with irregular baselines and photomechanical textures.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "newwave",
-        "typography",
-        "magazine",
-        "1980s"
-      ],
-      "claims": {
-        "medium": "subedit.typographic-new-wave",
-        "palette": "subedit.typographic-new-wave",
-        "texture": "subedit.typographic-new-wave",
-        "composition": "subedit.typographic-new-wave"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Present the scene as an experimental new-wave culture magazine spread",
-          "tags": [
-            "new wave magazine editorial"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use asymmetric image columns, unusual baseline alignments and aggressive crop overlaps",
-          "tags": [
-            "experimental editorial layout"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Restrict strong accents to vivid vermilion and electric blue",
-          "tags": [
-            "new wave print spot colors"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Keep registration shifts and exposed paper grain at image boundaries",
-          "tags": [
-            "new wave print registration texture"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.beauty-campaign-2005",
-      "name": "Mid-2000s Beauty Campaign",
-      "description": "Flashy early-digital beauty imagery and glossy consumer magazine composition.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "beauty",
-        "2000s",
-        "advertising",
-        "glossy"
-      ],
-      "claims": {
-        "medium": "subedit.beauty-campaign-2005",
-        "texture": "subedit.beauty-campaign-2005",
-        "composition": "subedit.beauty-campaign-2005",
-        "lighting": "subedit.beauty-campaign-2005"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Rework the subject as a mid-2000s independent beauty campaign print",
-          "tags": [
-            "2005 beauty advertisement aesthetic"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use tight clean crops and high-key magazine spacing without inventing branding",
-          "tags": [
-            "glossy beauty campaign crop"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Build broad bright frontal beauty illumination with small specular highlights",
-          "tags": [
-            "glossy beauty advertising light"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Use clear digital-era skin texture with slight coated-paper print softness",
-          "tags": [
-            "early digital beauty editorial finish"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.art-school-annual",
-      "name": "Art School Annual",
-      "description": "Experimental school-annual design with visible production process and unapologetic irregularity.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "artschool",
-        "experimental",
-        "publication",
-        "collage"
-      ],
-      "claims": {
-        "medium": "subedit.art-school-annual",
-        "palette": "subedit.art-school-annual",
-        "texture": "subedit.art-school-annual",
-        "composition": "subedit.art-school-annual"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Treat the subject as an image from an independent art-school annual",
-          "tags": [
-            "experimental art school publication"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Use bold grid interruptions, rough cutouts and generous uncomfortable whitespace",
-          "tags": [
-            "anti grid editorial collage"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "palette",
-          "text": "Apply restricted fluorescent spot colors against natural paper whites",
-          "tags": [
-            "fluorescent publication print colors"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Expose overprint imperfections, pencil marks and staple-adjacent scuffs",
-          "tags": [
-            "student publication materiality"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.slow-culture-journal",
-      "name": "Slow Culture Journal",
-      "description": "Literary and cultural publication language with quiet photographic observation.",
-      "category": "editorial-subcultures/looks",
-      "kind": "style",
-      "tags": [
-        "literary",
-        "indie",
-        "magazine",
-        "culture"
-      ],
-      "claims": {
-        "medium": "subedit.slow-culture-journal",
-        "texture": "subedit.slow-culture-journal",
-        "composition": "subedit.slow-culture-journal",
-        "lighting": "subedit.slow-culture-journal"
-      },
-      "clauses": [
-        {
-          "axis": "medium",
-          "text": "Present the existing scene as a meditative image in a small independent cultural journal",
-          "tags": [
-            "literary culture journal art"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Leave wide editorial margins and unhurried asymmetrical image placement",
-          "tags": [
-            "slow magazine generous margins"
-          ],
-          "min_intensity": 0.4
-        },
-        {
-          "axis": "lighting",
-          "text": "Work with subtle natural illumination instead of theatrical treatment",
-          "tags": [
-            "unforced literary daylight"
-          ],
-          "min_intensity": 0.75
-        },
-        {
-          "axis": "texture",
-          "text": "Use slightly toothy uncoated paper with excellent separation of midtones",
-          "tags": [
-            "uncoated cultural journal print"
-          ],
-          "min_intensity": 0.92
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.xerox-red",
-      "name": "Xerox Red",
-      "description": "High-contrast toner blacks and a single red editorial spot color.",
-      "category": "editorial-subcultures/grades",
-      "kind": "grade",
-      "tags": [
-        "xerox",
-        "red",
-        "black",
-        "grade"
-      ],
-      "claims": {
-        "palette": "subedit.xerox-red",
-        "texture": "subedit.xerox-red"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Limit the printed palette to dense toner black, warm paper white and a fierce scarlet accent",
-          "tags": [
-            "black red xerox print palette"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "texture",
-          "text": "Hold gritty printed ink plate contrast on paper fibers",
-          "tags": [
-            "sharp toner print texture"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.washed-fanzine",
-      "name": "Washed Fanzine",
-      "description": "Age-softened magazine colors and paper-bleached highlights.",
-      "category": "editorial-subcultures/grades",
-      "kind": "grade",
-      "tags": [
-        "fanzine",
-        "washed",
-        "nostalgia",
-        "grade"
-      ],
-      "claims": {
-        "palette": "subedit.washed-fanzine",
-        "texture": "subedit.washed-fanzine"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Fade primaries toward powdery magazine inks and leave highlights paper-warm",
-          "tags": [
-            "faded indie magazine colors"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "texture",
-          "text": "Allow thin irregular screening in shadow colors",
-          "tags": [
-            "aged fanzine print dots"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.chrome-pop",
-      "name": "Chrome Pop",
-      "description": "Icy reflective metallic accents against restrained warm neutral backgrounds.",
-      "category": "editorial-subcultures/grades",
-      "kind": "grade",
-      "tags": [
-        "chrome",
-        "glossy",
-        "pop",
-        "grade"
-      ],
-      "claims": {
-        "palette": "subedit.chrome-pop",
-        "lighting": "subedit.chrome-pop"
-      },
-      "clauses": [
-        {
-          "axis": "palette",
-          "text": "Favor steel-blue silvers against muted warm stone neutrals",
-          "tags": [
-            "chrome silver editorial palette"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "lighting",
-          "text": "Use small sharp reflection streaks rather than broad luminous smearing",
-          "tags": [
-            "narrow chrome specular highlights"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.ragged-trim",
-      "name": "Ragged Crop Marks",
-      "description": "Asymmetric cut-paper edges suitable for adding typesetting later.",
-      "category": "editorial-subcultures/modifiers",
-      "kind": "modifier",
-      "tags": [
-        "cutpaper",
-        "editorial",
-        "collage",
-        "modifier"
-      ],
-      "claims": {
-        "texture": "subedit.ragged-trim",
-        "composition": "subedit.ragged-trim"
-      },
-      "clauses": [
-        {
-          "axis": "texture",
-          "text": "Give selected frame margins gently torn or scissor-cut paper contours",
-          "tags": [
-            "rough collage cut edges"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "composition",
-          "text": "Maintain open areas for user-provided editorial typography",
-          "tags": [
-            "text safe magazine margins"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
-    },
-    {
-      "id": "subedit.risograph-registration",
-      "name": "Risograph Registration",
-      "description": "Small-scale spot-color plate misalignment without corrupting requested text.",
-      "category": "editorial-subcultures/modifiers",
-      "kind": "modifier",
-      "tags": [
-        "riso",
-        "print",
-        "misregistration",
-        "modifier"
-      ],
-      "claims": {
-        "texture": "subedit.risograph-registration",
-        "detail": "subedit.risograph-registration"
-      },
-      "clauses": [
-        {
-          "axis": "texture",
-          "text": "Displace secondary ink layers by a fraction of the line width at decorative contours",
-          "tags": [
-            "subtle risograph plate offset"
-          ],
-          "min_intensity": 0.01
-        },
-        {
-          "axis": "detail",
-          "text": "Keep user-requested lettering clear while allowing tactile overprint edges nearby",
-          "tags": [
-            "readable riso print contours"
-          ],
-          "min_intensity": 0.4
-        }
-      ],
-      "negative": [],
-      "models": [],
-      "variants": {}
+     "axis": "texture",
+     "text": "rough toner, crumpled paper fibers",
+     "tags": [
+      "xerox texture"
+     ],
+     "min_intensity": 0.75
     }
-  ]
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.streetwear-drop",
+   "name": "Streetwear Capsule Drop",
+   "description": "Modern streetwear campaign presentation with assertive negative space and material focus.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "streetwear",
+    "editorial",
+    "fashion",
+    "campaign"
+   ],
+   "claims": {
+    "composition": "subedit.streetwear-drop",
+    "lighting": "subedit.streetwear-drop",
+    "medium": "subedit.streetwear-drop",
+    "texture": "subedit.streetwear-drop"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "streetwear campaign photograph",
+     "tags": [
+      "streetwear",
+      "fashion photography"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "bold off-axis hero crop",
+     "tags": [
+      "negative space"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "firm softbox light on dark field",
+     "tags": [
+      "studio lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "garment texture, faint print grain",
+     "tags": [
+      "fabric texture"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.indie-music-zine",
+   "name": "Indie Music Fanzine",
+   "description": "Photocopied venue photography and restrained independent music editorial.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "indie",
+    "music",
+    "zine",
+    "concert"
+   ],
+   "claims": {
+    "composition": "subedit.indie-music-zine",
+    "lighting": "subedit.indie-music-zine",
+    "medium": "subedit.indie-music-zine",
+    "palette": "subedit.indie-music-zine"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "indie music fanzine spread",
+     "tags": [
+      "zine",
+      "music"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "informal crops, irregular white space",
+     "tags": [
+      "collage"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "available light with flash",
+     "tags": [
+      "flash photography"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "palette",
+     "text": "muted photocopy black and white",
+     "tags": [
+      "monochrome"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.alt-beauty-editorial",
+   "name": "Alternative Beauty Study",
+   "description": "Directional beauty-editorial closeup language with restrained experimental surfaces.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "beauty",
+    "editorial",
+    "alternative",
+    "makeup"
+   ],
+   "claims": {
+    "composition": "subedit.alt-beauty-editorial",
+    "lighting": "subedit.alt-beauty-editorial",
+    "medium": "subedit.alt-beauty-editorial",
+    "texture": "subedit.alt-beauty-editorial"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "alternative beauty editorial photograph",
+     "tags": [
+      "beauty photography",
+      "alternative fashion"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "graphic close framing",
+     "tags": [
+      "close-up"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "broad diffuse key with one sharp accent",
+     "tags": [
+      "soft lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "visible pores and texture",
+     "tags": [
+      "skin texture"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.club-flyer",
+   "name": "Club Night Flyer",
+   "description": "Independent dance-culture event graphics with forceful motion and readable emptiness.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "club",
+    "rave",
+    "flyer",
+    "nightlife"
+   ],
+   "claims": {
+    "composition": "subedit.club-flyer",
+    "medium": "subedit.club-flyer",
+    "palette": "subedit.club-flyer",
+    "texture": "subedit.club-flyer"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "club night flyer",
+     "tags": [
+      "flyer",
+      "risograph"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "fast diagonal hierarchy",
+     "tags": [
+      "diagonal"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "acid chartreuse and ultraviolet on charcoal",
+     "tags": [
+      "neon colors"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "misregistered riso edges",
+     "tags": [
+      "misregistration"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.fashion-contact-sheet",
+   "name": "Casting Contact Sheet",
+   "description": "Fashion-casting print proof with observational portrait spacing and authentic film notes.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "fashion",
+    "casting",
+    "contactsheet",
+    "editorial"
+   ],
+   "claims": {
+    "composition": "subedit.fashion-contact-sheet",
+    "lighting": "subedit.fashion-contact-sheet",
+    "medium": "subedit.fashion-contact-sheet",
+    "texture": "subedit.fashion-contact-sheet"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "fashion contact sheet print",
+     "tags": [
+      "contact sheet",
+      "fashion photography"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "contact-print margin",
+     "tags": [
+      "border"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "plain overhead daylight or flash",
+     "tags": [
+      "flash photography"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "fine paper grain",
+     "tags": [
+      "film grain"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.rave-documentary",
+   "name": "Rave Documentary Essay",
+   "description": "Low-light crowd-culture photography and high-energy print sequencing without branded references.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "rave",
+    "documentary",
+    "flash",
+    "music"
+   ],
+   "claims": {
+    "composition": "subedit.rave-documentary",
+    "lighting": "subedit.rave-documentary",
+    "medium": "subedit.rave-documentary",
+    "texture": "subedit.rave-documentary"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "documentary rave photograph",
+     "tags": [
+      "rave",
+      "documentary photo"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "close movement-led framing",
+     "tags": [
+      "candid"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "direct flash with colored venue spill",
+     "tags": [
+      "flash photography"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "high-ISO grain, motion smears",
+     "tags": [
+      "motion blur"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.fashion-grunge",
+   "name": "Soft Grunge Lookbook",
+   "description": "Washed fashion photography balanced against rough alternative print surfaces.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "grunge",
+    "lookbook",
+    "fashion",
+    "alternative"
+   ],
+   "claims": {
+    "composition": "subedit.fashion-grunge",
+    "medium": "subedit.fashion-grunge",
+    "palette": "subedit.fashion-grunge",
+    "texture": "subedit.fashion-grunge"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "soft grunge fashion lookbook",
+     "tags": [
+      "grunge",
+      "lookbook"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "loose candid crops",
+     "tags": [
+      "candid"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "washed denim blue and dusty rose",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "matte grain, rubbed edges",
+     "tags": [
+      "film grain"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.girlblog-diary",
+   "name": "Personal Blog Diary",
+   "description": "Early personal-blog and camera-diary collage with quiet intimacy and mixed media.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "girlblog",
+    "diary",
+    "web",
+    "nostalgia"
+   ],
+   "claims": {
+    "composition": "subedit.girlblog-diary",
+    "lighting": "subedit.girlblog-diary",
+    "medium": "subedit.girlblog-diary",
+    "texture": "subedit.girlblog-diary"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "early blog photo diary",
+     "tags": [
+      "2000s (style)",
+      "scrapbook"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "small snapshots with airy margins",
+     "tags": [
+      "collage"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "bedroom daylight, warm corner lamp",
+     "tags": [
+      "natural light"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "cut paper, digital camera noise",
+     "tags": [
+      "noise"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.luxury-understatement",
+   "name": "Quiet Luxury Editorial",
+   "description": "Restrained high-end print layouts where tone, spacing and fabric quality lead.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "luxury",
+    "minimal",
+    "editorial",
+    "fashion"
+   ],
+   "claims": {
+    "composition": "subedit.luxury-understatement",
+    "lighting": "subedit.luxury-understatement",
+    "medium": "subedit.luxury-understatement",
+    "texture": "subedit.luxury-understatement"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "quiet luxury editorial photograph",
+     "tags": [
+      "luxury",
+      "editorial"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "single balanced focal shape in open space",
+     "tags": [
+      "negative space"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "broad diffuse side light",
+     "tags": [
+      "soft lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "fine matte materials",
+     "tags": [
+      "matte"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.skate-photozine",
+   "name": "Skate Photozine",
+   "description": "Wide-angle urban youth-culture photography with dense print texture.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "skate",
+    "photozine",
+    "wideangle",
+    "street"
+   ],
+   "claims": {
+    "composition": "subedit.skate-photozine",
+    "lighting": "subedit.skate-photozine",
+    "medium": "subedit.skate-photozine",
+    "texture": "subedit.skate-photozine"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "underground skate photozine",
+     "tags": [
+      "skateboarding",
+      "zine"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "low wide-angle perspective",
+     "tags": [
+      "fisheye"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "hard midday light or speedlight flash",
+     "tags": [
+      "harsh lighting"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "film grain with newsprint halftone",
+     "tags": [
+      "halftone"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.typographic-new-wave",
+   "name": "New-Wave Magazine Spread",
+   "description": "Experimental editorial rhythm with irregular baselines and photomechanical textures.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "newwave",
+    "typography",
+    "magazine",
+    "1980s"
+   ],
+   "claims": {
+    "composition": "subedit.typographic-new-wave",
+    "medium": "subedit.typographic-new-wave",
+    "palette": "subedit.typographic-new-wave",
+    "texture": "subedit.typographic-new-wave"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "new wave magazine spread",
+     "tags": [
+      "new wave",
+      "magazine",
+      "magazine cover"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "asymmetric columns, crop overlaps",
+     "tags": [
+      "asymmetry"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "vivid vermilion and electric blue accents",
+     "tags": [
+      "red and blue"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "registration shifts, paper grain",
+     "tags": [
+      "misregistration"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.beauty-campaign-2005",
+   "name": "Mid-2000s Beauty Campaign",
+   "description": "Flashy early-digital beauty imagery and glossy consumer magazine composition.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "beauty",
+    "2000s",
+    "advertising",
+    "glossy"
+   ],
+   "claims": {
+    "composition": "subedit.beauty-campaign-2005",
+    "lighting": "subedit.beauty-campaign-2005",
+    "medium": "subedit.beauty-campaign-2005",
+    "texture": "subedit.beauty-campaign-2005"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "mid-2000s beauty campaign print",
+     "tags": [
+      "beauty photography",
+      "2000s (style)"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "tight clean high-key crop",
+     "tags": [
+      "close-up"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "bright frontal beauty light",
+     "tags": [
+      "high key"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "coated-paper print softness",
+     "tags": [
+      "glossy"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.art-school-annual",
+   "name": "Art School Annual",
+   "description": "Experimental school-annual design with visible production process and unapologetic irregularity.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "artschool",
+    "experimental",
+    "publication",
+    "collage"
+   ],
+   "claims": {
+    "composition": "subedit.art-school-annual",
+    "medium": "subedit.art-school-annual",
+    "palette": "subedit.art-school-annual",
+    "texture": "subedit.art-school-annual"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "art school annual print",
+     "tags": [
+      "graphic design",
+      "zine"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "grid breaks, rough cutouts",
+     "tags": [
+      "collage"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "fluorescent spot colors on paper white",
+     "tags": [
+      "neon colors"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "overprint flaws, pencil marks",
+     "tags": [
+      "paper texture"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "subedit.slow-culture-journal",
+   "name": "Slow Culture Journal",
+   "description": "Literary and cultural publication language with quiet photographic observation.",
+   "category": "editorial-subcultures",
+   "kind": "style",
+   "tags": [
+    "literary",
+    "indie",
+    "magazine",
+    "culture"
+   ],
+   "claims": {
+    "composition": "subedit.slow-culture-journal",
+    "lighting": "subedit.slow-culture-journal",
+    "medium": "subedit.slow-culture-journal",
+    "texture": "subedit.slow-culture-journal"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "meditative cultural journal photograph",
+     "tags": [
+      "editorial",
+      "minimalism"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "wide calm margins",
+     "tags": [
+      "negative space"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "subtle natural light",
+     "tags": [
+      "natural light"
+     ],
+     "min_intensity": 0.75
+    },
+    {
+     "axis": "texture",
+     "text": "toothy uncoated paper",
+     "tags": [
+      "paper texture"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  }
+ ]
 }

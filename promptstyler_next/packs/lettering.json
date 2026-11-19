@@ -1,0 +1,581 @@
+{
+ "schema_version": 1,
+ "id": "next.lettering",
+ "version": "2.0.0",
+ "name": "Lettering",
+ "description": "Letterform treatments for text that the prompt already specifies.",
+ "license": "CC0-1.0",
+ "author": "PromptStyler Next contributors",
+ "styles": [
+  {
+   "id": "letterform.broadnib",
+   "name": "Broad-nib stroke logic",
+   "description": "A broad-nib lettering treatment of the user's existing text. Keep thick and thin stroke changes coherent with a consistent pen angle.",
+   "category": "lettering",
+   "kind": "style",
+   "tags": [
+    "broad nib",
+    "calligraphy",
+    "stroke contrast",
+    "pen angle"
+   ],
+   "claims": {
+    "composition": "letterform.broadnib",
+    "medium": "letterform.broadnib",
+    "texture": "letterform.broadnib"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "broad-nib calligraphy lettering",
+     "tags": [
+      "calligraphy",
+      "lettering"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "consistent thick-thin pen strokes",
+     "tags": [
+      "ink"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "composition",
+     "text": "even letter spacing",
+     "tags": [
+      "centered"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "letterform.brushsign",
+   "name": "Brush-sign lettering",
+   "description": "A brush-painted sign-lettering treatment of the user's existing text. Keep paint edges confident with slight evidence of bristle movement.",
+   "category": "lettering",
+   "kind": "style",
+   "tags": [
+    "sign painting",
+    "brush stroke",
+    "paint edge",
+    "confident rhythm"
+   ],
+   "claims": {
+    "composition": "letterform.brushsign",
+    "medium": "letterform.brushsign",
+    "texture": "letterform.brushsign"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "hand-painted brush sign lettering",
+     "tags": [
+      "sign painting",
+      "lettering"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "confident paint edges, bristle marks",
+     "tags": [
+      "brush strokes"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "composition",
+     "text": "related letter proportions",
+     "tags": [
+      "centered"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "letterform.stencil",
+   "name": "Functional stencil cuts",
+   "description": "A functional stencil-lettering treatment of existing text. Keep bridges structurally plausible without confusing the supplied letter shapes.",
+   "category": "lettering",
+   "kind": "style",
+   "tags": [
+    "stencil letters",
+    "bridge logic",
+    "cut form",
+    "plain spacing"
+   ],
+   "claims": {
+    "composition": "letterform.stencil",
+    "medium": "letterform.stencil",
+    "texture": "letterform.stencil"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "stencil lettering",
+     "tags": [
+      "stencil",
+      "lettering"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "clear bridged letter shapes",
+     "tags": [
+      "bold shapes"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "clean cut edges",
+     "tags": [
+      "spray paint"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "letterform.woodtype",
+   "name": "Wood-type impression",
+   "description": "A wood-type print treatment of the user's existing text. Retain slight edge compression and uneven ink loading.",
+   "category": "lettering",
+   "kind": "style",
+   "tags": [
+    "wood type",
+    "printed letters",
+    "ink squeeze",
+    "large forms"
+   ],
+   "claims": {
+    "composition": "letterform.woodtype",
+    "medium": "letterform.woodtype",
+    "texture": "letterform.woodtype"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "wood type letterpress lettering",
+     "tags": [
+      "letterpress",
+      "wood type"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "uneven ink and pressed edges",
+     "tags": [
+      "ink texture"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "composition",
+     "text": "bold readable letters",
+     "tags": [
+      "bold"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "letterform.chalk",
+   "name": "Chalkboard letter craft",
+   "description": "A chalk-lettering treatment of the user's existing text. Use dusty edges and pressure variation while keeping the strokes complete.",
+   "category": "lettering",
+   "kind": "style",
+   "tags": [
+    "chalk lettering",
+    "powder edge",
+    "hand pressure",
+    "dark ground"
+   ],
+   "claims": {
+    "composition": "letterform.chalk",
+    "medium": "letterform.chalk",
+    "texture": "letterform.chalk"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "chalk lettering on a blackboard",
+     "tags": [
+      "chalkboard",
+      "chalk"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "dusty pressure-varied strokes",
+     "tags": [
+      "chalk texture"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "composition",
+     "text": "clear line hierarchy",
+     "tags": [
+      "centered"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "letterform.neontext",
+   "name": "Tube-letter continuity",
+   "description": "A tube-lettering treatment of existing user text. Keep luminous edges controlled enough that the letter structure remains visible.",
+   "category": "lettering",
+   "kind": "style",
+   "tags": [
+    "tube lettering",
+    "continuous glass",
+    "restrained glow",
+    "clear words"
+   ],
+   "claims": {
+    "composition": "letterform.neontext",
+    "lighting": "letterform.neontext",
+    "medium": "letterform.neontext"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "neon tube lettering",
+     "tags": [
+      "neon sign",
+      "neon lights"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "lighting",
+     "text": "controlled glow around the tubes",
+     "tags": [
+      "glowing"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "composition",
+     "text": "complete readable letters",
+     "tags": [
+      "dark background"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "letterform.goldleaf",
+   "name": "Gold-leaf letter surface",
+   "description": "A gold-leaf lettering treatment of existing text. Keep the thin metallic surface slightly irregular with restrained leaf joins.",
+   "category": "lettering",
+   "kind": "style",
+   "tags": [
+    "gold leaf",
+    "sign craft",
+    "thin metal",
+    "subtle joins"
+   ],
+   "claims": {
+    "lighting": "letterform.goldleaf",
+    "medium": "letterform.goldleaf",
+    "texture": "letterform.goldleaf"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "gold leaf lettering",
+     "tags": [
+      "gold leaf",
+      "lettering"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "slightly irregular thin metal leaf",
+     "tags": [
+      "gold"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "broad metallic reflections",
+     "tags": [
+      "shiny"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "letterform.embossed",
+   "name": "Embossed letter relief",
+   "description": "An embossed treatment of the user's existing text. Raise the letterforms through a believable small deformation of the existing surface.",
+   "category": "lettering",
+   "kind": "style",
+   "tags": [
+    "embossed letters",
+    "paper relief",
+    "shallow shadow",
+    "subtle pressure"
+   ],
+   "claims": {
+    "lighting": "letterform.embossed",
+    "medium": "letterform.embossed",
+    "texture": "letterform.embossed"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "embossed lettering",
+     "tags": [
+      "embossed",
+      "paper"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "raised letters in the surface",
+     "tags": [
+      "relief"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "low soft side light",
+     "tags": [
+      "sidelighting"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "letterform.stitchedtext",
+   "name": "Stitched-letter structure",
+   "description": "A stitched-lettering treatment of the user's existing text. Keep the thread path continuous and the stitch tension coherent.",
+   "category": "lettering",
+   "kind": "style",
+   "tags": [
+    "stitched letters",
+    "thread path",
+    "fabric tension",
+    "readable text"
+   ],
+   "claims": {
+    "composition": "letterform.stitchedtext",
+    "medium": "letterform.stitchedtext",
+    "texture": "letterform.stitchedtext"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "embroidered stitched lettering",
+     "tags": [
+      "embroidery",
+      "lettering"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "continuous even thread stitches",
+     "tags": [
+      "stitches"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "composition",
+     "text": "complete wording",
+     "tags": [
+      "centered"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  },
+  {
+   "id": "letterform.handdrawnserif",
+   "name": "Drawn-serif individuality",
+   "description": "A carefully drawn serif-lettering treatment of the user's existing text. Let small terminal details vary without losing their shared construction logic.",
+   "category": "lettering",
+   "kind": "style",
+   "tags": [
+    "drawn serif",
+    "lettering craft",
+    "unequal detail",
+    "consistent rhythm"
+   ],
+   "claims": {
+    "composition": "letterform.handdrawnserif",
+    "medium": "letterform.handdrawnserif",
+    "texture": "letterform.handdrawnserif"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "hand-drawn serif lettering",
+     "tags": [
+      "serif",
+      "lettering"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "small varied terminal details",
+     "tags": [
+      "ink"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "composition",
+     "text": "even rhythm across letters",
+     "tags": [
+      "centered"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [
+    "generic",
+    "flux",
+    "qwen-image",
+    "qwen-image-2.1",
+    "moss-image",
+    "moss-image-dmd",
+    "fibo",
+    "fibo-edit"
+   ],
+   "variants": {}
+  }
+ ]
+}

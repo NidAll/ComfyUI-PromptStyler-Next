@@ -174,6 +174,8 @@ class Pack:
     license: str
     author: str
     styles: tuple[Style, ...]
+    # Removed or merged style IDs: (old id, replacement id or "").
+    retired: tuple[tuple[str, str], ...] = ()
 
     @classmethod
     def from_dict(cls, value: object) -> Pack:
@@ -190,6 +192,7 @@ class Pack:
                 "author",
                 "styles",
             ),
+            optional=("retired",),
         )
         v.schema_version(data["schema_version"], "pack.schema_version")
         pack_id = v.identifier(data["id"], "pack.id")
@@ -200,6 +203,16 @@ class Pack:
         )
         if not styles:
             raise StylerError("empty_pack", "A pack needs at least one style.", "pack.styles")
+        retired = []
+        for i, raw in enumerate(v.array(data.get("retired", []), "retired", maximum=2048)):
+            item = v.obj(raw, f"retired[{i}]", required=("id",), optional=("replacement",))
+            replacement = item.get("replacement", "")
+            retired.append(
+                (
+                    v.identifier(item["id"], f"retired[{i}].id"),
+                    v.identifier(replacement, f"retired[{i}].replacement") if replacement else "",
+                )
+            )
         return cls(
             pack_id,
             pack_version,
@@ -208,6 +221,7 @@ class Pack:
             v.string(data["license"], "pack.license", maximum=128),
             v.string(data["author"], "pack.author", maximum=128),
             styles,
+            tuple(retired),
         )
 
     @classmethod
@@ -231,6 +245,15 @@ class Pack:
                 }
                 for style in self.styles
             ],
+            **(
+                {
+                    "retired": [
+                        {"id": old, **({"replacement": new} if new else {})} for old, new in self.retired
+                    ]
+                }
+                if self.retired
+                else {}
+            ),
         }
 
 
@@ -256,6 +279,16 @@ class Catalog:
             raise StylerError("duplicate_style", "Style IDs must be unique across packs.")
         self.styles = tuple(styles)
         self.by_id: Mapping[str, Style] = MappingProxyType(by_id)
+        retired: dict[str, str] = {}
+        for pack in self.packs:
+            for old, new in pack.retired:
+                if old in by_id or old in retired:
+                    raise StylerError("duplicate_style", "A retired ID must not name a live or retired style.", old)
+                retired[old] = new
+        for old, new in retired.items():
+            if new and new not in by_id:
+                raise StylerError("unknown_style", "A retired style must be replaced by a live style.", old)
+        self.retired: Mapping[str, str] = MappingProxyType(retired)
         self.index: Mapping[str, frozenset[str]] = MappingProxyType(
             {
                 style.id: tokens(

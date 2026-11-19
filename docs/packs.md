@@ -21,10 +21,10 @@ Schemas have protocol version 1; pack content uses its own semantic version.
     "category": "illustration/botanical",
     "kind": "style",
     "tags": ["botanical", "ink", "wash"],
-    "claims": {"medium": "ink-and-wash"},
+    "claims": {"medium": "community.botanical-fieldbook", "texture": "community.botanical-fieldbook"},
     "clauses": [
-      {"axis": "medium", "text": "Render with precise ink lines and transparent watercolor washes", "tags": ["ink and watercolor"], "min_intensity": 0},
-      {"axis": "texture", "text": "Leave fine paper fibers visible through the pigment", "tags": ["paper grain"], "min_intensity": 0.65}
+      {"axis": "medium", "text": "ink and transparent watercolor study", "tags": ["watercolor (medium)", "ink (medium)"], "min_intensity": 0},
+      {"axis": "texture", "text": "fine paper fibers under the pigment", "tags": ["paper texture"], "min_intensity": 0.4}
     ],
     "negative": [],
     "models": [],
@@ -40,7 +40,7 @@ can coexist. Declare only axes represented by clauses, including in every varian
 An unclaimed clause is additive and cannot participate in declared-claim conflict
 resolution.
 
-The bundled 0.3.0 library claims every authored axis. Use the same policy for
+The bundled library claims every authored axis, using the style ID as the identity. Use the same policy for
 contributed bundled packs so later lighting, palette and composition layers can
 replace earlier directions. Administrator-owned external packs may deliberately
 use additive clauses, but must assess the resulting contradictions themselves.
@@ -48,9 +48,51 @@ Review the tag form as carefully as the prose: a safe conditional description
 must not become an unconditional setting, person, timestamp or label tag.
 
 `min_intensity` is finite and between 0 and 1. It gates the clause at or above that
-threshold; intensity zero always bypasses every clause. Use the low tier for the
-recognizable visual identity, higher tiers for secondary material/light/detail.
-Do not use tiers to stuff a prompt with generic quality words.
+threshold; intensity zero always bypasses every clause. Bundled packs use three
+standard tiers, which Studio names Subtle, Balanced and Strong:
+
+| Tier | `min_intensity` | Use it for |
+| --- | --- | --- |
+| Core | `0` | The recognizable identity. A look starts with its medium. |
+| Supporting | `0.4` | One secondary light, palette, composition or texture direction. |
+| Finish | `0.75` | Fine technique detail. |
+
+Each profile has a `style_budget` (words for prose and captions, tags for tag
+models). Core clauses always render; supporting and finish clauses that would
+exceed the budget are skipped and reported as `budget_skipped` in the trace, so
+stacking several styles cannot flood a small text encoder.
+
+## Writing clauses for image encoders
+
+Clause text is read by a text encoder, not by an instruction-following model.
+The bundled packs follow these rules, and `scripts/audit_library.py` checks them:
+
+- Describe the visual result as a short noun phrase: "hand-inked anime cel art",
+  not "Render the subject as hand-inked anime cel art".
+- Never refer to the prompt or scene ("the subject", "existing", "supplied").
+- No negation ("without", "no", "not") and no conditions ("if", "unless"): the
+  encoder reads the negated words as requests.
+- Keep core clauses to 8 words, other clauses to 12, and a whole look to about
+  26 words at full strength. No brackets, colons or semicolons in text.
+- Use 1-3 tags per clause, each at most 4 words. For booru-trained tag models
+  (Anima), prefer tags the model knows, such as `watercolor (medium)`, `lineart`
+  or `film grain`. `--vocab <tag list>` reports the known-tag share; every look
+  needs at least one known tag.
+- No mood axis: express mood through light, palette or composition.
+- Hard palette words (monochrome, black-and-white, greyscale) belong only on
+  the palette axis.
+
+Rendering joins the selected clauses into one compact phrase after the prompt.
+Tag profiles escape brackets (`watercolor \\(medium\\)`) so ComfyUI reads them
+literally, and skip tags the prompt already contains.
+
+## Retired styles
+
+A pack may list `"retired": [{"id": "old.id", "replacement": "new.id"}]`. A recipe
+that still names a retired ID composes with its replacement and a `style_replaced`
+notice; an ID without a replacement is skipped with `style_retired`. Retired IDs
+must not be live styles, and replacements must be. ComfyUI keeps retired IDs as
+valid hidden values of the Style node so saved workflows keep loading.
 
 Every clause has natural `text` and optional concise `tags`. A tag adapter uses
 tags when present, otherwise the clause text. An exact model variant replaces the

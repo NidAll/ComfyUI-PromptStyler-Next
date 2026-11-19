@@ -1,6 +1,42 @@
 # Changelog
 
-## Unreleased
+## 0.6.0a1 (experimental, 2026-11-19)
+
+Experimental pre-release on the `experimental/0.6.0a1` branch, not yet merged into
+`main`. Style text and fingerprints change for every bundled pack. Image adherence was
+checked only on the small matched-seed comparison in [validation](docs/validation.md).
+
+**Style adherence.** Selected styles are now written so text encoders follow them:
+
+- Every bundled clause was rewritten from an instruction ("Render the subject as...")
+  into a short visual description, without negations, conditions, scene references or
+  a mood axis. Anima tags favour model-known tags such as `watercolor (medium)`.
+- Natural profiles render one compact style phrase after the prompt; tag profiles
+  escape brackets for ComfyUI and skip tags already present (adapter revisions
+  `natural/2`, `tags/2`, `fibo-caption/2`; engine `promptstyler-next/2`).
+- Three standard tiers (0 / 0.4 / 0.75) and a per-profile `style_budget` keep stacked
+  styles within what small encoders read: core identities always render.
+- New recipe field `prompt_conflicts` (`replace` by default, or `keep`): style words in
+  the prompt on axes the selection sets, such as "A photo of" or `realistic`, are
+  removed from the styled prompt and reported. The ComfyUI Style node gains it as an
+  optional advanced input appended after `enabled`, so saved widget order is unchanged.
+- Library cleanup: 1,003 entries in 49 packs. Studio packs cut to 10 entries each and
+  renamed (`weather`, `textile`, `garden-art`, `jewelry`, `lettering`), lettering
+  limited to text-capable models, grades and effects consolidated, Information
+  Hierarchy retired, authors unified. 161 retired IDs are listed in the pack's
+  `retired` map; recipes and saved ComfyUI workflows using them still load.
+- `scripts/audit_library.py` is now an authoring lint (`--check`, `--vocab`).
+- Studio: Subtle/Balanced/Strong strength, look Strong / color Balanced / effects
+  Subtle defaults, at most two effects outside free mixing, one look per model family,
+  and a "Style wins over prompt words" switch. Image Clone always replaces caption
+  style words.
+
+Added **Prompt Idea** (LFM3-VL): each seed turns a draft into a new prompt idea. A seeded lens and
+prompt structure rotate away from recently used ones, the model brainstorms concepts and the one
+least like earlier ideas is developed, then quoted text and exclusions are restored and a lost subject,
+echo or repeat triggers one retry. Stock adjectives and wording recurring across earlier prompts are
+softly penalised during decoding. Upscale Base Prompt and its measured recipe are unchanged; the shared
+LFM3 decode gained optional seeded sampling (greedy stays the default).
 
 Added an enabled toggle to the ComfyUI Style node. Disabling it passes raw positive
 and negative text through unchanged, without style additions or model formatting.

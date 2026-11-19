@@ -51,7 +51,9 @@ class PSNextStyle(io.ComfyNode):
                 io.String.Input("prompt", multiline=True, dynamic_prompts=False),
                 io.Combo.Input(
                     "style",
-                    options=[style["id"] for style in styles],
+                    # Retired IDs stay valid values so saved workflows keep loading; the
+                    # explorer lists only live styles and the engine maps the old ID.
+                    options=[style["id"] for style in styles] + sorted(engine.retired_styles()),
                     extra_dict={
                         "psnext_categories": {style["id"]: style["category"] for style in styles},
                         "psnext_styles": [
@@ -84,7 +86,7 @@ class PSNextStyle(io.ComfyNode):
                     max=1.0,
                     step=0.05,
                     display_mode=io.NumberDisplay.slider,
-                    tooltip="Activates curated detail tiers; zero bypasses the style. It is not a sampler weight.",
+                    tooltip="Selects curated detail tiers, not a sampler weight: below 0.4 adds only the style's identity (Subtle), 0.4 adds supporting detail (Balanced), 0.75 and above adds everything (Strong). Zero bypasses the style.",
                 ),
                 io.String.Input(
                     "negative",
@@ -108,6 +110,14 @@ class PSNextStyle(io.ComfyNode):
                     label_off="Disabled",
                     tooltip="When disabled, pass prompt and negative text through unchanged, without styling or model formatting.",
                 ),
+                io.Combo.Input(
+                    "prompt_conflicts",
+                    options=["replace", "keep"],
+                    default="replace",
+                    optional=True,
+                    advanced=True,
+                    tooltip="replace: style words in your prompt on the axes this style sets (for example 'photo of', 'watercolor', 'cinematic lighting') are removed so the style is followed. keep: leave them and report the conflict.",
+                ),
             ],
             outputs=[
                 io.String.Output("positive", display_name="positive"),
@@ -126,6 +136,7 @@ class PSNextStyle(io.ComfyNode):
         negative: str = "",
         locked_axes: list[str] | None = None,
         enabled: bool = True,
+        prompt_conflicts: str = "replace",
     ) -> io.NodeOutput:
         if not enabled:
             inspection = json.dumps(
@@ -144,6 +155,7 @@ class PSNextStyle(io.ComfyNode):
                     "model": model,
                     "styles": [{"id": style, "intensity": intensity}],
                     "locked_axes": locked_axes or [],
+                    "prompt_conflicts": prompt_conflicts,
                 }
             )
         )

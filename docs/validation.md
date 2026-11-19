@@ -5,6 +5,35 @@ Version 0.4.1 refines the optional local MiniCPM authoring stage. Version 0.4.0 
 [the 0.3.0 review](style-review.md). This source update creates no package-index
 release or version tag.
 
+## Style adherence update (2026-11-19)
+
+Engine revision `promptstyler-next/2` adds standard tiers, per-profile style budgets,
+prompt style-word replacement, retired IDs and the rewritten library (1,003 entries,
+49 packs, 161 retired IDs). The core suite passes 283 tests (one Hypothesis test
+skipped because the optional package is absent); the actual ComfyUI host passes 108
+node/graph tests; Node and Studio tests pass 7 and 26. `scripts/audit_library.py --check`
+reports no authoring errors; 54% of bundled tags match a local booru-tagger vocabulary
+used as a stand-in for Anima's own. Ruff and mypy were not available offline and
+were not run for this update.
+
+A small matched-seed comparison used Anima Lightning (4 steps, 768x1024, seeds 42 and
+1234) with one base scene and six recipes, rendering prompts from the previous and
+current engines. Per-image observations:
+
+| Recipe | Previous engine | Current engine |
+| --- | --- | --- |
+| `cinema.noir` | Monochrome, softer contrast | Monochrome, stronger contrast; comparable adherence |
+| `print.mokuhanga` | Pastel line art, weak print cues | Clearer woodblock cues (garments, cartouches); also invents cartouche text and changes architecture |
+| `print.mezzotint` | Dark tonal monochrome, closer to mezzotint | Harder engraved look; mixed |
+| `illustration.gouache` | Flat poster color | Flat poster color; no visible gouache texture in either |
+| Gouache + amber-teal + raking light + close crop | Orange/teal applied, crop ignored | Orange/teal applied, crop ignored |
+| "watercolor painting" + gouache | Both media words kept | Watercolor removed (`prompt_style_replaced`); same image as gouache alone |
+
+The model's own flat illustration look dominated painting media in both versions.
+This is a 24-image sample on one distilled model; it shows readable tag prompts and
+deterministic conflict handling, not a general improvement in visual adherence.
+Image quality and per-style adherence on other models remain unaccepted.
+
 ## Current source checks (2026-10-28)
 
 The current standalone suite passes 231 tests with 93% combined statement/branch

@@ -1,0 +1,491 @@
+{
+ "schema_version": 1,
+ "id": "next.garden-art",
+ "version": "2.0.0",
+ "name": "Garden and land art",
+ "description": "Designed-landscape and land-art representation treatments.",
+ "license": "CC0-1.0",
+ "author": "PromptStyler Next contributors",
+ "styles": [
+  {
+   "id": "gardenart.axialgarden",
+   "name": "Axial landscape order",
+   "description": "A garden-design interpretation organized around the existing scene's principal axis. Make successive depth intervals read as a deliberate measured sequence.",
+   "category": "garden-art/garden",
+   "kind": "style",
+   "tags": [
+    "axial landscape",
+    "measured depth",
+    "formal interval",
+    "quiet symmetry"
+   ],
+   "claims": {
+    "composition": "gardenart.axialgarden",
+    "medium": "gardenart.axialgarden",
+    "palette": "gardenart.axialgarden"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "formal axial garden",
+     "tags": [
+      "formal garden",
+      "symmetry"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "measured sequence along one axis",
+     "tags": [
+      "one-point perspective"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "pale stone and muted greens",
+     "tags": [
+      "muted color"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "gardenart.parterre",
+   "name": "Parterre graphic reading",
+   "description": "A formal landscape-design reading of the existing arrangement. Make its plan-like geometry legible through measured intervals and clear boundaries.",
+   "category": "garden-art/garden",
+   "kind": "style",
+   "tags": [
+    "parterre",
+    "plan geometry",
+    "measured pattern",
+    "clear intervals"
+   ],
+   "claims": {
+    "composition": "gardenart.parterre",
+    "medium": "gardenart.parterre",
+    "palette": "gardenart.parterre"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "parterre garden plan",
+     "tags": [
+      "parterre",
+      "hedge"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "geometric beds with clear borders",
+     "tags": [
+      "geometric"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "few tonal families",
+     "tags": [
+      "limited palette"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "gardenart.rockgarden",
+   "name": "Mineral-garden intervals",
+   "description": "A mineral-garden interpretation of the existing scene. Balance dense existing masses against wide open intervals.",
+   "category": "garden-art/garden",
+   "kind": "style",
+   "tags": [
+    "mineral garden",
+    "stone rhythm",
+    "empty interval",
+    "dry texture"
+   ],
+   "claims": {
+    "composition": "gardenart.rockgarden",
+    "medium": "gardenart.rockgarden",
+    "texture": "gardenart.rockgarden"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "dry rock garden",
+     "tags": [
+      "rock garden",
+      "zen garden"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "dense stones in open gravel",
+     "tags": [
+      "negative space"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "rough rock beside raked gravel",
+     "tags": [
+      "rock"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "gardenart.mossquiet",
+   "name": "Moss-like surface quiet",
+   "description": "A landscape interpretation with softly continuous ground-like surfaces. Keep fine dense surface variation low and tactile.",
+   "category": "garden-art/garden",
+   "kind": "style",
+   "tags": [
+    "moss texture",
+    "soft ground",
+    "low relief",
+    "muted green"
+   ],
+   "claims": {
+    "medium": "gardenart.mossquiet",
+    "palette": "gardenart.mossquiet",
+    "texture": "gardenart.mossquiet"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "moss garden",
+     "tags": [
+      "moss",
+      "garden"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "soft dense ground cover",
+     "tags": [
+      "moss"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "muted olive, deep green and brown",
+     "tags": [
+      "green theme"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "gardenart.terraced",
+   "name": "Terraced landscape sequence",
+   "description": "A landscape interpretation organized as successive existing levels. Make the transitions between horizontal planes clear and rhythmical.",
+   "category": "garden-art/garden",
+   "kind": "style",
+   "tags": [
+    "terraces",
+    "stepped plane",
+    "level rhythm",
+    "spatial sequence"
+   ],
+   "claims": {
+    "composition": "gardenart.terraced",
+    "lighting": "gardenart.terraced",
+    "medium": "gardenart.terraced"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "terraced landscape",
+     "tags": [
+      "terraces",
+      "landscape"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "rhythmic horizontal levels",
+     "tags": [
+      "layers"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "oblique light on level changes",
+     "tags": [
+      "sidelighting"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "gardenart.meadowmatrix",
+   "name": "Meadow-matrix texture",
+   "description": "A landscape interpretation of fine interwoven surface rhythms. Vary repeated small elements in height and density without making uniform rows.",
+   "category": "garden-art/garden",
+   "kind": "style",
+   "tags": [
+    "meadow matrix",
+    "fine repetition",
+    "open texture",
+    "soft rhythm"
+   ],
+   "claims": {
+    "medium": "gardenart.meadowmatrix",
+    "palette": "gardenart.meadowmatrix",
+    "texture": "gardenart.meadowmatrix"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "naturalistic meadow planting",
+     "tags": [
+      "meadow",
+      "flowers"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "texture",
+     "text": "varied interwoven plant heights",
+     "tags": [
+      "grass"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "palette",
+     "text": "muted local colors in one field",
+     "tags": [
+      "natural colors"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "gardenart.walledgarden",
+   "name": "Walled-garden color room",
+   "description": "A landscape-design interpretation treating the existing space as a quiet color room. Let a few broad material colors define the enclosure.",
+   "category": "garden-art/garden",
+   "kind": "style",
+   "tags": [
+    "walled garden",
+    "color room",
+    "enclosing plane",
+    "contained light"
+   ],
+   "claims": {
+    "lighting": "gardenart.walledgarden",
+    "medium": "gardenart.walledgarden",
+    "palette": "gardenart.walledgarden"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "walled garden",
+     "tags": [
+      "walled garden",
+      "garden"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "palette",
+     "text": "few broad material colors",
+     "tags": [
+      "limited palette"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "bright open center",
+     "tags": [
+      "sunlight"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "gardenart.landartline",
+   "name": "Walking-line land art",
+   "description": "A land-art interpretation based on a minimal line through the existing space. Use the scene's existing directional traces as one clear visual passage.",
+   "category": "garden-art/garden",
+   "kind": "style",
+   "tags": [
+    "land art",
+    "trace line",
+    "ground plane",
+    "quiet intervention"
+   ],
+   "claims": {
+    "composition": "gardenart.landartline",
+    "medium": "gardenart.landartline",
+    "texture": "gardenart.landartline"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "minimal walking-line land art",
+     "tags": [
+      "land art",
+      "path"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "one clear line through the landscape",
+     "tags": [
+      "leading lines"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "texture",
+     "text": "subtle marked ground",
+     "tags": [
+      "minimalism"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "gardenart.landartcircle",
+   "name": "Circular earthwork reading",
+   "description": "A land-art interpretation emphasizing existing curved spatial relationships. Let curved intervals create focus without adding a new central object.",
+   "category": "garden-art/garden",
+   "kind": "style",
+   "tags": [
+    "earthwork",
+    "circular interval",
+    "ground geometry",
+    "tonal mass"
+   ],
+   "claims": {
+    "composition": "gardenart.landartcircle",
+    "lighting": "gardenart.landartcircle",
+    "medium": "gardenart.landartcircle"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "circular earthwork land art",
+     "tags": [
+      "land art",
+      "circle"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "curved focus in the landscape",
+     "tags": [
+      "from above"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "soft directional light on relief",
+     "tags": [
+      "sidelighting"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  },
+  {
+   "id": "gardenart.landartwoven",
+   "name": "Woven-landscape structure",
+   "description": "A land-art interpretation reading existing linear forms as an interlaced structure. Keep crossings and open intervals spatially coherent.",
+   "category": "garden-art/garden",
+   "kind": "style",
+   "tags": [
+    "woven landscape",
+    "interlaced space",
+    "linear material",
+    "open gaps"
+   ],
+   "claims": {
+    "composition": "gardenart.landartwoven",
+    "lighting": "gardenart.landartwoven",
+    "medium": "gardenart.landartwoven"
+   },
+   "clauses": [
+    {
+     "axis": "medium",
+     "text": "woven branch land art",
+     "tags": [
+      "land art",
+      "woven"
+     ],
+     "min_intensity": 0.0
+    },
+    {
+     "axis": "composition",
+     "text": "coherent crossings and gaps",
+     "tags": [
+      "interlocking"
+     ],
+     "min_intensity": 0.4
+    },
+    {
+     "axis": "lighting",
+     "text": "soft side light",
+     "tags": [
+      "sidelighting"
+     ],
+     "min_intensity": 0.75
+    }
+   ],
+   "negative": [],
+   "models": [],
+   "variants": {}
+  }
+ ]
+}

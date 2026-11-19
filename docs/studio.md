@@ -110,26 +110,40 @@ intensities and order in the panel's state. Obtain model capabilities from
 `createPromptStylerPanel(React)` from `studio/react-panel.mjs` uses the host's React
 instance. Mount it beside the prompt field with `{profile, prompt, negative, mode}`
 and load `studio/panel.css`. The compact Styles button opens a native modal browser
-with **Looks**, **Color**, **Effects**, **Saved** and **Presets** sections. Search names, descriptions,
+with **Looks**, **Color**, **Effects**, **Favorites** and **Presets** sections, chosen from one
+segmented control. Search names, descriptions,
 collections and tags; browse the complete compatible catalog, including pages beyond
-1,000 entries. **New additions** highlights the 15 community packs and the four
-semantic-base toolkit packs (332 entries before model/type filtering).
+1,000 entries. **New additions** highlights the 15 community packs and the
+computational, weather, textile, garden-art, jewelry and lettering packs.
 
-Choose one look and one color grade by default: another choice replaces that type
-while retaining finishing effects. Click a selected card again to remove it. Selected
-styles appear as removable chips beside the original prompt; **Apply** pauses or
-resumes them. The **Your look** panel provides strength and a text preview. Under
-**Advanced controls**, opt into free mixing, reorder layers, override the model or
-protect prompt attributes. The recipe limit remains 16 layers. Strength changes
-which authored prompt clauses participate; it is not a diffusion/LoRA weight.
+Choose one look, one color grade and up to two effects by default: another look or
+color replaces that type, and a third effect replaces the oldest one. Click a selected card again to remove it. Selected
+styles appear as removable chips beside the original prompt, and the launcher shows
+their count; the **Apply** switch (in the composer and in **Your look**) pauses or
+resumes them. The **Your look** panel sets each layer's strength to **Subtle**, **Balanced** or
+**Strong** and shows a text preview. Strength selects the engine's detail tiers (Subtle:
+the identity only; Balanced: plus supporting detail; Strong: everything); it is not a
+diffusion/LoRA weight. New looks start at Strong, colors at Balanced (a complete
+grade) and effects at Subtle. Under **Advanced**, opt into free mixing, reorder layers,
+override the model, keep prompt attributes from being restyled, or turn off **Style
+wins over prompt words**. With it on (the default), style words in the prompt on an
+axis your selection sets, such as "A photo of" or "watercolor", are left out of the
+styled prompt so the model follows the selection. Image Clone always works this way,
+so a reference caption's medium tags cannot override the chosen look. The recipe
+limit remains 16 layers.
 
 The desktop browser has a library and a separate selection panel. On phones it uses
 the full viewport, two card columns, a collapsible selection section above the library,
 a single main scroll area and a fixed Done action. Native dialog behavior traps focus,
-supports Escape and returns focus to the launcher. Color cues are abstract identifiers,
-not generated examples or promises about output appearance.
+supports Escape and returns focus to the launcher. Card swatches are small abstract
+identifiers (hue from the collection, shape from the type), labelled as such in the
+library; they are not generated examples or promises about output appearance. The panel
+uses the host Studio design tokens (surfaces, radii, focus ring, motion) with matching
+fallbacks, and draws its icons as inline SVG.
 
-Selections are remembered per workflow profile in this browser, including pause state,
+Selections are remembered per model family in this browser (one look for every Anima
+workflow, one for every MOSS workflow, and so on), migrating a selection saved under
+the older per-workflow key, including pause state,
 strengths, layer order and advanced controls. Favorites retain the existing storage key.
 Save a named combination in **Your look**, then apply or delete it in **Presets**. Up to
 40 combinations are kept; saving the same name updates it. A preset preserves whether

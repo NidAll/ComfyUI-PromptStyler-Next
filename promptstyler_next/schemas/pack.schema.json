@@ -283,6 +283,29 @@
         ],
         "additionalProperties": false
       }
+    },
+    "retired": {
+      "type": "array",
+      "maxItems": 2048,
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "maxLength": 96,
+            "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"
+          },
+          "replacement": {
+            "type": "string",
+            "maxLength": 96,
+            "pattern": "^[a-z][a-z0-9]*(?:[._-][a-z0-9]+)*$"
+          }
+        },
+        "required": [
+          "id"
+        ],
+        "additionalProperties": false
+      }
     }
   },
   "required": [

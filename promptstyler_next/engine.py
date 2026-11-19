@@ -7,13 +7,14 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
+from . import lexicon
 from . import validation as v
 from .adapters import AdapterRegistry, ModelAdapter, Profile
 from .catalog import Catalog, Pack, Style, tokens
 from .errors import StylerError
 from .types import Clause, Composition, Notice, Recipe, Trace
 
-ENGINE_REVISION = "promptstyler-next/1"
+ENGINE_REVISION = "promptstyler-next/2"
 _DATA = Path(__file__).parent
 
 
@@ -97,6 +98,10 @@ class Engine:
     def get_style(self, style_id: str) -> dict[str, Any]:
         return self._catalog.get(style_id).to_dict()
 
+    def retired_styles(self) -> dict[str, str]:
+        """Retired style IDs mapped to their replacement ("" when skipped)."""
+        return dict(self._catalog.retired)
+
     def list_styles(
         self,
         *,
@@ -157,20 +162,34 @@ class Engine:
                 )
             )
         locked = set(request.locked_axes) | set(adapter.locked_axes(request.prompt))
+        layers: list[tuple[Style, float]] = []
+        for layer in request.styles:
+            style_id = layer.id
+            if style_id in self._catalog.retired:
+                replacement = self._catalog.retired[style_id]
+                if not replacement:
+                    message = f"Style {style_id} was retired from the library and is skipped."
+                    warnings.append(Notice("style_retired", message))
+                    trace.append(Trace(style_id, "style", "retired", "", "Retired from the library."))
+                    continue
+                warnings.append(Notice("style_replaced", f"Style {style_id} was merged into {replacement}."))
+                trace.append(Trace(style_id, "style", "replaced", replacement, "Merged into a live style."))
+                style_id = replacement
+            if any(style.id == style_id for style, _ in layers):
+                continue
+            layers.append((self._catalog.get(style_id), layer.intensity))
         # Each candidate owns its style claims. Only conflicting axes are suppressed,
         # so a color grade can replace a palette without erasing the original medium.
-        candidates: list[tuple[Style, Clause]] = []
+        candidates: list[tuple[int, int, Style, Clause]] = []
         suppressed_styles: set[str] = set()
-        active_styles: dict[str, Style] = {}
-        for layer in request.styles:
-            style = self._catalog.get(layer.id)
+        for layer_index, (style, intensity) in enumerate(layers):
             if style.models and profile.id not in style.models:
                 raise StylerError(
                     "unsupported_style", "Style is not supported by this model profile.", style.id
                 )
             variant = style.variant(profile.id)
-            for clause in variant.clauses:
-                if layer.intensity == 0 or layer.intensity < clause.min_intensity:
+            for clause_index, clause in enumerate(variant.clauses):
+                if intensity == 0 or intensity < clause.min_intensity:
                     suppressed_styles.add(style.id)
                     trace.append(
                         Trace(
@@ -193,9 +212,9 @@ class Engine:
                         )
                     )
                 else:
-                    candidates.append((style, clause))
+                    candidates.append((layer_index, clause_index, style, clause))
         winners: dict[str, tuple[str, str]] = {}
-        for style, clause in candidates:
+        for _layer, _index, style, clause in candidates:
             identity = dict(style.claims).get(clause.axis)
             if identity is None:
                 continue
@@ -210,9 +229,10 @@ class Engine:
                 if request.conflict_policy == "first_wins":
                     continue
             winners[clause.axis] = (identity, style.id)
-        selected: list[Clause] = []
+        eligible: list[tuple[int, int, Style, Clause]] = []
         seen: set[str] = set()
-        for style, clause in candidates:
+        for item in candidates:
+            _layer, _index, style, clause = item
             identity = dict(style.claims).get(clause.axis)
             winner = winners.get(clause.axis)
             if identity is not None and winner is not None and identity != winner[0]:
@@ -241,6 +261,42 @@ class Engine:
                 )
                 continue
             seen.add(key)
+            eligible.append(item)
+
+        # Identity first: every layer's core clause, then supporting tiers, then detail.
+        def tier(clause: Clause) -> int:
+            return sum(clause.min_intensity >= threshold for threshold in v.TIERS[1:])
+
+        eligible.sort(
+            key=lambda item: (tier(item[3]), item[0], v.AXIS_PRIORITY.index(item[3].axis), item[1])
+        )
+        unit = "tags" if profile.format == "tags" else "words"
+        budget = profile.style_budget
+        used = 0
+        counted_tags: set[str] = set()
+        selected: list[Clause] = []
+        active_styles: dict[str, Style] = {}
+        for _layer, _index, style, clause in eligible:
+            if unit == "tags":
+                fresh = [tag for tag in (clause.tags or (clause.text,)) if tag.casefold() not in counted_tags]
+                cost = len(fresh)
+            else:
+                fresh = []
+                cost = len(clause.text.split())
+            if tier(clause) > 0 and used + cost > budget:
+                suppressed_styles.add(style.id)
+                trace.append(
+                    Trace(
+                        style.id,
+                        clause.axis,
+                        "budget_skipped",
+                        clause.text,
+                        f"Keeps the added style within {budget} {unit} for this model.",
+                    )
+                )
+                continue
+            used += cost
+            counted_tags.update(tag.casefold() for tag in fresh)
             selected.append(clause)
             active_styles[style.id] = style
             trace.append(
@@ -254,6 +310,36 @@ class Engine:
                     else "Shared clause rendered by the model adapter.",
                 )
             )
+        prompt = request.prompt
+        removed: list[tuple[str, str]] = []
+        claimed = {
+            clause.axis
+            for clause in selected
+            if clause.axis in lexicon.AXES
+        }
+        if claimed and profile.format != "structured" and not prompt.lstrip().startswith("{"):
+            finder = lexicon.find_tags if profile.format == "tags" else lexicon.find_prose
+            cleaned, removed = finder(prompt, claimed)
+            if removed:
+                words = ", ".join(dict.fromkeys(phrase for _axis, phrase in removed))
+                if request.prompt_conflicts == "replace":
+                    prompt = cleaned
+                    warnings.append(
+                        Notice(
+                            "prompt_style_replaced",
+                            f"Removed style words from the prompt so the selected style is followed: {words}.",
+                        )
+                    )
+                    action, reason = "prompt_removed", "The selected style sets this axis."
+                else:
+                    warnings.append(
+                        Notice(
+                            "prompt_style_conflict",
+                            f"The prompt also sets this style direction and may weaken the selected style: {words}.",
+                        )
+                    )
+                    action, reason = "prompt_conflict", "Kept because prompt_conflicts is keep."
+                trace.extend(Trace("prompt", axis, action, phrase, reason) for axis, phrase in removed)
         negative_parts = list(
             dict.fromkeys(
                 phrase
@@ -294,9 +380,9 @@ class Engine:
                         "This profile does not use negative prompts. The supplied negative text is retained in the recipe, but omitted from the encoded output.",
                     )
                 )
-        positive = adapter.render(request.prompt, tuple(selected))
+        positive = adapter.render(prompt, tuple(selected))
         structured = {
-            "subject": request.prompt,
+            "subject": prompt,
             "format": profile.format,
             "axes": {
                 axis: [clause.text for clause in selected if clause.axis == axis]
@@ -304,6 +390,8 @@ class Engine:
                 if any(clause.axis == axis for clause in selected)
             },
             "protected_axes": sorted(locked),
+            "style_budget": {"limit": budget, "used": used, "unit": unit},
+            "prompt_style_words": [{"axis": axis, "text": phrase} for axis, phrase in removed],
         }
         fingerprint = v.digest(
             {

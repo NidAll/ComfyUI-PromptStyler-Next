@@ -3,7 +3,7 @@
 from comfy_api.latest import ComfyExtension, io
 
 from .nodes import PSNextCompose, PSNextEncode, PSNextStyle
-from .upscaler_nodes import PSNextLoadUpscaler, PSNextPreviewPrompt, PSNextUpscaleBase
+from .upscaler_nodes import PSNextLoadUpscaler, PSNextPreviewPrompt, PSNextPromptIdea, PSNextUpscaleBase
 
 
 class PromptStylerNextExtension(ComfyExtension):
@@ -14,6 +14,7 @@ class PromptStylerNextExtension(ComfyExtension):
             PSNextEncode,
             PSNextLoadUpscaler,
             PSNextUpscaleBase,
+            PSNextPromptIdea,
             PSNextPreviewPrompt,
         ]
 

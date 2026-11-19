@@ -117,17 +117,17 @@ def test_builtin_authoring_audit(engine):
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
     report = module.audit(engine)
-    assert report["entries"] == 1164
-    assert report["packs"] == 52
+    assert report["entries"] == 1003
+    assert report["packs"] == 49
     assert report["authoring_errors"] == []
 
 
 @pytest.mark.parametrize("model", ["flux", "anima", "fibo"])
-def test_reflected_light_signature_is_available_at_low_intensity_and_respects_locks(engine, model):
+def test_reflected_light_signature_is_available_at_balanced_intensity_and_respects_locks(engine, model):
     recipe = {
         "prompt": SCENES[0]["base_prompt"],
         "model": model,
-        "styles": [{"id": "liminal.poolrooms", "intensity": 0.2}],
+        "styles": [{"id": "liminal.poolrooms", "intensity": 0.5}],
     }
     result = engine.compose(recipe)
     assert any(t.axis == "lighting" and t.action == "applied" for t in result.trace)
@@ -153,4 +153,4 @@ def test_anime_techniques_keep_their_identity_in_low_intensity_text_and_tags(eng
         assert any("anime" in c["text"].casefold() for c in medium), style["id"]
         assert any("anime" in " ".join(c["tags"]).casefold() for c in medium), style["id"]
     cel = engine.get_style("anime.cel")
-    assert "flat painted cel fills" in cel["clauses"][0]["tags"]
+    assert "anime coloring" in cel["clauses"][0]["tags"]
