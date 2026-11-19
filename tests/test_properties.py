@@ -16,9 +16,22 @@ text = st.text(alphabet=st.characters(blacklist_categories=("Cs", "Cc")), max_si
 @settings(max_examples=160, suppress_health_check=[HealthCheck.function_scoped_fixture])
 @given(prompt=text, intensity=st.floats(min_value=0, max_value=1, allow_nan=False))
 def test_preservation_determinism_and_roundtrip(engine, prompt, intensity):
-    recipe = Recipe(prompt, styles=(Layer("test.ink", intensity),))
+    # "keep" leaves prompt style words in place, so the prompt is a verbatim prefix.
+    recipe = Recipe(prompt, styles=(Layer("test.ink", intensity),), prompt_conflicts="keep")
     result = engine.compose(recipe)
     assert result.positive.startswith(prompt)
+    assert engine.compose(recipe).to_dict() == result.to_dict()
+    assert engine.compose(result.recipe.to_dict()).fingerprint == result.fingerprint
+
+
+@settings(max_examples=160, suppress_health_check=[HealthCheck.function_scoped_fixture])
+@given(prompt=text, intensity=st.floats(min_value=0, max_value=1, allow_nan=False))
+def test_replacement_is_deterministic_and_reported(engine, prompt, intensity):
+    # "replace" (the default) may remove style words, but only with a notice.
+    recipe = Recipe(prompt, styles=(Layer("test.ink", intensity),))
+    result = engine.compose(recipe)
+    replaced = "prompt_style_replaced" in {notice.code for notice in result.warnings}
+    assert replaced or result.positive.startswith(prompt)
     assert engine.compose(recipe).to_dict() == result.to_dict()
     assert engine.compose(result.recipe.to_dict()).fingerprint == result.fingerprint
 
