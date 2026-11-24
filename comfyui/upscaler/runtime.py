@@ -837,64 +837,22 @@ def upsample_moss(
             upscaler.lock.release()
 
 
-def _frame(boxes):
-    """First frame of a BOUNDING_BOX value: a dict, a flat list, or per-frame lists."""
-    if isinstance(boxes, dict):
-        return [boxes]
-    if isinstance(boxes, (list, tuple)) and boxes and isinstance(boxes[0], (list, tuple)):
-        return list(boxes[0])
-    return list(boxes or [])
-
-
 def layout_assist(upscaler, task, image=None, request="", layout="", objects=None, words=None, seed=0,
-                  temperature=0.0):
-    """One LFM3 layout task. Returns (layout JSON, detector labels, inspection JSON)."""
+                  temperature=0.0, scene="", lettering=True):
+    """One LFM3 layout task. Returns (layout JSON, detector labels, inspection JSON, image has lettering).
+
+    The task logic (regions, prompts, parsing) is ``layout_assist.prepare``/``finish``; this runs the model.
+    ``scene`` is a list_objects answer (its layout output): its background nouns join the describe step's
+    list of things without a box."""
     from . import layout_assist as assist
 
     if not isinstance(upscaler, UpscalerHandle) or upscaler.model_family != "lfm3_vl":
         raise ValueError("Select the LFM3-VL file in Load Prompt Upscaler")
-    if task not in assist.TASKS:
-        raise ValueError(f"task must be one of {', '.join(assist.TASKS)}")
     picture = pil_image(image) if image is not None else None
-    width, height = (picture.size if picture is not None else (1024, 1024))
-    try:
-        given = json.loads(layout) if isinstance(layout, str) and layout.strip() else (layout or {})
-    except json.JSONDecodeError as error:
-        raise ValueError(f"layout is not JSON: {error}") from error
-    if isinstance(given, dict) and given.get("width") and given.get("height"):
-        width, height = int(given["width"]), int(given["height"])
-    regions, warnings = [], []
-    if task == "describe_regions":
-        detected = objects is not None or words is not None
-        if detected and picture is not None:
-            regions = assist.merge_regions(assist.normalize_detections(_frame(objects), *picture.size),
-                                           assist.text_lines(_frame(words), *picture.size))
-        else:
-            for item in (given.get("items") or []) if isinstance(given, dict) else []:
-                box = assist.clean_box(item.get("bbox")) if isinstance(item, dict) else None
-                if box:
-                    # A caption the box already has says what it holds (a rewrite would otherwise only see "object").
-                    hint = " ".join(str(item.get("caption") or "").split())[:120]
-                    regions.append({"label": str(item.get("label") or "object")[:60], "bbox": box,
-                                    **({"text": str(item["text"])[:200]} if item.get("text") else {}),
-                                    **({"hint": hint} if hint else {})})
-            regions = regions[: assist.MAX_REGIONS + assist.MAX_TEXT_LINES]
-        if not regions:
-            if picture is None:
-                raise ValueError("Draw or detect at least one box to describe")
-            task = "image_layout"
-            warnings.append("The detector found nothing, so LFM3 placed the boxes itself.")
-    if task in ("list_objects", "image_layout") and picture is None:
-        raise ValueError("This task needs an image")
-    if task in ("text_layout", "edit_layout") and not str(request).strip():
-        raise ValueError("Write what the layout should show or change")
-    scene = given.get("caption", "") if isinstance(given, dict) else ""
-    chat, budget = assist.messages(
-        task, request=request if task != "describe_regions" else (request or scene), regions=regions,
-        layout=given if task == "edit_layout" else None, has_image=picture is not None and task != "text_layout"
-        and task != "edit_layout", width=width, height=height,
-    )
-    use_picture = picture if task in ("list_objects", "describe_regions", "image_layout") else None
+    job = assist.prepare(task, request=request, layout=layout, objects=objects, words=words,
+                         image_size=picture.size if picture is not None else None, scene=scene, lettering=lettering)
+    task, regions, background = job["task"], job["regions"], job["background"]
+    use_picture = picture if job["use_image"] else None
     sampling = {"temperature": float(temperature), "top_p": 0.9, "top_k": 40} if temperature > 0 else None
     while not upscaler.lock.acquire(timeout=0.1):
         mm.throw_exception_if_processing_interrupted()
@@ -902,21 +860,21 @@ def layout_assist(upscaler, task, image=None, request="", layout="", objects=Non
         mm.throw_exception_if_processing_interrupted()
         engine = lfm3_engine(upscaler)
         raw, truncated, timing = _generate_lfm3(
-            upscaler.owner, upscaler.processor, chat, use_picture, budget, 1, sampling=sampling, seed=seed,
-            paragraphs=False, engine=engine,
+            upscaler.owner, upscaler.processor, job["messages"], use_picture, job["budget"], 1, sampling=sampling,
+            seed=seed, paragraphs=False, engine=engine,
         )
     finally:
         upscaler.lock.release()
     try:
-        result = assist.parse_answer(task, raw, regions)
+        result, labels = assist.finish(job, raw)
     except (ValueError, json.JSONDecodeError) as error:
-        if task != "list_objects":
-            raise ValueError(f"LFM3 wrote an unreadable layout ({error}). Try again or reword the request.") from error
-        result = {"objects": []}
-        warnings.append("LFM3 listed no objects; the detector looked for the main subject instead.")
-    labels = "\n".join(result.get("objects") or []) or ("main subject" if task == "list_objects" else "")
-    result.update({"task": task, "grid": "xyxy-1000", **({"warnings": warnings} if warnings else {})})
+        logging.warning("Layout Assist: unreadable %s answer (%s): %s", task, error, raw[:800])
+        raise ValueError(f"LFM3 wrote an unreadable layout ({error}). Try again or reword the request.") from error
+    if task == "list_objects" and result.get("warnings"):
+        logging.warning("Layout Assist: unreadable list answer: %s", raw[:800])
     if truncated:
         result.setdefault("warnings", []).append("The answer hit its length budget; the last part may be missing.")
-    inspection = {"task": task, "regions": len(regions), "truncated": truncated, **timing, "raw": raw[:4000]}
-    return json.dumps(result, ensure_ascii=False), labels, json.dumps(inspection, ensure_ascii=False)
+    lettering = result.get("lettering", True) is not False
+    inspection = {"task": task, "regions": len(regions), "truncated": truncated, **timing,
+                  **({"background": background} if background else {}), "raw": raw[:4000]}
+    return json.dumps(result, ensure_ascii=False), labels, json.dumps(inspection, ensure_ascii=False), lettering

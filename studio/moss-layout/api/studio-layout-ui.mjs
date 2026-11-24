@@ -247,7 +247,8 @@ export function gridRects(columns, rows, cells, gapX = 0, gapY = 0) {
 
 // ---------- AI assistant and Ideogram helpers (2026-11-24) ----------
 const GRID = 1000;
-const AI_SIDE = 1152;
+// 896 px: WeVisOne finds the same boxes as at 1152 px a little faster, and LFM3 reads images at 512 px anyway.
+const AI_SIDE = 896;
 const onGrid = (value) => Math.round(clamp(value, 0, 1) * GRID);
 
 /** 'ideogram' for an Ideogram 4 caption, 'assistant' for a Layout Assist answer (xyxy on 0-1000); the MOSS node converts both. */
@@ -341,6 +342,12 @@ export function toIdeogram(state) {
 }
 
 /** Where the reference lands on an `out`-sized copy of the canvas, matching the board's object-fit (1:1 = image pixels on canvas pixels). */
+/** A clipboard image as a named file ("Pasted image.png"); browsers call every pasted image "image.png". */
+export function pastedFile(blob) {
+  const type = blob.type || 'image/png';
+  return new File([blob], `Pasted image.${type.split('/')[1]?.replace('jpeg', 'jpg') || 'png'}`, { type });
+}
+
 export function fitRect(image, size, fit, out) {
   if (fit === 'fill') return { x: 0, y: 0, w: out.width, h: out.height };
   const k = fit === 'actual' ? out.width / size.width
@@ -741,6 +748,8 @@ class LayoutBuilder {
       void this.handleFiles(event.dataTransfer.files);
     });
     this.listen(this.root, 'paste', (event) => this.paste(event));
+    // Clicking the board leaves focus on <body>, outside the builder; a paste there still belongs here.
+    this.listen(document, 'paste', (event) => { if (!this.root.contains(event.target)) this.paste(event); });
     this.listen(window, 'resize', () => { this.closePopover(); this.layoutStage(); });
     this.resizer = new ResizeObserver(() => this.layoutStage());
     this.resizer.observe(this.stage);
@@ -1215,8 +1224,30 @@ class LayoutBuilder {
     { label: 'Import a layout' });
   }
 
+  /** The clipboard's image, read on request (a button). null when there is none or the browser refuses. */
+  async clipboardImage() {
+    if (!navigator.clipboard?.read) return null;
+    for (const item of await navigator.clipboard.read()) {
+      const type = item.types.find((kind) => kind.startsWith('image/'));
+      if (type) return pastedFile(await item.getType(type));
+    }
+    return null;
+  }
+
+  async pasteImage() {
+    try {
+      const image = await this.clipboardImage();
+      if (image) { await this.handleFiles([image]); return; }
+      this.notice('The clipboard has no image. Copy one (or take a screenshot), then try again.', 'warning');
+    } catch {
+      this.notice('This browser keeps the clipboard private here: press Ctrl+V on the builder instead.', 'warning');
+    }
+  }
+
   async pasteFromClipboard() {
     try {
+      const image = await this.clipboardImage().catch(() => null);
+      if (image) { await this.handleFiles([image]); return; }
       const text = await navigator.clipboard.readText();
       if (text) { await this.importText(text, { source: 'the clipboard' }); return; }
       this.notice('The clipboard has no text. Copy a MOSS layout, or paste an image with Ctrl+V.', 'warning');
@@ -1244,6 +1275,7 @@ class LayoutBuilder {
         el('div', { class: 'slb-pop-row' }, el('span', { text: 'Shape' }), fits),
         el('div', { class: 'slb-pop-actions' },
           el('button', { type: 'button', class: 'slb-btn is-small', onclick: () => { this.closePopover(); this.referenceInput.click(); } }, icon('image'), 'Replace…'),
+          el('button', { type: 'button', class: 'slb-btn is-small', title: 'Use the image on the clipboard (Ctrl+V works too)', onclick: () => { this.closePopover(true); void this.pasteImage(); } }, icon('copy'), 'Paste'),
           el('button', { type: 'button', class: 'slb-btn is-small is-danger', onclick: () => { this.closePopover(true); this.clearReference(); } }, icon('trash'), 'Remove'))].filter(Boolean));
     }, { className: 'is-wide', label: 'Reference image' });
   }
@@ -1356,7 +1388,7 @@ class LayoutBuilder {
     const data = event.clipboardData;
     if (!data) return;
     const image = [...data.files].find((file) => file.type.startsWith('image/'));
-    if (image) { event.preventDefault(); void this.handleFiles([image]); return; }
+    if (image) { event.preventDefault(); void this.handleFiles([pastedFile(image)]); return; }
     if (event.target.closest?.('input, textarea, [contenteditable="true"]')) return;
     const text = data.getData('text/plain');
     if (!text) return;
@@ -1462,14 +1494,18 @@ class LayoutBuilder {
       this.listen(lettering, 'change', () => { this.aiFindText = lettering.checked; writeStore('heiss.mossLayout.aiText', lettering.checked); });
       this.listen(look, 'keydown', (event) => { if (event.key === 'Enter') { event.preventDefault(); event.stopPropagation(); this.closePopover(true); void this.extractLayout(); } });
       const fromImage = ref
-        ? [el('div', { class: 'slb-ref-card' }, el('img', { src: ref.url, alt: '' }), el('div', {}, el('strong', { text: ref.name }), el('span', { text: 'Read as the canvas shows it' }))),
+        ? [el('div', { class: 'slb-ref-card' }, el('img', { src: ref.url, alt: '' }), el('div', {}, el('strong', { text: ref.name }), el('span', { text: 'Read as the canvas shows it' })),
+            el('div', { class: 'slb-ref-swap' },
+              el('button', { type: 'button', class: 'slb-btn is-small', title: 'Pick another image', onclick: () => { this.closePopover(true); this.referenceInput.click(); } }, icon('image'), 'Replace…'),
+              el('button', { type: 'button', class: 'slb-btn is-small', title: 'Use the image on the clipboard (Ctrl+V works too)', onclick: () => { this.closePopover(true); void this.pasteImage(); } }, icon('copy'), 'Paste'))),
           look,
           el('label', { class: 'slb-pop-check' }, lettering, el('span', { text: 'Read lettering into text boxes' })),
           el('div', { class: 'slb-pop-actions is-start' },
             action('Extract layout + prompt', 'spark', () => void this.extractLayout(), { primary: true }),
             action('Lettering', 'text', () => void this.findLettering(), { title: 'Add a text box for each line of lettering in the reference' }),
             action(target ? `Snap ${pad2(this.number(target))}` : 'Snap', 'target', () => void this.snapBox(), { disabled: !target, title: target ? 'Fit the selected box to what it describes in the reference' : 'Select a box to fit it to its object' }))]
-        : [el('div', { class: 'slb-pop-actions is-start' }, action('Add an image to read…', 'image', () => this.referenceInput.click(), { primary: true })),
+        : [el('div', { class: 'slb-pop-actions is-start' }, action('Add an image to read…', 'image', () => this.referenceInput.click(), { primary: true }),
+            action('Paste image', 'copy', () => void this.pasteImage(), { title: 'Use the image on the clipboard (Ctrl+V works too)' })),
           el('p', { class: 'slb-pop-foot', text: 'Drop, paste or pick an image: the assistant finds its objects and lettering and writes a layout and prompt for it.' })];
       // From words
       const words = el('textarea', { class: 'slb-input', rows: 3, 'aria-label': 'What to make or change', spellcheck: 'true',

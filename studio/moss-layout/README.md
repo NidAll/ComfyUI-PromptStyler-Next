@@ -45,6 +45,12 @@ Open it with the **AI** button or `I`. Escape or **Stop** cancels a running task
 - **Captions**: describe empty boxes, or rewrite the selected ones.
 - **Another take**: the same request with a new seed.
 
+Pressing Ctrl+V anywhere while the builder is open makes a copied image or screenshot the reference, even
+after a click on the board has moved focus outside the builder. The reference card (AI menu and Reference menu)
+has **Replace…** (pick a file) and **Paste**; with no reference yet, the AI menu has **Paste image**. Both paste
+buttons read the clipboard directly where the browser allows it. A pasted PNG that carries a layout offers to
+import it.
+
 Locked boxes survive every AI result. A new box that overlaps a locked one by IoU ≥ 0.5 is replaced by it.
 The reference is sent as the board shows it (cover, contain, fill or actual size, at most 1152 px, JPEG).
 While a task runs, the board shows a scan beam, the card lists each graph step as ComfyUI reaches it, and new

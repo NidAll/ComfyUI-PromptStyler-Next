@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { layoutRequest, mountLayoutRoutes } from './studio-layout-builder.mjs';
 import { deflateSync } from 'node:zlib';
 import { layoutInfo, studioSize, findLayout, inferSourceSize, normalizeLayout, gridRects, keepAspect, pngTexts,
-  foreignKind, regionsToGrid, gridRect, overlap, keepLocked, carryColours, ocrLines, toIdeogram, fitRect } from './studio-layout-ui.mjs';
+  foreignKind, regionsToGrid, gridRect, overlap, keepLocked, carryColours, ocrLines, toIdeogram, fitRect, pastedFile } from './studio-layout-ui.mjs';
 
 /** A minimal Express stand-in: records the route and replays requests through it. */
 function fakeApp() {
@@ -209,4 +209,13 @@ test('the reference is drawn for the assistant the way the board shows it', () =
   assert.deepEqual(fitRect(square, size, 'contain', out), { x: 0, y: 128, w: 896, h: 896 });
   assert.deepEqual(fitRect(square, size, 'fill', out), { x: 0, y: 0, w: 896, h: 1152 });
   assert.deepEqual(fitRect(square, size, 'actual', { width: 448, height: 576 }), { x: -26, y: 38, w: 500, h: 500 });
+});
+
+test('a pasted clipboard image becomes a named reference file of the same type', async () => {
+  const png = pastedFile(new Blob([new Uint8Array([1, 2, 3])], { type: 'image/png' }));
+  assert.equal(png.name, 'Pasted image.png');
+  assert.equal(png.type, 'image/png');
+  assert.deepEqual([...new Uint8Array(await png.arrayBuffer())], [1, 2, 3]);
+  assert.equal(pastedFile(new Blob([], { type: 'image/jpeg' })).name, 'Pasted image.jpg');
+  assert.equal(pastedFile(new Blob([])).type, 'image/png');
 });

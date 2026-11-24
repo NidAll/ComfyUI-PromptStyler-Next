@@ -965,4 +965,17 @@ def test_layout_assist_schema():
     names = [item.id for item in schema.inputs]
     assert names[:3] == ["upscaler", "task", "request"]
     assert {"image", "objects", "words", "layout"} <= set(names)
-    assert [item.display_name or item.id for item in schema.outputs] == ["layout", "labels", "inspection"]
+    assert [item.display_name or item.id for item in schema.outputs] == ["layout", "labels", "inspection", "lettering"]
+    assert {"read_words", "scene"} <= set(names)
+    assert next(item for item in schema.inputs if item.id == "words").lazy
+    assert next(item for item in schema.inputs if item.id == "scene").force_input
+
+
+def test_layout_assist_skips_ocr_only_when_told_and_connected():
+    lazy = LAYOUT_ASSIST.check_lazy_status
+    assert lazy(task="describe_regions", words=None, read_words=None) == ["words"]
+    assert lazy(task="describe_regions", words=None, read_words=True) == ["words"]
+    assert lazy(task="describe_regions", words=None, read_words=False) == []
+    assert lazy(task="describe_regions", read_words=True) == []  # words not connected
+    assert lazy(task="describe_regions", words=[{"x": 0}], read_words=True) == []  # already evaluated
+    assert lazy(task="list_objects", words=None) == []

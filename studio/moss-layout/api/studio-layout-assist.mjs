@@ -1,6 +1,8 @@
 // MOSS layout builder AI routes (2026-11-24). One queued ComfyUI graph per action:
 //   LFM3-VL (PromptStyler Next "Layout Assist", fast graph decode) writes and describes layouts as JSON;
-//   WeVisOne-VL (core "WeVisOne-VL Detect") finds boxes and lettering. Boxes travel as [x1, y1, x2, y2] on
+//   WeVisOne-VL (core "WeVisOne-VL Detect") finds boxes and lettering. An image layout boxes only what matters
+//   (subject, a few objects, lettering blocks); the setting and repeated patterns go into the summary caption as
+//   the background (Layout Assist's select_regions). Boxes travel as [x1, y1, x2, y2] on
 //   a 0-1000 grid; the MOSS node's import converts them onto the canvas. Results are cached by content, so
 //   asking again for the same image and settings answers at once. Nothing is saved to the gallery.
 import crypto from 'node:crypto';
@@ -14,13 +16,14 @@ const WEVISONE = /wevisone.*\.safetensors$/i;
 const MAX_IMAGE = 12 * 1024 * 1024;
 const MAX_ITEMS = 24;
 const CACHE_SIZE = 40;
-const WEVISONE_TOKENS = { detection: 384, referring: 160, ocr: 640 };
+const WEVISONE_TOKENS = { detection: 256, referring: 160, ocr: 640 };
+const LETTERING_LABELS = ['title', 'text'];
 const headers = { 'content-type': 'application/json' };
 const defaultDelay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 /** What each task's graph runs, in order; the UI animates these and the socket marks the live one. */
 export const STEPS = {
-  image: [['list', 'Looking at the image'], ['detect', 'Finding objects'], ['ocr', 'Reading lettering'], ['describe', 'Describing every box']],
+  image: [['list', 'Looking at the image'], ['detect', 'Finding objects and lettering'], ['describe', 'Describing every box']],
   describe: [['describe', 'Describing boxes']],
   text: [['assist', 'Planning the layout']],
   edit: [['assist', 'Editing the layout']],
@@ -129,7 +132,8 @@ export function assistGraph(args, models, name = '') {
   if (name) graph.img = { class_type: 'LoadImage', inputs: { image: name } };
   const lfm3 = () => { graph.load = { class_type: 'PSNextLoadUpscaler', inputs: { model_name: models.lfm3 } }; return ['load', 0]; };
   const wevisone = () => { graph.clip = { class_type: 'CLIPLoader', inputs: { clip_name: models.wevisone, type: 'stable_diffusion', device: 'default' } }; return ['clip', 0]; };
-  // Answers run ~20 tokens per box or word; the cap stops a rare repetition loop (seen once: 4096 tokens).
+  // Answers run ~20 tokens per box or word. The caps stop a rare repetition loop (seen once: 4096 tokens) and, for
+  // detection, the long tail of a label repeated all over (45 roses): the labels come most important first.
   const detect = (id, task, query) => { graph[id] = { class_type: 'WeVisOneDetect', inputs: { clip: ['clip', 0], image, task, query, individual_masks: false, max_length: WEVISONE_TOKENS[task] } }; };
   const assist = (id, inputs) => { graph[id] = { class_type: 'PSNextLayoutAssist', inputs: { upscaler: ['load', 0], request: '', seed: args.seed ?? 0, temperature: args.temperature ?? 0, ...inputs } }; };
   const preview = (from, inspection) => { graph.preview = { class_type: 'PSNextPreviewPrompt', inputs: { base_prompt: from, inspection } }; };
@@ -145,14 +149,14 @@ export function assistGraph(args, models, name = '') {
     if (!models.wevisone) {
       assist('describe', { task: 'image_layout', image, layout: json({ width, height }) });
     } else {
+      // One detector call finds the objects and the lettering blocks: the list adds "title"/"text" to its labels
+      // when it sees lettering, and LFM3 reads the words while it captions (no OCR pass, one model swap less).
       wevisone();
-      let query = args.labels.join('\n');
-      if (!query) { assist('list', { task: 'list_objects', image }); query = ['list', 1]; }
+      let query = [...args.labels, ...(args.labels.length && args.findText ? LETTERING_LABELS : [])].join('\n');
+      let scene = {};
+      if (!query) { assist('list', { task: 'list_objects', image }); query = ['list', 1]; scene = { scene: ['list', 0] }; }
       detect('detect', 'detection', query);
-      // OCR ignores its query; wiring it to the list makes ComfyUI run both WeVisOne nodes back to back
-      // (LFM3 → WeVisOne → LFM3): one model swap fewer than OCR first (a swap costs seconds when both models do not fit in VRAM together).
-      if (args.findText) detect('ocr', 'ocr', Array.isArray(query) ? query : '');
-      assist('describe', { task: 'describe_regions', image, objects: ['detect', 1], ...(args.findText ? { words: ['ocr', 1] } : {}), layout: json({ width, height }) });
+      assist('describe', { task: 'describe_regions', image, objects: ['detect', 1], ...scene, ...(args.findText ? {} : { read_words: false }), layout: json({ width, height }) });
     }
     preview(['describe', 0], ['describe', 2]);
     return graph;
@@ -165,6 +169,16 @@ export function assistGraph(args, models, name = '') {
   assist('assist', { task: task === 'text' ? 'text_layout' : 'edit_layout', request: args.request, layout: json({ ...(args.layout || {}), width, height }) });
   preview(['assist', 0], ['assist', 2]);
   return graph;
+}
+
+/** Finished steps when `step` goes live: moving forward finishes every earlier step (a skipped one too); a
+ *  step that runs again late (OCR, asked for lazily by describe) is live, not finished, until the next one. */
+export function stepsDone(progress, step) {
+  if (!progress.started) return [];
+  const done = new Set(progress.done);
+  if (step > progress.step) for (let index = 0; index < step; index += 1) done.add(index);
+  done.delete(step);
+  return [...done].sort((a, b) => a - b);
 }
 
 /** WeVisOne's raw answer ("<ref>dog</ref><box><x1><y1><x2><y2>,...</box>") as xyxy boxes on 0-1000. */
@@ -243,8 +257,7 @@ export function createLayoutAssist({
         if (step < 0 || !job?.progress) return;
         const { progress } = job;
         if (tokens != null) { if (step === progress.step) patch({ progress: { ...progress, tokens } }); return; }
-        const done = progress.started && progress.step !== step && !progress.done.includes(progress.step) ? [...progress.done, progress.step] : progress.done;
-        patch({ progress: { ...progress, step, started: true, done, phase: steps[step][1], tokens: 0 } });
+        patch({ progress: { ...progress, step, started: true, done: stepsDone(progress, step), phase: steps[step][1], tokens: 0 } });
       });
       await waitForOpen(socket);
       if (canceled()) { terminal(id, { status: 'canceled' }); return; }

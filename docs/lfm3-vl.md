@@ -60,7 +60,7 @@ answer carries `"grid": "xyxy-1000"`; the MOSS Image Layout Prompt Builder impor
 Captions come back under numbered keys so each lands on its own box; answers are repaired leniently
 (a describe answer with a stray quote is salvaged field by field), not retried. Detector clean-up drops
 backdrops, parts or clothing of a boxed person, a lettering box the OCR lines cover, and more than three
-boxes of one label. Caption quality was checked on three renders only.
+boxes of one label. Caption quality was checked on three renders only. `list_objects` puts the picture's subject first and reports `lettering`; wire that output to a describe step's `read_words` and the lazy `words` input skips OCR on images without text.
 
 ## Single-file installation
 

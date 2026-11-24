@@ -237,6 +237,7 @@ html.slb-open,html.slb-open body{overflow:hidden}
 .slb-ref-card img{width:52px;height:52px;flex:none;border-radius:7px;object-fit:cover;box-shadow:0 0 0 1px #ffffff1f}
 .slb-ref-card div{display:grid;min-width:0;gap:1px}.slb-ref-card strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:12px;font-weight:550}
 .slb-ref-card span{font-size:11px;color:var(--slb-muted);font-variant-numeric:tabular-nums}
+.slb-ref-card .slb-ref-swap{display:flex;flex:none;gap:4px;margin-left:auto}
 .slb-pop-warn{margin:2px 8px 4px;padding:6px 9px;border-radius:9px;background:#ffd08a12;color:#ffe2a8;font-size:11px}
 .slb-pop-actions{display:flex;justify-content:flex-end;gap:6px;padding:8px 6px 4px}
 .slb-pop-foot{margin:4px 8px 6px;font-size:11px;color:var(--slb-muted)}

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validateAssist, assistGraph, parseGrounding, createLayoutAssist, cacheKey, STEPS } from './studio-layout-assist.mjs';
+import { validateAssist, assistGraph, parseGrounding, createLayoutAssist, cacheKey, STEPS, stepsDone } from './studio-layout-assist.mjs';
 
 const PNG = 'data:image/png;base64,' + Buffer.from('fake png bytes').toString('base64');
 const models = { lfm3: 'lfm3-vl-2b-heretic-int8-convrot.safetensors', wevisone: 'wevisone_vl_2b_int8_convrot.safetensors' };
@@ -17,19 +17,27 @@ test('validation explains missing pieces in plain words', () => {
   assert.equal(args.findText, true);
 });
 
-test('image graph chains LFM3 objects -> WeVisOne -> LFM3 descriptions in one prompt', () => {
+test('image graph chains LFM3 objects -> one WeVisOne call -> LFM3 descriptions in one prompt', () => {
   const args = validateAssist({ task: 'image', width: 896, height: 1152, image: PNG });
   const graph = assistGraph(args, models, 'ref.png');
-  assert.deepEqual(graph.detect.inputs.query, ['list', 1]);
+  assert.deepEqual(graph.detect.inputs.query, ['list', 1], 'the list labels include title/text when it sees lettering');
   assert.equal(graph.list.inputs.task, 'list_objects');
   assert.deepEqual(graph.describe.inputs.objects, ['detect', 1]);
-  assert.deepEqual(graph.describe.inputs.words, ['ocr', 1]);
-  assert.deepEqual(graph.ocr.inputs.query, ['list', 1], 'OCR waits for the LFM3 list, so both WeVisOne nodes run back to back');
+  assert.deepEqual(graph.describe.inputs.scene, ['list', 0], 'the list hands its background to the describe step');
+  assert.equal(graph.ocr, undefined, 'no OCR pass: LFM3 reads the detected lettering while it captions');
+  assert.equal(graph.describe.inputs.words, undefined);
+  assert.equal(graph.describe.inputs.read_words, undefined);
   assert.deepEqual(graph.preview.inputs, { base_prompt: ['describe', 0], inspection: ['describe', 2] });
   const labelled = assistGraph(validateAssist({ task: 'image', width: 896, height: 1152, image: PNG, labels: 'dog', findText: false }), models, 'ref.png');
   assert.equal(labelled.list, undefined);
-  assert.equal(labelled.ocr, undefined);
   assert.equal(labelled.detect.inputs.query, 'dog');
+  assert.equal(labelled.describe.inputs.read_words, false);
+  assert.equal(labelled.describe.inputs.scene, undefined);
+  const labelledText = assistGraph(validateAssist({ task: 'image', width: 896, height: 1152, image: PNG, labels: 'dog' }), models, 'ref.png');
+  assert.equal(labelledText.detect.inputs.query, 'dog\ntitle\ntext');
+  assert.equal(labelledText.describe.inputs.read_words, undefined, 'typed labels still find and read lettering');
+  const noText = assistGraph(validateAssist({ task: 'image', width: 896, height: 1152, image: PNG, findText: false }), models, 'ref.png');
+  assert.equal(noText.describe.inputs.read_words, false, 'Find text off: detected lettering is not read');
   const noDetector = assistGraph(args, { ...models, wevisone: '' }, 'ref.png');
   assert.equal(noDetector.describe.inputs.task, 'image_layout');
 });
@@ -98,5 +106,14 @@ test('cache keys ignore freshness but not the image or settings', () => {
   const b = validateAssist({ task: 'image', width: 896, height: 1152, image: PNG, findText: false });
   assert.notEqual(cacheKey(a), cacheKey(b));
   assert.equal(cacheKey(a), cacheKey({ ...a, fresh: true }));
-  assert.ok(STEPS.image.length === 4);
+  assert.deepEqual(STEPS.image.map(([node]) => node), ['list', 'detect', 'describe']);
+});
+
+test('steps: forward finishes every earlier step, a lazily late step is live until the next one', () => {
+  const at = (step, done = [], started = true) => ({ step, done, started });
+  assert.deepEqual(stepsDone(at(0, [], false), 0), []);
+  assert.deepEqual(stepsDone(at(0), 1), [0]);
+  assert.deepEqual(stepsDone(at(1, [0]), 3), [0, 1, 2], 'OCR skipped: list, detect and the lettering check are finished');
+  assert.deepEqual(stepsDone(at(3, [0, 1, 2]), 2), [0, 1], 'OCR asked for late is live again');
+  assert.deepEqual(stepsDone(at(2, [0, 1]), 3), [0, 1, 2]);
 });

@@ -70,5 +70,7 @@ LFM3 decoding on CUDA goes through `comfyui/upscaler/lfm3/engine.py` (eager pref
 it is stored on the loader handle and must stay identical to the Anima Prompt Architect copy. Layout Assist
 (`layout_assist.py`, node `PSNextLayoutAssist`) owns layout JSON for Studio's builder: boxes are xyxy on
 0-1000, captions use numbered keys, no retries. Check live answers on real renders before changing its prompts.
+`layout_assist.py` is byte-identical to `src/moss_layout/assist.py` in the standalone `moss-layout-pipeline`
+repository; copy every change across and run both suites. Edits are worded changes applied by `apply_edit`.
 `studio/moss-layout/` is a copy of the HEISS install's `api/studio-layout-*` overlay; edit it in the install and copy
 it here (tests: `npm run test:moss-layout` in `studio/`). Its `tests/host/` stand-ins never go into HEISS.

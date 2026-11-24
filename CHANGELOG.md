@@ -6,6 +6,17 @@
   Transformers remains the fallback for token-biased requests and non-CUDA devices.
 - New **Layout Assist** node (`PSNextLayoutAssist`): MOSS layout JSON from LFM3-VL (list objects,
   describe boxes, idea → layout, edit by instruction, image → layout), boxes as xyxy on 0–1000.
+- Layout Assist `list_objects` names the subject first (the detector answers labels in order under a cap, so the
+  subject is never cut off), skips scattered things, and outputs `lettering`; describe's `words` input is lazy
+  and `read_words` skips OCR on text-free images. The Studio builder pastes clipboard images from anywhere and
+  offers Replace/Paste next to the reference.
+- Layout Assist second pass: detector boxes are sorted into things (boxed) and stuff (setting, patterns,
+  parts, contents, duplicates), which go into a background sentence in the summary; small repeats group into
+  one counted box. Lettering is found by the same detector call (`title`/`text` labels) and read by LFM3 while
+  it captions, so the image task needs no OCR pass. New optional `scene` input carries the list's background to
+  describe. Edits return worded changes (place, size, caption, words, remove, add) that `apply_edit` applies with
+  guards against restated or unasked changes and keeps the summary consistent. On 14 test renders: about a fifth
+  faster and about 40% fewer boxes.
 - HEISS Studio MOSS layout builder overlay ([studio/moss-layout/](studio/moss-layout/README.md)): visual
   editor with an AI menu (image → layout + prompt, idea → layout, edit, captions, snap, lettering), live step
   animation, result cache, Ideogram 4 import/export. Pipeline: [docs/moss-layout-pipeline.md](docs/moss-layout-pipeline.md).
