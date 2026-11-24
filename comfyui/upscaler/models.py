@@ -7,6 +7,8 @@ from pathlib import Path
 
 import folder_paths
 
+from .moss_upsampler import is_upsampler_header
+
 MODEL_KIND = "anima_prompt_architect"
 DEFAULT_MODEL = "minicpm-v4.7-1b-heretic-int8-convrot.safetensors"
 
@@ -51,6 +53,8 @@ def model_choices() -> list[str]:
                     choices.append(name)
                 lfm = json.loads((reader.metadata() or {}).get("lfm3_vl", "{}"))
                 if isinstance(lfm, dict) and lfm.get("kind") == "lfm3_vl" and lfm.get("version") == 1:
+                    choices.append(name)
+                elif is_upsampler_header(reader.keys()):
                     choices.append(name)
         except (ValueError, OSError, SafetensorError):
             continue

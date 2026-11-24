@@ -2,7 +2,8 @@
 
 from comfy_api.latest import io
 
-from .upscaler import idea_prompts
+from .upscaler import idea_prompts, moss_upsampler
+from .upscaler.layout_assist import TASKS as LAYOUT_TASKS
 from .upscaler.lfm_prompts import CONTRACT_VERSION as LFM_CONTRACT_VERSION
 from .upscaler.models import DEFAULT_MODEL, bundle_fingerprint, model_choices
 from .upscaler.prompts import CONTRACT_VERSION, DETAIL_MODES
@@ -18,8 +19,8 @@ class PSNextLoadUpscaler(io.ComfyNode):
             node_id="PSNextLoadUpscaler",
             display_name="PromptStyler Next: Load Prompt Upscaler",
             category="PromptStyler Next/upscaling",
-            description="Load a local self-contained MiniCPM or LFM3-VL INT8 ConvRot model. ComfyUI caches this handle and manages its VRAM. Requires the native CUDA/Kitchen backend.",
-            search_aliases=["minicpm", "lfm3", "vlm", "prompt", "upscale"],
+            description="Load a local self-contained MiniCPM or LFM3-VL INT8 ConvRot model, or the Qwen3.5 MOSS prompt upsampler. ComfyUI caches this handle and manages its VRAM. Requires the native CUDA/Kitchen backend.",
+            search_aliases=["minicpm", "lfm3", "qwen3.5", "upsampler", "vlm", "prompt", "upscale"],
             inputs=[
                 io.Combo.Input(
                     "model_name",
@@ -212,6 +213,29 @@ class PSNextPromptIdea(io.ComfyNode):
                     advanced=True,
                     tooltip="0 sizes the budget from detail and draft length.",
                 ),
+                io.Combo.Input(
+                    "style_mode",
+                    options=list(idea_prompts.STYLE_MODES),
+                    default="open",
+                    optional=True,
+                    advanced=True,
+                    tooltip="open lets ideas pick a medium or photo look. neutral describes content only and leaves the look to the image model. match writes content for the look in style and leaves every axis in style_axes to it.",
+                ),
+                io.String.Input(
+                    "style",
+                    default="",
+                    multiline=True,
+                    optional=True,
+                    advanced=True,
+                    tooltip="match only: the selected style's own prompt text (for example PromptStyler Compose with an empty prompt).",
+                ),
+                io.String.Input(
+                    "style_axes",
+                    default="",
+                    optional=True,
+                    advanced=True,
+                    tooltip="match only: axes the style sets, comma-separated (medium, lighting, palette, composition, texture, mood, detail).",
+                ),
             ],
             outputs=[io.String.Output("prompt"), io.String.Output("inspection")],
         )
@@ -236,6 +260,9 @@ class PSNextPromptIdea(io.ComfyNode):
         earlier="",
         recent="",
         max_new_tokens=0,
+        style_mode="open",
+        style="",
+        style_axes="",
     ):
         from .upscaler.runtime import ideate
 
@@ -254,8 +281,178 @@ class PSNextPromptIdea(io.ComfyNode):
                 recent or "",
                 max_new_tokens,
                 earlier or "",
+                style_mode or "open",
+                style or "",
+                style_axes or "",
             )
         )
+
+
+class PSNextMossUpsampler(io.ComfyNode):
+    """Expand a short draft with the MOSS-Image prompt-upsampling fine-tune (Qwen3.5-2B)."""
+
+    @classmethod
+    def define_schema(cls) -> io.Schema:
+        defaults = moss_upsampler.DEFAULT_SAMPLING
+        return io.Schema(
+            node_id="PSNextMossUpsampler",
+            display_name="PromptStyler Next: MOSS Prompt Upsampler",
+            category="PromptStyler Next/upscaling",
+            description="Expand a short idea into a rich, vivid MOSS-Image prompt with the Qwen3.5 MOSS upsampler fine-tune. Uses the fine-tune's exact training system prompt with thinking off; an optional style is appended to the draft as a short trailing clause; each seed writes a different take. Text only. Review the result: the model invents detail on purpose.",
+            search_aliases=["moss", "qwen3.5", "upsample", "enhance", "expand", "prompt"],
+            inputs=[
+                UPSCALER.Input("upscaler"),
+                io.String.Input("prompt", default="", multiline=True, dynamic_prompts=False),
+                io.Int.Input("seed", default=0, min=0, max=0xFFFFFFFFFFFFFFFF, control_after_generate=True),
+                io.Float.Input(
+                    "temperature",
+                    default=defaults["temperature"],
+                    min=0.0,
+                    max=1.5,
+                    step=0.05,
+                    tooltip="0 decodes greedily (same output every run). The v2 model card recommends 0.55-0.65; higher is more varied.",
+                ),
+                io.Float.Input("top_p", default=defaults["top_p"], min=0.0, max=1.0, step=0.01, advanced=True),
+                io.Int.Input("top_k", default=defaults["top_k"], min=0, max=1000, advanced=True),
+                io.Float.Input("min_p", default=defaults["min_p"], min=0.0, max=1.0, step=0.01, advanced=True),
+                io.Float.Input("presence_penalty", default=defaults["presence_penalty"], min=0.0, max=2.0, step=0.05, advanced=True),
+                io.Int.Input(
+                    "max_new_tokens",
+                    default=moss_upsampler.DEFAULT_MAX_NEW_TOKENS,
+                    min=64,
+                    max=2048,
+                    advanced=True,
+                    tooltip="Output budget. v2 training prompts reach about 637 tokens; generation stops at the end token, and a cut-off tail is trimmed to the last sentence.",
+                ),
+                io.Boolean.Input(
+                    "offload_after",
+                    default=False,
+                    advanced=True,
+                    tooltip="True releases the model's VRAM after each run. ComfyUI can otherwise offload it when another model needs memory.",
+                ),
+                io.String.Input(
+                    "style",
+                    default="",
+                    optional=True,
+                    dynamic_prompts=False,
+                    tooltip="Optional short look (for example a PromptStyler Next style clause). It is appended to the draft as a trailing clause so the upsampler writes the whole prompt in that medium; capped at 30 words.",
+                ),
+                io.Float.Input(
+                    "repetition_penalty",
+                    default=moss_upsampler.DEFAULT_REPETITION_PENALTY,
+                    min=1.0,
+                    max=2.0,
+                    step=0.01,
+                    optional=True,
+                    advanced=True,
+                    tooltip="1.05 is the v2 model card setting; 1.0 turns it off.",
+                ),
+                io.Boolean.Input(
+                    "guard",
+                    default=True,
+                    optional=True,
+                    tooltip="Temporary v2 workaround: swaps provenance tokens (trending on artstation, 8k, unreal engine) in the draft, then removes unrequested visible text (watermarks, credit lines, quoted lettering), negation tails and, for black-and-white drafts, color words. Regex-based: unusual wording can slip through.",
+                ),
+                io.Int.Input(
+                    "max_takes",
+                    default=1,
+                    min=1,
+                    max=moss_upsampler.MAX_TAKES,
+                    optional=True,
+                    advanced=True,
+                    tooltip="With the guard on, a sampled run writes another take (seed+1, ...) only when the guard gives up on the last one because cleaning would remove too much. 1 never retries. Greedy runs always write one take.",
+                ),
+            ],
+            outputs=[io.String.Output("prompt"), io.String.Output("inspection")],
+        )
+
+    @classmethod
+    def fingerprint_inputs(cls, **kwargs):
+        return moss_upsampler.CONTRACT_VERSION
+
+    @classmethod
+    def execute(
+        cls,
+        upscaler,
+        prompt="",
+        seed=0,
+        temperature=moss_upsampler.DEFAULT_SAMPLING["temperature"],
+        top_p=moss_upsampler.DEFAULT_SAMPLING["top_p"],
+        top_k=moss_upsampler.DEFAULT_SAMPLING["top_k"],
+        min_p=0.0,
+        presence_penalty=0.0,
+        max_new_tokens=moss_upsampler.DEFAULT_MAX_NEW_TOKENS,
+        offload_after=False,
+        style="",
+        repetition_penalty=moss_upsampler.DEFAULT_REPETITION_PENALTY,
+        guard=True,
+        max_takes=1,
+    ):
+        from .upscaler.runtime import upsample_moss
+
+        return io.NodeOutput(
+            *upsample_moss(
+                upscaler,
+                prompt,
+                seed,
+                temperature,
+                top_p,
+                top_k,
+                min_p,
+                presence_penalty,
+                max_new_tokens,
+                offload_after,
+                style or "",
+                repetition_penalty,
+                guard,
+                max_takes,
+            )
+        )
+
+
+class PSNextLayoutAssist(io.ComfyNode):
+    """LFM3-VL writes or describes a MOSS layout as JSON; boxes are xyxy on a 0-1000 grid."""
+
+    @classmethod
+    def define_schema(cls) -> io.Schema:
+        return io.Schema(
+            node_id="PSNextLayoutAssist",
+            display_name="PromptStyler Next: Layout Assist (LFM3-VL)",
+            category="PromptStyler Next/upscaling",
+            description=(
+                "JSON layout work for the MOSS layout builder with LFM3-VL. list_objects names the main things "
+                "in an image (wire 'labels' into a detector query); describe_regions captions detector boxes or a "
+                "layout's boxes and writes the scene caption and style words; text_layout plans a layout from an "
+                "idea; edit_layout applies an instruction; image_layout places boxes without a detector. Boxes are "
+                "[x1, y1, x2, y2] on a 0-1000 grid. Decodes as one CUDA graph per token."
+            ),
+            search_aliases=["layout", "moss", "bbox", "lfm3", "json", "describe", "regions"],
+            inputs=[
+                UPSCALER.Input("upscaler"),
+                io.Combo.Input("task", options=list(LAYOUT_TASKS), default="describe_regions"),
+                io.String.Input("request", default="", multiline=True, dynamic_prompts=False,
+                                tooltip="The idea for text_layout, the instruction for edit_layout, or a scene note."),
+                io.String.Input("layout", default="", multiline=True, dynamic_prompts=False, optional=True,
+                                tooltip='Optional JSON {"caption", "items": [{"label", "caption", "text", "bbox"}]} (xyxy, 0-1000).'),
+                io.Image.Input("image", optional=True),
+                io.BoundingBox.Input("objects", optional=True, force_input=True,
+                                     tooltip="Detector boxes in pixels of the image (for example WeVisOne-VL Detect)."),
+                io.BoundingBox.Input("words", optional=True, force_input=True,
+                                     tooltip="OCR word boxes; joined into lines of lettering."),
+                io.Int.Input("seed", default=0, min=0, max=0xFFFFFFFFFFFFFFFF, control_after_generate=False),
+                io.Float.Input("temperature", default=0.0, min=0.0, max=1.2, step=0.05,
+                               tooltip="0 decodes greedily: fastest and repeatable."),
+            ],
+            outputs=[io.String.Output("layout"), io.String.Output("labels"), io.String.Output("inspection")],
+        )
+
+    @classmethod
+    def execute(cls, upscaler, task, request="", layout="", image=None, objects=None, words=None, seed=0,
+                temperature=0.0):
+        from .upscaler.runtime import layout_assist
+
+        return io.NodeOutput(*layout_assist(upscaler, task, image, request, layout or "", objects, words, seed,
+                                            temperature))
 
 
 class PSNextPreviewPrompt(io.ComfyNode):

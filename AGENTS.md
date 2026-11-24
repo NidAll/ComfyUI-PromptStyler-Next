@@ -51,3 +51,24 @@ Expanded authoring uses bounded physical detail and preserves standalone absence
 clauses. Repair may not discard satisfied lexical checks. Curated prompt examples
 are inference guidance, not trained distillation; keep remaining invention/style
 leakage and untested diffusion quality explicit in validation reports.
+
+The MOSS upsampler path (`comfyui/upscaler/moss_upsampler.py`, node `PSNextMossUpsampler`)
+runs the owner's Qwen3.5-2B fine-tune as a plain ComfyUI Qwen3.5 text model through core
+`load_clip`/`CLIP.generate`; do not vendor model code for it. Keep the model card contract:
+the exact SFT system prompt, thinking off, and a user turn that is the draft plus at most
+the optional `style` look as a trailing `, <look>` clause (30 words; evaluated in
+docs/moss-upsampler.md). Do not add instructions or lenses, or change the style format,
+without a retrained model or a new live evaluation.
+The v2 output guard (`comfyui/upscaler/moss_guard.py`, inputs `guard`/`max_takes`) is a
+temporary regex workaround for v2's stray text, negation tails and B&W color words; it edits
+only the draft's provenance tokens and the output, never the system prompt. Check pattern
+changes against live outputs of realistic length (cleaning backs off above 30% removal).
+A checkpoint with `mtp.*` tensors decodes with core's adaptive MTP (`mtp=True`); fixed modes were
+measured slower. Speculative output is not bit-identical to plain decoding (verify-pass numerics);
+compare speed and outputs on both files before changing the head or the mode.
+LFM3 decoding on CUDA goes through `comfyui/upscaler/lfm3/engine.py` (eager prefill, one CUDA graph per token);
+it is stored on the loader handle and must stay identical to the Anima Prompt Architect copy. Layout Assist
+(`layout_assist.py`, node `PSNextLayoutAssist`) owns layout JSON for Studio's builder: boxes are xyxy on
+0-1000, captions use numbered keys, no retries. Check live answers on real renders before changing its prompts.
+`studio/moss-layout/` is a copy of the HEISS install's `api/studio-layout-*` overlay; edit it in the install and copy
+it here (tests: `npm run test:moss-layout` in `studio/`). Its `tests/host/` stand-ins never go into HEISS.

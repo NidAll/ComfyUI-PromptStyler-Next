@@ -14,10 +14,27 @@ import random
 import re
 from dataclasses import dataclass
 
-CONTRACT_VERSION = "idea-explore-1"
+CONTRACT_VERSION = "idea-explore-2"
 EXPLORATIONS = ("explore", "wild")
 DETAILS = ("concise", "balanced", "detailed")
 TARGETS = ("general", "moss_image", "krea2")
+# open: lenses may choose a medium or photo look (original behaviour). neutral: no style is selected, so the idea
+# describes content only and leaves the look to the image model. match: a selected style is appended after the
+# prompt; the idea writes content that suits it and leaves every axis the style sets to the style.
+STYLE_MODES = ("open", "neutral", "match")
+STYLE_AXES = ("medium", "lighting", "palette", "composition", "texture", "mood", "detail")
+# Lenses and structures that decide the look themselves. Medium and the photo brief always do; the others only
+# compete with a style that sets the same axis.
+_LOOK_LENSES = {"medium"}
+_LOOK_STRUCTURES = {"photo_brief"}
+_LENS_AXIS = {"medium": "medium", "palette": "palette", "light": "lighting", "viewpoint": "composition", "genre": "mood"}
+_STRUCTURE_AXIS = {"atmosphere": "palette", "composition": "composition"}
+# Words a style-free idea should not reach for; decoding is softly biased away from them (not banned).
+STYLE_WORDS = (
+    "photograph", "photography", "photorealistic", "hyperrealistic", "painting", "painted", "illustration",
+    "illustrated", "render", "rendered", "cinematic", "bokeh", "35mm", "50mm", "85mm", "24mm", "aperture",
+    "watercolor", "gouache", "sketch", "anime", "cartoon", "polaroid", "grainy", "stylized", "aesthetic",
+)
 
 
 @dataclass(frozen=True)
@@ -363,6 +380,11 @@ _TARGET = {
     "moss_image": "MOSS Image, which reads long natural-language captions; tie every attribute to its subject and state spatial relations plainly",
     "krea2": "Krea 2, which reads rich natural-language descriptions; describe light, surfaces and photographic or painterly qualities concretely",
 }
+# Without "photographic or painterly qualities": the look comes from the style step or the image model.
+_CONTENT_TARGET = {
+    **_TARGET,
+    "krea2": "Krea 2, which reads rich natural-language descriptions; describe surfaces, materials and physical light concretely",
+}
 _KEEP = {
     "explore": "the draft's main subjects with their number and key traits, their action, and the setting if the draft names one, "
     "plus names, colors, quoted text and exclusions. Change or add only what the draft leaves open.",
@@ -468,6 +490,66 @@ def validate(
     return prompt
 
 
+OPEN_STYLE = {"mode": "open", "text": "", "axes": frozenset()}
+
+
+def style_context(style_mode="open", style="", style_axes="") -> dict:
+    """Validated style guidance: the mode, the selected style's own prompt text and the axes it sets."""
+    if style_mode not in STYLE_MODES:
+        raise ValueError("style_mode must be open, neutral or match")
+    if not isinstance(style, str) or len(style) > 1500 or not isinstance(style_axes, str) or len(style_axes) > 200:
+        raise ValueError("style or style_axes is too long")
+    text = re.sub(r"\s+", " ", _CONTROL.sub(" ", style)).strip()
+    axes = recent_keys(style_axes)
+    unknown = axes - set(STYLE_AXES)
+    if unknown:
+        raise ValueError("Unknown style axis: " + ", ".join(sorted(unknown)))
+    if style_mode == "match" and not text:
+        raise ValueError("style_mode match needs the selected style's prompt text in style")
+    if style_mode != "match":
+        text, axes = "", set()
+    return {"mode": style_mode, "text": text, "axes": frozenset(axes)}
+
+
+def excluded(style: dict | None) -> tuple[set[str], set[str]]:
+    """Lens and structure keys that would decide the look instead of the selected style (or the model)."""
+    style = style or OPEN_STYLE
+    if style["mode"] == "open":
+        return set(), set()
+    lenses = set(_LOOK_LENSES) | {key for key, axis in _LENS_AXIS.items() if axis in style["axes"]}
+    structures = set(_LOOK_STRUCTURES) | {key for key, axis in _STRUCTURE_AXIS.items() if axis in style["axes"]}
+    return lenses, structures
+
+
+def style_rules(style: dict | None) -> list[str]:
+    """Instructions that keep the idea's wording from competing with the look."""
+    style = style or OPEN_STYLE
+    if style["mode"] == "open":
+        return []
+    lines = []
+    if style["mode"] == "match":
+        lines.append(
+            "Style: the image is rendered in this look, which is added after your prompt: "
+            + style["text"]
+            + " Choose content that this look shows well, but do not repeat, describe or contradict it."
+        )
+    else:
+        lines.append("Style: none is chosen; the image model decides the look.")
+    lines.append(
+        "Describe only what is in the picture. Do not name an art medium, art style, artist, rendering technique, "
+        "camera, lens, film stock or color grade, and do not call it a photo, painting or illustration."
+    )
+    if "lighting" in style["axes"]:
+        lines.append("Leave the lighting style to the look: mention light sources only as objects in the scene.")
+    if "palette" in style["axes"]:
+        lines.append("Leave the color scheme to the look: name colors only for specific objects the draft colors.")
+    if "composition" in style["axes"]:
+        lines.append("Leave framing and camera angle to the look.")
+    if "mood" in style["axes"]:
+        lines.append("Leave the overall mood to the look; show the subject's own emotion only through pose and expression.")
+    return lines
+
+
 def recent_keys(recent: str) -> set[str]:
     return {item.strip() for item in re.split(r"[,\s]+", recent or "") if item.strip()}
 
@@ -484,11 +566,29 @@ def without_quotes(text: str) -> str:
 
 
 def plan(
-    seed: int, exploration: str, detail: str, lens: str = "auto", structure: str = "auto", recent: str = ""
+    seed: int,
+    exploration: str,
+    detail: str,
+    lens: str = "auto",
+    structure: str = "auto",
+    recent: str = "",
+    style: dict | None = None,
 ) -> dict:
-    """Seeded lens/structure/spark choice that skips keys used recently while alternatives remain."""
+    """Seeded lens/structure/spark choice that skips keys used recently while alternatives remain.
+
+    With a ``neutral`` or ``match`` style, lenses and structures that would decide the look are never picked.
+    """
     rng = random.Random(int(seed) & 0xFFFFFFFFFFFFFFFF)
     used = recent_keys(recent)
+    skip_lenses, skip_structures = excluded(style)
+    if lens in skip_lenses:
+        raise ValueError(f"The {LENS_BY_KEY[lens].label} lens decides the look; choose it only with style_mode open")
+    if structure in skip_structures:
+        raise ValueError(
+            f"The {STRUCTURE_BY_KEY[structure].label} structure decides the look; choose it only with style_mode open"
+        )
+    lens_pool = [item for item in LENSES if item.key not in skip_lenses]
+    structure_pool = [item for item in STRUCTURES if item.key not in skip_structures]
 
     def pick(pool, keyed):
         fresh = [item for item in pool if item.key not in used] or list(pool)
@@ -497,14 +597,14 @@ def plan(
     if lens != "auto":
         lenses = [LENS_BY_KEY[lens]]
     elif exploration == "wild":
-        lenses = [pick([item for item in LENSES if item.bold], lambda item: item)]
+        lenses = [pick([item for item in lens_pool if item.bold], lambda item: item)]
     else:
-        lenses = [pick([item for item in LENSES if item.key != "medium"], lambda item: item)]
+        lenses = [pick([item for item in lens_pool if item.key != "medium"], lambda item: item)]
     if exploration == "wild":
         lenses.append(
-            pick([item for item in LENSES if item not in lenses and not item.bold], lambda item: item)
+            pick([item for item in lens_pool if item not in lenses and not item.bold], lambda item: item)
         )
-    chosen = STRUCTURE_BY_KEY[structure] if structure != "auto" else pick(STRUCTURES, lambda item: item)
+    chosen = STRUCTURE_BY_KEY[structure] if structure != "auto" else pick(structure_pool, lambda item: item)
     sparks = [spark for item in lenses for spark in rng.sample(item.sparks, min(3, len(item.sparks)))]
     return {
         "lenses": lenses,
@@ -512,6 +612,7 @@ def plan(
         "sparks": sparks,
         "concepts": _CONCEPTS[exploration],
         "rng_state": rng.getrandbits(32),
+        "style": style or OPEN_STYLE,
     }
 
 
@@ -536,6 +637,7 @@ def brainstorm_messages(draft: str, exploration: str, chosen: dict, avoid: list[
         "Keep " + _KEEP[exploration],
         "Explore: " + " ".join(lens.instruction for lens in chosen["lenses"]),
         "Optional sparks: " + "; ".join(chosen["sparks"]) + ".",
+        *style_rules(chosen.get("style")),
     ]
     if avoid:
         lines += ["Earlier ideas (do something clearly different):"] + [
@@ -582,10 +684,12 @@ def develop_messages(
         'Quoted text stays exactly as written, inside quotation marks. Keep every "no" or "without" exclusion from the draft.',
         "Use concrete nouns, materials, colors, light and spatial positions. Do not use quality tags such as masterpiece, 8k, "
         "best quality or highly detailed. Do not mention the draft or the concept.",
+        *style_rules(chosen.get("style")),
     ]
+    styled = (chosen.get("style") or OPEN_STYLE)["mode"] != "open"
     system = (
         "You write prompts for "
-        + _TARGET[target_model]
+        + (_CONTENT_TARGET if styled else _TARGET)[target_model]
         + ". You describe one finished image in vivid, concrete, visual "
         "language. Output only the prompt as one paragraph."
     )
@@ -752,3 +856,19 @@ def assess(text: str, draft: str, exploration: str, detail: str, avoid: list[str
         "issues": issues,
         "invented_text": invented_text(text, draft),
     }
+
+
+def scrub_style(text: str, draft: str, style: dict | None, find_prose) -> tuple[str, list[dict]]:
+    """Remove look phrases the idea added on its own (``find_prose`` is ``promptstyler_next.lexicon.find_prose``).
+
+    Only whole style segments and openings such as "A photo of" are found. The draft's own style words are
+    the owner's choice, so when the idea only repeated those nothing is removed.
+    """
+    style = style or OPEN_STYLE
+    if style["mode"] == "open":
+        return text, []
+    cleaned, removed = find_prose(text, {"medium", "palette", "lighting", "texture"})
+    own = draft.casefold()
+    if not removed or any(phrase.casefold().strip(" ,.") in own for _, phrase in removed):
+        return text, []
+    return cleaned, [{"axis": axis, "text": phrase} for axis, phrase in removed]

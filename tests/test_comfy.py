@@ -28,7 +28,7 @@ sys.modules[SPEC.name] = EXTENSION
 SPEC.loader.exec_module(EXTENSION)
 NODES = asyncio.run(EXTENSION.comfy_entrypoint())
 NODE_CLASSES = asyncio.run(NODES.get_node_list())
-STYLE, COMPOSE, ENCODE, LOAD_UPSCALER, UPSCALE_BASE, PROMPT_IDEA, PREVIEW_PROMPT = NODE_CLASSES
+STYLE, COMPOSE, ENCODE, LOAD_UPSCALER, UPSCALE_BASE, PROMPT_IDEA, MOSS_UPSAMPLER, LAYOUT_ASSIST, PREVIEW_PROMPT = NODE_CLASSES
 
 
 def literal_inputs(inputs: dict) -> dict:
@@ -43,7 +43,7 @@ def first_style() -> str:
 
 
 def test_real_v3_registration_and_schema() -> None:
-    assert len(NODE_CLASSES) == 7
+    assert len(NODE_CLASSES) == 9
     assert not hasattr(EXTENSION, "NODE_CLASS_MAPPINGS")
     expected = {
         "PSNextStyle",
@@ -52,6 +52,8 @@ def test_real_v3_registration_and_schema() -> None:
         "PSNextLoadUpscaler",
         "PSNextUpscaleBase",
         "PSNextPromptIdea",
+        "PSNextMossUpsampler",
+        "PSNextLayoutAssist",
         "PSNextPreviewPrompt",
     }
     assert {node.define_schema().node_id for node in NODE_CLASSES} == expected
@@ -304,6 +306,33 @@ def test_custom_pack_symlinks_are_refused(tmp_path: Path, monkeypatch: pytest.Mo
             module.get_engine()
     finally:
         module.get_engine.cache_clear()
+
+
+def test_moss_upsampler_example_passes_native_validation(monkeypatch):
+    from comfy.cli_args import args
+
+    monkeypatch.setattr(args, "cpu", True)
+    import execution
+    import nodes
+
+    for node in NODE_CLASSES:
+        monkeypatch.setitem(nodes.NODE_CLASS_MAPPINGS, node.define_schema().node_id, node)
+    graph = json.loads((ROOT / "examples" / "comfyui-moss-upsampler-api.json").read_text())
+    options = LOAD_UPSCALER.GET_NODE_INFO_V1()["input"]["required"]["model_name"][1]["options"]
+    if graph["1"]["inputs"]["model_name"] not in options:
+        pytest.skip("The MOSS upsampler model is not installed")
+    valid, error, outputs, node_errors = asyncio.run(execution.validate_prompt("psnext-moss", graph, None))
+    assert valid and error is None and not node_errors
+    assert outputs == ["3"]
+
+
+def test_moss_upsampler_style_is_an_optional_trailing_widget():
+    info = MOSS_UPSAMPLER.GET_NODE_INFO_V1()
+    assert "style" in info["input"]["optional"] and "style" not in info["input"]["required"]
+    # Later widgets are appended after style so saved workflows keep their widget positions.
+    assert list(info["input_order"]["optional"]) == ["style", "repetition_penalty", "guard", "max_takes"]
+    assert info["input"]["optional"]["guard"][1]["default"] is True
+    assert info["input"]["optional"]["max_takes"][1]["default"] == 1
 
 
 def test_api_example_references_registered_nodes() -> None:
@@ -567,7 +596,7 @@ def test_lfm_repair_cannot_lose_previously_satisfied_constraints(
     handle.model_family = "lfm3_vl"
     drafts = iter(["Two blue birds.", repaired])
 
-    def generate(*args):
+    def generate(*args, **_kwargs):
         return (
             next(drafts),
             False,
@@ -884,3 +913,56 @@ def test_prompt_conflicts_keep_leaves_prompt_style_words() -> None:
     kept = STYLE.execute("A photo of a cat", "anime.cel", "flux", 0.75, prompt_conflicts="keep")
     assert replaced.result[0].startswith("A cat. ")
     assert kept.result[0].startswith("A photo of a cat. ")
+
+
+@pytest.mark.parametrize("mode", ["open", "neutral", "match"])
+def test_prompt_idea_style_mode_reaches_plan_prompts_and_inspection(runtime, model_double, monkeypatch, mode):
+    handle, _ = model_double
+    handle.model_family = "lfm3_vl"
+    chats, biases = [], []
+    develop = (
+        "A photo of a fox leaping over a snowbank toward a hidden vole, cinematic lighting. "
+        "Powder sprays around its paws and pines lean over the frozen creek behind it."
+    )
+    answers = iter(
+        [
+            "1. A fox curls under a fallen pine in fresh snow while crows watch from the branches.\n"
+            "2. A fox digs through snow beside a frozen creek at dawn, steam rising from its breath.\n"
+            "3. A fox leaps over a snowbank toward a hidden vole as powder sprays around it.",
+        ]
+    )
+
+    def generate(owner, processor, messages, image, budget, slices, sampling=None, **kwargs):
+        chats.append(messages[-1]["content"][0]["text"])
+        biases.append(sampling)
+        return next(answers, develop), False, {"input_tokens": 1, "generated_tokens": 1, "prepare_seconds": 0, "placement_seconds": 0, "generate_seconds": 0}
+
+    monkeypatch.setattr(runtime, "_generate_lfm3", generate)
+    arguments = {"style_mode": mode}
+    if mode == "match":
+        arguments.update(style="Monochrome ink wash with dry brush texture.", style_axes="palette,texture")
+    text, inspection = runtime.ideate(handle, "a fox in snow", seed=3, **arguments)
+    info = json.loads(inspection)
+    assert info["idea"]["style"]["mode"] == mode
+    if mode == "open":
+        assert text.startswith("A photo of") and "Style:" not in chats[0]
+        assert info["idea"]["style"]["removed"] == []
+    else:
+        assert text.startswith("A fox leaping") and "cinematic lighting" not in text
+        assert {item["axis"] for item in info["idea"]["style"]["removed"]} == {"medium", "lighting"}
+        assert all("Do not name an art medium" in chat for chat in chats)
+        assert info["idea"]["structure"]["key"] != "photo_brief"
+    if mode == "match":
+        assert info["idea"]["style"]["axes"] == ["palette", "texture"]
+        assert all("Monochrome ink wash" in chat for chat in chats)
+        assert "palette" not in {lens["key"] for lens in info["idea"]["lenses"]}
+    assert not handle.lock.locked()
+
+
+def test_layout_assist_schema():
+    schema = LAYOUT_ASSIST.define_schema()
+    assert schema.node_id == "PSNextLayoutAssist"
+    names = [item.id for item in schema.inputs]
+    assert names[:3] == ["upscaler", "task", "request"]
+    assert {"image", "objects", "words", "layout"} <= set(names)
+    assert [item.display_name or item.id for item in schema.outputs] == ["layout", "labels", "inspection"]

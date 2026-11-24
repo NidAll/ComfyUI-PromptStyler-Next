@@ -1,0 +1,39 @@
+{
+  "1": {
+    "class_type": "PSNextLoadUpscaler",
+    "inputs": {
+      "model_name": "moss-qwen3.5-2b-upsampler-v2-int8-convrot.safetensors"
+    }
+  },
+  "2": {
+    "class_type": "PSNextMossUpsampler",
+    "inputs": {
+      "upscaler": [
+        "1",
+        0
+      ],
+      "prompt": "a red fox sleeping in a greenhouse at dawn",
+      "seed": 0,
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "top_k": 20,
+      "min_p": 0.0,
+      "presence_penalty": 0.0,
+      "max_new_tokens": 640,
+      "offload_after": false
+    }
+  },
+  "3": {
+    "class_type": "PSNextPreviewPrompt",
+    "inputs": {
+      "base_prompt": [
+        "2",
+        0
+      ],
+      "inspection": [
+        "2",
+        1
+      ]
+    }
+  }
+}

@@ -16,7 +16,8 @@ import torch
 from PIL import Image
 from transformers import StoppingCriteria, StoppingCriteriaList
 
-from . import idea_prompts, lfm_prompts
+from ...promptstyler_next.lexicon import find_prose
+from . import idea_prompts, lfm_prompts, moss_upsampler
 from .models import bundle_fingerprint, resolve_bundle
 from .prompts import (
     CONTRACT_VERSION,
@@ -40,6 +41,9 @@ class UpscalerHandle:
     load_seconds: float
     lock: Any = field(default_factory=threading.Lock)
     model_family: str = "minicpm"
+    speculative: bool = False
+    # LFM3 graph decode engine (caches + captured step); built on first use, owned by this handle
+    engine: Any = None
 
 
 def load_upscaler(model_name: str) -> UpscalerHandle:
@@ -50,7 +54,13 @@ def load_upscaler(model_name: str) -> UpscalerHandle:
 
     with safe_open(path, framework="pt", device="cpu") as reader:
         family = "lfm3_vl" if "lfm3_vl" in (reader.metadata() or {}) else "minicpm"
-    if family == "lfm3_vl":
+        if family == "minicpm" and moss_upsampler.is_upsampler_header(reader.keys()):
+            family = moss_upsampler.FAMILY
+    if family == moss_upsampler.FAMILY:
+        # A plain ComfyUI Qwen3.5 text model: core owns loading, offload and decoding.
+        owner, coverage, speculative = moss_upsampler.load(path)
+        processor = None
+    elif family == "lfm3_vl":
         from .lfm3 import load_lfm3
 
         owner, processor, coverage = load_lfm3(path)
@@ -61,7 +71,8 @@ def load_upscaler(model_name: str) -> UpscalerHandle:
     if identity != bundle_fingerprint(model_name):
         raise RuntimeError("Upscaler file changed during loading; queue the workflow again")
     return UpscalerHandle(
-        owner, processor, coverage, identity, time.perf_counter() - started, model_family=family
+        owner, processor, coverage, identity, time.perf_counter() - started, model_family=family,
+        speculative=family == moss_upsampler.FAMILY and speculative,
     )
 
 
@@ -169,10 +180,69 @@ def _generate(owner, processor, request, picture, budget, slices, detail_mode, *
     )
 
 
+def lfm3_engine(upscaler):
+    """The handle's graph decode engine, or None when CUDA graphs are unavailable."""
+    if upscaler.model_family != "lfm3_vl" or not torch.cuda.is_available() or mm.args.disable_cuda_graphs:
+        return None
+    if torch.device(upscaler.owner.load_device).type != "cuda":
+        return None
+    from .lfm3.engine import engine_for
+
+    return engine_for(upscaler)
+
+
+def _paragraph_stop(tokenizer):
+    """Host-side twin of ParagraphComplete for the engine: cut after a blank line."""
+    ids = {
+        token
+        for count in range(2, 17)
+        for token in tokenizer.encode("\n" * count, add_special_tokens=False)
+        if "\n\n" in tokenizer.decode([token])
+    }
+    newline = tokenizer.encode("\n", add_special_tokens=False)
+    newline = newline[0] if len(newline) == 1 else -1
+
+    def stop(tokens):
+        for index, token in enumerate(tokens):
+            if index == 0:
+                continue  # ParagraphComplete never stops on the first generated token
+            if token in ids or (index >= 1 and token == newline and tokens[index - 1] == newline):
+                return index + 1
+        return None
+
+    return stop
+
+
+def _engine_generate(engine, owner, processor, inputs, budget, sampling, seed, paragraphs):
+    from .lfm3.engine import Sampling
+
+    eos = owner.model.network.generation_config.eos_token_id
+    eos = [eos] if isinstance(eos, int) else list(eos or [])
+    settings = Sampling(seed=int(seed))
+    if sampling and sampling.get("do_sample", True) and "temperature" in sampling:
+        settings = Sampling(
+            temperature=float(sampling["temperature"]), top_p=float(sampling.get("top_p", 1.0)),
+            top_k=int(sampling.get("top_k", 0)), min_p=float(sampling.get("min_p", 0.0)),
+            repetition_penalty=float(sampling.get("repetition_penalty", 1.0)), seed=int(seed),
+        )
+    stop_fn = _paragraph_stop(processor.tokenizer) if paragraphs else None
+    import comfy.utils
+
+    bar = comfy.utils.ProgressBar(budget)  # live token count for the UI (one message per check window)
+    tokens, stopped, info = engine.generate(inputs, budget, eos, settings, stop_fn=stop_fn,
+                                            on_tokens=lambda count: bar.update_absolute(count, budget))
+    raw = processor.tokenizer.decode(tokens, skip_special_tokens=True).strip()
+    return raw, not stopped and len(tokens) >= budget, info
+
+
 def _generate_lfm3(
-    owner, processor, chat, picture, budget, slices, *, sampling=None, seed=0, paragraphs=True
+    owner, processor, chat, picture, budget, slices, *, sampling=None, seed=0, paragraphs=True, engine=None
 ):
-    """Greedy by default; ``sampling`` (temperature/top_p/min_p) samples reproducibly from ``seed``."""
+    """Greedy by default; ``sampling`` (temperature/top_p/min_p) samples reproducibly from ``seed``.
+
+    With ``engine`` the decode runs as one CUDA graph per token (about 3x faster on this model);
+    runs with a ``sequence_bias`` keep the transformers loop, which applies multi-token biases.
+    """
     started = time.perf_counter()
     mm.throw_exception_if_processing_interrupted()
     text = processor.apply_chat_template(
@@ -194,6 +264,17 @@ def _generate_lfm3(
     mm.load_models_gpu([owner], memory_required=640 * 1024**2, force_full_load=True)
     inputs = inputs.to(owner.load_device, dtype=torch.bfloat16)
     placed = time.perf_counter()
+    if engine is not None and not (sampling and sampling.get("sequence_bias")):
+        raw, truncated, info = _engine_generate(engine, owner, processor, inputs, budget, sampling, seed, paragraphs)
+        return raw, truncated, {
+            "input_tokens": input_length,
+            "generated_tokens": info["generated_tokens"],
+            "prepare_seconds": prepared - started,
+            "placement_seconds": placed - prepared,
+            "generate_seconds": time.perf_counter() - placed,
+            "engine": info["engine"],
+            "tokens_per_second": info["tokens_per_second"],
+        }
     if sampling:
         torch.manual_seed(int(seed) & 0xFFFFFFFFFFFFFFFF)
     tokens = owner.model.generate(
@@ -249,13 +330,14 @@ def upscale_lfm3(upscaler, prompt, image, budget, slices, offload_after, detail_
     try:
         mm.throw_exception_if_processing_interrupted()
         owner, processor = upscaler.owner, upscaler.processor
+        engine = lfm3_engine(upscaler)
         passes = []
         reference = None
         grounding_warnings = []
         if picture is not None and prompt.strip():
             grounding = lfm_prompts.messages("", True, target_model, "faithful")
             observed, cut, timing = _generate_lfm3(
-                owner, processor, grounding, picture, min(budget, 128), slices
+                owner, processor, grounding, picture, min(budget, 128), slices, engine=engine
             )
             reference, grounding_warnings, _ = lfm_prompts.inspect_output(
                 observed, "", cut, target_model, allow_reference_text=True
@@ -265,7 +347,7 @@ def upscale_lfm3(upscaler, prompt, image, budget, slices, offload_after, detail_
                 lfm_prompts.reference_request(reference, prompt), False, target_model, "faithful"
             )
         raw, truncated, timing = _generate_lfm3(
-            owner, processor, chat, None if reference else picture, budget, slices
+            owner, processor, chat, None if reference else picture, budget, slices, engine=engine
         )
         passes.append({"stage": "rewrite", **timing})
         raw, removed_style_clauses = lfm_prompts.remove_style_clauses(raw)
@@ -287,7 +369,7 @@ def upscale_lfm3(upscaler, prompt, image, budget, slices, offload_after, detail_
                 lfm_prompts.repair_request(repair_source, result, fidelity), False, target_model, "faithful"
             )
             raw, repaired_truncated, timing = _generate_lfm3(
-                owner, processor, correction, None, budget, slices
+                owner, processor, correction, None, budget, slices, engine=engine
             )
             passes.append({"stage": "repair", **timing})
             raw, repaired_style_clauses = lfm_prompts.remove_style_clauses(raw)
@@ -362,6 +444,7 @@ def upscale(
     detail_mode: str = "expanded",
     target_model: str = "moss_image_base",
 ) -> tuple[str, str]:
+    _refuse_upsampler(upscaler)
     if isinstance(upscaler, UpscalerHandle) and upscaler.model_family == "lfm3_vl":
         return upscale_lfm3(
             upscaler, prompt, image, max_new_tokens, image_slices, offload_after, detail_mode, target_model
@@ -500,13 +583,18 @@ def ideate(
     recent: str = "",
     max_new_tokens: int = 0,
     earlier: str = "",
+    style_mode: str = "open",
+    style: str = "",
+    style_axes: str = "",
 ) -> tuple[str, str]:
     """A new prompt idea from a draft: seeded lens/structure, brainstorm, novelty pick, develop, check.
 
     ``avoid`` lists earlier concepts (novelty and brainstorm); ``earlier`` lists earlier full prompts, whose
     recurring wording is penalised during decoding so each idea is described in fresh words too.
+    ``style_mode`` neutral/match keeps the look out of the idea (see ``idea_prompts.style_context``).
     """
     started = time.perf_counter()
+    look = idea_prompts.style_context(style_mode, style, style_axes)
     draft = idea_prompts.validate(
         prompt,
         exploration,
@@ -520,20 +608,27 @@ def ideate(
         max_new_tokens,
         earlier,
     )
+    _refuse_upsampler(upscaler)
     if not isinstance(upscaler, UpscalerHandle) or upscaler.model_family != "lfm3_vl":
         raise ValueError("Prompt ideas need the LFM3-VL model; select an lfm3 file in Load Prompt Upscaler")
     earlier_ideas = idea_prompts.avoid_list(avoid)
-    chosen = idea_prompts.plan(seed, exploration, detail, lens, structure, recent)
+    chosen = idea_prompts.plan(seed, exploration, detail, lens, structure, recent, look)
     budget = idea_prompts.token_budget(detail, draft, max_new_tokens)
     while not upscaler.lock.acquire(timeout=0.1):
         mm.throw_exception_if_processing_interrupted()
     try:
         owner, processor = upscaler.owner, upscaler.processor
+        engine = lfm3_engine(upscaler)
         # Near-ban the model's stock adjectives; gently steer away from words earlier ideas kept reusing.
         penalised = idea_prompts.bias_words(idea_prompts.avoid_list(earlier) or earlier_ideas, draft)
         bias = _word_bias(processor.tokenizer, list(idea_prompts.OVERUSED), -6.0) + _word_bias(
             processor.tokenizer, penalised, -1.5
         )
+        if look["mode"] != "open":
+            # Look words are steered away from softly; the draft's own words stay free to use.
+            own = idea_prompts.content_words(draft)
+            look_words = [word for word in idea_prompts.STYLE_WORDS if idea_prompts.stem(word) not in own]
+            bias += _word_bias(processor.tokenizer, look_words, -2.5)
         passes = []
         # Brainstorming is sampled hotter than the final prompt so the candidates really differ.
         raw, _, timing = _generate_lfm3(
@@ -545,6 +640,7 @@ def ideate(
             1,
             sampling=_idea_sampling(min(1.5, temperature + 0.2) if temperature else 0, bias),
             seed=seed,
+            engine=engine,
             paragraphs=False,
         )
         passes.append({"stage": "brainstorm", **timing})
@@ -564,6 +660,7 @@ def ideate(
                 1,
                 sampling=_idea_sampling(temperature, bias),
                 seed=seed + 1 + attempt * 7919,
+                engine=engine,
             )
             passes.append({"stage": "develop" if not attempt else "retry", **timing})
             try:
@@ -573,6 +670,7 @@ def ideate(
                     {"text": "", "warnings": [str(error)], "quality": {"issues": ["control"], "novelty": 0}}
                 )
                 continue
+            text, removed_look = idea_prompts.scrub_style(text, draft, look, find_prose)
             text, restored_exclusions = lfm_prompts.restore_exclusions(text, draft)
             text, restored_quotes = idea_prompts.restore_quotes(text, draft)
             quality = idea_prompts.assess(text, draft, exploration, detail, earlier_ideas)
@@ -585,6 +683,7 @@ def ideate(
                     "concept_novelty": concept_novelty,
                     "restored_exclusions": restored_exclusions,
                     "restored_quotes": restored_quotes,
+                    "removed_look": removed_look,
                 }
             )
             # A retry develops the next-ranked concept with a new sample.
@@ -623,6 +722,11 @@ def ideate(
                 "concepts": concepts,
                 "concept": best["concept"],
                 "concept_novelty": best["concept_novelty"],
+                "style": {
+                    "mode": look["mode"],
+                    "axes": sorted(look["axes"]),
+                    "removed": best["removed_look"],
+                },
             },
             "quality": best["quality"],
             "attempts": len(attempts),
@@ -663,3 +767,156 @@ def ideate(
                 mm.unload_model_and_clones(upscaler.owner)
         finally:
             upscaler.lock.release()
+
+
+def _refuse_upsampler(upscaler) -> None:
+    if isinstance(upscaler, UpscalerHandle) and upscaler.model_family == moss_upsampler.FAMILY:
+        raise ValueError(
+            "This is the MOSS prompt upsampler; connect it to PromptStyler Next: MOSS Prompt Upsampler"
+        )
+
+
+def upsample_moss(
+    upscaler: UpscalerHandle,
+    prompt: str,
+    seed: int = 0,
+    temperature: float = moss_upsampler.DEFAULT_SAMPLING["temperature"],
+    top_p: float = moss_upsampler.DEFAULT_SAMPLING["top_p"],
+    top_k: int = moss_upsampler.DEFAULT_SAMPLING["top_k"],
+    min_p: float = moss_upsampler.DEFAULT_SAMPLING["min_p"],
+    presence_penalty: float = moss_upsampler.DEFAULT_SAMPLING["presence_penalty"],
+    max_new_tokens: int = moss_upsampler.DEFAULT_MAX_NEW_TOKENS,
+    offload_after: bool = False,
+    style: str = "",
+    repetition_penalty: float = moss_upsampler.DEFAULT_REPETITION_PENALTY,
+    guard: bool = True,
+    max_takes: int = 1,
+) -> tuple[str, str]:
+    """Expand a draft with the MOSS fine-tune: its SFT system prompt, thinking off, seeded sampling."""
+    if not isinstance(upscaler, UpscalerHandle) or upscaler.model_family != moss_upsampler.FAMILY:
+        raise ValueError("Select the moss-qwen3.5 upsampler file in Load Prompt Upscaler")
+    if type(offload_after) is not bool or type(guard) is not bool:
+        raise ValueError("offload_after and guard must be booleans")
+    moss_upsampler.validate_prompt(prompt)
+    while not upscaler.lock.acquire(timeout=0.1):
+        mm.throw_exception_if_processing_interrupted()
+    try:
+        mm.throw_exception_if_processing_interrupted()
+        text, inspection = moss_upsampler.upsample(
+            upscaler.owner,
+            prompt,
+            seed=seed,
+            temperature=temperature,
+            top_p=top_p,
+            top_k=top_k,
+            min_p=min_p,
+            presence_penalty=presence_penalty,
+            repetition_penalty=repetition_penalty,
+            max_new_tokens=max_new_tokens,
+            style=style,
+            guard=guard,
+            max_takes=max_takes,
+            speculative=upscaler.speculative,
+        )
+        inspection["native_int8_layers"] = upscaler.native_int8_layers
+        inspection["model_load_seconds"] = round(upscaler.load_seconds, 2)
+        inspection["base_prompt"] = text
+        logger.info(
+            "PromptStyler MOSS upsampler: %d tokens in %.2fs (%d take(s), guard: %s)",
+            inspection["upsample"]["output_tokens"],
+            inspection["upsample"]["seconds"],
+            len(inspection["guard"]["takes"]),
+            "; ".join(inspection["guard"]["report"]) or ("clean" if guard else "off"),
+        )
+        return text, json.dumps(inspection, ensure_ascii=False, sort_keys=True, indent=2)
+    finally:
+        try:
+            if offload_after or sys.exc_info()[0] is not None:
+                mm.unload_model_and_clones(upscaler.owner.patcher)
+        finally:
+            upscaler.lock.release()
+
+
+def _frame(boxes):
+    """First frame of a BOUNDING_BOX value: a dict, a flat list, or per-frame lists."""
+    if isinstance(boxes, dict):
+        return [boxes]
+    if isinstance(boxes, (list, tuple)) and boxes and isinstance(boxes[0], (list, tuple)):
+        return list(boxes[0])
+    return list(boxes or [])
+
+
+def layout_assist(upscaler, task, image=None, request="", layout="", objects=None, words=None, seed=0,
+                  temperature=0.0):
+    """One LFM3 layout task. Returns (layout JSON, detector labels, inspection JSON)."""
+    from . import layout_assist as assist
+
+    if not isinstance(upscaler, UpscalerHandle) or upscaler.model_family != "lfm3_vl":
+        raise ValueError("Select the LFM3-VL file in Load Prompt Upscaler")
+    if task not in assist.TASKS:
+        raise ValueError(f"task must be one of {', '.join(assist.TASKS)}")
+    picture = pil_image(image) if image is not None else None
+    width, height = (picture.size if picture is not None else (1024, 1024))
+    try:
+        given = json.loads(layout) if isinstance(layout, str) and layout.strip() else (layout or {})
+    except json.JSONDecodeError as error:
+        raise ValueError(f"layout is not JSON: {error}") from error
+    if isinstance(given, dict) and given.get("width") and given.get("height"):
+        width, height = int(given["width"]), int(given["height"])
+    regions, warnings = [], []
+    if task == "describe_regions":
+        detected = objects is not None or words is not None
+        if detected and picture is not None:
+            regions = assist.merge_regions(assist.normalize_detections(_frame(objects), *picture.size),
+                                           assist.text_lines(_frame(words), *picture.size))
+        else:
+            for item in (given.get("items") or []) if isinstance(given, dict) else []:
+                box = assist.clean_box(item.get("bbox")) if isinstance(item, dict) else None
+                if box:
+                    # A caption the box already has says what it holds (a rewrite would otherwise only see "object").
+                    hint = " ".join(str(item.get("caption") or "").split())[:120]
+                    regions.append({"label": str(item.get("label") or "object")[:60], "bbox": box,
+                                    **({"text": str(item["text"])[:200]} if item.get("text") else {}),
+                                    **({"hint": hint} if hint else {})})
+            regions = regions[: assist.MAX_REGIONS + assist.MAX_TEXT_LINES]
+        if not regions:
+            if picture is None:
+                raise ValueError("Draw or detect at least one box to describe")
+            task = "image_layout"
+            warnings.append("The detector found nothing, so LFM3 placed the boxes itself.")
+    if task in ("list_objects", "image_layout") and picture is None:
+        raise ValueError("This task needs an image")
+    if task in ("text_layout", "edit_layout") and not str(request).strip():
+        raise ValueError("Write what the layout should show or change")
+    scene = given.get("caption", "") if isinstance(given, dict) else ""
+    chat, budget = assist.messages(
+        task, request=request if task != "describe_regions" else (request or scene), regions=regions,
+        layout=given if task == "edit_layout" else None, has_image=picture is not None and task != "text_layout"
+        and task != "edit_layout", width=width, height=height,
+    )
+    use_picture = picture if task in ("list_objects", "describe_regions", "image_layout") else None
+    sampling = {"temperature": float(temperature), "top_p": 0.9, "top_k": 40} if temperature > 0 else None
+    while not upscaler.lock.acquire(timeout=0.1):
+        mm.throw_exception_if_processing_interrupted()
+    try:
+        mm.throw_exception_if_processing_interrupted()
+        engine = lfm3_engine(upscaler)
+        raw, truncated, timing = _generate_lfm3(
+            upscaler.owner, upscaler.processor, chat, use_picture, budget, 1, sampling=sampling, seed=seed,
+            paragraphs=False, engine=engine,
+        )
+    finally:
+        upscaler.lock.release()
+    try:
+        result = assist.parse_answer(task, raw, regions)
+    except (ValueError, json.JSONDecodeError) as error:
+        if task != "list_objects":
+            raise ValueError(f"LFM3 wrote an unreadable layout ({error}). Try again or reword the request.") from error
+        result = {"objects": []}
+        warnings.append("LFM3 listed no objects; the detector looked for the main subject instead.")
+    labels = "\n".join(result.get("objects") or []) or ("main subject" if task == "list_objects" else "")
+    result.update({"task": task, "grid": "xyxy-1000", **({"warnings": warnings} if warnings else {})})
+    if truncated:
+        result.setdefault("warnings", []).append("The answer hit its length budget; the last part may be missing.")
+    inspection = {"task": task, "regions": len(regions), "truncated": truncated, **timing, "raw": raw[:4000]}
+    return json.dumps(result, ensure_ascii=False), labels, json.dumps(inspection, ensure_ascii=False)

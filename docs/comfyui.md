@@ -6,9 +6,10 @@ Clone this repository into `ComfyUI/custom_nodes/ComfyUI-PromptStyler-Next` and 
 
 | Node | Use | Outputs |
 |---|---|---|
-| **PromptStyler Next: Load Prompt Upscaler** | Load a local MiniCPM-V 4.7 1B or LFM3-VL 2B INT8 artifact once; native model management owns placement | Cached upscaler handle |
+| **PromptStyler Next: Load Prompt Upscaler** | Load a local MiniCPM-V 4.7 1B or LFM3-VL 2B INT8 artifact, or the Qwen3.5 MOSS upsampler, once; native model management owns placement | Cached upscaler handle |
 | **PromptStyler Next: Upscale Base Prompt** | Expand a text idea or choose Faithful clarification; accept one image or both; see [setup and measured performance](upscaler.md) | Base prompt, inspection JSON |
 | **PromptStyler Next: Prompt Idea** | Turn a draft into a new prompt idea on every seed (LFM3-VL): a different lens and structure each time; see [prompt ideas](prompt-ideas.md) | Prompt, inspection JSON |
+| **PromptStyler Next: MOSS Prompt Upsampler** | Expand a short idea into a rich MOSS-Image prompt with the Qwen3.5-2B fine-tune (its exact training system prompt, thinking off); an optional `style` look is appended to the draft so the whole prompt is written in it; see [MOSS upsampler](moss-upsampler.md) | Prompt, inspection JSON |
 | **PromptStyler Next: Style** | Pick one style, profile, and intensity; optional negative text and protected axes are under advanced inputs | Positive text, negative text, inspection JSON |
 | **PromptStyler Next: Compose Recipe** | Compose ordered layers with explicit conflict policy using recipe JSON | Positive text, negative text, inspection JSON |
 | **PromptStyler Next: Encode Text** | Convert the two text outputs using a compatible native text encoder | Positive conditioning, negative conditioning |

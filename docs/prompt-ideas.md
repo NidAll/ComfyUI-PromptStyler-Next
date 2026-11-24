@@ -58,16 +58,20 @@ repeatable. It applies soft penalties to a short list of stock adjectives ("weat
 | `earlier` | Earlier full prompts, one per line: recurring wording is discouraged. |
 | `recent` | Comma-separated lens/structure keys to skip. |
 | `max_new_tokens` | 0 sizes the budget from detail and draft length. |
+| `style_mode` | `open` (default, original behaviour) lets ideas choose a medium or photo look. `neutral` keeps the idea style-free: no Medium lens or Photo brief structure, a content-only rule, soft decoding penalties on medium/camera words, and removal of whole look phrases the idea added (the lexicon used by Compose; the draft's own style words are kept). `match` does the same and writes content that suits `style`, skipping lenses and structures on the axes in `style_axes` (Color and Atmosphere for palette, Light for lighting, Viewpoint and Composition for composition, Genre for mood). |
+| `style`, `style_axes` | `match` only: the selected style's own prompt text (Compose with an empty prompt) and the axes it sets, comma-separated. |
 
 The inspection JSON records the lenses, structure, sparks, all concepts and the chosen
 one, its novelty, quality checks per attempt, penalised words, restorations, sampling,
-seed, passes, token counts and timings.
+seed, passes, token counts and timings. `idea.style` records the style mode, the axes left
+to the style and any look phrases that were removed.
 
 ## Limits
 
 This is inference-time prompting of a 2B model, not training. The checks are lexical:
 they can miss a swapped subject described in other words, or flag a valid paraphrase.
 The model may still change counts, add props, or write dialogue or signage. Ideas can
-include lighting, camera and mood, which overlaps with Style; review the prompt before
-stacking a strong style on it. Diffusion image quality from these prompts has not been
+include lighting, camera and mood in `open` mode, which overlaps with Style; use `neutral`
+or `match` when a style is applied afterwards. Those modes are instructions, soft penalties
+and a lexical phrase scrub, so a look word inside a longer sentence can still slip through. Diffusion image quality from these prompts has not been
 evaluated. Only LFM3-VL bundles are supported; MiniCPM raises a clear error.

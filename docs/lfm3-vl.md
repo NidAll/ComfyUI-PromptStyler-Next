@@ -37,6 +37,31 @@ relationships even without a warning. Expanded mode can still invent a setting,
 material or prop; Faithful is the conservative choice. Review before generation. Longer captions
 are not automatically better, and image-quality parity has not been established.
 
+## Fast decode engine
+
+On CUDA, LFM3-VL decodes through a native engine (`comfyui/upscaler/lfm3/engine.py`) instead of the
+Transformers generate loop, which is launch-bound at batch size 1 (the GPU sits idle for most of each
+step). The prompt is prefilled eagerly, then each token replays one captured CUDA graph: fixed KV for
+the full-attention layers, a 256-slot ring for the sliding-window layers and a 6-tap state for the
+short-convolution layers, with a host stop check every 8 tokens. The graph is recaptured when the
+weights move. The engine lives on the loader's handle, never on the model. With the INT8 ConvRot file it
+decoded about three times faster than the Transformers loop in our tests; the gain depends on the GPU. Output is not
+bit-identical (bf16 numerics): teacher-forced argmax agreement was 99.2% on text and 95.4% with an
+image, mismatches only at near-ties. Requests with token bias (`sequence_bias`) still use Transformers.
+
+## Layout Assist
+
+**Layout Assist** (`PSNextLayoutAssist`) uses the same loader for MOSS layout JSON: `list_objects`
+(nouns for a detector), `describe_regions` (summary, style tags and one caption per given box, using
+the image when connected; detector `objects` and OCR `words` from core **WeVisOne-VL Detect** become
+the boxes), `text_layout` (an idea → boxes), `edit_layout` (an instruction applied to a layout) and
+`image_layout` (boxes without a detector). Boxes are `[x1, y1, x2, y2]` on a 0–1000 grid and the
+answer carries `"grid": "xyxy-1000"`; the MOSS Image Layout Prompt Builder imports that form.
+Captions come back under numbered keys so each lands on its own box; answers are repaired leniently
+(a describe answer with a stray quote is salvaged field by field), not retried. Detector clean-up drops
+backdrops, parts or clothing of a boxed person, a lettering box the OCR lines cover, and more than three
+boxes of one label. Caption quality was checked on three renders only.
+
 ## Single-file installation
 
 Place the prepared artifact in `ComfyUI/models/anima_prompt_architect/`. It

@@ -1,5 +1,36 @@
 # Changelog
 
+## Unreleased
+
+- LFM3-VL decodes through a native CUDA-graph engine (about 3× faster than the Transformers loop in our tests);
+  Transformers remains the fallback for token-biased requests and non-CUDA devices.
+- New **Layout Assist** node (`PSNextLayoutAssist`): MOSS layout JSON from LFM3-VL (list objects,
+  describe boxes, idea → layout, edit by instruction, image → layout), boxes as xyxy on 0–1000.
+- HEISS Studio MOSS layout builder overlay ([studio/moss-layout/](studio/moss-layout/README.md)): visual
+  editor with an AI menu (image → layout + prompt, idea → layout, edit, captions, snap, lettering), live step
+  animation, result cache, Ideogram 4 import/export. Pipeline: [docs/moss-layout-pipeline.md](docs/moss-layout-pipeline.md).
+- New **MOSS Prompt Upsampler** node (`PSNextMossUpsampler`) for the Qwen3.5-2B
+  MOSS-Image upsampling fine-tune: exact SFT system prompt, thinking off, seeded
+  Qwen3.5 sampling, 640-token budget with sentence trimming. It runs through ComfyUI's
+  native Qwen3.5 text model, so INT8 ConvRot layers use comfy-kitchen kernels.
+  **Load Prompt Upscaler** lists Qwen3.5 checkpoints in the prompt-model folder; the
+  LFM3 nodes refuse them with a pointer to the new node. See
+  [docs/moss-upsampler.md](docs/moss-upsampler.md).
+- The MOSS upsampler takes an optional `style` look, appended to the draft as a trailing
+  clause (at most 30 words), so the prompt is written in the selected medium instead of
+  the model's default photograph. Inspection reports `style` and `user_text`; the
+  contract version is now `moss-upsampler-2`.
+- MOSS upsampler v2 (`NidAll/moss-qwen3.5-2b-upsampler-v2-bf16`): defaults follow its
+  model card (temperature 0.6, top_p 0.9, new `repetition_penalty` 1.05, 700-token budget).
+  A temporary output **guard** (on by default) swaps provenance tokens in the draft and
+  removes unrequested visible text, negation tails and black-and-white color words; the new
+  `max_takes` input rewrites a sampled take only when the guard refuses it (cleaning would
+  remove more than 30%). Inspection adds a `guard` block; the contract version is now
+  `moss-upsampler-3`.
+- A MOSS upsampler checkpoint carrying a Qwen3.5 MTP draft head (`mtp.*`, for example grafted
+  from the base model) decodes through ComfyUI core's adaptive MTP speculative path;
+  inspection reports `upsample.speculative`.
+
 ## 0.6.0a1 (experimental, 2026-11-19)
 
 Experimental pre-release on the `experimental/0.6.0a1` branch, not yet merged into

@@ -94,9 +94,11 @@ are optional for this route.
 
 | Node | Purpose | Outputs |
 | --- | --- | --- |
-| **Load Prompt Upscaler** | Load a supported local MiniCPM or LFM3-VL INT8 artifact into a cacheable, native-managed handle | Upscaler handle |
+| **Load Prompt Upscaler** | Load a supported local MiniCPM or LFM3-VL INT8 artifact, or the Qwen3.5 MOSS upsampler, into a cacheable, native-managed handle | Upscaler handle |
 | **Upscale Base Prompt** | Author a base from text, one RGB IMAGE, or both | Base prompt, inspection JSON |
 | **Prompt Idea** | Turn a draft into a new, fully written idea per seed: rotating lenses (setting, light, viewpoint…) and prompt structures; LFM3-VL only, see [docs/prompt-ideas.md](docs/prompt-ideas.md) | Prompt, inspection JSON |
+| **MOSS Prompt Upsampler** | Expand a short idea into a rich MOSS-Image prompt with the Qwen3.5-2B fine-tune and its training system prompt; an optional style look sets the medium it writes in; each seed is a new take, see [docs/moss-upsampler.md](docs/moss-upsampler.md) | Prompt, inspection JSON |
+| **Layout Assist** | MOSS layout JSON with LFM3-VL: list objects, caption boxes from detector/OCR results, an idea → layout, edit by instruction; boxes on a 0–1000 grid, see [docs/moss-layout-pipeline.md](docs/moss-layout-pipeline.md) | Layout JSON, labels, inspection JSON |
 | **Preview Base Prompt** | Preview the base prompt and inspection without writing a file | UI preview |
 | **Style** | Apply one style with model selection, intensity, optional negative text, and protected axes | Positive text, negative text, inspection JSON |
 | **Compose Recipe** | Apply an ordered JSON recipe with conflict controls; an optional connected `prompt` overrides the recipe's base | Positive text, negative text, inspection JSON |
@@ -143,6 +145,7 @@ Ready-to-use examples:
 - [Visual text styling workflow](examples/comfyui-text-workflow.json) and [matching API graph](examples/comfyui-text-api.json): style and recipe examples with native text previews; no model required.
 - [Visual prompt upscaler workflow](examples/comfyui-upscaler-workflow.json) and [matching API graph](examples/comfyui-upscaler-api.json): MiniCPM → base prompt → Style → preview; connect Load Image for either image input mode.
 - [LFM3 MOSS Base graph](examples/comfyui-lfm3-moss_image_base-api.json) and [LFM3 Anima graph](examples/comfyui-lfm3-anima-api.json): complete scene rewriting through styling and native previews; require a separately prepared local artifact.
+- [MOSS upsampler API graph](examples/comfyui-moss-upsampler-api.json): Qwen3.5 MOSS upsampler → native preview; requires the prepared INT8 ConvRot file.
 - [Generated-caption API graph](examples/comfyui-generated-caption-api.json): feed generated text into Compose Recipe's connected prompt input.
 - [SDXL conditioning API example](examples/comfyui-sdxl-api.json): replace the checkpoint placeholder with an installed model before use.
 
@@ -451,6 +454,8 @@ quality require separate evaluation.
 | --- | --- |
 | [ComfyUI](docs/comfyui.md) | Nodes, native encoders, custom packs, and workflows |
 | [Experimental LFM3-VL](docs/lfm3-vl.md) | Separate artifact, offline preparation, targets and rewrite limits |
+| [MOSS layout pipeline](docs/moss-layout-pipeline.md) | Layout Assist, WeVisOne boxes, Studio builder overlay, LFM3 decode engine and the speed work |
+| [MOSS prompt upsampler](docs/moss-upsampler.md) | Qwen3.5-2B fine-tune: prompt contract, sampling, INT8 ConvRot preparation and limits |
 | [Local prompt upscaler](docs/upscaler.md) | Model requirements, controls, performance, and limits |
 | [Base-prompt toolkit](llm-prompts/README.md) | Seven metaprompts, semantic handoff, and examples |
 | [Style library](docs/style-library.md) | Inventory, creative domains, authoring, and previews |

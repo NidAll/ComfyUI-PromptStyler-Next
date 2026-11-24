@@ -216,3 +216,80 @@ def test_earlier_ideas_are_listed_without_their_quoted_words_and_subject_swaps_a
     assert idea.validate("a fox", earlier="x" * 100) == "a fox"
     with pytest.raises(ValueError):
         idea.validate("a fox", earlier="x" * 12001)
+
+
+# Style-aware ideas (Studio sends neutral without a selected style, match with one).
+
+
+def test_style_context_validates_and_open_ignores_style_text():
+    assert idea.style_context() == idea.OPEN_STYLE
+    neutral = idea.style_context("neutral", "ignored", "palette")
+    assert neutral == {"mode": "neutral", "text": "", "axes": frozenset()}
+    match = idea.style_context("match", "  Loose watercolor washes,\n soft edges. ", "medium, texture")
+    assert match["text"] == "Loose watercolor washes, soft edges." and match["axes"] == {"medium", "texture"}
+    for arguments in ({"style_mode": "styled"}, {"style_mode": "match"}, {"style_mode": "match", "style": "x", "style_axes": "sparkle"}):
+        with pytest.raises(ValueError):
+            idea.style_context(**arguments)
+
+
+def test_neutral_ideas_never_pick_a_medium_lens_or_photo_brief():
+    neutral = idea.style_context("neutral")
+    for seed in range(300):
+        for exploration in ("explore", "wild"):
+            chosen = idea.plan(seed, exploration, "balanced", style=neutral)
+            assert "medium" not in {lens.key for lens in chosen["lenses"]}
+            assert chosen["structure"].key != "photo_brief"
+    with pytest.raises(ValueError, match="decides the look"):
+        idea.plan(1, "explore", "balanced", lens="medium", style=neutral)
+    with pytest.raises(ValueError, match="decides the look"):
+        idea.plan(1, "explore", "balanced", structure="photo_brief", style=neutral)
+    # Open keeps the original behaviour, including the photo brief.
+    assert "photo_brief" in {idea.plan(seed, "explore", "balanced")["structure"].key for seed in range(200)}
+
+
+def test_match_skips_lenses_and_structures_on_axes_the_style_sets():
+    style = idea.style_context("match", "Monochrome ink wash with hard rim light.", "palette, lighting, composition, mood")
+    lenses, structures = set(), set()
+    for seed in range(400):
+        for exploration in ("explore", "wild"):
+            chosen = idea.plan(seed, exploration, "balanced", style=style)
+            lenses |= {lens.key for lens in chosen["lenses"]}
+            structures.add(chosen["structure"].key)
+    assert not lenses & {"medium", "palette", "light", "viewpoint", "genre"}
+    assert not structures & {"photo_brief", "atmosphere", "composition"}
+    assert {"setting", "moment", "material", "scale", "twist"} <= lenses
+    # A style that only sets the medium leaves color and light lenses available.
+    medium_only = idea.style_context("match", "Gouache painting.", "medium")
+    keys = {lens.key for seed in range(300) for lens in idea.plan(seed, "explore", "balanced", style=medium_only)["lenses"]}
+    assert {"palette", "light"} <= keys and "medium" not in keys
+
+
+def test_style_rules_reach_brainstorm_and_develop_requests():
+    style = idea.style_context("match", "Monochrome ink wash.", "palette")
+    chosen = idea.plan(4, "explore", "balanced", style=style)
+    for request in (
+        text_of(idea.brainstorm_messages("a fox", "explore", chosen, [])),
+        text_of(idea.develop_messages("a fox", "explore", "balanced", "krea2", chosen, "a fox in snow")),
+    ):
+        assert "Monochrome ink wash." in request and "Do not name an art medium" in request
+        assert "Leave the color scheme to the look" in request
+    system = idea.develop_messages("a fox", "explore", "balanced", "krea2", chosen, "x")[0]["content"]
+    assert "painterly" not in system
+    neutral = idea.plan(4, "explore", "balanced", style=idea.style_context("neutral"))
+    request = text_of(idea.develop_messages("a fox", "explore", "balanced", "general", neutral, "x"))
+    assert "none is chosen" in request and "Leave the color scheme" not in request
+    open_request = text_of(idea.develop_messages("a fox", "explore", "balanced", "krea2", idea.plan(4, "explore", "balanced"), "x"))
+    assert "Style:" not in open_request
+    assert "painterly" in idea.develop_messages("a fox", "explore", "balanced", "krea2", idea.plan(4, "explore", "balanced"), "x")[0]["content"]
+
+
+def test_scrub_removes_added_look_phrases_but_keeps_the_owners():
+    from promptstyler_next.lexicon import find_prose
+
+    neutral = idea.style_context("neutral")
+    text = "A photo of a fox in fresh snow at dawn, cinematic lighting. Pines lean over the frozen creek."
+    cleaned, removed = idea.scrub_style(text, "a fox in snow", neutral, find_prose)
+    assert cleaned.startswith("A fox in fresh snow at dawn.") and "cinematic lighting" not in cleaned
+    assert {item["axis"] for item in removed} == {"medium", "lighting"}
+    assert idea.scrub_style(text, "a photo of a fox in snow", neutral, find_prose) == (text, [])
+    assert idea.scrub_style(text, "a fox", idea.OPEN_STYLE, find_prose) == (text, [])
