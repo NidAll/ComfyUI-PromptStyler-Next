@@ -28,7 +28,7 @@ sys.modules[SPEC.name] = EXTENSION
 SPEC.loader.exec_module(EXTENSION)
 NODES = asyncio.run(EXTENSION.comfy_entrypoint())
 NODE_CLASSES = asyncio.run(NODES.get_node_list())
-STYLE, COMPOSE, ENCODE, LOAD_UPSCALER, UPSCALE_BASE, PROMPT_IDEA, MOSS_UPSAMPLER, LAYOUT_ASSIST, PREVIEW_PROMPT = NODE_CLASSES
+STYLE, COMPOSE, ENCODE, LOAD_UPSCALER, UPSCALE_BASE, PROMPT_IDEA, MOSS_UPSAMPLER, PREVIEW_PROMPT = NODE_CLASSES
 
 
 def literal_inputs(inputs: dict) -> dict:
@@ -43,7 +43,7 @@ def first_style() -> str:
 
 
 def test_real_v3_registration_and_schema() -> None:
-    assert len(NODE_CLASSES) == 9
+    assert len(NODE_CLASSES) == 8
     assert not hasattr(EXTENSION, "NODE_CLASS_MAPPINGS")
     expected = {
         "PSNextStyle",
@@ -53,7 +53,6 @@ def test_real_v3_registration_and_schema() -> None:
         "PSNextUpscaleBase",
         "PSNextPromptIdea",
         "PSNextMossUpsampler",
-        "PSNextLayoutAssist",
         "PSNextPreviewPrompt",
     }
     assert {node.define_schema().node_id for node in NODE_CLASSES} == expected
@@ -957,25 +956,3 @@ def test_prompt_idea_style_mode_reaches_plan_prompts_and_inspection(runtime, mod
         assert all("Monochrome ink wash" in chat for chat in chats)
         assert "palette" not in {lens["key"] for lens in info["idea"]["lenses"]}
     assert not handle.lock.locked()
-
-
-def test_layout_assist_schema():
-    schema = LAYOUT_ASSIST.define_schema()
-    assert schema.node_id == "PSNextLayoutAssist"
-    names = [item.id for item in schema.inputs]
-    assert names[:3] == ["upscaler", "task", "request"]
-    assert {"image", "objects", "words", "layout"} <= set(names)
-    assert [item.display_name or item.id for item in schema.outputs] == ["layout", "labels", "inspection", "lettering"]
-    assert {"read_words", "scene"} <= set(names)
-    assert next(item for item in schema.inputs if item.id == "words").lazy
-    assert next(item for item in schema.inputs if item.id == "scene").force_input
-
-
-def test_layout_assist_skips_ocr_only_when_told_and_connected():
-    lazy = LAYOUT_ASSIST.check_lazy_status
-    assert lazy(task="describe_regions", words=None, read_words=None) == ["words"]
-    assert lazy(task="describe_regions", words=None, read_words=True) == ["words"]
-    assert lazy(task="describe_regions", words=None, read_words=False) == []
-    assert lazy(task="describe_regions", read_words=True) == []  # words not connected
-    assert lazy(task="describe_regions", words=[{"x": 0}], read_words=True) == []  # already evaluated
-    assert lazy(task="list_objects", words=None) == []

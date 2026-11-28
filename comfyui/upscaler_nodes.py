@@ -3,7 +3,6 @@
 from comfy_api.latest import io
 
 from .upscaler import idea_prompts, moss_upsampler
-from .upscaler.layout_assist import TASKS as LAYOUT_TASKS
 from .upscaler.lfm_prompts import CONTRACT_VERSION as LFM_CONTRACT_VERSION
 from .upscaler.models import DEFAULT_MODEL, bundle_fingerprint, model_choices
 from .upscaler.prompts import CONTRACT_VERSION, DETAIL_MODES
@@ -408,77 +407,6 @@ class PSNextMossUpsampler(io.ComfyNode):
                 max_takes,
             )
         )
-
-
-def _lazy(item):
-    """Mark an input lazy; core's BoundingBox.Input constructor does not take the flag."""
-    item.lazy = True
-    return item
-
-
-class PSNextLayoutAssist(io.ComfyNode):
-    """LFM3-VL writes or describes a MOSS layout as JSON; boxes are xyxy on a 0-1000 grid."""
-
-    @classmethod
-    def define_schema(cls) -> io.Schema:
-        return io.Schema(
-            node_id="PSNextLayoutAssist",
-            display_name="PromptStyler Next: Layout Assist (LFM3-VL)",
-            category="PromptStyler Next/upscaling",
-            description=(
-                "JSON layout work for the MOSS layout builder with LFM3-VL. list_objects names the main things "
-                "in an image (wire 'labels' into a detector query; it adds title/text when it sees lettering); "
-                "describe_regions keeps the boxes that matter, reads detected lettering, captions the boxes and "
-                "writes the caption with a background sentence and style words; text_layout plans a layout from an "
-                "idea; edit_layout applies an instruction; image_layout places boxes without a detector. Boxes are "
-                "[x1, y1, x2, y2] on a 0-1000 grid. Decodes as one CUDA graph per token."
-            ),
-            search_aliases=["layout", "moss", "bbox", "lfm3", "json", "describe", "regions"],
-            inputs=[
-                UPSCALER.Input("upscaler"),
-                io.Combo.Input("task", options=list(LAYOUT_TASKS), default="describe_regions"),
-                io.String.Input("request", default="", multiline=True, dynamic_prompts=False,
-                                tooltip="The idea for text_layout, the instruction for edit_layout, or a scene note."),
-                io.String.Input("layout", default="", multiline=True, dynamic_prompts=False, optional=True,
-                                tooltip='Optional JSON {"caption", "items": [{"label", "caption", "text", "bbox"}]} (xyxy, 0-1000).'),
-                io.Image.Input("image", optional=True),
-                io.BoundingBox.Input("objects", optional=True, force_input=True,
-                                     tooltip="Detector boxes in pixels of the image (for example WeVisOne-VL Detect)."),
-                _lazy(io.BoundingBox.Input("words", optional=True, force_input=True,
-                                           tooltip="OCR word boxes; joined into lines of lettering. Evaluated only "
-                                           "when needed, so a skipped OCR node never runs.")),
-                io.Boolean.Input("read_words", optional=True, force_input=True,
-                                 tooltip="Wire list_objects' 'lettering' here: false skips the OCR connected to "
-                                 "'words' (it loops on images without text) and drops detected lettering blocks. "
-                                 "Unconnected, lettering is read."),
-                io.String.Input("scene", optional=True, force_input=True,
-                                tooltip="list_objects' layout output: its background nouns join the things that get "
-                                "no box, so describe_regions writes them into the background sentence."),
-                io.Int.Input("seed", default=0, min=0, max=0xFFFFFFFFFFFFFFFF, control_after_generate=False),
-                io.Float.Input("temperature", default=0.0, min=0.0, max=1.2, step=0.05,
-                               tooltip="0 decodes greedily: fastest and repeatable."),
-            ],
-            outputs=[io.String.Output("layout"), io.String.Output("labels"), io.String.Output("inspection"),
-                     io.Boolean.Output("lettering", tooltip="list_objects: whether the image shows text. "
-                                       "Wire it to a describe step's read_words.")],
-        )
-
-    @classmethod
-    def check_lazy_status(cls, task="describe_regions", read_words=None, **kwargs):
-        # Only a connected, not yet evaluated 'words' is requested (an unconnected one is absent from kwargs).
-        if task == "describe_regions" and "words" in kwargs and kwargs["words"] is None and read_words is not False:
-            return ["words"]
-        return []
-
-    @classmethod
-    def execute(cls, upscaler, task, request="", layout="", image=None, objects=None, words=None, seed=0,
-                temperature=0.0, read_words=None, scene=""):
-        from .upscaler.runtime import layout_assist
-
-        if read_words is False:
-            words = None
-        return io.NodeOutput(*layout_assist(upscaler, task, image, request, layout or "", objects, words, seed,
-                                            temperature, scene or "", lettering=read_words is not False))
 
 
 class PSNextPreviewPrompt(io.ComfyNode):

@@ -228,13 +228,6 @@ HEISS bridge adds HTTP 502/504 for unavailable/timed-out sidecars.
 Recommendations rank literal metadata matches; they do not claim model quality
 prediction or semantic understanding by a language model.
 
-## MOSS layout builder
-
-[studio/moss-layout/](../studio/moss-layout/README.md) is a HEISS overlay: a visual MOSS-Image layout
-editor with an AI menu (extract a layout and prompt from an image, plan or edit by words, caption boxes,
-snap, lettering). It mounts with `mountLayoutRoutes(app)`; the pipeline is described in
-[moss-layout-pipeline.md](moss-layout-pipeline.md).
-
 ## Validation and limits
 
 `tests/test_service.py` exercises real HTTP/catalog/engine parity, model profiles,

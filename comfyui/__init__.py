@@ -6,7 +6,6 @@ from .nodes import PSNextCompose, PSNextEncode, PSNextStyle
 from .upscaler_nodes import (
     PSNextLoadUpscaler,
     PSNextMossUpsampler,
-            PSNextLayoutAssist,
     PSNextPreviewPrompt,
     PSNextPromptIdea,
     PSNextUpscaleBase,
@@ -23,7 +22,6 @@ class PromptStylerNextExtension(ComfyExtension):
             PSNextUpscaleBase,
             PSNextPromptIdea,
             PSNextMossUpsampler,
-            PSNextLayoutAssist,
             PSNextPreviewPrompt,
         ]
 

@@ -49,18 +49,10 @@ decoded about three times faster than the Transformers loop in our tests; the ga
 bit-identical (bf16 numerics): teacher-forced argmax agreement was 99.2% on text and 95.4% with an
 image, mismatches only at near-ties. Requests with token bias (`sequence_bias`) still use Transformers.
 
-## Layout Assist
+## Layout work
 
-**Layout Assist** (`PSNextLayoutAssist`) uses the same loader for MOSS layout JSON: `list_objects`
-(nouns for a detector), `describe_regions` (summary, style tags and one caption per given box, using
-the image when connected; detector `objects` and OCR `words` from core **WeVisOne-VL Detect** become
-the boxes), `text_layout` (an idea → boxes), `edit_layout` (an instruction applied to a layout) and
-`image_layout` (boxes without a detector). Boxes are `[x1, y1, x2, y2]` on a 0–1000 grid and the
-answer carries `"grid": "xyxy-1000"`; the MOSS Image Layout Prompt Builder imports that form.
-Captions come back under numbered keys so each lands on its own box; answers are repaired leniently
-(a describe answer with a stray quote is salvaged field by field), not retried. Detector clean-up drops
-backdrops, parts or clothing of a boxed person, a lettering box the OCR lines cover, and more than three
-boxes of one label. Caption quality was checked on three renders only. `list_objects` puts the picture's subject first and reports `lettering`; wire that output to a describe step's `read_words` and the lazy `words` input skips OCR on images without text.
+Layout JSON (MOSS boxes, Ming layers, OCR of lettering) moved to the separate ComfyUI-Layout-AI pack,
+which carries its own copy of this LFM3 runtime and reads LFM3 files from this model folder too.
 
 ## Single-file installation
 
